@@ -1,0 +1,889 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n## Cosa sono le partizioni di Apache Spark?\n\n## È utile sapere che\nNel distribuire i dati in partizioni vengono seguite queste regole:\n\n- Ogni nodo (executor) del cluster di Spark contiene una o più partizioni\n- Ogni partizione è interamente contenuta in un unico executor\n- Spark assegna un task per ogni partizione e di default ogni core può processare un task per volta\n\n\n",
+      "user": "admin",
+      "dateUpdated": "2020-01-13 17:02:37.382",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eCosa sono le partizioni di Apache Spark?\u003c/h2\u003e\n\u003ch2\u003eÈ utile sapere che\u003c/h2\u003e\n\u003cp\u003eNel distribuire i dati in partizioni vengono seguite queste regole:\u003c/p\u003e\n\u003cul\u003e\n  \u003cli\u003eOgni nodo (executor) del cluster di Spark contiene una o più partizioni\u003c/li\u003e\n  \u003cli\u003eOgni partizione è interamente contenuta in un unico executor\u003c/li\u003e\n  \u003cli\u003eSpark assegna un task per ogni partizione e di default ogni core può processare un task per volta\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578312384113_1766903140",
+      "id": "20191211-111114_1565692295",
+      "dateCreated": "2020-01-06 13:06:24.113",
+      "dateStarted": "2020-01-13 17:02:37.382",
+      "dateFinished": "2020-01-13 17:02:40.281",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Perché è importante il partitioning\nUn esempio per capire l\u0027importanza del numero di partizioni.\n\nSupponiamo di avere un cluster con 4 core. Un numero di partizioni suggerito è pari al numero di cores del cluster. In questo modo ogni nodo (supponendo 1 nodo \u003d 1 core) riceve una partizione. Nella esecuzione del *job* ogni nodo riceverà un task, pertanto avrò un numero di task pari al numero delle partizioni (core). L\u0027utilizzo del cluster è al 100%, ovvero tutti i nodi sono impegnati. \n\n#FIGURA SOTTO\n\n\n\nSe invece avessimo 4 core e un numero di partizioni pari a 5 avrei che l\u0027intero processo deve essere suddiviso in 5 task. Nel primo batch i 4 executor processano i primi 4 task, il primo che finisce eseguirà il 5 task e sarà l\u0027unico a lavorare mentre gli altri tre avranno finito i loro task. L\u0027utilizzo del cluster non è ottimale.",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-07 15:58:51.751",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003ePerché è importante il partitioning\u003c/h3\u003e\n\u003cp\u003eUn esempio per capire l\u0026rsquo;importanza del numero di partizioni.\u003c/p\u003e\n\u003cp\u003eSupponiamo di avere un cluster con 4 core. Un numero di partizioni suggerito è pari al numero di cores del cluster. In questo modo ogni nodo (supponendo 1 nodo \u003d 1 core) riceve una partizione. Nella esecuzione del \u003cem\u003ejob\u003c/em\u003e ogni nodo riceverà un task, pertanto avrò un numero di task pari al numero delle partizioni (core). L\u0026rsquo;utilizzo del cluster è al 100%, ovvero tutti i nodi sono impegnati. \u003c/p\u003e\n\u003cp\u003e#FIGURA SOTTO\u003c/p\u003e\n\u003cp\u003eSe invece avessimo 4 core e un numero di partizioni pari a 5 avrei che l\u0026rsquo;intero processo deve essere suddiviso in 5 task. Nel primo batch i 4 executor processano i primi 4 task, il primo che finisce eseguirà il 5 task e sarà l\u0026rsquo;unico a lavorare mentre gli altri tre avranno finito i loro task. L\u0026rsquo;utilizzo del cluster non è ottimale.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578312384116_281921986",
+      "id": "20200104-000359_1766048439",
+      "dateCreated": "2020-01-06 13:06:24.116",
+      "dateStarted": "2020-01-07 15:58:51.751",
+      "dateFinished": "2020-01-07 15:58:51.767",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Quante partizioni?\nPer vedere il numero di partizioni uso **getNumPartitions()** o **df.rdd.pastions.size()**.\nCarico un dataset di 7.55MB in un dataframe e controllo subito in quante partizioni è suddiviso il dataframe.\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-07 15:59:52.820",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eQuante partizioni?\u003c/h3\u003e\n\u003cp\u003ePer vedere il numero di partizioni uso \u003cstrong\u003egetNumPartitions()\u003c/strong\u003e o \u003cstrong\u003edf.rdd.pastions.size()\u003c/strong\u003e.\u003cbr/\u003eCarico un dataset di 7.55MB in un dataframe e controllo subito in quante partizioni è suddiviso il dataframe.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578312384116_128441113",
+      "id": "20191211-111725_28086690",
+      "dateCreated": "2020-01-06 13:06:24.116",
+      "dateStarted": "2020-01-07 15:59:52.821",
+      "dateFinished": "2020-01-07 15:59:52.828",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df \u003d spark.read.option(\"inferSchema\", \"true\").option(\"header\", \"true\").csv(\"Datasets/globalpowerplantdatabasev120/*.csv\")\nprintln(f\"Numero di partizioni del dataframe: ${df.rdd.partitions.size}\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-08 12:22:01.454",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Numero di partizioni del dataframe: 1\r\ndf: org.apache.spark.sql.DataFrame \u003d [country: string, country_long: string ... 22 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578312384117_-514945308",
+      "id": "20191211-113930_2105717002",
+      "dateCreated": "2020-01-06 13:06:24.117",
+      "dateStarted": "2020-01-08 12:22:01.560",
+      "dateFinished": "2020-01-08 12:22:15.828",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nPerché 1 partizione soltanto?\n\nCi sono due parametri interni di Spark di cui tenere conto:\n- il numero minimo di partizioni **sc.defaultMinPartitions**, che può essere 1 (nel caso in cui Spark utilizzi un solo core) o 2 (caso multi-core).\n- lo *splitSize* della partizione. Vedremo più avanti come viene calcolato. È importante sapere che Spark calcola questo splitSize e poi carica un numero **intero** di file tale da riempire la partizione. Più un overhead pari a **spark.sql.files.openCostInBytes** per ogni file, questo è 4MB di default. \n\nPer il riempimento delle partizioni viene usato il metodo interno **createNonBucketedReadRDD**.\n\nIl numero minimo di partizioni (**sc.defaultMinPartitions**) è 1. Quest\u0027ultimo è definito internamente da Spark come il minimo tra **spark.default.parallelism** (sc.defaultParallelism) e 2, ciò significa che defaultMinPartitions non può essere più grande di 2.\n\n**spark.default.parallelism** viene settato di default pari al numero di cores usato, che in Apache Zeppelin di default è 1. Posso settare questo in una nuova **Sparkession** con il metodo **master(\"local[x]\")**.\n\nSi noti che allocando un numero di cores maggiore o uguale a 2, il numero minimo di partizioni (sc.defaultMinPartitions) è 2.\n\nSe invece alloco un core soltanto ho sc.defaultMinPartitions \u003d 1\n\nFacciamo una verifica dei settaggi.",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-08 18:32:48.098",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003ePerché 1 partizione soltanto?\u003c/p\u003e\n\u003cp\u003eCi sono due parametri interni di Spark di cui tenere conto:\u003cbr/\u003e- il numero minimo di partizioni \u003cstrong\u003esc.defaultMinPartitions\u003c/strong\u003e, che può essere 1 (nel caso in cui Spark utilizzi un solo core) o 2 (caso multi-core).\u003cbr/\u003e- lo \u003cem\u003esplitSize\u003c/em\u003e della partizione. Vedremo più avanti come viene calcolato. È importante sapere che Spark calcola questo splitSize e poi carica un numero \u003cstrong\u003eintero\u003c/strong\u003e di file tale da riempire la partizione. Più un overhead pari a \u003cstrong\u003espark.sql.files.openCostInBytes\u003c/strong\u003e per ogni file, questo è 4MB di default. \u003c/p\u003e\n\u003cp\u003ePer il riempimento delle partizioni viene usato il metodo interno \u003cstrong\u003ecreateNonBucketedReadRDD\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003eIl numero minimo di partizioni (**sc.defaultMinPartitions**) è 1. Quest\u0026rsquo;ultimo è definito internamente da Spark come il minimo tra \u003cstrong\u003espark.default.parallelism\u003c/strong\u003e (sc.defaultParallelism) e 2, ciò significa che defaultMinPartitions non può essere più grande di 2.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003espark.default.parallelism\u003c/strong\u003e viene settato di default pari al numero di cores usato, che in Apache Zeppelin di default è 1. Posso settare questo in una nuova \u003cstrong\u003eSparkession\u003c/strong\u003e con il metodo \u003cstrong\u003emaster(\u0026ldquo;local[x]\u0026rdquo;)\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003eSi noti che allocando un numero di cores maggiore o uguale a 2, il numero minimo di partizioni (sc.defaultMinPartitions) è 2.\u003c/p\u003e\n\u003cp\u003eSe invece alloco un core soltanto ho sc.defaultMinPartitions \u003d 1\u003c/p\u003e\n\u003cp\u003eFacciamo una verifica dei settaggi.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578312384117_-505927416",
+      "id": "20200105-162802_1539673061",
+      "dateCreated": "2020-01-06 13:06:24.117",
+      "dateStarted": "2020-01-08 18:32:48.099",
+      "dateFinished": "2020-01-08 18:32:48.107",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "println(f\"sc.defaultParallelism: ${sc.defaultParallelism}\")\nprintln(f\"Numero minimo di partizioni: ${sc.defaultMinPartitions}\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-07 18:02:14.336",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "sc.defaultParallelism: 1\r\nNumero minimo di partizioni: 1\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578409569078_1384560649",
+      "id": "20200107-160609_514599114",
+      "dateCreated": "2020-01-07 16:06:09.078",
+      "dateStarted": "2020-01-07 18:02:14.572",
+      "dateFinished": "2020-01-07 18:02:25.840",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\r\nIl metodo **createNonBucketedReadRDD** è descritto in maniera approssimativa [qui](https://docs.microsoft.com/en-gb/archive/blogs/shanyu/how-does-spark-determine-partitions-for-an-rdd).\r\nPer il codice dell\u0027algoritmo si può vedere nel github repo di [Apache Spark](https://github.com/apache/spark/blob/992447fb30ee9ebb3cf794f2d06f4d63a2d792db/sql/core/src/main/scala/org/apache/spark/sql/execution/DataSourceScanExec.scala#L396). \r\nUn pseudocodice è riportato sotto:\r\n```\r\nsplitSize \u003d Math.min(defaultMaxSplitBytes, Math.max(openCostInBytes, bytesPerCore))\r\n   defaultMaxSplitBytes \u003d conf: spark.sql.files.maxPartitionBytes, defaults to 128MB\r\n   openCostInBytes \u003d conf: spark.sql.files.openCostInBytes, default to 4MB\r\n   totalBytes \u003d fileSize + openCostInBytes*numFiles\r\n   bytesPerCore \u003d totalBytes / defaultParallelism\r\n   defaultParallelism \u003d conf: spark.default.parallelism, defaults to (conf: spark.executor.cores) * (conf: spark.executor.instances)\r\n```\r\n\r\nFissato il numero di cores e di executors, con i setting di default indicati sopra ho che il punto di divisione della partizione (splitSize) varia da un minimo di 4MB ad un massimo di 128MB quando la dimensione del dataset varia da 4x16\u003d64MB (spark.sql.files.openCostInBytes x numero-dei-cores) a 128x16\u003d2GB (spark.sql.files.maxPartitionBytes x numero-dei-cores).\r\n\r\nVediamo cosa risulta per il nostro dataset e i setting di default: ",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-08 18:33:49.862",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eIl metodo \u003cstrong\u003ecreateNonBucketedReadRDD\u003c/strong\u003e è descritto in maniera approssimativa \u003ca href\u003d\"https://docs.microsoft.com/en-gb/archive/blogs/shanyu/how-does-spark-determine-partitions-for-an-rdd\"\u003equi\u003c/a\u003e.\u003cbr/\u003ePer il codice dell\u0026rsquo;algoritmo si può vedere nel github repo di \u003ca href\u003d\"https://github.com/apache/spark/blob/992447fb30ee9ebb3cf794f2d06f4d63a2d792db/sql/core/src/main/scala/org/apache/spark/sql/execution/DataSourceScanExec.scala#L396\"\u003eApache Spark\u003c/a\u003e.\u003cbr/\u003eUn pseudocodice è riportato sotto:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003esplitSize \u003d Math.min(defaultMaxSplitBytes, Math.max(openCostInBytes, bytesPerCore))\r\n   defaultMaxSplitBytes \u003d conf: spark.sql.files.maxPartitionBytes, defaults to 128MB\r\n   openCostInBytes \u003d conf: spark.sql.files.openCostInBytes, default to 4MB\r\n   totalBytes \u003d fileSize + openCostInBytes*numFiles\r\n   bytesPerCore \u003d totalBytes / defaultParallelism\r\n   defaultParallelism \u003d conf: spark.default.parallelism, defaults to (conf: spark.executor.cores) * (conf: spark.executor.instances)\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eFissato il numero di cores e di executors, con i setting di default indicati sopra ho che il punto di divisione della partizione (splitSize) varia da un minimo di 4MB ad un massimo di 128MB quando la dimensione del dataset varia da 4x16\u003d64MB (spark.sql.files.openCostInBytes x numero-dei-cores) a 128x16\u003d2GB (spark.sql.files.maxPartitionBytes x numero-dei-cores).\u003c/p\u003e\n\u003cp\u003eVediamo cosa risulta per il nostro dataset e i setting di default:\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578411537406_-224468198",
+      "id": "20200107-163857_900181572",
+      "dateCreated": "2020-01-07 16:38:57.406",
+      "dateStarted": "2020-01-08 18:33:49.863",
+      "dateFinished": "2020-01-08 18:33:49.871",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val numFiles \u003d 50\nval defaultParallelism \u003d 16\nval openCostInBytes \u003d 4.0*1024*1024\nval totalBytes \u003d 1.22*1024*1024*1024 + openCostInBytes*numFiles //dataset\u003d1.22GB\nval bytesPerCore \u003d totalBytes/defaultParallelism\nval defaultMaxSplitBytes \u003d 128.0*1024*1024\nval splitSize \u003d Math.min(defaultMaxSplitBytes, Math.max(openCostInBytes, bytesPerCore))\n\nval splitSize_MB \u003d splitSize/1024/1024",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-08 18:34:51.619",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "numFiles: Int \u003d 50\r\ndefaultParallelism: Int \u003d 16\r\nopenCostInBytes: Double \u003d 4194304.0\r\ntotalBytes: Double \u003d 1.51968022528E9\r\nbytesPerCore: Double \u003d 9.498001408E7\r\ndefaultMaxSplitBytes: Double \u003d 1.34217728E8\r\nsplitSize: Double \u003d 9.498001408E7\r\nsplitSize_MB: Double \u003d 90.58\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578435348665_-1085179729",
+      "id": "20200107-231548_135706772",
+      "dateCreated": "2020-01-07 23:15:48.665",
+      "dateStarted": "2020-01-08 18:34:51.649",
+      "dateFinished": "2020-01-08 18:34:51.839",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nQuindi ho uno splitSize di 90.58MB, settiamo i parametri e verifichiamo che le partizioni vengano riempite usando il valore splitSize trovato.\n\nPer incominciare cancelliamo questo oggetto *spark*.",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-08 20:14:08.646",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eQuindi ho uno splitSize di 90.58MB, settiamo i parametri e verifichiamo che le partizioni vengano riempite usando il valore splitSize trovato.\u003c/p\u003e\n\u003cp\u003ePer incominciare cancelliamo questo oggetto \u003cem\u003espark\u003c/em\u003e.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578440253389_-1615307263",
+      "id": "20200108-003733_1456400066",
+      "dateCreated": "2020-01-08 00:37:33.390",
+      "dateStarted": "2020-01-08 20:14:08.646",
+      "dateFinished": "2020-01-08 20:14:08.649",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.stop",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-08 17:09:37.619",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1578312384118_-484052762",
+      "id": "20200105-180314_546314396",
+      "dateCreated": "2020-01-06 13:06:24.118",
+      "dateStarted": "2020-01-08 17:09:37.654",
+      "dateFinished": "2020-01-08 17:09:37.813",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\ne creiamone un altro con i parametri da noi definiti.",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-08 17:07:41.780",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003ee creiamone un altro con i parametri da noi definiti.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578499439446_-1443711612",
+      "id": "20200108-170359_1303576333",
+      "dateCreated": "2020-01-08 17:03:59.446",
+      "dateStarted": "2020-01-08 17:07:41.780",
+      "dateFinished": "2020-01-08 17:07:41.784",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.SparkSession\n\n//definiamo un nuovo spark object\nval spark \u003d SparkSession.builder.master(\"local[*]\").config(\"spark.executor.cores\", 1)\n                                                   .config(\"spark.executor.instances\", 16)\n                                                   .config(\"spark.sql.files.maxPartitionBytes\", 128*1024*1024)\n                                                   .config(\"spark.sql.files.openCostInBytes\", 4*1024*1024)\n                                                   .getOrCreate()\n\nval df \u003d spark.read.option(\"inferSchema\", \"true\").option(\"header\", \"true\").csv(\"Datasets/donation/blocks2/*.csv\")\nprintln(f\"Numero di partizioni del dataframe: ${df.rdd.partitions.size}\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-08 17:09:40.232",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Numero di partizioni del dataframe: 17\r\nimport org.apache.spark.sql.SparkSession\r\nspark: org.apache.spark.sql.SparkSession \u003d org.apache.spark.sql.SparkSession@c03d33\r\ndf: org.apache.spark.sql.DataFrame \u003d [id_1: int, id_2: int ... 10 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578312384118_-339124615",
+      "id": "20200105-172541_599899694",
+      "dateCreated": "2020-01-06 13:06:24.118",
+      "dateStarted": "2020-01-08 17:09:40.262",
+      "dateFinished": "2020-01-08 17:09:54.392",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nNell\u0027interfaccia web di Apache Spark vediamo come sono costruite le partizioni. Si può vedere che ci sono 17 partizioni, le prime 16 da 75MB (ovvero contengono 3 files da 25MB), l\u0027ultima contenente i restanti 2 files da 50MB.\n\n![Apache Spark partition web UI](https://www.1week4.com/wp-content/uploads/2020/01/apache-spark-partitions-web-UI.jpg)\n\nPerchè 17 partizioni? L\u0027algoritmo *createBucketedReadRDD* visto sopra procede a riempiere le partizioni come indicato in figura sotto. Da cui risultano 17 partizioni.\n\n![partitions Apache Spark](https://www.1week4.com/wp-content/uploads/2020/01/apache-spark-partitions.jpg)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-08 19:01:26.792",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eNell\u0026rsquo;interfaccia web di Apache Spark vediamo come sono costruite le partizioni. Si può vedere che ci sono 17 partizioni, le prime 16 da 75MB (ovvero contengono 3 files da 25MB), l\u0026rsquo;ultima contenente i restanti 2 files da 50MB.\u003c/p\u003e\n\u003cp\u003e\u003cimg src\u003d\"https://www.1week4.com/wp-content/uploads/2020/01/apache-spark-partitions-web-UI.jpg\" alt\u003d\"Apache Spark partition web UI\" /\u003e\u003c/p\u003e\n\u003cp\u003ePerchè 17 partizioni? L\u0026rsquo;algoritmo \u003cem\u003ecreateBucketedReadRDD\u003c/em\u003e visto sopra procede a riempiere le partizioni come indicato in figura sotto. Da cui risultano 17 partizioni.\u003c/p\u003e\n\u003cp\u003e\u003cimg src\u003d\"https://www.1week4.com/wp-content/uploads/2020/01/apache-spark-partitions.jpg\" alt\u003d\"partitions Apache Spark\" /\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578504114916_293324928",
+      "id": "20200108-182154_463289204",
+      "dateCreated": "2020-01-08 18:21:54.916",
+      "dateStarted": "2020-01-08 19:01:26.792",
+      "dateFinished": "2020-01-08 19:01:26.798",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nAbbiamo visto come cambia il numero delle partizioni quando una struttura di **dati in ingresso viene generata**.\n\nMa il numero delle partizioni non è fisso dall\u0027inizio alla fine della applicazione, infatti esso cambia se triggeriamo uno shuffle dei dati, ovvero se utilizziamo una trasformazione che implica uno shuffle (**wide transformation**). Per esempio ...\n\nCome si può vedere sotto il numero delle partizioni dopo le operazioni **groupBy()** e **max()** è diventato 200. Perchè?\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-06 13:06:24.125",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eAbbiamo visto come cambia il numero delle partizioni quando una struttura di \u003cstrong\u003edati in ingresso viene generata\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003eMa il numero delle partizioni non è fisso dall\u0026rsquo;inizio alla fine della applicazione, infatti esso cambia se triggeriamo uno shuffle dei dati, ovvero se utilizziamo una trasformazione che implica uno shuffle (**wide transformation**). Per esempio \u0026hellip;\u003c/p\u003e\n\u003cp\u003eCome si può vedere sotto il numero delle partizioni dopo le operazioni \u003cstrong\u003egroupBy()\u003c/strong\u003e e \u003cstrong\u003emax()\u003c/strong\u003e è diventato 200. Perchè?\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578312384124_1593617272",
+      "id": "20200105-032003_1472496855",
+      "dateCreated": "2020-01-06 13:06:24.124",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val newdf \u003d df.groupBy(\"country\").max(\"estimated_generation_gwh\")\nnewdf.rdd.getNumPartitions",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-08 19:28:15.694",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "org.apache.spark.sql.AnalysisException: Cannot resolve column name \"country\" among (id_1, id_2, cmp_fname_c1, cmp_fname_c2, cmp_lname_c1, cmp_lname_c2, cmp_sex, cmp_bd, cmp_bm, cmp_by, cmp_plz, is_match);\r\n  at org.apache.spark.sql.Dataset$$anonfun$resolve$1.apply(Dataset.scala:212)\r\n  at org.apache.spark.sql.Dataset$$anonfun$resolve$1.apply(Dataset.scala:212)\r\n  at scala.Option.getOrElse(Option.scala:121)\r\n  at org.apache.spark.sql.Dataset.resolve(Dataset.scala:211)\r\n  at org.apache.spark.sql.Dataset$$anonfun$groupBy$2.apply(Dataset.scala:1439)\r\n  at org.apache.spark.sql.Dataset$$anonfun$groupBy$2.apply(Dataset.scala:1439)\r\n  at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)\r\n  at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)\r\n  at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)\r\n  at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)\r\n  at scala.collection.TraversableLike$class.map(TraversableLike.scala:234)\r\n  at scala.collection.AbstractTraversable.map(Traversable.scala:104)\r\n  at org.apache.spark.sql.Dataset.groupBy(Dataset.scala:1439)\r\n  ... 47 elided\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578312384125_304123786",
+      "id": "20191211-145314_1450041834",
+      "dateCreated": "2020-01-06 13:06:24.125",
+      "dateStarted": "2020-01-08 19:28:15.716",
+      "dateFinished": "2020-01-08 19:28:16.083",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "dateUpdated": "2020-01-06 13:06:24.125",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1578312384125_1396048646",
+      "id": "20200104-112553_25467890",
+      "dateCreated": "2020-01-06 13:06:24.125",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nCome si vede sopra dopo le operazioni **groupBy()** e **aggregate** ho 200 partizioni, questo perché il parametro spark.sql.shuffle.partitions è settato a 200. Ricordiamo che quest\u0027ultimo fissa il numero di partizioni create da un\u0027operazione che1 implica uno shuffle, come ad esempio **groupBy**.\n\nNella UI di Spark si può vedere come è cambiato il numero di task e conseguentemente di partizioni, da 1 a 200.\n![spark ui stages](https://www.1week4.com/wp-content/uploads/2019/12/spark-ui-stages1.jpg)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-08 19:28:44.871",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eCome si vede sopra dopo le operazioni \u003cstrong\u003egroupBy()\u003c/strong\u003e e \u003cstrong\u003eaggregate\u003c/strong\u003e ho 200 partizioni, questo perché il parametro spark.sql.shuffle.partitions è settato a 200. Ricordiamo che quest\u0026rsquo;ultimo fissa il numero di partizioni create da un\u0026rsquo;operazione che1 implica uno shuffle, come ad esempio \u003cstrong\u003egroupBy\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003eNella UI di Spark si può vedere come è cambiato il numero di task e conseguentemente di partizioni, da 1 a 200.\u003cbr/\u003e\u003cimg src\u003d\"https://www.1week4.com/wp-content/uploads/2019/12/spark-ui-stages1.jpg\" alt\u003d\"spark ui stages\" /\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578312384126_947709862",
+      "id": "20191211-155312_1902930156",
+      "dateCreated": "2020-01-06 13:06:24.126",
+      "dateStarted": "2020-01-08 19:28:44.872",
+      "dateFinished": "2020-01-08 19:28:44.877",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## spark.executor.cores\n## spark.task.cpus",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-06 13:06:24.126",
+      "config": {
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1578312384126_-1221923775",
+      "id": "20200104-013042_456316799",
+      "dateCreated": "2020-01-06 13:06:24.126",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "//   Default min number of partitions for Hadoop RDDs when not given by user\r\n//   Notice that we use math.min so the \"defaultMinPartitions\" cannot be higher than 2.\r\n//   The reasons for this are discussed in https://github.com/mesos/spark/pull/718\r\n//   \r\n//  def defaultMinPartitions: Int \u003d math.min(defaultParallelism, 2)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-06 13:06:24.127",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1578312384126_-1888282766",
+      "id": "20191211-125437_1840307153",
+      "dateCreated": "2020-01-06 13:06:24.126",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n| settaggio | default | spiegazione |\n|---------|---------|-------------|\n|spark.driver.cores|1|setta il numero di cores usati dal driver|\n|spark.executor.cores|1 in modo YARN. Tutti i cores disponibili in modo Spark standalone e con Mesos | il numero di cores per ogni executor in fase di lancio del nodo|\n|spark.task.cpu | 1 | numero di task da allocare per ciascun core|\n|spark.cores.max| non settato | il massimo numero di cores del cluster (totale, non per ogni executor) da assegnare **all\u0027applicazione**. Solo per Spark standalone e Mesos \"coarse-grained\" |\n|spark.deploy.defaultCores| illimitato | numero default di cores del cluster da assegnare in Spark standalone se non è assegnato spark.cores.max. Si può usare per limitare il numero di cores da assegnare a diversi user di un cluster condiviso|\n|spark.default.parallelism \u003cbr\u003esc.defaultParallelism| numero di cores??? | numero di default delle partizioni generate da operazioni quali *join* e *reduceByKey* e *parallelize*|\n\n\n#### Esempio\nSupponendo di essere in **cluster mode**, settando: \n- spark.cores.max \u003d 5\n- \n- spark.driver.cores \u003d 1\n- spark.executor.cores \u003d 2\n\navrò un numero di executors pari a\n\n#executors \u003d (spark.cores.max - spark.driver.cores)/spark.executor.cores \u003d 2\n\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-08 20:12:49.882",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003esettaggio \u003c/th\u003e\n      \u003cth\u003edefault \u003c/th\u003e\n      \u003cth\u003espiegazione \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003espark.driver.cores\u003c/td\u003e\n      \u003ctd\u003e1\u003c/td\u003e\n      \u003ctd\u003esetta il numero di cores usati dal driver\u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003espark.executor.cores\u003c/td\u003e\n      \u003ctd\u003e1 in modo YARN. Tutti i cores disponibili in modo Spark standalone e con Mesos \u003c/td\u003e\n      \u003ctd\u003eil numero di cores per ogni executor in fase di lancio del nodo\u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003espark.task.cpu \u003c/td\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003enumero di task da allocare per ciascun core\u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003espark.cores.max\u003c/td\u003e\n      \u003ctd\u003enon settato \u003c/td\u003e\n      \u003ctd\u003eil massimo numero di cores del cluster (totale, non per ogni executor) da assegnare \u003cstrong\u003eall\u0026rsquo;applicazione\u003c/strong\u003e. Solo per Spark standalone e Mesos \u0026ldquo;coarse-grained\u0026rdquo; \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003espark.deploy.defaultCores\u003c/td\u003e\n      \u003ctd\u003eillimitato \u003c/td\u003e\n      \u003ctd\u003enumero default di cores del cluster da assegnare in Spark standalone se non è assegnato spark.cores.max. Si può usare per limitare il numero di cores da assegnare a diversi user di un cluster condiviso\u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003espark.default.parallelism \u003cbr\u003esc.defaultParallelism\u003c/td\u003e\n      \u003ctd\u003enumero di cores??? \u003c/td\u003e\n      \u003ctd\u003enumero di default delle partizioni generate da operazioni quali \u003cem\u003ejoin\u003c/em\u003e e \u003cem\u003ereduceByKey\u003c/em\u003e e \u003cem\u003eparallelize\u003c/em\u003e\u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch4\u003eEsempio\u003c/h4\u003e\n\u003cp\u003eSupponendo di essere in \u003cstrong\u003ecluster mode\u003c/strong\u003e, settando:\u003cbr/\u003e- spark.cores.max \u003d 5\u003cbr/\u003e-\u003cbr/\u003e- spark.driver.cores \u003d 1\u003cbr/\u003e- spark.executor.cores \u003d 2\u003c/p\u003e\n\u003cp\u003eavrò un numero di executors pari a\u003c/p\u003e\n\u003cp\u003e#executors \u003d (spark.cores.max - spark.driver.cores)/spark.executor.cores \u003d 2\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578312384127_350713928",
+      "id": "20200104-234415_320317775",
+      "dateCreated": "2020-01-06 13:06:24.127",
+      "dateStarted": "2020-01-08 20:12:49.882",
+      "dateFinished": "2020-01-08 20:12:49.891",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nRiferimenti\n1. [Spark Github](https://github.com/apache/spark/blob/master/core/src/main/scala/org/apache/spark/SparkContext.scala#L799)\n2. https://www.dezyre.com/article/how-data-partitioning-in-spark-helps-achieve-more-parallelism/297",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-06 13:06:24.128",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eRiferimenti\u003cbr/\u003e1. \u003ca href\u003d\"https://github.com/apache/spark/blob/master/core/src/main/scala/org/apache/spark/SparkContext.scala#L799\"\u003eSpark Github\u003c/a\u003e\u003cbr/\u003e2. \u003ca href\u003d\"https://www.dezyre.com/article/how-data-partitioning-in-spark-helps-achieve-more-parallelism/297\"\u003ehttps://www.dezyre.com/article/how-data-partitioning-in-spark-helps-achieve-more-parallelism/297\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578312384127_-111749629",
+      "id": "20191211-130043_314232691",
+      "dateCreated": "2020-01-06 13:06:24.127",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.conf.getAll.foreach(println)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-06 13:06:24.128",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "editorHide": false,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "(spark.driver.host,LAPTOP-CD5FRQQG)\r\n(spark.driver.port,7778)\r\n(spark.jars,file:///C:/zeppelin-0.8.2-bin-all-local/interpreter/spark/spark-interpreter-0.8.2.jar,file:/C:/zeppelin-0.8.2-bin-all-local/interpreter/spark/spark-interpreter-0.8.2.jar)\r\n(spark.app.name,Zeppelin)\r\n(spark.executor.instances,4)\r\n(spark.executor.id,driver)\r\n(spark.driver.extraJavaOptions, -Dfile.encoding\u003dUTF-8 -Dzeppelin.log.file\u003d\u0027C:\\zeppelin-0.8.2-bin-all-local\\logs\\zeppelin-interpreter-spark-Anto-LAPTOP-CD5FRQQG.log\u0027)\r\n(spark.submit.deployMode,client)\r\n(spark.master,local[4])\r\n(spark.repl.local.jars,file:///C:/zeppelin-0.8.2-bin-all-local/interpreter/spark/spark-interpreter-0.8.2.jar)\r\n(spark.app.id,local-1578244297950)\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578312384128_1019690779",
+      "id": "20191211-130103_1686291439",
+      "dateCreated": "2020-01-06 13:06:24.128",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "dateUpdated": "2020-01-06 13:06:24.128",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1578312384128_612855877",
+      "id": "20200104-112837_2034204350",
+      "dateCreated": "2020-01-06 13:06:24.128",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Partitions",
+  "id": "2EWWHV416",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

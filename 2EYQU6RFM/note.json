@@ -1,0 +1,1593 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\nIl dataset può esserescaricato da: \nhttp://academictorrents.com/details/a2ccf94bbb4af222bf8e69dad60a68a29f310d9a\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 12:19:45.979",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eIl dataset può esserescaricato da:\u003cbr/\u003e\u003ca href\u003d\"http://academictorrents.com/details/a2ccf94bbb4af222bf8e69dad60a68a29f310d9a\"\u003ehttp://academictorrents.com/details/a2ccf94bbb4af222bf8e69dad60a68a29f310d9a\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578568766947_2000321528",
+      "id": "20200109-121926_1499604890",
+      "dateCreated": "2020-01-09 12:19:26.947",
+      "dateStarted": "2020-01-09 12:19:45.980",
+      "dateFinished": "2020-01-09 12:19:48.699",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df \u003d spark.read.format(\"csv\").option(\"sep\",\"\\t\").option(\"inferSchema\", \"true\").load(\"./Datasets/chimps_16091-2010-08-03_17-08-31/*.tsv\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 12:19:51.876",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "df: org.apache.spark.sql.DataFrame \u003d [_c0: string, _c1: string ... 9 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578524705862_-1364196793",
+      "id": "20200109-000505_846111797",
+      "dateCreated": "2020-01-09 00:05:05.862",
+      "dateStarted": "2020-01-09 12:19:51.913",
+      "dateFinished": "2020-01-09 12:19:57.980",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 12:19:58.404",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+---+-------------+--------+----+----+---+-----+------+-------+-----+\n|_c0|_c1|          _c2|     _c3| _c4| _c5|_c6|  _c7|   _c8|    _c9| _c10|\n+---+---+-------------+--------+----+----+---+-----+------+-------+-----+\n|MHK|AMW|Manhattan, KS|Ames, IA|  21|  30|  1|254.0|200810| 122049|86219|\n|EUG|RDM|   Eugene, OR|Bend, OR|  41| 396| 22|103.0|199011| 284093|76034|\n|EUG|RDM|   Eugene, OR|Bend, OR|  88| 342| 19|103.0|199012| 284093|76034|\n|EUG|RDM|   Eugene, OR|Bend, OR|  11|  72|  4|103.0|199010| 284093|76034|\n|MFR|RDM|  Medford, OR|Bend, OR|   0|  18|  1|156.0|199002| 147300|76034|\n|MFR|RDM|  Medford, OR|Bend, OR|  11|  18|  1|156.0|199003| 147300|76034|\n|MFR|RDM|  Medford, OR|Bend, OR|   2|  72|  4|156.0|199001| 147300|76034|\n|MFR|RDM|  Medford, OR|Bend, OR|   7|  18|  1|156.0|199009| 147300|76034|\n|MFR|RDM|  Medford, OR|Bend, OR|   7|  36|  2|156.0|199011| 147300|76034|\n|SEA|RDM|  Seattle, WA|Bend, OR|   8|  18|  1|228.0|199002|5154164|76034|\n|SEA|RDM|  Seattle, WA|Bend, OR| 453|3128| 23|228.0|199001|5154164|76034|\n|SEA|RDM|  Seattle, WA|Bend, OR| 784|2720| 20|228.0|199002|5154164|76034|\n|SEA|RDM|  Seattle, WA|Bend, OR| 749|2992| 22|228.0|199003|5154164|76034|\n|SEA|RDM|  Seattle, WA|Bend, OR|  11|  18|  1|228.0|199004|5154164|76034|\n|PDX|RDM| Portland, OR|Bend, OR| 349| 851| 23|116.0|199001|1534762|76034|\n|PDX|RDM| Portland, OR|Bend, OR|1376|2898|161|116.0|199001|1534762|76034|\n|PDX|RDM| Portland, OR|Bend, OR| 444|1110| 30|116.0|199010|1534762|76034|\n|PDX|RDM| Portland, OR|Bend, OR|1949|3261|187|116.0|199006|1534762|76034|\n|PDX|RDM| Portland, OR|Bend, OR| 381| 814| 22|116.0|199002|1534762|76034|\n|PDX|RDM| Portland, OR|Bend, OR|1559|2772|154|116.0|199002|1534762|76034|\n+---+---+-------------+--------+----+----+---+-----+------+-------+-----+\nonly showing top 20 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578524827643_920108480",
+      "id": "20200109-000707_1769797891",
+      "dateCreated": "2020-01-09 00:07:07.643",
+      "dateStarted": "2020-01-09 12:19:58.439",
+      "dateFinished": "2020-01-09 12:19:58.844",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\ntable{backgroud:grey}.\n    |Short name|Type|Description|\n    |Origin|String| Three letter airport code of the origin airport |\n    |Destination|String| Three letter airport code of the destination airport |\n    |Origin City|String| Origin city name |\n    |Destination City|String| Destination city name |\n    |Passengers|Integer| Number of passengers transported from origin to destination |\n    |Seats|Integer| Number of seats available on flights from origin to destination |\n    |Flights|Integer| Number of flights between origin and destination (multiple records for one month, many with flights \u003e 1)|\n    |Distance|Integer| Distance (to nearest mile) flown between origin and destination |\n    |Fly Date|Integer| The date (yyyymm) of flight |\n    |Origin Population|Integer| Origin city\u0027s population as reported by US Census |\n    |Destination Population|Integer| Destination city\u0027s population as reported by US Census |\n    \n    ",
+      "user": "user1",
+      "dateUpdated": "2020-01-09 00:47:11.892",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003etable{backgroud:grey}.\u003cbr/\u003e |Short name|Type|Description|\u003cbr/\u003e |Origin|String| Three letter airport code of the origin airport |\u003cbr/\u003e |Destination|String| Three letter airport code of the destination airport |\u003cbr/\u003e |Origin City|String| Origin city name |\u003cbr/\u003e |Destination City|String| Destination city name |\u003cbr/\u003e |Passengers|Integer| Number of passengers transported from origin to destination |\u003cbr/\u003e |Seats|Integer| Number of seats available on flights from origin to destination |\u003cbr/\u003e |Flights|Integer| Number of flights between origin and destination (multiple records for one month, many with flights \u0026gt; 1)|\u003cbr/\u003e |Distance|Integer| Distance (to nearest mile) flown between origin and destination |\u003cbr/\u003e |Fly Date|Integer| The date (yyyymm) of flight |\u003cbr/\u003e |Origin Population|Integer| Origin city\u0026rsquo;s population as reported by US Census |\u003cbr/\u003e |Destination Population|Integer| Destination city\u0026rsquo;s population as reported by US Census |\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578527069388_-1502065954",
+      "id": "20200109-004429_436921921",
+      "dateCreated": "2020-01-09 00:44:29.388",
+      "dateStarted": "2020-01-09 00:47:11.892",
+      "dateFinished": "2020-01-09 00:47:11.899",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.rdd.getNumPartitions",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 12:20:04.478",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res2: Int \u003d 3\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578527167596_1646022527",
+      "id": "20200109-004607_2141970442",
+      "dateCreated": "2020-01-09 00:46:07.596",
+      "dateStarted": "2020-01-09 12:20:04.512",
+      "dateFinished": "2020-01-09 12:20:04.742",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\ndiamo i nomi alle colonne",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 12:20:22.780",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003ediamo i nomi alle colonne\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578527379787_-813419732",
+      "id": "20200109-004939_562533385",
+      "dateCreated": "2020-01-09 00:49:39.787",
+      "dateStarted": "2020-01-09 12:20:22.780",
+      "dateFinished": "2020-01-09 12:20:22.787",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val nomiColonne \u003d Seq(\"originShort\",\"destShort\",\"origin\",\"dest\",\"numPassengers\",\"numSeats\",\"numFligths\",\"distance\",\"flyDate\",\"originPopul\",\"destPopul\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 12:20:25.445",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "nomiColonne: Seq[String] \u003d List(originShort, destShort, origin, dest, numPassengers, numSeats, numFligths, distance, flyDate, originPopul, destPopul)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578527480846_977344864",
+      "id": "20200109-005120_460862941",
+      "dateCreated": "2020-01-09 00:51:20.846",
+      "dateStarted": "2020-01-09 12:20:25.472",
+      "dateFinished": "2020-01-09 12:20:26.022",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "user": "user1",
+      "dateUpdated": "2020-01-09 12:20:36.552",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res76: String \u003d _c1\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578527787864_-1277290249",
+      "id": "20200109-005627_465529168",
+      "dateCreated": "2020-01-09 00:56:27.864",
+      "dateStarted": "2020-01-09 00:56:36.752",
+      "dateFinished": "2020-01-09 00:56:36.908",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "var df1 \u003d df\n\nfor (i \u003c- 0 to (nomiColonne.length-1)) {\n    df1 \u003d df1.withColumnRenamed(df.columns(i), nomiColonne(i))\n}\n\ndf1.show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 12:20:37.124",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------+---------+-------------+--------+-------------+--------+----------+--------+-------+-----------+---------+\n|originShort|destShort|       origin|    dest|numPassengers|numSeats|numFligths|distance|flyDate|originPopul|destPopul|\n+-----------+---------+-------------+--------+-------------+--------+----------+--------+-------+-----------+---------+\n|        MHK|      AMW|Manhattan, KS|Ames, IA|           21|      30|         1|   254.0| 200810|     122049|    86219|\n|        EUG|      RDM|   Eugene, OR|Bend, OR|           41|     396|        22|   103.0| 199011|     284093|    76034|\n|        EUG|      RDM|   Eugene, OR|Bend, OR|           88|     342|        19|   103.0| 199012|     284093|    76034|\n|        EUG|      RDM|   Eugene, OR|Bend, OR|           11|      72|         4|   103.0| 199010|     284093|    76034|\n|        MFR|      RDM|  Medford, OR|Bend, OR|            0|      18|         1|   156.0| 199002|     147300|    76034|\n|        MFR|      RDM|  Medford, OR|Bend, OR|           11|      18|         1|   156.0| 199003|     147300|    76034|\n|        MFR|      RDM|  Medford, OR|Bend, OR|            2|      72|         4|   156.0| 199001|     147300|    76034|\n|        MFR|      RDM|  Medford, OR|Bend, OR|            7|      18|         1|   156.0| 199009|     147300|    76034|\n|        MFR|      RDM|  Medford, OR|Bend, OR|            7|      36|         2|   156.0| 199011|     147300|    76034|\n|        SEA|      RDM|  Seattle, WA|Bend, OR|            8|      18|         1|   228.0| 199002|    5154164|    76034|\n|        SEA|      RDM|  Seattle, WA|Bend, OR|          453|    3128|        23|   228.0| 199001|    5154164|    76034|\n|        SEA|      RDM|  Seattle, WA|Bend, OR|          784|    2720|        20|   228.0| 199002|    5154164|    76034|\n|        SEA|      RDM|  Seattle, WA|Bend, OR|          749|    2992|        22|   228.0| 199003|    5154164|    76034|\n|        SEA|      RDM|  Seattle, WA|Bend, OR|           11|      18|         1|   228.0| 199004|    5154164|    76034|\n|        PDX|      RDM| Portland, OR|Bend, OR|          349|     851|        23|   116.0| 199001|    1534762|    76034|\n|        PDX|      RDM| Portland, OR|Bend, OR|         1376|    2898|       161|   116.0| 199001|    1534762|    76034|\n|        PDX|      RDM| Portland, OR|Bend, OR|          444|    1110|        30|   116.0| 199010|    1534762|    76034|\n|        PDX|      RDM| Portland, OR|Bend, OR|         1949|    3261|       187|   116.0| 199006|    1534762|    76034|\n|        PDX|      RDM| Portland, OR|Bend, OR|          381|     814|        22|   116.0| 199002|    1534762|    76034|\n|        PDX|      RDM| Portland, OR|Bend, OR|         1559|    2772|       154|   116.0| 199002|    1534762|    76034|\n+-----------+---------+-------------+--------+-------------+--------+----------+--------+-------+-----------+---------+\nonly showing top 20 rows\n\r\ndf1: org.apache.spark.sql.DataFrame \u003d [originShort: string, destShort: string ... 9 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578527687027_980338864",
+      "id": "20200109-005447_1410232786",
+      "dateCreated": "2020-01-09 00:54:47.027",
+      "dateStarted": "2020-01-09 12:20:37.154",
+      "dateFinished": "2020-01-09 12:20:38.019",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.select(col(\"_c0\").alias(\"origin\")).show",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 12:28:29.479",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------+\n|origin|\n+------+\n|   MHK|\n|   EUG|\n|   EUG|\n|   EUG|\n|   MFR|\n|   MFR|\n|   MFR|\n|   MFR|\n|   MFR|\n|   SEA|\n|   SEA|\n|   SEA|\n|   SEA|\n|   SEA|\n|   PDX|\n|   PDX|\n|   PDX|\n|   PDX|\n|   PDX|\n|   PDX|\n+------+\nonly showing top 20 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578527925746_1461730476",
+      "id": "20200109-005845_1129261868",
+      "dateCreated": "2020-01-09 00:58:45.746",
+      "dateStarted": "2020-01-09 12:28:29.501",
+      "dateFinished": "2020-01-09 12:28:29.814",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// var i \u003d 0",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 12:37:06.736",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "i: Int \u003d 0\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578569396132_2024524982",
+      "id": "20200109-122956_263323141",
+      "dateCreated": "2020-01-09 12:29:56.132",
+      "dateStarted": "2020-01-09 12:30:04.876",
+      "dateFinished": "2020-01-09 12:30:05.057",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.columns.foreach{println}",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 12:45:30.233",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "_c0\r\n_c1\r\n_c2\r\n_c3\r\n_c4\r\n_c5\r\n_c6\r\n_c7\r\n_c8\r\n_c9\r\n_c10\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578569846421_1599819878",
+      "id": "20200109-123726_1772352048",
+      "dateCreated": "2020-01-09 12:37:26.421",
+      "dateStarted": "2020-01-09 12:45:30.259",
+      "dateFinished": "2020-01-09 12:45:30.485",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.columns.map(df.columns.zipWithIndex.map{ case (c,i) \u003d\u003e nomiColonne(i) }",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 12:53:47.007",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res31: Array[String] \u003d Array(originShort, destShort, origin, dest, numPassengers, numSeats, numFligths, distance, flyDate, originPopul, destPopul)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578569700639_-415323028",
+      "id": "20200109-123500_1744652800",
+      "dateCreated": "2020-01-09 12:35:00.639",
+      "dateStarted": "2020-01-09 12:49:31.535",
+      "dateFinished": "2020-01-09 12:49:31.783",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.select(df.columns.zipWithIndex.map{ case (c,i) \u003d\u003e nomiColonne(i)}: _*)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 12:50:13.051",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cconsole\u003e:30: error: no `: _*\u0027 annotation allowed here\r\n(such annotations are only allowed in arguments to *-parameters)\r\n       df.select(df.columns.zipWithIndex.map{ case (c,i) \u003d\u003e nomiColonne(i)}: _*)\r\n                                                                           ^\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578528094501_2124737553",
+      "id": "20200109-010134_1104380886",
+      "dateCreated": "2020-01-09 01:01:34.501",
+      "dateStarted": "2020-01-09 12:50:13.078",
+      "dateFinished": "2020-01-09 12:50:13.131",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.columns.map(c \u003d\u003e col(c).alias(lookup.getOrElse(c, c)))",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 12:52:22.713",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res36: Array[org.apache.spark.sql.Column] \u003d Array(_c0 AS `foo`, _c1 AS `bar`, _c2 AS `_c2`, _c3 AS `_c3`, _c4 AS `_c4`, _c5 AS `_c5`, _c6 AS `_c6`, _c7 AS `_c7`, _c8 AS `_c8`, _c9 AS `_c9`, _c10 AS `_c10`)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578570704100_1793277923",
+      "id": "20200109-125144_1704322540",
+      "dateCreated": "2020-01-09 12:51:44.100",
+      "dateStarted": "2020-01-09 12:52:22.741",
+      "dateFinished": "2020-01-09 12:52:22.990",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val lookup \u003d Map(\"_c0\" -\u003e \"foo\", \"_c1\" -\u003e \"bar\")\r\n\r\ndf.select(df.columns.map(c \u003d\u003e col(c).alias(lookup.getOrElse(c, c))): _*).show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 12:52:29.182",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+---+-------------+--------+----+----+---+-----+------+-------+-----+\n|foo|bar|          _c2|     _c3| _c4| _c5|_c6|  _c7|   _c8|    _c9| _c10|\n+---+---+-------------+--------+----+----+---+-----+------+-------+-----+\n|MHK|AMW|Manhattan, KS|Ames, IA|  21|  30|  1|254.0|200810| 122049|86219|\n|EUG|RDM|   Eugene, OR|Bend, OR|  41| 396| 22|103.0|199011| 284093|76034|\n|EUG|RDM|   Eugene, OR|Bend, OR|  88| 342| 19|103.0|199012| 284093|76034|\n|EUG|RDM|   Eugene, OR|Bend, OR|  11|  72|  4|103.0|199010| 284093|76034|\n|MFR|RDM|  Medford, OR|Bend, OR|   0|  18|  1|156.0|199002| 147300|76034|\n|MFR|RDM|  Medford, OR|Bend, OR|  11|  18|  1|156.0|199003| 147300|76034|\n|MFR|RDM|  Medford, OR|Bend, OR|   2|  72|  4|156.0|199001| 147300|76034|\n|MFR|RDM|  Medford, OR|Bend, OR|   7|  18|  1|156.0|199009| 147300|76034|\n|MFR|RDM|  Medford, OR|Bend, OR|   7|  36|  2|156.0|199011| 147300|76034|\n|SEA|RDM|  Seattle, WA|Bend, OR|   8|  18|  1|228.0|199002|5154164|76034|\n|SEA|RDM|  Seattle, WA|Bend, OR| 453|3128| 23|228.0|199001|5154164|76034|\n|SEA|RDM|  Seattle, WA|Bend, OR| 784|2720| 20|228.0|199002|5154164|76034|\n|SEA|RDM|  Seattle, WA|Bend, OR| 749|2992| 22|228.0|199003|5154164|76034|\n|SEA|RDM|  Seattle, WA|Bend, OR|  11|  18|  1|228.0|199004|5154164|76034|\n|PDX|RDM| Portland, OR|Bend, OR| 349| 851| 23|116.0|199001|1534762|76034|\n|PDX|RDM| Portland, OR|Bend, OR|1376|2898|161|116.0|199001|1534762|76034|\n|PDX|RDM| Portland, OR|Bend, OR| 444|1110| 30|116.0|199010|1534762|76034|\n|PDX|RDM| Portland, OR|Bend, OR|1949|3261|187|116.0|199006|1534762|76034|\n|PDX|RDM| Portland, OR|Bend, OR| 381| 814| 22|116.0|199002|1534762|76034|\n|PDX|RDM| Portland, OR|Bend, OR|1559|2772|154|116.0|199002|1534762|76034|\n+---+---+-------------+--------+----+----+---+-----+------+-------+-----+\nonly showing top 20 rows\n\r\nlookup: scala.collection.immutable.Map[String,String] \u003d Map(_c0 -\u003e foo, _c1 -\u003e bar)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578528356595_431277971",
+      "id": "20200109-010556_674578555",
+      "dateCreated": "2020-01-09 01:05:56.595",
+      "dateStarted": "2020-01-09 12:52:29.206",
+      "dateFinished": "2020-01-09 12:52:29.548",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val dd \u003d df.columns.map(c \u003d\u003e col(c).as(lookup.getOrElse(c, c)))",
+      "user": "user1",
+      "dateUpdated": "2020-01-09 02:20:46.889",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "dd: Array[org.apache.spark.sql.Column] \u003d Array(_c0 AS `foo`, _c1 AS `bar`, _c2 AS `_c2`, _c3 AS `_c3`, _c4 AS `_c4`, _c5 AS `_c5`, _c6 AS `_c6`, _c7 AS `_c7`, _c8 AS `_c8`, _c9 AS `_c9`, _c10 AS `_c10`)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578529014643_-972626647",
+      "id": "20200109-011654_1774908518",
+      "dateCreated": "2020-01-09 01:16:54.643",
+      "dateStarted": "2020-01-09 02:20:46.910",
+      "dateFinished": "2020-01-09 02:20:47.143",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "dd(0)",
+      "user": "user1",
+      "dateUpdated": "2020-01-09 02:20:51.912",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res129: org.apache.spark.sql.Column \u003d _c0 AS `foo`\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578532849339_-1848348967",
+      "id": "20200109-022049_1407444244",
+      "dateCreated": "2020-01-09 02:20:49.339",
+      "dateStarted": "2020-01-09 02:20:51.931",
+      "dateFinished": "2020-01-09 02:20:52.084",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val firstDF \u003d spark.createDataFrame(Seq(\r\n  (1, 1, 2, 3, 8, 4, 5),\r\n  (2, 4, 3, 8, 7, 9, 8),\r\n  (3, 6, 1, 9, 2, 3, 6),\r\n  (4, 7, 8, 6, 9, 4, 5),\r\n  (5, 9, 2, 7, 8, 7, 3),\r\n  (6, 1, 1, 4, 2, 8, 4)\r\n)).toDF()\r\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 12:21:41.673",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "firstDF: org.apache.spark.sql.DataFrame \u003d [_1: int, _2: int ... 5 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578529119485_489800352",
+      "id": "20200109-011839_1856484551",
+      "dateCreated": "2020-01-09 01:18:39.485",
+      "dateStarted": "2020-01-09 12:21:41.697",
+      "dateFinished": "2020-01-09 12:21:42.346",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val colNames \u003d Seq(\"uid\", \"col1\", \"col2\", \"col3\", \"col4\", \"col5\", \"col6\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 12:21:44.127",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "colNames: Seq[String] \u003d List(uid, col1, col2, col3, col4, col5, col6)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578529290467_-413004487",
+      "id": "20200109-012130_1331497881",
+      "dateCreated": "2020-01-09 01:21:30.467",
+      "dateStarted": "2020-01-09 12:21:44.157",
+      "dateFinished": "2020-01-09 12:21:44.479",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val secondDF \u003d firstDF.select (colNames: _*)\r\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 12:22:31.748",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cconsole\u003e:25: error: not found: value $colNames\r\n       val secondDF \u003d firstDF.select($colNames: _*)\r\n                                     ^\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578529303521_62179129",
+      "id": "20200109-012143_238154267",
+      "dateCreated": "2020-01-09 01:21:43.521",
+      "dateStarted": "2020-01-09 12:22:02.665",
+      "dateFinished": "2020-01-09 12:22:02.695",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "secondDF.show",
+      "user": "user1",
+      "dateUpdated": "2020-01-09 01:23:07.012",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+----+----+----+----+----+----+\n|uid|col1|col2|col3|col4|col5|col6|\n+---+----+----+----+----+----+----+\n|  1|   1|   2|   3|   8|   4|   5|\n|  2|   4|   3|   8|   7|   9|   8|\n|  3|   6|   1|   9|   2|   3|   6|\n|  4|   7|   8|   6|   9|   4|   5|\n|  5|   9|   2|   7|   8|   7|   3|\n|  6|   1|   1|   4|   2|   8|   4|\n+---+----+----+----+----+----+----+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578529331976_-252576347",
+      "id": "20200109-012211_1563811542",
+      "dateCreated": "2020-01-09 01:22:11.976",
+      "dateStarted": "2020-01-09 01:23:07.029",
+      "dateFinished": "2020-01-09 01:23:07.218",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import spark.implicits._",
+      "user": "user1",
+      "dateUpdated": "2020-01-09 01:28:02.061",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import spark.implicits._\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578529671300_672285244",
+      "id": "20200109-012751_1299263733",
+      "dateCreated": "2020-01-09 01:27:51.300",
+      "dateStarted": "2020-01-09 01:28:02.080",
+      "dateFinished": "2020-01-09 01:28:02.732",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "firstDF.select($\"_1\".alias(\"uid\"))",
+      "user": "user1",
+      "dateUpdated": "2020-01-09 01:29:47.952",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res115: org.apache.spark.sql.DataFrame \u003d [uid: int]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578529344460_495838832",
+      "id": "20200109-012224_1728851164",
+      "dateCreated": "2020-01-09 01:22:24.460",
+      "dateStarted": "2020-01-09 01:29:47.973",
+      "dateFinished": "2020-01-09 01:29:48.207",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "firstDF.show",
+      "user": "user1",
+      "dateUpdated": "2020-01-09 01:24:10.284",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+---+---+---+---+---+---+\n| _1| _2| _3| _4| _5| _6| _7|\n+---+---+---+---+---+---+---+\n|  1|  1|  2|  3|  8|  4|  5|\n|  2|  4|  3|  8|  7|  9|  8|\n|  3|  6|  1|  9|  2|  3|  6|\n|  4|  7|  8|  6|  9|  4|  5|\n|  5|  9|  2|  7|  8|  7|  3|\n|  6|  1|  1|  4|  2|  8|  4|\n+---+---+---+---+---+---+---+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578529429151_-1386943473",
+      "id": "20200109-012349_1111481115",
+      "dateCreated": "2020-01-09 01:23:49.151",
+      "dateStarted": "2020-01-09 01:24:10.305",
+      "dateFinished": "2020-01-09 01:24:10.456",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df1.show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 14:42:48.231",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------+---------+-------------+--------+-------------+--------+----------+--------+-------+-----------+---------+\n|originShort|destShort|       origin|    dest|numPassengers|numSeats|numFligths|distance|flyDate|originPopul|destPopul|\n+-----------+---------+-------------+--------+-------------+--------+----------+--------+-------+-----------+---------+\n|        MHK|      AMW|Manhattan, KS|Ames, IA|           21|      30|         1|   254.0| 200810|     122049|    86219|\n|        EUG|      RDM|   Eugene, OR|Bend, OR|           41|     396|        22|   103.0| 199011|     284093|    76034|\n|        EUG|      RDM|   Eugene, OR|Bend, OR|           88|     342|        19|   103.0| 199012|     284093|    76034|\n|        EUG|      RDM|   Eugene, OR|Bend, OR|           11|      72|         4|   103.0| 199010|     284093|    76034|\n|        MFR|      RDM|  Medford, OR|Bend, OR|            0|      18|         1|   156.0| 199002|     147300|    76034|\n|        MFR|      RDM|  Medford, OR|Bend, OR|           11|      18|         1|   156.0| 199003|     147300|    76034|\n|        MFR|      RDM|  Medford, OR|Bend, OR|            2|      72|         4|   156.0| 199001|     147300|    76034|\n|        MFR|      RDM|  Medford, OR|Bend, OR|            7|      18|         1|   156.0| 199009|     147300|    76034|\n|        MFR|      RDM|  Medford, OR|Bend, OR|            7|      36|         2|   156.0| 199011|     147300|    76034|\n|        SEA|      RDM|  Seattle, WA|Bend, OR|            8|      18|         1|   228.0| 199002|    5154164|    76034|\n|        SEA|      RDM|  Seattle, WA|Bend, OR|          453|    3128|        23|   228.0| 199001|    5154164|    76034|\n|        SEA|      RDM|  Seattle, WA|Bend, OR|          784|    2720|        20|   228.0| 199002|    5154164|    76034|\n|        SEA|      RDM|  Seattle, WA|Bend, OR|          749|    2992|        22|   228.0| 199003|    5154164|    76034|\n|        SEA|      RDM|  Seattle, WA|Bend, OR|           11|      18|         1|   228.0| 199004|    5154164|    76034|\n|        PDX|      RDM| Portland, OR|Bend, OR|          349|     851|        23|   116.0| 199001|    1534762|    76034|\n|        PDX|      RDM| Portland, OR|Bend, OR|         1376|    2898|       161|   116.0| 199001|    1534762|    76034|\n|        PDX|      RDM| Portland, OR|Bend, OR|          444|    1110|        30|   116.0| 199010|    1534762|    76034|\n|        PDX|      RDM| Portland, OR|Bend, OR|         1949|    3261|       187|   116.0| 199006|    1534762|    76034|\n|        PDX|      RDM| Portland, OR|Bend, OR|          381|     814|        22|   116.0| 199002|    1534762|    76034|\n|        PDX|      RDM| Portland, OR|Bend, OR|         1559|    2772|       154|   116.0| 199002|    1534762|    76034|\n+-----------+---------+-------------+--------+-------------+--------+----------+--------+-------+-----------+---------+\nonly showing top 20 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578529450284_-1206377787",
+      "id": "20200109-012410_1100110580",
+      "dateCreated": "2020-01-09 01:24:10.284",
+      "dateStarted": "2020-01-09 14:42:48.256",
+      "dateFinished": "2020-01-09 14:42:48.513",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\ndf1.reduce\ndf1.agg\ndf1.groupBy\ndf1.groupByKey\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 14:45:03.637",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003edf1.reduce\u003cbr/\u003edf1.agg\u003cbr/\u003edf1.groupBy\u003cbr/\u003edf1.groupByKey\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578577363680_1451608580",
+      "id": "20200109-144243_649506856",
+      "dateCreated": "2020-01-09 14:42:43.680",
+      "dateStarted": "2020-01-09 14:45:03.638",
+      "dateFinished": "2020-01-09 14:45:03.645",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df1.createOrReplaceTempView(\"AZdatabase\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 14:46:45.261",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1578577503612_1374927389",
+      "id": "20200109-144503_1378298329",
+      "dateCreated": "2020-01-09 14:45:03.612",
+      "dateStarted": "2020-01-09 14:46:45.288",
+      "dateFinished": "2020-01-09 14:46:45.564",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.catalog.listDatabases.show()\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 14:48:21.937",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+----------------+--------------------+\n|   name|     description|         locationUri|\n+-------+----------------+--------------------+\n|default|default database|file:/D:/Anaconda...|\n+-------+----------------+--------------------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578577605261_1111740667",
+      "id": "20200109-144645_463314440",
+      "dateCreated": "2020-01-09 14:46:45.261",
+      "dateStarted": "2020-01-09 14:48:21.961",
+      "dateFinished": "2020-01-09 14:48:22.129",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.catalog.listTables.show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 14:48:39.882",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----------+--------+-----------+---------+-----------+\n|      name|database|description|tableType|isTemporary|\n+----------+--------+-----------+---------+-----------+\n|azdatabase|    null|       null|TEMPORARY|       true|\n+----------+--------+-----------+---------+-----------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578577643951_-1385921812",
+      "id": "20200109-144723_1971698198",
+      "dateCreated": "2020-01-09 14:47:23.951",
+      "dateStarted": "2020-01-09 14:48:39.913",
+      "dateFinished": "2020-01-09 14:48:40.140",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.catalog.getTable(\"azdatabase\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 14:50:49.664",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res50: String \u003d null\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578577799209_-618886717",
+      "id": "20200109-144959_1055397883",
+      "dateCreated": "2020-01-09 14:49:59.209",
+      "dateStarted": "2020-01-09 14:50:26.971",
+      "dateFinished": "2020-01-09 14:50:27.117",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.sql(\"SELECT * FROM azdatabase\").show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 14:51:08.114",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------+---------+-------------+--------+-------------+--------+----------+--------+-------+-----------+---------+\n|originShort|destShort|       origin|    dest|numPassengers|numSeats|numFligths|distance|flyDate|originPopul|destPopul|\n+-----------+---------+-------------+--------+-------------+--------+----------+--------+-------+-----------+---------+\n|        MHK|      AMW|Manhattan, KS|Ames, IA|           21|      30|         1|   254.0| 200810|     122049|    86219|\n|        EUG|      RDM|   Eugene, OR|Bend, OR|           41|     396|        22|   103.0| 199011|     284093|    76034|\n|        EUG|      RDM|   Eugene, OR|Bend, OR|           88|     342|        19|   103.0| 199012|     284093|    76034|\n|        EUG|      RDM|   Eugene, OR|Bend, OR|           11|      72|         4|   103.0| 199010|     284093|    76034|\n|        MFR|      RDM|  Medford, OR|Bend, OR|            0|      18|         1|   156.0| 199002|     147300|    76034|\n|        MFR|      RDM|  Medford, OR|Bend, OR|           11|      18|         1|   156.0| 199003|     147300|    76034|\n|        MFR|      RDM|  Medford, OR|Bend, OR|            2|      72|         4|   156.0| 199001|     147300|    76034|\n|        MFR|      RDM|  Medford, OR|Bend, OR|            7|      18|         1|   156.0| 199009|     147300|    76034|\n|        MFR|      RDM|  Medford, OR|Bend, OR|            7|      36|         2|   156.0| 199011|     147300|    76034|\n|        SEA|      RDM|  Seattle, WA|Bend, OR|            8|      18|         1|   228.0| 199002|    5154164|    76034|\n|        SEA|      RDM|  Seattle, WA|Bend, OR|          453|    3128|        23|   228.0| 199001|    5154164|    76034|\n|        SEA|      RDM|  Seattle, WA|Bend, OR|          784|    2720|        20|   228.0| 199002|    5154164|    76034|\n|        SEA|      RDM|  Seattle, WA|Bend, OR|          749|    2992|        22|   228.0| 199003|    5154164|    76034|\n|        SEA|      RDM|  Seattle, WA|Bend, OR|           11|      18|         1|   228.0| 199004|    5154164|    76034|\n|        PDX|      RDM| Portland, OR|Bend, OR|          349|     851|        23|   116.0| 199001|    1534762|    76034|\n|        PDX|      RDM| Portland, OR|Bend, OR|         1376|    2898|       161|   116.0| 199001|    1534762|    76034|\n|        PDX|      RDM| Portland, OR|Bend, OR|          444|    1110|        30|   116.0| 199010|    1534762|    76034|\n|        PDX|      RDM| Portland, OR|Bend, OR|         1949|    3261|       187|   116.0| 199006|    1534762|    76034|\n|        PDX|      RDM| Portland, OR|Bend, OR|          381|     814|        22|   116.0| 199002|    1534762|    76034|\n|        PDX|      RDM| Portland, OR|Bend, OR|         1559|    2772|       154|   116.0| 199002|    1534762|    76034|\n+-----------+---------+-------------+--------+-------------+--------+----------+--------+-------+-----------+---------+\nonly showing top 20 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578577719882_-750164450",
+      "id": "20200109-144839_2084166664",
+      "dateCreated": "2020-01-09 14:48:39.882",
+      "dateStarted": "2020-01-09 14:51:08.141",
+      "dateFinished": "2020-01-09 14:51:08.412",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.sql(\"SELECT DISTINCT destShort FROM azdatabase\").show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 14:52:29.100",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---------+\n|destShort|\n+---------+\n|      VWD|\n|      CRS|\n|      BGM|\n|      MOR|\n|      RDG|\n|      MSY|\n|      HVR|\n|      DRT|\n|      GEG|\n|      MML|\n|      STF|\n|      CGX|\n|      SNA|\n|      OPF|\n|      JRB|\n|      GRB|\n|      FOD|\n|      GTF|\n|      JCC|\n|      UBS|\n+---------+\nonly showing top 20 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578577860572_1004477116",
+      "id": "20200109-145100_435594113",
+      "dateCreated": "2020-01-09 14:51:00.572",
+      "dateStarted": "2020-01-09 14:52:29.127",
+      "dateFinished": "2020-01-09 14:52:36.103",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df2 \u003d df1.select(\u0027originShort,\u0027origin).map( r \u003d\u003e (r(0).toString, r(1).toString)).toDF(\"originSh\", \"origin\").cache()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 15:05:25.516",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "df2: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [originSh: string, origin: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578577943694_1885686894",
+      "id": "20200109-145223_176833611",
+      "dateCreated": "2020-01-09 14:52:23.694",
+      "dateStarted": "2020-01-09 15:05:25.549",
+      "dateFinished": "2020-01-09 15:05:25.900",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df3 \u003d df2.distinct().cache()\ndf3.count()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 15:07:34.867",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "df3: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [originSh: string, origin: string]\r\nres73: Long \u003d 683\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578578089010_-533946988",
+      "id": "20200109-145449_1162755883",
+      "dateCreated": "2020-01-09 14:54:49.010",
+      "dateStarted": "2020-01-09 15:07:34.899",
+      "dateFinished": "2020-01-09 15:07:38.895",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df3.show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 15:09:47.513",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+--------------------+\n|originSh|              origin|\n+--------+--------------------+\n|     COS|Colorado Springs, CO|\n|     MMI|          Athens, TN|\n|     1B1|          Hudson, NY|\n|     OFF|           Omaha, NE|\n|     CBE|      Cumberland, MD|\n|     TKF|         Truckee, CA|\n|     PIR|          Pierre, SD|\n|     DQF|         Phoenix, AZ|\n|     MSN|         Madison, WI|\n|     EVV|      Evansville, IN|\n|     GTR|        Columbus, MS|\n|     SVC|     Silver City, NM|\n|     HLG|        Wheeling, WV|\n|     RIC|        Richmond, VA|\n|     FLO|        Florence, SC|\n|     OPF|           Miami, FL|\n|     MIO|           Miami, OK|\n|     CWI|         Clinton, IA|\n|     ISM|         Orlando, FL|\n|     AXV|      Wapakoneta, OH|\n+--------+--------------------+\nonly showing top 20 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578578979414_-2126555678",
+      "id": "20200109-150939_1925607381",
+      "dateCreated": "2020-01-09 15:09:39.414",
+      "dateStarted": "2020-01-09 15:09:47.542",
+      "dateFinished": "2020-01-09 15:09:47.744",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df3.filter(col(\"origin\") contains \"Diego\").show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 15:12:05.218",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+-------------+\n|originSh|       origin|\n+--------+-------------+\n|     SEE|San Diego, CA|\n|     NKX|San Diego, CA|\n|     MYF|San Diego, CA|\n|     SDM|San Diego, CA|\n|     SAN|San Diego, CA|\n|     NZY|San Diego, CA|\n+--------+-------------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578578191599_-330932007",
+      "id": "20200109-145631_825697516",
+      "dateCreated": "2020-01-09 14:56:31.599",
+      "dateStarted": "2020-01-09 15:12:05.246",
+      "dateFinished": "2020-01-09 15:12:05.812",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.sql(\"select distinct origin from azdatabase\").show",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 15:16:49.741",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------------------+\n|            origin|\n+------------------+\n|   Gainesville, FL|\n|     Jonesboro, AR|\n|        Tucson, AZ|\n|        Pierre, SD|\n|      Richmond, VA|\n|      Carlsbad, NM|\n|        Uvalde, TX|\n|       Medford, OR|\n|  Myrtle Beach, SC|\n|      Freeport, IL|\n|     Tullahoma, TN|\n|     Manhattan, KS|\n|       Redding, CA|\n|        Borger, TX|\n|        Eureka, CA|\n|       Durango, CO|\n|     St. Cloud, MN|\n|        Searcy, AR|\n|Corpus Christi, TX|\n|        Mobile, AL|\n+------------------+\nonly showing top 20 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578578199164_569682044",
+      "id": "20200109-145639_1154186885",
+      "dateCreated": "2020-01-09 14:56:39.164",
+      "dateStarted": "2020-01-09 15:16:49.773",
+      "dateFinished": "2020-01-09 15:16:56.723",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val passeggeriPartiti \u003d df1.groupBy(\"origin\").sum(\"numPassengers\")\npasseggeriPartiti.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 15:21:11.849",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------------------+------------------+\n|            origin|sum(numPassengers)|\n+------------------+------------------+\n|   Gainesville, FL|           2639124|\n|     Jonesboro, AR|             15868|\n|        Tucson, AZ|          31490766|\n|        Pierre, SD|            157709|\n|      Richmond, VA|          24248323|\n|      Carlsbad, NM|             55332|\n|        Uvalde, TX|                 0|\n|       Medford, OR|           4174913|\n|  Myrtle Beach, SC|          10386055|\n|      Freeport, IL|                 0|\n|     Tullahoma, TN|                 0|\n|     Manhattan, KS|            113403|\n|       Redding, CA|            943418|\n|        Borger, TX|                 0|\n|        Eureka, CA|           1218741|\n|       Durango, CO|            446611|\n|     St. Cloud, MN|            366722|\n|        Searcy, AR|                 0|\n|Corpus Christi, TX|           8607838|\n|        Mobile, AL|           7177380|\n+------------------+------------------+\nonly showing top 20 rows\n\r\npasseggeriPartiti: org.apache.spark.sql.DataFrame \u003d [origin: string, sum(numPassengers): bigint]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578579404828_987715581",
+      "id": "20200109-151644_231868279",
+      "dateCreated": "2020-01-09 15:16:44.828",
+      "dateStarted": "2020-01-09 15:21:11.880",
+      "dateFinished": "2020-01-09 15:21:18.251",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.sql(\"select origin groupby origin from azdatabase\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-09 16:47:38.228",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "org.apache.spark.sql.catalyst.parser.ParseException:\r\nextraneous input \u0027origin\u0027 expecting {\u003cEOF\u003e, \u0027,\u0027, \u0027FROM\u0027, \u0027WHERE\u0027, \u0027GROUP\u0027, \u0027ORDER\u0027, \u0027HAVING\u0027, \u0027LIMIT\u0027, \u0027LATERAL\u0027, \u0027WINDOW\u0027, \u0027UNION\u0027, \u0027EXCEPT\u0027, \u0027MINUS\u0027, \u0027INTERSECT\u0027, \u0027SORT\u0027, \u0027CLUSTER\u0027, \u0027DISTRIBUTE\u0027}(line 1, pos 22)\r\n\r\n\u003d\u003d SQL \u003d\u003d\r\nselect origin groupby origin from azdatabase\r\n----------------------^^^\r\n\r\n  at org.apache.spark.sql.catalyst.parser.ParseException.withCommand(ParseDriver.scala:217)\r\n  at org.apache.spark.sql.catalyst.parser.AbstractSqlParser.parse(ParseDriver.scala:114)\r\n  at org.apache.spark.sql.execution.SparkSqlParser.parse(SparkSqlParser.scala:48)\r\n  at org.apache.spark.sql.catalyst.parser.AbstractSqlParser.parsePlan(ParseDriver.scala:68)\r\n  at org.apache.spark.sql.SparkSession.sql(SparkSession.scala:632)\r\n  ... 47 elided\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578579527253_1375086660",
+      "id": "20200109-151847_1302803568",
+      "dateCreated": "2020-01-09 15:18:47.253",
+      "dateStarted": "2020-01-09 16:47:38.266",
+      "dateFinished": "2020-01-09 16:47:38.602",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1578584858228_1832385858",
+      "id": "20200109-164738_120186428",
+      "dateCreated": "2020-01-09 16:47:38.229",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Flight dataset exploration",
+  "id": "2EYQU6RFM",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

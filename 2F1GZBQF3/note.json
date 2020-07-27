@@ -1,0 +1,1193 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\nfrom https://jaceklaskowski.gitbooks.io/mastering-spark-sql/spark-sql-functions-windows.html\n\nWindow aggregate functions (aka window functions or windowed aggregates) are functions that perform a calculation over a group of records called window that are in some relation to the current record (i.e. can be in the same partition or frame as the current row).\n\nIn other words, when executed, a window function computes a value for each and every row in a window (per window specification).\n\nSpark SQL supports three kinds of window functions:\n\n-- ranking functions\n-- analytic functions\n-- aggregate functions\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-22 14:24:04.033",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": false,
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003efrom \u003ca href\u003d\"https://jaceklaskowski.gitbooks.io/mastering-spark-sql/spark-sql-functions-windows.html\"\u003ehttps://jaceklaskowski.gitbooks.io/mastering-spark-sql/spark-sql-functions-windows.html\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003eWindow aggregate functions (aka window functions or windowed aggregates) are functions that perform a calculation over a group of records called window that are in some relation to the current record (i.e. can be in the same partition or frame as the current row).\u003c/p\u003e\n\u003cp\u003eIn other words, when executed, a window function computes a value for each and every row in a window (per window specification).\u003c/p\u003e\n\u003cp\u003eSpark SQL supports three kinds of window functions:\u003c/p\u003e\n\u003cp\u003e\u0026ndash; ranking functions\u003cbr/\u003e\u0026ndash; analytic functions\u003cbr/\u003e\u0026ndash; aggregate functions\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579215700321_-1609065080",
+      "id": "20200117-000140_876352863",
+      "dateCreated": "2020-01-17 00:01:40.321",
+      "dateStarted": "2020-01-17 00:03:53.934",
+      "dateFinished": "2020-01-17 00:03:53.949",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "case class Salary(depName: String, empNo: Long, salary: Long)\n\nval empsalary \u003d Seq(\n  Salary(\"sales\", 1, 5000),\n  Salary(\"personnel\", 2, 3900),\n  Salary(\"sales\", 3, 4800),\n  Salary(\"sales\", 4, 4800),\n  Salary(\"personnel\", 5, 3500),\n  Salary(\"develop\", 7, 4200),\n  Salary(\"develop\", 8, 6000),\n  Salary(\"develop\", 9, 4500),\n  Salary(\"develop\", 10, 5200),\n  Salary(\"develop\", 11, 5200))",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-22 15:38:50.422",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "defined class Salary\r\nempsalary: Seq[Salary] \u003d List(Salary(sales,1,5000), Salary(personnel,2,3900), Salary(sales,3,4800), Salary(sales,4,4800), Salary(personnel,5,3500), Salary(develop,7,4200), Salary(develop,8,6000), Salary(develop,9,4500), Salary(develop,10,5200), Salary(develop,11,5200))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579215736136_639817115",
+      "id": "20200117-000216_2086365360",
+      "dateCreated": "2020-01-17 00:02:16.136",
+      "dateStarted": "2020-01-22 15:38:50.442",
+      "dateFinished": "2020-01-22 15:38:57.976",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.expressions.Window\n\nval empsalaryDS \u003d empsalary.toDS\n\nval byDepName \u003d Window.partitionBy(\u0027depName)\n\nempsalaryDS.withColumn(\"avg\", avg(\u0027salary) over byDepName).show",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-17 00:11:28.608",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---------+-----+------+-----------------+\n|  depName|empNo|salary|              avg|\n+---------+-----+------+-----------------+\n|  develop|    7|  4200|           5020.0|\n|  develop|    8|  6000|           5020.0|\n|  develop|    9|  4500|           5020.0|\n|  develop|   10|  5200|           5020.0|\n|  develop|   11|  5200|           5020.0|\n|    sales|    1|  5000|4866.666666666667|\n|    sales|    3|  4800|4866.666666666667|\n|    sales|    4|  4800|4866.666666666667|\n|personnel|    2|  3900|           3700.0|\n|personnel|    5|  3500|           3700.0|\n+---------+-----+------+-----------------+\n\r\nempsalaryDS: org.apache.spark.sql.Dataset[Salary] \u003d [depName: string, empNo: bigint ... 1 more field]\r\nimport org.apache.spark.sql.expressions.Window\r\nbyDepName: org.apache.spark.sql.expressions.WindowSpec \u003d org.apache.spark.sql.expressions.WindowSpec@1f677e2f\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579215979041_1109669347",
+      "id": "20200117-000619_1002340639",
+      "dateCreated": "2020-01-17 00:06:19.041",
+      "dateStarted": "2020-01-17 00:10:19.053",
+      "dateFinished": "2020-01-17 00:10:20.194",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val byHTokens \u003d Window.partitionBy(\u0027depName startsWith \"d\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-17 00:23:12.853",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "byHTokens: org.apache.spark.sql.expressions.WindowSpec \u003d org.apache.spark.sql.expressions.WindowSpec@7d6419c6\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579216024586_-200899475",
+      "id": "20200117-000704_1855754270",
+      "dateCreated": "2020-01-17 00:07:04.586",
+      "dateStarted": "2020-01-17 00:23:12.867",
+      "dateFinished": "2020-01-17 00:23:13.195",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "empsalaryDS.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-17 00:26:22.539",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---------+-----+------+\n|  depName|empNo|salary|\n+---------+-----+------+\n|    sales|    1|  5000|\n|personnel|    2|  3900|\n|    sales|    3|  4800|\n|    sales|    4|  4800|\n|personnel|    5|  3500|\n|  develop|    7|  4200|\n|  develop|    8|  6000|\n|  develop|    9|  4500|\n|  develop|   10|  5200|\n|  develop|   11|  5200|\n+---------+-----+------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579217168616_876226821",
+      "id": "20200117-002608_1584805688",
+      "dateCreated": "2020-01-17 00:26:08.616",
+      "dateStarted": "2020-01-17 00:26:22.553",
+      "dateFinished": "2020-01-17 00:26:22.811",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\nresult.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-17 12:43:37.746",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---------+-----+------+-----------------+\n|  depName|empNo|salary|sum over d tokens|\n+---------+-----+------+-----------------+\n|personnel|    5|  3500|            22000|\n|personnel|    2|  3900|            22000|\n|  develop|    7|  4200|            25100|\n|  develop|    9|  4500|            25100|\n|    sales|    3|  4800|            22000|\n|    sales|    4|  4800|            22000|\n|    sales|    1|  5000|            22000|\n|  develop|   10|  5200|            25100|\n|  develop|   11|  5200|            25100|\n|  develop|    8|  6000|            25100|\n+---------+-----+------+-----------------+\n\r\nresult: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [depName: string, empNo: bigint ... 2 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579216992853_-808931202",
+      "id": "20200117-002312_1348358482",
+      "dateCreated": "2020-01-17 00:23:12.853",
+      "dateStarted": "2020-01-17 00:25:06.255",
+      "dateFinished": "2020-01-17 00:25:07.130",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nDefinisco una Window \u003d\u003e si chiama WindowSpec.\n\nLa WindowSpec deve contenere le seguenti informazioni:\n- partitionBy. Partiziono in modo tale da avere i dati relativi ad un gruppo di valori da aggregare in una singola partizione. In questo modo evito successivi shuffle dei dati.\n- orderBy, ovvero le singole righe saranno ordinate in base ai valory di una colonna. Perchè? perchè quando faccio l\u0027aggregazione devo specificare un frame ovvero quante righe prendere o il range dei valori.  \n- frame, specifico quali righe devono essere aggregate. Questo può essere fatto sulla base delle righe o dei valori. Si può usare **rowsBetween()** oppure **rangeBetween()**\n\nUna volta che ho definito la WindowSpec posso eseguire l\u0027aggregazione sulla Window. Con una notazione del tipo:\n\n\\\u003cfunzione-aggregante\\\u003e **over** WindowSpec\n\noppure\n\n\\\u003cfunzione-aggregante\\\u003e.over(WindowSpec)\n\nLe funzioni di Window sono di tre tipi:\n- funzioni di ranking: row\\_number(), rank(), dense\\_rank(), percent\\_rank(), ntile()\n- funzioni analytiche: cume_dist(), lag(), lead()\n- funzioni di aggregazione: sum(), first(),last(), max(), min(), mean(), sttdev(), etc\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-22 14:24:36.992",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eDefinisco una Window \u003d\u0026gt; si chiama WindowSpec.\u003c/p\u003e\n\u003cp\u003eLa WindowSpec deve contenere le seguenti informazioni:\u003cbr/\u003e- partitionBy. Partiziono in modo tale da avere i dati relativi ad un gruppo di valori da aggregare in una singola partizione. In questo modo evito successivi shuffle dei dati.\u003cbr/\u003e- orderBy, ovvero le singole righe saranno ordinate in base ai valory di una colonna. Perchè? perchè quando faccio l\u0026rsquo;aggregazione devo specificare un frame ovvero quante righe prendere o il range dei valori.\u003cbr/\u003e- frame, specifico quali righe devono essere aggregate. Questo può essere fatto sulla base delle righe o dei valori. Si può usare \u003cstrong\u003erowsBetween()\u003c/strong\u003e oppure \u003cstrong\u003erangeBetween()\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eUna volta che ho definito la WindowSpec posso eseguire l\u0026rsquo;aggregazione sulla Window. Con una notazione del tipo:\u003c/p\u003e\n\u003cp\u003e\u0026lt;funzione-aggregante\u0026gt; \u003cstrong\u003eover\u003c/strong\u003e WindowSpec\u003c/p\u003e\n\u003cp\u003eoppure\u003c/p\u003e\n\u003cp\u003e\u0026lt;funzione-aggregante\u0026gt;.over(WindowSpec)\u003c/p\u003e\n\u003cp\u003eLe funzioni di Window sono di tre tipi:\u003cbr/\u003e- funzioni di ranking: row_number(), rank(), dense_rank(), percent_rank(), ntile()\u003cbr/\u003e- funzioni analytiche: cume_dist(), lag(), lead()\u003cbr/\u003e- funzioni di aggregazione: sum(), first(),last(), max(), min(), mean(), sttdev(), etc\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579217078677_198491281",
+      "id": "20200117-002438_1604156080",
+      "dateCreated": "2020-01-17 00:24:38.677",
+      "dateStarted": "2020-06-22 14:24:36.992",
+      "dateFinished": "2020-06-22 14:24:39.791",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df \u003d spark.read.format(\"csv\").option(\"inferSchema\", \"true\").option(\"sep\", \"\\t\").load(\"D:\\\\AnacondaProjects\\\\Datasets\\\\chimps_16091-2010-08-03_17-08-31\\\\flight_edges.tsv\").cache()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-23 11:06:58.755",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "df: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [_c0: string, _c1: string ... 9 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579705896635_89273179",
+      "id": "20200122-161136_973033343",
+      "dateCreated": "2020-01-22 16:11:36.635",
+      "dateStarted": "2020-01-23 11:06:58.802",
+      "dateFinished": "2020-01-23 11:07:05.800",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.printSchema",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-23 11:07:01.340",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- _c0: string (nullable \u003d true)\n |-- _c1: string (nullable \u003d true)\n |-- _c2: string (nullable \u003d true)\n |-- _c3: string (nullable \u003d true)\n |-- _c4: integer (nullable \u003d true)\n |-- _c5: integer (nullable \u003d true)\n |-- _c6: integer (nullable \u003d true)\n |-- _c7: double (nullable \u003d true)\n |-- _c8: integer (nullable \u003d true)\n |-- _c9: integer (nullable \u003d true)\n |-- _c10: integer (nullable \u003d true)\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579708594831_2073260509",
+      "id": "20200122-165634_538693615",
+      "dateCreated": "2020-01-22 16:56:34.831",
+      "dateStarted": "2020-01-23 11:07:01.386",
+      "dateFinished": "2020-01-23 11:07:06.013",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1579714601952_872977662",
+      "id": "20200122-183641_138080708",
+      "dateCreated": "2020-01-22 18:36:41.952",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val colNames \u003d List(\"Origin\", \"Destination\", \"OriginCity\", \"DestinationCity\", \"Passengers\",\r\n    \"Seats\", \"Flights\", \"Distance\", \"FlyDate\", \"OriginPopulation\", \"DestinationPopulation\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-23 11:07:04.821",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "colNames: List[String] \u003d List(Origin, Destination, OriginCity, DestinationCity, Passengers, Seats, Flights, Distance, FlyDate, OriginPopulation, DestinationPopulation)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579708664254_-239036463",
+      "id": "20200122-165744_1049028051",
+      "dateCreated": "2020-01-22 16:57:44.254",
+      "dateStarted": "2020-01-23 11:07:06.055",
+      "dateFinished": "2020-01-23 11:07:06.711",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df1 \u003d df.toDF(colNames: _*)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-23 11:07:13.111",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "df1: org.apache.spark.sql.DataFrame \u003d [Origin: string, Destination: string ... 9 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579709741593_1018823619",
+      "id": "20200122-171541_1548149792",
+      "dateCreated": "2020-01-22 17:15:41.593",
+      "dateStarted": "2020-01-23 11:07:13.142",
+      "dateFinished": "2020-01-23 11:07:13.431",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1579717436018_1778041194",
+      "id": "20200122-192356_23436848",
+      "dateCreated": "2020-01-22 19:23:56.018",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nIn Spark 2.4.4 ci sono due funzioni nella API che sembrano essere la stessa cosa [Window](https://spark.apache.org/docs/latest/api/scala/#org.apache.spark.sql.expressions.Window) e [WindowSpec](https://spark.apache.org/docs/latest/api/scala/#org.apache.spark.sql.expressions.WindowSpec).\n\nImportiamo una delle due.",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-22 19:24:31.556",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "tableHide": false,
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eIn Spark 2.4.4 ci sono due funzioni nella API che sembrano essere la stessa cosa \u003ca href\u003d\"https://spark.apache.org/docs/latest/api/scala/#org.apache.spark.sql.expressions.Window\"\u003eWindow\u003c/a\u003e e \u003ca href\u003d\"https://spark.apache.org/docs/latest/api/scala/#org.apache.spark.sql.expressions.WindowSpec\"\u003eWindowSpec\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eImportiamo una delle due.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579717445806_948572921",
+      "id": "20200122-192405_756363391",
+      "dateCreated": "2020-01-22 19:24:05.806",
+      "dateStarted": "2020-01-22 19:24:31.557",
+      "dateFinished": "2020-01-22 19:24:31.562",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.expressions.Window",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-23 11:07:16.375",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.expressions.Window\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579701613581_1575538415",
+      "id": "20200122-150013_662139103",
+      "dateCreated": "2020-01-22 15:00:13.582",
+      "dateStarted": "2020-01-23 11:07:16.414",
+      "dateFinished": "2020-01-23 11:07:16.575",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val winSpec \u003d Window\n                .partitionBy(\"Origin\")\n                .orderBy(\"FlyDate\")\n                .rowsBetween(-4, +3)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-23 11:07:18.535",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "winSpec: org.apache.spark.sql.expressions.WindowSpec \u003d org.apache.spark.sql.expressions.WindowSpec@50c2cb84\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579704314437_-128943099",
+      "id": "20200122-154514_167442510",
+      "dateCreated": "2020-01-22 15:45:14.437",
+      "dateStarted": "2020-01-23 11:07:18.573",
+      "dateFinished": "2020-01-23 11:07:18.852",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1579717413666_484708470",
+      "id": "20200122-192333_730111582",
+      "dateCreated": "2020-01-22 19:23:33.667",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df2 \u003d df1.repartition(200)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-23 11:07:24.936",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "df2: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [Origin: string, Destination: string ... 9 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579711372676_-1760395514",
+      "id": "20200122-174252_863850225",
+      "dateCreated": "2020-01-22 17:42:52.676",
+      "dateStarted": "2020-01-23 11:07:24.968",
+      "dateFinished": "2020-01-23 11:07:25.174",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df3 \u003d df2.withColumn(\"avg\", mean(\"Passengers\").over(winSpec)).cache()\n\ndf3.orderBy(\"FlyDate\").show",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-23 11:07:26.702",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------+-----------+---------------+------------------+----------+-----+-------+--------+-------+----------------+---------------------+------------------+\n|Origin|Destination|     OriginCity|   DestinationCity|Passengers|Seats|Flights|Distance|FlyDate|OriginPopulation|DestinationPopulation|               avg|\n+------+-----------+---------------+------------------+----------+-----+-------+--------+-------+----------------+---------------------+------------------+\n|   EUG|        SFO|     Eugene, OR| San Francisco, CA|       247|  588|      4|   451.0| 199001|          284093|              7436126|          1702.125|\n|   BGM|        BWI| Binghamton, NY|     Baltimore, MD|       377| 3504|     24|   212.0| 199001|          264586|              2389165|           859.875|\n|   EUG|        LMT|     Eugene, OR| Klamath Falls, OR|       213|  486|     27|   155.0| 199001|          284093|                57948|             925.0|\n|   BGM|        PIT| Binghamton, NY|    Pittsburgh, PA|      1266| 3796|     26|   251.0| 199001|          264586|              2468674|          1114.875|\n|   BGM|        ALB| Binghamton, NY|        Albany, NY|        39|  108|      1|   117.0| 199001|          264586|               811232|           778.375|\n|   BGM|        BWI| Binghamton, NY|     Baltimore, MD|        27|  151|      1|   212.0| 199001|          264586|              2389165|1030.4285714285713|\n|   EUG|        MFR|     Eugene, OR|       Medford, OR|       227| 2025|     25|   122.0| 199001|          284093|               147300|           2430.75|\n|   IDA|        SLC|Idaho Falls, ID|Salt Lake City, UT|      1176| 8378|     59|   189.0| 199001|           89215|               771473|          1424.375|\n|   IDA|        SLC|Idaho Falls, ID|Salt Lake City, UT|      2840| 3638|     34|   189.0| 199001|           89215|               771473|           1633.25|\n|   BGM|        PIT| Binghamton, NY|    Pittsburgh, PA|        30|  110|      1|   251.0| 199001|          264586|              2468674|1195.6666666666667|\n|   IDA|        OGD|Idaho Falls, ID|         Ogden, UT|        25|  142|      1|   160.0| 199001|           89215|               353125|             834.6|\n|   BGM|        BWI| Binghamton, NY|     Baltimore, MD|      1930| 6050|     55|   212.0| 199001|          264586|              2389165|           1469.75|\n|   BGM|        PIT| Binghamton, NY|    Pittsburgh, PA|      3892| 6804|     63|   251.0| 199001|          264586|              2468674|            1181.6|\n|   BGM|        BWI| Binghamton, NY|     Baltimore, MD|        29|   63|      1|   212.0| 199001|          264586|              2389165|            948.75|\n|   EUG|        YKM|     Eugene, OR|        Yakima, WA|         8|   18|      1|   213.0| 199001|          284093|               189428|           1446.25|\n|   IDA|        JAC|Idaho Falls, ID|       Jackson, WY|        70|  128|      1|    67.0| 199001|           89215|                14725|            1023.0|\n|   IDA|        SLC|Idaho Falls, ID|Salt Lake City, UT|      4234| 7808|     61|   189.0| 199001|           89215|               771473|          1914.375|\n|   IDA|        PIH|Idaho Falls, ID|     Pocatello, ID|       148|  962|     26|    49.0| 199001|           89215|                73312|            1603.5|\n|   IDA|        PIH|Idaho Falls, ID|     Pocatello, ID|       280|  468|     26|    49.0| 199001|           89215|                73312| 720.1666666666666|\n|   IDA|        ORD|Idaho Falls, ID|       Chicago, IL|      2622| 4118|     29|  1229.0| 199001|           89215|             16395048|            749.25|\n+------+-----------+---------------+------------------+----------+-----+-------+--------+-------+----------------+---------------------+------------------+\nonly showing top 20 rows\n\r\ndf3: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [Origin: string, Destination: string ... 10 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579710410577_-2121026842",
+      "id": "20200122-172650_1955618451",
+      "dateCreated": "2020-01-22 17:26:50.577",
+      "dateStarted": "2020-01-23 11:07:26.732",
+      "dateFinished": "2020-01-23 11:08:06.262",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df3.where($\"Origin\" \u003d\u003d\u003d \"BGM\").orderBy(\"FlyDate\").show(2000)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-23 11:07:29.121",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------+-----------+--------------+-------------------+----------+-----+-------+--------+-------+----------------+---------------------+------------------+\n|Origin|Destination|    OriginCity|    DestinationCity|Passengers|Seats|Flights|Distance|FlyDate|OriginPopulation|DestinationPopulation|               avg|\n+------+-----------+--------------+-------------------+----------+-----+-------+--------+-------+----------------+---------------------+------------------+\n|   BGM|        ALB|Binghamton, NY|         Albany, NY|        39|  108|      1|   117.0| 199001|          264586|               811232|           778.375|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|       377| 3504|     24|   212.0| 199001|          264586|              2389165|           859.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      3892| 6804|     63|   251.0| 199001|          264586|              2468674|            1181.6|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|        27|  151|      1|   212.0| 199001|          264586|              2389165|1030.4285714285713|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|        29|   63|      1|   212.0| 199001|          264586|              2389165|            948.75|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|      1930| 6050|     55|   212.0| 199001|          264586|              2389165|           1469.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1266| 3796|     26|   251.0| 199001|          264586|              2468674|          1114.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        30|  110|      1|   251.0| 199001|          264586|              2468674|1195.6666666666667|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       174|  330|      3|   251.0| 199002|          264586|              2468674|          1269.125|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|       680| 2640|     24|   212.0| 199002|          264586|              2389165|           914.375|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|      1200| 2916|     27|   212.0| 199002|          264586|              2389165|          1048.625|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|       682| 1779|     28|   212.0| 199002|          264586|              2389165|           975.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      3259| 5616|     52|   251.0| 199002|          264586|              2468674|            878.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1392| 1816|     27|   251.0| 199002|          264586|              2468674|           1321.75|\n|   BGM|        IAD|Binghamton, NY|     Washington, DC|         0| 1026|     54|   238.0| 199003|          264586|              8270942|            1295.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      3363| 4060|     60|   251.0| 199003|          264586|              2468674|          1331.375|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|        35|  110|      1|   212.0| 199003|          264586|              2389165|          1356.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1703| 3456|     32|   251.0| 199003|          264586|              2468674|          1059.875|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|      2389| 6480|     60|   212.0| 199003|          264586|              2389165|           1184.75|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|       798| 1847|     29|   212.0| 199003|          264586|              2389165|          1103.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1683| 3240|     30|   251.0| 199004|          264586|              2468674|          1383.625|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|       882| 1925|     30|   212.0| 199004|          264586|              2389165|            1480.0|\n|   BGM|        SYR|Binghamton, NY|       Syracuse, NY|        15|   30|      1|    63.0| 199004|          264586|               661505|            1394.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      3388| 3992|     59|   251.0| 199004|          264586|              2468674|          1398.875|\n|   BGM|        IAD|Binghamton, NY|     Washington, DC|       771| 1824|     96|   238.0| 199004|          264586|              8270942|            1539.5|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|      2675| 6372|     59|   212.0| 199004|          264586|              2389165|          1379.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       406|  648|      6|   251.0| 199005|          264586|              2468674|          1512.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1604| 2575|     25|   251.0| 199005|          264586|              2468674|          1538.125|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|      2757| 6003|     91|   212.0| 199005|          264586|              2389165|          1248.875|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|        74|  216|      2|   212.0| 199005|          264586|              2389165|          1470.125|\n|   BGM|        IAD|Binghamton, NY|     Washington, DC|       984| 2033|    107|   238.0| 199005|          264586|              8270942|          1573.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2828| 4133|     61|   251.0| 199005|          264586|              2468674|          1812.875|\n|   BGM|        IAD|Binghamton, NY|     Washington, DC|       977| 1976|    104|   238.0| 199006|          264586|              8270942|          1409.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       361|  648|      6|   251.0| 199006|          264586|              2468674|            1727.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2947| 4035|     60|   251.0| 199006|          264586|              2468674|          1556.125|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|      2674| 5894|     88|   212.0| 199006|          264586|              2389165|          1529.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1516| 2472|     24|   251.0| 199006|          264586|              2468674|          1312.375|\n|   BGM|        SYR|Binghamton, NY|       Syracuse, NY|         0|   19|      1|    63.0| 199007|          264586|               661505|           1106.75|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|        23|  108|      1|   212.0| 199007|          264586|              2389165|            1434.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        56|  103|      1|   251.0| 199007|          264586|              2468674|          1048.625|\n|   BGM|        IAD|Binghamton, NY|     Washington, DC|         0|   30|      1|   238.0| 199007|          264586|              8270942|           1045.75|\n|   BGM|        IAD|Binghamton, NY|     Washington, DC|      1017| 2033|    107|   238.0| 199007|          264586|              8270942|          1395.875|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|      2482| 6002|     89|   212.0| 199007|          264586|              2389165|             906.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2934| 4113|     61|   251.0| 199007|          264586|              2468674|          1061.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1877| 3240|     30|   251.0| 199007|          264586|              2468674|            1272.0|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|         6|  103|      1|   212.0| 199008|          264586|              2389165|           1451.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        69|  108|      1|   251.0| 199008|          264586|              2468674|           1333.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2827| 3521|     52|   251.0| 199008|          264586|              2468674|            1247.5|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|      2719| 5259|     78|   212.0| 199008|          264586|              2389165|          1083.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1634| 2575|     25|   251.0| 199008|          264586|              2468674|           1209.25|\n|   BGM|        SHD|Binghamton, NY|       Staunton, VA|         0|   19|      1|   313.0| 199008|          264586|                98022|           914.625|\n|   BGM|        IAD|Binghamton, NY|     Washington, DC|       933| 1805|     95|   238.0| 199008|          264586|              8270942|           855.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1241| 2808|     26|   251.0| 199009|          264586|              2468674|            1071.5|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|      1736| 4146|     62|   212.0| 199009|          264586|              2389165|           1259.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1646| 2234|     33|   251.0| 199009|          264586|              2468674|          1343.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1704| 2884|     28|   251.0| 199009|          264586|              2468674|           1093.25|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|       481| 2266|     22|   212.0| 199009|          264586|              2389165|          1068.125|\n|   BGM|        IAD|Binghamton, NY|     Washington, DC|      1005| 2299|    121|   238.0| 199009|          264586|              8270942|          1214.625|\n|   BGM|        CLT|Binghamton, NY|      Charlotte, NC|         0|   68|      1|   551.0| 199009|          264586|              1029829|           1091.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1672| 2030|     30|   251.0| 199010|          264586|              2468674|          1571.125|\n|   BGM|        IAD|Binghamton, NY|     Washington, DC|      1227| 2831|    149|   238.0| 199010|          264586|              8270942|          1704.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1541| 3240|     30|   251.0| 199010|          264586|              2468674|            1505.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2001| 3090|     30|   251.0| 199010|          264586|              2468674|          1592.125|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|       759| 2781|     27|   212.0| 199010|          264586|              2389165|            1496.5|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|      1987| 4073|     61|   212.0| 199010|          264586|              2389165|          1533.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1961| 3132|     29|   251.0| 199011|          264586|              2468674|           1266.75|\n|   BGM|        IAD|Binghamton, NY|     Washington, DC|       963| 2033|    107|   238.0| 199011|          264586|              8270942|          1302.625|\n|   BGM|        RIC|Binghamton, NY|       Richmond, VA|        30|   68|      1|   332.0| 199011|          264586|               953666|          1052.875|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|       750| 2484|     23|   212.0| 199011|          264586|              2389165|          1413.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        66|  103|      1|   251.0| 199011|          264586|              2468674|            1264.0|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|      2023| 3544|     53|   212.0| 199011|          264586|              2389165|          1034.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2800| 3840|     60|   251.0| 199011|          264586|              2468674|           1502.25|\n|   BGM|        IAD|Binghamton, NY|     Washington, DC|       802| 1767|     93|   238.0| 199012|          264586|              8270942|          1017.875|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|       606| 2376|     22|   212.0| 199012|          264586|              2389165|          1221.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        52|  103|      1|   251.0| 199012|          264586|              2468674|          1357.625|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|      1839| 3675|     55|   212.0| 199012|          264586|              2389165|           1114.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2593| 3661|     57|   251.0| 199012|          264586|              2468674|            1259.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1828| 3348|     31|   251.0| 199012|          264586|              2468674|          1033.125|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|       274| 1080|     10|   212.0| 199101|          264920|              2410834|             986.5|\n|   BGM|        IAD|Binghamton, NY|     Washington, DC|       793| 1900|    100|   238.0| 199101|          264920|              8369110|            1159.0|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|      1109| 2244|     33|   212.0| 199101|          264920|              2410834|           854.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       323|  544|      8|   251.0| 199101|          264920|              2472127|            941.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1213| 1764|     28|   251.0| 199101|          264920|              2472127|           766.625|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|        59|  126|      2|   212.0| 199101|          264920|              2410834|             710.5|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|      1118| 4070|     37|   212.0| 199101|          264920|              2410834|          1257.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        76|  220|      2|   251.0| 199101|          264920|              2472127|          1216.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2986| 5724|     53|   251.0| 199101|          264920|              2472127|            1348.5|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|       777| 1768|     26|   212.0| 199102|          264920|              2410834|          1021.375|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|      1585| 5500|     50|   212.0| 199102|          264920|              2410834|             993.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       344|  612|      9|   251.0| 199102|          264920|              2472127|            955.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2761| 5832|     54|   251.0| 199102|          264920|              2472127|             914.5|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|        21|   63|      1|   212.0| 199102|          264920|              2410834|            857.75|\n|   BGM|        IAD|Binghamton, NY|     Washington, DC|       882| 1824|     96|   238.0| 199102|          264920|              8369110|            949.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       887| 1197|     19|   251.0| 199102|          264920|              2472127|           800.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       341|  476|      7|   251.0| 199103|          264920|              2472127|           860.625|\n|   BGM|        AVP|Binghamton, NY|       Scranton, PA|        41|  108|      1|    61.0| 199103|          264920|               575902|           520.875|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|        43|  108|      1|   212.0| 199103|          264920|              2410834|            735.75|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|       824| 1836|     27|   212.0| 199103|          264920|              2410834|           646.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        23|  103|      1|   251.0| 199103|          264920|              2472127|           802.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1882| 3190|     29|   251.0| 199103|          264920|              2472127|            812.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1604| 3456|     32|   251.0| 199103|          264920|              2472127|             951.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       874| 1134|     18|   251.0| 199103|          264920|              2472127|           875.625|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|       124|  252|      4|   212.0| 199103|          264920|              2410834|            1034.0|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|      2234| 6050|     55|   212.0| 199103|          264920|              2410834|          1069.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       221|  640|      5|   251.0| 199103|          264920|              2472127|             841.0|\n|   BGM|        IAD|Binghamton, NY|     Washington, DC|      1128| 1938|    102|   238.0| 199103|          264920|              8369110|             413.5|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|       638| 1564|     23|   212.0| 199104|          264920|              2410834|             791.5|\n|   BGM|        ROC|Binghamton, NY|      Rochester, NY|        45|  141|      1|   107.0| 199104|          264920|              1010696|           537.875|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|       129|  252|      4|   212.0| 199104|          264920|              2410834|           664.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       984| 1260|     20|   251.0| 199104|          264920|              2472127|             526.0|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|      2175| 5940|     54|   212.0| 199104|          264920|              2410834|           672.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       215|  512|      4|   251.0| 199104|          264920|              2472127|           668.375|\n|   BGM|        IAD|Binghamton, NY|     Washington, DC|      1102| 1995|    105|   238.0| 199104|          264920|              8369110|             684.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1310| 3132|     29|   251.0| 199104|          264920|              2472127|           905.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       310|  408|      6|   251.0| 199104|          264920|              2472127|             799.5|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|        51|  103|      1|   212.0| 199104|          264920|              2410834|           789.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2119| 3410|     31|   251.0| 199104|          264920|              2472127|           633.375|\n|   BGM|        AVP|Binghamton, NY|       Scranton, PA|        27|  108|      1|    61.0| 199104|          264920|               575902|             685.5|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|        59|  220|      2|   212.0| 199105|          264920|              2410834|            1289.5|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|      1303| 3240|     30|   212.0| 199105|          264920|              2410834|           1018.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        77|  110|      1|   251.0| 199105|          264920|              2472127|           1436.25|\n|   BGM|        IAD|Binghamton, NY|     Washington, DC|      1077| 2071|    109|   238.0| 199105|          264920|              8369110|           1415.25|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|        27|   68|      1|   212.0| 199105|          264920|              2410834|           1847.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      5482|12852|    119|   251.0| 199105|          264920|              2472127|           1146.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        47|   63|      1|   251.0| 199105|          264920|              2472127|          1156.625|\n|   BGM|        IAD|Binghamton, NY|     Washington, DC|      1025| 1938|    102|   238.0| 199106|          264920|              8369110|            1981.0|\n|   BGM|        SYR|Binghamton, NY|       Syracuse, NY|        78|  146|      1|    63.0| 199106|          264920|               665743|           1841.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      5606|12960|    120|   251.0| 199106|          264920|              2472127|           1955.75|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|      1162| 3240|     30|   212.0| 199106|          264920|              2410834|          1322.875|\n|   BGM|        IAD|Binghamton, NY|     Washington, DC|       249|  810|     27|   238.0| 199107|          264920|              8369110|           2757.25|\n|   BGM|        IAD|Binghamton, NY|     Washington, DC|       709| 1577|     83|   238.0| 199107|          264920|              8369110|           2150.75|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|      1335| 3240|     30|   212.0| 199107|          264920|              2410834|           2066.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      6366|13284|    123|   251.0| 199107|          264920|              2472127|            2062.0|\n|   BGM|        IAD|Binghamton, NY|     Washington, DC|       311|  810|     27|   238.0| 199108|          264920|              8369110|           1419.25|\n|   BGM|        SYR|Binghamton, NY|       Syracuse, NY|        44|  108|      1|    63.0| 199108|          264920|               665743|            2181.0|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|      1267| 3240|     30|   212.0| 199108|          264920|              2410834|          1496.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      6724|13068|    121|   251.0| 199108|          264920|              2472127|            2053.0|\n|   BGM|        IAD|Binghamton, NY|     Washington, DC|       754| 1577|     83|   238.0| 199108|          264920|              8369110|            1379.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|         0|    0|      0|   251.0| 199109|          264920|              2472127|            838.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      3407| 7344|     68|   251.0| 199109|          264920|              2472127|           837.875|\n|   BGM|        IAD|Binghamton, NY|     Washington, DC|       308|  750|     25|   238.0| 199109|          264920|              8369110|            866.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       978| 2575|     25|   251.0| 199109|          264920|              2472127|           1413.75|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|      1135| 3240|     30|   212.0| 199109|          264920|              2410834|           1041.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1182| 2530|     23|   251.0| 199109|          264920|              2472127|           999.125|\n|   BGM|        IAD|Binghamton, NY|     Washington, DC|       704| 1501|     79|   238.0| 199109|          264920|              8369110|            715.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        94|  141|      1|   251.0| 199109|          264920|              2472127|           908.625|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|        30|  103|      1|    48.0| 199109|          264920|                95064|             857.5|\n|   BGM|        IAD|Binghamton, NY|     Washington, DC|       826| 1615|     85|   238.0| 199110|          264920|              8369110|           1126.25|\n|   BGM|        DAY|Binghamton, NY|         Dayton, OH|        44|  216|      2|   459.0| 199110|          264920|               850946|             651.0|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|      1322| 3024|     28|   212.0| 199110|          264920|              2410834|            1134.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        39|  141|      1|   251.0| 199110|          264920|              2472127|           995.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1306| 3090|     30|   251.0| 199110|          264920|              2472127|          1125.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      3825| 6912|     64|   251.0| 199110|          264920|              2472127|          1130.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1396| 2750|     25|   251.0| 199110|          264920|              2472127|          1140.625|\n|   BGM|        IAD|Binghamton, NY|     Washington, DC|       285|  810|     27|   238.0| 199110|          264920|              8369110|          1267.375|\n|   BGM|        IAD|Binghamton, NY|     Washington, DC|       283|  780|     26|   238.0| 199111|          264920|              8369110|           856.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      3188| 6804|     63|   251.0| 199111|          264920|              2472127|           842.125|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|      1398| 3240|     30|   212.0| 199111|          264920|              2410834|          1365.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        11|  128|      1|   251.0| 199111|          264920|              2472127|           1358.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1372| 3080|     28|   251.0| 199111|          264920|              2472127|           883.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1206| 2575|     25|   251.0| 199111|          264920|              2472127|            1272.0|\n|   BGM|        AVP|Binghamton, NY|       Scranton, PA|        30|  103|      1|    61.0| 199111|          264920|               575902|            1012.0|\n|   BGM|        IAD|Binghamton, NY|     Washington, DC|       608| 1463|     77|   238.0| 199111|          264920|              8369110|           1015.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        82|  143|      1|   251.0| 199112|          264920|              2472127|           1219.75|\n|   BGM|        MDT|Binghamton, NY|     Harrisburg, PA|        37|  108|      1|   145.0| 199112|          264920|               480880|          1206.125|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|      1390| 3132|     29|   212.0| 199112|          264920|              2410834|             799.0|\n|   BGM|        IAD|Binghamton, NY|     Washington, DC|       306|  780|     26|   238.0| 199112|          264920|              8369110|             909.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      3426| 6480|     60|   251.0| 199112|          264920|              2472127|          1287.375|\n|   BGM|        IAD|Binghamton, NY|     Washington, DC|       680| 1501|     79|   238.0| 199112|          264920|              8369110|          1108.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1030| 2472|     24|   251.0| 199112|          264920|              2472127|          1221.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1914| 3850|     35|   251.0| 199112|          264920|              2472127|          1244.625|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|      1231| 3240|     30|   212.0| 199201|          265293|              2427277|             849.5|\n|   BGM|        ABE|Binghamton, NY|      Allentown, PA|        53|  108|      1|   110.0| 199201|          265293|               698563|           1007.25|\n|   BGM|        AVP|Binghamton, NY|       Scranton, PA|        35|  108|      1|    61.0| 199201|          265293|               575862|           1319.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       930| 2987|     29|   251.0| 199201|          265293|              2477012|           824.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2267| 5508|     51|   251.0| 199201|          265293|              2477012|           926.875|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|        60|  216|      2|    48.0| 199201|          265293|                95065|            1022.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1914| 3630|     33|   251.0| 199201|          265293|              2477012|          1018.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        84|  141|      1|   251.0| 199202|          265293|              2477012|            947.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2556| 5709|     53|   251.0| 199202|          265293|              2477012|            817.25|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|       156|  402|      4|   212.0| 199202|          265293|              2427277|             945.0|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|      1156| 2675|     25|   212.0| 199202|          265293|              2427277|           838.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1573| 3300|     30|   251.0| 199202|          265293|              2477012|           956.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       925| 2472|     24|   251.0| 199202|          265293|              2477012|            1099.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1075| 2854|     28|   251.0| 199203|          265293|              2477012|           646.375|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|        53|  103|      1|   212.0| 199203|          265293|              2427277|             488.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        54|   68|      1|   251.0| 199203|          265293|              2477012|          1025.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        37|  110|      1|   251.0| 199203|          265293|              2477012|            1021.5|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|      1293| 2989|     28|   212.0| 199203|          265293|              2427277|           1469.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      4453| 9216|     87|   251.0| 199203|          265293|              2477012|            1463.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        51|  143|      1|   251.0| 199204|          265293|              2477012|          1626.375|\n|   BGM|        BWI|Binghamton, NY|      Baltimore, MD|      1356| 3145|     30|   212.0| 199204|          265293|              2427277|          2071.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      4738| 9229|     88|   251.0| 199204|          265293|              2477012|          1626.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1029| 2618|     26|   251.0| 199204|          265293|              2477012|           2213.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1519| 1836|     27|   251.0| 199205|          265293|              2477012|            1767.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        54|  103|      1|   251.0| 199205|          265293|              2477012|          1705.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      4736| 9184|     88|   251.0| 199205|          265293|              2477012|          2342.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       158|  189|      3|   251.0| 199205|          265293|              2477012|          1888.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      5147| 8971|     87|   251.0| 199206|          265293|              2477012|          1621.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       195|  252|      4|   251.0| 199206|          265293|              2477012|          1703.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1112| 1564|     23|   251.0| 199206|          265293|              2477012|           1839.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        54|  143|      1|   251.0| 199206|          265293|              2477012|          1259.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       290|  378|      6|   251.0| 199207|          265293|              2477012|           1073.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1134| 1564|     23|   251.0| 199207|          265293|              2477012|           1064.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      3708| 5488|     56|   251.0| 199207|          265293|              2477012|            915.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        51|  128|      1|   251.0| 199207|          265293|              2477012|          1504.125|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|        93|  103|      1|    48.0| 199207|          265293|                95065|          1047.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1797| 3193|     31|   251.0| 199207|          265293|              2477012|            1549.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1322| 1836|     27|   251.0| 199208|          265293|              2477012|          1512.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       119|  196|      2|   251.0| 199208|          265293|              2477012|           1181.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      5316| 8961|     87|   251.0| 199208|          265293|              2477012|           1151.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       161|  189|      3|   251.0| 199208|          265293|              2477012|            1021.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        54|  146|      1|   251.0| 199209|          265293|              2477012|            1400.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       192|  252|      4|   251.0| 199209|          265293|              2477012|           1134.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        88|  220|      2|   251.0| 199209|          265293|              2477012|            1392.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        61|  128|      1|   251.0| 199209|          265293|              2477012|            1150.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2880| 5390|     55|   251.0| 199209|          265293|              2477012|             751.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1525| 2884|     28|   251.0| 199209|          265293|              2477012|             739.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1057| 1496|     22|   251.0| 199209|          265293|              2477012|          1374.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        55|  141|      1|   251.0| 199209|          265293|              2477012|          1017.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        36|  110|      1|   251.0| 199210|          265293|              2477012|             738.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        53|   63|      1|   251.0| 199210|          265293|              2477012|           597.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      3288| 6566|     67|   251.0| 199210|          265293|              2477012|           797.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       985| 1360|     20|   251.0| 199210|          265293|              2477012|             611.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       218|  309|      3|   251.0| 199210|          265293|              2477012|             606.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1182| 2970|     27|   251.0| 199211|          265293|              2477012|          1295.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      4049| 8034|     78|   251.0| 199211|          265293|              2477012|          1293.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        15|   98|      1|   251.0| 199211|          265293|              2477012|           833.125|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|       127|  206|      2|    48.0| 199211|          265293|                95065|          1184.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        33|  128|      1|   251.0| 199212|          265293|              2477012|           1746.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1110| 2530|     23|   251.0| 199212|          265293|              2477012|          1317.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      3793| 8549|     83|   251.0| 199212|          265293|              2477012|          1315.875|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|       218|  412|      4|    48.0| 199301|          264159|                94877|           1708.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        29|  141|      1|   251.0| 199301|          264159|              2478989|          1206.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      3556| 8549|     83|   251.0| 199301|          264159|              2478989|          1234.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       878| 2420|     22|   251.0| 199301|          264159|              2478989|          1210.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      4013| 8034|     78|   251.0| 199302|          264159|              2478989|          1879.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       924| 2530|     23|   251.0| 199302|          264159|              2478989|          1885.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        36|   68|      1|   251.0| 199302|          264159|              2478989|          1331.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       995| 2750|     25|   251.0| 199303|          264159|              2478989|            1463.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      4608| 8755|     85|   251.0| 199303|          264159|              2478989|           2023.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        71|   98|      1|   251.0| 199303|          264159|              2478989|          2023.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       179|  423|      3|   251.0| 199303|          264159|              2478989|          1526.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        35|  146|      1|   251.0| 199304|          264159|              2478989|           1442.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        39|  128|      1|   251.0| 199304|          264159|              2478989|            1468.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1197| 2860|     26|   251.0| 199304|          264159|              2478989|            1472.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      5364| 8858|     86|   251.0| 199304|          264159|              2478989|            1561.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        49|   68|      1|   251.0| 199305|          264159|              2478989|          1450.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      4814| 9579|     93|   251.0| 199305|          264159|              2478989|             889.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       103|  256|      2|   251.0| 199305|          264159|              2478989|           898.375|\n|   BGM|        SYR|Binghamton, NY|       Syracuse, NY|         2|  110|      1|    63.0| 199305|          264159|               670688|          1621.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       873| 2200|     20|   251.0| 199305|          264159|              2478989|           1526.25|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|       110|  220|      2|    48.0| 199305|          264159|                94877|          1534.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      5821|10712|    104|   251.0| 199306|          264159|              2478989|          1684.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       438| 1100|     10|   251.0| 199306|          264159|              2478989|            1679.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       118|  440|      4|   251.0| 199307|          264159|              2478989|           1685.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      6014|11536|    112|   251.0| 199307|          264159|              2478989|           1581.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      6689|11639|    113|   251.0| 199308|          264159|              2478989|          1642.125|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|        56|   98|      1|    48.0| 199308|          264159|                94877|           1693.75|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|        37|  103|      1|    48.0| 199308|          264159|                94877|           1658.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       142|  220|      2|   251.0| 199308|          264159|              2478989|           1661.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        56|   98|      1|   251.0| 199308|          264159|              2478989|           1585.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       158|  256|      2|   251.0| 199309|          264159|              2478989|          1644.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       142|  196|      2|   251.0| 199309|          264159|              2478989|          2511.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      5857|11124|    108|   251.0| 199309|          264159|              2478989|            2513.0|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|        78|  103|      1|    48.0| 199309|          264159|                94877|          2499.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        33|   98|      1|   251.0| 199310|          264159|              2478989|          2404.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      6988|12051|    117|   251.0| 199310|          264159|              2478989|           2008.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        50|   68|      1|   251.0| 199310|          264159|              2478989|            2395.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       215|  294|      3|   251.0| 199311|          264159|              2478989|             817.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2760| 5768|     56|   251.0| 199311|          264159|              2478989|            1678.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      3252| 6050|     55|   251.0| 199311|          264159|              2478989|            1682.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2743| 6050|     55|   251.0| 199312|          264159|              2478989|            1377.0|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|        63|  110|      1|    48.0| 199312|          264159|                94877|          1382.375|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|       106|  206|      2|    48.0| 199312|          264159|                94877|            1492.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        72|  128|      1|   251.0| 199312|          264159|              2478989|          1155.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2740| 5356|     52|   251.0| 199312|          264159|              2478989|          1059.375|\n|   BGM|        AVP|Binghamton, NY|       Scranton, PA|        52|  103|      1|    61.0| 199312|          264159|               574798|           1153.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2484| 4840|     44|   251.0| 199401|          261712|              2471125|          1481.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2756| 5974|     58|   251.0| 199401|          261712|              2471125|          1861.375|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|        95|   98|      1|    32.0| 199402|          261712|                96996|          1723.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       902| 1843|     13|   251.0| 199402|          261712|              2471125|          1618.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      3108| 6489|     63|   251.0| 199402|          261712|              2471125|            1626.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1640| 2970|     27|   251.0| 199402|          261712|              2471125|          1900.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      4675| 8961|     87|   251.0| 199403|          261712|              2471125|          2024.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       128|  128|      1|   251.0| 199403|          261712|              2471125|          2115.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1899| 4238|     30|   251.0| 199403|          261712|              2471125|           2122.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1739| 3072|     24|   251.0| 199404|          261712|              2471125|          1457.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        59|   98|      1|   251.0| 199404|          261712|              2471125|             880.5|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|        62|  103|      1|    48.0| 199404|          261712|                94357|           1089.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      4535| 9167|     89|   251.0| 199404|          261712|              2471125|            1853.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        34|  110|      1|   251.0| 199404|          261712|              2471125|          1655.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       178|  284|      2|   251.0| 199404|          261712|              2471125|           1426.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      6205|12051|    117|   251.0| 199405|          261712|              2471125|           1670.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       381|  768|      6|   251.0| 199405|          261712|              2471125|          1767.375|\n|   BGM|        CLE|Binghamton, NY|      Cleveland, OH|        56|  103|      1|   308.0| 199405|          261712|              2130716|            1752.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      5459| 9682|     94|   251.0| 199406|          261712|              2471125|          1670.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        55|  143|      1|   251.0| 199406|          261712|              2471125|          2045.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1089| 1564|     23|   251.0| 199406|          261712|              2471125|          2226.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        34|  141|      1|   251.0| 199407|          261712|              2471125|            1059.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        54|  256|      2|   251.0| 199407|          261712|              2471125|           2234.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1949| 2970|     27|   251.0| 199407|          261712|              2471125|            926.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      3064| 6077|     59|   251.0| 199407|          261712|              2471125|            1472.0|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|       107|  206|      2|    48.0| 199407|          261712|                94357|            903.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1833| 2940|     30|   251.0| 199407|          261712|              2471125|           793.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       115|  136|      2|   251.0| 199407|          261712|              2471125|          1030.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2024| 3234|     33|   251.0| 199408|          261712|              2471125|           1326.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       116|  292|      2|   251.0| 199408|          261712|              2471125|          1321.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1933| 2860|     26|   251.0| 199408|          261712|              2471125|           1640.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2002| 3502|     34|   251.0| 199408|          261712|              2471125|            1178.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        70|  141|      1|   251.0| 199408|          261712|              2471125|           950.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1300| 1836|     27|   251.0| 199408|          261712|              2471125|            950.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1914| 3136|     32|   251.0| 199409|          261712|              2471125|          1270.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1216| 1836|     27|   251.0| 199409|          261712|              2471125|           1511.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2621| 5562|     54|   251.0| 199409|          261712|              2471125|            1296.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       264|  550|      5|   251.0| 199409|          261712|              2471125|            1288.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        73|  128|      1|   251.0| 199409|          261712|              2471125|          1200.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2235| 3136|     32|   251.0| 199410|          261712|              2471125|          1311.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        52|  128|      1|   251.0| 199410|          261712|              2471125|            1235.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1305| 2640|     24|   251.0| 199410|          261712|              2471125|          1085.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1228| 1632|     24|   251.0| 199410|          261712|              2471125|           1002.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2106| 4242|     42|   251.0| 199410|          261712|              2471125|          1022.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       575| 1210|     11|   251.0| 199411|          261712|              2471125|           1272.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        43|  146|      1|   251.0| 199411|          261712|              2471125|            1780.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      4787| 8484|     84|   251.0| 199411|          261712|              2471125|          1623.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       429|  680|     10|   251.0| 199411|          261712|              2471125|            1403.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       755| 1176|     12|   251.0| 199411|          261712|              2471125|           811.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       178|  441|      4|   251.0| 199412|          261712|              2471125|           1533.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      6172|11514|    114|   251.0| 199412|          261712|              2471125|            2231.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        52|  284|      2|   251.0| 199412|          261712|              2471125|            2281.5|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|       358|  630|     21|    32.0| 199501|          257231|                97612|          1039.625|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|       324|  480|     16|   140.0| 199501|          257231|             17130692|          1013.625|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|        30|  101|      1|    48.0| 199501|          257231|                93951|          2279.375|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|       486| 1564|     34|   140.0| 199501|          257231|             17130692|           970.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      6011|11716|    116|   251.0| 199501|          257231|              2460192|           1725.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       103|  220|      2|   251.0| 199501|          257231|              2460192|            1145.5|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|       979| 2346|     51|    32.0| 199501|          257231|                97612|          1716.375|\n|   BGM|        SYR|Binghamton, NY|       Syracuse, NY|        26|   30|      1|    63.0| 199501|          257231|               665107|           985.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       635|  816|     12|   251.0| 199502|          257231|              2460192|           1210.75|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|       909| 3220|     70|    32.0| 199502|          257231|                97612|            1353.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       111|  256|      2|   251.0| 199502|          257231|              2460192|            1311.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      4956| 8888|     88|   251.0| 199502|          257231|              2460192|          1050.125|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|       877| 2208|     48|   140.0| 199502|          257231|             17130692|            1081.0|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|      1466| 3956|     86|    32.0| 199503|          257231|                97612|          1121.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       146|  384|      3|   251.0| 199503|          257231|              2460192|            1236.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2450| 3332|     49|   251.0| 199503|          257231|              2460192|          1130.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1870| 2842|     29|   251.0| 199503|          257231|              2460192|          1436.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1548| 3333|     33|   251.0| 199503|          257231|              2460192|          1449.625|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|      1388| 2806|     61|   140.0| 199503|          257231|             17130692|          1507.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2561| 3400|     50|   251.0| 199504|          257231|              2460192|            1684.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1494| 3333|     33|   251.0| 199504|          257231|              2460192|            1539.0|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|      1286| 2760|     60|   140.0| 199504|          257231|             17130692|          1492.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2051| 2646|     27|   251.0| 199504|          257231|              2460192|          1542.625|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|      1440| 3864|     84|    32.0| 199504|          257231|                97612|          1497.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        62|  128|      1|   251.0| 199504|          257231|              2460192|           1522.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2013| 2842|     29|   251.0| 199505|          257231|              2460192|          1326.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1899| 2584|     38|   251.0| 199505|          257231|              2460192|            1473.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       334|  660|      6|   251.0| 199505|          257231|              2460192|          1648.875|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|      1190| 3726|     81|    32.0| 199505|          257231|                97612|          1489.375|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|      1625| 3082|     67|   140.0| 199505|          257231|             17130692|           1367.25|\n|   BGM|        SYR|Binghamton, NY|       Syracuse, NY|        20|   46|      1|    63.0| 199505|          257231|               665107|          1484.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2404| 4949|     49|   251.0| 199505|          257231|              2460192|          1346.375|\n|   BGM|        PVD|Binghamton, NY|     Providence, RI|        75|  101|      1|   236.0| 199506|          257231|              1501636|           1210.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       613|  816|     12|   251.0| 199506|          257231|              2460192|          1192.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1409| 2420|     22|   251.0| 199506|          257231|              2460192|          1529.625|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|      1453| 2668|     58|   140.0| 199506|          257231|             17130692|           1727.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       647|  980|     10|   251.0| 199506|          257231|              2460192|          1234.125|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|      1572| 3864|     84|    32.0| 199506|          257231|                97612|          1436.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      3770| 7373|     73|   251.0| 199506|          257231|              2460192|          1309.625|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|         9|   64|      1|    32.0| 199507|          257231|                97612|            2324.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      4266| 8585|     85|   251.0| 199507|          257231|              2460192|          1388.375|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|      1301| 3864|     84|    32.0| 199507|          257231|                97612|          1525.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2052| 3630|     33|   251.0| 199507|          257231|              2460192|          2000.125|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|      1314| 2668|     58|   140.0| 199507|          257231|             17130692|          1396.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       143|  294|      3|   251.0| 199507|          257231|              2460192|            1221.0|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|      1711| 3910|     85|    32.0| 199508|          257231|                97612|          2168.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      5205| 9090|     90|   251.0| 199508|          257231|              2460192|           1819.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2734| 3740|     34|   251.0| 199508|          257231|              2460192|          1947.625|\n|   BGM|        SYR|Binghamton, NY|       Syracuse, NY|        71|  101|      1|    63.0| 199508|          257231|               665107|          1695.875|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|      1471| 2714|     59|   140.0| 199508|          257231|             17130692|            1827.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        38|  146|      1|   251.0| 199509|          257231|              2460192|          1299.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1062| 1632|     24|   251.0| 199509|          257231|              2460192|            1126.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1594| 3333|     33|   251.0| 199509|          257231|              2460192|          1276.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1101| 3038|     31|   251.0| 199509|          257231|              2460192|          1096.125|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|      1347| 2668|     58|   140.0| 199509|          257231|             17130692|             846.0|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|      1268| 3864|     84|    32.0| 199509|          257231|                97612|             864.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2328| 3300|     30|   251.0| 199509|          257231|              2460192|          1812.875|\n|   BGM|        ALB|Binghamton, NY|         Albany, NY|        31|   46|      1|   117.0| 199510|          257231|               828038|           913.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2348| 3576|     28|   251.0| 199510|          257231|              2460192|          1352.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       327|  440|      4|   251.0| 199510|          257231|              2460192|           900.875|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|      1620| 4048|     88|    32.0| 199510|          257231|                97612|          1481.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       182|  340|      5|   251.0| 199510|          257231|              2460192|          1079.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2529| 5292|     54|   251.0| 199510|          257231|              2460192|          1254.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1461| 2929|     29|   251.0| 199510|          257231|              2460192|            1204.5|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|      1490| 2668|     58|   140.0| 199510|          257231|             17130692|            1248.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      3573| 6272|     64|   251.0| 199511|          257231|              2460192|            1265.5|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|      1345| 3450|     75|    32.0| 199511|          257231|                97612|          1876.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        78|  136|      2|   251.0| 199511|          257231|              2460192|          1470.375|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|      1373| 2576|     56|   140.0| 199511|          257231|             17130692|           1462.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1115| 2222|     22|   251.0| 199511|          257231|              2460192|           1730.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1210| 1788|     14|   251.0| 199511|          257231|              2460192|           1582.75|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|       993| 3450|     75|    32.0| 199512|          257231|                97612|           2033.75|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|        46|  101|      1|    48.0| 199512|          257231|                93951|          1840.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      4963| 8232|     84|   251.0| 199512|          257231|              2460192|          1845.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1050| 2323|     23|   251.0| 199512|          257231|              2460192|            2015.0|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|      1384| 2484|     54|   140.0| 199512|          257231|             17130692|            1868.0|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|      1411| 3404|     74|    32.0| 199601|          253392|                97215|           1860.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      4928| 7546|     77|   251.0| 199601|          253392|              2447532|            1947.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1495| 3333|     33|   251.0| 199601|          253392|              2447532|           1331.75|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|         0|  101|      1|    48.0| 199601|          253392|                93311|          1502.625|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|       736| 1932|     42|   140.0| 199601|          253392|             17190036|           1807.75|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|        74|  101|      1|    48.0| 199602|          253392|                93311|           1118.75|\n|   BGM|        PHL|Binghamton, NY|   Philadelphia, PA|        24|   46|      1|   165.0| 199602|          253392|             11007158|           1498.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        41|  144|      1|   251.0| 199602|          253392|              2447532|          1640.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2417| 4141|     41|   251.0| 199602|          253392|              2447532|            1163.0|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|      1117| 3404|     74|    32.0| 199602|          253392|                97215|          1451.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      3434| 5390|     55|   251.0| 199602|          253392|              2447532|           1115.75|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|      1107| 2346|     51|   140.0| 199602|          253392|             17190036|          1273.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1159| 2626|     26|   251.0| 199603|          253392|              2447532|          1241.875|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|        25|  132|      2|    32.0| 199603|          253392|                97215|          1688.625|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|      1402| 2530|     55|   140.0| 199603|          253392|             17190036|            1470.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2796| 5292|     54|   251.0| 199603|          253392|              2447532|          1245.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1977| 3253|     23|   251.0| 199603|          253392|              2447532|          1214.375|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|      1461| 3358|     73|    32.0| 199603|          253392|                97215|           1208.25|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|       228|  540|     18|   140.0| 199604|          253392|             17190036|          1169.375|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|      1091| 2852|     62|    32.0| 199604|          253392|                97215|            1300.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      3598| 5978|     61|   251.0| 199604|          253392|              2447532|            1079.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1028| 2222|     22|   251.0| 199604|          253392|              2447532|          1097.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1882| 2542|     18|   251.0| 199604|          253392|              2447532|           1081.75|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|       853| 1702|     37|   140.0| 199604|          253392|             17190036|           657.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       101|  128|      1|   251.0| 199604|          253392|              2447532|          1272.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|         0|    0|      0|   251.0| 199604|          253392|              2447532|            636.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1370| 2929|     29|   251.0| 199605|          253392|              2447532|            1090.5|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|       205|  690|     23|   140.0| 199605|          253392|             17190036|            1220.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        57|  132|      1|   251.0| 199605|          253392|              2447532|            1156.0|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|       801| 1518|     33|   140.0| 199605|          253392|             17190036|          1059.375|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|       964| 2668|     58|    32.0| 199605|          253392|                97215|            723.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      4998| 7938|     81|   251.0| 199605|          253392|              2447532|          1075.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1520| 2262|     16|   251.0| 199606|          253392|              2447532|             990.5|\n|   BGM|        AVP|Binghamton, NY|       Scranton, PA|        80|  101|      1|    61.0| 199606|          253392|               563194|          1170.625|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|       846| 2162|     47|   140.0| 199606|          253392|             17190036|          1168.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2221| 4343|     43|   251.0| 199606|          253392|              2447532|           1004.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        47|  110|      1|   251.0| 199606|          253392|              2447532|           855.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        92|  136|      2|   251.0| 199606|          253392|              2447532|           754.875|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|         8|   30|      1|   140.0| 199606|          253392|             17190036|           586.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       128|  128|      1|   251.0| 199606|          253392|              2447532|          1425.375|\n|   BGM|        SYR|Binghamton, NY|       Syracuse, NY|        18|   92|      2|    63.0| 199606|          253392|               661210|             863.5|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|      1085| 2576|     56|    32.0| 199606|          253392|                97215|          1602.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2095| 3528|     36|   251.0| 199606|          253392|              2447532|           1002.75|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|        31|   60|      2|   140.0| 199607|          253392|             17190036|            589.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       179|  204|      3|   251.0| 199607|          253392|              2447532|           600.625|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|       815| 1368|     72|   140.0| 199607|          253392|             17190036|           239.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2964| 6060|     60|   251.0| 199607|          253392|              2447532|           468.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       262|  588|      6|   251.0| 199607|          253392|              2447532|           607.875|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|       588| 1426|     31|    32.0| 199607|          253392|                97215|           610.625|\n|   BGM|        SYR|Binghamton, NY|       Syracuse, NY|        16|   46|      1|    63.0| 199607|          253392|               661210|           601.375|\n|   BGM|        ROC|Binghamton, NY|      Rochester, NY|        18|   46|      1|   107.0| 199607|          253392|              1023991|             538.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        37|  110|      1|   251.0| 199607|          253392|              2447532|            438.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2896| 4530|     32|   251.0| 199607|          253392|              2447532|             530.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        81|  256|      2|   251.0| 199607|          253392|              2447532|           499.125|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|         8|   19|      1|    32.0| 199607|          253392|                97215|           489.625|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|        38|   92|      2|   140.0| 199607|          253392|             17190036|            400.75|\n|   BGM|        ABE|Binghamton, NY|      Allentown, PA|       198|  282|      2|   110.0| 199608|          253392|               710211|           500.875|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|       701| 1349|     71|   140.0| 199608|          253392|             17190036|            394.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      3958| 5292|     54|   251.0| 199608|          253392|              2447532|           803.625|\n|   BGM|        PHL|Binghamton, NY|   Philadelphia, PA|       666| 2424|     24|   165.0| 199608|          253392|             11007158|           351.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1319| 2828|     28|   251.0| 199608|          253392|              2447532|           403.875|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|        10|   46|      1|   140.0| 199608|          253392|             17190036|            806.25|\n|   BGM|        SYR|Binghamton, NY|       Syracuse, NY|        21|   46|      1|    63.0| 199608|          253392|               661210|           811.125|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|        81|  120|      4|   140.0| 199608|          253392|             17190036|             549.0|\n|   BGM|        ABE|Binghamton, NY|      Allentown, PA|        69|  101|      1|   110.0| 199608|          253392|               710211|          1016.125|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|       881| 1564|     34|    32.0| 199608|          253392|                97215|          1021.875|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|         8|   19|      1|    32.0| 199608|          253392|                97215|           870.875|\n|   BGM|        PHL|Binghamton, NY|   Philadelphia, PA|        30|  196|      2|   165.0| 199608|          253392|             11007158|           434.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       403|  568|      4|   251.0| 199608|          253392|              2447532|             426.0|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|       441|  874|     46|   140.0| 199609|          253392|             17190036|             603.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2682| 5252|     52|   251.0| 199609|          253392|              2447532|             510.0|\n|   BGM|        PHL|Binghamton, NY|   Philadelphia, PA|         6|   98|      1|   165.0| 199609|          253392|             11007158|            741.25|\n|   BGM|        PHL|Binghamton, NY|   Philadelphia, PA|       781| 2828|     28|   165.0| 199609|          253392|             11007158|          1074.375|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|       103|  276|      6|   140.0| 199609|          253392|             17190036|           828.625|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|       393| 1350|     45|   140.0| 199609|          253392|             17190036|             832.5|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|       159|  460|     10|    32.0| 199609|          253392|                97215|            490.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        82|  136|      2|   251.0| 199609|          253392|              2447532|           531.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2401| 3528|     36|   251.0| 199609|          253392|              2447532|           1086.25|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|        56|  120|      4|    32.0| 199609|          253392|                97215|            592.25|\n|   BGM|        SYR|Binghamton, NY|       Syracuse, NY|        23|   46|      1|    63.0| 199610|          253392|               661210|          1005.625|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|       244|  598|     13|    32.0| 199610|          253392|                97215|            960.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2510| 3332|     34|   251.0| 199610|          253392|              2447532|             907.0|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|       267|  513|     27|   140.0| 199610|          253392|             17190036|            982.25|\n|   BGM|        PHL|Binghamton, NY|   Philadelphia, PA|      1020| 3131|     31|   165.0| 199610|          253392|             11007158|           696.625|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|        27|   90|      3|    32.0| 199610|          253392|                97215|             523.0|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|       438| 1288|     28|   140.0| 199610|          253392|             17190036|           628.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      3153| 5656|     56|   251.0| 199610|          253392|              2447532|            927.25|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|       614| 1530|     51|   140.0| 199610|          253392|             17190036|          1208.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       214|  284|      2|   251.0| 199610|          253392|              2447532|          1225.875|\n|   BGM|        PHL|Binghamton, NY|   Philadelphia, PA|       845| 2626|     26|   165.0| 199611|          253392|             11007158|            1149.0|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|      1764| 3818|     83|   140.0| 199611|          253392|             17190036|             582.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        69|  220|      2|   251.0| 199611|          253392|              2447532|           1091.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      4521| 7979|     79|   251.0| 199611|          253392|              2447532|          1047.125|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|       870| 2438|     53|    32.0| 199611|          253392|                97215|           560.625|\n|   BGM|        PHL|Binghamton, NY|   Philadelphia, PA|        71|  294|      3|   165.0| 199611|          253392|             11007158|          1122.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       401|  686|      7|   251.0| 199611|          253392|              2447532|           604.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      4779| 8282|     82|   251.0| 199612|          253392|              2447532|          1702.625|\n|   BGM|        PHL|Binghamton, NY|   Philadelphia, PA|       949| 2323|     23|   165.0| 199612|          253392|             11007158|          1800.125|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|      2037| 3772|     82|   140.0| 199612|          253392|             17190036|          1144.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        65|  143|      1|   251.0| 199612|          253392|              2447532|          1128.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       218|  550|      5|   251.0| 199612|          253392|              2447532|          1126.625|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|        59|  101|      1|    48.0| 199612|          253392|                93311|          1036.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        43|  196|      2|   251.0| 199612|          253392|              2447532|            445.25|\n|   BGM|        PHL|Binghamton, NY|   Philadelphia, PA|       189|  490|      5|   165.0| 199612|          253392|             11007158|           1535.75|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|       863| 2576|     56|    32.0| 199612|          253392|                97215|            1781.5|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|       877| 2070|     45|    32.0| 199701|          250447|                97287|             205.0|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|        40|  196|      3|   140.0| 199701|          250447|             17264316|           913.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        54|  128|      1|   251.0| 199701|          250447|              2432761|            1027.0|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|        48|   98|      1|    32.0| 199701|          250447|                97287|            727.25|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|      1342| 3588|     78|   140.0| 199701|          250447|             17264316|           911.375|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|       215|  320|      5|    32.0| 199701|          250447|                97287|           191.375|\n|   BGM|        PHL|Binghamton, NY|   Philadelphia, PA|      1231| 2828|     28|   165.0| 199701|          250447|             11003856|           1062.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        66|  141|      1|   251.0| 199701|          250447|              2432761|            739.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      4352| 8181|     81|   251.0| 199701|          250447|              2432761|           784.375|\n|   BGM|        PHL|Binghamton, NY|   Philadelphia, PA|       115|  196|      2|   165.0| 199701|          250447|             11003856|           887.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       109|  220|      2|   251.0| 199701|          250447|              2432761|            887.25|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|      1348| 3404|     74|   140.0| 199702|          250447|             17264316|            1153.0|\n|   BGM|        PHL|Binghamton, NY|   Philadelphia, PA|       391| 1010|     10|   165.0| 199702|          250447|             11003856|           913.625|\n|   BGM|        PHL|Binghamton, NY|   Philadelphia, PA|      1022| 1666|     17|   165.0| 199702|          250447|             11003856|            579.25|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|       936| 2576|     56|    32.0| 199702|          250447|                97287|           1158.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2715| 4508|     46|   251.0| 199702|          250447|              2432761|           1045.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1772| 3535|     35|   251.0| 199702|          250447|              2432761|          1075.375|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|        58|  120|      4|   140.0| 199702|          250447|             17264316|            1038.5|\n|   BGM|        PHL|Binghamton, NY|   Philadelphia, PA|      1735| 3038|     31|   165.0| 199703|          250447|             11003856|          1311.875|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|      1884| 3680|     80|   140.0| 199703|          250447|             17264316|            1693.0|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|       120|  150|      5|   140.0| 199703|          250447|             17264316|           1574.75|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|        91|  150|      5|    32.0| 199703|          250447|                97287|          1082.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       175|  256|      2|   251.0| 199703|          250447|              2432761|          1642.875|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|      1004| 2346|     51|    32.0| 199703|          250447|                97287|           1318.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       433|  909|      9|   251.0| 199703|          250447|              2432761|            1570.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      5104| 8036|     82|   251.0| 199703|          250447|              2432761|          1413.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       193|  505|      5|   251.0| 199704|          250447|              2432761|           818.875|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|         7|   30|      1|    32.0| 199704|          250447|                97287|           1010.25|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|      1600| 3404|     74|   140.0| 199704|          250447|             17264316|           1146.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      4917| 7938|     81|   251.0| 199704|          250447|              2432761|            694.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        48|   68|      1|   251.0| 199704|          250447|              2432761|            910.75|\n|   BGM|        PHL|Binghamton, NY|   Philadelphia, PA|       244|  392|      4|   165.0| 199704|          250447|             11003856|          1149.375|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|        58|   98|      1|    48.0| 199704|          250447|                92549|            810.25|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|      1015| 2438|     53|    32.0| 199704|          250447|                97287|           1654.75|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|        69|   90|      3|   140.0| 199704|          250447|             17264316|          1012.125|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|       874| 2254|     49|    32.0| 199705|          250447|                97287|          1140.375|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|       108|  136|      2|   140.0| 199705|          250447|             17264316|             339.5|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|        39|   68|      1|    32.0| 199705|          250447|                97287|           994.875|\n|   BGM|        DTW|Binghamton, NY|        Detroit, MI|        37|  101|      1|   378.0| 199705|          250447|              8934802|          1019.875|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|      1756| 3266|     71|   140.0| 199705|          250447|             17264316|             416.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        44|  128|      1|   251.0| 199705|          250447|              2432761|           280.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       110|  303|      3|   251.0| 199705|          250447|              2432761|           808.375|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|        51|   60|      2|   140.0| 199705|          250447|             17264316|           377.375|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      5204| 8323|     85|   251.0| 199705|          250447|              2432761|            1127.5|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|       765| 1610|     35|   140.0| 199706|          250447|             17264316|           819.375|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|       651| 1650|     55|   140.0| 199706|          250447|             17264316|            1014.5|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|       510| 1150|     25|    32.0| 199706|          250447|                97287|           996.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       191|  505|      5|   251.0| 199706|          250447|              2432761|           875.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        52|  141|      1|   251.0| 199706|          250447|              2432761|          1096.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      4750| 7918|     79|   251.0| 199706|          250447|              2432761|           879.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        98|  136|      2|   251.0| 199706|          250447|              2432761|            408.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        60|  136|      2|   251.0| 199707|          250447|              2432761|             314.0|\n|   BGM|        DTW|Binghamton, NY|        Detroit, MI|        70|   96|      3|   378.0| 199707|          250447|              8934802|           896.625|\n|   BGM|        DTW|Binghamton, NY|        Detroit, MI|       627| 1036|     28|   378.0| 199707|          250447|              8934802|           364.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       121|  505|      5|   251.0| 199707|          250447|              2432761|            1204.5|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|        89|  184|      4|    32.0| 199707|          250447|                97287|           964.375|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|       694| 1887|     51|    48.0| 199707|          250447|                92549|           284.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      5458| 8585|     83|   251.0| 199707|          250447|              2432761|           1129.25|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|      1044| 2400|     80|   140.0| 199707|          250447|             17264316|           1138.75|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|       596| 1380|     30|   140.0| 199707|          250447|             17264316|            1081.5|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|      1007| 1952|     61|    48.0| 199707|          250447|                92549|           1146.75|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|        16|   30|      1|    32.0| 199707|          250447|                97287|           816.375|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|        25|   64|      1|   140.0| 199708|          250447|             17264316|           539.375|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|        65|  184|      4|    32.0| 199708|          250447|                97287|           209.875|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|       724| 1776|     48|    48.0| 199708|          250447|                92549|           931.125|\n|   BGM|        DTW|Binghamton, NY|        Detroit, MI|       665| 1147|     31|   378.0| 199708|          250447|              8934802|           297.125|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|        25|   64|      1|    32.0| 199708|          250447|                97287|           1068.25|\n|   BGM|        SYR|Binghamton, NY|       Syracuse, NY|        48|  110|      1|    63.0| 199708|          250447|               656224|            210.25|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|       135|  238|      7|    48.0| 199708|          250447|                92549|           296.375|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|        29|   90|      3|    32.0| 199708|          250447|                97287|            887.75|\n|   BGM|        DTW|Binghamton, NY|        Detroit, MI|        32|   34|      1|   378.0| 199708|          250447|              8934802|             419.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      5396| 8273|     85|   251.0| 199708|          250447|              2432761|             930.5|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|       956| 2310|     77|   140.0| 199708|          250447|             17264316|             934.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       122|  605|      6|   251.0| 199708|          250447|              2432761|          1048.875|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|       683| 1334|     29|   140.0| 199708|          250447|             17264316|           310.875|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        22|   68|      1|   251.0| 199708|          250447|              2432761|           921.875|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|       834| 1632|     48|    48.0| 199708|          250447|                92549|           1136.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      4525| 7862|     81|   251.0| 199709|          250447|              2432761|             870.5|\n|   BGM|        DTW|Binghamton, NY|        Detroit, MI|        64|  102|      3|   378.0| 199709|          250447|              8934802|             870.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       163|  220|      2|   251.0| 199709|          250447|              2432761|          1062.125|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|        35|   90|      3|    32.0| 199709|          250447|                97287|           977.875|\n|   BGM|        DTW|Binghamton, NY|        Detroit, MI|       377|  714|     21|   378.0| 199709|          250447|              8934802|            811.25|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|      1022| 2618|     77|    48.0| 199709|          250447|                92549|             780.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        89|  201|      2|   251.0| 199709|          250447|              2432761|            777.75|\n|   BGM|        DTW|Binghamton, NY|        Detroit, MI|        60|  111|      3|   378.0| 199709|          250447|              8934802|           1114.75|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|        75|  184|      4|    32.0| 199709|          250447|                97287|           775.625|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|        53|  185|      5|    48.0| 199709|          250447|                92549|             234.0|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|       303|  816|     24|    48.0| 199709|          250447|                92549|           830.875|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|       948| 2400|     80|   140.0| 199709|          250447|             17264316|           395.625|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|       549| 1334|     29|   140.0| 199709|          250447|             17264316|             280.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       268|  502|      5|   251.0| 199710|          250447|              2432761|             382.0|\n|   BGM|        DTW|Binghamton, NY|        Detroit, MI|       449|  888|     24|   378.0| 199710|          250447|              8934802|            429.25|\n|   BGM|        DTW|Binghamton, NY|        Detroit, MI|        93|  136|      4|   378.0| 199710|          250447|              8934802|            890.75|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|       424| 1122|     33|    48.0| 199710|          250447|                92549|           906.375|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|       192|  999|     27|    48.0| 199710|          250447|                92549|            272.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       107|  220|      2|   251.0| 199710|          250447|              2432761|           467.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      4591| 7857|     81|   251.0| 199710|          250447|              2432761|            810.25|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|       424| 1288|     28|   140.0| 199710|          250447|             17264316|           918.625|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|       143|  230|      5|    32.0| 199710|          250447|                97287|           841.375|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|      1081| 2550|     85|   140.0| 199710|          250447|             17264316|            375.25|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|       895| 2312|     68|    48.0| 199710|          250447|                92549|           438.625|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|        18|   30|      1|    32.0| 199710|          250447|                97287|            227.75|\n|   BGM|        DTW|Binghamton, NY|        Detroit, MI|        46|   68|      2|   378.0| 199710|          250447|              8934802|             322.0|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|       121|  276|      6|    32.0| 199711|          250447|                97287|             350.5|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       516| 1164|     12|   251.0| 199711|          250447|              2432761|             683.5|\n|   BGM|        DTW|Binghamton, NY|        Detroit, MI|        97|  136|      4|   378.0| 199711|          250447|              8934802|            951.75|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|       356|  884|     26|    48.0| 199711|          250447|                92549|           839.125|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|       240|  962|     26|    48.0| 199711|          250447|                92549|           715.875|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|       741| 1564|     46|    48.0| 199711|          250447|                92549|           758.875|\n|   BGM|        DTW|Binghamton, NY|        Detroit, MI|        28|  102|      3|   378.0| 199711|          250447|              8934802|             877.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       961| 2310|     21|   251.0| 199711|          250447|              2432761|            927.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      2951| 4706|     47|   251.0| 199711|          250447|              2432761|             819.5|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|       358| 1196|     26|   140.0| 199711|          250447|             17264316|            295.25|\n|   BGM|        DTW|Binghamton, NY|        Detroit, MI|       444|  814|     22|   378.0| 199711|          250447|              8934802|           341.875|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|       672| 1440|     48|   140.0| 199711|          250447|             17264316|           833.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      1179| 2750|     25|   251.0| 199712|          250447|              2432761|          1215.625|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|       929| 1768|     52|    48.0| 199712|          250447|                92549|            869.25|\n|   BGM|        DTW|Binghamton, NY|        Detroit, MI|        48|   68|      2|   378.0| 199712|          250447|              8934802|           862.125|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|       199|  925|     25|    48.0| 199712|          250447|                92549|             655.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      3512| 5705|     57|   251.0| 199712|          250447|              2432761|           769.375|\n|   BGM|        DTW|Binghamton, NY|        Detroit, MI|        48|   68|      2|   378.0| 199712|          250447|              8934802|           864.625|\n|   BGM|        DTW|Binghamton, NY|        Detroit, MI|       506|  925|     25|   378.0| 199712|          250447|              8934802|           668.625|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|       455| 1020|     30|    48.0| 199712|          250447|                92549|           341.875|\n|   BGM|        ITH|Binghamton, NY|         Ithaca, NY|       123|  184|      4|    32.0| 199712|          250447|                97287|             716.5|\n|   BGM|        EWR|Binghamton, NY|         Newark, NJ|       117|  184|      4|   140.0| 199712|          250447|             17264316|             626.0|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|       703| 1666|     49|    48.0| 199801|          248959|                92207|           1238.75|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|       280|  918|     27|    48.0| 199801|          248959|                92207|           379.125|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       898| 2530|     23|   251.0| 199801|          248959|              2418452|             435.5|\n|   BGM|        DTW|Binghamton, NY|        Detroit, MI|        64|  102|      3|   378.0| 199801|          248959|              8944948|            778.25|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      3686| 6207|     62|   251.0| 199801|          248959|              2418452|          1258.125|\n|   BGM|        DTW|Binghamton, NY|        Detroit, MI|        17|   68|      2|   378.0| 199801|          248959|              8944948|            1159.0|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|       157|  925|     25|    48.0| 199801|          248959|                92207|             372.5|\n|   BGM|        DTW|Binghamton, NY|        Detroit, MI|       421|  888|     24|   378.0| 199801|          248959|              8944948|             833.0|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|       312|  874|      8|   251.0| 199802|          248959|              2418452|            1226.0|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|       999| 2516|     74|    48.0| 199802|          248959|                92207|           753.375|\n|   BGM|        DTW|Binghamton, NY|        Detroit, MI|       105|  170|      5|   378.0| 199802|          248959|              8944948|          1185.125|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|       232|  646|     19|    48.0| 199802|          248959|                92207|           841.625|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|        22|  126|      1|   251.0| 199802|          248959|              2418452|             851.0|\n|   BGM|        DTW|Binghamton, NY|        Detroit, MI|       376|  714|     21|   378.0| 199802|          248959|              8944948|            372.75|\n|   BGM|        PIT|Binghamton, NY|     Pittsburgh, PA|      3964| 6804|     68|   251.0| 199802|          248959|              2418452|           1231.25|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|       559| 1360|     40|    48.0| 199803|          248959|                92207|           971.875|\n|   BGM|        DTW|Binghamton, NY|        Detroit, MI|       138|  238|      7|   378.0| 199803|          248959|              8944948|           877.125|\n|   BGM|        ELM|Binghamton, NY|         Elmira, NY|       798| 2176|     64|    48.0| 199803|          248959|                92207|           878.125|"
+          },
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"result-alert alert-warning\" role\u003d\"alert\"\u003e\u003cbutton type\u003d\"button\" class\u003d\"close\" data-dismiss\u003d\"alert\" aria-label\u003d\"Close\"\u003e\u003cspan aria-hidden\u003d\"true\"\u003e\u0026times;\u003c/span\u003e\u003c/button\u003e\u003cstrong\u003eOutput is truncated\u003c/strong\u003e to 102400 bytes. Learn more about \u003cstrong\u003eZEPPELIN_INTERPRETER_OUTPUT_LIMIT\u003c/strong\u003e\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579710818034_-898665812",
+      "id": "20200122-173338_240622070",
+      "dateCreated": "2020-01-22 17:33:38.034",
+      "dateStarted": "2020-01-23 11:07:29.313",
+      "dateFinished": "2020-01-23 11:08:07.204",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df3.where($\"Origin\" \u003d\u003d\u003d \"BGM\").count()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-23 11:07:35.439",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res5: Long \u003d 1738\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579711723186_-1690529108",
+      "id": "20200122-174843_583230369",
+      "dateCreated": "2020-01-22 17:48:43.186",
+      "dateStarted": "2020-01-23 11:08:06.807",
+      "dateFinished": "2020-01-23 11:08:08.370",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df3.createOrReplaceTempView(\"df3Windowed\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-23 11:07:38.504",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1579713129336_-956472304",
+      "id": "20200122-181209_679008300",
+      "dateCreated": "2020-01-22 18:12:09.336",
+      "dateStarted": "2020-01-23 11:08:07.252",
+      "dateFinished": "2020-01-23 11:08:08.716",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "order by FlyDate\n%sql\nselect FlyDate, avg\nfrom df3Windowed\nwhere Origin \u003d\u003d \u0027BGM\u0027",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-23 11:08:47.628",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "scatterChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "FlyDate": "string",
+                      "avg": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [],
+              "groups": [],
+              "values": [
+                {
+                  "name": "avg",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "FlyDate\tavg\n199001\t859.875\n199001\t1181.6\n199001\t1030.4285714285713\n199001\t948.75\n199001\t1469.75\n199001\t1114.875\n199001\t1195.6666666666667\n199001\t778.375\n199002\t1048.625\n199002\t975.375\n199002\t878.25\n199002\t1321.75\n199002\t1269.125\n199002\t914.375\n199003\t1295.0\n199003\t1331.375\n199003\t1356.625\n199003\t1059.875\n199003\t1184.75\n199003\t1103.875\n199004\t1480.0\n199004\t1394.0\n199004\t1398.875\n199004\t1539.5\n199004\t1379.875\n199004\t1383.625\n199005\t1470.125\n199005\t1573.875\n199005\t1812.875\n199005\t1512.375\n199005\t1538.125\n199005\t1248.875\n199006\t1409.875\n199006\t1727.5\n199006\t1556.125\n199006\t1529.875\n199006\t1312.375\n199007\t1106.75\n199007\t1434.0\n199007\t1048.625\n199007\t1045.75\n199007\t1395.875\n199007\t906.0\n199007\t1061.625\n199007\t1272.0\n199008\t1247.5\n199008\t1083.625\n199008\t1209.25\n199008\t914.625\n199008\t855.875\n199008\t1451.75\n199008\t1333.75\n199009\t1214.625\n199009\t1091.75\n199009\t1071.5\n199009\t1259.75\n199009\t1343.125\n199009\t1093.25\n199009\t1068.125\n199010\t1505.5\n199010\t1592.125\n199010\t1496.5\n199010\t1533.625\n199010\t1571.125\n199010\t1704.125\n199011\t1266.75\n199011\t1302.625\n199011\t1052.875\n199011\t1413.625\n199011\t1264.0\n199011\t1034.875\n199011\t1502.25\n199012\t1017.875\n199012\t1221.625\n199012\t1357.625\n199012\t1114.25\n199012\t1259.0\n199012\t1033.125\n199101\t986.5\n199101\t1159.0\n199101\t854.125\n199101\t941.75\n199101\t766.625\n199101\t710.5\n199101\t1257.875\n199101\t1216.375\n199101\t1348.5\n199102\t1021.375\n199102\t993.0\n199102\t955.25\n199102\t914.5\n199102\t857.75\n199102\t949.75\n199102\t800.625\n199103\t735.75\n199103\t646.125\n199103\t802.375\n199103\t812.75\n199103\t951.0\n199103\t875.625\n199103\t1034.0\n199103\t1069.875\n199103\t841.0\n199103\t413.5\n199103\t860.625\n199103\t520.875\n199104\t789.625\n199104\t633.375\n199104\t685.5\n199104\t791.5\n199104\t537.875\n199104\t664.375\n199104\t526.0\n199104\t672.375\n199104\t668.375\n199104\t684.0\n199104\t905.375\n199104\t799.5\n199105\t1146.75\n199105\t1156.625\n199105\t1289.5\n199105\t1018.75\n199105\t1436.25\n199105\t1415.25\n199105\t1847.75\n199106\t1981.0\n199106\t1841.25\n199106\t1955.75\n199106\t1322.875\n199107\t2757.25\n199107\t2150.75\n199107\t2066.25\n199107\t2062.0\n199108\t1419.25\n199108\t2181.0\n199108\t1496.125\n199108\t2053.0\n199108\t1379.5\n199109\t838.25\n199109\t837.875\n199109\t866.75\n199109\t1413.75\n199109\t1041.25\n199109\t999.125\n199109\t715.25\n199109\t908.625\n199109\t857.5\n199110\t1126.25\n199110\t651.0\n199110\t1134.5\n199110\t995.375\n199110\t1125.375\n199110\t1130.375\n199110\t1140.625\n199110\t1267.375\n199111\t856.625\n199111\t842.125\n199111\t1365.375\n199111\t1358.25\n199111\t883.875\n199111\t1272.0\n199111\t1012.0\n199111\t1015.25\n199112\t1219.75\n199112\t1206.125\n199112\t799.0\n199112\t909.5\n199112\t1287.375\n199112\t1108.125\n199112\t1221.625\n199112\t1244.625\n199201\t849.5\n199201\t1007.25\n199201\t1319.25\n199201\t824.125\n199201\t926.875\n199201\t1022.5\n199201\t1018.875\n199202\t947.25\n199202\t817.25\n199202\t945.0\n199202\t838.375\n199202\t956.125\n199202\t1099.5\n199203\t488.5\n199203\t646.375\n199203\t1025.625\n199203\t1021.5\n199203\t1469.25\n199203\t1463.5\n199204\t1626.375\n199204\t2071.875\n199204\t1626.375\n199204\t2213.75\n199205\t1767.0\n199205\t1705.125\n199205\t2342.125\n199205\t1888.875\n199206\t1621.875\n199206\t1703.125\n199206\t1839.75\n199206\t1259.375\n199207\t1073.75\n199207\t1064.25\n199207\t915.25\n199207\t1504.125\n199207\t1047.875\n199207\t1549.5\n199208\t1181.25\n199208\t1151.75\n199208\t1021.0\n199208\t1512.625\n199209\t1374.625\n199209\t1017.875\n199209\t1400.0\n199209\t1134.25\n199209\t1392.0\n199209\t1150.5\n199209\t751.5\n199209\t739.0\n199210\t606.0\n199210\t738.0\n199210\t597.875\n199210\t797.125\n199210\t611.0\n199211\t1295.625\n199211\t1293.125\n199211\t833.125\n199211\t1184.125\n199212\t1746.25\n199212\t1317.625\n199212\t1315.875\n199301\t1708.25\n199301\t1206.625\n199301\t1234.125\n199301\t1210.875\n199302\t1879.875\n199302\t1885.125\n199302\t1331.125\n199303\t1463.0\n199303\t2023.75\n199303\t2023.625\n199303\t1526.875\n199304\t1468.5\n199304\t1472.5\n199304\t1561.0\n199304\t1442.75\n199305\t1621.125\n199305\t1450.375\n199305\t1526.25\n199305\t1534.875\n199305\t889.0\n199305\t898.375\n199306\t1684.875\n199306\t1679.0\n199307\t1685.75\n199307\t1581.25\n199308\t1693.75\n199308\t1642.125\n199308\t1658.75\n199308\t1661.75\n199308\t1585.25\n199309\t2511.375\n199309\t1644.875\n199309\t2513.0\n199309\t2499.375\n199310\t2404.125\n199310\t2008.25\n199310\t2395.0\n199311\t817.5\n199311\t1678.5\n199311\t1682.0\n199312\t1382.375\n199312\t1492.5\n199312\t1377.0\n199312\t1155.375\n199312\t1059.375\n199312\t1153.75\n199401\t1481.875\n199401\t1861.375\n199402\t1723.875\n199402\t1618.375\n199402\t1900.375\n199402\t1626.5\n199403\t2024.625\n199403\t2115.125\n199403\t2122.75\n199404\t880.5\n199404\t1853.5\n199404\t1457.875\n199404\t1089.25\n199404\t1655.875\n199404\t1426.25\n199405\t1670.75\n199405\t1767.375\n199405\t1752.0\n199406\t1670.125\n199406\t2226.875\n199406\t2045.375\n199407\t1059.0\n199407\t1472.0\n199407\t2234.25\n199407\t926.25\n199407\t903.25\n199407\t793.875\n199407\t1030.625\n199408\t1326.25\n199408\t1321.875\n199408\t1640.75\n199408\t1178.5\n199408\t950.125\n199408\t950.25\n199409\t1270.125\n199409\t1511.25\n199409\t1296.5\n199409\t1200.375\n199409\t1288.5\n199410\t1235.5\n199410\t1311.625\n199410\t1085.625\n199410\t1002.25\n199410\t1022.875\n199411\t1272.25\n199411\t1780.5\n199411\t1623.875\n199411\t1403.5\n199411\t811.625\n199412\t2231.0\n199412\t1533.25\n199412\t2281.5\n199501\t1039.625\n199501\t1013.625\n199501\t1725.75\n199501\t2279.375\n199501\t970.625\n199501\t1145.5\n199501\t1716.375\n199501\t985.375\n199502\t1210.75\n199502\t1353.5\n199502\t1311.0\n199502\t1050.125\n199502\t1081.0\n199503\t1121.875\n199503\t1236.0\n199503\t1436.375\n199503\t1507.625\n199503\t1130.125\n199503\t1449.625\n199504\t1539.0\n199504\t1684.5\n199504\t1492.625\n199504\t1542.625\n199504\t1497.875\n199504\t1522.75\n199505\t1326.375\n199505\t1489.375\n199505\t1473.0\n199505\t1648.875\n199505\t1367.25\n199505\t1484.625\n199505\t1346.375\n199506\t1210.25\n199506\t1192.875\n199506\t1727.25\n199506\t1529.625\n199506\t1234.125\n199506\t1436.125\n199506\t1309.625\n199507\t1388.375\n199507\t2324.0\n199507\t1525.625\n199507\t2000.125\n199507\t1396.625\n199507\t1221.0\n199508\t2168.625\n199508\t1819.25\n199508\t1695.875\n199508\t1947.625\n199508\t1827.5\n199509\t1126.5\n199509\t1096.125\n199509\t1299.875\n199509\t1276.125\n199509\t846.0\n199509\t864.0\n199509\t1812.875\n199510\t913.875\n199510\t1352.875\n199510\t1079.375\n199510\t900.875\n199510\t1481.375\n199510\t1254.375\n199510\t1204.5\n199510\t1248.5\n199511\t1265.5\n199511\t1470.375\n199511\t1876.125\n199511\t1462.25\n199511\t1730.75\n199511\t1582.75\n199512\t1840.875\n199512\t2033.75\n199512\t1845.625\n199512\t2015.0\n199512\t1868.0\n199601\t1860.75\n199601\t1331.75\n199601\t1947.0\n199601\t1502.625\n199601\t1807.75\n199602\t1118.75\n199602\t1498.75\n199602\t1163.0\n199602\t1640.625\n199602\t1451.375\n199602\t1115.75\n199602\t1273.875\n199603\t1241.875\n199603\t1688.625\n199603\t1470.0\n199603\t1245.125\n199603\t1214.375\n199603\t1208.25\n199604\t1097.625\n199604\t657.625\n199604\t1272.875\n199604\t1081.75\n199604\t636.25\n199604\t1169.375\n199604\t1300.0\n199604\t1079.0\n199605\t1090.5\n199605\t1220.0\n199605\t1075.375\n199605\t1156.0\n199605\t1059.375\n199605\t723.75\n199606\t1168.125\n199606\t1602.875\n199606\t1002.75\n199606\t990.5\n199606\t1170.625\n199606\t1004.25\n199606\t855.875\n199606\t754.875\n199606\t586.875\n199606\t1425.375\n199606\t863.5\n199607\t589.25\n199607\t600.625\n199607\t239.625\n199607\t468.375\n199607\t607.875\n199607\t610.625\n199607\t601.375\n199607\t538.0\n199607\t438.25\n199607\t530.0\n199607\t499.125\n199607\t489.625\n199607\t400.75\n199608\t500.875\n199608\t394.75\n199608\t803.625\n199608\t351.875\n199608\t403.875\n199608\t806.25\n199608\t811.125\n199608\t549.0\n199608\t1016.125\n199608\t1021.875\n199608\t870.875\n199608\t434.875\n199608\t426.0\n199609\t603.5\n199609\t510.0\n199609\t741.25\n199609\t1074.375\n199609\t828.625\n199609\t832.5\n199609\t490.25\n199609\t531.625\n199609\t1086.25\n199609\t592.25\n199610\t1005.625\n199610\t960.25\n199610\t907.0\n199610\t1225.875\n199610\t982.25\n199610\t696.625\n199610\t523.0\n199610\t628.875\n199610\t927.25\n199610\t1208.875\n199611\t582.5\n199611\t1047.125\n199611\t560.625\n199611\t604.375\n199611\t1149.0\n199611\t1122.375\n199611\t1091.25\n199612\t1126.625\n199612\t1128.375\n199612\t1702.625\n199612\t1036.625\n199612\t1535.75\n199612\t1800.125\n199612\t1144.875\n199612\t445.25\n199612\t1781.5\n199701\t205.0\n199701\t911.375\n199701\t191.375\n199701\t913.625\n199701\t1027.0\n199701\t727.25\n199701\t1062.25\n199701\t784.375\n199701\t887.625\n199701\t739.75\n199701\t887.25\n199702\t579.25\n199702\t1153.0\n199702\t913.625\n199702\t1158.25\n199702\t1045.25\n199702\t1075.375\n199702\t1038.5\n199703\t1574.75\n199703\t1311.875\n199703\t1693.0\n199703\t1082.375\n199703\t1318.25\n199703\t1570.5\n199703\t1642.875\n199703\t1413.375\n199704\t818.875\n199704\t1010.25\n199704\t910.75\n199704\t1146.75\n199704\t694.75\n199704\t1149.375\n199704\t810.25\n199704\t1654.75\n199704\t1012.125\n199705\t1140.375\n199705\t1019.875\n199705\t339.5\n199705\t994.875\n199705\t416.0\n199705\t280.375\n199705\t808.375\n199705\t1127.5\n199705\t377.375\n199706\t996.125\n199706\t819.375\n199706\t1014.5\n199706\t875.625\n199706\t1096.625\n199706\t879.125\n199706\t408.75\n199707\t896.625\n199707\t314.0\n199707\t364.625\n199707\t284.125\n199707\t1204.5\n199707\t964.375\n199707\t1129.25\n199707\t1138.75\n199707\t1081.5\n199707\t816.375\n199707\t1146.75\n199708\t539.375\n199708\t210.25\n199708\t419.5\n199708\t209.875\n199708\t931.125\n199708\t297.125\n199708\t1068.25\n199708\t296.375\n199708\t930.5\n199708\t1048.875\n199708\t310.875\n199708\t1136.25\n199708\t887.75\n199708\t934.0\n199708\t921.875\n199709\t977.875\n199709\t1114.75\n199709\t870.5\n199709\t870.5\n199709\t1062.125\n199709\t811.25\n199709\t780.0\n199709\t775.625\n199709\t830.875\n199709\t395.625\n199709\t777.75\n199709\t234.0\n199709\t280.5\n199710\t382.0\n199710\t429.25\n199710\t467.625\n199710\t890.75\n199710\t906.375\n199710\t272.75\n199710\t810.25\n199710\t918.625\n199710\t375.25\n199710\t227.75\n199710\t841.375\n199710\t438.625\n199710\t322.0\n199711\t350.5\n199711\t715.875\n199711\t877.0\n199711\t683.5\n199711\t951.75\n199711\t839.125\n199711\t758.875\n199711\t927.75\n199711\t819.5\n199711\t295.25\n199711\t341.875\n199711\t833.125\n199712\t869.25\n199712\t1215.625\n199712\t862.125\n199712\t864.625\n199712\t655.0\n199712\t769.375\n199712\t668.625\n199712\t341.875\n199712\t716.5\n199712\t626.0\n199801\t435.5\n199801\t778.25\n199801\t1238.75\n199801\t379.125\n199801\t1258.125\n199801\t372.5\n199801\t1159.0\n199801\t833.0\n199802\t1226.0\n199802\t1185.125\n199802\t753.375\n199802\t841.625\n199802\t851.0\n199802\t1231.25\n199802\t372.75\n199803\t878.125\n199803\t971.875\n199803\t877.125\n199803\t1051.5\n199803\t944.25\n199803\t1029.75\n199804\t920.875\n199804\t1464.75\n199804\t832.125\n199804\t988.25\n199804\t1104.875\n199804\t795.875\n199804\t1110.75\n199805\t856.0\n199805\t1423.25\n199805\t1428.125\n199805\t857.375\n199805\t791.25\n199805\t840.5\n199805\t911.625\n199806\t492.625\n199806\t501.375\n199806\t982.5\n199806\t866.625\n199806\t975.625\n199806\t1596.25\n199806\t893.125\n199806\t1551.25\n199807\t1140.0\n199807\t1274.875\n199807\t1765.625\n199807\t372.25\n199807\t976.875\n199808\t1519.375\n199808\t898.0\n199808\t1765.25\n199808\t182.625\n199808\t820.5\n199808\t1604.25\n199808\t658.25\n199808\t1556.625\n199809\t167.625\n199809\t170.5\n199809\t636.625\n199809\t642.125\n199809\t1277.375\n199809\t1275.0\n199809\t1195.625\n199810\t1072.75\n199810\t1268.375\n199810\t1642.75\n199810\t1371.25\n199810\t1445.0\n199811\t1541.5\n199811\t1014.125\n199811\t1535.5\n199811\t1542.75\n199812\t1434.375\n199812\t1463.625\n199812\t1321.0\n199812\t1826.75\n199812\t1242.0\n199901\t242.375\n199901\t747.0\n199901\t705.625\n199901\t744.875\n199901\t800.375\n199901\t750.125\n199902\t1272.625\n199902\t1269.625\n199902\t689.875\n199902\t694.5\n199902\t702.5\n199902\t725.375\n199903\t1286.375\n199903\t1306.875\n199903\t929.5\n199903\t872.25\n199903\t1395.625\n199904\t847.375\n199904\t858.0\n199904\t937.25\n199904\t1403.375\n199904\t858.0\n199905\t755.75\n199905\t1115.125\n199905\t1284.875\n199905\t753.375\n199905\t835.5\n199905\t744.875\n199906\t1210.25\n199906\t1143.75\n199906\t763.125\n199906\t767.25\n199906\t1121.25\n199906\t787.875\n199907\t816.375\n199907\t1224.625\n199907\t718.125\n199907\t804.125\n199907\t809.5\n199908\t1246.625\n199908\t775.125\n199908\t756.375\n199908\t1129.75\n199908\t735.875\n199908\t1182.75\n199908\t1214.375\n199909\t1236.75\n199909\t766.75\n199909\t777.75\n199909\t682.25\n199909\t767.875\n199909\t408.625\n199909\t342.625\n199909\t1137.0\n199910\t1065.375\n199910\t1055.625\n199910\t779.625\n199910\t764.625\n199910\t776.25\n199910\t773.75\n199910\t347.625\n199911\t709.25\n199911\t1045.875\n199911\t1040.0\n199911\t1162.875\n199911\t732.75\n199911\t636.875\n199911\t1151.375\n199912\t304.25\n199912\t243.125\n199912\t566.625\n199912\t315.75\n199912\t563.5\n199912\t560.75\n199912\t660.625\n199912\t326.75\n199912\t231.75\n199912\t559.75\n200001\t725.5\n200001\t660.0\n200001\t710.75\n200001\t642.25\n200001\t282.75\n200001\t306.25\n200001\t316.75\n200002\t1584.125\n200002\t1537.125\n200002\t1167.625\n200002\t688.0\n200002\t1126.875\n200003\t779.5\n200003\t1235.125\n200003\t1219.625\n200003\t1181.25\n200003\t1264.25\n200004\t839.5\n200004\t1303.5\n200004\t892.0\n200004\t910.375\n200004\t405.75\n200005\t1264.875\n200005\t1726.5\n200005\t1718.625\n200005\t1295.625\n200005\t1277.625\n200006\t764.75\n200006\t1202.625\n200006\t780.75\n200006\t683.75\n200006\t1209.625\n200006\t735.5\n200007\t714.0\n200007\t703.25\n200007\t691.375\n200007\t706.75\n200007\t795.0\n200008\t807.875\n200008\t1213.125\n200008\t786.25\n200008\t1330.125\n200008\t803.625\n200008\t1345.125\n200008\t880.125\n200009\t1358.625\n200009\t1307.875\n200009\t1325.75\n200009\t1721.625\n200009\t1220.625\n200010\t828.125\n200010\t809.875\n200010\t836.75\n200010\t827.125\n200010\t929.25\n200010\t822.75\n200011\t783.625\n200011\t816.875\n200011\t887.0\n200011\t790.75\n200011\t785.875\n200012\t892.375\n200012\t853.125\n200012\t805.125\n200012\t833.125\n200012\t742.625\n200012\t799.5\n200101\t1192.0\n200101\t1590.25\n200101\t1181.0\n200101\t1300.125\n200101\t1260.875\n200102\t995.375\n200102\t995.25\n200102\t1181.25\n200102\t1170.25\n200102\t1186.0\n200103\t1101.5\n200103\t676.875\n200103\t850.125\n200103\t818.625\n200103\t865.125\n200103\t845.75\n200104\t547.5\n200104\t751.0\n200104\t528.75\n200104\t696.875\n200104\t748.25\n200104\t876.625\n200104\t921.875\n200105\t812.25\n200105\t838.25\n200105\t1203.875\n200105\t696.875\n200105\t1237.875\n200105\t738.0\n200106\t1307.375\n200106\t1312.25\n200106\t1602.625\n200107\t1276.375\n200107\t1285.75\n200107\t1241.25\n200107\t1649.375\n200107\t1247.5\n200108\t1201.75\n200108\t1124.0\n200108\t1178.0\n200109\t906.75\n200109\t892.375\n200109\t957.75\n200109\t1023.0\n200110\t803.625\n200110\t1069.375\n200110\t1120.625\n200110\t910.625\n200111\t1283.125\n200111\t1225.75\n200111\t1229.75\n200111\t913.0\n200112\t930.375\n200112\t908.75\n200112\t916.625\n200201\t1181.5\n200201\t1245.25\n200201\t957.375\n200202\t1195.625\n200202\t1123.625\n200202\t1143.375\n200203\t1129.75\n200203\t1157.75\n200203\t903.375\n200204\t711.0\n200204\t865.375\n200204\t888.5\n200205\t912.625\n200205\t1046.875\n200205\t800.375\n200205\t736.75\n200206\t961.75\n200206\t958.875\n200206\t808.125\n200206\t1102.5\n200207\t858.5\n200207\t902.5\n200207\t1127.0\n200208\t1136.875\n200208\t1120.875\n200208\t1074.75\n200209\t1642.75\n200209\t1427.375\n200209\t1458.125\n200210\t1423.75\n200210\t1429.375\n200210\t1381.875\n200210\t1292.75\n200210\t1355.625\n200210\t1599.875\n200211\t1250.5\n200211\t1032.875\n200211\t1032.25\n200211\t971.125\n200211\t1059.375\n200211\t843.5\n200211\t1242.625\n200211\t1047.0\n200212\t867.875\n200212\t1081.0\n200212\t1082.625\n200212\t1412.375\n200212\t1406.625\n200212\t1151.75\n200212\t667.0\n200212\t1407.25\n200212\t819.25\n200212\t663.375\n200301\t1094.375\n200301\t771.25\n200301\t771.75\n200301\t1157.125\n200301\t1075.75\n200301\t1122.75\n200301\t1156.5\n200301\t1157.5\n200302\t1309.125\n200302\t1104.25\n200302\t979.75\n200302\t944.125\n200302\t970.125\n200302\t1177.0\n200302\t1071.0\n200302\t1149.75\n200302\t1010.0\n200303\t1095.25\n200303\t928.0\n200303\t833.5\n200303\t1013.0\n200303\t982.25\n200303\t824.875\n200303\t1014.25\n200303\t977.75\n200303\t825.0\n200303\t960.0\n200303\t1016.625\n200304\t895.75\n200304\t659.375\n200304\t659.75\n200304\t798.75\n200304\t1018.25\n200304\t903.25\n"
+          },
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"result-alert alert-warning\" role\u003d\"alert\"\u003e\u003cbutton type\u003d\"button\" class\u003d\"close\" data-dismiss\u003d\"alert\" aria-label\u003d\"Close\"\u003e\u003cspan aria-hidden\u003d\"true\"\u003e\u0026times;\u003c/span\u003e\u003c/button\u003e\u003cstrong\u003eOutput is truncated\u003c/strong\u003e to 1000 rows. Learn more about \u003cstrong\u003ezeppelin.spark.maxResult\u003c/strong\u003e\u003c/div\u003e\n"
+          },
+          {
+            "type": "TEXT",
+            "data": ""
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579733614954_1655611485",
+      "id": "20200122-235334_1695800916",
+      "dateCreated": "2020-01-22 23:53:34.954",
+      "dateStarted": "2020-01-23 11:08:08.420",
+      "dateFinished": "2020-01-23 11:08:09.238",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nVoglio aggregare per aeroporto di origine e FlyDate\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-23 11:06:20.061",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eVoglio aggregare per aeroporto di origine e FlyDate\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579733815099_-189218095",
+      "id": "20200122-235655_353609982",
+      "dateCreated": "2020-01-22 23:56:55.099",
+      "dateStarted": "2020-01-23 11:06:20.066",
+      "dateFinished": "2020-01-23 11:06:25.148",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val newWinSpec \u003d Window\n                    .partitionBy(\"Origin\", \"FlyDate\")\n                    .orderBy(\"FlyDate\")\n                    ",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-23 11:26:27.861",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "newWinSpec: org.apache.spark.sql.expressions.WindowSpec \u003d org.apache.spark.sql.expressions.WindowSpec@2e974343\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579774590186_749189019",
+      "id": "20200123-111630_525338784",
+      "dateCreated": "2020-01-23 11:16:30.186",
+      "dateStarted": "2020-01-23 11:26:27.887",
+      "dateFinished": "2020-01-23 11:26:28.060",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df1.printSchema",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-23 11:13:46.364",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {}
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- Origin: string (nullable \u003d true)\n |-- Destination: string (nullable \u003d true)\n |-- OriginCity: string (nullable \u003d true)\n |-- DestinationCity: string (nullable \u003d true)\n |-- Passengers: integer (nullable \u003d true)\n |-- Seats: integer (nullable \u003d true)\n |-- Flights: integer (nullable \u003d true)\n |-- Distance: double (nullable \u003d true)\n |-- FlyDate: integer (nullable \u003d true)\n |-- OriginPopulation: integer (nullable \u003d true)\n |-- DestinationPopulation: integer (nullable \u003d true)\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579773989226_505283494",
+      "id": "20200123-110629_2042075843",
+      "dateCreated": "2020-01-23 11:06:29.226",
+      "dateStarted": "2020-01-23 11:13:46.395",
+      "dateFinished": "2020-01-23 11:13:46.683",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df4 \u003d df1.withColumn(\"sumOverOriginFlyDate\", sum(\"Passengers\").over(newWinSpec)).cache()\n\ndf4.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-23 11:27:17.990",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------+-----------+---------------+---------------+----------+-----+-------+--------+-------+----------------+---------------------+--------------------+\n|Origin|Destination|     OriginCity|DestinationCity|Passengers|Seats|Flights|Distance|FlyDate|OriginPopulation|DestinationPopulation|sumOverOriginFlyDate|\n+------+-----------+---------------+---------------+----------+-----+-------+--------+-------+----------------+---------------------+--------------------+\n|   ABI|        EKO|    Abilene, TX|       Elko, NV|        99|  124|      1|  1064.0| 199811|          153457|                48011|                4631|\n|   ABI|        DFW|    Abilene, TX|     Dallas, TX|       358|  800|     16|   158.0| 199811|          153457|              9475022|                4631|\n|   ABI|        DFW|    Abilene, TX|     Dallas, TX|        20|   30|      1|   158.0| 199811|          153457|              9475022|                4631|\n|   ABI|        DFW|    Abilene, TX|     Dallas, TX|      4079| 7378|    217|   158.0| 199811|          153457|              9475022|                4631|\n|   ABI|        DFW|    Abilene, TX|     Dallas, TX|        64|  139|      1|   158.0| 199811|          153457|              9475022|                4631|\n|   ABI|        ILE|    Abilene, TX|    Killeen, TX|        11|   34|      1|   149.0| 199811|          153457|               314727|                4631|\n|   ABQ|        RNO|Albuquerque, NM|       Reno, NV|        79|  137|      1|   787.0| 200803|          846582|               416657|              290296|\n|   ABQ|        ACT|Albuquerque, NM|       Waco, TX|        82|  137|      1|   591.0| 200803|          846582|               230849|              290296|\n|   ABQ|        HOB|Albuquerque, NM|      Hobbs, NM|        77|  144|     16|   254.0| 200803|          846582|                59129|              290296|\n|   ABQ|        TPA|Albuquerque, NM|      Tampa, FL|      3478| 3973|     29|  1497.0| 200803|          846582|              2730007|              290296|\n|   ABQ|        TPA|Albuquerque, NM|      Tampa, FL|       261|  274|      2|  1497.0| 200803|          846582|              2730007|              290296|\n|   ABQ|        TUL|Albuquerque, NM|      Tulsa, OK|       922| 1550|     31|   608.0| 200803|          846582|               916037|              290296|\n|   ABQ|        AUS|Albuquerque, NM|     Austin, TX|      2132| 2850|     57|   619.0| 200803|          846582|              1654100|              290296|\n|   ABQ|        AUS|Albuquerque, NM|     Austin, TX|        40|  137|      1|   619.0| 200803|          846582|              1654100|              290296|\n|   ABQ|        CVN|Albuquerque, NM|     Clovis, NM|       223|  950|     50|   205.0| 200803|          846582|                43806|              290296|\n|   ABQ|        DFW|Albuquerque, NM|     Dallas, TX|     26359|31568|    226|   569.0| 200803|          846582|             12602170|              290296|\n|   ABQ|        DAL|Albuquerque, NM|     Dallas, TX|      9339|12056|     88|   580.0| 200803|          846582|             12602170|              290296|\n|   ABQ|        DAL|Albuquerque, NM|     Dallas, TX|       951| 1098|      9|   580.0| 200803|          846582|             12602170|              290296|\n|   ABQ|        DAL|Albuquerque, NM|     Dallas, TX|     16118|21783|    159|   580.0| 200803|          846582|             12602170|              290296|\n|   ABQ|        FAT|Albuquerque, NM|     Fresno, CA|        60|  137|      1|   744.0| 200803|          846582|               903133|              290296|\n+------+-----------+---------------+---------------+----------+-----+-------+--------+-------+----------------+---------------------+--------------------+\nonly showing top 20 rows\n\r\ndf4: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [Origin: string, Destination: string ... 10 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579774426364_-1701182171",
+      "id": "20200123-111346_1429049717",
+      "dateCreated": "2020-01-23 11:13:46.364",
+      "dateStarted": "2020-01-23 11:27:18.016",
+      "dateFinished": "2020-01-23 11:27:21.480",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df4.filter(col(\"Origin\").equalTo(\"BGM\")).orderBy(\"FlyDate\").show",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-23 11:45:49.497",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------+-----------+--------------+---------------+----------+-----+-------+--------+-------+----------------+---------------------+--------------------+\n|Origin|Destination|    OriginCity|DestinationCity|Passengers|Seats|Flights|Distance|FlyDate|OriginPopulation|DestinationPopulation|sumOverOriginFlyDate|\n+------+-----------+--------------+---------------+----------+-----+-------+--------+-------+----------------+---------------------+--------------------+\n|   BGM|        PIT|Binghamton, NY| Pittsburgh, PA|      1266| 3796|     26|   251.0| 199001|          264586|              2468674|                7590|\n|   BGM|        PIT|Binghamton, NY| Pittsburgh, PA|      3892| 6804|     63|   251.0| 199001|          264586|              2468674|                7590|\n|   BGM|        BWI|Binghamton, NY|  Baltimore, MD|        27|  151|      1|   212.0| 199001|          264586|              2389165|                7590|\n|   BGM|        PIT|Binghamton, NY| Pittsburgh, PA|        30|  110|      1|   251.0| 199001|          264586|              2468674|                7590|\n|   BGM|        BWI|Binghamton, NY|  Baltimore, MD|       377| 3504|     24|   212.0| 199001|          264586|              2389165|                7590|\n|   BGM|        BWI|Binghamton, NY|  Baltimore, MD|      1930| 6050|     55|   212.0| 199001|          264586|              2389165|                7590|\n|   BGM|        ALB|Binghamton, NY|     Albany, NY|        39|  108|      1|   117.0| 199001|          264586|               811232|                7590|\n|   BGM|        BWI|Binghamton, NY|  Baltimore, MD|        29|   63|      1|   212.0| 199001|          264586|              2389165|                7590|\n|   BGM|        PIT|Binghamton, NY| Pittsburgh, PA|       174|  330|      3|   251.0| 199002|          264586|              2468674|                7387|\n|   BGM|        BWI|Binghamton, NY|  Baltimore, MD|      1200| 2916|     27|   212.0| 199002|          264586|              2389165|                7387|\n|   BGM|        BWI|Binghamton, NY|  Baltimore, MD|       682| 1779|     28|   212.0| 199002|          264586|              2389165|                7387|\n|   BGM|        PIT|Binghamton, NY| Pittsburgh, PA|      3259| 5616|     52|   251.0| 199002|          264586|              2468674|                7387|\n|   BGM|        BWI|Binghamton, NY|  Baltimore, MD|       680| 2640|     24|   212.0| 199002|          264586|              2389165|                7387|\n|   BGM|        PIT|Binghamton, NY| Pittsburgh, PA|      1392| 1816|     27|   251.0| 199002|          264586|              2468674|                7387|\n|   BGM|        IAD|Binghamton, NY| Washington, DC|         0| 1026|     54|   238.0| 199003|          264586|              8270942|                8288|\n|   BGM|        PIT|Binghamton, NY| Pittsburgh, PA|      1703| 3456|     32|   251.0| 199003|          264586|              2468674|                8288|\n|   BGM|        BWI|Binghamton, NY|  Baltimore, MD|       798| 1847|     29|   212.0| 199003|          264586|              2389165|                8288|\n|   BGM|        PIT|Binghamton, NY| Pittsburgh, PA|      3363| 4060|     60|   251.0| 199003|          264586|              2468674|                8288|\n|   BGM|        BWI|Binghamton, NY|  Baltimore, MD|      2389| 6480|     60|   212.0| 199003|          264586|              2389165|                8288|\n|   BGM|        BWI|Binghamton, NY|  Baltimore, MD|        35|  110|      1|   212.0| 199003|          264586|              2389165|                8288|\n+------+-----------+--------------+---------------+----------+-----+-------+--------+-------+----------------+---------------------+--------------------+\nonly showing top 20 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579774479285_-1583534955",
+      "id": "20200123-111439_636893446",
+      "dateCreated": "2020-01-23 11:14:39.286",
+      "dateStarted": "2020-01-23 11:45:49.522",
+      "dateFinished": "2020-01-23 11:45:53.237",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df4.filter(\"`Origin` \u003d \u0027BGM\u0027\").orderBy(\"FlyDate\").show",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-23 11:49:12.521",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------+-----------+--------------+---------------+----------+-----+-------+--------+-------+----------------+---------------------+--------------------+\n|Origin|Destination|    OriginCity|DestinationCity|Passengers|Seats|Flights|Distance|FlyDate|OriginPopulation|DestinationPopulation|sumOverOriginFlyDate|\n+------+-----------+--------------+---------------+----------+-----+-------+--------+-------+----------------+---------------------+--------------------+\n|   BGM|        PIT|Binghamton, NY| Pittsburgh, PA|      1266| 3796|     26|   251.0| 199001|          264586|              2468674|                7590|\n|   BGM|        ALB|Binghamton, NY|     Albany, NY|        39|  108|      1|   117.0| 199001|          264586|               811232|                7590|\n|   BGM|        PIT|Binghamton, NY| Pittsburgh, PA|      3892| 6804|     63|   251.0| 199001|          264586|              2468674|                7590|\n|   BGM|        PIT|Binghamton, NY| Pittsburgh, PA|        30|  110|      1|   251.0| 199001|          264586|              2468674|                7590|\n|   BGM|        BWI|Binghamton, NY|  Baltimore, MD|        27|  151|      1|   212.0| 199001|          264586|              2389165|                7590|\n|   BGM|        BWI|Binghamton, NY|  Baltimore, MD|        29|   63|      1|   212.0| 199001|          264586|              2389165|                7590|\n|   BGM|        BWI|Binghamton, NY|  Baltimore, MD|       377| 3504|     24|   212.0| 199001|          264586|              2389165|                7590|\n|   BGM|        BWI|Binghamton, NY|  Baltimore, MD|      1930| 6050|     55|   212.0| 199001|          264586|              2389165|                7590|\n|   BGM|        PIT|Binghamton, NY| Pittsburgh, PA|      3259| 5616|     52|   251.0| 199002|          264586|              2468674|                7387|\n|   BGM|        PIT|Binghamton, NY| Pittsburgh, PA|      1392| 1816|     27|   251.0| 199002|          264586|              2468674|                7387|\n|   BGM|        BWI|Binghamton, NY|  Baltimore, MD|      1200| 2916|     27|   212.0| 199002|          264586|              2389165|                7387|\n|   BGM|        BWI|Binghamton, NY|  Baltimore, MD|       682| 1779|     28|   212.0| 199002|          264586|              2389165|                7387|\n|   BGM|        BWI|Binghamton, NY|  Baltimore, MD|       680| 2640|     24|   212.0| 199002|          264586|              2389165|                7387|\n|   BGM|        PIT|Binghamton, NY| Pittsburgh, PA|       174|  330|      3|   251.0| 199002|          264586|              2468674|                7387|\n|   BGM|        PIT|Binghamton, NY| Pittsburgh, PA|      1703| 3456|     32|   251.0| 199003|          264586|              2468674|                8288|\n|   BGM|        IAD|Binghamton, NY| Washington, DC|         0| 1026|     54|   238.0| 199003|          264586|              8270942|                8288|\n|   BGM|        BWI|Binghamton, NY|  Baltimore, MD|       798| 1847|     29|   212.0| 199003|          264586|              2389165|                8288|\n|   BGM|        PIT|Binghamton, NY| Pittsburgh, PA|      3363| 4060|     60|   251.0| 199003|          264586|              2468674|                8288|\n|   BGM|        BWI|Binghamton, NY|  Baltimore, MD|        35|  110|      1|   212.0| 199003|          264586|              2389165|                8288|\n|   BGM|        BWI|Binghamton, NY|  Baltimore, MD|      2389| 6480|     60|   212.0| 199003|          264586|              2389165|                8288|\n+------+-----------+--------------+---------------+----------+-----+-------+--------+-------+----------------+---------------------+--------------------+\nonly showing top 20 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579775321509_-1766068364",
+      "id": "20200123-112841_1985825494",
+      "dateCreated": "2020-01-23 11:28:41.509",
+      "dateStarted": "2020-01-23 11:49:12.548",
+      "dateFinished": "2020-01-23 11:49:12.979",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df4.filter(col(\"Origin\")\u003d\u003d\u003d\"BGM\").orderBy(\"FlyDate\").show",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-23 12:22:28.423",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------+-----------+--------------+---------------+----------+-----+-------+--------+-------+----------------+---------------------+--------------------+\n|Origin|Destination|    OriginCity|DestinationCity|Passengers|Seats|Flights|Distance|FlyDate|OriginPopulation|DestinationPopulation|sumOverOriginFlyDate|\n+------+-----------+--------------+---------------+----------+-----+-------+--------+-------+----------------+---------------------+--------------------+\n|   BGM|        PIT|Binghamton, NY| Pittsburgh, PA|      3892| 6804|     63|   251.0| 199001|          264586|              2468674|                7590|\n|   BGM|        BWI|Binghamton, NY|  Baltimore, MD|        29|   63|      1|   212.0| 199001|          264586|              2389165|                7590|\n|   BGM|        ALB|Binghamton, NY|     Albany, NY|        39|  108|      1|   117.0| 199001|          264586|               811232|                7590|\n|   BGM|        PIT|Binghamton, NY| Pittsburgh, PA|        30|  110|      1|   251.0| 199001|          264586|              2468674|                7590|\n|   BGM|        BWI|Binghamton, NY|  Baltimore, MD|        27|  151|      1|   212.0| 199001|          264586|              2389165|                7590|\n|   BGM|        BWI|Binghamton, NY|  Baltimore, MD|      1930| 6050|     55|   212.0| 199001|          264586|              2389165|                7590|\n|   BGM|        PIT|Binghamton, NY| Pittsburgh, PA|      1266| 3796|     26|   251.0| 199001|          264586|              2468674|                7590|\n|   BGM|        BWI|Binghamton, NY|  Baltimore, MD|       377| 3504|     24|   212.0| 199001|          264586|              2389165|                7590|\n|   BGM|        BWI|Binghamton, NY|  Baltimore, MD|      1200| 2916|     27|   212.0| 199002|          264586|              2389165|                7387|\n|   BGM|        BWI|Binghamton, NY|  Baltimore, MD|       680| 2640|     24|   212.0| 199002|          264586|              2389165|                7387|\n|   BGM|        PIT|Binghamton, NY| Pittsburgh, PA|      1392| 1816|     27|   251.0| 199002|          264586|              2468674|                7387|\n|   BGM|        PIT|Binghamton, NY| Pittsburgh, PA|       174|  330|      3|   251.0| 199002|          264586|              2468674|                7387|\n|   BGM|        PIT|Binghamton, NY| Pittsburgh, PA|      3259| 5616|     52|   251.0| 199002|          264586|              2468674|                7387|\n|   BGM|        BWI|Binghamton, NY|  Baltimore, MD|       682| 1779|     28|   212.0| 199002|          264586|              2389165|                7387|\n|   BGM|        BWI|Binghamton, NY|  Baltimore, MD|      2389| 6480|     60|   212.0| 199003|          264586|              2389165|                8288|\n|   BGM|        BWI|Binghamton, NY|  Baltimore, MD|       798| 1847|     29|   212.0| 199003|          264586|              2389165|                8288|\n|   BGM|        IAD|Binghamton, NY| Washington, DC|         0| 1026|     54|   238.0| 199003|          264586|              8270942|                8288|\n|   BGM|        PIT|Binghamton, NY| Pittsburgh, PA|      1703| 3456|     32|   251.0| 199003|          264586|              2468674|                8288|\n|   BGM|        PIT|Binghamton, NY| Pittsburgh, PA|      3363| 4060|     60|   251.0| 199003|          264586|              2468674|                8288|\n|   BGM|        BWI|Binghamton, NY|  Baltimore, MD|        35|  110|      1|   212.0| 199003|          264586|              2389165|                8288|\n+------+-----------+--------------+---------------+----------+-----+-------+--------+-------+----------------+---------------------+--------------------+\nonly showing top 20 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579776525297_1996518814",
+      "id": "20200123-114845_362819269",
+      "dateCreated": "2020-01-23 11:48:45.297",
+      "dateStarted": "2020-01-23 12:22:28.455",
+      "dateFinished": "2020-01-23 12:22:29.050",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1579778548423_1892099988",
+      "id": "20200123-122228_1473779246",
+      "dateCreated": "2020-01-23 12:22:28.423",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Window",
+  "id": "2F1GZBQF3",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

@@ -1,0 +1,220 @@
+{
+  "paragraphs": [
+    {
+      "text": "val df \u003d spark.read.option(\"sep\",\"\\t\").csv(\"D:/AnacondaProjects/Datasets/chimps_16091-2010-08-03_17-08-31/*.tsv\")",
+      "user": "admin",
+      "dateUpdated": "2020-01-13 14:48:44.708",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "df: org.apache.spark.sql.DataFrame \u003d [_c0: string, _c1: string ... 9 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578922955706_-1693263081",
+      "id": "20200113-144235_588115375",
+      "dateCreated": "2020-01-13 14:42:35.706",
+      "dateStarted": "2020-01-13 14:48:44.719",
+      "dateFinished": "2020-01-13 14:48:45.042",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.show",
+      "user": "admin",
+      "dateUpdated": "2020-01-13 14:49:09.489",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+---+-------------+--------+----+----+---+-----+------+-------+-----+\n|_c0|_c1|          _c2|     _c3| _c4| _c5|_c6|  _c7|   _c8|    _c9| _c10|\n+---+---+-------------+--------+----+----+---+-----+------+-------+-----+\n|MHK|AMW|Manhattan, KS|Ames, IA|  21|  30|  1|254.0|200810| 122049|86219|\n|EUG|RDM|   Eugene, OR|Bend, OR|  41| 396| 22|103.0|199011| 284093|76034|\n|EUG|RDM|   Eugene, OR|Bend, OR|  88| 342| 19|103.0|199012| 284093|76034|\n|EUG|RDM|   Eugene, OR|Bend, OR|  11|  72|  4|103.0|199010| 284093|76034|\n|MFR|RDM|  Medford, OR|Bend, OR|   0|  18|  1|156.0|199002| 147300|76034|\n|MFR|RDM|  Medford, OR|Bend, OR|  11|  18|  1|156.0|199003| 147300|76034|\n|MFR|RDM|  Medford, OR|Bend, OR|   2|  72|  4|156.0|199001| 147300|76034|\n|MFR|RDM|  Medford, OR|Bend, OR|   7|  18|  1|156.0|199009| 147300|76034|\n|MFR|RDM|  Medford, OR|Bend, OR|   7|  36|  2|156.0|199011| 147300|76034|\n|SEA|RDM|  Seattle, WA|Bend, OR|   8|  18|  1|228.0|199002|5154164|76034|\n|SEA|RDM|  Seattle, WA|Bend, OR| 453|3128| 23|228.0|199001|5154164|76034|\n|SEA|RDM|  Seattle, WA|Bend, OR| 784|2720| 20|228.0|199002|5154164|76034|\n|SEA|RDM|  Seattle, WA|Bend, OR| 749|2992| 22|228.0|199003|5154164|76034|\n|SEA|RDM|  Seattle, WA|Bend, OR|  11|  18|  1|228.0|199004|5154164|76034|\n|PDX|RDM| Portland, OR|Bend, OR| 349| 851| 23|116.0|199001|1534762|76034|\n|PDX|RDM| Portland, OR|Bend, OR|1376|2898|161|116.0|199001|1534762|76034|\n|PDX|RDM| Portland, OR|Bend, OR| 444|1110| 30|116.0|199010|1534762|76034|\n|PDX|RDM| Portland, OR|Bend, OR|1949|3261|187|116.0|199006|1534762|76034|\n|PDX|RDM| Portland, OR|Bend, OR| 381| 814| 22|116.0|199002|1534762|76034|\n|PDX|RDM| Portland, OR|Bend, OR|1559|2772|154|116.0|199002|1534762|76034|\n+---+---+-------------+--------+----+----+---+-----+------+-------+-----+\nonly showing top 20 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578923301103_-1698463301",
+      "id": "20200113-144821_1156557027",
+      "dateCreated": "2020-01-13 14:48:21.103",
+      "dateStarted": "2020-01-13 14:49:09.500",
+      "dateFinished": "2020-01-13 14:49:09.739",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.write.option(\"compression\", \"gzip\").csv(\"flightData\")",
+      "user": "admin",
+      "dateUpdated": "2020-01-13 14:51:42.147",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1578923349489_123998035",
+      "id": "20200113-144909_1839325986",
+      "dateCreated": "2020-01-13 14:49:09.489",
+      "dateStarted": "2020-01-13 14:51:42.160",
+      "dateFinished": "2020-01-13 14:52:03.254",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df1 \u003d spark.read.csv(\"./flightData\")",
+      "user": "admin",
+      "dateUpdated": "2020-01-13 14:54:57.620",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "df1: org.apache.spark.sql.DataFrame \u003d [_c0: string, _c1: string ... 9 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578923502147_-1002857264",
+      "id": "20200113-145142_360246243",
+      "dateCreated": "2020-01-13 14:51:42.147",
+      "dateStarted": "2020-01-13 14:54:57.631",
+      "dateFinished": "2020-01-13 14:54:57.865",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df1.show",
+      "user": "admin",
+      "dateUpdated": "2020-01-13 14:55:03.467",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+---+-------------+--------+----+----+---+-----+------+-------+-----+\n|_c0|_c1|          _c2|     _c3| _c4| _c5|_c6|  _c7|   _c8|    _c9| _c10|\n+---+---+-------------+--------+----+----+---+-----+------+-------+-----+\n|MHK|AMW|Manhattan, KS|Ames, IA|  21|  30|  1|254.0|200810| 122049|86219|\n|EUG|RDM|   Eugene, OR|Bend, OR|  41| 396| 22|103.0|199011| 284093|76034|\n|EUG|RDM|   Eugene, OR|Bend, OR|  88| 342| 19|103.0|199012| 284093|76034|\n|EUG|RDM|   Eugene, OR|Bend, OR|  11|  72|  4|103.0|199010| 284093|76034|\n|MFR|RDM|  Medford, OR|Bend, OR|   0|  18|  1|156.0|199002| 147300|76034|\n|MFR|RDM|  Medford, OR|Bend, OR|  11|  18|  1|156.0|199003| 147300|76034|\n|MFR|RDM|  Medford, OR|Bend, OR|   2|  72|  4|156.0|199001| 147300|76034|\n|MFR|RDM|  Medford, OR|Bend, OR|   7|  18|  1|156.0|199009| 147300|76034|\n|MFR|RDM|  Medford, OR|Bend, OR|   7|  36|  2|156.0|199011| 147300|76034|\n|SEA|RDM|  Seattle, WA|Bend, OR|   8|  18|  1|228.0|199002|5154164|76034|\n|SEA|RDM|  Seattle, WA|Bend, OR| 453|3128| 23|228.0|199001|5154164|76034|\n|SEA|RDM|  Seattle, WA|Bend, OR| 784|2720| 20|228.0|199002|5154164|76034|\n|SEA|RDM|  Seattle, WA|Bend, OR| 749|2992| 22|228.0|199003|5154164|76034|\n|SEA|RDM|  Seattle, WA|Bend, OR|  11|  18|  1|228.0|199004|5154164|76034|\n|PDX|RDM| Portland, OR|Bend, OR| 349| 851| 23|116.0|199001|1534762|76034|\n|PDX|RDM| Portland, OR|Bend, OR|1376|2898|161|116.0|199001|1534762|76034|\n|PDX|RDM| Portland, OR|Bend, OR| 444|1110| 30|116.0|199010|1534762|76034|\n|PDX|RDM| Portland, OR|Bend, OR|1949|3261|187|116.0|199006|1534762|76034|\n|PDX|RDM| Portland, OR|Bend, OR| 381| 814| 22|116.0|199002|1534762|76034|\n|PDX|RDM| Portland, OR|Bend, OR|1559|2772|154|116.0|199002|1534762|76034|\n+---+---+-------------+--------+----+----+---+-----+------+-------+-----+\nonly showing top 20 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578923688694_-421878939",
+      "id": "20200113-145448_508058406",
+      "dateCreated": "2020-01-13 14:54:48.694",
+      "dateStarted": "2020-01-13 14:55:03.481",
+      "dateFinished": "2020-01-13 14:55:03.700",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "admin",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1578923703467_255130813",
+      "id": "20200113-145503_679822822",
+      "dateCreated": "2020-01-13 14:55:03.468",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Load-zipped-save-zipped",
+  "id": "2EZNP5QVJ",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

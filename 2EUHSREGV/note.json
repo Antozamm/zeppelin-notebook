@@ -1,0 +1,2323 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\nScarichiamo il dataset sulle centrali elettriche mondiali dal sito [datasets.wri.org](http://datasets.wri.org/dataset/globalpowerplantdatabase).\n\nPer leggere i dati dal file csv possiamo importare i dati in un RDD, e poi convertire il RDD in un DataFrame.",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 08:21:35.308",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eScarichiamo il dataset sulle centrali elettriche mondiali dal sito \u003ca href\u003d\"http://datasets.wri.org/dataset/globalpowerplantdatabase\"\u003edatasets.wri.org\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003ePer leggere i dati dal file csv possiamo importare i dati in un RDD, e poi convertire il RDD in un DataFrame.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575233195023_385007770",
+      "id": "20191201-214635_79899124",
+      "dateCreated": "2019-12-01 21:46:35.023",
+      "dateStarted": "2019-12-05 08:21:35.308",
+      "dateFinished": "2019-12-05 08:21:35.313",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val data \u003d sc.textFile(\"globalpowerplantdatabasev120/global_power_plant_database.csv\")",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:14:26.691",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "data: org.apache.spark.rdd.RDD[String] \u003d globalpowerplantdatabasev120/global_power_plant_database.csv MapPartitionsRDD[1] at textFile at \u003cconsole\u003e:25\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575233048855_1460439028",
+      "id": "20191201-214408_249173080",
+      "dateCreated": "2019-12-01 21:44:08.855",
+      "dateStarted": "2019-12-05 06:14:26.973",
+      "dateFinished": "2019-12-05 06:14:39.767",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nIl dataset consta di 29911 righe",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 08:21:58.276",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eIl dataset consta di 29911 righe\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575233172735_1160193289",
+      "id": "20191201-214612_1874979361",
+      "dateCreated": "2019-12-01 21:46:12.735",
+      "dateStarted": "2019-12-05 08:21:58.276",
+      "dateFinished": "2019-12-05 08:21:58.280",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "data.count()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:14:41.501",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res2: Long \u003d 29911\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575242930477_1103952607",
+      "id": "20191202-002850_271206334",
+      "dateCreated": "2019-12-02 00:28:50.477",
+      "dateStarted": "2019-12-05 06:14:41.674",
+      "dateFinished": "2019-12-05 06:14:42.358",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nStampiamo i primi 5 elementi del RDD",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 08:23:12.595",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eStampiamo i primi 5 elementi del RDD\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575530554146_1431520260",
+      "id": "20191205-082234_760779531",
+      "dateCreated": "2019-12-05 08:22:34.146",
+      "dateStarted": "2019-12-05 08:23:12.595",
+      "dateFinished": "2019-12-05 08:23:12.598",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "data.take(5).foreach(println)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 08:22:18.783",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "country,country_long,name,gppd_idnr,capacity_mw,latitude,longitude,primary_fuel,other_fuel1,other_fuel2,other_fuel3,commissioning_year,owner,source,url,geolocation_source,wepp_id,year_of_capacity_data,generation_gwh_2013,generation_gwh_2014,generation_gwh_2015,generation_gwh_2016,generation_gwh_2017,estimated_generation_gwh\r\nAFG,Afghanistan,Kajaki Hydroelectric Power Plant Afghanistan,GEODB0040538,33.0,32.3220,65.1190,Hydro,,,,,,GEODB,http://globalenergyobservatory.org,GEODB,1009793,2017,,,,,,\r\nAFG,Afghanistan,Mahipar Hydroelectric Power Plant Afghanistan,GEODB0040541,66.0,34.5560,69.4787,Hydro,,,,,,GEODB,http://globalenergyobservatory.org,GEODB,1009795,2017,,,,,,\r\nAFG,Afghanistan,Naghlu Dam Hydroelectric Power Plant Afghanistan,GEODB0040534,100.0,34.6410,69.7170,Hydro,,,,,,GEODB,http://globalenergyobservatory.org,GEODB,1009797,2017,,,,,,\r\nAFG,Afghanistan,Nangarhar (Darunta) Hydroelectric Power Plant Afghanistan,GEODB0040536,11.55,34.4847,70.3633,Hydro,,,,,,GEODB,http://globalenergyobservatory.org,GEODB,1009787,2017,,,,,,\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575234017621_-1708517116",
+      "id": "20191201-220017_1290540198",
+      "dateCreated": "2019-12-01 22:00:17.621",
+      "dateStarted": "2019-12-05 08:22:18.827",
+      "dateFinished": "2019-12-05 08:22:19.053",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nCome si vede la prima riga contiene l\u0027header del file csv, ovvero i nomi di ciascuna colonna del file csv.\n\nSiccome vogliamo un RDD di soli dati numerici devo eliminare la prima colonna.\n\nPer fare ciò uso il metodo **filter()**, definendo un filtro che cattura tutti gli elementi tranne la prima stringa contenuta nella prima riga.\n\nInizio col definire una variabile contenente la stringa della prima riga usando il metodo **first()**",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:14:43.517",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eCome si vede la prima riga contiene l\u0026rsquo;header del file csv, ovvero i nomi di ciascuna colonna del file csv.\u003c/p\u003e\n\u003cp\u003eSiccome vogliamo un RDD di soli dati numerici devo eliminare la prima colonna.\u003c/p\u003e\n\u003cp\u003ePer fare ciò uso il metodo \u003cstrong\u003efilter()\u003c/strong\u003e, definendo un filtro che cattura tutti gli elementi tranne la prima stringa contenuta nella prima riga.\u003c/p\u003e\n\u003cp\u003eInizio col definire una variabile contenente la stringa della prima riga usando il metodo \u003cstrong\u003efirst()\u003c/strong\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575293346261_-387994335",
+      "id": "20191202-142906_1740898142",
+      "dateCreated": "2019-12-02 14:29:06.261",
+      "dateStarted": "2019-12-05 06:14:43.684",
+      "dateFinished": "2019-12-05 06:14:43.718",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val dataheader \u003d data.first()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:14:43.783",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "dataheader: String \u003d country,country_long,name,gppd_idnr,capacity_mw,latitude,longitude,primary_fuel,other_fuel1,other_fuel2,other_fuel3,commissioning_year,owner,source,url,geolocation_source,wepp_id,year_of_capacity_data,generation_gwh_2013,generation_gwh_2014,generation_gwh_2015,generation_gwh_2016,generation_gwh_2017,estimated_generation_gwh\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575234056651_886482691",
+      "id": "20191201-220056_2105282125",
+      "dateCreated": "2019-12-01 22:00:56.651",
+      "dateStarted": "2019-12-05 06:14:43.980",
+      "dateFinished": "2019-12-05 06:14:44.349",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nAdesso filtro tutti gli elementi che soddisfano la condizione **x !\u003d dataheader**, questi elementi sono inclusi nel nuovo RDD",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:14:44.380",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eAdesso filtro tutti gli elementi che soddisfano la condizione \u003cstrong\u003ex !\u003d dataheader\u003c/strong\u003e, questi elementi sono inclusi nel nuovo RDD\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575293342692_708678822",
+      "id": "20191202-142902_2096090107",
+      "dateCreated": "2019-12-02 14:29:02.692",
+      "dateStarted": "2019-12-05 06:14:44.509",
+      "dateFinished": "2019-12-05 06:14:44.532",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val data_no_header \u003d data.filter(x \u003d\u003e (x !\u003d dataheader))",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:14:44.609",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "data_no_header: org.apache.spark.rdd.RDD[String] \u003d MapPartitionsRDD[5] at filter at \u003cconsole\u003e:29\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575235783115_923865695",
+      "id": "20191201-222943_546130858",
+      "dateCreated": "2019-12-01 22:29:43.115",
+      "dateStarted": "2019-12-05 06:14:44.729",
+      "dateFinished": "2019-12-05 06:14:45.343",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nCome possiamo vedere il primo elemento del nuovo RDD non contiene più l\u0027header ma i dati del dataset",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:14:45.431",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eCome possiamo vedere il primo elemento del nuovo RDD non contiene più l\u0026rsquo;header ma i dati del dataset\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575294342301_1470470052",
+      "id": "20191202-144542_1289691035",
+      "dateCreated": "2019-12-02 14:45:42.301",
+      "dateStarted": "2019-12-05 06:14:45.497",
+      "dateFinished": "2019-12-05 06:14:45.507",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "data_no_header.first()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:14:45.596",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res4: String \u003d AFG,Afghanistan,Kajaki Hydroelectric Power Plant Afghanistan,GEODB0040538,33.0,32.3220,65.1190,Hydro,,,,,,GEODB,http://globalenergyobservatory.org,GEODB,1009793,2017,,,,,,\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575235817311_214166964",
+      "id": "20191201-223017_2113288087",
+      "dateCreated": "2019-12-01 22:30:17.311",
+      "dateStarted": "2019-12-05 06:14:45.669",
+      "dateFinished": "2019-12-05 06:14:45.990",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "data_no_header.take(1)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:14:46.070",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res5: Array[String] \u003d Array(AFG,Afghanistan,Kajaki Hydroelectric Power Plant Afghanistan,GEODB0040538,33.0,32.3220,65.1190,Hydro,,,,,,GEODB,http://globalenergyobservatory.org,GEODB,1009793,2017,,,,,,)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575243078184_-812457598",
+      "id": "20191202-003118_1919192121",
+      "dateCreated": "2019-12-02 00:31:18.184",
+      "dateStarted": "2019-12-05 06:14:46.144",
+      "dateFinished": "2019-12-05 06:14:46.570",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nSi può vedere sotto che ciascun elemento del RDD è una lunga stringa, contenente i dati separati da una virgola.",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 08:25:51.046",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eSi può vedere sotto che ciascun elemento del RDD è una lunga stringa, contenente i dati separati da una virgola.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575243170683_1282653005",
+      "id": "20191202-003250_1797908175",
+      "dateCreated": "2019-12-02 00:32:50.683",
+      "dateStarted": "2019-12-05 08:25:51.047",
+      "dateFinished": "2019-12-05 08:25:51.051",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "data_no_header.take(1)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:14:47.635",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res7: Array[String] \u003d Array(AFG,Afghanistan,Kajaki Hydroelectric Power Plant Afghanistan,GEODB0040538,33.0,32.3220,65.1190,Hydro,,,,,,GEODB,http://globalenergyobservatory.org,GEODB,1009793,2017,,,,,,)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575295363829_-1115014261",
+      "id": "20191202-150243_1143496609",
+      "dateCreated": "2019-12-02 15:02:43.829",
+      "dateStarted": "2019-12-05 06:14:47.700",
+      "dateFinished": "2019-12-05 06:14:47.954",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nAdesso voglio separare i dati contenuti nelle stringhe. Inizio con l\u0027usare il metodo **split()** su ciascuna stringa. Il risultato è che ogni stringa è convertita in un Array di stringhe.",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 08:27:01.973",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 53.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eAdesso voglio separare i dati contenuti nelle stringhe. Inizio con l\u0026rsquo;usare il metodo \u003cstrong\u003esplit()\u003c/strong\u003e su ciascuna stringa. Il risultato è che ogni stringa è convertita in un Array di stringhe.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575295374530_-1862793636",
+      "id": "20191202-150254_548823022",
+      "dateCreated": "2019-12-02 15:02:54.530",
+      "dateStarted": "2019-12-05 08:27:01.973",
+      "dateFinished": "2019-12-05 08:27:01.977",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val data_array \u003d data_no_header.map(x \u003d\u003e x.split(\u0027,\u0027))\ndata_array.take(1)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:14:48.205",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "data_array: org.apache.spark.rdd.RDD[Array[String]] \u003d MapPartitionsRDD[9] at map at \u003cconsole\u003e:31\r\nres8: Array[Array[String]] \u003d Array(Array(AFG, Afghanistan, Kajaki Hydroelectric Power Plant Afghanistan, GEODB0040538, 33.0, 32.3220, 65.1190, Hydro, \"\", \"\", \"\", \"\", \"\", GEODB, http://globalenergyobservatory.org, GEODB, 1009793, 2017))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575295814363_-891429458",
+      "id": "20191202-151014_1208019031",
+      "dateCreated": "2019-12-02 15:10:14.363",
+      "dateStarted": "2019-12-05 06:14:48.273",
+      "dateFinished": "2019-12-05 06:14:48.844",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Problema\n\nSupponiamo di volere calcolare il dato della produzione totale annuale di energia in Italia.\n\nPer sapere cosa sono i dati nell\u0027array posso fare riferimento al valore precedentemente definito *dataheader*.\n\nScopriamo che i dati che ci interessano sono nel primo campo ( *country*), nell\u0027ottavo ( *primary_fuel*) e nel 24-esimo ( *estimated_generation_gwh*). Si ricordi comunque che in Scala il primo elemento dell\u0027Array ha posizione 0.",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 10:35:37.623",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eProblema\u003c/h2\u003e\n\u003cp\u003eSupponiamo di volere calcolare il dato della produzione totale annuale di energia in Italia.\u003c/p\u003e\n\u003cp\u003ePer sapere cosa sono i dati nell\u0026rsquo;array posso fare riferimento al valore precedentemente definito \u003cem\u003edataheader\u003c/em\u003e.\u003c/p\u003e\n\u003cp\u003eScopriamo che i dati che ci interessano sono nel primo campo ( \u003cem\u003ecountry\u003c/em\u003e), nell\u0026rsquo;ottavo ( \u003cem\u003eprimary_fuel\u003c/em\u003e) e nel 24-esimo ( \u003cem\u003eestimated_generation_gwh\u003c/em\u003e). Si ricordi comunque che in Scala il primo elemento dell\u0026rsquo;Array ha posizione 0.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575296011560_-254763528",
+      "id": "20191202-151331_1486030913",
+      "dateCreated": "2019-12-02 15:13:31.560",
+      "dateStarted": "2019-12-05 10:35:37.623",
+      "dateFinished": "2019-12-05 10:35:37.629",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "dataheader",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:14:49.061",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res9: String \u003d country,country_long,name,gppd_idnr,capacity_mw,latitude,longitude,primary_fuel,other_fuel1,other_fuel2,other_fuel3,commissioning_year,owner,source,url,geolocation_source,wepp_id,year_of_capacity_data,generation_gwh_2013,generation_gwh_2014,generation_gwh_2015,generation_gwh_2016,generation_gwh_2017,estimated_generation_gwh\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575298038249_569442068",
+      "id": "20191202-154718_1435942342",
+      "dateCreated": "2019-12-02 15:47:18.249",
+      "dateStarted": "2019-12-05 06:14:49.115",
+      "dateFinished": "2019-12-05 06:14:49.338",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nInizio con il filtrare tutte e solo le righe in cui il primo elemento dell\u0027array contiene il codice country\u003d\u0027ITA\u0027. ",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 10:34:37.546",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eInizio con il filtrare tutte e solo le righe in cui il primo elemento dell\u0026rsquo;array contiene il codice country\u003d\u0026lsquo;ITA\u0026rsquo;.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575298080313_-1209878337",
+      "id": "20191202-154800_1847115384",
+      "dateCreated": "2019-12-02 15:48:00.313",
+      "dateStarted": "2019-12-05 10:34:37.546",
+      "dateFinished": "2019-12-05 10:34:37.550",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val data_ita \u003d data_array.filter(x \u003d\u003e x(0) \u003d\u003d \"ITA\")\ndata_ita.take(2)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:14:49.572",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "data_ita: org.apache.spark.rdd.RDD[Array[String]] \u003d MapPartitionsRDD[10] at filter at \u003cconsole\u003e:33\r\nres10: Array[Array[String]] \u003d Array(Array(ITA, Italy, ACCEGLIO, WRI1021706, 19.0, 44.4742, 7.0183, Hydro, \"\", \"\", \"\", \"\", \"\", ENTSOE, https://transparency.entsoe.eu/generation/r2/installedCapacityPerProductionUnit/show, WRI, 1015906, \"\", \"\", \"\", \"\", \"\", \"\", 85.53859855441274), Array(ITA, Italy, ACERRA, WRI1021322, 72.0, 40.9319, 14.3850, Other, \"\", \"\", \"\", \"\", \"\", ENTSOE, https://transparency.entsoe.eu/generation/r2/installedCapacityPerProductionUnit/show, GEODB, 1053275|1067259, \"\", \"\", \"\", \"\", \"\", \"\", 123.74414976599063))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575296829770_-1379226443",
+      "id": "20191202-152709_1578261837",
+      "dateCreated": "2019-12-02 15:27:09.770",
+      "dateStarted": "2019-12-05 06:14:49.623",
+      "dateFinished": "2019-12-05 06:14:49.960",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nSi noti che il motivo per cui ho filtrato i dati sopra è quello di ridurre il dataset al minimo indispensabile, cioè ai dati relativi solo all\u0027Italia e ai campi che ci servono. In questo modo il lavoro del cluster è semplificato e velocizzato, poiché ci sono meno dati da spostare nella rete. \n\nAdesso posso selezionare solamente la colonna di dati che mi interessa quella con i valori della produzione energetica, colonna numero 24",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 10:36:09.911",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eSi noti che il motivo per cui ho filtrato i dati sopra è quello di ridurre il dataset al minimo indispensabile, cioè ai dati relativi solo all\u0026rsquo;Italia e ai campi che ci servono. In questo modo il lavoro del cluster è semplificato e velocizzato, poiché ci sono meno dati da spostare nella rete. \u003c/p\u003e\n\u003cp\u003eAdesso posso selezionare solamente la colonna di dati che mi interessa quella con i valori della produzione energetica, colonna numero 24\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575301602128_1339838706",
+      "id": "20191202-164642_860431816",
+      "dateCreated": "2019-12-02 16:46:42.128",
+      "dateStarted": "2019-12-05 10:36:09.911",
+      "dateFinished": "2019-12-05 10:36:09.916",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val data_ita_keyvalue \u003d data_ita.map(x \u003d\u003e (x(0), x(23).toDouble))",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:14:50.190",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "data_ita_keyvalue: org.apache.spark.rdd.RDD[(String, Double)] \u003d MapPartitionsRDD[11] at map at \u003cconsole\u003e:35\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575301566937_1911746762",
+      "id": "20191202-164606_2052055759",
+      "dateCreated": "2019-12-02 16:46:06.938",
+      "dateStarted": "2019-12-05 06:14:50.252",
+      "dateFinished": "2019-12-05 06:14:50.883",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nIl risultato della mappatura precedente è un RDD di coppie (chiave, valore) o *(key, value)*. Un RDD di coppie *(key, value)* ha una serie di mtodi dedicati, tra cui **reduceByKey()**.\n\nAdesso applico il metodo **reduceByKey()** sulle coppie *(chiave, valore)* del RDD. Questo metodo seleziona tutti gli elementi aventi la stessa chiave e sui corrispondenti valori applica la funzione che indico come argomento del metodo. Nel codice sotto **a** e **b** sono i valori di due diverse coppie (chiave, valore), quindi **a** e **b** sono scalari che posso sommare tra loro.",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 10:39:13.828",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eIl risultato della mappatura precedente è un RDD di coppie (chiave, valore) o \u003cem\u003e(key, value)\u003c/em\u003e. Un RDD di coppie \u003cem\u003e(key, value)\u003c/em\u003e ha una serie di mtodi dedicati, tra cui \u003cstrong\u003ereduceByKey()\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003eAdesso applico il metodo \u003cstrong\u003ereduceByKey()\u003c/strong\u003e sulle coppie \u003cem\u003e(chiave, valore)\u003c/em\u003e del RDD. Questo metodo seleziona tutti gli elementi aventi la stessa chiave e sui corrispondenti valori applica la funzione che indico come argomento del metodo. Nel codice sotto \u003cstrong\u003ea\u003c/strong\u003e e \u003cstrong\u003eb\u003c/strong\u003e sono i valori di due diverse coppie (chiave, valore), quindi \u003cstrong\u003ea\u003c/strong\u003e e \u003cstrong\u003eb\u003c/strong\u003e sono scalari che posso sommare tra loro.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575301167130_-1332456002",
+      "id": "20191202-163927_2001901954",
+      "dateCreated": "2019-12-02 16:39:27.130",
+      "dateStarted": "2019-12-05 10:39:13.828",
+      "dateFinished": "2019-12-05 10:39:13.835",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val somma_produzione \u003d data_ita_keyvalue.reduceByKey( (a,b) \u003d\u003e a+b ).collect()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:14:51.106",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "somma_produzione: Array[(String, Double)] \u003d Array((ITA,258640.99999999994))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575296900128_-1531188754",
+      "id": "20191202-152820_1744700337",
+      "dateCreated": "2019-12-02 15:28:20.128",
+      "dateStarted": "2019-12-05 06:14:51.161",
+      "dateFinished": "2019-12-05 06:14:52.192",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Domanda\nMa quanto è la produzione di energia in Italia?",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 10:39:32.352",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eDomanda\u003c/h3\u003e\n\u003cp\u003eMa quanto è la produzione di energia in Italia?\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575305972135_-1516100070",
+      "id": "20191202-175932_1000417631",
+      "dateCreated": "2019-12-02 17:59:32.135",
+      "dateStarted": "2019-12-05 10:39:32.353",
+      "dateFinished": "2019-12-05 10:39:32.357",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val somma \u003d somma_produzione(0)._2\nprintln(f\"La produzione stimata di energia elettrica totale in Italia è di $somma%.2f GWh\")",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 10:39:50.828",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "La produzione stimata di energia elettrica totale in Italia è di 258641.00 GWh\r\nsomma: Double \u003d 258640.99999999994\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575299484556_-1344950499",
+      "id": "20191202-161124_438345999",
+      "dateCreated": "2019-12-02 16:11:24.556",
+      "dateStarted": "2019-12-05 10:39:50.874",
+      "dateFinished": "2019-12-05 10:39:51.106",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n## Aggregazione dei dati\n\nNaturalmente avrei potuto decidere di lavorare su tutto il dataset senza restringere il RDD ai dati relativi all\u0027Italia. In questo modo posso avere il dato aggregato della produzione di energia per ogni stato del database. Vediamo come procedere.\n\nInnanzitutto con una **map()** seleziono solo i dati delle colonne *country* e *estimated_generation_gwh*  e al contempo converto le stringhe di x(23) in double usando il metodo **toDouble()**. Il risulato sarà un RDD di coppie (chiave, valore).",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 10:42:22.791",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eAggregazione dei dati\u003c/h2\u003e\n\u003cp\u003eNaturalmente avrei potuto decidere di lavorare su tutto il dataset senza restringere il RDD ai dati relativi all\u0026rsquo;Italia. In questo modo posso avere il dato aggregato della produzione di energia per ogni stato del database. Vediamo come procedere.\u003c/p\u003e\n\u003cp\u003eInnanzitutto con una \u003cstrong\u003emap()\u003c/strong\u003e seleziono solo i dati delle colonne \u003cem\u003ecountry\u003c/em\u003e e \u003cem\u003eestimated_generation_gwh\u003c/em\u003e e al contempo converto le stringhe di x(23) in double usando il metodo \u003cstrong\u003etoDouble()\u003c/strong\u003e. Il risulato sarà un RDD di coppie (chiave, valore).\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575304843805_859949676",
+      "id": "20191202-174043_937491198",
+      "dateCreated": "2019-12-02 17:40:43.805",
+      "dateStarted": "2019-12-05 10:42:22.791",
+      "dateFinished": "2019-12-05 10:42:22.800",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val data_kv \u003d data_array.map(x \u003d\u003e (x(0), x(23).toDouble))",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 10:42:27.268",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "data_kv: org.apache.spark.rdd.RDD[(String, Double)] \u003d MapPartitionsRDD[56] at map at \u003cconsole\u003e:33\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575305626722_742830955",
+      "id": "20191202-175346_1866297325",
+      "dateCreated": "2019-12-02 17:53:46.722",
+      "dateStarted": "2019-12-05 10:42:27.311",
+      "dateFinished": "2019-12-05 10:42:27.541",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nVediamo la prima coppia *(chiave, valore)* cosa contiene",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 10:42:36.035",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eVediamo la prima coppia \u003cem\u003e(chiave, valore)\u003c/em\u003e cosa contiene\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575325219462_-1515166214",
+      "id": "20191202-232019_1992745906",
+      "dateCreated": "2019-12-02 23:20:19.462",
+      "dateStarted": "2019-12-05 10:42:36.035",
+      "dateFinished": "2019-12-05 10:42:36.039",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "data_kv.take(1)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 10:42:39.937",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 144.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 131.0 failed 1 times, most recent failure: Lost task 0.0 in stage 131.0 (TID 79, localhost, executor driver): java.lang.ArrayIndexOutOfBoundsException: 23\r\n\tat $anonfun$1.apply(\u003cconsole\u003e:33)\r\n\tat $anonfun$1.apply(\u003cconsole\u003e:33)\r\n\tat scala.collection.Iterator$$anon$11.next(Iterator.scala:409)\r\n\tat scala.collection.Iterator$$anon$10.next(Iterator.scala:393)\r\n\tat scala.collection.Iterator$class.foreach(Iterator.scala:893)\r\n\tat scala.collection.AbstractIterator.foreach(Iterator.scala:1336)\r\n\tat scala.collection.generic.Growable$class.$plus$plus$eq(Growable.scala:59)\r\n\tat scala.collection.mutable.ArrayBuffer.$plus$plus$eq(ArrayBuffer.scala:104)\r\n\tat scala.collection.mutable.ArrayBuffer.$plus$plus$eq(ArrayBuffer.scala:48)\r\n\tat scala.collection.TraversableOnce$class.to(TraversableOnce.scala:310)\r\n\tat scala.collection.AbstractIterator.to(Iterator.scala:1336)\r\n\tat scala.collection.TraversableOnce$class.toBuffer(TraversableOnce.scala:302)\r\n\tat scala.collection.AbstractIterator.toBuffer(Iterator.scala:1336)\r\n\tat scala.collection.TraversableOnce$class.toArray(TraversableOnce.scala:289)\r\n\tat scala.collection.AbstractIterator.toArray(Iterator.scala:1336)\r\n\tat org.apache.spark.rdd.RDD$$anonfun$take$1$$anonfun$29.apply(RDD.scala:1354)\r\n\tat org.apache.spark.rdd.RDD$$anonfun$take$1$$anonfun$29.apply(RDD.scala:1354)\r\n\tat org.apache.spark.SparkContext$$anonfun$runJob$5.apply(SparkContext.scala:2069)\r\n\tat org.apache.spark.SparkContext$$anonfun$runJob$5.apply(SparkContext.scala:2069)\r\n\tat org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)\r\n\tat org.apache.spark.scheduler.Task.run(Task.scala:108)\r\n\tat org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:338)\r\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)\r\n\tat java.lang.Thread.run(Unknown Source)\r\n\r\nDriver stacktrace:\r\n  at org.apache.spark.scheduler.DAGScheduler.org$apache$spark$scheduler$DAGScheduler$$failJobAndIndependentStages(DAGScheduler.scala:1517)\r\n  at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1505)\r\n  at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1504)\r\n  at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)\r\n  at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)\r\n  at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:1504)\r\n  at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:814)\r\n  at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:814)\r\n  at scala.Option.foreach(Option.scala:257)\r\n  at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:814)\r\n  at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:1732)\r\n  at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:1687)\r\n  at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:1676)\r\n  at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:48)\r\n  at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:630)\r\n  at org.apache.spark.SparkContext.runJob(SparkContext.scala:2029)\r\n  at org.apache.spark.SparkContext.runJob(SparkContext.scala:2050)\r\n  at org.apache.spark.SparkContext.runJob(SparkContext.scala:2069)\r\n  at org.apache.spark.rdd.RDD$$anonfun$take$1.apply(RDD.scala:1354)\r\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)\r\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)\r\n  at org.apache.spark.rdd.RDD.withScope(RDD.scala:362)\r\n  at org.apache.spark.rdd.RDD.take(RDD.scala:1327)\r\n  ... 47 elided\r\nCaused by: java.lang.ArrayIndexOutOfBoundsException: 23\r\n  at $anonfun$1.apply(\u003cconsole\u003e:33)\r\n  at $anonfun$1.apply(\u003cconsole\u003e:33)\r\n  at scala.collection.Iterator$$anon$11.next(Iterator.scala:409)\r\n  at scala.collection.Iterator$$anon$10.next(Iterator.scala:393)\r\n  at scala.collection.Iterator$class.foreach(Iterator.scala:893)\r\n  at scala.collection.AbstractIterator.foreach(Iterator.scala:1336)\r\n  at scala.collection.generic.Growable$class.$plus$plus$eq(Growable.scala:59)\r\n  at scala.collection.mutable.ArrayBuffer.$plus$plus$eq(ArrayBuffer.scala:104)\r\n  at scala.collection.mutable.ArrayBuffer.$plus$plus$eq(ArrayBuffer.scala:48)\r\n  at scala.collection.TraversableOnce$class.to(TraversableOnce.scala:310)\r\n  at scala.collection.AbstractIterator.to(Iterator.scala:1336)\r\n  at scala.collection.TraversableOnce$class.toBuffer(TraversableOnce.scala:302)\r\n  at scala.collection.AbstractIterator.toBuffer(Iterator.scala:1336)\r\n  at scala.collection.TraversableOnce$class.toArray(TraversableOnce.scala:289)\r\n  at scala.collection.AbstractIterator.toArray(Iterator.scala:1336)\r\n  at org.apache.spark.rdd.RDD$$anonfun$take$1$$anonfun$29.apply(RDD.scala:1354)\r\n  at org.apache.spark.rdd.RDD$$anonfun$take$1$$anonfun$29.apply(RDD.scala:1354)\r\n  at org.apache.spark.SparkContext$$anonfun$runJob$5.apply(SparkContext.scala:2069)\r\n  at org.apache.spark.SparkContext$$anonfun$runJob$5.apply(SparkContext.scala:2069)\r\n  at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)\r\n  at org.apache.spark.scheduler.Task.run(Task.scala:108)\r\n  at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:338)\r\n  ... 3 more\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575315303452_-1118030315",
+      "id": "20191202-203503_1806272136",
+      "dateCreated": "2019-12-02 20:35:03.452",
+      "dateStarted": "2019-12-05 10:42:39.980",
+      "dateFinished": "2019-12-05 10:42:40.452",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nCome si vede ottengo un errore, precisamente **java.lang.ArrayIndexOutOfBoundsException**. Stranamente non avevo ricevuto lo stesso errore quando ho usato la stessa procedura per i dati dell\u0027Italia.\n\nDopo un po di investigazioni mi accorgo che il problema sta nel fatto che l\u0027ultimo campo ( x(23) ) alla fine di alcune righe è vuoto perché la funzione **split()**, che abbiamo usato per convertire la stringa singola letta dal file, non converte i campi vuoti alla fine della stringa. Ovvero:\n\n`split(\"AFG, 100, 12500,,,,\")`\n\nviene convertito in\n\n`Array[String] \u003d [\"AFG\", \"100\", \"12500\"]`\n\nPer fare in modo che la conversione contenga anche i campi vuoti devo usare un secondo parametro in **split()** ovvero:\n\n`split(\"AFG, 100, 12500,,,,\", -1)`\n\nviene convertito in \n\n`Array[String] \u003d [\"AFG\", \"100\", \"12500\", \"\", \"\", \"\", \"\"]`\n\nesattamente ciò di cui abbiamo bisogno per evitare l\u0027errore **ArrayIndexOutOfBoundsException**.",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 10:44:03.712",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eCome si vede ottengo un errore, precisamente \u003cstrong\u003ejava.lang.ArrayIndexOutOfBoundsException\u003c/strong\u003e. Stranamente non avevo ricevuto lo stesso errore quando ho usato la stessa procedura per i dati dell\u0026rsquo;Italia.\u003c/p\u003e\n\u003cp\u003eDopo un po di investigazioni mi accorgo che il problema sta nel fatto che l\u0026rsquo;ultimo campo ( x(23) ) alla fine di alcune righe è vuoto perché la funzione \u003cstrong\u003esplit()\u003c/strong\u003e, che abbiamo usato per convertire la stringa singola letta dal file, non converte i campi vuoti alla fine della stringa. Ovvero:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003esplit(\u0026quot;AFG, 100, 12500,,,,\u0026quot;)\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eviene convertito in\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eArray[String] \u003d [\u0026quot;AFG\u0026quot;, \u0026quot;100\u0026quot;, \u0026quot;12500\u0026quot;]\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003ePer fare in modo che la conversione contenga anche i campi vuoti devo usare un secondo parametro in \u003cstrong\u003esplit()\u003c/strong\u003e ovvero:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003esplit(\u0026quot;AFG, 100, 12500,,,,\u0026quot;, -1)\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eviene convertito in \u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eArray[String] \u003d [\u0026quot;AFG\u0026quot;, \u0026quot;100\u0026quot;, \u0026quot;12500\u0026quot;, \u0026quot;\u0026quot;, \u0026quot;\u0026quot;, \u0026quot;\u0026quot;, \u0026quot;\u0026quot;]\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eesattamente ciò di cui abbiamo bisogno per evitare l\u0026rsquo;errore \u003cstrong\u003eArrayIndexOutOfBoundsException\u003c/strong\u003e.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575325295942_1879823511",
+      "id": "20191202-232135_1079055390",
+      "dateCreated": "2019-12-02 23:21:35.942",
+      "dateStarted": "2019-12-05 10:44:03.712",
+      "dateFinished": "2019-12-05 10:44:03.721",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "data_no_header.map(x \u003d\u003e x.split(\",\", -1)).map(x \u003d\u003e (x(0), x(23))).collect()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 10:44:43.001",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 144.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res110: Array[(String, String)] \u003d Array((AFG,\"\"), (AFG,\"\"), (AFG,\"\"), (AFG,\"\"), (AFG,\"\"), (AFG,\"\"), (AFG,\"\"), (ALB,89.13207547169812), (ALB,1650.5939902166317), (ALB,1980.712788259958), (ALB,16.50593990216632), (ALB,79.22851153039832), (ALB,82.52969951083159), (ALB,825.2969951083159), (ALB,0.0), (DZA,2152.249818828645), (DZA,293.8648791092957), (DZA,2317.807497200079), (DZA,413.8941959285856), (DZA,1862.523881678635), (DZA,1862.523881678635), (DZA,1208.57105211147), (DZA,4966.730351143026), (DZA,1730.0777389814875), (DZA,298.0038210685816), (DZA,2483.365175571513), (DZA,827.7883918571712), (DZA,2036.3594439686408), (DZA,254.0), (DZA,2433.697872060083), (DZA,1427.93497595362), (DZA,4966.730351143026), (DZA,1639.0210158771988), (DZA,3476.711245800119), (DZA,761.5653205085974), (DZA,4056.1..."
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575311626159_827971120",
+      "id": "20191202-193346_738072400",
+      "dateCreated": "2019-12-02 19:33:46.159",
+      "dateStarted": "2019-12-05 10:44:43.044",
+      "dateFinished": "2019-12-05 10:44:43.423",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nCome si vede ottengo un array di coppie (stringa, stringa), ma se voglio fare operazioni matematiche sul secondo elemento della coppia devo convertire quest\u0027ultimo in un valore numerico.\n\nPer la conversione della stringa normalmente basterebbe usare il metodo **String.toDouble()**. \nMa a causa del fatto che ci sono stringhe vuote, il metodo toDouble() sulla stringa vuota darebbe errore.\n\nAllora definiamo una funzione che riceve in ingresso una stringa, converte il suo contenuto in Double, usando il metodo **toDouble()**, e in caso la stringa sia vuota ritorna il valore 0.",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 10:47:06.882",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eCome si vede ottengo un array di coppie (stringa, stringa), ma se voglio fare operazioni matematiche sul secondo elemento della coppia devo convertire quest\u0026rsquo;ultimo in un valore numerico.\u003c/p\u003e\n\u003cp\u003ePer la conversione della stringa normalmente basterebbe usare il metodo \u003cstrong\u003eString.toDouble()\u003c/strong\u003e.\u003cbr/\u003eMa a causa del fatto che ci sono stringhe vuote, il metodo toDouble() sulla stringa vuota darebbe errore.\u003c/p\u003e\n\u003cp\u003eAllora definiamo una funzione che riceve in ingresso una stringa, converte il suo contenuto in Double, usando il metodo \u003cstrong\u003etoDouble()\u003c/strong\u003e, e in caso la stringa sia vuota ritorna il valore 0.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575415879539_-245195480",
+      "id": "20191204-003119_1042729388",
+      "dateCreated": "2019-12-04 00:31:19.539",
+      "dateStarted": "2019-12-05 10:47:06.882",
+      "dateFinished": "2019-12-05 10:47:06.888",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "def convert_to_Double(x: String): Double \u003d {\n    if (x !\u003d \"\") {\n        x.toDouble\n    } else {\n        0\n    }\n}",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 10:47:19.679",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "convert_to_Double: (x: String)Double\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575324465223_-2077640588",
+      "id": "20191202-230745_1088654845",
+      "dateCreated": "2019-12-02 23:07:45.223",
+      "dateStarted": "2019-12-05 10:47:19.726",
+      "dateFinished": "2019-12-05 10:47:19.887",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nVerifichiamo che funzioni:",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 10:47:22.692",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eVerifichiamo che funzioni:\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575311799568_861121229",
+      "id": "20191202-193639_1958040466",
+      "dateCreated": "2019-12-02 19:36:39.568",
+      "dateStarted": "2019-12-05 10:47:22.693",
+      "dateFinished": "2019-12-05 10:47:22.696",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "print(convert_to_Double(\"25\"))\nprint(\"\\n\")\nprint(convert_to_Double(\"\"))",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 10:47:24.949",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "25.0\n0.0"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575329700532_-306527629",
+      "id": "20191203-003500_1040363346",
+      "dateCreated": "2019-12-03 00:35:00.532",
+      "dateStarted": "2019-12-05 10:47:24.991",
+      "dateFinished": "2019-12-05 10:47:25.134",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nOvviamente lo svantaggio di questo metodo è che non so se un risultato pari a zero corrisponde ad una produzione nulla o ad una mancanza di dati. \n\nAdesso procedo con la stessa analisi fatta in predecenza, siccome conosco i vari passaggi posso eseguirli tutti in una singola riga di codice, questi sono i singoli passaggi:\n- dato un RDD composto da stringhe\n- splitto ogni stringa nei singoli campi con **split(\",\")**\n- mappo ogni riga in modo da avere solo il campo *country_code* e *estimated_production*, ottenendo un RDD di coppie *(key, value)*\n- con **reduceByKey()** aggrego tutte le righe aventi la stessa chiave\n- **collect()** e **println()**",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 10:49:58.503",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eOvviamente lo svantaggio di questo metodo è che non so se un risultato pari a zero corrisponde ad una produzione nulla o ad una mancanza di dati. \u003c/p\u003e\n\u003cp\u003eAdesso procedo con la stessa analisi fatta in predecenza, siccome conosco i vari passaggi posso eseguirli tutti in una singola riga di codice, questi sono i singoli passaggi:\u003cbr/\u003e- dato un RDD composto da stringhe\u003cbr/\u003e- splitto ogni stringa nei singoli campi con \u003cstrong\u003esplit(\u0026ldquo;,\u0026rdquo;)\u003c/strong\u003e\u003cbr/\u003e- mappo ogni riga in modo da avere solo il campo \u003cem\u003ecountry_code\u003c/em\u003e e \u003cem\u003eestimated_production\u003c/em\u003e, ottenendo un RDD di coppie \u003cem\u003e(key, value)\u003c/em\u003e\u003cbr/\u003e- con \u003cstrong\u003ereduceByKey()\u003c/strong\u003e aggrego tutte le righe aventi la stessa chiave\u003cbr/\u003e- \u003cstrong\u003ecollect()\u003c/strong\u003e e \u003cstrong\u003eprintln()\u003c/strong\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575474193088_-1285746384",
+      "id": "20191204-164313_182392174",
+      "dateCreated": "2019-12-04 16:43:13.088",
+      "dateStarted": "2019-12-05 10:49:58.503",
+      "dateFinished": "2019-12-05 10:49:58.509",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val data_agg \u003d data_no_header.map(x \u003d\u003e x.split(\",\", -1)).map(x \u003d\u003e (x(0), convert_to_Double(x(23)) )).reduceByKey((a,b) \u003d\u003e a+b)\ndata_agg.collect().foreach(println)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 10:52:00.553",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "(SVN,16869.0)\r\n(FIN,67265.99999999999)\r\n(BLR,34041.99999999999)\r\n(VNM,140913.00000000006)\r\n(ROU,63069.0)\r\n(FJI,0.0)\r\n(GHA,0.0)\r\n(TUR,250530.99999999994)\r\n(HND,7996.999999999999)\r\n(NER,686.0000000000001)\r\n(BHR,27252.999999999996)\r\n(ATA,0.0)\r\n(BRN,4461.0)\r\n(CHL,73428.0)\r\n(COL,67719.0)\r\n(GIN,0.0)\r\n(IDN,227586.99999999994)\r\n(JOR,18153.999999999996)\r\n(CYP,4033.0)\r\n(NGA,30390.000000000007)\r\n(MOZ,16175.000000000002)\r\n(SWE,150760.00000000006)\r\n(BEN,183.0)\r\n(ESH,0.0)\r\n(MKD,4944.0)\r\n(ZMB,14452.0)\r\n(MDA,5322.0)\r\n(CMR,6850.0)\r\n(NLD,93830.00000000004)\r\n(TJK,16000.0)\r\n(RUS,984212.0)\r\n(GEO,10371.0)\r\n(GNB,0.0)\r\n(VEN,109826.99999999999)\r\n(ISR,60439.000000000015)\r\n(SVK,24935.999999999993)\r\n(PRY,55276.0)\r\n(LAO,0.0)\r\n(MWI,0.0)\r\n(IRQ,67767.99999999997)\r\n(LVA,4331.0)\r\n(SAU,311806.0)\r\n(HRV,12623.999999999996)\r\n(NPL,3788.9999999999995)\r\n(SDN,11376.0)\r\n(KWT,21984.000000000004)\r\n(BRA,590631.9999999984)\r\n(SGP,48647.0)\r\n(IRL,26180.000000000007)\r\n(JAM,3976.0)\r\n(GUY,0.0)\r\n(POL,158866.99999999997)\r\n(SRB,33783.00000000001)\r\n(ARE,108506.0)\r\n(SLE,0.0)\r\n(TKM,20400.0)\r\n(UGA,0.0)\r\n(GTM,10725.000000000002)\r\n(ZWE,9828.0)\r\n(CUB,18605.0)\r\n(ERI,368.0)\r\n(BWA,2263.0)\r\n(BDI,0.0)\r\n(PHL,77196.0)\r\n(ECU,23812.0)\r\n(MEX,301418.99999999977)\r\n(ISL,18111.000000000004)\r\n(BIH,16085.999999999996)\r\n(TTO,9891.0)\r\n(SLV,5784.000000000001)\r\n(ALB,4724.0)\r\n(CIV,7708.0)\r\n(COD,8831.0)\r\n(AUT,54075.0)\r\n(BFA,0.0)\r\n(COG,1740.0)\r\n(EGY,45324.0)\r\n(IRN,274032.0)\r\n(CHN,5621543.999999972)\r\n(KOS,5270.0)\r\n(TWN,255790.99999999997)\r\n(IND,316056.4701018557)\r\n(GUF,0.0)\r\n(AGO,9479.999999999998)\r\n(CAN,655943.9999999995)\r\n(KHM,3055.9999999999995)\r\n(TGO,137.0)\r\n(EST,716.0000000000001)\r\n(KAZ,104031.0)\r\n(SWZ,0.0)\r\n(MMR,14092.0)\r\n(PRT,51438.00000000008)\r\n(MRT,0.0)\r\n(SEN,3440.0)\r\n(LBR,0.0)\r\n(UKR,180910.0)\r\n(USA,760222.293761999)\r\n(NIC,3106.0000000000005)\r\n(DZA,63079.0)\r\n(ARM,7746.0)\r\n(BEL,69406.0)\r\n(DOM,18541.0)\r\n(GAB,2354.9999999999995)\r\n(DJI,0.0)\r\n(HUN,26061.0)\r\n(AFG,0.0)\r\n(PAK,105304.99999999997)\r\n(THA,171591.99999999988)\r\n(OMN,28371.0)\r\n(BTN,0.0)\r\n(KOR,549440.0000000001)\r\n(ITA,258640.99999999994)\r\n(CAF,0.0)\r\n(ETH,9606.0)\r\n(GRC,50254.0)\r\n(JPN,1011747.9999999998)\r\n(RWA,0.0)\r\n(SYR,21725.999999999996)\r\n(PAN,9139.0)\r\n(ZAF,252387.99999999997)\r\n(AUS,61441.04416666662)\r\n(MUS,2930.999999999999)\r\n(GBR,338923.0000000005)\r\n(LTU,2837.0000000000005)\r\n(ARG,138805.99999999997)\r\n(KGZ,14455.0)\r\n(DEU,627697.0000000007)\r\n(GNQ,0.0)\r\n(FRA,557930.0000000016)\r\n(MNE,3174.0)\r\n(URY,13011.0)\r\n(LBY,37731.0)\r\n(DNK,30559.0)\r\n(LUX,2621.0)\r\n(LKA,12419.999999999998)\r\n(PER,43676.0)\r\n(QAT,38692.0)\r\n(BOL,8379.0)\r\n(MLI,0.0)\r\n(UZB,55399.99999999999)\r\n(KEN,9120.999999999998)\r\n(PRK,17322.0)\r\n(NOR,141453.00000000006)\r\n(BGD,55696.00000000002)\r\n(MAR,29141.999999999996)\r\n(MNG,5134.0)\r\n(TZA,6179.0)\r\n(CZE,0.0)\r\n(CPV,0.0)\r\n(CRI,9298.000000000004)\r\n(GMB,0.0)\r\n(YEM,7646.0)\r\n(PNG,0.0)\r\n(BGR,43666.00000000001)\r\n(TUN,18483.000000000004)\r\n(AZE,24549.0)\r\n(NAM,1498.0)\r\n(LSO,0.0)\r\n(LBN,17759.0)\r\n(ESP,278749.9999999994)\r\n(MDG,0.0)\r\n(NZL,42867.99999999999)\r\n(MYS,147468.99999999997)\r\n(CHE,67258.00000000001)\r\ndata_agg: org.apache.spark.rdd.RDD[(String, Double)] \u003d ShuffledRDD[63] at reduceByKey at \u003cconsole\u003e:33\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575323179086_1859091287",
+      "id": "20191202-224619_511166840",
+      "dateCreated": "2019-12-02 22:46:19.086",
+      "dateStarted": "2019-12-05 10:52:00.599",
+      "dateFinished": "2019-12-05 10:52:01.186",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nSe voglio ordinare in ordine descrescente per vedere quali sono le nazioni con la più alta produzione di energia elettrica posso usare il metodo **sortBy()**. Come ogni altro metodo per lavorare sugli RDD, questi si aspetta come parametro una funzione che restituisce un valore numerico per ogni valore del RDD.\n\nInoltre l\u0027ordinamento viene fatto in direzione crescente per default, per invertire la direzione dobbiamo moltiplicare per **-1**.\n\nPer indicare che voglio ordinare sul secondo elemento della coppia *(chiave, valore)* devo usare la notazione x._2. Contrariamente agli array, dove il primo elemento ha posizione 0, nei tuple il primo elemento ha posizione 1.  ",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-04 17:42:19.122",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eSe voglio ordinare in ordine descrescente per vedere quali sono le nazioni con la più alta produzione di energia elettrica posso usare il metodo \u003cstrong\u003esortBy()\u003c/strong\u003e. Come ogni altro metodo per lavorare sugli RDD, questi si aspetta come parametro una funzione che restituisce un valore numerico per ogni valore del RDD.\u003c/p\u003e\n\u003cp\u003eInoltre l\u0026rsquo;ordinamento viene fatto in direzione crescente per default, per invertire la direzione dobbiamo moltiplicare per \u003cstrong\u003e-1\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003ePer indicare che voglio ordinare sul secondo elemento della coppia \u003cem\u003e(chiave, valore)\u003c/em\u003e devo usare la notazione x._2. Contrariamente agli array, dove il primo elemento ha posizione 0, nei tuple il primo elemento ha posizione 1.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575477025345_-34930543",
+      "id": "20191204-173025_83324272",
+      "dateCreated": "2019-12-04 17:30:25.345",
+      "dateStarted": "2019-12-04 17:42:19.122",
+      "dateFinished": "2019-12-04 17:42:19.129",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "data_agg.sortBy( x \u003d\u003e (x._2 * -1) ).take(10)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 10:52:07.794",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res114: Array[(String, Double)] \u003d Array((CHN,5621543.999999972), (JPN,1011747.9999999998), (RUS,984212.0), (USA,760222.293761999), (CAN,655943.9999999995), (DEU,627697.0000000007), (BRA,590631.9999999984), (FRA,557930.0000000016), (KOR,549440.0000000001), (GBR,338923.0000000005))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575474671121_-2093908626",
+      "id": "20191204-165111_1478604904",
+      "dateCreated": "2019-12-04 16:51:11.121",
+      "dateStarted": "2019-12-05 10:52:07.839",
+      "dateFinished": "2019-12-05 10:52:08.154",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nNon è una sorpresa scoprire che il primo produttore di energia elettrica è la Cina, mentre il secondo è il Giappone.",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 10:52:16.694",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eNon è una sorpresa scoprire che il primo produttore di energia elettrica è la Cina, mentre il secondo è il Giappone.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575477405958_131603824",
+      "id": "20191204-173645_1509429523",
+      "dateCreated": "2019-12-04 17:36:45.958",
+      "dateStarted": "2019-12-05 10:52:16.694",
+      "dateFinished": "2019-12-05 10:52:16.700",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nNon trattandosi di un RDD di coppie *(key, value)* non ho a disposizione il metodo reduceByKey(), quindi dobbiamo inventarci qualcosa.\n\nVediamo di passare ad un problema più complicato.\n\n### Problema\n\nVoglio sapere quanto è la produzione di energia di ogni stato suddivisa per ogni fonte di energia.\n\nIniziamo con il ridurre il dataset ai soli dati che mi interessano, in questo caso sono i campi *country*, *primary_fuel* e *estimated_generation_gwh*. Come in precedenza il valore di potenza generata viene convertito in Double. \n\nLe operazioni String -\u003e Array e selezione dei campi possono essere fatte in un solo comando.",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 12:12:01.250",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eNon trattandosi di un RDD di coppie \u003cem\u003e(key, value)\u003c/em\u003e non ho a disposizione il metodo reduceByKey(), quindi dobbiamo inventarci qualcosa.\u003c/p\u003e\n\u003cp\u003eVediamo di passare ad un problema più complicato.\u003c/p\u003e\n\u003ch3\u003eProblema\u003c/h3\u003e\n\u003cp\u003eVoglio sapere quanto è la produzione di energia di ogni stato suddivisa per ogni fonte di energia.\u003c/p\u003e\n\u003cp\u003eIniziamo con il ridurre il dataset ai soli dati che mi interessano, in questo caso sono i campi \u003cem\u003ecountry\u003c/em\u003e, \u003cem\u003eprimary_fuel\u003c/em\u003e e \u003cem\u003eestimated_generation_gwh\u003c/em\u003e. Come in precedenza il valore di potenza generata viene convertito in Double. \u003c/p\u003e\n\u003cp\u003eLe operazioni String -\u0026gt; Array e selezione dei campi possono essere fatte in un solo comando.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575480743924_88701771",
+      "id": "20191204-183223_2065344229",
+      "dateCreated": "2019-12-04 18:32:23.924",
+      "dateStarted": "2019-12-05 12:12:01.250",
+      "dateFinished": "2019-12-05 12:12:01.257",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val data_reduced \u003d data_no_header.map( x\u003d\u003ex.split(\",\",-1)).map(x \u003d\u003e (x(0), x(7), convert_to_Double(x(23))))\ndata_reduced.take(5)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 12:12:07.213",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "data_reduced: org.apache.spark.rdd.RDD[(String, String, Double)] \u003d MapPartitionsRDD[68] at map at \u003cconsole\u003e:37\r\nres116: Array[(String, String, Double)] \u003d Array((AFG,Hydro,0.0), (AFG,Hydro,0.0), (AFG,Hydro,0.0), (AFG,Hydro,0.0), (AFG,Gas,0.0))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575477828485_552309804",
+      "id": "20191204-174348_762450845",
+      "dateCreated": "2019-12-04 17:43:48.485",
+      "dateStarted": "2019-12-05 12:12:07.257",
+      "dateFinished": "2019-12-05 12:12:07.589",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nIl RDD data_reduced è costituito da tuple a 3 elementi *(String, String, Double)*.\nAdesso raggruppo usando **groupBy()** e indicando come chiavi il primo e il secondo elemento del tuple, cioè *country* e *primary_fuel*. \nIl risultato sarà un tuple in cui il primo elemento è a sua volta un tuple *(country, primary_fuel)* e il secondo elemento una Sequenza di numeri indicanti la produzioni delle varie centrali corrispondenti alla combinazione *(country, primary_fuel)*.\n\nCome esempio si una operazione di groupby su un RDD si veda la figura sotto.\n![spark groupby](https://www.1week4.com/wp-content/uploads/2019/12/apache-spark-groupby-operation1-e1575612354692.png)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-06 07:06:40.042",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eIl RDD data_reduced è costituito da tuple a 3 elementi \u003cem\u003e(String, String, Double)\u003c/em\u003e.\u003cbr/\u003eAdesso raggruppo usando \u003cstrong\u003egroupBy()\u003c/strong\u003e e indicando come chiavi il primo e il secondo elemento del tuple, cioè \u003cem\u003ecountry\u003c/em\u003e e \u003cem\u003eprimary_fuel\u003c/em\u003e.\u003cbr/\u003eIl risultato sarà un tuple in cui il primo elemento è a sua volta un tuple \u003cem\u003e(country, primary_fuel)\u003c/em\u003e e il secondo elemento una Sequenza di numeri indicanti la produzioni delle varie centrali corrispondenti alla combinazione \u003cem\u003e(country, primary_fuel)\u003c/em\u003e.\u003c/p\u003e\n\u003cp\u003eCome esempio si una operazione di groupby su un RDD si veda la figura sotto.\u003cbr/\u003e\u003cimg src\u003d\"https://www.1week4.com/wp-content/uploads/2019/12/apache-spark-groupby-operation1-e1575612354692.png\" alt\u003d\"spark groupby\" /\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575527085688_-1436382928",
+      "id": "20191205-072445_534884089",
+      "dateCreated": "2019-12-05 07:24:45.688",
+      "dateStarted": "2019-12-06 07:06:40.042",
+      "dateFinished": "2019-12-06 07:06:40.048",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val data_grouped \u003d data_reduced.groupBy( x \u003d\u003e (x._1, x._2))\ndata_grouped.take(1)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 08:04:34.401",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "data_grouped: org.apache.spark.rdd.RDD[((String, String), Iterable[(String, String, Double)])] \u003d ShuffledRDD[47] at groupBy at \u003cconsole\u003e:37\r\nres94: Array[((String, String), Iterable[(String, String, Double)])] \u003d Array(((SVN,Nuclear),CompactBuffer((SVN,Nuclear,6370.0))))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575524570854_372473152",
+      "id": "20191205-064250_1311600600",
+      "dateCreated": "2019-12-05 06:42:50.854",
+      "dateStarted": "2019-12-05 08:04:34.444",
+      "dateFinished": "2019-12-05 08:04:35.079",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nCome si può vedere sopra gli elementi del RDD sono ((String, String), Iterable[(String, String, Double)]), più specificatamente si può scrivere ((country, primary_fuel), Iterable[(country, primary_fuel, estimated_generation_gwh)]).\nVoglio ridurre questo tuple (mostruso) in **(String, String, Double)** ovvero (country, primary_fuel, sum(estimated_generation_gwh).\n\nPer farlo scrivo una funzione che riceve in ingresso un tuple ((String, String), Iterable[(String, String, Double)]) e fa la somma dei valori di energia generata.\nSi noti che il tipo **Iterable** è per definizione iterabile con un for loop, quindi mi basta iterare sugli elementi del Iterable e accumulare il valore in una variabile.\n\nLa dichiarazione della funzione è piuttosto elaborata:\n    `def proc_group2(input: ((String, String), Iterable[(String, String, Double)])): (String, String, Double)`",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 08:04:12.821",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eCome si può vedere sopra gli elementi del RDD sono ((String, String), Iterable[(String, String, Double)]), più specificatamente si può scrivere ((country, primary_fuel), Iterable[(country, primary_fuel, estimated_generation_gwh)]).\u003cbr/\u003eVoglio ridurre questo tuple (mostruso) in \u003cstrong\u003e(String, String, Double)\u003c/strong\u003e ovvero (country, primary_fuel, sum(estimated_generation_gwh).\u003c/p\u003e\n\u003cp\u003ePer farlo scrivo una funzione che riceve in ingresso un tuple ((String, String), Iterable[(String, String, Double)]) e fa la somma dei valori di energia generata.\u003cbr/\u003eSi noti che il tipo \u003cstrong\u003eIterable\u003c/strong\u003e è per definizione iterabile con un for loop, quindi mi basta iterare sugli elementi del Iterable e accumulare il valore in una variabile.\u003c/p\u003e\n\u003cp\u003eLa dichiarazione della funzione è piuttosto elaborata:\u003cbr/\u003e \u003ccode\u003edef proc_group2(input: ((String, String), Iterable[(String, String, Double)])): (String, String, Double)\u003c/code\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575528178864_617465833",
+      "id": "20191205-074258_148150483",
+      "dateCreated": "2019-12-05 07:42:58.864",
+      "dateStarted": "2019-12-05 08:04:12.821",
+      "dateFinished": "2019-12-05 08:04:12.829",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "def proc_group(input: ((String, String), Iterable[(String, String, Double)])): (String, String, Double) \u003d {\n    //definisco una variabile (var) in quanto sum deve cambiare valore\n    var sum \u003d 0.0\n    //facciamo un loop sull\u0027elemento Iterable del tuple\n    for (elem \u003c- input._2){\n        // println(\"summing \"+ elem._3)\n        sum +\u003d elem._3\n        // println(\"sum is \" + sum)\n    }\n    //l\u0027ultima riga della funzione è quello che la funzione ritorna\n    (input._1._1, input._1._2, sum)\n}",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 08:09:29.095",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "proc_group: (input: ((String, String), Iterable[(String, String, Double)]))(String, String, Double)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575525134692_-785930951",
+      "id": "20191205-065214_1522049686",
+      "dateCreated": "2019-12-05 06:52:14.692",
+      "dateStarted": "2019-12-05 08:09:29.134",
+      "dateFinished": "2019-12-05 08:09:29.341",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nVerifichiamo che funzioni, prendiamo un elemento a caso e lo foniamo come input della funzione:",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 08:06:40.899",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eVerifichiamo che funzioni, prendiamo un elemento a caso e lo foniamo come input della funzione:\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575529029948_-647876473",
+      "id": "20191205-075709_111118344",
+      "dateCreated": "2019-12-05 07:57:09.948",
+      "dateStarted": "2019-12-05 08:06:40.899",
+      "dateFinished": "2019-12-05 08:06:40.904",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val input \u003d data_grouped.take(5)(4)\nprintln(\"Produzione di \" + input._1._1 + \u0027\\n\u0027)\nval prodAggregata \u003d proc_group(input)\nprintln(f\"La produzione di energia di ${prodAggregata._1} mediante centrali di tipo ${prodAggregata._2} è di ${prodAggregata._3}\\n\")",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 08:10:09.715",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Produzione di DOM\n\r\nLa produzione di energia di DOM mediante centrali di tipo Oil è di 9642.0\n\r\ninput: ((String, String), Iterable[(String, String, Double)]) \u003d ((DOM,Oil),CompactBuffer((DOM,Oil,2117.3465558194775), (DOM,Oil,480.95486935866984), (DOM,Oil,1146.2757719714964), (DOM,Oil,4924.061757719715), (DOM,Oil,973.3610451306414)))\r\nprodAggregata: (String, String, Double) \u003d (DOM,Oil,9642.0)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575526520498_958239178",
+      "id": "20191205-071520_381723656",
+      "dateCreated": "2019-12-05 07:15:20.498",
+      "dateStarted": "2019-12-05 08:10:09.758",
+      "dateFinished": "2019-12-05 08:10:10.254",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nPer finire mappo il RDD data_grouped con la funzione proc_group",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 08:10:15.608",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003ePer finire mappo il RDD data_grouped con la funzione proc_group\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575529713899_-43600893",
+      "id": "20191205-080833_1602052677",
+      "dateCreated": "2019-12-05 08:08:33.899",
+      "dateStarted": "2019-12-05 08:10:15.608",
+      "dateFinished": "2019-12-05 08:10:15.612",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val data_aggregated \u003d data_grouped.map(proc_group)\ndata_aggregated.take(5).foreach(println)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 21:58:17.218",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "(SVN,Nuclear,6370.0)\r\n(GBR,Wind,32015.000000000025)\r\n(USA,Wind,4317.620910000014)\r\n(ARM,Nuclear,2465.0)\r\n(DOM,Oil,9642.0)\r\ndata_aggregated: org.apache.spark.rdd.RDD[(String, String, Double)] \u003d MapPartitionsRDD[51] at map at \u003cconsole\u003e:45\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575525211060_-509662256",
+      "id": "20191205-065331_103919707",
+      "dateCreated": "2019-12-05 06:53:31.060",
+      "dateStarted": "2019-12-05 08:11:27.687",
+      "dateFinished": "2019-12-05 08:11:28.223",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nAdesso se voglio posso filtrare tutti i dati relativi agli USA per esempio",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 08:12:37.563",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eAdesso se voglio posso filtrare tutti i dati relativi agli USA per esempio\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575529895618_-236650015",
+      "id": "20191205-081135_688233774",
+      "dateCreated": "2019-12-05 08:11:35.618",
+      "dateStarted": "2019-12-05 08:12:37.563",
+      "dateFinished": "2019-12-05 08:12:37.567",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "data_aggregated.filter( x \u003d\u003e x._1\u003d\u003d\"USA\").collect().foreach(println)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 08:13:31.591",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "(USA,Wind,4317.620910000014)\r\n(USA,Petcoke,0.0)\r\n(USA,Solar,7617.67086999997)\r\n(USA,Storage,0.0)\r\n(USA,Geothermal,3120.476999999997)\r\n(USA,Waste,0.0)\r\n(USA,Oil,28942.813017000062)\r\n(USA,Gas,159085.28519300214)\r\n(USA,Nuclear,0.0)\r\n(USA,Other,3226.2118600000013)\r\n(USA,Cogeneration,0.0)\r\n(USA,Coal,484977.23213499994)\r\n(USA,Hydro,29065.432300000262)\r\n(USA,Biomass,39869.550477000004)\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575525859255_1722884412",
+      "id": "20191205-070419_1942159088",
+      "dateCreated": "2019-12-05 07:04:19.255",
+      "dateStarted": "2019-12-05 08:13:31.631",
+      "dateFinished": "2019-12-05 08:13:32.136",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nOppure posso selezionare i dati relativi alla produzione mediante \"Waste\" nel mondo",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 21:57:50.294",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eOppure posso selezionare i dati relativi alla produzione mediante \u0026ldquo;Waste\u0026rdquo; nel mondo\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575525933943_188989579",
+      "id": "20191205-070533_1951415848",
+      "dateCreated": "2019-12-05 07:05:33.943",
+      "dateStarted": "2019-12-05 21:57:50.294",
+      "dateFinished": "2019-12-05 21:57:50.298",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "data_aggregated.filter( x \u003d\u003e x._2\u003d\u003d\"Waste\").collect().foreach(println)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 08:15:16.029",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "(HND,Waste,0.0)\r\n(GTM,Waste,0.0)\r\n(RWA,Waste,0.0)\r\n(USA,Waste,0.0)\r\n(DEU,Waste,13503.0)\r\n(BEL,Waste,2083.0)\r\n(ESP,Waste,1371.9999999999998)\r\n(AUS,Waste,0.0)\r\n(JPN,Waste,6595.0)\r\n(KHM,Waste,0.0)\r\n(KOR,Waste,696.0)\r\n(GRC,Waste,100.0)\r\n(SGP,Waste,1260.0)\r\n(NIC,Waste,0.0)\r\n(PRT,Waste,489.00000000000006)\r\n(GBR,Waste,4038.0000000000014)\r\n(BRA,Waste,0.0)\r\n(ZAF,Waste,0.0)\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575530073782_-1386714531",
+      "id": "20191205-081433_265485026",
+      "dateCreated": "2019-12-05 08:14:33.782",
+      "dateStarted": "2019-12-05 08:15:16.076",
+      "dateFinished": "2019-12-05 08:15:16.613",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nE scopriamo che lo stato dove si produce maggiormente energia bruciando l\u0027immondizia è l\u0027industrializzatissima Germania! \nProprio a questo serve fare questo tipo di analisi: a leggere fatti che sono nascosti in una marea di dati. ",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 08:17:55.571",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eE scopriamo che lo stato dove si produce maggiormente energia bruciando l\u0026rsquo;immondizia è l\u0026rsquo;industrializzatissima Germania!\u003cbr/\u003eProprio a questo serve fare questo tipo di analisi: a leggere fatti che sono nascosti in una marea di dati.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575530116029_-1427817580",
+      "id": "20191205-081516_41290319",
+      "dateCreated": "2019-12-05 08:15:16.029",
+      "dateStarted": "2019-12-05 08:17:55.571",
+      "dateFinished": "2019-12-05 08:17:55.576",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "RDD API example2",
+  "id": "2EUHSREGV",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "simple",
+    "personalizedMode": "false"
+  },
+  "info": {}
+}

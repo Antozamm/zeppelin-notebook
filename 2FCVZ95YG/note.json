@@ -1,0 +1,552 @@
+{
+  "paragraphs": [
+    {
+      "text": "%sh\ndir",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-23 16:17:12.345",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/sh"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": " Volume in drive D has no label.\r\n Volume Serial Number is 6EF7-E246\r\n\r\n Directory of D:\\AnacondaProjects\r\n\r\n23/06/2020  15:47    \u003cDIR\u003e          .\r\n23/06/2020  15:47    \u003cDIR\u003e          ..\r\n10/03/2020  00:40    \u003cDIR\u003e          .ipynb_checkpoints\r\n13/03/2019  01:35                46 1.yml\r\n28/01/2020  18:07    \u003cDIR\u003e          1week4\r\n05/11/2019  17:10    \u003cDIR\u003e          1week4_2\r\n23/11/2019  12:54            16,925 Advanced AnalyticsSpark-ch2.ipynb\r\n23/11/2019  16:01    \u003cDIR\u003e          AdvancedAnalyticsSpark\r\n13/10/2019  20:54           253,555 AdvancedAnalyticsSpark-Chap 2 (5).json\r\n17/02/2020  15:30         3,713,492 Apache Spark - Databricks certification - Zeppelin.html\r\n14/11/2019  11:58         7,665,025 backup6887153579280596404.serpmojo\r\n28/01/2020  18:13    \u003cDIR\u003e          BayesianModel\r\n12/03/2019  19:42    \u003cDIR\u003e          beakerx-master\r\n13/03/2019  23:31           216,308 binning-bagging.ipynb\r\n17/02/2020  13:17           962,100 bk_zeppelin-component-guide.pdf\r\n16/11/2019  23:28    \u003cDIR\u003e          checkpoint\r\n20/10/2019  05:03         8,835,072 chromedriver.exe\r\n15/11/2019  00:49         4,845,020 chromedriver_win32.zip\r\n27/02/2019  02:11    \u003cDIR\u003e          competitive-data-science-master\r\n24/02/2019  11:01    \u003cDIR\u003e          cookbook-2nd-code-master\r\n16/11/2019  08:17            42,519 Copy_of_Train_a_GPT_2_Text_Generating_Model_w_GPU.ipynb\r\n24/02/2019  00:50    \u003cDIR\u003e          dask-worker-space\r\n23/08/2019  06:35    \u003cDIR\u003e          databricks-master\r\n24/09/2019  23:56       125,368,023 databricks-master.zip\r\n26/02/2020  16:05    \u003cDIR\u003e          Datasets\r\n20/02/2020  14:09            52,119 data_exploration.ipynb\r\n12/02/2020  16:58               689 derby.log\r\n16/01/2020  03:14    \u003cDIR\u003e          docker-spark\r\n16/01/2020  13:17    \u003cDIR\u003e          docker-spark-cluster\r\n28/01/2020  11:12           642,447 Elaborate HTML_4.ipynb\r\n03/01/2020  08:52             4,609 environment.yml\r\n25/11/2019  14:15             3,838 exampl1.csv\r\n10/12/2019  12:50               161 exampl2.csv\r\n10/12/2019  13:57                78 exampl3.csv\r\n26/01/2020  02:37         1,002,370 Filter - Zeppelin 2.html\r\n26/01/2020  01:07         1,009,368 Filter - Zeppelin.html\r\n15/11/2019  00:44            87,538 glassdoor scraping.ipynb\r\n15/11/2019  01:16            23,657 Glassdoor_scraper.ipynb\r\n15/02/2019  13:44    \u003cDIR\u003e          House_prices\r\n13/01/2020  19:44            42,654 hs_err_pid12572.log\r\n13/01/2020  19:25            42,350 hs_err_pid14988.log\r\n13/01/2020  19:03            43,354 hs_err_pid16288.log\r\n13/01/2020  19:19            42,907 hs_err_pid17024.log\r\n13/01/2020  19:35            41,643 hs_err_pid4824.log\r\n16/11/2019  08:10         1,115,394 input.txt\r\n15/03/2020  00:20    \u003cDIR\u003e          Ion_Switching\r\n23/02/2019  21:10    \u003cDIR\u003e          ipyparallel-master\r\n30/01/2020  02:15        12,944,659 lastfm_subset.zip\r\n30/01/2020  02:19       138,366,470 lastfm_test.zip\r\n30/01/2020  02:32     1,078,326,185 lastfm_train.zip\r\n13/01/2020  00:34        18,020,567 Learning Spark SQL - Aurobindo Sarkar.epub\r\n05/03/2020  15:24    \u003cDIR\u003e          LightGBM\r\n25/02/2019  11:08    \u003cDIR\u003e          LightGBM-master\r\n13/10/2019  21:26    \u003cDIR\u003e          logs\r\n05/10/2019  18:20        16,773,477 Mastering Apache Spark 2.x - Romeo Kienzler.pdf\r\n12/02/2020  16:58    \u003cDIR\u003e          metastore_db\r\n13/03/2019  15:55    \u003cDIR\u003e          mlens-master\r\n16/11/2019  23:24    \u003cDIR\u003e          models\r\n15/07/2019  14:40         2,961,609 Neural Network with Pytorch.ipynb\r\n16/01/2020  16:05            15,120 new 1.txt\r\n12/02/2020  15:47             7,629 New OpenDocument Spreadsheet.ods\r\n20/02/2020  13:06             1,330 new.ipynb\r\n21/02/2020  00:39            21,165 NLP Getting Started Tutorial.ipynb\r\n27/09/2019  00:18            99,544 note.json\r\n06/05/2020  14:39         1,098,596 OBS-VirtualCam2.0.4-Installer.exe\r\n16/11/2019  07:10    \u003cDIR\u003e          panel-examples\r\n14/03/2020  21:28    \u003cDIR\u003e          PetAdoption\r\n21/12/2019  22:12            91,383 Public - Crash Course - Apache Spark - Berlin - 2018.pdf\r\n21/12/2019  22:12            91,383 Public - Crash Course - Data Science - Berlin - 2018.pdf\r\n21/07/2019  23:10    \u003cDIR\u003e          pymc3-master\r\n11/12/2019  13:20           676,800 PySpark_Cheat_Sheet_Python.pdf\r\n06/12/2019  08:10         2,032,143 RDD API example2 - Zeppelin.html\r\n27/09/2019  00:18            99,544 RDD transformation and action (3).json\r\n29/02/2020  17:23            26,010 res_majority.csv\r\n18/07/2019  22:19        28,014,045 spanish-high-speed-rail-system-ticket-pricing.zip\r\n22/01/2020  17:30    \u003cDIR\u003e          spark\r\n26/11/2019  19:20         1,781,348 Spark Basic 1 - Zeppelin.html\r\n27/11/2019  15:14         1,681,824 Spark Basic 1 - Zeppelin1.html\r\n18/02/2020  17:16    \u003cDIR\u003e          Spark-in-action-box\r\n26/09/2019  21:08    \u003cDIR\u003e          Spark-The-Definitive-Guide-master\r\n17/02/2020  19:45    \u003cDIR\u003e          spark-warehouse\r\n14/01/2020  20:53         2,954,222 Spark2_myLearning_inforGraphics.jpg\r\n22/07/2019  00:42            13,172 spec-file.txt\r\n12/03/2019  19:17            18,962 TableAPI.ipynb\r\n06/12/2019  08:13           490,439 temp.html\r\n20/02/2020  15:44           420,783 test.csv\r\n22/06/2020  22:55    \u003cDIR\u003e          testParquet\r\n17/02/2020  18:49    \u003cDIR\u003e          testSave\r\n16/11/2019  07:56    \u003cDIR\u003e          textgenrnn\r\n29/11/2019  08:35         2,814,078 text_generation_app.ipynb\r\n21/11/2019  23:05            88,728 text_generation_transformers.ipynb\r\n21/11/2019  23:45            73,483 text_generation_transformers2.ipynb\r\n09/03/2020  21:38            20,994 text_generation_transformers3.ipynb\r\n26/06/2019  16:30    \u003cDIR\u003e          Titanic_Machine_Learning_From_Disaster\r\n20/02/2020  12:41    \u003cDIR\u003e          tpot\r\n20/02/2020  12:02             1,095 tpot_iris_pipeline.py\r\n20/02/2020  15:44           987,712 train.csv\r\n28/01/2020  11:04    \u003cDIR\u003e          UNCSS4\r\n03/01/2020  01:44             1,379 Untitled.ipynb\r\n06/11/2019  02:11               894 Untitled1.ipynb\r\n23/11/2019  12:32             1,071 Untitled10.ipynb\r\n23/11/2019  12:33             1,213 Untitled11.ipynb\r\n23/11/2019  13:20            17,270 Untitled12.ipynb\r\n27/01/2020  18:46                72 Untitled13.ipynb\r\n27/01/2020  20:26                72 Untitled14.ipynb\r\n20/02/2020  11:54                72 Untitled15.ipynb\r\n20/02/2020  12:11             6,416 Untitled16.ipynb\r\n26/02/2020  18:08            36,475 Untitled17.ipynb\r\n29/02/2020  18:41            62,054 Untitled18.ipynb\r\n10/03/2020  01:00               741 Untitled19.ipynb\r\n14/11/2019  18:37            57,337 Untitled2.ipynb\r\n18/11/2019  01:59               555 Untitled3.ipynb\r\n16/11/2019  06:53                72 Untitled4.ipynb\r\n17/11/2019  02:00             3,134 Untitled5.ipynb\r\n17/11/2019  01:54            24,981 Untitled6.ipynb\r\n23/11/2019  12:14             1,273 Untitled7.ipynb\r\n23/11/2019  12:16             1,166 Untitled8.ipynb\r\n23/11/2019  13:31             5,614 Untitled9.ipynb\r\n23/11/2019  14:56                16 vsprova.scala\r\n06/12/2019  08:13             8,910 zeppelin.css\r\n03/12/2019  14:06            46,793 zeppelin1.css\r\n06/12/2019  08:13         2,583,880 ZeppelinHTML.ipynb\r\n03/12/2019  15:39         1,039,095 Zeppelin_postproc.ipynb\r\n17/02/2020  15:34         4,185,741 Zeppelin_postproc_1.ipynb\r\n17/02/2020  15:34           455,093 Zeppelin_postproc_2.ipynb\r\n29/02/2020  17:35           253,652 [Full tutoria] EDA to Ensembles. Embeddings Zoo!.ipynb\r\n              88 File(s)  1,475,882,801 bytes\r\n              38 Dir(s)  71,695,056,896 bytes free\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1592921659266_1965781305",
+      "id": "20200623-161419_524685056",
+      "dateCreated": "2020-06-23 16:14:19.266",
+      "dateStarted": "2020-06-23 16:17:12.358",
+      "dateFinished": "2020-06-23 16:17:12.762",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "//verifichiamo di avere una sparkSession già aperta\nspark",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-23 16:30:08.446",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res1: org.apache.spark.sql.SparkSession \u003d org.apache.spark.sql.SparkSession@2d48baa0\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1592921677225_1581901085",
+      "id": "20200623-161437_1706019048",
+      "dateCreated": "2020-06-23 16:14:37.225",
+      "dateStarted": "2020-06-23 16:29:22.038",
+      "dateFinished": "2020-06-23 16:29:26.287",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "//carico il file csv in un dataframe \nval df \u003d spark.read.options(Map((\"header\",\"true\"),(\"inferSchema\",\"true\"))).format(\"csv\").load(\"./exampl1.csv\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-23 18:13:38.983",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "df: org.apache.spark.sql.DataFrame \u003d [eta: int, amici: int]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1592922562019_1095604219",
+      "id": "20200623-162922_1988392200",
+      "dateCreated": "2020-06-23 16:29:22.019",
+      "dateStarted": "2020-06-23 18:13:38.995",
+      "dateFinished": "2020-06-23 18:13:39.554",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-23 16:33:43.944",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+-----+\n|_c0|  _c1|\n+---+-----+\n|eta|amici|\n| 44|   11|\n|  5|  190|\n| 44|  123|\n|  9|  111|\n| 18|  238|\n| 15|  135|\n|  8|  332|\n| 11|    2|\n| 41|  461|\n|  9|  158|\n| 12|  416|\n| 29|   72|\n| 23|  392|\n| 55|   42|\n| 21|  203|\n| 34|  258|\n|  7|  453|\n| 52|  196|\n| 45|  460|\n+---+-----+\nonly showing top 20 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1592922744527_181901837",
+      "id": "20200623-163224_154524854",
+      "dateCreated": "2020-06-23 16:32:24.527",
+      "dateStarted": "2020-06-23 16:33:43.958",
+      "dateFinished": "2020-06-23 16:33:44.320",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.rdd.getNumPartitions",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-23 16:38:51.948",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res7: Int \u003d 1\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1592922823944_-244372613",
+      "id": "20200623-163343_1379729218",
+      "dateCreated": "2020-06-23 16:33:43.944",
+      "dateStarted": "2020-06-23 16:38:51.961",
+      "dateFinished": "2020-06-23 16:38:52.186",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df1 \u003d df.withColumnRenamed()",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-23 17:35:40.303",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cconsole\u003e:25: error: not enough arguments for method withColumnRenamed: (existingName: String, newName: String)org.apache.spark.sql.DataFrame.\r\nUnspecified value parameter newName.\r\n       val df1 \u003d df.withColumnRenamed((\"_c0\", \"eta\"))\r\n                                     ^\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1592923102312_1465358523",
+      "id": "20200623-163822_957405657",
+      "dateCreated": "2020-06-23 16:38:22.312",
+      "dateStarted": "2020-06-23 17:35:18.910",
+      "dateFinished": "2020-06-23 17:35:18.937",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val acc \u003d sc.longAccumulator\n \nval newNames \u003d List(\"eta\", \"amici\")\n\n\n\ndf.columns.foldLeft(df)( (acc, colname) \u003d\u003e { \n                                            \n                                            acc.withColumnRenamed(colname, \"eta\") }  )",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-23 18:03:51.854",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "acc: org.apache.spark.util.LongAccumulator \u003d LongAccumulator(id: 138, name: None, value: 0)\r\nnewNames: List[String] \u003d List(eta, amici)\r\nres25: org.apache.spark.sql.DataFrame \u003d [eta: string, eta: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1592926301700_1802713428",
+      "id": "20200623-173141_1051180811",
+      "dateCreated": "2020-06-23 17:31:41.700",
+      "dateStarted": "2020-06-23 17:56:23.133",
+      "dateFinished": "2020-06-23 17:56:23.538",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val newNames \u003d List(\"eta\", \"amici\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-23 17:52:20.320",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "newNames: List[String] \u003d List(eta, amici)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1592926497489_1005248571",
+      "id": "20200623-173457_65038861",
+      "dateCreated": "2020-06-23 17:34:57.489",
+      "dateStarted": "2020-06-23 17:52:15.260",
+      "dateFinished": "2020-06-23 17:52:15.597",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "newNames(0) ",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-23 17:53:22.672",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res23: String \u003d eta\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1592927215533_-1129284550",
+      "id": "20200623-174655_1615292721",
+      "dateCreated": "2020-06-23 17:46:55.533",
+      "dateStarted": "2020-06-23 17:52:30.630",
+      "dateFinished": "2020-06-23 17:52:30.844",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.DataFrameReader\n\nval dfr:DataFrameReader \u003d spark.read",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-23 18:57:12.589",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.DataFrameReader\r\ndfr: org.apache.spark.sql.DataFrameReader \u003d org.apache.spark.sql.DataFrameReader@54e44c08\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1592927550616_1860196697",
+      "id": "20200623-175230_737696222",
+      "dateCreated": "2020-06-23 17:52:30.617",
+      "dateStarted": "2020-06-23 18:57:12.600",
+      "dateFinished": "2020-06-23 18:57:12.772",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "dfr.schema(\"num1 INT, num2 INT\").option(\"header\",\"true\").csv(\"exampl1.csv\").show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-23 19:05:42.903",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----+----+\n|num1|num2|\n+----+----+\n|  44|  11|\n|   5| 190|\n|  44| 123|\n|   9| 111|\n|  18| 238|\n|  15| 135|\n|   8| 332|\n|  11|   2|\n|  41| 461|\n|   9| 158|\n|  12| 416|\n|  29|  72|\n|  23| 392|\n|  55|  42|\n|  21| 203|\n|  34| 258|\n|   7| 453|\n|  52| 196|\n|  45| 460|\n|  30| 148|\n+----+----+\nonly showing top 20 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1592930701670_-1972192862",
+      "id": "20200623-184501_703749063",
+      "dateCreated": "2020-06-23 18:45:01.670",
+      "dateStarted": "2020-06-23 19:05:42.916",
+      "dateFinished": "2020-06-23 19:05:43.158",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.SparkSession\n\nval spark \u003d SparkSession.builder.appName(\"def\").master(\"local[*]\").getOrCreate()",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-23 19:30:26.383",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.SparkSession\r\nspark: org.apache.spark.sql.SparkSession \u003d org.apache.spark.sql.SparkSession@2d48baa0\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1592931460822_-912430836",
+      "id": "20200623-185740_558333870",
+      "dateCreated": "2020-06-23 18:57:40.822",
+      "dateStarted": "2020-06-23 19:30:26.397",
+      "dateFinished": "2020-06-23 19:30:26.610",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.conf.getAll.foreach(println)",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 00:58:10.926",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "(zeppelin.pyspark.python,C:\\Users\\home\\Anaconda3\\python)\r\n(spark.driver.host,DESKTOP-46GRV54)\r\n(zeppelin.dep.localrepo,local-repo)\r\n(zeppelin.spark.sql.stacktrace,false)\r\n(spark.driver.port,64110)\r\n(master,local[16])\r\n(spark.repl.class.uri,spark://DESKTOP-46GRV54:64110/classes)\r\n(spark.jars,file:///C:/zeppelin-0.8.2-bin-all/interpreter/spark/spark-interpreter-0.8.2.jar,file:/C:/zeppelin-0.8.2-bin-all/interpreter/spark/spark-interpreter-0.8.2.jar)\r\n(zeppelin.spark.useHiveContext,true)\r\n(spark.repl.class.outputDir,C:\\Users\\home\\AppData\\Local\\Temp\\spark1659656743594574330)\r\n(zeppelin.spark.sql.interpolation,false)\r\n(zeppelin.spark.importImplicit,true)\r\n(zeppelin.interpreter.output.limit,102400)\r\n(spark.app.name,Zeppelin)\r\n(zeppelin.R.cmd,R)\r\n(zeppelin.spark.maxResult,1000)\r\n(zeppelin.pyspark.useIPython,true)\r\n(zeppelin.spark.concurrentSQL,false)\r\n(zeppelin.spark.enableSupportedVersionCheck,true)\r\n(spark.driver.memory,8g)\r\n(zeppelin.spark.printREPLOutput,true)\r\n(zeppelin.dep.additionalRemoteRepository,spark-packages,http://dl.bintray.com/spark-packages/maven,false;)\r\n(spark.executor.id,driver)\r\n(spark.driver.extraJavaOptions, -Dfile.encoding\u003dUTF-8 -Dzeppelin.log.file\u003d\u0027C:\\zeppelin-0.8.2-bin-all\\logs\\zeppelin-interpreter-spark-home-DESKTOP-46GRV54.log\u0027)\r\n(spark.submit.deployMode,client)\r\n(zeppelin.spark.useNew,true)\r\n(spark.useHiveContext,true)\r\n(spark.master,local[*])\r\n(zeppelin.R.image.width,100%)\r\n(zeppelin.spark.ui.hidden,false)\r\n(zeppelin.interpreter.localRepo,C:\\zeppelin-0.8.2-bin-all/local-repo/spark)\r\n(spark.executor.memory,8g)\r\n(spark.driver.extraClassPath,C:\\Users\\home\\Downloads\\jar_files\\mongo-spark-connector_2.12-2.4.1.jar)\r\n(spark.executor.extraClassPath,C:\\Users\\home\\Downloads\\jar_files\\mongo-spark-connector_2.12-2.4.1.jar)\r\n(spark.repl.local.jars,file:///C:/zeppelin-0.8.2-bin-all/interpreter/spark/spark-interpreter-0.8.2.jar)\r\n(zeppelin.R.render.options,out.format \u003d \u0027html\u0027, comment \u003d NA, echo \u003d FALSE, results \u003d \u0027asis\u0027, message \u003d F, warning \u003d F, fig.retina \u003d 2)\r\n(zeppelin.interpreter.max.poolsize,10)\r\n(spark.app.id,local-1592953104794)\r\n(zeppelin.R.knitr,true)\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1592933426383_-1771994867",
+      "id": "20200623-193026_1776365262",
+      "dateCreated": "2020-06-23 19:30:26.383",
+      "dateStarted": "2020-06-24 00:58:11.028",
+      "dateFinished": "2020-06-24 00:58:28.847",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.SparkConf\n\nval conf \u003d SparkConf",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 00:59:44.801",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1592949837839_-1749255240",
+      "id": "20200624-000357_1018943115",
+      "dateCreated": "2020-06-24 00:03:57.839",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "example1",
+  "id": "2FCVZ95YG",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "sh:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

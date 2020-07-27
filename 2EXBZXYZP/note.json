@@ -1,0 +1,363 @@
+{
+  "paragraphs": [
+    {
+      "text": "class Person(nome: String, cognome: String, altezza: Float, peso: Float)",
+      "user": "admin",
+      "dateUpdated": "2019-12-12 19:45:56.244",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "defined class Person\nwarning: previously defined object Person is not a companion to class Person.\nCompanions must be defined together; you may wish to use :paste mode for this.\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576174768457_-1949389196",
+      "id": "20191212-191928_1336588752",
+      "dateCreated": "2019-12-12 19:19:28.457",
+      "dateStarted": "2019-12-12 19:45:56.253",
+      "dateFinished": "2019-12-12 19:45:56.379",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nPrefixing a constructor argument with a var makes it a mutable field of the class, also\ncall an instance variable or attribute in different OO languages. Prefixing a constructor\nargument with a val makes it an immutable field. Using the case keyword infers the\nval keyword and also adds additional methods.",
+      "user": "admin",
+      "dateUpdated": "2019-12-12 19:52:53.008",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003ePrefixing a constructor argument with a var makes it a mutable field of the class, also\u003cbr/\u003ecall an instance variable or attribute in different OO languages. Prefixing a constructor\u003cbr/\u003eargument with a val makes it an immutable field. Using the case keyword infers the\u003cbr/\u003eval keyword and also adds additional methods.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576176657732_-772617212",
+      "id": "20191212-195057_1143009145",
+      "dateCreated": "2019-12-12 19:50:57.732",
+      "dateStarted": "2019-12-12 19:52:53.009",
+      "dateFinished": "2019-12-12 19:52:53.013",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "class MutablePerson(var name: String, var age: Int)\ncase class ImmutablePerson(name: String, age: Int)\n//oppure\nclass ImmutablePerson2(val name: String, val age: Int)",
+      "user": "admin",
+      "dateUpdated": "2019-12-12 20:12:21.112",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "defined class MutablePerson\r\ndefined class ImmutablePerson\r\ndefined class ImmutablePerson2\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576174876945_-296564186",
+      "id": "20191212-192116_260465688",
+      "dateCreated": "2019-12-12 19:21:16.945",
+      "dateStarted": "2019-12-12 20:12:21.123",
+      "dateFinished": "2019-12-12 20:12:21.316",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nLike most statically typed languages, Scala allows overloaded methods. Two or more methods can have the same name as long as their full signatures are unique.\nThe signature includes the enclosing type name, method name, and the list of argument types (the names don’t matter). In the JVM, different return types alone are not sufficient to distinguish methods.\nHowever, recall from “Working Around Erasure” on page 139 that the JVM prevents\nsome methods from being truly distinct, because of type erasure of the type parameters\nfor higher-kinded types, i.e., types with type parameters, like List[A]. Consider the\nfollowing example:\n```\nobject C {\n| def m(seq: Seq[Int]): Unit \u003d println(s\"Seq[Int]: $seq\")\n| def m(seq: Seq[String]): Unit \u003d println(s\"Seq[String]: $seq\")\n| }\n```\nconsole:9: error: double definition:\nmethod m:(seq: Seq[String])Unit and\nmethod m:(seq: Seq[Int])Unit at line 8\nhave same type after erasure: (seq: Seq)Unit\ndef m(seq: Seq[String]): Unit \u003d println(s\"Seq[String]: $seq\")\n^\nThe type parameters Int and String are erased in the byte code",
+      "user": "admin",
+      "dateUpdated": "2019-12-12 20:01:50.475",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eLike most statically typed languages, Scala allows overloaded methods. Two or more methods can have the same name as long as their full signatures are unique.\u003cbr/\u003eThe signature includes the enclosing type name, method name, and the list of argument types (the names don’t matter). In the JVM, different return types alone are not sufficient to distinguish methods.\u003cbr/\u003eHowever, recall from “Working Around Erasure” on page 139 that the JVM prevents\u003cbr/\u003esome methods from being truly distinct, because of type erasure of the type parameters\u003cbr/\u003efor higher-kinded types, i.e., types with type parameters, like List[A]. Consider the\u003cbr/\u003efollowing example:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eobject C {\n| def m(seq: Seq[Int]): Unit \u003d println(s\u0026quot;Seq[Int]: $seq\u0026quot;)\n| def m(seq: Seq[String]): Unit \u003d println(s\u0026quot;Seq[String]: $seq\u0026quot;)\n| }\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003econsole:9: error: double definition:\u003cbr/\u003emethod m:(seq: Seq[String])Unit and\u003cbr/\u003emethod m:(seq: Seq[Int])Unit at line 8\u003cbr/\u003ehave same type after erasure: (seq: Seq)Unit\u003cbr/\u003edef m(seq: Seq[String]): Unit \u003d println(s\u0026ldquo;Seq[String]: $seq\u0026rdquo;)\u003cbr/\u003e^\u003cbr/\u003eThe type parameters Int and String are erased in the byte code\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576176752193_-1738021140",
+      "id": "20191212-195232_1516239661",
+      "dateCreated": "2019-12-12 19:52:32.193",
+      "dateStarted": "2019-12-12 20:01:50.475",
+      "dateFinished": "2019-12-12 20:01:50.483",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val tony \u003d new MutablePerson(\"Antonio\", 32)",
+      "user": "admin",
+      "dateUpdated": "2019-12-12 20:12:33.364",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "tony: MutablePerson \u003d MutablePerson@6523ca01\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576177222945_-469692748",
+      "id": "20191212-200022_424161633",
+      "dateCreated": "2019-12-12 20:00:22.945",
+      "dateStarted": "2019-12-12 20:12:33.373",
+      "dateFinished": "2019-12-12 20:12:33.505",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nPoichè ho definito ImmutablePerson con *case class* posso evitare di usare la key **new**. ",
+      "user": "user1",
+      "dateUpdated": "2020-01-09 00:04:11.925",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003ePoichè ho definito ImmutablePerson con \u003cem\u003ecase class\u003c/em\u003e posso evitare di usare la key \u003cstrong\u003enew\u003c/strong\u003e.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576178196046_-2070534310",
+      "id": "20191212-201636_1760681693",
+      "dateCreated": "2019-12-12 20:16:36.046",
+      "dateStarted": "2020-01-09 00:04:11.926",
+      "dateFinished": "2020-01-09 00:04:11.932",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val giusy \u003d ImmutablePerson(\"Giuseppe\", 12)",
+      "user": "admin",
+      "dateUpdated": "2019-12-12 20:16:31.915",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "giusy: ImmutablePerson \u003d ImmutablePerson(Giuseppe,12)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576177936459_221200989",
+      "id": "20191212-201216_2041633164",
+      "dateCreated": "2019-12-12 20:12:16.459",
+      "dateStarted": "2019-12-12 20:16:31.926",
+      "dateFinished": "2019-12-12 20:16:32.071",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "giusy match { case ImmutablePerson(n, r) \u003d\u003e println(n, r) }",
+      "user": "admin",
+      "dateUpdated": "2019-12-12 20:22:06.797",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "(Giuseppe,12)\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576177959697_-1953433103",
+      "id": "20191212-201239_539352931",
+      "dateCreated": "2019-12-12 20:12:39.697",
+      "dateStarted": "2019-12-12 20:22:06.809",
+      "dateFinished": "2019-12-12 20:22:07.007",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "user": "admin",
+      "dateUpdated": "2019-12-12 20:27:12.442",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1576178335810_-1991223076",
+      "id": "20191212-201855_1247294322",
+      "dateCreated": "2019-12-12 20:18:55.810",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Using class",
+  "id": "2EXBZXYZP",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "sh:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

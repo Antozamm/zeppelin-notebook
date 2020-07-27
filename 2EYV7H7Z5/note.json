@@ -1,0 +1,321 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\nCome appendere una riga ad un dataframe? Usando il metodo **.union**",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-02 20:54:18.632",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eCome appendere una riga ad un dataframe? Usando il metodo \u003cstrong\u003e.union\u003c/strong\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579452643359_-1248855997",
+      "id": "20200119-175043_14721669",
+      "dateCreated": "2020-01-19 17:50:43.359",
+      "dateStarted": "2020-07-02 20:54:18.664",
+      "dateFinished": "2020-07-02 20:54:18.678",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-19 17:23:25.156",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res1: org.apache.spark.sql.SparkSession \u003d org.apache.spark.sql.SparkSession@75b080cb\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579450991543_-1910966653",
+      "id": "20200119-172311_268916091",
+      "dateCreated": "2020-01-19 17:23:11.543",
+      "dateStarted": "2020-01-19 17:23:25.179",
+      "dateFinished": "2020-01-19 17:23:29.045",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df \u003d Seq((\"Roberto\", \"Cavalli\", 54),\n             (\"Giulio\", \"Lupo\", 67),\n             (\"Giovanni\", \"Cane\", 43)).toDF(\"Nome\", \"Cognome\", \"Eta\u0027\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-19 17:26:00.443",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "df: org.apache.spark.sql.DataFrame \u003d [Nome: string, Cognome: string ... 1 more field]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579450991528_-1858668354",
+      "id": "20200119-172311_1600475824",
+      "dateCreated": "2020-01-19 17:23:11.528",
+      "dateStarted": "2020-01-19 17:26:00.461",
+      "dateFinished": "2020-01-19 17:26:02.455",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-19 17:28:25.144",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+-------+----+\n|    Nome|Cognome|Eta\u0027|\n+--------+-------+----+\n| Roberto|Cavalli|  54|\n|  Giulio|   Lupo|  67|\n|Giovanni|   Cane|  43|\n+--------+-------+----+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579450991513_1876123747",
+      "id": "20200119-172311_1970078860",
+      "dateCreated": "2020-01-19 17:23:11.513",
+      "dateStarted": "2020-01-19 17:28:25.165",
+      "dateFinished": "2020-01-19 17:28:25.806",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val newdf \u003d Seq((\"Roberto\", \"Volpe\", 39)).toDF()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-19 17:44:39.738",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "newdf: org.apache.spark.sql.DataFrame \u003d [_1: string, _2: string ... 1 more field]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579450991499_-1221386228",
+      "id": "20200119-172311_482140325",
+      "dateCreated": "2020-01-19 17:23:11.499",
+      "dateStarted": "2020-01-19 17:44:31.465",
+      "dateFinished": "2020-01-19 17:44:32.042",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.union(newdf).show",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-19 17:45:13.023",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+-------+----+\n|    Nome|Cognome|Eta\u0027|\n+--------+-------+----+\n| Roberto|Cavalli|  54|\n|  Giulio|   Lupo|  67|\n|Giovanni|   Cane|  43|\n| Roberto|  Volpe|  39|\n+--------+-------+----+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579450991483_-670789412",
+      "id": "20200119-172311_1741695922",
+      "dateCreated": "2020-01-19 17:23:11.483",
+      "dateStarted": "2020-01-19 17:45:13.046",
+      "dateFinished": "2020-01-19 17:45:14.377",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nSi noti che si può usare anche con due dataFrame. Quindi l\u0027unione è una operazione in cui ho l\u0027incolonnammento in verticale dei due dataframe.",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-02 20:56:34.207",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eSi noti che si può usare anche con due dataFrame. Quindi l\u0026rsquo;unione è una operazione in cui ho l\u0026rsquo;incolonnammento in verticale dei due dataframe.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579450805362_605393394",
+      "id": "20200119-172005_916911464",
+      "dateCreated": "2020-01-19 17:20:05.363",
+      "dateStarted": "2020-07-02 20:56:34.230",
+      "dateFinished": "2020-07-02 20:56:34.258",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-02 22:43:56.857",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1593716194196_-2142268769",
+      "id": "20200702-205634_2021737025",
+      "dateCreated": "2020-07-02 20:56:34.196",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Dataframe Union",
+  "id": "2EYV7H7Z5",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

@@ -1,0 +1,270 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\nCome modificare iterativamente una colonna di un dataFrame considerando che il dataFrame è un oggetto immutabile?\n\nUsando foldLeft applicato ad un range per esempio. Il range ha una funzione equiparabile a quella di un for loop in un linguaggio di programmazione tradizionale",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 12:15:00.092",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eCome modificare iterativamente una colonna di un dataFrame considerando che il dataFrame è un oggetto immutabile?\u003c/p\u003e\n\u003cp\u003eUsando foldLeft applicato ad un range per esempio. Il range ha una funzione equiparabile a quella di un for loop in un linguaggio di programmazione tradizionale\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1595585658199_1516526236",
+      "id": "20200724-121418_1451572965",
+      "dateCreated": "2020-07-24 12:14:18.199",
+      "dateStarted": "2020-07-24 12:15:00.093",
+      "dateFinished": "2020-07-24 12:15:00.099",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.storage.StorageLevel\n\n\nval d_path \u003d \"D:/AnacondaProjects/Datasets/DatasetToCompleteTheSixSparkExercises\"\nval d_path_prod \u003d d_path + \"/products_parquet\"\nval d_path_sales \u003d d_path + \"/sales_parquet\"\nval d_path_seller \u003d d_path + \"/sellers_parquet\"\n\nval sellers \u003d spark.read.format(\"parquet\").load(d_path_seller).persist(StorageLevel.MEMORY_AND_DISK)\n\nval prods \u003d spark.read.format(\"parquet\").load(d_path_prod).persist(StorageLevel.MEMORY_AND_DISK)\n\nval sales \u003d spark.read.format(\"parquet\").load(d_path_sales).persist(StorageLevel.MEMORY_AND_DISK)\n\nsales.show(1)\nsellers.show(1)\nprods.show(1)",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 12:15:30.911",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|kyeibuumwlyhuwksx...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 1 row\n\r\n+---------+-----------+------------+\n|seller_id|seller_name|daily_target|\n+---------+-----------+------------+\n|        0|   seller_0|     2500000|\n+---------+-----------+------------+\nonly showing top 1 row\n\r\n+----------+------------+-----+\n|product_id|product_name|price|\n+----------+------------+-----+\n|         0|   product_0|   22|\n+----------+------------+-----+\nonly showing top 1 row\n\r\nimport org.apache.spark.storage.StorageLevel\r\nd_path: String \u003d D:/AnacondaProjects/Datasets/DatasetToCompleteTheSixSparkExercises\r\nd_path_prod: String \u003d D:/AnacondaProjects/Datasets/DatasetToCompleteTheSixSparkExercises/products_parquet\r\nd_path_sales: String \u003d D:/AnacondaProjects/Datasets/DatasetToCompleteTheSixSparkExercises/sales_parquet\r\nd_path_seller: String \u003d D:/AnacondaProjects/Datasets/DatasetToCompleteTheSixSparkExercises/sellers_parquet\r\nsellers: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [seller_id: string, seller_name: string ... 1 more field]\r\nprods: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [product_id: string, product_name: string ... 1 more field]\r\nsales: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [order_id: string, product_id: s..."
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1595585700084_-873554407",
+      "id": "20200724-121500_1804778908",
+      "dateCreated": "2020-07-24 12:15:00.084",
+      "dateStarted": "2020-07-24 12:15:30.919",
+      "dateFinished": "2020-07-24 12:15:42.230",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nNel codice sotto il range agisce come una sorta di for loop.\n\nCosa fa il fold left? \nIniziamo con il semplificare il codice: `Range(1,5).foldLeft( sales1 ){ (acc,x) \u003d\u003e acc \u003d func(acc,x) }`\n\nVediamo gli step dell\u0027iterazione:\n\n* step 1:\n    - inizializa la variabile `acc` con `sales1`, e `x` e il valore corrente del range: 1 nel primo step\n    - applica alla coppia (acc,x) la funzione specificata, e l\u0027output della funzione è assegnato come nuovo valore di `acc` che verrà usato/propagato allo step 2\n    - il nuovo valore di `acc` è il vecchio `acc` con l\u0027aggiunta di una colonna\n* step 2:\n    - ho 2 nuovi valori acc e x. acc è stato aggiornato allo step precedente e x è il nuovo valore del range (\u003d2)\n    - alla nuova coppia (acc,x) viene applicata la funzione specificata e l\u0027aoutput della funzione viene assegnato ad `acc`, il cui nuovo valore verrà usato nello step 3\n\ne così via.",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 13:18:25.726",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eNel codice sotto il range agisce come una sorta di for loop.\u003c/p\u003e\n\u003cp\u003eCosa fa il fold left?\u003cbr/\u003eIniziamo con il semplificare il codice: \u003ccode\u003eRange(1,5).foldLeft( sales1 ){ (acc,x) \u003d\u0026gt; acc \u003d func(acc,x) }\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eVediamo gli step dell\u0026rsquo;iterazione:\u003c/p\u003e\n\u003cul\u003e\n  \u003cli\u003estep 1:\n    \u003cul\u003e\n      \u003cli\u003einizializa la variabile \u003ccode\u003eacc\u003c/code\u003e con \u003ccode\u003esales1\u003c/code\u003e, e \u003ccode\u003ex\u003c/code\u003e e il valore corrente del range: 1 nel primo step\u003c/li\u003e\n      \u003cli\u003eapplica alla coppia (acc,x) la funzione specificata, e l\u0026rsquo;output della funzione è assegnato come nuovo valore di \u003ccode\u003eacc\u003c/code\u003e che verrà usato/propagato allo step 2\u003c/li\u003e\n      \u003cli\u003eil nuovo valore di \u003ccode\u003eacc\u003c/code\u003e è il vecchio \u003ccode\u003eacc\u003c/code\u003e con l\u0026rsquo;aggiunta di una colonna\u003c/li\u003e\n    \u003c/ul\u003e\n  \u003c/li\u003e\n  \u003cli\u003estep 2:\n    \u003cul\u003e\n      \u003cli\u003eho 2 nuovi valori acc e x. acc è stato aggiornato allo step precedente e x è il nuovo valore del range (\u003d2)\u003c/li\u003e\n      \u003cli\u003ealla nuova coppia (acc,x) viene applicata la funzione specificata e l\u0026rsquo;aoutput della funzione viene assegnato ad \u003ccode\u003eacc\u003c/code\u003e, il cui nuovo valore verrà usato nello step 3\u003c/li\u003e\n    \u003c/ul\u003e\n  \u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003ee così via.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1595585800063_-1424944864",
+      "id": "20200724-121640_795805087",
+      "dateCreated": "2020-07-24 12:16:40.064",
+      "dateStarted": "2020-07-24 13:18:25.726",
+      "dateFinished": "2020-07-24 13:18:25.743",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val acc \u003d sc.collectionAccumulator(\"prova\")\n\nval sales1 \u003d sales.withColumnRenamed(\"bill_raw_text\", \"bill_raw_text_0\")\nsales1.show(5)\n\nval sales2 \u003d Range(1,5).foldLeft( sales1 ){ (acc, x) \u003d\u003e acc.withColumn(\"bill_raw_text_\"+x, md5( acc(\"bill_raw_text_\"+(x-1)) ) )}\nsales2.show(5)",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 12:30:44.773",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|     bill_raw_text_0|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|kyeibuumwlyhuwksx...|\n|       2|         0|        0|2020-07-08|             13|jfyuoyfkeyqkckwbu...|\n|       3|         0|        0|2020-07-05|             38|uyjihlzhzcswxcccx...|\n|       4|         0|        0|2020-07-05|             56|umnxvoqbdzpbwjqmz...|\n|       5|         0|        0|2020-07-05|             11|zmqexmaawmvdpqhih...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 5 rows\n\r\n+--------+----------+---------+----------+---------------+--------------------+--------------------+--------------------+--------------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|     bill_raw_text_0|     bill_raw_text_1|     bill_raw_text_2|     bill_raw_text_3|     bill_raw_text_4|\n+--------+----------+---------+----------+---------------+--------------------+--------------------+--------------------+--------------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|kyeibuumwlyhuwksx...|0e72113eda28e817b...|dd7776a030df0941b...|51960891d3640178d...|aa26467f07244138a...|\n|       2|         0|        0|2020-07-08|             13|jfyuoyfkeyqkckwbu...|13af9a32eb8a31513...|4b4b6db3794449623...|1599682fcd0879b58...|afa71e43783564ce2...|\n|       3|         0|        0|2020-07-05|             38|uyjihlzhzcswxcccx...|c2d269a5c9376e431...|fee9bf121605c6666...|41719f6c251ec32a7...|7946fd68fde656983...|\n|       4|         0|        0|2020-07-05|             56|umnxvoqbdzpbwjqmz...|7a73a2250f416bb81...|fa00fab1238c5bf17...|82f89222fdc874bec...|260a666921f815980...|\n|       5|         0|        0|2020-07-05|             11|zmqexmaawmvdpqhih...|2e66bd8b5b16526e5...|4f2c00af4df594bb9...|dc2fe70005ee80ed9...|f165c5bfcbb6b4e85...|\n+--------+----------+---------+----------+---------------+--------------------+--------------------+--------------------+--------------------+--------------------+\nonly showing top 5 rows\n\r\nacc: org.apache.spark.util.CollectionAccumulator[Nothing] \u003d CollectionAccumulator(id: 1048, name: Some(prova), value: [])\r\nsales1: org.apache.spark.sql.DataFrame \u003d [order_id: string, product_id: string ... 4 more fields]\r\nsales2: org.apache.spark.sql.DataFrame \u003d [order_id: string, product_id: string ... 8 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1595585730911_92420968",
+      "id": "20200724-121530_829680300",
+      "dateCreated": "2020-07-24 12:15:30.911",
+      "dateStarted": "2020-07-24 12:30:44.781",
+      "dateFinished": "2020-07-24 12:30:45.195",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nSi noti che l\u0027ultimo numero di `Range(1,5)` è 4",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 12:31:37.376",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eSi noti che l\u0026rsquo;ultimo numero di \u003ccode\u003eRange(1,5)\u003c/code\u003e è 4\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1595586644773_1880936614",
+      "id": "20200724-123044_1961446647",
+      "dateCreated": "2020-07-24 12:30:44.774",
+      "dateStarted": "2020-07-24 12:31:37.376",
+      "dateFinished": "2020-07-24 12:31:37.380",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 13:37:53.305",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|kyeibuumwlyhuwksx...|\n|       2|         0|        0|2020-07-08|             13|jfyuoyfkeyqkckwbu...|\n|       3|         0|        0|2020-07-05|             38|uyjihlzhzcswxcccx...|\n|       4|         0|        0|2020-07-05|             56|umnxvoqbdzpbwjqmz...|\n|       5|         0|        0|2020-07-05|             11|zmqexmaawmvdpqhih...|\n|       6|         0|        0|2020-07-01|             82|lmuhhkpyuoyslwmvX...|\n|       7|         0|        0|2020-07-04|             15|zoqweontumefxbgvu...|\n|       8|         0|        0|2020-07-08|             79|sgldfgtcxufasnvsc...|\n|       9|         0|        0|2020-07-10|             25|jnykelwjjebgkwgmu...|\n|      10|         0|        0|2020-07-08|              8|yywjfihneygcvfnyl...|\n|      11|         0|        0|2020-07-01|             10|nxwejyoeznltdhcam...|\n|      12|         0|        0|2020-07-06|             45|efmymeftivwsfljzt...|\n|      13|         0|        0|2020-07-10|             63|nxhvtospPhfnkavdy...|\n|      14|         0|        0|2020-07-03|             22|ypyusdsjzfpfbucnn...|\n|      15|         0|        0|2020-07-09|             75|ymjvbhaxffyjcwzyn...|\n|      16|         0|        0|2020-07-10|             83|phbcykkhvqsbkipwa...|\n|      17|         0|        0|2020-07-04|             54|qgnGqqnjmbqZytoug...|\n|      18|         0|        0|2020-07-04|             58|ozmllbabrnhebWcex...|\n|      19|         0|        0|2020-07-07|             33|kbrvXuzgiuinodtkg...|\n|      20|         0|        0|2020-07-09|             73|jnqjzaigjtqlfwpug...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 20 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1595586671553_-1738194502",
+      "id": "20200724-123111_28799018",
+      "dateCreated": "2020-07-24 12:31:11.553",
+      "dateStarted": "2020-07-24 13:37:31.792",
+      "dateFinished": "2020-07-24 13:37:32.051",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1595590651783_273961536",
+      "id": "20200724-133731_1267778958",
+      "dateCreated": "2020-07-24 13:37:31.783",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Modificare iterativamente le colonne di un DataFrame",
+  "id": "2FGCRVFRR",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

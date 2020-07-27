@@ -1,0 +1,1096 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\nIl dataset è una struttura **typed**, ovvero ogni campo è di un tipo ben definito. Contrariamente al dataframe che è **untyped**. Il fatto che il dataset sia typed consente il controllo del tipo al momento della compilazione (compile time), ovvero il compilatore è in grado di controllare se i campi del dataset contengono i tipi di dati corretti. Nel caso del dataframe invece l\u0027errore viene scoperto al momento del runtime.\n\nA partire da Apache Spark 2.0.0 Dataset e Dataframe fanno riferimento alla stessa API. Dataframe è un alias per Dataset[Row].\n\nIl dataset è una raccolta di istanze di una classe definita ad hoc. Definiamo la classe **GOTchar** (personaggi di Game Of Throne), in cui ho il nome del personaggio, la sua casata e il numero di like (su drakebook probabilmente):",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-20 10:24:01.753",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eIl dataset è una struttura \u003cstrong\u003etyped\u003c/strong\u003e, ovvero ogni campo è di un tipo ben definito. Contrariamente al dataframe che è \u003cstrong\u003euntyped\u003c/strong\u003e. Il fatto che il dataset sia typed consente il controllo del tipo al momento della compilazione (compile time), ovvero il compilatore è in grado di controllare se i campi del dataset contengono i tipi di dati corretti. Nel caso del dataframe invece l\u0026rsquo;errore viene scoperto al momento del runtime.\u003c/p\u003e\n\u003cp\u003eA partire da Apache Spark 2.0.0 Dataset e Dataframe fanno riferimento alla stessa API. Dataframe è un alias per Dataset[Row].\u003c/p\u003e\n\u003cp\u003eIl dataset è una raccolta di istanze di una classe definita ad hoc. Definiamo la classe \u003cstrong\u003eGOTchar\u003c/strong\u003e (personaggi di Game Of Throne), in cui ho il nome del personaggio, la sua casata e il numero di like (su drakebook probabilmente):\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579474769264_1164496534",
+      "id": "20200119-235929_956299078",
+      "dateCreated": "2020-01-19 23:59:29.264",
+      "dateStarted": "2020-01-20 10:24:01.756",
+      "dateFinished": "2020-01-20 10:24:03.365",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "case class GOTchar(nome: String, casata: String, like: Long)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-20 10:24:28.754",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "defined class GOTchar\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579456120121_-1099953929",
+      "id": "20200119-184840_1099633857",
+      "dateCreated": "2020-01-19 18:48:40.121",
+      "dateStarted": "2020-01-20 10:24:28.784",
+      "dateFinished": "2020-01-20 10:24:28.994",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nDefiniamo una sequenza di elementi del tipo GOTchar.",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-20 10:24:05.680",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eDefiniamo una sequenza di elementi del tipo GOTchar.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579476060232_-1712696648",
+      "id": "20200120-002100_1709645829",
+      "dateCreated": "2020-01-20 00:21:00.232",
+      "dateStarted": "2020-01-20 10:24:05.679",
+      "dateFinished": "2020-01-20 10:24:05.686",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val GOTlist \u003d Seq(\n    GOTchar(\"Cersei\", \"Lannister\", 1240000),\n    GOTchar(\"John\", \"Stark\", 875678),\n    GOTchar(\"Tyrion\", \"Lannister\", 1000544),\n    GOTchar(\"Arya\", \"Stark\", 625142),\n    GOTchar(\"Tywin\", \"Lannister\", 523457),\n    GOTchar(\"Sansa\", \"Stark\", 754823),\n    GOTchar(\"Daeneris\", \"Targaryen\", 1129544)\n    )",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-20 10:24:36.083",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "GOTlist: Seq[GOTchar] \u003d List(GOTchar(Cersei,Lannister,1240000), GOTchar(John,Stark,875678), GOTchar(Tyrion,Lannister,1000544), GOTchar(Arya,Stark,625142), GOTchar(Tywin,Lannister,523457), GOTchar(Sansa,Stark,754823), GOTchar(Daeneris,Targaryen,1129544))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579455793775_-771300736",
+      "id": "20200119-184313_1001413388",
+      "dateCreated": "2020-01-19 18:43:13.775",
+      "dateStarted": "2020-01-20 10:24:36.119",
+      "dateFinished": "2020-01-20 10:24:36.676",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nGeneriamo un dataset con **.createDataset** a partire dalla sequenza di personaggi di GOT.",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-20 09:48:59.473",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eGeneriamo un dataset con \u003cstrong\u003e.createDataset\u003c/strong\u003e a partire dalla sequenza di personaggi di GOT.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579476087469_-295703406",
+      "id": "20200120-002127_2068691414",
+      "dateCreated": "2020-01-20 00:21:27.469",
+      "dateStarted": "2020-01-20 09:48:59.474",
+      "dateFinished": "2020-01-20 09:48:59.485",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val myGOTDS \u003d spark.createDataset(GOTlist)\n\nmyGOTDS.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-20 10:24:41.798",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+---------+-------+\n|    nome|   casata|   like|\n+--------+---------+-------+\n|  Cersei|Lannister|1240000|\n|    John|    Stark| 875678|\n|  Tyrion|Lannister|1000544|\n|    Arya|    Stark| 625142|\n|   Tywin|Lannister| 523457|\n|   Sansa|    Stark| 754823|\n|Daeneris|Targaryen|1129544|\n+--------+---------+-------+\n\r\nmyGOTDS: org.apache.spark.sql.Dataset[GOTchar] \u003d [nome: string, casata: string ... 1 more field]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579456457313_1149967854",
+      "id": "20200119-185417_1719452511",
+      "dateCreated": "2020-01-19 18:54:17.313",
+      "dateStarted": "2020-01-20 10:24:41.831",
+      "dateFinished": "2020-01-20 10:24:44.419",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-20 00:23:28.916",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1579476208894_-1803820622",
+      "id": "20200120-002328_179153286",
+      "dateCreated": "2020-01-20 00:23:28.894",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "myGOTDS.groupByKey(r \u003d\u003e r.casata)\n//or myGOTDS.groupByKey( _ \u003d\u003e _.casata)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-20 10:24:47.329",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res2: org.apache.spark.sql.KeyValueGroupedDataset[String,GOTchar] \u003d KeyValueGroupedDataset: [key: [value: string], value: [nome: string, casata: string ... 1 more field(s)]]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579455876207_-359296958",
+      "id": "20200119-184436_1820449607",
+      "dateCreated": "2020-01-19 18:44:36.207",
+      "dateStarted": "2020-01-20 10:24:47.356",
+      "dateFinished": "2020-01-20 10:24:47.854",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nIl risultato di groupBy sul dataset è un [KeyValueGroupedDataset](https://spark.apache.org/docs/latest/api/scala/#org.apache.spark.sql.KeyValueGroupedDataset), in cui ho in ogni record una *key* (String in questo caso) e come *value* tutti i GOTchar associati a queta key.\n\nPosso vedere le *key* del KeyValueDataset.",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-20 10:27:35.755",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eIl risultato di groupBy sul dataset è un \u003ca href\u003d\"https://spark.apache.org/docs/latest/api/scala/#org.apache.spark.sql.KeyValueGroupedDataset\"\u003eKeyValueGroupedDataset\u003c/a\u003e, in cui ho in ogni record una \u003cem\u003ekey\u003c/em\u003e (String in questo caso) e come \u003cem\u003evalue\u003c/em\u003e tutti i GOTchar associati a queta key.\u003c/p\u003e\n\u003cp\u003ePosso vedere le \u003cem\u003ekey\u003c/em\u003e del KeyValueDataset.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579463397924_-1610449087",
+      "id": "20200119-204957_1031540939",
+      "dateCreated": "2020-01-19 20:49:57.924",
+      "dateStarted": "2020-01-20 10:27:35.756",
+      "dateFinished": "2020-01-20 10:27:35.764",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "myGOTDS.groupByKey(r \u003d\u003e r.casata).keys.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-20 10:27:40.372",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---------+\n|    value|\n+---------+\n|Lannister|\n|Targaryen|\n|    Stark|\n+---------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579510077644_564125656",
+      "id": "20200120-094757_724540980",
+      "dateCreated": "2020-01-20 09:47:57.644",
+      "dateStarted": "2020-01-20 10:27:40.397",
+      "dateFinished": "2020-01-20 10:27:41.733",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nPer ottenere qualcosa che abbia un valore tangibile, devo ancora applicare una operazione di aggregazione sui *value* del *KeyValueGroupedDataset*.\n\nRicordandoci che voglio fare la somma di tutti i like, procedo come segue:\n- isolo i like di ogni value con **.mapValues(p \u003d\u003e p.like)** in modo tale che in ogni gruppo rimangono solo i like associati alla key\n- sommo tutti il like associati alla key usando **.reduceGroups( (a,b) \u003d\u003e a+b )**, ove a e b sono due dei value associati alla key (in questo caso due like)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-20 10:35:44.017",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1579510439881_-486509249",
+      "id": "20200120-095359_1676027999",
+      "dateCreated": "2020-01-20 09:53:59.881",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "myGOTDS.groupByKey( r \u003d\u003e r.casata ).mapValues(p \u003d\u003e p.like).reduceGroups( (a,b) \u003d\u003e a+b ).show",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-20 10:28:23.012",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---------+------------------------+\n|    value|ReduceAggregator(bigint)|\n+---------+------------------------+\n|Lannister|                 2764001|\n|Targaryen|                 1129544|\n|    Stark|                 2255643|\n+---------+------------------------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579455887646_739377787",
+      "id": "20200119-184447_75987521",
+      "dateCreated": "2020-01-19 18:44:47.646",
+      "dateStarted": "2020-01-19 23:41:55.916",
+      "dateFinished": "2020-01-19 23:41:57.498",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nUn altro modo per aggregare è usando il metodo **mapGroups** la cui signature è:\n`def mapGroups[U](f: (K, Iterator[V]) ⇒ U)`\n\nLa funzione che passo come parametro a *mapGroups* deve accettare come parametri la *key* e un iteratore sui *value*. per iterare sui *value* posso usare **foldLeft()**.",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-20 14:36:34.857",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eUn altro modo per aggregare è usando il metodo \u003cstrong\u003emapGroups\u003c/strong\u003e la cui signature è:\u003cbr/\u003e\u003ccode\u003edef mapGroups[U](f: (K, Iterator[V]) ⇒ U)\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eLa funzione che passo come parametro a \u003cem\u003emapGroups\u003c/em\u003e deve accettare come parametri la \u003cem\u003ekey\u003c/em\u003e e un iteratore sui \u003cem\u003evalue\u003c/em\u003e. per iterare sui \u003cem\u003evalue\u003c/em\u003e posso usare \u003cstrong\u003efoldLeft()\u003c/strong\u003e.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579513187232_-88302167",
+      "id": "20200120-103947_1829209806",
+      "dateCreated": "2020-01-20 10:39:47.232",
+      "dateStarted": "2020-01-20 14:36:34.857",
+      "dateFinished": "2020-01-20 14:36:34.862",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "myGOTDS.groupByKey( r \u003d\u003e r.casata ).mapGroups( (k, itV) \u003d\u003e (k, itV.foldLeft(0.asInstanceOf[Long])( (acc, value) \u003d\u003e acc + value.like) )).toDF(\"casata\", \"likeTotali\").show",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-20 11:53:01.450",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---------+----------+\n|   casata|likeTotali|\n+---------+----------+\n|Lannister|   2764001|\n|Targaryen|   1129544|\n|    Stark|   2255643|\n+---------+----------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579512986558_1453597131",
+      "id": "20200120-103626_1012589693",
+      "dateCreated": "2020-01-20 10:36:26.558",
+      "dateStarted": "2020-01-20 11:53:01.478",
+      "dateFinished": "2020-01-20 11:53:02.303",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nSi noti che nel comando sopra ho usato come valore neutro dell\u0027accumulatore di foldLeft `0.asInstanceOf[Long]` perché **like** è di tipo Long. Altrimenti ho un errore (perché non converte implicitamente??).\n\nInoltre ho usato il metodo **toDF**, unicamente per dare un nome alle colonne del dataframe risultato dell\u0027operazione.\n\nPer tornare al tipo dataset posso definire una nuova *case class* con gli stessi nomi delle colonne del dataframe (importante) e poi convertire il dataframe in dataset usando il metodo **.as[\\\u003cclasse\\\u003e]**.",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-20 11:59:35.703",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eSi noti che nel comando sopra ho usato come valore neutro dell\u0026rsquo;accumulatore di foldLeft \u003ccode\u003e0.asInstanceOf[Long]\u003c/code\u003e perché \u003cstrong\u003elike\u003c/strong\u003e è di tipo Long. Altrimenti ho un errore (perché non converte implicitamente??).\u003c/p\u003e\n\u003cp\u003eInoltre ho usato il metodo \u003cstrong\u003etoDF\u003c/strong\u003e, unicamente per dare un nome alle colonne del dataframe risultato dell\u0026rsquo;operazione.\u003c/p\u003e\n\u003cp\u003ePer tornare al tipo dataset posso definire una nuova \u003cem\u003ecase class\u003c/em\u003e con gli stessi nomi delle colonne del dataframe (importante) e poi convertire il dataframe in dataset usando il metodo \u003cstrong\u003e.as[\u0026lt;classe\u0026gt;]\u003c/strong\u003e.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579513872261_1525932627",
+      "id": "20200120-105112_130296048",
+      "dateCreated": "2020-01-20 10:51:12.261",
+      "dateStarted": "2020-01-20 11:59:35.703",
+      "dateFinished": "2020-01-20 11:59:35.710",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "case class casataLike(casata: String, likeTotali: Long)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-20 11:55:19.497",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "defined class casataLike\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579516964352_992905499",
+      "id": "20200120-114244_17233122",
+      "dateCreated": "2020-01-20 11:42:44.352",
+      "dateStarted": "2020-01-20 11:55:19.526",
+      "dateFinished": "2020-01-20 11:55:19.687",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val newGOTDS \u003d myGOTDS.groupByKey( r \u003d\u003e r.casata ).mapGroups( (k, itV) \u003d\u003e (k, itV.foldLeft(0.asInstanceOf[Long])( (acc, value) \u003d\u003e acc + value.like) )).toDF(\"casata\", \"likeTotali\").as[casataLike]",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-20 12:00:37.572",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "newGOTDS: org.apache.spark.sql.Dataset[casataLike] \u003d [casata: string, likeTotali: bigint]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579516991877_-1233687606",
+      "id": "20200120-114311_1099993201",
+      "dateCreated": "2020-01-20 11:43:11.877",
+      "dateStarted": "2020-01-20 12:00:37.596",
+      "dateFinished": "2020-01-20 12:00:38.017",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "newGOTDS.explain",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-20 12:00:45.602",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003d\u003d Physical Plan \u003d\u003d\n*(2) Project [_1#223 AS casata#226, _2#224L AS likeTotali#227L]\n+- *(2) SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, assertnotnull(input[0, scala.Tuple2, true])._1, true, false) AS _1#223, assertnotnull(input[0, scala.Tuple2, true])._2 AS _2#224L]\n   +- MapGroups \u003cfunction2\u003e, value#219.toString, newInstance(class $line51693013723.$read$$iw$$iw$GOTchar), [value#219], [nome#3, casata#4, like#5L], obj#222: scala.Tuple2\n      +- *(1) Sort [value#219 ASC NULLS FIRST], false, 0\n         +- Exchange hashpartitioning(value#219, 200)\n            +- AppendColumns \u003cfunction1\u003e, newInstance(class $line51693013723.$read$$iw$$iw$GOTchar), [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, input[0, java.lang.String, true], true, false) AS value#219]\n               +- LocalTableScan [nome#3, casata#4, like#5L]\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579517004430_-1966144718",
+      "id": "20200120-114324_697002622",
+      "dateCreated": "2020-01-20 11:43:24.430",
+      "dateStarted": "2020-01-20 12:00:45.629",
+      "dateFinished": "2020-01-20 12:00:45.825",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nNella [KeyValueGroupedDataset API](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.sql.KeyValueGroupedDataset) c\u0027è un warning per il metodo **mapGroups**, per l\u0027esattezza dice di usae il metodo con cautela poiché il metodo avvia uno shuffle completo dei dati. Quindi per fare un\u0027aggregazione su ogni *key* è meglio usare la funzione **reduceGroups**.\n\nTra le funzioni che si possono usare c\u0027è **agg()**.",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-20 14:47:19.078",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eNella \u003ca href\u003d\"https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.sql.KeyValueGroupedDataset\"\u003eKeyValueGroupedDataset API\u003c/a\u003e c\u0026rsquo;è un warning per il metodo \u003cstrong\u003emapGroups\u003c/strong\u003e, per l\u0026rsquo;esattezza dice di usae il metodo con cautela poiché il metodo avvia uno shuffle completo dei dati. Quindi per fare un\u0026rsquo;aggregazione su ogni \u003cem\u003ekey\u003c/em\u003e è meglio usare la funzione \u003cstrong\u003ereduceGroups\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003eTra le funzioni che si possono usare c\u0026rsquo;è \u003cstrong\u003eagg()\u003c/strong\u003e.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579518371473_-119340367",
+      "id": "20200120-120611_872976029",
+      "dateCreated": "2020-01-20 12:06:11.473",
+      "dateStarted": "2020-01-20 14:47:19.078",
+      "dateFinished": "2020-01-20 14:47:19.084",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "myGOTDS.groupByKey( r \u003d\u003e r.casata ).agg((sum($\"like\").as[Long])).show\n// def agg[U1](col1: org.apache.spark.sql.TypedColumn[GOTchar,U1]): org.apache.spark.sql.Dataset[(String, U1)]",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-20 14:36:14.137",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---------+---------+\n|    value|sum(like)|\n+---------+---------+\n|Lannister|  2764001|\n|Targaryen|  1129544|\n|    Stark|  2255643|\n+---------+---------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579518781789_-2087081205",
+      "id": "20200120-121301_440509860",
+      "dateCreated": "2020-01-20 12:13:01.789",
+      "dateStarted": "2020-01-20 14:36:14.162",
+      "dateFinished": "2020-01-20 14:36:14.711",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-20 12:12:59.233",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1579518779232_1618063703",
+      "id": "20200120-121259_1843415390",
+      "dateCreated": "2020-01-20 12:12:59.232",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nUn altro esempio di uso di **groupBy**.",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-20 00:24:31.061",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eUn altro esempio di uso di \u003cstrong\u003egroupBy\u003c/strong\u003e.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579476245930_-993083840",
+      "id": "20200120-002405_761947409",
+      "dateCreated": "2020-01-20 00:24:05.930",
+      "dateStarted": "2020-01-20 00:24:31.061",
+      "dateFinished": "2020-01-20 00:24:31.065",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val ds \u003d List(\"abcdef\", \"abcd\", \"cdef\", \"mnop\").toDS",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-19 23:57:24.946",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "ds: org.apache.spark.sql.Dataset[String] \u003d [value: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579466785639_-1323524758",
+      "id": "20200119-214625_946604438",
+      "dateCreated": "2020-01-19 21:46:25.639",
+      "dateStarted": "2020-01-19 23:57:24.974",
+      "dateFinished": "2020-01-19 23:57:25.465",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "ds.groupByKey(l \u003d\u003e l.substring(0,3)).keys.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-19 23:57:27.209",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----+\n|value|\n+-----+\n|  cde|\n|  mno|\n|  abc|\n+-----+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579466788737_-1899010332",
+      "id": "20200119-214628_315784772",
+      "dateCreated": "2020-01-19 21:46:28.737",
+      "dateStarted": "2020-01-19 23:57:27.234",
+      "dateFinished": "2020-01-19 23:57:28.267",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val keyvalue \u003d List((3, \"aaa\"), (1, \"bbb\"), (2, \"uuu\"), (3, \"iii\"), (2, \"www\"), (3, \"mmm\"))\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-20 10:55:07.328",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "keyvalue: List[(Int, String)] \u003d List((3,aaa), (1,bbb), (2,uuu), (3,iii), (2,www), (3,mmm))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579466942735_1650185609",
+      "id": "20200119-214902_1739016400",
+      "dateCreated": "2020-01-19 21:49:02.735",
+      "dateStarted": "2020-01-20 10:55:07.353",
+      "dateFinished": "2020-01-20 10:55:07.646",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val keyvalueDS \u003d keyvalue.toDS\n\nkeyvalueDS.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-20 10:55:09.552",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+---+\n| _1| _2|\n+---+---+\n|  3|aaa|\n|  1|bbb|\n|  2|uuu|\n|  3|iii|\n|  2|www|\n|  3|mmm|\n+---+---+\n\r\nkeyvalueDS: org.apache.spark.sql.Dataset[(Int, String)] \u003d [_1: int, _2: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579467679156_188821143",
+      "id": "20200119-220119_1737318052",
+      "dateCreated": "2020-01-19 22:01:19.156",
+      "dateStarted": "2020-01-20 10:55:09.578",
+      "dateFinished": "2020-01-20 10:55:09.943",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "keyvalueDS.groupByKey( p \u003d\u003e p._1).mapGroups( (k, vs) \u003d\u003e (k, vs.foldLeft(\"\")( (acc, value) \u003d\u003e acc+value._2)))",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-20 10:55:15.813",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res21: org.apache.spark.sql.Dataset[(Int, String)] \u003d [_1: int, _2: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579467727998_-1331492147",
+      "id": "20200119-220207_72577024",
+      "dateCreated": "2020-01-19 22:02:07.998",
+      "dateStarted": "2020-01-20 10:55:15.840",
+      "dateFinished": "2020-01-20 10:55:16.207",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.version",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-20 10:36:21.573",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res9: String \u003d 2.4.4\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579471097950_-785732708",
+      "id": "20200119-225817_982692280",
+      "dateCreated": "2020-01-19 22:58:17.950",
+      "dateStarted": "2020-01-20 10:36:21.600",
+      "dateFinished": "2020-01-20 10:36:21.780",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1579511495955_-1945834323",
+      "id": "20200120-101135_87053864",
+      "dateCreated": "2020-01-20 10:11:35.955",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Dataset",
+  "id": "2EX5DB4GA",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {}
+}

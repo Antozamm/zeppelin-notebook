@@ -1,0 +1,575 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\nfrom [databricks](https://docs.databricks.com/data/data-sources/read-parquet.html)",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-22 22:54:54.578",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003efrom \u003ca href\u003d\"https://docs.databricks.com/data/data-sources/read-parquet.html\"\u003edatabricks\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575984288899_1073278843",
+      "id": "20191210-142448_1147341431",
+      "dateCreated": "2019-12-10 14:24:48.899",
+      "dateStarted": "2020-06-22 22:54:54.578",
+      "dateFinished": "2020-06-22 22:54:54.582",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "case class myCaseClass(key:String, group:String, value:Int, someInts: Seq[Int], someMap: Map[String, Int])\n\nmyCaseClass(\"nome\", \"Antonio\", 47, List(180,75), Map(\"age\" -\u003e 47))\n\nval dataframe \u003d sc.parallelize( \n    Array(\n        myCaseClass(\"nome\", \"Antonio\", 47, List(180,75), Map(\"age\" -\u003e 47)),\n        myCaseClass(\"nome\", \"Pippo\", 57, List(160,20), Map(\"age\" -\u003e 23)),\n        myCaseClass(\"nome\", \"Andrea\", 17, List(190,95), Map(\"age\" -\u003e 42)),\n        myCaseClass(\"nome\", \"Melo\", 40, List(172,98), Map(\"age\" -\u003e 22)),\n        myCaseClass(\"nome\", \"Pino\", 34, List(183,64), Map(\"age\" -\u003e 79)))\n    )\n    \nval dataframe2 \u003d dataframe.toDF()",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-23 00:12:42.008",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "completionKey": "TAB"
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import sqlContext.implicits._\r\ndefined class myCaseClass\r\ndataframe: org.apache.spark.rdd.RDD[myCaseClass] \u003d ParallelCollectionRDD[187] at parallelize at \u003cconsole\u003e:24\r\ndataframe2: org.apache.spark.sql.DataFrame \u003d [key: string, group: string ... 3 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1592859083571_-1610704856",
+      "id": "20200622-225123_29592039",
+      "dateCreated": "2020-06-22 22:51:23.571",
+      "dateStarted": "2020-06-22 23:17:32.275",
+      "dateFinished": "2020-06-22 23:17:33.680",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "dataframe2.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-22 23:17:58.623",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "completionKey": "TAB"
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----+-------+-----+---------+-----------+\n| key|  group|value| someInts|    someMap|\n+----+-------+-----+---------+-----------+\n|nome|Antonio|   47|[180, 75]|[age -\u003e 47]|\n|nome|  Pippo|   57|[160, 20]|[age -\u003e 23]|\n|nome| Andrea|   17|[190, 95]|[age -\u003e 42]|\n|nome|Antonio|   40|[100, 75]|[age -\u003e 47]|\n|nome|Antonio|   47|[180, 75]|[age -\u003e 47]|\n+----+-------+-----+---------+-----------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575984345352_1725092848",
+      "id": "20191210-142545_1655401710",
+      "dateCreated": "2019-12-10 14:25:45.352",
+      "dateStarted": "2020-06-22 23:17:58.633",
+      "dateFinished": "2020-06-22 23:17:59.073",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "dataframe2.write.mode(\"overwrite\").parquet(\"/tmp/testParquet\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-22 23:28:45.344",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "completionKey": "TAB"
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1592857782051_1563625468",
+      "id": "20200622-222942_1773376220",
+      "dateCreated": "2020-06-22 22:29:42.051",
+      "dateStarted": "2020-06-22 23:28:45.344",
+      "dateFinished": "2020-06-22 23:28:45.883",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val data \u003d sqlContext.read.parquet(\"/tmp/testParquet\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-22 23:31:56.565",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "completionKey": "TAB"
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "data: org.apache.spark.sql.DataFrame \u003d [key: string, group: string ... 3 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1592857805023_847340667",
+      "id": "20200622-223005_131456524",
+      "dateCreated": "2020-06-22 22:30:05.023",
+      "dateStarted": "2020-06-22 23:31:56.565",
+      "dateFinished": "2020-06-22 23:31:57.080",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "data.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-22 23:33:28.761",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "completionKey": "TAB"
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----+-------+-----+---------+-----------+\n| key|  group|value| someInts|    someMap|\n+----+-------+-----+---------+-----------+\n|nome|Antonio|   47|[180, 75]|[age -\u003e 47]|\n|nome|Antonio|   40|[100, 75]|[age -\u003e 47]|\n|nome|Antonio|   47|[180, 75]|[age -\u003e 47]|\n|nome| Andrea|   17|[190, 95]|[age -\u003e 42]|\n|nome|  Pippo|   57|[160, 20]|[age -\u003e 23]|\n+----+-------+-----+---------+-----------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1592859073629_-285485189",
+      "id": "20200622-225113_1319467325",
+      "dateCreated": "2020-06-22 22:51:13.629",
+      "dateStarted": "2020-06-22 23:33:28.770",
+      "dateFinished": "2020-06-22 23:33:29.459",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%r\n\ndata \u003c- read.df(\"/tmp/testParquet\", \"parquet\")\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-22 23:36:23.317",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "r",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/r"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "org.apache.zeppelin.interpreter.InterpreterException: sparkr is not responding \r\n\tat org.apache.zeppelin.spark.ZeppelinR.waitForRScriptInitialized(ZeppelinR.java:294)\r\n\tat org.apache.zeppelin.spark.ZeppelinR.request(ZeppelinR.java:236)\r\n\tat org.apache.zeppelin.spark.ZeppelinR.eval(ZeppelinR.java:185)\r\n\tat org.apache.zeppelin.spark.ZeppelinR.open(ZeppelinR.java:174)\r\n\tat org.apache.zeppelin.spark.SparkRInterpreter.open(SparkRInterpreter.java:106)\r\n\tat org.apache.zeppelin.interpreter.LazyOpenInterpreter.open(LazyOpenInterpreter.java:69)\r\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreterServer$InterpretJob.jobRun(RemoteInterpreterServer.java:616)\r\n\tat org.apache.zeppelin.scheduler.Job.run(Job.java:188)\r\n\tat org.apache.zeppelin.scheduler.FIFOScheduler$1.run(FIFOScheduler.java:140)\r\n\tat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)\r\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:266)\r\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)\r\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)\r\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\r\n\tat java.lang.Thread.run(Thread.java:745)\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1592861526579_342770925",
+      "id": "20200622-233206_962211117",
+      "dateCreated": "2020-06-22 23:32:06.579",
+      "dateStarted": "2020-06-22 23:36:23.327",
+      "dateFinished": "2020-06-22 23:36:24.376",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\n\nCREATE TABLE data\nUSING parquet\nOPTIONS (path \"/tmp/testParquet\")\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-22 23:37:37.675",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1592861783317_-807187268",
+      "id": "20200622-233623_1861429501",
+      "dateCreated": "2020-06-22 23:36:23.317",
+      "dateStarted": "2020-06-22 23:37:37.686",
+      "dateFinished": "2020-06-22 23:37:38.048",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\nSELECT *\nFROM data",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-22 23:37:58.482",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "key": "string",
+                      "group": "string",
+                      "value": "string",
+                      "someInts": "string",
+                      "someMap": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "key\tgroup\tvalue\tsomeInts\tsomeMap\nnome\tAntonio\t47\tWrappedArray(180, 75)\tMap(age -\u003e 47)\nnome\tAntonio\t40\tWrappedArray(100, 75)\tMap(age -\u003e 47)\nnome\tAntonio\t47\tWrappedArray(180, 75)\tMap(age -\u003e 47)\nnome\tAndrea\t17\tWrappedArray(190, 95)\tMap(age -\u003e 42)\nnome\tPippo\t57\tWrappedArray(160, 20)\tMap(age -\u003e 23)\n"
+          },
+          {
+            "type": "TEXT",
+            "data": ""
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1592861857675_604071497",
+      "id": "20200622-233737_613318503",
+      "dateCreated": "2020-06-22 23:37:37.675",
+      "dateStarted": "2020-06-22 23:37:57.517",
+      "dateFinished": "2020-06-22 23:37:57.784",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\nSHOW TABLES",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-22 23:48:50.161",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 94.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "database": "string",
+                      "tableName": "string",
+                      "isTemporary": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "database\ttableName\tisTemporary\ndefault\tdata\tfalse\n"
+          },
+          {
+            "type": "TEXT",
+            "data": ""
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1592861877504_-393328990",
+      "id": "20200622-233757_586453541",
+      "dateCreated": "2020-06-22 23:37:57.504",
+      "dateStarted": "2020-06-22 23:48:41.249",
+      "dateFinished": "2020-06-22 23:48:41.306",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\nSHOW DATABASES",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-22 23:51:15.064",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 84.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "databaseName": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "databaseName\ndefault\n"
+          },
+          {
+            "type": "TEXT",
+            "data": ""
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1592862521235_-607149764",
+      "id": "20200622-234841_1406679269",
+      "dateCreated": "2020-06-22 23:48:41.235",
+      "dateStarted": "2020-06-22 23:49:02.013",
+      "dateFinished": "2020-06-22 23:49:02.052",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\nAbout Parquet file, read [here](https://acadgild.com/blog/parquet-file-format-hadoop#:~:text\u003dParquet%20File%20Format%20Hadoop\u0026text\u003dParquet%2C%20an%20open%20source%20file,terms%20of%20storage%20and%20performance.):\n\n\"\nParquet, an open source file format for Hadoop. Parquet stores nested data structures in a flat columnar format. Compared to a traditional approach where data is stored in row-oriented approach, parquet is more efficient in terms of storage and performance.\n\"\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-22 23:56:07.581",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1592862542000_1986936694",
+      "id": "20200622-234902_596341658",
+      "dateCreated": "2020-06-22 23:49:02.000",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Parquet file",
+  "id": "2EX35Y41J",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

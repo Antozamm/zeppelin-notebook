@@ -1,0 +1,510 @@
+{
+  "paragraphs": [
+    {
+      "text": "\n%md\n## FILTER signature #1\nLa funzione filter ha diverse signature, questo significa che la funzione puà essere chiamata con diversi parametri.\n\nLa prima funzione è:\n`def filter(func: (T) ⇒ Boolean): Dataset[T]`\n\nIn questo caso devo passare una funzione che ritorna un valore di tipo boolean. \n\nLa funzione può essere definita esplicitamente (def funzione(A): Boolean) oppure può essere una funzione anonima. \n\n#### Esempio #1: \n\nusiamo una funzione anonima. La funzione che passo è: `x \u003d\u003e x\u003e20` in cui ogni elemento viene confrontato con il numero 20. Il risultato è ovviamente **true** o **false**.",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-26 00:06:37.749",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eFILTER signature #1\u003c/h2\u003e\n\u003cp\u003eLa funzione filter ha diverse signature, questo significa che la funzione puà essere chiamata con diversi parametri.\u003c/p\u003e\n\u003cp\u003eLa prima funzione è:\u003cbr/\u003e\u003ccode\u003edef filter(func: (T) ⇒ Boolean): Dataset[T]\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eIn questo caso devo passare una funzione che ritorna un valore di tipo boolean. \u003c/p\u003e\n\u003cp\u003eLa funzione può essere definita esplicitamente (def funzione(A): Boolean) oppure può essere una funzione anonima. \u003c/p\u003e\n\u003ch4\u003eEsempio #1:\u003c/h4\u003e\n\u003cp\u003eusiamo una funzione anonima. La funzione che passo è: \u003ccode\u003ex \u003d\u0026gt; x\u0026gt;20\u003c/code\u003e in cui ogni elemento viene confrontato con il numero 20. Il risultato è ovviamente \u003cstrong\u003etrue\u003c/strong\u003e o \u003cstrong\u003efalse\u003c/strong\u003e.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579798137486_1083362891",
+      "id": "20200123-174857_739726674",
+      "dateCreated": "2020-01-23 17:48:57.486",
+      "dateStarted": "2020-01-26 00:06:37.750",
+      "dateFinished": "2020-01-26 00:06:37.764",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.range(1, 25).filter( x \u003d\u003e x\u003e20  ).show",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-23 18:10:36.454",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+\n| id|\n+---+\n| 21|\n| 22|\n| 23|\n| 24|\n+---+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579798219565_6257722",
+      "id": "20200123-175019_1616000185",
+      "dateCreated": "2020-01-23 17:50:19.565",
+      "dateStarted": "2020-01-23 18:09:39.267",
+      "dateFinished": "2020-01-23 18:09:39.809",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### Esempio #2\n\nPosso applicare la funzione di filter ad ogni elemento della riga usando la notazione **x._k** per indicare il k-esimo elemento di x ",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-25 22:32:51.948",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003eEsempio #2\u003c/h4\u003e\n\u003cp\u003ePosso applicare la funzione di filter ad ogni elemento della riga usando la notazione \u003cstrong\u003ex._k\u003c/strong\u003e per indicare il k-esimo elemento di x\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579799978749_921168973",
+      "id": "20200123-181938_7348249",
+      "dateCreated": "2020-01-23 18:19:38.749",
+      "dateStarted": "2020-01-25 22:32:51.949",
+      "dateFinished": "2020-01-25 22:32:51.962",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df \u003d spark.range(1,25).map(x \u003d\u003e (x, x*x))\ndf.filter(a \u003d\u003e a._1\u003e10).show(5)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-25 22:33:05.137",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+---+\n| _1| _2|\n+---+---+\n| 11|121|\n| 12|144|\n| 13|169|\n| 14|196|\n| 15|225|\n+---+---+\nonly showing top 5 rows\n\r\ndf: org.apache.spark.sql.Dataset[(Long, Long)] \u003d [_1: bigint, _2: bigint]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579799371648_182316161",
+      "id": "20200123-180931_1536864294",
+      "dateCreated": "2020-01-23 18:09:31.648",
+      "dateStarted": "2020-01-25 22:33:05.174",
+      "dateFinished": "2020-01-25 22:33:27.888",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### Esempio #3\n\nDefiniamo la funzione esplicitamente.",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-23 22:27:07.455",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003eEsempio #3\u003c/h4\u003e\n\u003cp\u003eDefiniamo la funzione esplicitamente.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579800440169_-1620595371",
+      "id": "20200123-182720_995192217",
+      "dateCreated": "2020-01-23 18:27:20.169",
+      "dateStarted": "2020-01-23 22:27:07.455",
+      "dateFinished": "2020-01-23 22:27:07.462",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "def funz1(a: (Long, Long)): Boolean \u003d a._2\u003e10\n\nval df \u003d spark.range(1,25).map(x \u003d\u003e (x.toLong, (x*x).toLong))  \n\ndf.filter(funz1 _).show(5)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-23 22:22:18.595",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+---+\n| _1| _2|\n+---+---+\n|  4| 16|\n|  5| 25|\n|  6| 36|\n|  7| 49|\n|  8| 64|\n+---+---+\nonly showing top 5 rows\n\r\nfunz1: (a: (Long, Long))Boolean\r\ndf: org.apache.spark.sql.Dataset[(Long, Long)] \u003d [_1: bigint, _2: bigint]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579800465294_2086771047",
+      "id": "20200123-182745_901379871",
+      "dateCreated": "2020-01-23 18:27:45.294",
+      "dateStarted": "2020-01-23 22:22:18.612",
+      "dateFinished": "2020-01-23 22:22:19.033",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## FILTER signature #2\n\nVediamo la seconda signature \n\n`def filter(conditionExpr: String): Dataset[T]`\n\nNon è molto chiaro cosa sia *conditionExpr*, però si capisce che è una stringa, quindi la condizione deve essere espressa come stringa.",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-26 01:37:29.831",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eFILTER signature #2\u003c/h2\u003e\n\u003cp\u003eVediamo la seconda signature \u003c/p\u003e\n\u003cp\u003e\u003ccode\u003edef filter(conditionExpr: String): Dataset[T]\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eNon è molto chiaro cosa sia \u003cem\u003econditionExpr\u003c/em\u003e, però si capisce che è una stringa, quindi la condizione deve essere espressa come stringa.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579799864919_-1006949131",
+      "id": "20200123-181744_150597248",
+      "dateCreated": "2020-01-23 18:17:44.919",
+      "dateStarted": "2020-01-26 01:37:29.832",
+      "dateFinished": "2020-01-26 01:37:29.843",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df \u003d spark.range(1,25).map(x \u003d\u003e (x.toLong, (x*x).toLong)).toDF(\"numero\", \"quadrato\")\n\ndf.filter(\"quadrato \u003e 100\").show(5)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-23 22:32:07.513",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------+--------+\n|numero|quadrato|\n+------+--------+\n|    11|     121|\n|    12|     144|\n|    13|     169|\n|    14|     196|\n|    15|     225|\n+------+--------+\nonly showing top 5 rows\n\r\ndf: org.apache.spark.sql.DataFrame \u003d [numero: bigint, quadrato: bigint]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579814875536_-2146570086",
+      "id": "20200123-222755_819949606",
+      "dateCreated": "2020-01-23 22:27:55.536",
+      "dateStarted": "2020-01-23 22:32:07.525",
+      "dateFinished": "2020-01-23 22:32:07.878",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\r\n## FILTER signature #3\r\n\r\nInfine l\u0027ultima signature:\r\n\r\n`def filter(condition: Column): Dataset[T]`\r\n\r\nQuesto metodo si aspetta una colonna come condizione.",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-25 22:35:22.931",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eFILTER signature #3\u003c/h2\u003e\n\u003cp\u003eInfine l\u0026rsquo;ultima signature:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003edef filter(condition: Column): Dataset[T]\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eQuesto metodo si aspetta una colonna come condizione.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579815102549_1454398456",
+      "id": "20200123-223142_33318660",
+      "dateCreated": "2020-01-23 22:31:42.549",
+      "dateStarted": "2020-01-25 22:35:22.931",
+      "dateFinished": "2020-01-25 22:35:22.937",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.filter($\"numero\"\u003e20).show",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-24 00:58:52.101",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------+--------+\n|numero|quadrato|\n+------+--------+\n|    21|     441|\n|    22|     484|\n|    23|     529|\n|    24|     576|\n+------+--------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579823772330_1878251834",
+      "id": "20200124-005612_2006146603",
+      "dateCreated": "2020-01-24 00:56:12.330",
+      "dateStarted": "2020-01-24 00:58:52.116",
+      "dateFinished": "2020-01-24 00:58:52.452",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\noppure nel formato che utilizza i metodi della classe org.apache.spark.sql.Column:\n-- **gt**: greater than\n-- **lt**: less than\n-- **equalsTo**: equal \n-- **notequal**: not equal \n-- **leq**: less than or equal\n-- **geq**: greater than or equal\ne altre che si possono trovare nella [API di Column](https://spark.apache.org/docs/latest/api/scala/#org.apache.spark.sql.Column)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-25 22:36:02.021",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eoppure nel formato che utilizza i metodi della classe org.apache.spark.sql.Column:\u003cbr/\u003e\u0026ndash; \u003cstrong\u003egt\u003c/strong\u003e: greater than\u003cbr/\u003e\u0026ndash; \u003cstrong\u003elt\u003c/strong\u003e: less than\u003cbr/\u003e\u0026ndash; \u003cstrong\u003eequalsTo\u003c/strong\u003e: equal\u003cbr/\u003e\u0026ndash; \u003cstrong\u003enotequal\u003c/strong\u003e: not equal\u003cbr/\u003e\u0026ndash; \u003cstrong\u003eleq\u003c/strong\u003e: less than or equal\u003cbr/\u003e\u0026ndash; \u003cstrong\u003egeq\u003c/strong\u003e: greater than or equal\u003cbr/\u003ee altre che si possono trovare nella \u003ca href\u003d\"https://spark.apache.org/docs/latest/api/scala/#org.apache.spark.sql.Column\"\u003eAPI di Column\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579823932101_-1883378282",
+      "id": "20200124-005852_1895055567",
+      "dateCreated": "2020-01-24 00:58:52.101",
+      "dateStarted": "2020-01-25 22:36:02.021",
+      "dateFinished": "2020-01-25 22:36:02.031",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.filter($\"quadrato\".equalTo(121)).show",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-24 01:08:14.559",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------+--------+\n|numero|quadrato|\n+------+--------+\n|    11|     121|\n+------+--------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579824118310_500827123",
+      "id": "20200124-010158_143023129",
+      "dateCreated": "2020-01-24 01:01:58.310",
+      "dateStarted": "2020-01-24 01:08:14.574",
+      "dateFinished": "2020-01-24 01:08:14.868",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1579824141803_-833998743",
+      "id": "20200124-010221_1543259161",
+      "dateCreated": "2020-01-24 01:02:21.803",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Filter",
+  "id": "2F24ZCF8A",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

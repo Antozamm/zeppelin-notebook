@@ -1,0 +1,2342 @@
+{
+  "paragraphs": [
+    {
+      "text": "spark.version",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 15:57:18.554",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res1: String \u003d 2.4.4\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581501431982_-2112743472",
+      "id": "20200212-105711_607763418",
+      "dateCreated": "2020-02-12 10:57:11.983",
+      "dateStarted": "2020-02-12 15:57:18.827",
+      "dateFinished": "2020-02-12 15:57:35.152",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nVediamo quali database ho già definito, e quali tabelle all\u0027interno di questi database.\n\nPer fare questo posso usare la SQL API, con comandi noti a chi conosce SQL.\n\nIn **Apache Zeppelin** basta usare il prefisso **%sql** per usare i comandi SQL. ",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 13:26:13.054",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eVediamo quali database ho già definito, e quali tabelle all\u0026rsquo;interno di questi database.\u003c/p\u003e\n\u003cp\u003ePer fare questo posso usare la SQL API, con comandi noti a chi conosce SQL.\u003c/p\u003e\n\u003cp\u003eIn \u003cstrong\u003eApache Zeppelin\u003c/strong\u003e basta usare il prefisso \u003cstrong\u003e%sql\u003c/strong\u003e per usare i comandi SQL.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581501577405_603469567",
+      "id": "20200212-105937_1457207487",
+      "dateCreated": "2020-02-12 10:59:37.405",
+      "dateStarted": "2020-02-12 13:26:13.260",
+      "dateFinished": "2020-02-12 13:26:16.026",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\nshow databases",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 13:26:16.074",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 88.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "databaseName": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "databaseName\ndefault\n"
+          },
+          {
+            "type": "TEXT",
+            "data": ""
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581501490516_41886681",
+      "id": "20200212-105810_1823593061",
+      "dateCreated": "2020-02-12 10:58:10.516",
+      "dateStarted": "2020-02-12 13:26:16.214",
+      "dateFinished": "2020-02-12 13:26:17.853",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\nshow tables",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 13:26:17.920",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 84.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "database": "string",
+                      "tableName": "string",
+                      "isTemporary": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "database\ttableName\tisTemporary\n"
+          },
+          {
+            "type": "TEXT",
+            "data": ""
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581501519189_1253484289",
+      "id": "20200212-105839_735081760",
+      "dateCreated": "2020-02-12 10:58:39.189",
+      "dateStarted": "2020-02-12 13:26:17.999",
+      "dateFinished": "2020-02-12 13:26:18.064",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nSe non fossi in Apache Zepellin potrei ottenere lo stesso risultato usando il metodo **spark.sql()**, e usando come agomento di questo metodo la query SQL che voglio eseguire.",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 13:26:18.100",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eSe non fossi in Apache Zepellin potrei ottenere lo stesso risultato usando il metodo \u003cstrong\u003espark.sql()\u003c/strong\u003e, e usando come agomento di questo metodo la query SQL che voglio eseguire.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581501916523_323374464",
+      "id": "20200212-110516_1332499380",
+      "dateCreated": "2020-02-12 11:05:16.523",
+      "dateStarted": "2020-02-12 13:26:18.170",
+      "dateFinished": "2020-02-12 13:26:18.181",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.sql(\"show databases\").show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 13:26:18.271",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------------+\n|databaseName|\n+------------+\n|     default|\n+------------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581502087909_1915492049",
+      "id": "20200212-110807_320535865",
+      "dateCreated": "2020-02-12 11:08:07.909",
+      "dateStarted": "2020-02-12 13:26:18.338",
+      "dateFinished": "2020-02-12 13:26:18.637",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val sqlcontext \u003d spark.sqlContext\n\nsqlcontext.sql(\"show databases\").show",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 13:26:18.638",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------------+\n|databaseName|\n+------------+\n|     default|\n+------------+\n\r\nsqlcontext: org.apache.spark.sql.SQLContext \u003d org.apache.spark.sql.SQLContext@4b5b15b6\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581501959223_-1407164703",
+      "id": "20200212-110559_49664509",
+      "dateCreated": "2020-02-12 11:05:59.223",
+      "dateStarted": "2020-02-12 13:26:18.719",
+      "dateFinished": "2020-02-12 13:26:18.977",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nOppure posso usare la **catalog API** con i metodi, rispettivamente, **.listDatabases** e **listTables**.",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 13:26:19.021",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eOppure posso usare la \u003cstrong\u003ecatalog API\u003c/strong\u003e con i metodi, rispettivamente, \u003cstrong\u003e.listDatabases\u003c/strong\u003e e \u003cstrong\u003elistTables\u003c/strong\u003e.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581501659136_1831265649",
+      "id": "20200212-110059_1890030828",
+      "dateCreated": "2020-02-12 11:00:59.136",
+      "dateStarted": "2020-02-12 13:26:19.073",
+      "dateFinished": "2020-02-12 13:26:19.081",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.catalog.listDatabases.show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 13:26:19.172",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+----------------+--------------------+\n|   name|     description|         locationUri|\n+-------+----------------+--------------------+\n|default|default database|file:/D:/Anaconda...|\n+-------+----------------+--------------------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581501537374_-1906014209",
+      "id": "20200212-105857_827528500",
+      "dateCreated": "2020-02-12 10:58:57.374",
+      "dateStarted": "2020-02-12 13:26:19.214",
+      "dateFinished": "2020-02-12 13:26:19.839",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.catalog.listTables.show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 13:26:19.917",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----+--------+-----------+---------+-----------+\n|name|database|description|tableType|isTemporary|\n+----+--------+-----------+---------+-----------+\n+----+--------+-----------+---------+-----------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581501557325_1749482908",
+      "id": "20200212-105917_266750301",
+      "dateCreated": "2020-02-12 10:59:17.325",
+      "dateStarted": "2020-02-12 13:26:19.958",
+      "dateFinished": "2020-02-12 13:26:20.229",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### CREARE UNA TABELLA DA UN DATAFRAME\n\nHo solamente il database default che non contiene alcuna tabella. Iniziamo con generare una tabella.\n\nPrima definisco un dataframe, che salverò come tabella nel metastore di Apache Spark. ",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 14:42:02.262",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCREARE UNA TABELLA DA UN DATAFRAME\u003c/h3\u003e\n\u003cp\u003eHo solamente il database default che non contiene alcuna tabella. Iniziamo con generare una tabella.\u003c/p\u003e\n\u003cp\u003ePrima definisco un dataframe, che salverò come tabella nel metastore di Apache Spark.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581501728355_-1745018782",
+      "id": "20200212-110208_1778482203",
+      "dateCreated": "2020-02-12 11:02:08.355",
+      "dateStarted": "2020-02-12 14:42:02.262",
+      "dateFinished": "2020-02-12 14:42:02.267",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.Row\nimport org.apache.spark.sql.types.{StructType, StructField, IntegerType, LongType}\n\nval array \u003d for (i \u003c- List.range(1, 100)) yield Row(i, i % 2)\n\nval schema \u003d\n  StructType(\n    StructField(\"num1\", IntegerType, true) ::\n    StructField(\"bit1\", IntegerType, true) :: Nil)\n    \nval dataFrame \u003d spark.createDataFrame(spark.sparkContext.parallelize(array, 200), schema)\n\ndataFrame.write.saveAsTable(\"large_table_1\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 13:26:20.457",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.Row\r\nimport org.apache.spark.sql.types.{StructType, StructField, IntegerType, LongType}\r\narray: List[org.apache.spark.sql.Row] \u003d List([1,1], [2,0], [3,1], [4,0], [5,1], [6,0], [7,1], [8,0], [9,1], [10,0], [11,1], [12,0], [13,1], [14,0], [15,1], [16,0], [17,1], [18,0], [19,1], [20,0], [21,1], [22,0], [23,1], [24,0], [25,1], [26,0], [27,1], [28,0], [29,1], [30,0], [31,1], [32,0], [33,1], [34,0], [35,1], [36,0], [37,1], [38,0], [39,1], [40,0], [41,1], [42,0], [43,1], [44,0], [45,1], [46,0], [47,1], [48,0], [49,1], [50,0], [51,1], [52,0], [53,1], [54,0], [55,1], [56,0], [57,1], [58,0], [59,1], [60,0], [61,1], [62,0], [63,1], [64,0], [65,1], [66,0], [67,1], [68,0], [69,1], [70,0], [71,1], [72,0], [73,1], [74,0], [75,1], [76,0], [77,1], [78,0], [79,1], [80,0], [81,..."
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581452641519_539142842",
+      "id": "20200211-212401_197642968",
+      "dateCreated": "2020-02-11 21:24:01.519",
+      "dateStarted": "2020-02-12 13:26:20.520",
+      "dateFinished": "2020-02-12 13:26:26.017",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nCon il metodo **.saveAsTable()** la tabella viene salvata in modo permanente, per l\u0027esattezza viene salvata nello spark metastore, nella cartella **spark-warehouse**.\nStoppando e riavviando il cluster la tabella è ancora disponibile.\n\nVerifichiamo che la tabella sia disponibile.",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 13:26:26.055",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eCon il metodo \u003cstrong\u003e.saveAsTable()\u003c/strong\u003e la tabella viene salvata in modo permanente, per l\u0026rsquo;esattezza viene salvata nello spark metastore, nella cartella \u003cstrong\u003espark-warehouse\u003c/strong\u003e.\u003cbr/\u003eStoppando e riavviando il cluster la tabella è ancora disponibile.\u003c/p\u003e\n\u003cp\u003eVerifichiamo che la tabella sia disponibile.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579351636404_935690205",
+      "id": "20200118-134716_955075469",
+      "dateCreated": "2020-01-18 13:47:16.404",
+      "dateStarted": "2020-02-12 13:26:26.093",
+      "dateFinished": "2020-02-12 13:26:26.101",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\nSHOW TABLES",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 13:26:26.192",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 84.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "database": "string",
+                      "tableName": "string",
+                      "isTemporary": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "database\ttableName\tisTemporary\ndefault\tlarge_table_1\tfalse\n"
+          },
+          {
+            "type": "TEXT",
+            "data": ""
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579356814934_-2071248632",
+      "id": "20200118-151334_471691871",
+      "dateCreated": "2020-01-18 15:13:34.934",
+      "dateStarted": "2020-02-12 13:26:26.231",
+      "dateFinished": "2020-02-12 13:26:26.272",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nSi può notare sopra che il campo **isTemporary** è false. Ovvero la tabella è permanente in quanto è stata salvata su file nel metastore di Apache Spark.\n\nPossiamo anche definire delle tabelle temporanee usando i metodi:\n- def createGlobalTempView(viewName: String): Unit \n- def createOrReplaceGlobalTempView(viewName: String): Unit\n- def createTempView(viewName: String): Unit\n- def createOrReplaceTempView(viewName: String): Unit\n\nCome si vede ho una **Global** Temporary View e una (local) Temporary view. Tutte e due le tabelle sono temporanee ma la tabella global è visibile all\u0027interno della stessa applicazione anche se cambio SparkSession. La tabella local invece viene cancellata nel momento in cui la SparkSession in cui è stata creata la tabella viene terminata.",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 13:35:36.571",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eSi può notare sopra che il campo \u003cstrong\u003eisTemporary\u003c/strong\u003e è false. Ovvero la tabella è permanente in quanto è stata salvata su file nel metastore di Apache Spark.\u003c/p\u003e\n\u003cp\u003ePossiamo anche definire delle tabelle temporanee usando i metodi:\u003cbr/\u003e- def createGlobalTempView(viewName: String): Unit\u003cbr/\u003e- def createOrReplaceGlobalTempView(viewName: String): Unit\u003cbr/\u003e- def createTempView(viewName: String): Unit\u003cbr/\u003e- def createOrReplaceTempView(viewName: String): Unit\u003c/p\u003e\n\u003cp\u003eCome si vede ho una \u003cstrong\u003eGlobal\u003c/strong\u003e Temporary View e una (local) Temporary view. Tutte e due le tabelle sono temporanee ma la tabella global è visibile all\u0026rsquo;interno della stessa applicazione anche se cambio SparkSession. La tabella local invece viene cancellata nel momento in cui la SparkSession in cui è stata creata la tabella viene terminata.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581503938559_-2098518611",
+      "id": "20200212-113858_1699751438",
+      "dateCreated": "2020-02-12 11:38:58.559",
+      "dateStarted": "2020-02-12 13:35:36.572",
+      "dateFinished": "2020-02-12 13:35:36.579",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "dataFrame.createGlobalTempView(\"large_table_2\")\ndataFrame.createTempView(\"large_table_3\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 13:29:35.917",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1581504703455_-1507042890",
+      "id": "20200212-115143_1978666717",
+      "dateCreated": "2020-02-12 11:51:43.455",
+      "dateStarted": "2020-02-12 13:29:35.951",
+      "dateFinished": "2020-02-12 13:29:36.135",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nSe vediamo quali tabelle sono disponibili con .listTables() la tabella globale non è visualizzata, per qualche motivo oscuro.",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 13:29:42.950",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eSe vediamo quali tabelle sono disponibili con .listTables() la tabella globale non è visualizzata, per qualche motivo oscuro.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581505724593_-143650001",
+      "id": "20200212-120844_617544424",
+      "dateCreated": "2020-02-12 12:08:44.593",
+      "dateStarted": "2020-02-12 13:29:42.950",
+      "dateFinished": "2020-02-12 13:29:42.954",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.catalog.listTables.show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 13:29:45.114",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------------+--------+-----------+---------+-----------+\n|         name|database|description|tableType|isTemporary|\n+-------------+--------+-----------+---------+-----------+\n|large_table_1| default|       null|  MANAGED|      false|\n|large_table_3|    null|       null|TEMPORARY|       true|\n+-------------+--------+-----------+---------+-----------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581453370080_1203542115",
+      "id": "20200211-213610_271630214",
+      "dateCreated": "2020-02-11 21:36:10.080",
+      "dateStarted": "2020-02-12 13:29:45.144",
+      "dateFinished": "2020-02-12 13:29:45.340",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nInvece la tabella globale large\\_table\\_2 è presente nel database global\\_temp. Quindi per accedervi devo usare global\\_temp.large\\_table\\_2. \n\nInterroghiamo la catalog API sull\u0027esistenza della tabella con il metodo **.tableExists()**",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 13:29:49.105",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eInvece la tabella globale large_table_2 è presente nel database global_temp. Quindi per accedervi devo usare global_temp.large_table_2. \u003c/p\u003e\n\u003cp\u003eInterroghiamo la catalog API sull\u0026rsquo;esistenza della tabella con il metodo \u003cstrong\u003e.tableExists()\u003c/strong\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581505743783_-137301907",
+      "id": "20200212-120903_804942640",
+      "dateCreated": "2020-02-12 12:09:03.783",
+      "dateStarted": "2020-02-12 13:29:49.105",
+      "dateFinished": "2020-02-12 13:29:49.112",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.catalog.tableExists(\"global_temp.large_table_2\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 13:29:53.991",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res16: Boolean \u003d true\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581505919180_-897442935",
+      "id": "20200212-121159_1959719569",
+      "dateCreated": "2020-02-12 12:11:59.181",
+      "dateStarted": "2020-02-12 13:29:54.023",
+      "dateFinished": "2020-02-12 13:29:54.167",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nPer sicurezza visualizziamone il contenuto",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 13:26:27.754",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003ePer sicurezza visualizziamone il contenuto\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581505997114_-734509135",
+      "id": "20200212-121317_1380135395",
+      "dateCreated": "2020-02-12 12:13:17.114",
+      "dateStarted": "2020-02-12 13:26:27.816",
+      "dateFinished": "2020-02-12 13:26:27.820",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\nselect * from global_temp.large_table_2",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 13:30:34.722",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 128.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "num1": "string",
+                      "bit1": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          },
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 86.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "database": "string",
+                      "tableName": "string",
+                      "isTemporary": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          },
+          "2": {
+            "graph": {
+              "mode": "table",
+              "height": 86.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "num1\tbit1\n1\t1\n2\t0\n3\t1\n4\t0\n5\t1\n6\t0\n7\t1\n8\t0\n9\t1\n10\t0\n11\t1\n12\t0\n13\t1\n14\t0\n15\t1\n16\t0\n17\t1\n18\t0\n19\t1\n20\t0\n21\t1\n22\t0\n23\t1\n24\t0\n25\t1\n26\t0\n27\t1\n28\t0\n29\t1\n30\t0\n31\t1\n32\t0\n33\t1\n34\t0\n35\t1\n36\t0\n37\t1\n38\t0\n39\t1\n40\t0\n41\t1\n42\t0\n43\t1\n44\t0\n45\t1\n46\t0\n47\t1\n48\t0\n49\t1\n50\t0\n51\t1\n52\t0\n53\t1\n54\t0\n55\t1\n56\t0\n57\t1\n58\t0\n59\t1\n60\t0\n61\t1\n62\t0\n63\t1\n64\t0\n65\t1\n66\t0\n67\t1\n68\t0\n69\t1\n70\t0\n71\t1\n72\t0\n73\t1\n74\t0\n75\t1\n76\t0\n77\t1\n78\t0\n79\t1\n80\t0\n81\t1\n82\t0\n83\t1\n84\t0\n85\t1\n86\t0\n87\t1\n88\t0\n89\t1\n90\t0\n91\t1\n92\t0\n93\t1\n94\t0\n95\t1\n96\t0\n97\t1\n98\t0\n99\t1\n"
+          },
+          {
+            "type": "TEXT",
+            "data": ""
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579351595010_150748056",
+      "id": "20200118-134635_1507007198",
+      "dateCreated": "2020-01-18 13:46:35.010",
+      "dateStarted": "2020-02-12 13:30:34.271",
+      "dateFinished": "2020-02-12 13:30:34.469",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nPossiamo anche usare la **catalog API** per vedere i database e le tabelle",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-18 14:52:28.641",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003ePossiamo anche usare la \u003cstrong\u003ecatalog API\u003c/strong\u003e per vedere i database e le tabelle\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579353023020_1940389093",
+      "id": "20200118-141023_376186027",
+      "dateCreated": "2020-01-18 14:10:23.020",
+      "dateStarted": "2020-01-18 14:52:28.641",
+      "dateFinished": "2020-01-18 14:52:28.648",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.catalog.listDatabases.show(truncate\u003dfalse)",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 13:30:55.151",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+----------------+-----------------------------------------+\n|name   |description     |locationUri                              |\n+-------+----------------+-----------------------------------------+\n|default|default database|file:/D:/AnacondaProjects/spark-warehouse|\n+-------+----------------+-----------------------------------------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579351161499_-515866148",
+      "id": "20200118-133921_1568193007",
+      "dateCreated": "2020-01-18 13:39:21.499",
+      "dateStarted": "2020-02-12 13:30:55.182",
+      "dateFinished": "2020-02-12 13:30:55.366",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.catalog.listTables.show(truncate\u003dfalse)",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 13:30:56.874",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------------+--------+-----------+---------+-----------+\n|name         |database|description|tableType|isTemporary|\n+-------------+--------+-----------+---------+-----------+\n|large_table_1|default |null       |MANAGED  |false      |\n|large_table_3|null    |null       |TEMPORARY|true       |\n+-------------+--------+-----------+---------+-----------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579351297182_-877706099",
+      "id": "20200118-134137_672204502",
+      "dateCreated": "2020-01-18 13:41:37.182",
+      "dateStarted": "2020-02-12 13:30:56.904",
+      "dateFinished": "2020-02-12 13:30:57.085",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\r\nCome si vede sopra la tabella large\\_table\\_1 è permanente (`isTemporary \u003d false`) ed è **MANAGED** significando che è sotto il controllo di Spark.\r\nLa tabella possono anche essere **EXTERNAL** nel caso in cui sono sotto il controllo di un database manager (RDBMS) esterno. ",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 13:33:59.164",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eCome si vede sopra la tabella large_table_1 è permanente (\u003ccode\u003eisTemporary \u003d false\u003c/code\u003e) ed è \u003cstrong\u003eMANAGED\u003c/strong\u003e significando che è sotto il controllo di Spark.\u003cbr/\u003eLa tabella possono anche essere \u003cstrong\u003eEXTERNAL\u003c/strong\u003e nel caso in cui sono sotto il controllo di un database manager (RDBMS) esterno.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579351370766_1553378659",
+      "id": "20200118-134250_1153508047",
+      "dateCreated": "2020-01-18 13:42:50.766",
+      "dateStarted": "2020-02-12 13:33:59.164",
+      "dateFinished": "2020-02-12 13:33:59.170",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nPer rimuovere una tabella esistente",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 13:34:28.233",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003ePer rimuovere una tabella esistente\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579356152384_1299012735",
+      "id": "20200118-150232_593591830",
+      "dateCreated": "2020-01-18 15:02:32.384",
+      "dateStarted": "2020-02-12 13:34:28.234",
+      "dateFinished": "2020-02-12 13:34:28.237",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\nDROP TABLE large_table_1",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 13:34:36.079",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1579356609658_576056148",
+      "id": "20200118-151009_592857826",
+      "dateCreated": "2020-01-18 15:10:09.658",
+      "dateStarted": "2020-02-12 13:34:36.107",
+      "dateFinished": "2020-02-12 13:34:36.182",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nSi noti che anche se la tabella viene rimossa dalla SparkSession, i file rimangono nella directory *spark-warehouse* e devono essere cancellati manualmente.\n\n### Creare un database con Spark SQL",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 14:21:44.408",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eSi noti che anche se la tabella viene rimossa dalla SparkSession, i file rimangono nella directory \u003cem\u003espark-warehouse\u003c/em\u003e e devono essere cancellati manualmente.\u003c/p\u003e\n\u003ch3\u003eCreare un database con Spark SQL\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581451898052_736278368",
+      "id": "20200211-211138_1799687888",
+      "dateCreated": "2020-02-11 21:11:38.052",
+      "dateStarted": "2020-02-12 14:21:44.408",
+      "dateFinished": "2020-02-12 14:21:44.413",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.sql(\"\"\"\n    CREATE DATABASE myDB\n    LOCATION \u0027C:/tmp/hive\u0027\n\"\"\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 14:23:14.993",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res21: org.apache.spark.sql.DataFrame \u003d []\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581460728460_1010117529",
+      "id": "20200211-233848_752887344",
+      "dateCreated": "2020-02-11 23:38:48.460",
+      "dateStarted": "2020-02-12 14:23:15.019",
+      "dateFinished": "2020-02-12 14:23:15.182",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.sql(\"\"\"\n    DESCRIBE DATABASE myDB\n\"\"\").show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 14:25:13.083",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------------------------+--------------------------+\n|database_description_item|database_description_value|\n+-------------------------+--------------------------+\n|            Database Name|                      mydb|\n|              Description|                          |\n|                 Location|         file:/C:/tmp/hive|\n+-------------------------+--------------------------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581513835558_705405833",
+      "id": "20200212-142355_197657861",
+      "dateCreated": "2020-02-12 14:23:55.558",
+      "dateStarted": "2020-02-12 14:25:13.111",
+      "dateFinished": "2020-02-12 14:25:13.288",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nNel caso del database generato sopra ho specificato la posizione del file, se non avessi la specificata, il database sarebbe stato salvato nella posizione di default, specificata nel setting **spark.sql.warehouse.dir** che di default è la già citata directory *spark-warehouse*.",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 14:31:20.246",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1581514012769_928736147",
+      "id": "20200212-142652_782714679",
+      "dateCreated": "2020-02-12 14:26:52.769",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.sql(\"\"\"\n    SET spark.sql.warehouse.dir\n\"\"\").show(truncate\u003dfalse)",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 14:32:24.313",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 84.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "key": "string",
+                      "value": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------------------+------------------------------------------+\n|key                    |value                                     |\n+-----------------------+------------------------------------------+\n|spark.sql.warehouse.dir|file:/D:/AnacondaProjects/spark-warehouse/|\n+-----------------------+------------------------------------------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581513790274_-1022348023",
+      "id": "20200212-142310_1181791655",
+      "dateCreated": "2020-02-12 14:23:10.274",
+      "dateStarted": "2020-02-12 14:32:24.340",
+      "dateFinished": "2020-02-12 14:32:24.498",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.sql(\"\"\"\n    CREATE TABLE my_fist_table\n\"\"\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 14:34:06.470",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 84.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "org.apache.spark.sql.AnalysisException: Hive support is required to CREATE Hive TABLE (AS SELECT);;\r\n\u0027CreateTable `my_fist_table`, org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, ErrorIfExists\r\n\r\n  at org.apache.spark.sql.execution.datasources.HiveOnlyCheck$$anonfun$apply$12.apply(rules.scala:392)\r\n  at org.apache.spark.sql.execution.datasources.HiveOnlyCheck$$anonfun$apply$12.apply(rules.scala:390)\r\n  at org.apache.spark.sql.catalyst.trees.TreeNode.foreach(TreeNode.scala:117)\r\n  at org.apache.spark.sql.execution.datasources.HiveOnlyCheck$.apply(rules.scala:390)\r\n  at org.apache.spark.sql.execution.datasources.HiveOnlyCheck$.apply(rules.scala:388)\r\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$2.apply(CheckAnalysis.scala:429)\r\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$2.apply(CheckAnalysis.scala:429)\r\n  at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)\r\n  at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)\r\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$class.checkAnalysis(CheckAnalysis.scala:429)\r\n  at org.apache.spark.sql.catalyst.analysis.Analyzer.checkAnalysis(Analyzer.scala:95)\r\n  at org.apache.spark.sql.catalyst.analysis.Analyzer$$anonfun$executeAndCheck$1.apply(Analyzer.scala:108)\r\n  at org.apache.spark.sql.catalyst.analysis.Analyzer$$anonfun$executeAndCheck$1.apply(Analyzer.scala:105)\r\n  at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper$.markInAnalyzer(AnalysisHelper.scala:201)\r\n  at org.apache.spark.sql.catalyst.analysis.Analyzer.executeAndCheck(Analyzer.scala:105)\r\n  at org.apache.spark.sql.execution.QueryExecution.analyzed$lzycompute(QueryExecution.scala:57)\r\n  at org.apache.spark.sql.execution.QueryExecution.analyzed(QueryExecution.scala:55)\r\n  at org.apache.spark.sql.execution.QueryExecution.assertAnalyzed(QueryExecution.scala:47)\r\n  at org.apache.spark.sql.Dataset$.ofRows(Dataset.scala:78)\r\n  at org.apache.spark.sql.SparkSession.sql(SparkSession.scala:642)\r\n  ... 47 elided\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581513811514_1277330240",
+      "id": "20200212-142331_623893748",
+      "dateCreated": "2020-02-12 14:23:31.514",
+      "dateStarted": "2020-02-12 14:33:51.243",
+      "dateFinished": "2020-02-12 14:33:51.549",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nOttengo un errore perché devo abilitare il supporto Hive/SQL al momento della creazione della SparkSession",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 14:36:06.204",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eOttengo un errore perché devo abilitare il supporto Hive/SQL al momento della creazione della SparkSession\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581514415216_1990753965",
+      "id": "20200212-143335_1395597896",
+      "dateCreated": "2020-02-12 14:33:35.216",
+      "dateStarted": "2020-02-12 14:36:06.205",
+      "dateFinished": "2020-02-12 14:36:06.209",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.stop",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 15:58:08.760",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1581514821928_-1414718049",
+      "id": "20200212-144021_45763322",
+      "dateCreated": "2020-02-12 14:40:21.928",
+      "dateStarted": "2020-02-12 15:58:08.838",
+      "dateFinished": "2020-02-12 15:58:09.053",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.SparkSession\nval spark \u003d SparkSession.builder.config(\"spark.sql.catalogImplementation\",\"hive\").enableHiveSupport.getOrCreate",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 15:58:10.363",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.SparkSession\r\nspark: org.apache.spark.sql.SparkSession \u003d org.apache.spark.sql.SparkSession@7c831108\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581514566174_-1144304261",
+      "id": "20200212-143606_320813437",
+      "dateCreated": "2020-02-12 14:36:06.174",
+      "dateStarted": "2020-02-12 15:58:10.434",
+      "dateFinished": "2020-02-12 15:58:10.919",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.sql(\"CREATE DATABASE mydb\")\nspark.sql(\"\"\"\n    CREATE TABLE IF NOT EXISTS mydb.table_1 (\n        nome STRING,\n        cognome STRING,\n        altezza STRING,\n        peso STRING,\n        anni STRING\n    )\n\"\"\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 17:45:10.790",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res45: org.apache.spark.sql.DataFrame \u003d []\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581514805857_2121554200",
+      "id": "20200212-144005_1051729038",
+      "dateCreated": "2020-02-12 14:40:05.857",
+      "dateStarted": "2020-02-12 17:45:10.827",
+      "dateFinished": "2020-02-12 17:45:11.071",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "//do I need hiveSupport to use this???\nspark.sql(\"\"\"\n    LOAD DATA INPATH \u0027D:/AnacondaProjects/Datasets/exampl2.csv\u0027 OVERWRITE INTO TABLE mydb.table_1\n\"\"\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 17:45:34.338",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res46: org.apache.spark.sql.DataFrame \u003d []\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581514815963_1394411314",
+      "id": "20200212-144015_1081888990",
+      "dateCreated": "2020-02-12 14:40:15.963",
+      "dateStarted": "2020-02-12 17:45:34.375",
+      "dateFinished": "2020-02-12 17:45:34.613",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.sql(\"drop table mydb.table_1\")\nspark.sql(\"DROP database mydb\")\n// spark.sql(\"show tables in mydb\").show",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 17:45:06.728",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "database": "string",
+                      "tableName": "string",
+                      "isTemporary": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res44: org.apache.spark.sql.DataFrame \u003d []\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581515786668_-223427898",
+      "id": "20200212-145626_504916397",
+      "dateCreated": "2020-02-12 14:56:26.668",
+      "dateStarted": "2020-02-12 17:45:06.769",
+      "dateFinished": "2020-02-12 17:45:07.002",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.catalog.listDatabases.show()\nspark.catalog.listTables.show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 17:48:25.328",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "database": "string",
+                      "tableName": "string",
+                      "isTemporary": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+--------------------+--------------------+\n|   name|         description|         locationUri|\n+-------+--------------------+--------------------+\n|    bdp|                    |file:/D:/Anaconda...|\n|default|Default Hive data...|file:/D:/Anaconda...|\n|   mydb|                    |file:/D:/Anaconda...|\n+-------+--------------------+--------------------+\n\r\n+----+--------+-----------+---------+-----------+\n|name|database|description|tableType|isTemporary|\n+----+--------+-----------+---------+-----------+\n+----+--------+-----------+---------+-----------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581525948801_417407133",
+      "id": "20200212-174548_453239685",
+      "dateCreated": "2020-02-12 17:45:48.801",
+      "dateStarted": "2020-02-12 17:48:25.364",
+      "dateFinished": "2020-02-12 17:48:25.733",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.catalog.tableExists(\"mydb.table_1\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 18:02:11.934",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 108.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "databaseName": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res49: Boolean \u003d true\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581515942174_1051096827",
+      "id": "20200212-145902_2093152345",
+      "dateCreated": "2020-02-12 14:59:02.174",
+      "dateStarted": "2020-02-12 18:02:11.973",
+      "dateFinished": "2020-02-12 18:02:12.154",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.sql(\"select * from mydb.table_1\").show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 18:02:47.903",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------------+-------+-------+----+----+\n|                nome|cognome|altezza|peso|anni|\n+--------------------+-------+-------+----+----+\n|Pippo,Paolini,167...|   null|   null|null|null|\n|Luigi,Russo,178,8...|   null|   null|null|null|\n|Giovanna,Rosso,17...|   null|   null|null|null|\n|Giuseppe,Bianchi,...|   null|   null|null|null|\n|Amedeo,Verdi,167,...|   null|   null|null|null|\n|Luisa,Valentino,1...|   null|   null|null|null|\n+--------------------+-------+-------+----+----+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581526937974_894779763",
+      "id": "20200212-180217_928778564",
+      "dateCreated": "2020-02-12 18:02:17.974",
+      "dateStarted": "2020-02-12 18:02:47.940",
+      "dateFinished": "2020-02-12 18:02:49.446",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.catalyst.TableIdentifier\r\nval t1Tid \u003d spark.sessionState.sqlParser.parseTableIdentifier(\"mydb.table_1\")\r\nval catalog \u003d spark.sessionState.catalog\r\nval targetTable \u003d catalog.getTableMetadata(t1Tid)\r\nimport org.apache.spark.sql.execution.command.DDLUtils\r\nDDLUtils.isDatasourceTable(targetTable)",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 15:30:35.327",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.catalyst.TableIdentifier\r\nt1Tid: org.apache.spark.sql.catalyst.TableIdentifier \u003d `mydb`.`table_1`\r\ncatalog: org.apache.spark.sql.catalyst.catalog.SessionCatalog \u003d org.apache.spark.sql.hive.HiveSessionCatalog@13c5ebaa\r\ntargetTable: org.apache.spark.sql.catalyst.catalog.CatalogTable \u003d\r\nCatalogTable(\r\nDatabase: mydb\r\nTable: table_1\r\nOwner: home\r\nCreated Time: Wed Feb 12 15:08:48 CET 2020\r\nLast Access: Thu Jan 01 01:00:00 CET 1970\r\nCreated By: Spark 2.4.4\r\nType: MANAGED\r\nProvider: CSV\r\nTable Properties: [transient_lastDdlTime\u003d1581516528]\r\nLocation: file:/D:/AnacondaProjects/spark-warehouse/mydb.db/table_1\r\nSerde Library: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe\r\nInputFormat: org.apache.hadoop.mapred.SequenceFileInputFormat\r\nOutputFormat: org.apache.hado..."
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581517163063_282700410",
+      "id": "20200212-151923_1541249901",
+      "dateCreated": "2020-02-12 15:19:23.063",
+      "dateStarted": "2020-02-12 15:30:35.362",
+      "dateFinished": "2020-02-12 15:30:35.532",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "DDLUtils.isDatasourceTable(targetTable)\r\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 15:30:58.365",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res77: Boolean \u003d true\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581517244011_2127579459",
+      "id": "20200212-152044_235889565",
+      "dateCreated": "2020-02-12 15:20:44.011",
+      "dateStarted": "2020-02-12 15:30:58.397",
+      "dateFinished": "2020-02-12 15:30:58.539",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 15:30:13.157",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.catalyst.TableIdentifier\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581517346286_1774771803",
+      "id": "20200212-152226_1164919122",
+      "dateCreated": "2020-02-12 15:22:26.286",
+      "dateStarted": "2020-02-12 15:24:17.352",
+      "dateFinished": "2020-02-12 15:24:17.479",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 15:30:22.241",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "t1Tid: org.apache.spark.sql.catalyst.TableIdentifier \u003d `mydb`.`table_1`\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581517457318_-1132029669",
+      "id": "20200212-152417_1721824144",
+      "dateCreated": "2020-02-12 15:24:17.318",
+      "dateStarted": "2020-02-12 15:26:23.438",
+      "dateFinished": "2020-02-12 15:26:23.588",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\r\nCREATE SCHEMA IF NOT EXISTS bdp\r\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 15:42:46.932",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1581517583400_-381826635",
+      "id": "20200212-152623_1374817350",
+      "dateCreated": "2020-02-12 15:26:23.400",
+      "dateStarted": "2020-02-12 15:42:46.964",
+      "dateFinished": "2020-02-12 15:42:46.987",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql \nshow databases",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 15:43:04.726",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "databaseName": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "databaseName\nbdp\ndefault\nmydb\n"
+          },
+          {
+            "type": "TEXT",
+            "data": ""
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581518550727_-1071400480",
+      "id": "20200212-154230_139444659",
+      "dateCreated": "2020-02-12 15:42:30.727",
+      "dateStarted": "2020-02-12 15:43:03.170",
+      "dateFinished": "2020-02-12 15:43:03.189",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.sql(\"create database bdp\")\nspark.sql(\"\"\"\nCREATE EXTERNAL TABLE IF NOT EXISTS bdp.hv_csv_table\n(id STRING,Code STRING)\nROW FORMAT DELIMITED\nFIELDS TERMINATED BY \u0027,\u0027\nSTORED AS TEXTFILE\nLOCATION \u0027D:\\\\AnacondaProjects\\\\Datasets\\\\MyDir\\\\\u0027\n\"\"\").show",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 16:06:16.068",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "++\n||\n++\n++\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581518583132_-1776093107",
+      "id": "20200212-154303_1958166992",
+      "dateCreated": "2020-02-12 15:43:03.132",
+      "dateStarted": "2020-02-12 16:06:16.105",
+      "dateFinished": "2020-02-12 16:06:16.324",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// spark.sql(\"drop table bdp.hv_csv_table\")\nspark.sql(\"drop database bdp\")\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-12 16:06:12.389",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res29: org.apache.spark.sql.DataFrame \u003d []\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581518646929_369629410",
+      "id": "20200212-154406_770492321",
+      "dateCreated": "2020-02-12 15:44:06.929",
+      "dateStarted": "2020-02-12 16:06:12.431",
+      "dateFinished": "2020-02-12 16:06:12.585",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1581519582472_924412367",
+      "id": "20200212-155942_426096605",
+      "dateCreated": "2020-02-12 15:59:42.472",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Spark SQL",
+  "id": "2EZZZVWN5",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

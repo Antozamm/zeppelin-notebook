@@ -1,0 +1,853 @@
+{
+  "paragraphs": [
+    {
+      "text": "import org.apache.spark.sql.types._\nimport org.apache.spark.sql.Row\nimport java.util.Properties\nimport org.apache.spark.sql.SparkSession",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-21 19:51:30.786",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.types._\r\nimport org.apache.spark.sql.Row\r\nimport java.util.Properties\r\nimport org.apache.spark.sql.SparkSession\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579558671357_725700240",
+      "id": "20200120-231751_1164780489",
+      "dateCreated": "2020-01-20 23:17:51.357",
+      "dateStarted": "2020-01-21 19:51:30.834",
+      "dateFinished": "2020-01-21 19:51:31.061",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nInnanzitutto ho dovuto installare il driver jdbc che consente ad Apache Spark di usare un database MySQL esterno.\n\nIl connettore (o driver) si può scaricare dal sito di [Oracle](https://dev.mysql.com/downloads/connector/j/) scegliendo \"Platform indipendent\". Dopodiché nel file SPARK_HOME/conf/spark-defaults.conf devo settare:\n\n```\nspark.driver.extraClassPath \u003cpercorso-al-file-jar\u003e\\\\mysql-connector-java-8.0.19.jar\nspark.executor.extraClassPath \u003cpercorso-al-file-jar\u003e\\\\mysql-connector-java-8.0.19.jar\n```",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-21 17:26:30.222",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eInnanzitutto ho dovuto installare il driver jdbc che consente ad Apache Spark di usare un database MySQL esterno.\u003c/p\u003e\n\u003cp\u003eIl connettore (o driver) si può scaricare dal sito di \u003ca href\u003d\"https://dev.mysql.com/downloads/connector/j/\"\u003eOracle\u003c/a\u003e scegliendo \u0026ldquo;Platform indipendent\u0026rdquo;. Dopodiché nel file SPARK_HOME/conf/spark-defaults.conf devo settare:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003espark.driver.extraClassPath \u0026lt;percorso-al-file-jar\u0026gt;\\\\mysql-connector-java-8.0.19.jar\nspark.executor.extraClassPath \u0026lt;percorso-al-file-jar\u0026gt;\\\\mysql-connector-java-8.0.19.jar\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579623206675_-388377945",
+      "id": "20200121-171326_583174720",
+      "dateCreated": "2020-01-21 17:13:26.675",
+      "dateStarted": "2020-01-21 17:26:30.222",
+      "dateFinished": "2020-01-21 17:26:30.232",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val inFileRDD \u003d spark.sparkContext.textFile(\"file:///D:/AnacondaProjects/Datasets/OnlineRetail/OnlineRetail.csv\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-21 19:47:29.536",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "inFileRDD: org.apache.spark.rdd.RDD[String] \u003d file:///D:/AnacondaProjects/Datasets/OnlineRetail/OnlineRetail.csv MapPartitionsRDD[1] at textFile at \u003cconsole\u003e:29\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579558780249_-1031035161",
+      "id": "20200120-231940_543606373",
+      "dateCreated": "2020-01-20 23:19:40.249",
+      "dateStarted": "2020-01-21 19:47:29.633",
+      "dateFinished": "2020-01-21 19:47:31.886",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val allRowsRDD \u003d inFileRDD.map( line \u003d\u003e line.split(\"\\t\", -1) )",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-21 19:47:33.152",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "allRowsRDD: org.apache.spark.rdd.RDD[Array[String]] \u003d MapPartitionsRDD[2] at map at \u003cconsole\u003e:31\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579559162856_-877232421",
+      "id": "20200120-232602_626062307",
+      "dateCreated": "2020-01-20 23:26:02.856",
+      "dateStarted": "2020-01-21 19:47:33.197",
+      "dateFinished": "2020-01-21 19:47:33.782",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nMemorizzo l\u0027header per poterlo eliminare successivamente, usando **filter()**.",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-21 19:40:22.556",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eMemorizzo l\u0026rsquo;header per poterlo eliminare successivamente, usando \u003cstrong\u003efilter()\u003c/strong\u003e.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579624052895_-1042179101",
+      "id": "20200121-172732_825751156",
+      "dateCreated": "2020-01-21 17:27:32.895",
+      "dateStarted": "2020-01-21 19:40:22.557",
+      "dateFinished": "2020-01-21 19:40:25.107",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val header \u003d allRowsRDD.first",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-21 19:47:35.129",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "header: Array[String] \u003d Array(InvoiceNo, StockCode, Description, Quantity, InvoiceDate, UnitPrice, CustomerID, Country)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579559245692_-688871192",
+      "id": "20200120-232725_1118426775",
+      "dateCreated": "2020-01-20 23:27:25.692",
+      "dateStarted": "2020-01-21 19:47:35.168",
+      "dateFinished": "2020-01-21 19:47:35.944",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val data \u003d allRowsRDD.filter(_(0) !\u003d header(0))",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-21 19:47:36.897",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "data: org.apache.spark.rdd.RDD[Array[String]] \u003d MapPartitionsRDD[3] at filter at \u003cconsole\u003e:33\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579561011906_-635301819",
+      "id": "20200120-235651_1889703937",
+      "dateCreated": "2020-01-20 23:56:51.906",
+      "dateStarted": "2020-01-21 19:47:36.935",
+      "dateFinished": "2020-01-21 19:47:37.311",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val fields \u003d Seq(\n    StructField(\"invoiceNo\", StringType, true),\n    StructField(\"stockCode\", StringType, true),\n    StructField(\"description\", StringType, true),\n    StructField(\"quantity\", IntegerType, true),\n    StructField(\"invoiceDate\", StringType, true),\n    StructField(\"unitPrice\", DoubleType, true),\n    StructField(\"customerID\", StringType, true),\n    StructField(\"country\", StringType, true))\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-21 19:47:38.081",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "fields: Seq[org.apache.spark.sql.types.StructField] \u003d List(StructField(invoiceNo,StringType,true), StructField(stockCode,StringType,true), StructField(description,StringType,true), StructField(quantity,IntegerType,true), StructField(invoiceDate,StringType,true), StructField(unitPrice,DoubleType,true), StructField(customerID,StringType,true), StructField(country,StringType,true))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579559259191_-131352763",
+      "id": "20200120-232739_1546137157",
+      "dateCreated": "2020-01-20 23:27:39.191",
+      "dateStarted": "2020-01-21 19:47:38.115",
+      "dateFinished": "2020-01-21 19:47:38.685",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val schema \u003d StructType(fields)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-21 19:47:41.760",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "schema: org.apache.spark.sql.types.StructType \u003d StructType(StructField(invoiceNo,StringType,true), StructField(stockCode,StringType,true), StructField(description,StringType,true), StructField(quantity,IntegerType,true), StructField(invoiceDate,StringType,true), StructField(unitPrice,DoubleType,true), StructField(customerID,StringType,true), StructField(country,StringType,true))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579559383325_-466947882",
+      "id": "20200120-232943_1218901362",
+      "dateCreated": "2020-01-20 23:29:43.325",
+      "dateStarted": "2020-01-21 19:47:41.794",
+      "dateFinished": "2020-01-21 19:47:42.071",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val rowRDD \u003d data.map(attributes \u003d\u003e Row(attributes(0), attributes(1), attributes(2), \n                                        attributes(3).toInt, attributes(4), attributes(5).toDouble,\n                                        attributes(6), attributes(7)))",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-21 19:47:43.426",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "rowRDD: org.apache.spark.rdd.RDD[org.apache.spark.sql.Row] \u003d MapPartitionsRDD[4] at map at \u003cconsole\u003e:31\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579560147944_703805014",
+      "id": "20200120-234227_1943486092",
+      "dateCreated": "2020-01-20 23:42:27.944",
+      "dateStarted": "2020-01-21 19:47:43.461",
+      "dateFinished": "2020-01-21 19:47:43.846",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val rlDF \u003d spark.createDataFrame(rowRDD, schema)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-21 19:47:45.953",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "rlDF: org.apache.spark.sql.DataFrame \u003d [invoiceNo: string, stockCode: string ... 6 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579566294014_-1313540549",
+      "id": "20200121-012454_461240174",
+      "dateCreated": "2020-01-21 01:24:54.014",
+      "dateStarted": "2020-01-21 19:47:45.983",
+      "dateFinished": "2020-01-21 19:47:46.902",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// val ts \u003d unix_timestamp($\"invoiceDate\", \"dd/MM/yyHH:mm\").cast(\"timestamp\")\nval r2DF \u003d rlDF.withColumn(\"ts\", unix_timestamp($\"invoiceDate\", \"dd/MM/yy HH:mm\").cast(\"timestamp\"))\nr2DF.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-21 19:47:47.514",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---------+---------+--------------------+--------+----------------+---------+----------+--------------+-------------------+\n|invoiceNo|stockCode|         description|quantity|     invoiceDate|unitPrice|customerID|       country|                 ts|\n+---------+---------+--------------------+--------+----------------+---------+----------+--------------+-------------------+\n|   536365|   85123A|WHITE HANGING HEA...|       6|01/12/2010 08:26|     2.55|     17850|United Kingdom|2010-12-01 08:26:00|\n|   536365|    71053| WHITE METAL LANTERN|       6|01/12/2010 08:26|     3.39|     17850|United Kingdom|2010-12-01 08:26:00|\n|   536365|   84406B|CREAM CUPID HEART...|       8|01/12/2010 08:26|     2.75|     17850|United Kingdom|2010-12-01 08:26:00|\n|   536365|   84029G|KNITTED UNION FLA...|       6|01/12/2010 08:26|     3.39|     17850|United Kingdom|2010-12-01 08:26:00|\n|   536365|   84029E|RED WOOLLY HOTTIE...|       6|01/12/2010 08:26|     3.39|     17850|United Kingdom|2010-12-01 08:26:00|\n|   536365|    22752|SET 7 BABUSHKA NE...|       2|01/12/2010 08:26|     7.65|     17850|United Kingdom|2010-12-01 08:26:00|\n|   536365|    21730|GLASS STAR FROSTE...|       6|01/12/2010 08:26|     4.25|     17850|United Kingdom|2010-12-01 08:26:00|\n|   536366|    22633|HAND WARMER UNION...|       6|01/12/2010 08:28|     1.85|     17850|United Kingdom|2010-12-01 08:28:00|\n|   536366|    22632|HAND WARMER RED P...|       6|01/12/2010 08:28|     1.85|     17850|United Kingdom|2010-12-01 08:28:00|\n|   536367|    84879|ASSORTED COLOUR B...|      32|01/12/2010 08:34|     1.69|     13047|United Kingdom|2010-12-01 08:34:00|\n|   536367|    22745|POPPY\u0027S PLAYHOUSE...|       6|01/12/2010 08:34|      2.1|     13047|United Kingdom|2010-12-01 08:34:00|\n|   536367|    22748|POPPY\u0027S PLAYHOUSE...|       6|01/12/2010 08:34|      2.1|     13047|United Kingdom|2010-12-01 08:34:00|\n|   536367|    22749|FELTCRAFT PRINCES...|       8|01/12/2010 08:34|     3.75|     13047|United Kingdom|2010-12-01 08:34:00|\n|   536367|    22310|IVORY KNITTED MUG...|       6|01/12/2010 08:34|     1.65|     13047|United Kingdom|2010-12-01 08:34:00|\n|   536367|    84969|BOX OF 6 ASSORTED...|       6|01/12/2010 08:34|     4.25|     13047|United Kingdom|2010-12-01 08:34:00|\n|   536367|    22623|BOX OF VINTAGE JI...|       3|01/12/2010 08:34|     4.95|     13047|United Kingdom|2010-12-01 08:34:00|\n|   536367|    22622|BOX OF VINTAGE AL...|       2|01/12/2010 08:34|     9.95|     13047|United Kingdom|2010-12-01 08:34:00|\n|   536367|    21754|HOME BUILDING BLO...|       3|01/12/2010 08:34|     5.95|     13047|United Kingdom|2010-12-01 08:34:00|\n|   536367|    21755|LOVE BUILDING BLO...|       3|01/12/2010 08:34|     5.95|     13047|United Kingdom|2010-12-01 08:34:00|\n|   536367|    21777|RECIPE BOX WITH M...|       4|01/12/2010 08:34|     7.95|     13047|United Kingdom|2010-12-01 08:34:00|\n+---------+---------+--------------------+--------+----------------+---------+----------+--------------+-------------------+\nonly showing top 20 rows\n\r\nr2DF: org.apache.spark.sql.DataFrame \u003d [invoiceNo: string, stockCode: string ... 7 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579566342941_-1468410586",
+      "id": "20200121-012542_1039761722",
+      "dateCreated": "2020-01-21 01:25:42.942",
+      "dateStarted": "2020-01-21 19:47:47.543",
+      "dateFinished": "2020-01-21 19:47:48.981",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "r2DF.createOrReplaceTempView(\"retailTable\")\nval r3DF \u003d spark.sql(\"select * from retailTable where ts\u003c\u00272011-12-01\u0027\")\nval r4DF \u003d spark.sql(\"select * from retailTable where ts\u003e\u003d\u00272011-12-01\u0027\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-21 19:47:53.346",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "r3DF: org.apache.spark.sql.DataFrame \u003d [invoiceNo: string, stockCode: string ... 7 more fields]\r\nr4DF: org.apache.spark.sql.DataFrame \u003d [invoiceNo: string, stockCode: string ... 7 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579566500258_876648197",
+      "id": "20200121-012820_1580772033",
+      "dateCreated": "2020-01-21 01:28:20.258",
+      "dateStarted": "2020-01-21 19:47:53.373",
+      "dateFinished": "2020-01-21 19:47:53.609",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "r3DF.count",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-21 19:47:55.186",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res2: Long \u003d 516384\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579598847263_-428157135",
+      "id": "20200121-102727_728047924",
+      "dateCreated": "2020-01-21 10:27:27.263",
+      "dateStarted": "2020-01-21 19:47:55.214",
+      "dateFinished": "2020-01-21 19:47:57.037",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val selectData \u003d r4DF.select(\"invoiceNo\", \"stockCode\", \"description\", \"quantity\", \"unitPrice\", \"customerID\", \"country\", \"ts\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-21 19:47:57.250",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "selectData: org.apache.spark.sql.DataFrame \u003d [invoiceNo: string, stockCode: string ... 6 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579566524397_301433831",
+      "id": "20200121-012844_881476272",
+      "dateCreated": "2020-01-21 01:28:44.397",
+      "dateStarted": "2020-01-21 19:47:57.277",
+      "dateFinished": "2020-01-21 19:47:57.501",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val writeData \u003d selectData.withColumnRenamed(\"ts\", \"invoiceDate\")\nwriteData.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-21 19:47:58.930",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---------+---------+--------------------+--------+---------+----------+--------------+-------------------+\n|invoiceNo|stockCode|         description|quantity|unitPrice|customerID|       country|        invoiceDate|\n+---------+---------+--------------------+--------+---------+----------+--------------+-------------------+\n|  C579889|    23245|SET OF 3 REGENCY ...|      -8|     4.15|     13853|United Kingdom|2011-12-01 08:12:00|\n|  C579890|    84947|ANTIQUE SILVER TE...|      -1|     1.25|     15197|United Kingdom|2011-12-01 08:14:00|\n|  C579890|    23374|RED SPOT PAPER GI...|      -1|     0.82|     15197|United Kingdom|2011-12-01 08:14:00|\n|  C579890|    84945|MULTI COLOUR SILV...|      -2|     0.85|     15197|United Kingdom|2011-12-01 08:14:00|\n|  C579891|    23485|BOTANICAL GARDENS...|      -1|     25.0|     13644|United Kingdom|2011-12-01 08:18:00|\n|  C579891|    23186|FRENCH STYLE STOR...|      -6|     0.29|     13644|United Kingdom|2011-12-01 08:18:00|\n|  C579892|    23461|SWEETHEART BIRD H...|      -4|     4.15|     13310|United Kingdom|2011-12-01 08:23:00|\n|  C579893|    37449|CERAMIC CAKE STAN...|      -2|     9.95|     13468|United Kingdom|2011-12-01 08:25:00|\n|  C579894|    23012|GLASS APOTHECARY ...|      -1|     3.95|     13098|United Kingdom|2011-12-01 08:26:00|\n|  C579894|    23568|EGG CUP HENRIETTA...|      -1|     1.25|     13098|United Kingdom|2011-12-01 08:26:00|\n|  C579894|    23319|BOX OF 6 MINI 50\u0027...|      -6|     2.08|     13098|United Kingdom|2011-12-01 08:26:00|\n|  C579895|    23374|RED SPOT PAPER GI...|      -5|     0.82|     14329|United Kingdom|2011-12-01 08:27:00|\n|  C579896|    23456|MEDIUM PARLOUR PI...|      -2|     4.15|     13971|United Kingdom|2011-12-01 08:27:00|\n|  C579897|    23382|BOX OF 6 CHRISTMA...|      -2|     3.75|     17636|United Kingdom|2011-12-01 08:29:00|\n|  C579897|    23256|CHILDRENS CUTLERY...|      -1|     4.15|     17636|United Kingdom|2011-12-01 08:29:00|\n|  C579897|    23203|JUMBO BAG VINTAGE...|      -1|     2.08|     17636|United Kingdom|2011-12-01 08:29:00|\n|  C579897|    22470|HEART OF WICKER L...|      -2|     2.95|     17636|United Kingdom|2011-12-01 08:29:00|\n|  C579898|    22153|ANGEL DECORATION ...|      -1|     0.42|     14299|United Kingdom|2011-12-01 08:32:00|\n|  C579898|    22969|HOMEMADE JAM SCEN...|      -1|     1.45|     14299|United Kingdom|2011-12-01 08:32:00|\n|   579899|    23301|GARDENERS KNEELIN...|      24|     1.65|     15687|United Kingdom|2011-12-01 08:33:00|\n+---------+---------+--------------------+--------+---------+----------+--------------+-------------------+\nonly showing top 20 rows\n\r\nwriteData: org.apache.spark.sql.DataFrame \u003d [invoiceNo: string, stockCode: string ... 6 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579566718262_-1196179711",
+      "id": "20200121-013158_505714076",
+      "dateCreated": "2020-01-21 01:31:58.262",
+      "dateStarted": "2020-01-21 19:47:58.955",
+      "dateFinished": "2020-01-21 19:48:01.034",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val dbUrl \u003d \"jdbc:mysql://localhost:3306/retaildb\"\nval prop \u003d new Properties()\nprop.setProperty(\"user\", \"root\") \nprop.setProperty(\"password\", \"Giulia83\")\nprop.setProperty(\"serverTimezone\",\"UTC\")\n\nwriteData.write.mode(\"append\").jdbc(dbUrl, \"transactions\", prop)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-21 19:51:56.708",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cconsole\u003e:37: error: not found: value writeData\r\n       writeData.write.mode(\"append\").jdbc(dbUrl, \"transactions\", prop)\r\n       ^\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579566798509_1003161915",
+      "id": "20200121-013318_1039100967",
+      "dateCreated": "2020-01-21 01:33:18.509",
+      "dateStarted": "2020-01-21 19:51:56.750",
+      "dateFinished": "2020-01-21 19:51:56.802",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val selectData \u003d r3DF.select(\"invoiceNo\", \"stockCode\", \"description\", \"quantity\", \"unitPrice\", \"customerID\", \"country\", \"ts\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-21 17:09:51.433",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "selectData: org.apache.spark.sql.DataFrame \u003d [invoiceNo: string, stockCode: string ... 6 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579607271644_1617173697",
+      "id": "20200121-124751_487535789",
+      "dateCreated": "2020-01-21 12:47:51.644",
+      "dateStarted": "2020-01-21 17:09:51.459",
+      "dateFinished": "2020-01-21 17:09:51.995",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val writeData \u003d selectData.withColumnRenamed(\"ts\", \"invoiceDate\")\nwriteData.select(\"*\").write.format(\"json\").saveAsTable(\"r3df\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-21 17:11:23.367",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "writeData: org.apache.spark.sql.DataFrame \u003d [invoiceNo: string, stockCode: string ... 6 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579622991433_-2026303463",
+      "id": "20200121-170951_714752025",
+      "dateCreated": "2020-01-21 17:09:51.433",
+      "dateStarted": "2020-01-21 17:11:23.392",
+      "dateFinished": "2020-01-21 17:11:26.173",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val prova \u003d spark.range(1,4)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-21 19:51:02.458",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "prova: org.apache.spark.sql.Dataset[Long] \u003d [id: bigint]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579623083367_660599300",
+      "id": "20200121-171123_1479054827",
+      "dateCreated": "2020-01-21 17:11:23.367",
+      "dateStarted": "2020-01-21 19:51:02.648",
+      "dateFinished": "2020-01-21 19:51:16.147",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val dbUrl \u003d \"jdbc:mysql://localhost:3306/retaildb\"\nval prop \u003d new Properties()\nprop.setProperty(\"user\", \"root\") \nprop.setProperty(\"password\", \"Giulia83\")\nprop.setProperty(\"serverTimezone\",\"UTC\")\n\nspark.range(1,4).withColumnRenamed(\"id\",\"customerID\").write.mode(\"append\").jdbc(dbUrl, \"transactions\", prop)\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-21 19:54:27.743",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "dbUrl: String \u003d jdbc:mysql://localhost:3306/retaildb\r\nprop: java.util.Properties \u003d {user\u003droot, serverTimezone\u003dUTC, password\u003dGiulia83}\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579632662460_2070880400",
+      "id": "20200121-195102_551404572",
+      "dateCreated": "2020-01-21 19:51:02.460",
+      "dateStarted": "2020-01-21 19:54:27.772",
+      "dateFinished": "2020-01-21 19:54:28.260",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1579632800827_424620795",
+      "id": "20200121-195320_1156799162",
+      "dateCreated": "2020-01-21 19:53:20.827",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Spark SQL - connect to MySQL",
+  "id": "2EX68V7T6",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

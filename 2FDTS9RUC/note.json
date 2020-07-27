@@ -1,0 +1,1453 @@
+{
+  "paragraphs": [
+    {
+      "text": "val rawUserArtistData \u003d spark.read.textFile(\"D:\\\\AnacondaProjects\\\\Datasets\\\\profiledata_06-May-2005\\\\user_artist_data.txt\")\n\nval rawArtistAlias \u003d spark.read.textFile(\"D:\\\\AnacondaProjects\\\\Datasets\\\\profiledata_06-May-2005\\\\artist_alias.txt\")\n\nval rawArtistData \u003d spark.read.textFile(\"D:\\\\AnacondaProjects\\\\Datasets\\\\profiledata_06-May-2005\\\\artist_data.txt\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.123",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "rawUserArtistData: org.apache.spark.sql.Dataset[String] \u003d [value: string]\r\nrawArtistAlias: org.apache.spark.sql.Dataset[String] \u003d [value: string]\r\nrawArtistData: org.apache.spark.sql.Dataset[String] \u003d [value: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829123_444225276",
+      "id": "20200202-161540_24089880",
+      "dateCreated": "2020-06-24 18:07:09.123",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nun modo per importare \u0027artist_data.txt\u0027 e inserirlo in un dataframe di sue colonne è quello di mappare la singola riga in un tuple delle due parti della stringa splittate in \u0027\\t\u0027 (il tab). ",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.124",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eun modo per importare \u0026lsquo;artist_data.txt\u0026rsquo; e inserirlo in un dataframe di sue colonne è quello di mappare la singola riga in un tuple delle due parti della stringa splittate in \u0026lsquo;\\t\u0026rsquo; (il tab).\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829124_-1327758572",
+      "id": "20200203-185945_1459565413",
+      "dateCreated": "2020-06-24 18:07:09.124",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "case class artista(artistID: Int, artistNam: String)",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.125",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "defined class artista\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829124_1771841355",
+      "id": "20200203-103714_9999897",
+      "dateCreated": "2020-06-24 18:07:09.124",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val rawArtistData2\u003d rawArtistData.map{ value \u003d\u003e\n                                        val artistID \u003d value.split(\"\\t\")(0)\n                                        val name \u003d value.split(\"\\t\")(1)\n                                        (artistID.toInt, name)\n}.toDF(\"artistID\", \"name\").show",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.125",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+--------------------+\n|artistID|                name|\n+--------+--------------------+\n| 1134999|        06Crazy Life|\n| 6821360|        Pang Nakarin|\n|10113088|Terfel, Bartoli- ...|\n|10151459| The Flaming Sidebur|\n| 6826647|   Bodenstandig 3000|\n|10186265|Jota Quest e Ivet...|\n| 6828986|       Toto_XX (1977|\n|10236364|         U.S Bombs -|\n| 1135000|artist formaly kn...|\n|10299728|Kassierer - Musik...|\n|10299744|         Rahzel, RZA|\n| 6864258|      Jon Richardson|\n| 6878791|Young Fresh Fello...|\n|10299751|          Ki-ya-Kiss|\n| 6909716|Underminded - The...|\n|10435121|             Kox-Box|\n| 6918061|  alexisonfire [wo!]|\n| 1135001|         dj salinger|\n| 6940391|The B52\u0027s - Chann...|\n|10475396|             44 Hoes|\n+--------+--------------------+\nonly showing top 20 rows\n\r\nrawArtistData2: Unit \u003d ()\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829125_-396721493",
+      "id": "20200203-104206_19912754",
+      "dateCreated": "2020-06-24 18:07:09.125",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nQuesto funziona senza problemi se il file è correttamente formato ma da errore se, per esempio, non trova un carattere \u0027\\t\u0027 con cui fare lo split. Provare per credere.\nCarichiamo adesso un altro file in cui ho inserito degli errori apposta: Una virgola, o uno spazio, al posto del tab etc.",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.125",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eQuesto funziona senza problemi se il file è correttamente formato ma da errore se, per esempio, non trova un carattere \u0026lsquo;\\t\u0026rsquo; con cui fare lo split. Provare per credere.\u003cbr/\u003eCarichiamo adesso un altro file in cui ho inserito degli errori apposta: Una virgola, o uno spazio, al posto del tab etc.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829125_1255321728",
+      "id": "20200203-190141_1278504965",
+      "dateCreated": "2020-06-24 18:07:09.125",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val artistData3 \u003d spark.read.textFile(\"D:\\\\AnacondaProjects\\\\Datasets\\\\profiledata_06-May-2005\\\\artist_data2.txt\").cache()\n\nartistData3.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.126",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------------+\n|               value|\n+--------------------+\n|1134999\t06Crazy Life|\n|6821360\tPang Nakarin|\n|10113088\tTerfel, ...|\n|10151459\tThe Flam...|\n|6826647\tBodenstan...|\n|10186265,Jota Que...|\n|6828986\tToto_XX (...|\n|          \tPIPPOLINO|\n|10236364\tU.S Bombs -|\n|1135000\tartist fo...|\n|10299728\tKassiere...|\n|10299744 Rahzel, RZA|\n|6864258\tJon Richa...|\n|6878791\tYoung Fre...|\n| 10299751\tKi-ya-Kiss|\n|6909716\tUndermind...|\n|            10435121|\n|6918061\talexisonf...|\n| 1135001\tdj salinger|\n|6940391\tThe B52\u0027s...|\n+--------------------+\nonly showing top 20 rows\n\r\nartistData3: org.apache.spark.sql.Dataset[String] \u003d [value: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829125_2143529007",
+      "id": "20200203-105122_10118593",
+      "dateCreated": "2020-06-24 18:07:09.125",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n- load con textfile\n- mappo ogni stringa in formato `id TAB nome` nella coppia (id, nome) facendo uno split della stringa.\n- deve usare un **flatMap** in questo modo ho la possibilità di non passare alcun valore (**None**) per stringhe che non siano nel formato `id TAB nome`\n- poichè la funzione da passare a flatMap deve essere `String \u003d\u003e TraversableOnce` la funzione deve ritornare un valore del tipo **Some(val, val2)**",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.126",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cul\u003e\n  \u003cli\u003eload con textfile\u003c/li\u003e\n  \u003cli\u003emappo ogni stringa in formato \u003ccode\u003eid TAB nome\u003c/code\u003e nella coppia (id, nome) facendo uno split della stringa.\u003c/li\u003e\n  \u003cli\u003edeve usare un \u003cstrong\u003eflatMap\u003c/strong\u003e in questo modo ho la possibilità di non passare alcun valore (**None**) per stringhe che non siano nel formato \u003ccode\u003eid TAB nome\u003c/code\u003e\u003c/li\u003e\n  \u003cli\u003epoichè la funzione da passare a flatMap deve essere \u003ccode\u003eString \u003d\u0026gt; TraversableOnce\u003c/code\u003e la funzione deve ritornare un valore del tipo \u003cstrong\u003eSome(val, val2)\u003c/strong\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829126_1414973167",
+      "id": "20200203-112442_7651970",
+      "dateCreated": "2020-06-24 18:07:09.126",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "artistData3.flatMap{ line \u003d\u003e\n                    try {\n                        val artistID \u003d line.split(\"\\t\")(0)\n                        val name \u003d line.split(\"\\t\")(1)\n                        Some(artistID, name)\n                    } catch {\n                        case _: Exception \u003d\u003e None\n                    }\n}.toDF(\"artistID\", \"name\").show",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.126",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+--------------------+\n|artistID|                name|\n+--------+--------------------+\n| 1134999|        06Crazy Life|\n| 6821360|        Pang Nakarin|\n|10113088|Terfel, Bartoli- ...|\n|10151459| The Flaming Sidebur|\n| 6826647|   Bodenstandig 3000|\n| 6828986|       Toto_XX (1977|\n|        |           PIPPOLINO|\n|10236364|         U.S Bombs -|\n| 1135000|artist formaly kn...|\n|10299728|Kassierer - Musik...|\n| 6864258|      Jon Richardson|\n| 6878791|Young Fresh Fello...|\n|10299751|          Ki-ya-Kiss|\n| 6909716|Underminded - The...|\n| 6918061|  alexisonfire [wo!]|\n| 1135001|         dj salinger|\n| 6940391|The B52\u0027s - Chann...|\n|10475396|             44 Hoes|\n|10584537|orchestral mandeu...|\n|10584538|Josh Groban (Feat...|\n+--------+--------------------+\nonly showing top 20 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829126_290343103",
+      "id": "20200203-110955_2098917",
+      "dateCreated": "2020-06-24 18:07:09.126",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "case class artistRecord(ID: String, name: String)",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.127",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "defined class artistRecord\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829126_63409238",
+      "id": "20200203-104752_11200560",
+      "dateCreated": "2020-06-24 18:07:09.127",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n- load con csv()\n- filtro gli elementi con null ",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.127",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cul\u003e\n  \u003cli\u003eload con csv()\u003c/li\u003e\n  \u003cli\u003efiltro gli elementi con null\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829127_2097141754",
+      "id": "20200203-130819_19678802",
+      "dateCreated": "2020-06-24 18:07:09.127",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val artistData5 \u003d spark.read.option(\"sep\", \"\\t\").csv(\"D:\\\\AnacondaProjects\\\\Datasets\\\\profiledata_06-May-2005\\\\artist_data3.txt\").toDF(\"ID\", \"name\").as[artistRecord]\nartistData5.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.127",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------------+--------------------+\n|                  ID|                name|\n+--------------------+--------------------+\n|             1134999|        06Crazy Life|\n|             6821360|        Pang Nakarin|\n|            10113088|Terfel, Bartoli- ...|\n|            10151459| The Flaming Sidebur|\n|             6826647|   Bodenstandig 3000|\n|10186265,Jota Que...|                null|\n|             6828986|       Toto_XX (1977|\n|                null|           PIPPOLINO|\n|            10236364|         U.S Bombs -|\n|             1135000|artist formaly kn...|\n|            10299728|Kassierer - Musik...|\n|10299744 Rahzel, RZA|                null|\n|             6864258|      Jon Richardson|\n|             6878791|Young Fresh Fello...|\n|            10299751|          Ki-ya-Kiss|\n|             6909716|Underminded - The...|\n|            10435121|                null|\n|             6918061|  alexisonfire [wo!]|\n|             1135001|         dj salinger|\n|             6940391|The B52\u0027s - Chann...|\n+--------------------+--------------------+\nonly showing top 20 rows\n\r\nartistData5: org.apache.spark.sql.Dataset[artistRecord] \u003d [ID: string, name: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829127_-2040499427",
+      "id": "20200203-130841_8756615",
+      "dateCreated": "2020-06-24 18:07:09.127",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "artistData5.filter(col(\"name\") !\u003d\u003d \"null\").show",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.128",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "warning: there was one deprecation warning; re-run with -deprecation for details\n+--------+--------------------+\n|      ID|                name|\n+--------+--------------------+\n| 1134999|        06Crazy Life|\n| 6821360|        Pang Nakarin|\n|10113088|Terfel, Bartoli- ...|\n|10151459| The Flaming Sidebur|\n| 6826647|   Bodenstandig 3000|\n| 6828986|       Toto_XX (1977|\n|    null|           PIPPOLINO|\n|10236364|         U.S Bombs -|\n| 1135000|artist formaly kn...|\n|10299728|Kassierer - Musik...|\n| 6864258|      Jon Richardson|\n| 6878791|Young Fresh Fello...|\n|10299751|          Ki-ya-Kiss|\n| 6909716|Underminded - The...|\n| 6918061|  alexisonfire [wo!]|\n| 1135001|         dj salinger|\n| 6940391|The B52\u0027s - Chann...|\n|10475396|             44 Hoes|\n|10584537|orchestral mandeu...|\n|10584538|Josh Groban (Feat...|\n+--------+--------------------+\nonly showing top 20 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829128_-214107483",
+      "id": "20200203-131057_1428432",
+      "dateCreated": "2020-06-24 18:07:09.128",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val artistData6 \u003d artistData5.columns.foldLeft(artistData5)( (acc, colName) \u003d\u003e acc.filter(col(colName)!\u003d\u003d \"null\"))\nartistData6.show\n//override def foldLeft[B](z: B)(op: (B, String) \u003d\u003e B): B",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.128",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "warning: there was one deprecation warning; re-run with -deprecation for details\n+--------+--------------------+\n|      ID|                name|\n+--------+--------------------+\n| 1134999|        06Crazy Life|\n| 6821360|        Pang Nakarin|\n|10113088|Terfel, Bartoli- ...|\n|10151459| The Flaming Sidebur|\n| 6826647|   Bodenstandig 3000|\n| 6828986|       Toto_XX (1977|\n|10236364|         U.S Bombs -|\n| 1135000|artist formaly kn...|\n|10299728|Kassierer - Musik...|\n| 6864258|      Jon Richardson|\n| 6878791|Young Fresh Fello...|\n|10299751|          Ki-ya-Kiss|\n| 6909716|Underminded - The...|\n| 6918061|  alexisonfire [wo!]|\n| 1135001|         dj salinger|\n| 6940391|The B52\u0027s - Chann...|\n|10475396|             44 Hoes|\n|10584537|orchestral mandeu...|\n|10584538|Josh Groban (Feat...|\n| 6945632|Savage Garden - T...|\n+--------+--------------------+\nonly showing top 20 rows\n\r\nartistData6: org.apache.spark.sql.Dataset[artistRecord] \u003d [ID: string, name: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829128_-1254020861",
+      "id": "20200203-142625_23287293",
+      "dateCreated": "2020-06-24 18:07:09.128",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Unire userArtistData e artistAlias",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.128",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eUnire userArtistData e artistAlias\u003c/h2\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829128_396951545",
+      "id": "20200203-171727_1677463733",
+      "dateCreated": "2020-06-24 18:07:09.128",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val rawUserArtistData \u003d spark.read.option(\"inferSchema\", \"true\").option(\"sep\",\" \").csv(\"D:\\\\AnacondaProjects\\\\Datasets\\\\profiledata_06-May-2005\\\\user_artist_data.txt\").toDF(\"userID\", \"artistID\", \"view\")\nrawUserArtistData.show\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.129",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+--------+----+\n| userID|artistID|view|\n+-------+--------+----+\n|1000002|       1|  55|\n|1000002| 1000006|  33|\n|1000002| 1000007|   8|\n|1000002| 1000009| 144|\n|1000002| 1000010| 314|\n|1000002| 1000013|   8|\n|1000002| 1000014|  42|\n|1000002| 1000017|  69|\n|1000002| 1000024| 329|\n|1000002| 1000025|   1|\n|1000002| 1000028|  17|\n|1000002| 1000031|  47|\n|1000002| 1000033|  15|\n|1000002| 1000042|   1|\n|1000002| 1000045|   1|\n|1000002| 1000054|   2|\n|1000002| 1000055|  25|\n|1000002| 1000056|   4|\n|1000002| 1000059|   2|\n|1000002| 1000062|  71|\n+-------+--------+----+\nonly showing top 20 rows\n\r\nrawUserArtistData: org.apache.spark.sql.DataFrame \u003d [userID: int, artistID: int ... 1 more field]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829129_-1613604699",
+      "id": "20200203-190539_1255982858",
+      "dateCreated": "2020-06-24 18:07:09.129",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nAnche qui devo filtrare le righe contenenti un **null**. Stavolta uso la funzione di Row **anyNull** che ho appena scoerto. ",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.129",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eAnche qui devo filtrare le righe contenenti un \u003cstrong\u003enull\u003c/strong\u003e. Stavolta uso la funzione di Row \u003cstrong\u003eanyNull\u003c/strong\u003e che ho appena scoerto.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829129_-553892925",
+      "id": "20200203-190615_2017448355",
+      "dateCreated": "2020-06-24 18:07:09.129",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val userArtistDataClean \u003d rawUserArtistData.filter(row \u003d\u003e !row.anyNull)\nuserArtistDataClean.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.130",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+--------+----+\n| userID|artistID|view|\n+-------+--------+----+\n|1000002|       1|  55|\n|1000002| 1000006|  33|\n|1000002| 1000007|   8|\n|1000002| 1000009| 144|\n|1000002| 1000010| 314|\n|1000002| 1000013|   8|\n|1000002| 1000014|  42|\n|1000002| 1000017|  69|\n|1000002| 1000024| 329|\n|1000002| 1000025|   1|\n|1000002| 1000028|  17|\n|1000002| 1000031|  47|\n|1000002| 1000033|  15|\n|1000002| 1000042|   1|\n|1000002| 1000045|   1|\n|1000002| 1000054|   2|\n|1000002| 1000055|  25|\n|1000002| 1000056|   4|\n|1000002| 1000059|   2|\n|1000002| 1000062|  71|\n+-------+--------+----+\nonly showing top 20 rows\n\r\nuserArtistDataClean: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [userID: int, artistID: int ... 1 more field]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829129_78384521",
+      "id": "20200203-191142_1057964969",
+      "dateCreated": "2020-06-24 18:07:09.129",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val rawArtistAlias \u003d spark.read.option(\"inferSchema\", \"true\").option(\"sep\",\"\\t\").csv(\"D:\\\\AnacondaProjects\\\\Datasets\\\\profiledata_06-May-2005\\\\artist_alias.txt\").toDF(\"badArtistID\", \"goodArtistID\")\nrawArtistAlias.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.130",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------+------------+\n|badArtistID|goodArtistID|\n+-----------+------------+\n|    1092764|     1000311|\n|    1095122|     1000557|\n|    6708070|     1007267|\n|   10088054|     1042317|\n|    1195917|     1042317|\n|    1112006|     1000557|\n|    1187350|     1294511|\n|    1116694|     1327092|\n|    6793225|     1042317|\n|    1079959|     1000557|\n|    6789612|     1000591|\n|    1262241|     1000591|\n|    6791455|     1000591|\n|    6694867|     1000591|\n|   10141141|     1113738|\n|    1295140|     1000591|\n|    1027859|     1252408|\n|    2127019|     1000591|\n|    2153974|     1000591|\n|    1232342|     1000591|\n+-----------+------------+\nonly showing top 20 rows\n\r\nrawArtistAlias: org.apache.spark.sql.DataFrame \u003d [badArtistID: int, goodArtistID: int]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829130_1117830697",
+      "id": "20200203-191231_809260503",
+      "dateCreated": "2020-06-24 18:07:09.130",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nCon un *leftouter join* condizionale unisco i due",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.130",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eCon un \u003cem\u003eleftouter join\u003c/em\u003e condizionale unisco i due\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829130_-1617388719",
+      "id": "20200203-193528_2137501358",
+      "dateCreated": "2020-06-24 18:07:09.130",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val joinedData \u003d userArtistDataClean.join(rawArtistAlias, $\"artistID\" \u003d\u003d\u003d $\"badArtistID\", \"leftouter\")\njoinedData.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.131",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+--------+----+-----------+------------+\n| userID|artistID|view|badArtistID|goodArtistID|\n+-------+--------+----+-----------+------------+\n|1000002|       1|  55|       null|        null|\n|1000002| 1000006|  33|       null|        null|\n|1000002| 1000007|   8|       null|        null|\n|1000002| 1000009| 144|       null|        null|\n|1000002| 1000010| 314|       null|        null|\n|1000002| 1000013|   8|       null|        null|\n|1000002| 1000014|  42|       null|        null|\n|1000002| 1000017|  69|       null|        null|\n|1000002| 1000024| 329|       null|        null|\n|1000002| 1000025|   1|       null|        null|\n|1000002| 1000028|  17|       null|        null|\n|1000002| 1000031|  47|       null|        null|\n|1000002| 1000033|  15|       null|        null|\n|1000002| 1000042|   1|       null|        null|\n|1000002| 1000045|   1|       null|        null|\n|1000002| 1000054|   2|       null|        null|\n|1000002| 1000055|  25|       null|        null|\n|1000002| 1000056|   4|       null|        null|\n|1000002| 1000059|   2|       null|        null|\n|1000002| 1000062|  71|       null|        null|\n+-------+--------+----+-----------+------------+\nonly showing top 20 rows\n\r\njoinedData: org.apache.spark.sql.DataFrame \u003d [userID: int, artistID: int ... 3 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829130_455911723",
+      "id": "20200203-192000_185401742",
+      "dateCreated": "2020-06-24 18:07:09.130",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "userAliasData.count",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.131",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res64: Long \u003d 24296858\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829131_-158792285",
+      "id": "20200203-232143_2091172632",
+      "dateCreated": "2020-06-24 18:07:09.131",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "userArtistDataClean.count",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.131",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res65: Long \u003d 24296858\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829131_837999433",
+      "id": "20200203-232329_719502576",
+      "dateCreated": "2020-06-24 18:07:09.131",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "rawArtistAlias.count",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.132",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res66: Long \u003d 193027\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829132_672134581",
+      "id": "20200203-232423_1919805852",
+      "dateCreated": "2020-06-24 18:07:09.132",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val userAliasData \u003d joinedData.withColumn(\"alias\", when($\"badArtistID\" !\u003d\u003d \"null\", $\"badArtistID\").otherwise($\"artistID\"))\nuserAliasData.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.132",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "warning: there was one deprecation warning; re-run with -deprecation for details\n+-------+--------+----+-----------+------------+-------+\n| userID|artistID|view|badArtistID|goodArtistID|  alias|\n+-------+--------+----+-----------+------------+-------+\n|1000002|       1|  55|       null|        null|      1|\n|1000002| 1000006|  33|       null|        null|1000006|\n|1000002| 1000007|   8|       null|        null|1000007|\n|1000002| 1000009| 144|       null|        null|1000009|\n|1000002| 1000010| 314|       null|        null|1000010|\n|1000002| 1000013|   8|       null|        null|1000013|\n|1000002| 1000014|  42|       null|        null|1000014|\n|1000002| 1000017|  69|       null|        null|1000017|\n|1000002| 1000024| 329|       null|        null|1000024|\n|1000002| 1000025|   1|       null|        null|1000025|\n|1000002| 1000028|  17|       null|        null|1000028|\n|1000002| 1000031|  47|       null|        null|1000031|\n|1000002| 1000033|  15|       null|        null|1000033|\n|1000002| 1000042|   1|       null|        null|1000042|\n|1000002| 1000045|   1|       null|        null|1000045|\n|1000002| 1000054|   2|       null|        null|1000054|\n|1000002| 1000055|  25|       null|        null|1000055|\n|1000002| 1000056|   4|       null|        null|1000056|\n|1000002| 1000059|   2|       null|        null|1000059|\n|1000002| 1000062|  71|       null|        null|1000062|\n+-------+--------+----+-----------+------------+-------+\nonly showing top 20 rows\n\r\nuserAliasData: org.apache.spark.sql.DataFrame \u003d [userID: int, artistID: int ... 4 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829132_-1818976475",
+      "id": "20200203-192549_1714080272",
+      "dateCreated": "2020-06-24 18:07:09.132",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val dataClean \u003d userAliasData.drop(\"artistID\", \"badArtistID\", \"goodArtistID\")\ndataClean.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.133",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+----+-------+\n| userID|view|  alias|\n+-------+----+-------+\n|1000002|  55|      1|\n|1000002|  33|1000006|\n|1000002|   8|1000007|\n|1000002| 144|1000009|\n|1000002| 314|1000010|\n|1000002|   8|1000013|\n|1000002|  42|1000014|\n|1000002|  69|1000017|\n|1000002| 329|1000024|\n|1000002|   1|1000025|\n|1000002|  17|1000028|\n|1000002|  47|1000031|\n|1000002|  15|1000033|\n|1000002|   1|1000042|\n|1000002|   1|1000045|\n|1000002|   2|1000054|\n|1000002|  25|1000055|\n|1000002|   4|1000056|\n|1000002|   2|1000059|\n|1000002|  71|1000062|\n+-------+----+-------+\nonly showing top 20 rows\n\r\ndataClean: org.apache.spark.sql.DataFrame \u003d [userID: int, view: int ... 1 more field]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829132_-1015061436",
+      "id": "20200203-193952_1799550088",
+      "dateCreated": "2020-06-24 18:07:09.132",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "dataClean.printSchema",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.133",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- userID: integer (nullable \u003d true)\n |-- view: integer (nullable \u003d true)\n |-- alias: integer (nullable \u003d true)\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829133_2078153298",
+      "id": "20200203-210905_936508102",
+      "dateCreated": "2020-06-24 18:07:09.133",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val Array(trainingData, testData) \u003d dataClean.randomSplit(Array(0.80, 0.20))",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.133",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "trainingData: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [userID: int, view: int ... 1 more field]\r\ntestData: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [userID: int, view: int ... 1 more field]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829133_-510881139",
+      "id": "20200203-211121_1725614727",
+      "dateCreated": "2020-06-24 18:07:09.133",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.ml.recommendation.ALS",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.134",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.ml.recommendation.ALS\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829133_-2084482915",
+      "id": "20200203-194219_148448305",
+      "dateCreated": "2020-06-24 18:07:09.133",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val als \u003d new ALS()\n                .setMaxIter(5)\n                .setRegParam(0.01)\n                .setImplicitPrefs(true)\n                .setUserCol(\"userID\")\n                .setItemCol(\"alias\")\n                .setRatingCol(\"view\")\n\nval model \u003d als.fit(trainingData)",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.134",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829134_-1604442240",
+      "id": "20200203-194958_2110577190",
+      "dateCreated": "2020-06-24 18:07:09.134",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "testData.printSchema",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.134",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- userID: integer (nullable \u003d true)\n |-- view: integer (nullable \u003d true)\n |-- alias: integer (nullable \u003d true)\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829134_272568313",
+      "id": "20200203-211730_701483308",
+      "dateCreated": "2020-06-24 18:07:09.134",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "model.setColdStartStrategy(\"drop\")\r\n\r\nval prediction \u003d model.transform(testData)",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.135",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "prediction: org.apache.spark.sql.DataFrame \u003d [userID: int, view: int ... 2 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829135_-825565962",
+      "id": "20200203-211435_309950729",
+      "dateCreated": "2020-06-24 18:07:09.135",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "testData.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.135",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------+----+--------+\n|userID|view|   alias|\n+------+----+--------+\n|   116|   3|     785|\n|   116|  12|    2001|\n|   120|   1|     969|\n|   120|   1|    5810|\n|   120|   1| 1000899|\n|   120|   1| 2118878|\n|   120|   1| 6773068|\n|   120|   1|10671289|\n|   120|   3| 1023455|\n|   128|   1|     619|\n|   128|   4|    5355|\n|   128|  43|    3023|\n|  1014|   1|      28|\n|  1014|   1| 1000487|\n|  1014|   1| 1000881|\n|  1014|   1| 1005015|\n|  1014|   1| 1006555|\n|  1014|   1| 1009337|\n|  1014|   1| 1009744|\n|  1014|   1| 1014767|\n+------+----+--------+\nonly showing top 20 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829135_-704455443",
+      "id": "20200203-231717_460841019",
+      "dateCreated": "2020-06-24 18:07:09.135",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "prediction.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.136",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+----+-----+----------+\n| userID|view|alias|prediction|\n+-------+----+-----+----------+\n|1000190|  23|  463|  59.16755|\n|1038881|  29|  463|  4.409752|\n|1051867| 108|  463| 17.508497|\n|2033127|  39|  463|  22.37843|\n|2069908|   4|  463| 33.908455|\n|2070233|   1|  463| 102.85086|\n|2078917| 127|  463|104.303085|\n|2140713| 146|  463|-15.377411|\n|2223609|   8|  463| 49.083984|\n|2281411|   1|  463|  8.466522|\n|2289460| 750|  463| 15.015625|\n|2303915|   6|  463| 51.626427|\n|2406975|   8|  463|-49.736874|\n|1036889|  14|  463| 26.484417|\n|1043147|  26|  463|  42.02478|\n|1056094|  27|  463| 28.798582|\n|1071011|   8|  463| 1939.9844|\n|2016025|   1|  463| 2.7750323|\n|2017115|   5|  463| 10.329519|\n|2021131| 105|  463| 46.455906|\n+-------+----+-----+----------+\nonly showing top 20 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829135_-1715131528",
+      "id": "20200203-231610_917280077",
+      "dateCreated": "2020-06-24 18:07:09.135",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.ml.evaluation.RegressionEvaluator\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.136",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.ml.evaluation.RegressionEvaluator\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829136_2122888911",
+      "id": "20200203-211753_1824960448",
+      "dateCreated": "2020-06-24 18:07:09.136",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val eval \u003d new RegressionEvaluator()\n                    .setMetricName(\"mae\") \n                    .setLabelCol(\"view\")\n                    .setPredictionCol(\"prediction\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.136",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "eval: org.apache.spark.ml.evaluation.RegressionEvaluator \u003d regEval_2fd44a22c84e\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829136_-1488831913",
+      "id": "20200203-211830_154740548",
+      "dateCreated": "2020-06-24 18:07:09.136",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val meanAbsoluteError \u003d eval.evaluate(prediction)",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.137",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "meanAbsoluteError: Double \u003d 23.599714493514487\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829136_890620288",
+      "id": "20200203-212024_648303791",
+      "dateCreated": "2020-06-24 18:07:09.136",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "println(s\"Root-mean-square error \u003d $meanAbsoluteError\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.137",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Root-mean-square error \u003d 23.599714493514487\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829137_-1675769939",
+      "id": "20200203-212054_289178997",
+      "dateCreated": "2020-06-24 18:07:09.137",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 18:07:09.137",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1593014829137_1806268114",
+      "id": "20200203-225019_1906158344",
+      "dateCreated": "2020-06-24 18:07:09.137",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "capitolo 3 - Advanced Analytics with Spark",
+  "id": "2FDTS9RUC",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

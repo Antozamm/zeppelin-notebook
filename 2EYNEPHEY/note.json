@@ -1,0 +1,185 @@
+{
+  "paragraphs": [
+    {
+      "text": "val stringArray \u003d \"Provando le variabili broadcasted con Spark. Un tentativo unico.\"\nval wordsRDD \u003d sc.parallelize(stringArray)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-23 14:57:41.703",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "stringArray: String \u003d Provando le variabili broadcasted con Spark. Un tentativo unico.\r\nwordsRDD: org.apache.spark.rdd.RDD[Char] \u003d ParallelCollectionRDD[1] at parallelize at \u003cconsole\u003e:28\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1577107755599_-2121111831",
+      "id": "20191223-142915_71428915",
+      "dateCreated": "2019-12-23 14:29:15.599",
+      "dateStarted": "2019-12-23 14:57:31.667",
+      "dateFinished": "2019-12-23 14:57:31.915",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val supllementalData \u003d Map(\"Spark\" -\u003e 100, \"broadcasted\" -\u003e 10, \"variabili\" -\u003e 30, \"tentativo\" -\u003e 5)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-23 14:59:14.606",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "supllementalData: scala.collection.immutable.Map[String,Int] \u003d Map(Spark -\u003e 100, broadcasted -\u003e 10, variabili -\u003e 30, tentativo -\u003e 5)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1577109237217_-1891473284",
+      "id": "20191223-145357_63386543",
+      "dateCreated": "2019-12-23 14:53:57.217",
+      "dateStarted": "2019-12-23 14:59:14.625",
+      "dateFinished": "2019-12-23 14:59:15.102",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val suppBroadcast \u003d sc.broadcast(supllementalData)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-23 15:00:38.592",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "suppBroadcast: org.apache.spark.broadcast.Broadcast[scala.collection.immutable.Map[String,Int]] \u003d Broadcast(0)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1577109554606_1760842888",
+      "id": "20191223-145914_1980863463",
+      "dateCreated": "2019-12-23 14:59:14.606",
+      "dateStarted": "2019-12-23 15:00:38.612",
+      "dateFinished": "2019-12-23 15:00:39.046",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "suppBroadcast.value",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-23 15:01:04.900",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res1: scala.collection.immutable.Map[String,Int] \u003d Map(Spark -\u003e 100, broadcasted -\u003e 10, variabili -\u003e 30, tentativo -\u003e 5)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1577109638592_-143058476",
+      "id": "20191223-150038_653592650",
+      "dateCreated": "2019-12-23 15:00:38.592",
+      "dateStarted": "2019-12-23 15:01:04.920",
+      "dateFinished": "2019-12-23 15:01:05.161",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1577109664900_68907367",
+      "id": "20191223-150104_1031784234",
+      "dateCreated": "2019-12-23 15:01:04.900",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Broadcast",
+  "id": "2EYNEPHEY",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

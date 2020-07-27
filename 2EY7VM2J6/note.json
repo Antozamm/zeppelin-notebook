@@ -1,0 +1,146 @@
+{
+  "paragraphs": [
+    {
+      "text": "import org.apache.spark.sql.SQLContext\nimport org.apache.spark.{SparkContext, SparkConf}\nimport com.mongodb.spark.MongoSpark\nimport com.mongodb.spark.config.{ReadConfig, WriteConfig}",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-21 23:52:44.995",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.SQLContext\r\nimport org.apache.spark.{SparkContext, SparkConf}\r\nimport com.mongodb.spark.MongoSpark\r\nimport com.mongodb.spark.config.{ReadConfig, WriteConfig}\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579634419688_723428415",
+      "id": "20200121-202019_2077344696",
+      "dateCreated": "2020-01-21 20:20:19.688",
+      "dateStarted": "2020-01-21 23:52:45.055",
+      "dateFinished": "2020-01-21 23:52:57.862",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val readConfig \u003d ReadConfig(Map(\"uri\" -\u003e \"mongodb://localhost:27017/admin.dbschool?readPreference\u003dprimaryPreferred\"))",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-21 23:53:00.588",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cconsole\u003e:25: error: Symbol \u0027term org.bson\u0027 is missing from the classpath.\r\nThis symbol is required by \u0027type com.mongodb.spark.config.ReadConfig.B\u0027.\r\nMake sure that term bson is in your classpath and check for conflicting dependencies with `-Ylog-classpath`.\r\nA full rebuild may help if \u0027ReadConfig.class\u0027 was compiled against an incompatible version of org.\r\nclass $iw extends Serializable {\r\n      ^\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579634550087_1322645287",
+      "id": "20200121-202230_1501627327",
+      "dateCreated": "2020-01-21 20:22:30.088",
+      "dateStarted": "2020-01-21 23:53:00.608",
+      "dateFinished": "2020-01-21 23:53:01.157",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import com.mongodb.spark._\r\nimport com.mongodb.spark.config.ReadConfig\r\nimport com.mongodb.spark.sql._\r\nimport com.typesafe.scalalogging.slf4j.LazyLogging\r\nimport org.apache.spark.sql.SparkSession\r\nimport org.apache.spark.sql.functions.{max, min}\r\nimport org.bson.Document\r\n\r\nobject Main extends App with LazyLogging {\r\n    val spark \u003d SparkSession.builder()\r\n    .appName(\"mongozips\")\r\n    .master(\"local[*]\")\r\n    .getOrCreate()\r\n\r\n  // Read the data from MongoDB to a DataFrame\r\n  val readConfig \u003d ReadConfig(Map(\"uri\" -\u003e \"mongodb://127.0.0.1/\", \"database\" -\u003e \"test\", \"collection\" -\u003e \"zips\")) // 1)\r\n  val zipDf \u003d spark.read.mongo(readConfig) // 2)\r\n  zipDf.printSchema() // 3)\r\n  zipDf.show()\r\n}",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-21 23:57:28.829",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cconsole\u003e:30: error: object typesafe is not a member of package com\r\n       import com.typesafe.scalalogging.slf4j.LazyLogging\r\n                  ^\n\u003cconsole\u003e:33: error: object bson is not a member of package org\r\n       import org.bson.Document\r\n                  ^\n\u003cconsole\u003e:35: error: not found: type LazyLogging\r\n       object Main extends App with LazyLogging {\r\n                                    ^\n\u003cconsole\u003e:42: error: Symbol \u0027term org.bson\u0027 is missing from the classpath.\r\nThis symbol is required by \u0027value com.mongodb.spark.package.e\u0027.\r\nMake sure that term bson is in your classpath and check for conflicting dependencies with `-Ylog-classpath`.\r\nA full rebuild may help if \u0027package.class\u0027 was compiled against an incompatible version of org.\r\n         val readConfig \u003d ReadConfig(Map(\"uri\" -\u003e \"mongodb://127.0.0.1/\", \"database\" -\u003e \"test\", \"collection\" -\u003e \"zips\")) // 1)\r\n                                         ^\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579634731592_-68895268",
+      "id": "20200121-202531_330136266",
+      "dateCreated": "2020-01-21 20:25:31.592",
+      "dateStarted": "2020-01-21 23:57:28.857",
+      "dateFinished": "2020-01-21 23:57:29.059",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1579647448829_-1540441129",
+      "id": "20200121-235728_519378671",
+      "dateCreated": "2020-01-21 23:57:28.829",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "connect to Mongo DB",
+  "id": "2EY7VM2J6",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

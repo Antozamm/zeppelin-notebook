@@ -1,0 +1,101 @@
+{
+  "paragraphs": [
+    {
+      "text": "package com.cloudera.datascience.intro\n\nimport org.apache.spark.sql.{DataFrame, Dataset, Row, SparkSession}\nimport org.apache.spark.sql.functions._ // for lit(), first(), etc.",
+      "user": "user1",
+      "dateUpdated": "2019-11-23 14:01:52.773",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "java.lang.NoSuchMethodError: scala.Predef$.refArrayOps([Ljava/lang/Object;)Lscala/collection/mutable/ArrayOps;\r\n\tat org.apache.zeppelin.spark.BaseSparkScalaInterpreter.getUserJars(BaseSparkScalaInterpreter.scala:382)\r\n\tat org.apache.zeppelin.spark.SparkScala211Interpreter.open(SparkScala211Interpreter.scala:71)\r\n\tat org.apache.zeppelin.spark.NewSparkInterpreter.open(NewSparkInterpreter.java:102)\r\n\tat org.apache.zeppelin.spark.SparkInterpreter.open(SparkInterpreter.java:62)\r\n\tat org.apache.zeppelin.interpreter.LazyOpenInterpreter.open(LazyOpenInterpreter.java:69)\r\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreterServer$InterpretJob.jobRun(RemoteInterpreterServer.java:616)\r\n\tat org.apache.zeppelin.scheduler.Job.run(Job.java:188)\r\n\tat org.apache.zeppelin.scheduler.FIFOScheduler$1.run(FIFOScheduler.java:140)\r\n\tat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)\r\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:266)\r\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)\r\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)\r\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\r\n\tat java.lang.Thread.run(Thread.java:748)\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1574506235512_1718523996",
+      "id": "20191123-115035_1673975438",
+      "dateCreated": "2019-11-23 11:50:35.512",
+      "dateStarted": "2019-11-23 14:01:41.785",
+      "dateFinished": "2019-11-23 14:01:41.797",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\ncase class MatchData(\n  id_1: Int,\n  id_2: Int,\n  cmp_fname_c1: Option[Double],\n  cmp_fname_c2: Option[Double],\n  cmp_lname_c1: Option[Double],\n  cmp_lname_c2: Option[Double],\n  cmp_sex: Option[Int],\n  cmp_bd: Option[Int],\n  cmp_bm: Option[Int],\n  cmp_by: Option[Int],\n  cmp_plz: Option[Int],\n  is_match: Boolean\n)",
+      "user": "user1",
+      "dateUpdated": "2019-11-23 14:01:27.393",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {}
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "java.lang.NoSuchMethodError: scala.Predef$.refArrayOps([Ljava/lang/Object;)Lscala/collection/mutable/ArrayOps;\r\n\tat org.apache.zeppelin.spark.BaseSparkScalaInterpreter.getUserJars(BaseSparkScalaInterpreter.scala:382)\r\n\tat org.apache.zeppelin.spark.SparkScala211Interpreter.open(SparkScala211Interpreter.scala:71)\r\n\tat org.apache.zeppelin.spark.NewSparkInterpreter.open(NewSparkInterpreter.java:102)\r\n\tat org.apache.zeppelin.spark.SparkInterpreter.open(SparkInterpreter.java:62)\r\n\tat org.apache.zeppelin.interpreter.LazyOpenInterpreter.open(LazyOpenInterpreter.java:69)\r\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreterServer$InterpretJob.jobRun(RemoteInterpreterServer.java:616)\r\n\tat org.apache.zeppelin.scheduler.Job.run(Job.java:188)\r\n\tat org.apache.zeppelin.scheduler.FIFOScheduler$1.run(FIFOScheduler.java:140)\r\n\tat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)\r\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:266)\r\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)\r\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)\r\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\r\n\tat java.lang.Thread.run(Thread.java:748)\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1574514030641_-1395714507",
+      "id": "20191123-140030_1983128680",
+      "dateCreated": "2019-11-23 14:00:30.641",
+      "dateStarted": "2019-11-23 14:01:27.411",
+      "dateFinished": "2019-11-23 14:01:27.428",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "user1",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1574514087394_700386633",
+      "id": "20191123-140127_997728719",
+      "dateCreated": "2019-11-23 14:01:27.394",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "~Trash/AdvancedAnalyticsSpark-ch2",
+  "id": "2EV78DP53",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

@@ -1,0 +1,108 @@
+{
+  "paragraphs": [
+    {
+      "text": "\r\nprintln(matchInteger(3))\r\n\r\ndef matchInteger(x: Int): String \u003d x match {\r\n    case 1 \u003d\u003e \"one\"\r\n    case 2 \u003d\u003e \"two\"\r\n    case _ \u003d\u003e \"greater than two\"\r\n}\r\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-17 13:03:54.157",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "greater than two\r\nmatchInteger: (x: Int)String\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579261492042_1871942457",
+      "id": "20200117-124452_1485949266",
+      "dateCreated": "2020-01-17 12:44:52.042",
+      "dateStarted": "2020-01-17 13:03:54.176",
+      "dateFinished": "2020-01-17 13:03:54.404",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "println(comparison(\"uno\"))\r\nprintln(comparison(1))\r\nprintln(comparison(\"dieci\"))\r\n\r\ndef comparison(x: Any): Any \u003d {\r\nx match {\r\n  case \"uno\" \u003d\u003e 1\r\n  case 1 \u003d\u003e \"uno\"\r\n  case _ \u003d\u003e \"altro\"\r\n}\r\n}\r\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-17 13:04:15.338",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "1\r\nuno\r\naltro\r\ncomparison: (x: Any)Any\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579261748329_1630205846",
+      "id": "20200117-124908_925637202",
+      "dateCreated": "2020-01-17 12:49:08.329",
+      "dateStarted": "2020-01-17 13:04:15.354",
+      "dateFinished": "2020-01-17 13:04:15.645",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1579262086137_-1233812683",
+      "id": "20200117-125446_39240232",
+      "dateCreated": "2020-01-17 12:54:46.137",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Scala Pattern Matching",
+  "id": "2EZSUS8F5",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

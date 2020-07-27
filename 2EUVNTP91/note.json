@@ -1,0 +1,2666 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\nScarichiamo il dataset sulle centrali elettriche mondiali dal sito [dataser.writer.org](http://datasets.wri.org/dataset/globalpowerplantdatabase).\n\nPer leggere i dati dal file csv possiamo importare i dati in un RDD, e poi convertire il RDD in un DataFrame.",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.804",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eScarichiamo il dataset sulle centrali elettriche mondiali dal sito \u003ca href\u003d\"http://datasets.wri.org/dataset/globalpowerplantdatabase\"\u003edataser.writer.org\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003ePer leggere i dati dal file csv possiamo importare i dati in un RDD, e poi convertire il RDD in un DataFrame.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157804_-97386879",
+      "id": "20191201-214635_79899124",
+      "dateCreated": "2019-12-05 06:19:17.804",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val data \u003d sc.textFile(\"globalpowerplantdatabasev120/global_power_plant_database.csv\")",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.805",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "data: org.apache.spark.rdd.RDD[String] \u003d globalpowerplantdatabasev120/global_power_plant_database.csv MapPartitionsRDD[1] at textFile at \u003cconsole\u003e:25\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157805_-394063593",
+      "id": "20191201-214408_249173080",
+      "dateCreated": "2019-12-05 06:19:17.805",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "data.toDF()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.805",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res1: org.apache.spark.sql.DataFrame \u003d [value: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157805_808596611",
+      "id": "20191201-214612_1874979361",
+      "dateCreated": "2019-12-05 06:19:17.805",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "data.count()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.805",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res2: Long \u003d 29911\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157805_353378206",
+      "id": "20191202-002850_271206334",
+      "dateCreated": "2019-12-05 06:19:17.805",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "data.toDF().show(5)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.806",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------------+\n|               value|\n+--------------------+\n|country,country_l...|\n|AFG,Afghanistan,K...|\n|AFG,Afghanistan,M...|\n|AFG,Afghanistan,N...|\n|AFG,Afghanistan,N...|\n+--------------------+\nonly showing top 5 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157805_753567913",
+      "id": "20191201-220017_1290540198",
+      "dateCreated": "2019-12-05 06:19:17.805",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nCome si vede la prima riga contiene l\u0027header del file csv, ovvero i nomi di ciascuna colonna del file csv.\n\nSiccome vogliamo un RDD di soli dati numerici devo eliminare la prima colonna.\n\nPer fare ciò uso il metodo **filter()**, definendo un filtro che cattura tutti gli elementi tranne la prima stringa contenuta nella prima riga.\n\nInizio col definire una variabile contenente la stringa della prima riga usando il metodo **first()**",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.806",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eCome si vede la prima riga contiene l\u0026rsquo;header del file csv, ovvero i nomi di ciascuna colonna del file csv.\u003c/p\u003e\n\u003cp\u003eSiccome vogliamo un RDD di soli dati numerici devo eliminare la prima colonna.\u003c/p\u003e\n\u003cp\u003ePer fare ciò uso il metodo \u003cstrong\u003efilter()\u003c/strong\u003e, definendo un filtro che cattura tutti gli elementi tranne la prima stringa contenuta nella prima riga.\u003c/p\u003e\n\u003cp\u003eInizio col definire una variabile contenente la stringa della prima riga usando il metodo \u003cstrong\u003efirst()\u003c/strong\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157806_-1762295177",
+      "id": "20191202-142906_1740898142",
+      "dateCreated": "2019-12-05 06:19:17.806",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val dataheader \u003d data.first()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.806",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "dataheader: String \u003d country,country_long,name,gppd_idnr,capacity_mw,latitude,longitude,primary_fuel,other_fuel1,other_fuel2,other_fuel3,commissioning_year,owner,source,url,geolocation_source,wepp_id,year_of_capacity_data,generation_gwh_2013,generation_gwh_2014,generation_gwh_2015,generation_gwh_2016,generation_gwh_2017,estimated_generation_gwh\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157806_713230880",
+      "id": "20191201-220056_2105282125",
+      "dateCreated": "2019-12-05 06:19:17.806",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nAdesso filtro tutti gli elementi che soddisfano la condizione **x !\u003d dataheader**, questi elementi sono inclusi nel nuovo RDD",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.806",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eAdesso filtro tutti gli elementi che soddisfano la condizione \u003cstrong\u003ex !\u003d dataheader\u003c/strong\u003e, questi elementi sono inclusi nel nuovo RDD\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157806_1374247138",
+      "id": "20191202-142902_2096090107",
+      "dateCreated": "2019-12-05 06:19:17.806",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val data_no_header \u003d data.filter(x \u003d\u003e (x !\u003d dataheader))",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.807",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "data_no_header: org.apache.spark.rdd.RDD[String] \u003d MapPartitionsRDD[5] at filter at \u003cconsole\u003e:29\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157806_384639886",
+      "id": "20191201-222943_546130858",
+      "dateCreated": "2019-12-05 06:19:17.807",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nCome possiamo vedere il primo elemento del nuovo RDD non contiene più l\u0027header ma i dati del dataset",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.807",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eCome possiamo vedere il primo elemento del nuovo RDD non contiene più l\u0026rsquo;header ma i dati del dataset\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157807_695139178",
+      "id": "20191202-144542_1289691035",
+      "dateCreated": "2019-12-05 06:19:17.807",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "data_no_header.first()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.807",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res4: String \u003d AFG,Afghanistan,Kajaki Hydroelectric Power Plant Afghanistan,GEODB0040538,33.0,32.3220,65.1190,Hydro,,,,,,GEODB,http://globalenergyobservatory.org,GEODB,1009793,2017,,,,,,\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157807_-1785750077",
+      "id": "20191201-223017_2113288087",
+      "dateCreated": "2019-12-05 06:19:17.807",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "data_no_header.take(1)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.808",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res5: Array[String] \u003d Array(AFG,Afghanistan,Kajaki Hydroelectric Power Plant Afghanistan,GEODB0040538,33.0,32.3220,65.1190,Hydro,,,,,,GEODB,http://globalenergyobservatory.org,GEODB,1009793,2017,,,,,,)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157807_-370530598",
+      "id": "20191202-003118_1919192121",
+      "dateCreated": "2019-12-05 06:19:17.807",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "data_no_header.toDF().show(5)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.808",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------------+\n|               value|\n+--------------------+\n|AFG,Afghanistan,K...|\n|AFG,Afghanistan,M...|\n|AFG,Afghanistan,N...|\n|AFG,Afghanistan,N...|\n|AFG,Afghanistan,N...|\n+--------------------+\nonly showing top 5 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157808_1022669436",
+      "id": "20191202-003202_841192317",
+      "dateCreated": "2019-12-05 06:19:17.808",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nCome si può vedere sotto, ciascun elemento del RDD è una stringa, nella quale i singoli elementi sono separati da una virgola ",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.808",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eCome si può vedere sotto, ciascun elemento del RDD è una stringa, nella quale i singoli elementi sono separati da una virgola\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157808_587922534",
+      "id": "20191202-003250_1797908175",
+      "dateCreated": "2019-12-05 06:19:17.808",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "data_no_header.take(1)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.808",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res7: Array[String] \u003d Array(AFG,Afghanistan,Kajaki Hydroelectric Power Plant Afghanistan,GEODB0040538,33.0,32.3220,65.1190,Hydro,,,,,,GEODB,http://globalenergyobservatory.org,GEODB,1009793,2017,,,,,,)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157808_166940442",
+      "id": "20191202-150243_1143496609",
+      "dateCreated": "2019-12-05 06:19:17.808",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nAdesso voglio separare i dati della stringa e convertire in dati numerici ove appropriato.\n\nInizio con l\u0027usare il metodo **split()** su ciascuna stringa. Il risultato è che ogni stringa è convertita in un Array",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.809",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157808_-602850387",
+      "id": "20191202-150254_548823022",
+      "dateCreated": "2019-12-05 06:19:17.808",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val data_array \u003d data_no_header.map(x \u003d\u003e x.split(\u0027,\u0027))\ndata_array.take(1)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.809",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "data_array: org.apache.spark.rdd.RDD[Array[String]] \u003d MapPartitionsRDD[9] at map at \u003cconsole\u003e:31\r\nres8: Array[Array[String]] \u003d Array(Array(AFG, Afghanistan, Kajaki Hydroelectric Power Plant Afghanistan, GEODB0040538, 33.0, 32.3220, 65.1190, Hydro, \"\", \"\", \"\", \"\", \"\", GEODB, http://globalenergyobservatory.org, GEODB, 1009793, 2017))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157809_1573128465",
+      "id": "20191202-151014_1208019031",
+      "dateCreated": "2019-12-05 06:19:17.809",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nSupponiamo di volere calcolare il dato della produzione totale annuale di energia in Italia.\n\nPer sapere cosa sono i dati nell\u0027array posso fare riferimento a *dataheader*",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.809",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eSupponiamo di volere calcolare il dato della produzione totale annuale di energia in Italia.\u003c/p\u003e\n\u003cp\u003ePer sapere cosa sono i dati nell\u0026rsquo;array posso fare riferimento a \u003cem\u003edataheader\u003c/em\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157809_-1876995134",
+      "id": "20191202-151331_1486030913",
+      "dateCreated": "2019-12-05 06:19:17.809",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "dataheader",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.810",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res9: String \u003d country,country_long,name,gppd_idnr,capacity_mw,latitude,longitude,primary_fuel,other_fuel1,other_fuel2,other_fuel3,commissioning_year,owner,source,url,geolocation_source,wepp_id,year_of_capacity_data,generation_gwh_2013,generation_gwh_2014,generation_gwh_2015,generation_gwh_2016,generation_gwh_2017,estimated_generation_gwh\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157810_-1933989705",
+      "id": "20191202-154718_1435942342",
+      "dateCreated": "2019-12-05 06:19:17.810",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nInizio con il filtrare le righe in cui il primo elemento dell\u0027array contiene il codice \u0027ITA\u0027. ",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.810",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eInizio con il filtrare le righe in cui il primo elemento dell\u0026rsquo;array contiene il codice \u0026lsquo;ITA\u0026rsquo;.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157810_-1563843576",
+      "id": "20191202-154800_1847115384",
+      "dateCreated": "2019-12-05 06:19:17.810",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val data_ita \u003d data_array.filter(x \u003d\u003e x(0) \u003d\u003d \"ITA\")\ndata_ita.take(2)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.810",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "data_ita: org.apache.spark.rdd.RDD[Array[String]] \u003d MapPartitionsRDD[10] at filter at \u003cconsole\u003e:33\r\nres10: Array[Array[String]] \u003d Array(Array(ITA, Italy, ACCEGLIO, WRI1021706, 19.0, 44.4742, 7.0183, Hydro, \"\", \"\", \"\", \"\", \"\", ENTSOE, https://transparency.entsoe.eu/generation/r2/installedCapacityPerProductionUnit/show, WRI, 1015906, \"\", \"\", \"\", \"\", \"\", \"\", 85.53859855441274), Array(ITA, Italy, ACERRA, WRI1021322, 72.0, 40.9319, 14.3850, Other, \"\", \"\", \"\", \"\", \"\", ENTSOE, https://transparency.entsoe.eu/generation/r2/installedCapacityPerProductionUnit/show, GEODB, 1053275|1067259, \"\", \"\", \"\", \"\", \"\", \"\", 123.74414976599063))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157810_-1092043959",
+      "id": "20191202-152709_1578261837",
+      "dateCreated": "2019-12-05 06:19:17.810",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nSi noti che il motivo per cui ho filtrato i dati sopra è quello di ridurre il dataset al minimo indispensabile, cioè ai dati relativi solo all\u0027Italia.\n\nAdesso posso selezionare solamente la colonna di dati che mi interessa qualla con i valori della produzione energetica, colonna numero 24 (si ricordi che in Scala il primo elemnto dell\u0027array è alla posizione 0)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.811",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157810_484869097",
+      "id": "20191202-164642_860431816",
+      "dateCreated": "2019-12-05 06:19:17.810",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val data_ita_keyvalue \u003d data_ita.map(x \u003d\u003e (x(0), x(23).toDouble))",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.811",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "data_ita_keyvalue: org.apache.spark.rdd.RDD[(String, Double)] \u003d MapPartitionsRDD[11] at map at \u003cconsole\u003e:35\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157811_-545424147",
+      "id": "20191202-164606_2052055759",
+      "dateCreated": "2019-12-05 06:19:17.811",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nAdesso applico il metodo **reduceByKey()** sulle coppie *(chiave, valore)* del RDD. Questo metodo selezioa tutti gli elementi aventi la stessa chiave e sui corrispondenti valori applica la funzione che indico come argomento del metodo. Nel codice sotto **a** e **b** sono i valori di due diverse coppie (chiave, valore), quindi **a** e **b** sono scalari che posso sommare tra loro.",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.811",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157811_1025592249",
+      "id": "20191202-163927_2001901954",
+      "dateCreated": "2019-12-05 06:19:17.811",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val somma_produzione \u003d data_ita_keyvalue.reduceByKey( (a,b) \u003d\u003e a+b ).collect()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.811",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "somma_produzione: Array[(String, Double)] \u003d Array((ITA,258640.99999999994))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157811_-1579685897",
+      "id": "20191202-152820_1744700337",
+      "dateCreated": "2019-12-05 06:19:17.811",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nMa quanto è la produzione di energia in Italia?",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.811",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eMa quanto è la produzione di energia in Italia?\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157811_395261786",
+      "id": "20191202-175932_1000417631",
+      "dateCreated": "2019-12-05 06:19:17.811",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val somma \u003d somma_produzione(0)._2\nprintln(f\"La produzione di energia elettrica totale in Italia è di $somma%.2f GWh\")",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.812",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "La produzione di energia elettrica totale in Italia è di 258641.00 GWh\r\nsomma: Double \u003d 258640.99999999994\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157811_-424245599",
+      "id": "20191202-161124_438345999",
+      "dateCreated": "2019-12-05 06:19:17.811",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n## Aggregazione dei dati\n\nNaturalmente avrei potuto decidere di lavorare su tutto il dataset senza restringere il RDD ai dati relativi all\u0027Italia. In questo modo posso avere il dato aggregato della produzione di energia per ogni stato del database.\n\nSeleziono solo i dati delle colonne *country* e *estimated_generation_gwh* che costituiranno dopo una **map()** le mie coppie *(chiave, valore)*. Al contempo converto le stringhe di x(23) in double usando il metodo **toDouble()**",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.812",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eAggregazione dei dati\u003c/h2\u003e\n\u003cp\u003eNaturalmente avrei potuto decidere di lavorare su tutto il dataset senza restringere il RDD ai dati relativi all\u0026rsquo;Italia. In questo modo posso avere il dato aggregato della produzione di energia per ogni stato del database.\u003c/p\u003e\n\u003cp\u003eSeleziono solo i dati delle colonne \u003cem\u003ecountry\u003c/em\u003e e \u003cem\u003eestimated_generation_gwh\u003c/em\u003e che costituiranno dopo una \u003cstrong\u003emap()\u003c/strong\u003e le mie coppie \u003cem\u003e(chiave, valore)\u003c/em\u003e. Al contempo converto le stringhe di x(23) in double usando il metodo \u003cstrong\u003etoDouble()\u003c/strong\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157812_1461506538",
+      "id": "20191202-174043_937491198",
+      "dateCreated": "2019-12-05 06:19:17.812",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val data_kv \u003d data_array.map(x \u003d\u003e (x(0), x(23).toDouble))",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.812",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "data_kv: org.apache.spark.rdd.RDD[(String, Double)] \u003d MapPartitionsRDD[13] at map at \u003cconsole\u003e:33\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157812_-1501543070",
+      "id": "20191202-175346_1866297325",
+      "dateCreated": "2019-12-05 06:19:17.812",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nvediamo la prima coppia *(chiave, valore)* cosa contiene",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.812",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003evediamo la prima coppia \u003cem\u003e(chiave, valore)\u003c/em\u003e cosa contiene\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157812_-1764141465",
+      "id": "20191202-232019_1992745906",
+      "dateCreated": "2019-12-05 06:19:17.812",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "data_kv.take(1)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.813",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 144.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 11.0 failed 1 times, most recent failure: Lost task 0.0 in stage 11.0 (TID 11, localhost, executor driver): java.lang.ArrayIndexOutOfBoundsException: 23\r\n\tat $anonfun$1.apply(\u003cconsole\u003e:33)\r\n\tat $anonfun$1.apply(\u003cconsole\u003e:33)\r\n\tat scala.collection.Iterator$$anon$11.next(Iterator.scala:409)\r\n\tat scala.collection.Iterator$$anon$10.next(Iterator.scala:393)\r\n\tat scala.collection.Iterator$class.foreach(Iterator.scala:893)\r\n\tat scala.collection.AbstractIterator.foreach(Iterator.scala:1336)\r\n\tat scala.collection.generic.Growable$class.$plus$plus$eq(Growable.scala:59)\r\n\tat scala.collection.mutable.ArrayBuffer.$plus$plus$eq(ArrayBuffer.scala:104)\r\n\tat scala.collection.mutable.ArrayBuffer.$plus$plus$eq(ArrayBuffer.scala:48)\r\n\tat scala.collection.TraversableOnce$class.to(TraversableOnce.scala:310)\r\n\tat scala.collection.AbstractIterator.to(Iterator.scala:1336)\r\n\tat scala.collection.TraversableOnce$class.toBuffer(TraversableOnce.scala:302)\r\n\tat scala.collection.AbstractIterator.toBuffer(Iterator.scala:1336)\r\n\tat scala.collection.TraversableOnce$class.toArray(TraversableOnce.scala:289)\r\n\tat scala.collection.AbstractIterator.toArray(Iterator.scala:1336)\r\n\tat org.apache.spark.rdd.RDD$$anonfun$take$1$$anonfun$29.apply(RDD.scala:1354)\r\n\tat org.apache.spark.rdd.RDD$$anonfun$take$1$$anonfun$29.apply(RDD.scala:1354)\r\n\tat org.apache.spark.SparkContext$$anonfun$runJob$5.apply(SparkContext.scala:2069)\r\n\tat org.apache.spark.SparkContext$$anonfun$runJob$5.apply(SparkContext.scala:2069)\r\n\tat org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)\r\n\tat org.apache.spark.scheduler.Task.run(Task.scala:108)\r\n\tat org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:338)\r\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)\r\n\tat java.lang.Thread.run(Unknown Source)\r\n\r\nDriver stacktrace:\r\n  at org.apache.spark.scheduler.DAGScheduler.org$apache$spark$scheduler$DAGScheduler$$failJobAndIndependentStages(DAGScheduler.scala:1517)\r\n  at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1505)\r\n  at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1504)\r\n  at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)\r\n  at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)\r\n  at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:1504)\r\n  at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:814)\r\n  at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:814)\r\n  at scala.Option.foreach(Option.scala:257)\r\n  at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:814)\r\n  at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:1732)\r\n  at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:1687)\r\n  at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:1676)\r\n  at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:48)\r\n  at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:630)\r\n  at org.apache.spark.SparkContext.runJob(SparkContext.scala:2029)\r\n  at org.apache.spark.SparkContext.runJob(SparkContext.scala:2050)\r\n  at org.apache.spark.SparkContext.runJob(SparkContext.scala:2069)\r\n  at org.apache.spark.rdd.RDD$$anonfun$take$1.apply(RDD.scala:1354)\r\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)\r\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)\r\n  at org.apache.spark.rdd.RDD.withScope(RDD.scala:362)\r\n  at org.apache.spark.rdd.RDD.take(RDD.scala:1327)\r\n  ... 47 elided\r\nCaused by: java.lang.ArrayIndexOutOfBoundsException: 23\r\n  at $anonfun$1.apply(\u003cconsole\u003e:33)\r\n  at $anonfun$1.apply(\u003cconsole\u003e:33)\r\n  at scala.collection.Iterator$$anon$11.next(Iterator.scala:409)\r\n  at scala.collection.Iterator$$anon$10.next(Iterator.scala:393)\r\n  at scala.collection.Iterator$class.foreach(Iterator.scala:893)\r\n  at scala.collection.AbstractIterator.foreach(Iterator.scala:1336)\r\n  at scala.collection.generic.Growable$class.$plus$plus$eq(Growable.scala:59)\r\n  at scala.collection.mutable.ArrayBuffer.$plus$plus$eq(ArrayBuffer.scala:104)\r\n  at scala.collection.mutable.ArrayBuffer.$plus$plus$eq(ArrayBuffer.scala:48)\r\n  at scala.collection.TraversableOnce$class.to(TraversableOnce.scala:310)\r\n  at scala.collection.AbstractIterator.to(Iterator.scala:1336)\r\n  at scala.collection.TraversableOnce$class.toBuffer(TraversableOnce.scala:302)\r\n  at scala.collection.AbstractIterator.toBuffer(Iterator.scala:1336)\r\n  at scala.collection.TraversableOnce$class.toArray(TraversableOnce.scala:289)\r\n  at scala.collection.AbstractIterator.toArray(Iterator.scala:1336)\r\n  at org.apache.spark.rdd.RDD$$anonfun$take$1$$anonfun$29.apply(RDD.scala:1354)\r\n  at org.apache.spark.rdd.RDD$$anonfun$take$1$$anonfun$29.apply(RDD.scala:1354)\r\n  at org.apache.spark.SparkContext$$anonfun$runJob$5.apply(SparkContext.scala:2069)\r\n  at org.apache.spark.SparkContext$$anonfun$runJob$5.apply(SparkContext.scala:2069)\r\n  at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)\r\n  at org.apache.spark.scheduler.Task.run(Task.scala:108)\r\n  at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:338)\r\n  ... 3 more\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157812_-590792192",
+      "id": "20191202-203503_1806272136",
+      "dateCreated": "2019-12-05 06:19:17.812",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nCome si vede ottengo un errore, precisamente **java.lang.ArrayIndexOutOfBoundsException**. Stranamente non avevo ricevuto lo stesso errore quando ho usato la stessa procedura per i dati dell\u0027Italia.\n\nDopo un po\u0027 di investigazioni mi accorgo che il problema sta nel fatto che l\u0027ultimo campo ( x(23) ) alla fine di alcune righe è vuoto e la funzione **split()**, che abbiamo usato per convertire la stringa singola letta dal file, non converte i campi vuoti alla fine della stringa. Ovvero:\n\n`split(\"AFG, 100, 12500,,,,\")`\n\nviene convertito in\n\n`Array[String] \u003d [\"AFG\", \"100\", \"12500\"]`\n\nPer fare in modo che la conversione contenga anche i campi vuoti devo usare un secondo parametro in **split()**\n\n`split(\"AFG, 100, 12500,,,,\", -1)`\n\nviene convertito in \n\n`Array[String] \u003d [\"AFG\", \"100\", \"12500\", \"\", \"\", \"\", \"\"]`\n\nesattamente ciò di cui abbiamo bisogno per evitare l\u0027errore **ArrayIndexOutOfBoundsException**.",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.813",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eCome si vede ottengo un errore, precisamente \u003cstrong\u003ejava.lang.ArrayIndexOutOfBoundsException\u003c/strong\u003e. Stranamente non avevo ricevuto lo stesso errore quando ho usato la stessa procedura per i dati dell\u0026rsquo;Italia.\u003c/p\u003e\n\u003cp\u003eDopo un po\u0026rsquo; di investigazioni mi accorgo che il problema sta nel fatto che l\u0026rsquo;ultimo campo ( x(23) ) alla fine di alcune righe è vuoto e la funzione \u003cstrong\u003esplit()\u003c/strong\u003e, che abbiamo usato per convertire la stringa singola letta dal file, non converte i campi vuoti alla fine della stringa. Ovvero:\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003esplit(\u0026quot;AFG, 100, 12500,,,,\u0026quot;)\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eviene convertito in\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eArray[String] \u003d [\u0026quot;AFG\u0026quot;, \u0026quot;100\u0026quot;, \u0026quot;12500\u0026quot;]\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003ePer fare in modo che la conversione contenga anche i campi vuoti devo usare un secondo parametro in \u003cstrong\u003esplit()\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003esplit(\u0026quot;AFG, 100, 12500,,,,\u0026quot;, -1)\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eviene convertito in \u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eArray[String] \u003d [\u0026quot;AFG\u0026quot;, \u0026quot;100\u0026quot;, \u0026quot;12500\u0026quot;, \u0026quot;\u0026quot;, \u0026quot;\u0026quot;, \u0026quot;\u0026quot;, \u0026quot;\u0026quot;]\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eesattamente ciò di cui abbiamo bisogno per evitare l\u0026rsquo;errore \u003cstrong\u003eArrayIndexOutOfBoundsException\u003c/strong\u003e.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157813_-281317998",
+      "id": "20191202-232135_1079055390",
+      "dateCreated": "2019-12-05 06:19:17.813",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "data_no_header.map(x \u003d\u003e x.split(\",\", -1)).map(x \u003d\u003e (x(0), x(23))).collect()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.813",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 144.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res21: Array[(String, String)] \u003d Array((AFG,\"\"), (AFG,\"\"), (AFG,\"\"), (AFG,\"\"), (AFG,\"\"), (AFG,\"\"), (AFG,\"\"), (ALB,89.13207547169812), (ALB,1650.5939902166317), (ALB,1980.712788259958), (ALB,16.50593990216632), (ALB,79.22851153039832), (ALB,82.52969951083159), (ALB,825.2969951083159), (ALB,0.0), (DZA,2152.249818828645), (DZA,293.8648791092957), (DZA,2317.807497200079), (DZA,413.8941959285856), (DZA,1862.523881678635), (DZA,1862.523881678635), (DZA,1208.57105211147), (DZA,4966.730351143026), (DZA,1730.0777389814875), (DZA,298.0038210685816), (DZA,2483.365175571513), (DZA,827.7883918571712), (DZA,2036.3594439686408), (DZA,254.0), (DZA,2433.697872060083), (DZA,1427.93497595362), (DZA,4966.730351143026), (DZA,1639.0210158771988), (DZA,3476.711245800119), (DZA,761.5653205085974), (DZA,4056.16..."
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157813_575400403",
+      "id": "20191202-193346_738072400",
+      "dateCreated": "2019-12-05 06:19:17.813",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nIn realtà il campo 23 va convertito in numerico (default: stringa). Per la conversione della stringa normalmente basterebbe usare il metodo **\u0027stringa\u0027.toDouble()**. \nMa a causa del fatto che ci sono stringhe vuote, il metodo toDouble() sulla stringa vuota da errore.\n\nAllora definiamo una funzione che riceve in ingresso una stringa, converte il suo contenuto in Double, usando il metodo **toDouble()**, e in caso la stringa sia vuota ritorna il valore 0.",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.813",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eIn realtà il campo 23 va convertito in numerico (default: stringa). Per la conversione della stringa normalmente basterebbe usare il metodo \u003cstrong\u003e\u0026lsquo;stringa\u0026rsquo;.toDouble()\u003c/strong\u003e.\u003cbr/\u003eMa a causa del fatto che ci sono stringhe vuote, il metodo toDouble() sulla stringa vuota da errore.\u003c/p\u003e\n\u003cp\u003eAllora definiamo una funzione che riceve in ingresso una stringa, converte il suo contenuto in Double, usando il metodo \u003cstrong\u003etoDouble()\u003c/strong\u003e, e in caso la stringa sia vuota ritorna il valore 0.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157813_1018006132",
+      "id": "20191204-003119_1042729388",
+      "dateCreated": "2019-12-05 06:19:17.813",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "def convert_to_Double(x: String): Double \u003d {\n    if (x !\u003d \"\") {\n        x.toDouble\n    } else {\n        0\n    }\n}",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.814",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "convert_to_Double: (x: String)Double\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157814_1778196916",
+      "id": "20191202-230745_1088654845",
+      "dateCreated": "2019-12-05 06:19:17.814",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nVerifichiamo che funzioni:",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.814",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eVerifichiamo che funzioni:\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157814_1972535148",
+      "id": "20191202-193639_1958040466",
+      "dateCreated": "2019-12-05 06:19:17.814",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "print(convert_to_Double(\"25\"))\nprint(\"\\n\")\nprint(convert_to_Double(\"\"))",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.814",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "25.0\n0.0"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157814_904864245",
+      "id": "20191203-003500_1040363346",
+      "dateCreated": "2019-12-05 06:19:17.814",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nOvviamente lo svantaggio di questo metodo è che non so se un risultato pari a zero corrisponde ad una produzione nulla o ad una mancanza di dati. \n\nAdesso procedo con la stessa analisi fatta in predecenza, siccome conosco i vari passaggi posso eseguirli tutti in una singola riga di codice, questi sono i singoli passaggi:\n- splitto le stringhe nei singolii campi\n- mappo ogni riga in modo da avere solo il campo *country_code* e *estimated_production*, ottengo un RDD di coppie *(key, value)*\n- con reduceByKey aggrego tutte le righe aventi la stessa chiave\n- collect() e println",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.814",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eOvviamente lo svantaggio di questo metodo è che non so se un risultato pari a zero corrisponde ad una produzione nulla o ad una mancanza di dati. \u003c/p\u003e\n\u003cp\u003eAdesso procedo con la stessa analisi fatta in predecenza, siccome conosco i vari passaggi posso eseguirli tutti in una singola riga di codice, questi sono i singoli passaggi:\u003cbr/\u003e- splitto le stringhe nei singolii campi\u003cbr/\u003e- mappo ogni riga in modo da avere solo il campo \u003cem\u003ecountry_code\u003c/em\u003e e \u003cem\u003eestimated_production\u003c/em\u003e, ottengo un RDD di coppie \u003cem\u003e(key, value)\u003c/em\u003e\u003cbr/\u003e- con reduceByKey aggrego tutte le righe aventi la stessa chiave\u003cbr/\u003e- collect() e println\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157814_1208691784",
+      "id": "20191204-164313_182392174",
+      "dateCreated": "2019-12-05 06:19:17.814",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val data_agg \u003d data_no_header.map(x \u003d\u003e x.split(\",\", -1)).map(x \u003d\u003e (x(0), convert_to_Double(x(23)) )).reduceByKey((a,b) \u003d\u003e a+b)\ndata_agg.collect().foreach(println)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.815",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "(SVN,16869.0)\r\n(FIN,67265.99999999999)\r\n(BLR,34041.99999999999)\r\n(VNM,140913.00000000006)\r\n(ROU,63069.0)\r\n(FJI,0.0)\r\n(GHA,0.0)\r\n(TUR,250530.99999999994)\r\n(HND,7996.999999999999)\r\n(NER,686.0000000000001)\r\n(BHR,27252.999999999996)\r\n(ATA,0.0)\r\n(BRN,4461.0)\r\n(CHL,73428.0)\r\n(COL,67719.0)\r\n(GIN,0.0)\r\n(IDN,227586.99999999994)\r\n(JOR,18153.999999999996)\r\n(CYP,4033.0)\r\n(NGA,30390.000000000007)\r\n(MOZ,16175.000000000002)\r\n(SWE,150760.00000000006)\r\n(BEN,183.0)\r\n(ESH,0.0)\r\n(MKD,4944.0)\r\n(ZMB,14452.0)\r\n(MDA,5322.0)\r\n(CMR,6850.0)\r\n(NLD,93830.00000000004)\r\n(TJK,16000.0)\r\n(RUS,984212.0)\r\n(GEO,10371.0)\r\n(GNB,0.0)\r\n(VEN,109826.99999999999)\r\n(ISR,60439.000000000015)\r\n(SVK,24935.999999999993)\r\n(PRY,55276.0)\r\n(LAO,0.0)\r\n(MWI,0.0)\r\n(IRQ,67767.99999999997)\r\n(LVA,4331.0)\r\n(SAU,311806.0)\r\n(HRV,12623.999999999996)\r\n(NPL,3788.9999999999995)\r\n(SDN,11376.0)\r\n(KWT,21984.000000000004)\r\n(BRA,590631.9999999984)\r\n(SGP,48647.0)\r\n(IRL,26180.000000000007)\r\n(JAM,3976.0)\r\n(GUY,0.0)\r\n(POL,158866.99999999997)\r\n(SRB,33783.00000000001)\r\n(ARE,108506.0)\r\n(SLE,0.0)\r\n(TKM,20400.0)\r\n(UGA,0.0)\r\n(GTM,10725.000000000002)\r\n(ZWE,9828.0)\r\n(CUB,18605.0)\r\n(ERI,368.0)\r\n(BWA,2263.0)\r\n(BDI,0.0)\r\n(PHL,77196.0)\r\n(ECU,23812.0)\r\n(MEX,301418.99999999977)\r\n(ISL,18111.000000000004)\r\n(BIH,16085.999999999996)\r\n(TTO,9891.0)\r\n(SLV,5784.000000000001)\r\n(ALB,4724.0)\r\n(CIV,7708.0)\r\n(COD,8831.0)\r\n(AUT,54075.0)\r\n(BFA,0.0)\r\n(COG,1740.0)\r\n(EGY,45324.0)\r\n(IRN,274032.0)\r\n(CHN,5621543.999999972)\r\n(KOS,5270.0)\r\n(TWN,255790.99999999997)\r\n(IND,316056.4701018557)\r\n(GUF,0.0)\r\n(AGO,9479.999999999998)\r\n(CAN,655943.9999999995)\r\n(KHM,3055.9999999999995)\r\n(TGO,137.0)\r\n(EST,716.0000000000001)\r\n(KAZ,104031.0)\r\n(SWZ,0.0)\r\n(MMR,14092.0)\r\n(PRT,51438.00000000008)\r\n(MRT,0.0)\r\n(SEN,3440.0)\r\n(LBR,0.0)\r\n(UKR,180910.0)\r\n(USA,760222.293761999)\r\n(NIC,3106.0000000000005)\r\n(DZA,63079.0)\r\n(ARM,7746.0)\r\n(BEL,69406.0)\r\n(DOM,18541.0)\r\n(GAB,2354.9999999999995)\r\n(DJI,0.0)\r\n(HUN,26061.0)\r\n(AFG,0.0)\r\n(PAK,105304.99999999997)\r\n(THA,171591.99999999988)\r\n(OMN,28371.0)\r\n(BTN,0.0)\r\n(KOR,549440.0000000001)\r\n(ITA,258640.99999999994)\r\n(CAF,0.0)\r\n(ETH,9606.0)\r\n(GRC,50254.0)\r\n(JPN,1011747.9999999998)\r\n(RWA,0.0)\r\n(SYR,21725.999999999996)\r\n(PAN,9139.0)\r\n(ZAF,252387.99999999997)\r\n(AUS,61441.04416666662)\r\n(MUS,2930.999999999999)\r\n(GBR,338923.0000000005)\r\n(LTU,2837.0000000000005)\r\n(ARG,138805.99999999997)\r\n(KGZ,14455.0)\r\n(DEU,627697.0000000007)\r\n(GNQ,0.0)\r\n(FRA,557930.0000000016)\r\n(MNE,3174.0)\r\n(URY,13011.0)\r\n(LBY,37731.0)\r\n(DNK,30559.0)\r\n(LUX,2621.0)\r\n(LKA,12419.999999999998)\r\n(PER,43676.0)\r\n(QAT,38692.0)\r\n(BOL,8379.0)\r\n(MLI,0.0)\r\n(UZB,55399.99999999999)\r\n(KEN,9120.999999999998)\r\n(PRK,17322.0)\r\n(NOR,141453.00000000006)\r\n(BGD,55696.00000000002)\r\n(MAR,29141.999999999996)\r\n(MNG,5134.0)\r\n(TZA,6179.0)\r\n(CZE,0.0)\r\n(CPV,0.0)\r\n(CRI,9298.000000000004)\r\n(GMB,0.0)\r\n(YEM,7646.0)\r\n(PNG,0.0)\r\n(BGR,43666.00000000001)\r\n(TUN,18483.000000000004)\r\n(AZE,24549.0)\r\n(NAM,1498.0)\r\n(LSO,0.0)\r\n(LBN,17759.0)\r\n(ESP,278749.9999999994)\r\n(MDG,0.0)\r\n(NZL,42867.99999999999)\r\n(MYS,147468.99999999997)\r\n(CHE,67258.00000000001)\r\ndata_agg: org.apache.spark.rdd.RDD[(String, Double)] \u003d ShuffledRDD[19] at reduceByKey at \u003cconsole\u003e:35\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157815_425144695",
+      "id": "20191202-224619_511166840",
+      "dateCreated": "2019-12-05 06:19:17.815",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nSe voglio ordinare in ordine descrescente per vedere quali sono le nazioni con la più alta produzione di energia elettrica posso usare il metodo **sortBy()**. Come ogni altro metodo per lavorare sugli RDD, questi si aspetta come parametro una funzione che restituisce un valore numerico per ogni valore del RDD.\n\nInoltre l\u0027ordinamento viene fatto in direzione crescente per default, per invertire la direzione dobbiamo moltiplicare per **-1**.\n\nPer indicare che voglio ordinare sul secondo elemento della coppia *(chiave, valore)* devo usare la notazione x._2. Contrariamente agli array, dove il primo elemento ha posizione 0, nei tuple il primo elemento ha posizione 1.  ",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.815",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eSe voglio ordinare in ordine descrescente per vedere quali sono le nazioni con la più alta produzione di energia elettrica posso usare il metodo \u003cstrong\u003esortBy()\u003c/strong\u003e. Come ogni altro metodo per lavorare sugli RDD, questi si aspetta come parametro una funzione che restituisce un valore numerico per ogni valore del RDD.\u003c/p\u003e\n\u003cp\u003eInoltre l\u0026rsquo;ordinamento viene fatto in direzione crescente per default, per invertire la direzione dobbiamo moltiplicare per \u003cstrong\u003e-1\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003ePer indicare che voglio ordinare sul secondo elemento della coppia \u003cem\u003e(chiave, valore)\u003c/em\u003e devo usare la notazione x._2. Contrariamente agli array, dove il primo elemento ha posizione 0, nei tuple il primo elemento ha posizione 1.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157815_461844155",
+      "id": "20191204-173025_83324272",
+      "dateCreated": "2019-12-05 06:19:17.815",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "data_agg.sortBy( x \u003d\u003e (x._2 * -1) ).take(10)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.815",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res30: Array[(String, Double)] \u003d Array((CHN,5621543.999999972), (JPN,1011747.9999999998), (RUS,984212.0), (USA,760222.293761999), (CAN,655943.9999999995), (DEU,627697.0000000007), (BRA,590631.9999999984), (FRA,557930.0000000016), (KOR,549440.0000000001), (GBR,338923.0000000005))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157815_2014211980",
+      "id": "20191204-165111_1478604904",
+      "dateCreated": "2019-12-05 06:19:17.815",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nNon è una sorpresa scoprire che il primo produttore di energia elettrica è la Cina, mentre il secondo è il Giappone.",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.815",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eNon è una sorpresa scoprire che il primo produttore di energia elettrica è la Cina, mentre il secondo è il Giappone.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157815_932787612",
+      "id": "20191204-173645_1509429523",
+      "dateCreated": "2019-12-05 06:19:17.815",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "dataheader.split(\u0027,\u0027)(7)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.816",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res35: String \u003d primary_fuel\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157816_1781372423",
+      "id": "20191204-174257_1047484565",
+      "dateCreated": "2019-12-05 06:19:17.816",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val data_reduced \u003d data_no_header.map( x\u003d\u003ex.split(\",\",-1)).map(x \u003d\u003e (x(0), x(7), convert_to_Double(x(23))))\ndata_reduced.take(5)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.816",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "data_reduced: org.apache.spark.rdd.RDD[(String, String, Double)] \u003d MapPartitionsRDD[70] at map at \u003cconsole\u003e:33\r\nres59: Array[(String, String, Double)] \u003d Array((AFG,Hydro,0.0), (AFG,Hydro,0.0), (AFG,Hydro,0.0), (AFG,Hydro,0.0), (AFG,Gas,0.0))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157816_-1265843180",
+      "id": "20191204-174348_762450845",
+      "dateCreated": "2019-12-05 06:19:17.816",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nNon trattandosi di un RDD di coppie *(key, value)* non ho a disposizione il metodo reduceByKey(), quindi dobbiamo inventarci qualcosa.",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.816",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eNon trattandosi di un RDD di coppie \u003cem\u003e(key, value)\u003c/em\u003e non ho a disposizione il metodo reduceByKey(), quindi dobbiamo inventarci qualcosa.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157816_-632321249",
+      "id": "20191204-183223_2065344229",
+      "dateCreated": "2019-12-05 06:19:17.816",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "data_reduced.groupBy( x \u003d\u003e x._1)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.816",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "editorHide": false,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res66: org.apache.spark.rdd.RDD[(String, Iterable[(String, String, Double)])] \u003d ShuffledRDD[80] at groupBy at \u003cconsole\u003e:36\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157816_-15834721",
+      "id": "20191204-180210_2124576514",
+      "dateCreated": "2019-12-05 06:19:17.816",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nCome si vede il primo elemento del RDD è una stringa, il secondo elemento è un **Iterable**, questo significa che ho nuovamente una coppia (key, value) sul quale posso eseguire una qualche fora di aggregazione.",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.817",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eCome si vede il primo elemento del RDD è una stringa, il secondo elemento è un \u003cstrong\u003eIterable\u003c/strong\u003e, questo significa che ho nuovamente una coppia (key, value) sul quale posso eseguire una qualche fora di aggregazione.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157817_184406975",
+      "id": "20191204-184135_299506685",
+      "dateCreated": "2019-12-05 06:19:17.817",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "data_reduced.groupBy( x \u003d\u003e x._1).map(x \u003d\u003e x._2).map(x \u003d\u003e x._1)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.817",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cconsole\u003e:36: error: value _1 is not a member of Iterable[(String, String, Double)]\r\n       data_reduced.groupBy( x \u003d\u003e x._1).map(x \u003d\u003e x._2).map(x \u003d\u003e x._1)\r\n                                                                  ^\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157817_763140189",
+      "id": "20191204-183629_1109354155",
+      "dateCreated": "2019-12-05 06:19:17.817",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "def aggregateFunction(x: String, y: Iterable[(String, String, Double)]): (String, Array[(String, Double)] ) \u003d {\n    for (central \u003c- y) {\n        central._2\n    }\n}",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.817",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cconsole\u003e:23: error: type mismatch;\r\n found   : Unit\r\n required: (String, Array[(String, Double)])\r\n       def aggregateFunction(x: String, y: Iterable[(String, String, Double)]): (String, Array[(String, Double)] ) \u003d {\r\n                                                                                                                     ^\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157817_736415898",
+      "id": "20191204-185633_658473280",
+      "dateCreated": "2019-12-05 06:19:17.817",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val iterable1 \u003d data_reduced.groupBy( x \u003d\u003e x._1).take(1)(0)._2",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.817",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "iterable1: Iterable[(String, String, Double)] \u003d CompactBuffer((SVN,Gas,374.0), (SVN,Coal,318.7040121120363), (SVN,Hydro,1749.8957345971564), (SVN,Hydro,1900.7488151658765), (SVN,Nuclear,6370.0), (SVN,Coal,3127.2831188493565), (SVN,Coal,313.0128690386071), (SVN,Hydro,2715.355450236967))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157817_1436898048",
+      "id": "20191204-191051_123052803",
+      "dateCreated": "2019-12-05 06:19:17.817",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "for (elem \u003c- iterable1) {\n    println(elem._1)\n}",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.818",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "SVN\r\nSVN\r\nSVN\r\nSVN\r\nSVN\r\nSVN\r\nSVN\r\nSVN\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157818_-934195266",
+      "id": "20191204-191639_1807436262",
+      "dateCreated": "2019-12-05 06:19:17.818",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "iterable1.foreach(println)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.818",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "(SVN,Gas,374.0)\r\n(SVN,Coal,318.7040121120363)\r\n(SVN,Hydro,1749.8957345971564)\r\n(SVN,Hydro,1900.7488151658765)\r\n(SVN,Nuclear,6370.0)\r\n(SVN,Coal,3127.2831188493565)\r\n(SVN,Coal,313.0128690386071)\r\n(SVN,Hydro,2715.355450236967)\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157818_-5620772",
+      "id": "20191204-191110_1739424658",
+      "dateCreated": "2019-12-05 06:19:17.818",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "iterable1.map( x \u003d\u003e (x._2, x._3))",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.818",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res99: Iterable[(String, Double)] \u003d List((Gas,374.0), (Coal,318.7040121120363), (Hydro,1749.8957345971564), (Hydro,1900.7488151658765), (Nuclear,6370.0), (Coal,3127.2831188493565), (Coal,313.0128690386071), (Hydro,2715.355450236967))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157818_-470398028",
+      "id": "20191204-191755_2066223736",
+      "dateCreated": "2019-12-05 06:19:17.818",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "iterable1",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.819",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res120: Iterable[(String, String, Double)] \u003d CompactBuffer((SVN,Gas,374.0), (SVN,Coal,318.7040121120363), (SVN,Hydro,1749.8957345971564), (SVN,Hydro,1900.7488151658765), (SVN,Nuclear,6370.0), (SVN,Coal,3127.2831188493565), (SVN,Coal,313.0128690386071), (SVN,Hydro,2715.355450236967))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157818_870992812",
+      "id": "20191204-200212_670682325",
+      "dateCreated": "2019-12-05 06:19:17.818",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "data_reduced.groupBy( x \u003d\u003e (x._1, x._2)).mapValues(x \u003d\u003e x.map(_._3))",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.819",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res140: org.apache.spark.rdd.RDD[((String, String), Iterable[Double])] \u003d MapPartitionsRDD[139] at mapValues at \u003cconsole\u003e:38\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157819_909876329",
+      "id": "20191204-201227_1477948720",
+      "dateCreated": "2019-12-05 06:19:17.819",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "data_reduced.groupBy( x \u003d\u003e (x._1, x._2) ).map( x \u003d\u003e x(0)(0) )",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.819",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cconsole\u003e:36: error: ((String, String), Iterable[(String, String, Double)]) does not take parameters\r\n       data_reduced.groupBy( x \u003d\u003e (x._1, x._2) ).map( x \u003d\u003e x(0)(0) )\r\n                                                            ^\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157819_-1613971671",
+      "id": "20191204-215523_240436156",
+      "dateCreated": "2019-12-05 06:19:17.819",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "def func_aggregate( x: String, y: Iterable[(String, String, Double)] ): (String, Double) \u003d {\n    (y._2, y._3)\n}",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.819",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cconsole\u003e:24: error: value _2 is not a member of Iterable[(String, String, Double)]\r\n           (y._2, y._3)\r\n              ^\n\u003cconsole\u003e:24: error: value _3 is not a member of Iterable[(String, String, Double)]\r\n           (y._2, y._3)\r\n                    ^\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157819_666396102",
+      "id": "20191204-222241_222446989",
+      "dateCreated": "2019-12-05 06:19:17.819",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val x \u003d List(77.29, 4.17)\n\nx.aggregate(0)( (x,y) \u003d\u003e x+y, (x,y) \u003d\u003e x+y )",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.820",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cconsole\u003e:29: error: type mismatch;\r\n found   : x.type (with underlying type Int)\r\n required: ?{def +(x$1: ? \u003e: Double): ?}\r\nNote that implicit conversions are not applicable because they are ambiguous:\r\n both method int2long in object Int of type (x: Int)Long\r\n and method int2float in object Int of type (x: Int)Float\r\n are possible conversion functions from x.type to ?{def +(x$1: ? \u003e: Double): ?}\r\n       x.aggregate(0)( (x,y) \u003d\u003e x+y, (x,y) \u003d\u003e x+y )\r\n                                ^\n\u003cconsole\u003e:29: error: overloaded method value + with alternatives:\r\n  (x: Int)Int \u003cand\u003e\r\n  (x: Char)Int \u003cand\u003e\r\n  (x: Short)Int \u003cand\u003e\r\n  (x: Byte)Int\r\n cannot be applied to (Double)\r\n       x.aggregate(0)( (x,y) \u003d\u003e x+y, (x,y) \u003d\u003e x+y )\r\n                                 ^\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157819_1141336321",
+      "id": "20191204-223803_1299144323",
+      "dateCreated": "2019-12-05 06:19:17.819",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// Creating a sequence of strings \r\nval seq \u003d Seq(\"nidhi\", \"yes\", \"sonu\", \"Geeks\") \r\n\r\n// Applying aggregate function \r\nval result \u003d seq.par.aggregate(0)(_ + _.length, _ + _) \r\n\r\n// Displays total number of \r\n// letters used \r\nprintln(\"The total number of letters used are: \"+result) ",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.820",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "The total number of letters used are: 17\r\nseq: Seq[String] \u003d List(nidhi, yes, sonu, Geeks)\r\nresult: Int \u003d 17\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157820_-300916099",
+      "id": "20191204-224745_512664031",
+      "dateCreated": "2019-12-05 06:19:17.820",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val list \u003d Seq((\"one\", \"1\"), (\"two\", \"2\"), (\"two\", \"22\"), (\"one\", \"11\"), (\"four\", \"4\"))\r\n\r\nlist.groupBy(_._1).mapValues(_.map(_._2.toDouble))",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.820",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "list: Seq[(String, String)] \u003d List((one,1), (two,2), (two,22), (one,11), (four,4))\r\nres153: scala.collection.immutable.Map[String,Seq[Double]] \u003d Map(one -\u003e List(1.0, 11.0), four -\u003e List(4.0), two -\u003e List(2.0, 22.0))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157820_-1669123399",
+      "id": "20191204-225127_739167817",
+      "dateCreated": "2019-12-05 06:19:17.820",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "list.groupBy(x \u003d\u003e x._1).mapValues( x \u003d\u003e x.map(x \u003d\u003e x._2.toDouble)).reduce( x \u003d\u003e x._2.sum )\r\n",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.820",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cconsole\u003e:28: error: missing parameter type\r\n       list.groupBy(x \u003d\u003e x._1).mapValues( x \u003d\u003e x.map(x \u003d\u003e x._2.toDouble)).reduce( x \u003d\u003e x._2.sum )\r\n                                                                                  ^\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157820_1982365791",
+      "id": "20191204-225312_1593674554",
+      "dateCreated": "2019-12-05 06:19:17.820",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val aaa \u003d list.groupBy(x \u003d\u003e x._1).take(1)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.821",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "aaa: scala.collection.immutable.Map[String,Seq[(String, String)]] \u003d Map(one -\u003e List((one,i), (one,1)))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157820_919916750",
+      "id": "20191204-230924_1349003127",
+      "dateCreated": "2019-12-05 06:19:17.820",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\n\nlist.groupBy(x \u003d\u003e x._1).mapValues( x \u003d\u003e x.map(x \u003d\u003e x._2.toDouble)).aggregate(0)((acc, value) \u003d\u003e (acc + value._2), (acc1, acc2) \u003d\u003e (acc1 + acc2) )",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.821",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cconsole\u003e:28: error: overloaded method value + with alternatives:\r\n  (x: Int)Int \u003cand\u003e\r\n  (x: Char)Int \u003cand\u003e\r\n  (x: Short)Int \u003cand\u003e\r\n  (x: Byte)Int\r\n cannot be applied to (Seq[Double])\r\n       list.groupBy(x \u003d\u003e x._1).mapValues( x \u003d\u003e x.map(x \u003d\u003e x._2.toDouble)).aggregate(0)((acc, value) \u003d\u003e (acc + value._2), (acc1, acc2) \u003d\u003e (acc1 + acc2) )\r\n                                                                                                            ^\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157821_505987269",
+      "id": "20191204-231153_502961476",
+      "dateCreated": "2019-12-05 06:19:17.821",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Aggregate()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.821",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eAggregate()\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157821_1898259108",
+      "id": "20191204-231322_1013349982",
+      "dateCreated": "2019-12-05 06:19:17.821",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val inputrdd \u003d sc.parallelize(\r\n    List(\r\n        (\"maths\", 21),\r\n        (\"english\", 22),\r\n        (\"science\", 31)\r\n    ),\r\n    3\r\n)\r\n",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.821",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "inputrdd: org.apache.spark.rdd.RDD[(String, Int)] \u003d ParallelCollectionRDD[141] at parallelize at \u003cconsole\u003e:25\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157821_-1925247306",
+      "id": "20191204-232811_897755810",
+      "dateCreated": "2019-12-05 06:19:17.821",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val result \u003d inputrdd.aggregate(0) (\r\n/*\r\n* This is a seqOp for merging T into a U\r\n* ie (String, Int) in  into Int\r\n * (we take (String, Int) in \u0027value\u0027 \u0026 return Int)\r\n* Arguments :\r\n* acc   :  Reprsents the accumulated result\r\n* value :  Represents the element in \u0027inputrdd\u0027\r\n*          In our case this of type (String, Int)\r\n* Return value\r\n* We are returning an Int\r\n*/\r\n    (acc, value) \u003d\u003e (acc + value._2),\r\n\r\n/*\r\n* This is a combOp for mergining two U\u0027s\r\n* (ie 2 Int)\r\n*/\r\n    (acc1, acc2) \u003d\u003e (acc1 + acc2)\r\n)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.822",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "result: Int \u003d 74\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157821_388215599",
+      "id": "20191204-233012_1084734208",
+      "dateCreated": "2019-12-05 06:19:17.821",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### Using accumulator",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.822",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003eUsing accumulator\u003c/h4\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157822_331547384",
+      "id": "20191204-233112_2081555554",
+      "dateCreated": "2019-12-05 06:19:17.822",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// val sc \u003d new SparkContext(...)\r\nval file \u003d sc.textFile(\"environment.yml\")\r\nval blankLines \u003d sc.accumulator(0) // Create an Accumulator[Int] initialized to 0\r\nval callSigns \u003d file.flatMap(line \u003d\u003e {\r\n    if (line \u003d\u003d \"\") {\r\n    blankLines +\u003d 1 // Add to the accumulator\r\n    }\r\n    line.split(\" \")\r\n    })\r\ncallSigns.saveAsTextFile(\"output13.txt\")\r\nprintln(\"Blank lines: \" + blankLines.value)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.822",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "warning: there were two deprecation warnings; re-run with -deprecation for details\norg.apache.hadoop.mapred.FileAlreadyExistsException: Output directory file:/D:/AnacondaProjects/output13.txt already exists\r\n  at org.apache.hadoop.mapred.FileOutputFormat.checkOutputSpecs(FileOutputFormat.java:131)\r\n  at org.apache.spark.rdd.PairRDDFunctions$$anonfun$saveAsHadoopDataset$1.apply$mcV$sp(PairRDDFunctions.scala:1119)\r\n  at org.apache.spark.rdd.PairRDDFunctions$$anonfun$saveAsHadoopDataset$1.apply(PairRDDFunctions.scala:1096)\r\n  at org.apache.spark.rdd.PairRDDFunctions$$anonfun$saveAsHadoopDataset$1.apply(PairRDDFunctions.scala:1096)\r\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)\r\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)\r\n  at org.apache.spark.rdd.RDD.withScope(RDD.scala:362)\r\n  at org.apache.spark.rdd.PairRDDFunctions.saveAsHadoopDataset(PairRDDFunctions.scala:1096)\r\n  at org.apache.spark.rdd.PairRDDFunctions$$anonfun$saveAsHadoopFile$4.apply$mcV$sp(PairRDDFunctions.scala:1070)\r\n  at org.apache.spark.rdd.PairRDDFunctions$$anonfun$saveAsHadoopFile$4.apply(PairRDDFunctions.scala:1035)\r\n  at org.apache.spark.rdd.PairRDDFunctions$$anonfun$saveAsHadoopFile$4.apply(PairRDDFunctions.scala:1035)\r\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)\r\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)\r\n  at org.apache.spark.rdd.RDD.withScope(RDD.scala:362)\r\n  at org.apache.spark.rdd.PairRDDFunctions.saveAsHadoopFile(PairRDDFunctions.scala:1035)\r\n  at org.apache.spark.rdd.PairRDDFunctions$$anonfun$saveAsHadoopFile$1.apply$mcV$sp(PairRDDFunctions.scala:961)\r\n  at org.apache.spark.rdd.PairRDDFunctions$$anonfun$saveAsHadoopFile$1.apply(PairRDDFunctions.scala:961)\r\n  at org.apache.spark.rdd.PairRDDFunctions$$anonfun$saveAsHadoopFile$1.apply(PairRDDFunctions.scala:961)\r\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)\r\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)\r\n  at org.apache.spark.rdd.RDD.withScope(RDD.scala:362)\r\n  at org.apache.spark.rdd.PairRDDFunctions.saveAsHadoopFile(PairRDDFunctions.scala:960)\r\n  at org.apache.spark.rdd.RDD$$anonfun$saveAsTextFile$1.apply$mcV$sp(RDD.scala:1489)\r\n  at org.apache.spark.rdd.RDD$$anonfun$saveAsTextFile$1.apply(RDD.scala:1468)\r\n  at org.apache.spark.rdd.RDD$$anonfun$saveAsTextFile$1.apply(RDD.scala:1468)\r\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)\r\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)\r\n  at org.apache.spark.rdd.RDD.withScope(RDD.scala:362)\r\n  at org.apache.spark.rdd.RDD.saveAsTextFile(RDD.scala:1468)\r\n  ... 47 elided\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157822_359098508",
+      "id": "20191204-233959_812508681",
+      "dateCreated": "2019-12-05 06:19:17.822",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 06:19:17.822",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1575523157822_-130798230",
+      "id": "20191204-234137_1240440699",
+      "dateCreated": "2019-12-05 06:19:17.822",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "~Trash/RDD API example",
+  "id": "2EUVNTP91",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

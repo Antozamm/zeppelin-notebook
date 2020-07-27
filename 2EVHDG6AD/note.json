@@ -1,0 +1,1080 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n\n- Ogni nodo del cluster di Spark contiene una o più partizioni.\n- Di default il numero di partizioni è settato pari al numero di cores disponibili nel cluster.\n- Ogni partizione è interamente contenuta in un unico worker.\n- Spark assegna un task per ogni partizione e ogni worker può processare un task per volta.\n\n",
+      "user": "admin",
+      "dateUpdated": "2019-12-11 12:02:35.824",
+      "config": {
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true,
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cul\u003e\n  \u003cli\u003eOgni nodo del cluster di Spark contiene una o più partizioni.\u003c/li\u003e\n  \u003cli\u003eDi default il numero di partizioni è settato pari al numero di cores disponibili nel cluster.\u003c/li\u003e\n  \u003cli\u003eOgni partizione è interamente contenuta in un unico worker.\u003c/li\u003e\n  \u003cli\u003eSpark assegna un task per ogni partizione e ogni worker può processare un task per volta.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576059074046_695604585",
+      "id": "20191211-111114_1565692295",
+      "dateCreated": "2019-12-11 11:11:14.046",
+      "dateStarted": "2019-12-11 12:02:35.825",
+      "dateFinished": "2019-12-11 12:02:35.831",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nPer vedere il numero di partizioni uso **getNumPartitions()**",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-11 11:39:30.722",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003ePer vedere il numero di partizioni uso \u003cstrong\u003egetNumPartitions()\u003c/strong\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576059445016_-1452489620",
+      "id": "20191211-111725_28086690",
+      "dateCreated": "2019-12-11 11:17:25.016",
+      "dateStarted": "2019-12-11 11:39:30.722",
+      "dateFinished": "2019-12-11 11:39:30.737",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df \u003d spark.read.option(\"inferSchema\", \"true\").option(\"header\", \"true\").csv(\"globalpowerplantdatabasev120/*.csv\")\ndf.rdd.getNumPartitions",
+      "user": "admin",
+      "dateUpdated": "2019-12-11 12:41:36.797",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "df: org.apache.spark.sql.DataFrame \u003d [country: string, country_long: string ... 22 more fields]\r\nres1: Int \u003d 1\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576060770709_-2139155297",
+      "id": "20191211-113930_2105717002",
+      "dateCreated": "2019-12-11 11:39:30.709",
+      "dateStarted": "2019-12-11 12:41:36.817",
+      "dateFinished": "2019-12-11 12:41:53.141",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nQuesto setting definisce il numero minimo di partizioni quando un dataframe è creato per la prima volta:\n`sc.defaultMinPartitions`\nQuesto è definito internamente da Spark come il minimo tra defaultParallelism e 2, ciò significa che defaultMinPartitions non può essere più grande di 2. [RIF. 1]\n\n**defaultParallelism** è il numero di cores/Executors usato, che in Zeppelin di default è 1. Posso settare questo in una nuova **Sparkession** con il metodo **master(\"local[x]\")**.\n\nSi noti che anche allocando un numero alto di executor, il numero massimo di partizioni create è 2, questo significa che la creazione del rdd/dataframe al momento del caricamento dei dati può essere lenta. ",
+      "user": "admin",
+      "dateUpdated": "2019-12-11 13:30:25.971",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eQuesto setting definisce il numero minimo di partizioni quando un dataframe è creato per la prima volta:\u003cbr/\u003e\u003ccode\u003esc.defaultMinPartitions\u003c/code\u003e\u003cbr/\u003eQuesto è definito internamente da Spark come il minimo tra defaultParallelism e 2, ciò significa che defaultMinPartitions non può essere più grande di 2. [RIF. 1]\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003edefaultParallelism\u003c/strong\u003e è il numero di cores/Executors usato, che in Zeppelin di default è 1. Posso settare questo in una nuova \u003cstrong\u003eSparkession\u003c/strong\u003e con il metodo \u003cstrong\u003emaster(\u0026ldquo;local[x]\u0026rdquo;)\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003eSi noti che anche allocando un numero alto di executor, il numero massimo di partizioni create è 2, questo significa che la creazione del rdd/dataframe al momento del caricamento dei dati può essere lenta.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576064215827_1297258228",
+      "id": "20191211-123655_801279717",
+      "dateCreated": "2019-12-11 12:36:55.827",
+      "dateStarted": "2019-12-11 13:30:25.971",
+      "dateFinished": "2019-12-11 13:30:25.977",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import spark.implicits._\n\nprintln(f\"Numero di Executors: ${sc.defaultParallelism}\")\nprintln(f\"Numero minimo di partizioni: ${sc.defaultMinPartitions}\")",
+      "user": "admin",
+      "dateUpdated": "2019-12-11 14:50:33.297",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Numero di Executors: 2\r\nNumero minimo di partizioni: 2\r\nimport spark.implicits._\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576062601162_813364363",
+      "id": "20191211-121001_507255553",
+      "dateCreated": "2019-12-11 12:10:01.162",
+      "dateStarted": "2019-12-11 14:50:33.315",
+      "dateFinished": "2019-12-11 14:50:34.384",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nCi sono diversi modi di settare **sc.defaultParallelism**:\n- se uso **master(\"local[x]\")** per usare x cores, defaultParallelism viene settato a x\n- si può definire nello SparkSession, per es.:\n```val spark \u003d SparkSession.builder().appName(\"TestPartitionNums\").master(\"local\").config(\"spark.default.parallelism\", 20).getOrCreate()```\n- si può settare nel file *spark-defaults.conf* con la linea: `spark.default.parallelism\u003d20`\n- in Apache Zeppelin si può anche settare tra i parametri dell\u0027interprete Spark, creando un nuovo parametro con `spark.default.parallelism\u003d20`",
+      "user": "admin",
+      "dateUpdated": "2019-12-11 13:37:09.894",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eCi sono diversi modi di settare \u003cstrong\u003esc.defaultParallelism\u003c/strong\u003e:\u003cbr/\u003e- se uso \u003cstrong\u003emaster(\u0026ldquo;local[x]\u0026rdquo;)\u003c/strong\u003e per usare x cores, defaultParallelism viene settato a x\u003cbr/\u003e- si può definire nello SparkSession, per es.:\u003cbr/\u003e\u003ccode\u003eval spark \u003d SparkSession.builder().appName(\u0026quot;TestPartitionNums\u0026quot;).master(\u0026quot;local\u0026quot;).config(\u0026quot;spark.default.parallelism\u0026quot;, 20).getOrCreate()\u003c/code\u003e\u003cbr/\u003e- si può settare nel file \u003cem\u003espark-defaults.conf\u003c/em\u003e con la linea: \u003ccode\u003espark.default.parallelism\u003d20\u003c/code\u003e\u003cbr/\u003e- in Apache Zeppelin si può anche settare tra i parametri dell\u0026rsquo;interprete Spark, creando un nuovo parametro con \u003ccode\u003espark.default.parallelism\u003d20\u003c/code\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576064521977_2039630275",
+      "id": "20191211-124201_1141603656",
+      "dateCreated": "2019-12-11 12:42:01.977",
+      "dateStarted": "2019-12-11 13:37:09.894",
+      "dateFinished": "2019-12-11 13:37:09.899",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.stop",
+      "user": "admin",
+      "dateUpdated": "2019-12-11 12:42:16.420",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1576062018717_-1405023364",
+      "id": "20191211-120018_821827504",
+      "dateCreated": "2019-12-11 12:00:18.717",
+      "dateStarted": "2019-12-11 12:42:16.440",
+      "dateFinished": "2019-12-11 12:42:16.640",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.SparkSession\nval spark \u003d SparkSession.builder.master(\"local[16]\").getOrCreate()\nval sc \u003d spark.sparkContext\n\nval df \u003d spark.read.option(\"inferSchema\", \"true\").option(\"header\", \"true\").csv(\"globalpowerplantdatabasev120/*.csv\")\ndf.rdd.getNumPartitions",
+      "user": "admin",
+      "dateUpdated": "2019-12-11 12:42:19.016",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.SparkSession\r\nspark: org.apache.spark.sql.SparkSession \u003d org.apache.spark.sql.SparkSession@78b6cc3c\r\nsc: org.apache.spark.SparkContext \u003d org.apache.spark.SparkContext@544cbb2\r\ndf: org.apache.spark.sql.DataFrame \u003d [country: string, country_long: string ... 22 more fields]\r\nres4: Int \u003d 2\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576061215031_1329482832",
+      "id": "20191211-114655_2070483524",
+      "dateCreated": "2019-12-11 11:46:55.031",
+      "dateStarted": "2019-12-11 12:42:19.036",
+      "dateFinished": "2019-12-11 12:42:19.667",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "println(f\"Numero di Executors: ${sc.defaultParallelism}\")\nprintln(f\"Numero minimo di partizioni: ${sc.defaultMinPartitions}\")",
+      "user": "admin",
+      "dateUpdated": "2019-12-11 14:50:58.442",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Numero di Executors: 2\r\nNumero minimo di partizioni: 2\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576062033906_-1424557200",
+      "id": "20191211-120033_1744201914",
+      "dateCreated": "2019-12-11 12:00:33.906",
+      "dateStarted": "2019-12-11 14:50:58.460",
+      "dateFinished": "2019-12-11 14:50:58.753",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nUn altro parametro utile per definire il numero di partizioni è\n`spark.sql.files.maxPartitionBytes`\nCome si evince dal nome questo parametro definisce lo spazio su disco per ogni partizione.\nSetto questo parametro a 1M (il default è 128MB), con un file dati da 7.55MB, implica che vengono create **floor(7.55M/1M) \u003d 8** partizioni.\nSi noti che in questo modo viene anche rispettato il parametro **defaultMinPartitions**.",
+      "user": "admin",
+      "dateUpdated": "2019-12-11 15:42:35.202",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eUn altro parametro utile per definire il numero di partizioni è\u003cbr/\u003e\u003ccode\u003espark.sql.files.maxPartitionBytes\u003c/code\u003e\u003cbr/\u003eCome si evince dal nome questo parametro definisce lo spazio su disco per ogni partizione.\u003cbr/\u003eSetto questo parametro a 1M (il default è 128MB), con un file dati da 7.55MB, implica che vengono create \u003cstrong\u003efloor(7.55M/1M) \u003d 8\u003c/strong\u003e partizioni.\u003cbr/\u003eSi noti che in questo modo viene anche rispettato il parametro \u003cstrong\u003edefaultMinPartitions\u003c/strong\u003e.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576062387516_-2001321506",
+      "id": "20191211-120627_1269901082",
+      "dateCreated": "2019-12-11 12:06:27.517",
+      "dateStarted": "2019-12-11 15:42:35.203",
+      "dateFinished": "2019-12-11 15:42:35.209",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.conf.set(\"spark.sql.files.maxPartitionBytes\", \"1000000\")\nval df \u003d spark.read.option(\"inferSchema\", \"true\").option(\"header\", \"true\").csv(\"globalpowerplantdatabasev120/*.csv\")\n\nprintln(f\"Numero di Executors: ${sc.defaultParallelism}\")\nprintln(f\"Numero minimo di partizioni: ${sc.defaultMinPartitions}\")\nprintln(f\"Numero di partizioni: ${df.rdd.getNumPartitions}\")",
+      "user": "admin",
+      "dateUpdated": "2019-12-11 14:51:27.570",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Numero di Executors: 2\r\nNumero minimo di partizioni: 2\r\nNumero di partizioni: 8\r\ndf: org.apache.spark.sql.DataFrame \u003d [country: string, country_long: string ... 22 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576062683922_-1150818995",
+      "id": "20191211-121123_739577557",
+      "dateCreated": "2019-12-11 12:11:23.922",
+      "dateStarted": "2019-12-11 14:51:27.584",
+      "dateFinished": "2019-12-11 14:51:28.099",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.stop\nsc.stop",
+      "user": "admin",
+      "dateUpdated": "2019-12-11 14:55:24.312",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1576064055707_-769807528",
+      "id": "20191211-123415_1070340983",
+      "dateCreated": "2019-12-11 12:34:15.707",
+      "dateStarted": "2019-12-11 14:55:24.327",
+      "dateFinished": "2019-12-11 14:55:24.474",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.SparkConf\nimport org.apache.spark.SparkContext\nimport org.apache.spark.sql.SparkSession\n\nval conf \u003d new SparkConf().setMaster(\"local[16]\").setAppName(\"NewApp\")\nval sc \u003d new SparkContext(conf)\nval spark \u003d SparkSession.builder.master(\"local[*]\").getOrCreate()\n\nval df \u003d spark.read.option(\"inferSchema\", \"true\").option(\"header\", \"true\").csv(\"globalpowerplantdatabasev120/*.csv\")\n\nprintln(f\"Numero di Executors: ${sc.defaultParallelism}\")\nprintln(f\"Numero minimo di partizioni: ${sc.defaultMinPartitions}\")\nprintln(f\"Numero di partizioni: ${df.rdd.getNumPartitions}\")",
+      "user": "admin",
+      "dateUpdated": "2019-12-11 14:55:26.134",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Numero di Executors: 16\r\nNumero minimo di partizioni: 2\r\nNumero di partizioni: 2\r\nimport org.apache.spark.SparkConf\r\nimport org.apache.spark.SparkContext\r\nimport org.apache.spark.sql.SparkSession\r\nconf: org.apache.spark.SparkConf \u003d org.apache.spark.SparkConf@7ea61de8\r\nsc: org.apache.spark.SparkContext \u003d org.apache.spark.SparkContext@4d4345e9\r\nspark: org.apache.spark.sql.SparkSession \u003d org.apache.spark.sql.SparkSession@40feb6ff\r\ndf: org.apache.spark.sql.DataFrame \u003d [country: string, country_long: string ... 22 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576063273899_972506315",
+      "id": "20191211-122113_379911460",
+      "dateCreated": "2019-12-11 12:21:13.899",
+      "dateStarted": "2019-12-11 14:55:26.152",
+      "dateFinished": "2019-12-11 14:55:27.635",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val newdf \u003d df.groupBy(\"country\").max(\"estimated_generation_gwh\")\nnewdf.rdd.getNumPartitions",
+      "user": "admin",
+      "dateUpdated": "2019-12-11 16:02:29.728",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "newdf: org.apache.spark.sql.DataFrame \u003d [country: string, max(estimated_generation_gwh): double]\r\nres31: Int \u003d 200\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576072394324_-937478376",
+      "id": "20191211-145314_1450041834",
+      "dateCreated": "2019-12-11 14:53:14.324",
+      "dateStarted": "2019-12-11 16:02:18.512",
+      "dateFinished": "2019-12-11 16:02:18.843",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nCome si vede sopra dopo le operazioni **groupBy()** e **aggregate** ho 200 partizioni, questo perchè il parametro spark.sql.shuffle.partitions è settato a 200. Ricordiamo che quest\u0027ultimo fissa il numero di partizioni create da un\u0027operazione con implica uno shuffle, come ad esempio **groupBy**.\n\nNella UI di Spark si può vedere come è cambiato il numero di task e conseguentemente di partizioni, da 1 a 200.\n![spark ui stages](https://www.1week4.com/wp-content/uploads/2019/12/spark-ui-stages1.jpg)",
+      "user": "admin",
+      "dateUpdated": "2019-12-11 16:06:16.343",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eCome si vede sopra dopo le operazioni \u003cstrong\u003egroupBy()\u003c/strong\u003e e \u003cstrong\u003eaggregate\u003c/strong\u003e ho 200 partizioni, questo perchè il parametro spark.sql.shuffle.partitions è settato a 200. Ricordiamo che quest\u0026rsquo;ultimo fissa il numero di partizioni create da un\u0026rsquo;operazione con implica uno shuffle, come ad esempio \u003cstrong\u003egroupBy\u003c/strong\u003e.\u003c/p\u003e\n\u003cp\u003eNella UI di Spark si può vedere come è cambiato il numero di task e conseguentemente di partizioni, da 1 a 200.\u003cbr/\u003e\u003cimg src\u003d\"https://www.1week4.com/wp-content/uploads/2019/12/spark-ui-stages1.jpg\" alt\u003d\"spark ui stages\" /\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576075992677_-1462959047",
+      "id": "20191211-155312_1902930156",
+      "dateCreated": "2019-12-11 15:53:12.677",
+      "dateStarted": "2019-12-11 16:06:16.343",
+      "dateFinished": "2019-12-11 16:06:16.349",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "//   Default min number of partitions for Hadoop RDDs when not given by user\r\n//   Notice that we use math.min so the \"defaultMinPartitions\" cannot be higher than 2.\r\n//   The reasons for this are discussed in https://github.com/mesos/spark/pull/718\r\n//   \r\n//  def defaultMinPartitions: Int \u003d math.min(defaultParallelism, 2)",
+      "user": "admin",
+      "dateUpdated": "2019-12-11 12:57:56.755",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1576065277360_137080930",
+      "id": "20191211-125437_1840307153",
+      "dateCreated": "2019-12-11 12:54:37.360",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nRiferimenti\n1. [Spark Github](https://github.com/apache/spark/blob/master/core/src/main/scala/org/apache/spark/SparkContext.scala#L799)",
+      "user": "admin",
+      "dateUpdated": "2019-12-11 13:01:12.027",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eRiferimenti\u003cbr/\u003e1. \u003ca href\u003d\"https://github.com/apache/spark/blob/master/core/src/main/scala/org/apache/spark/SparkContext.scala#L799\"\u003eSpark Github\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576065643809_1978105441",
+      "id": "20191211-130043_314232691",
+      "dateCreated": "2019-12-11 13:00:43.810",
+      "dateStarted": "2019-12-11 13:01:12.027",
+      "dateFinished": "2019-12-11 13:01:12.031",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Hash partitioning vs range partitioning",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-21 10:58:45.749",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eHash partitioning vs range partitioning\u003c/h2\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576065663003_957701437",
+      "id": "20191211-130103_1686291439",
+      "dateCreated": "2019-12-11 13:01:03.003",
+      "dateStarted": "2019-12-21 10:58:45.753",
+      "dateFinished": "2019-12-21 10:58:48.554",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Coalesce",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-21 10:59:06.869",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eCoalesce\u003c/h2\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576922325646_-486851574",
+      "id": "20191221-105845_398272355",
+      "dateCreated": "2019-12-21 10:58:45.646",
+      "dateStarted": "2019-12-21 10:59:06.870",
+      "dateFinished": "2019-12-21 10:59:06.879",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val rdd\u003dsc.parallelize(Seq((\"a\",22),(\"b\",1),(\"c\",4),(\"b\",1),(\"d\",2),(\"e\",0),(\"d\",3),(\"a\",1),(\"c\",4),(\"b\",7),(\"a\",2),(\"f\",1)))\r\nval df\u003drdd.toDF(\"key\",\"value\")\r\nval df1\u003ddf.repartition(5,col(\"key\"))",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-21 15:13:45.710",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "rdd: org.apache.spark.rdd.RDD[(String, Int)] \u003d ParallelCollectionRDD[18] at parallelize at \u003cconsole\u003e:31\r\ndf: org.apache.spark.sql.DataFrame \u003d [key: string, value: int]\r\ndf1: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [key: string, value: int]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576929249860_1779615337",
+      "id": "20191221-125409_304191382",
+      "dateCreated": "2019-12-21 12:54:09.861",
+      "dateStarted": "2019-12-21 14:41:04.354",
+      "dateFinished": "2019-12-21 14:41:04.623",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df1.rdd.glom().map(x \u003d\u003e x.length).collect()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-21 14:46:22.448",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res36: Array[Int] \u003d Array(3, 3, 2, 2, 2)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576935947453_-988093114",
+      "id": "20191221-144547_120181559",
+      "dateCreated": "2019-12-21 14:45:47.453",
+      "dateStarted": "2019-12-21 14:46:22.476",
+      "dateFinished": "2019-12-21 14:46:24.176",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df1.show()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-21 15:04:40.681",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+-----+\n|key|value|\n+---+-----+\n|  a|   22|\n|  a|    1|\n|  a|    2|\n|  b|    1|\n|  b|    1|\n|  b|    7|\n|  c|    4|\n|  c|    4|\n|  e|    0|\n|  f|    1|\n|  d|    2|\n|  d|    3|\n+---+-----+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576935483809_1707696518",
+      "id": "20191221-143803_1926116650",
+      "dateCreated": "2019-12-21 14:38:03.809",
+      "dateStarted": "2019-12-21 15:04:40.712",
+      "dateFinished": "2019-12-21 15:04:40.919",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.functions.spark_partition_id\n\nval partIdDF \u003d df1.select(col(\"value\"), spark_partition_id() as \"orig_part_id\")\n\npartIdDF.show()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-21 15:32:19.250",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----+------------+\n|value|orig_part_id|\n+-----+------------+\n|   22|           0|\n|    1|           0|\n|    2|           0|\n|    1|           1|\n|    1|           1|\n|    7|           1|\n|    4|           2|\n|    4|           2|\n|    0|           3|\n|    1|           3|\n|    2|           4|\n|    3|           4|\n+-----+------------+\n\r\nimport org.apache.spark.sql.functions.spark_partition_id\r\npartIdDF: org.apache.spark.sql.DataFrame \u003d [value: int, orig_part_id: int]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576937080681_305301459",
+      "id": "20191221-150440_927519298",
+      "dateCreated": "2019-12-21 15:04:40.681",
+      "dateStarted": "2019-12-21 15:32:19.272",
+      "dateFinished": "2019-12-21 15:32:19.522",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nQuindi i dati sono divisi su 5 partizioni il cui *id* va da 0 a 4. ",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-21 15:15:54.253",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eQuindi i dati sono divisi su 5 partizioni il cui \u003cem\u003eid\u003c/em\u003e va da 0 a 4.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576937241366_1372811087",
+      "id": "20191221-150721_375865624",
+      "dateCreated": "2019-12-21 15:07:21.366",
+      "dateStarted": "2019-12-21 15:15:43.976",
+      "dateFinished": "2019-12-21 15:15:44.004",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val newDf \u003d df.repartition(2)\nval partIdDF_new \u003d newDf.select(col(\"value\"), spark_partition_id() as \"new_part_id\")\npartIdDF_new.show",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-21 15:33:40.800",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----+-----------+\n|value|new_part_id|\n+-----+-----------+\n|   22|          0|\n|    4|          0|\n|    2|          0|\n|    3|          0|\n|    4|          0|\n|    2|          0|\n|    1|          1|\n|    1|          1|\n|    0|          1|\n|    1|          1|\n|    7|          1|\n|    1|          1|\n+-----+-----------+\n\r\nnewDf: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [key: string, value: int]\r\npartIdDF_new: org.apache.spark.sql.DataFrame \u003d [value: int, new_part_id: int]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576937743952_-1038073198",
+      "id": "20191221-151543_184917779",
+      "dateCreated": "2019-12-21 15:15:43.952",
+      "dateStarted": "2019-12-21 15:33:30.699",
+      "dateFinished": "2019-12-21 15:33:30.928",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val newDf \u003d df1.coalesce(3)\nval partIdDF_new \u003d newDf.select(col(\"value\"), spark_partition_id() as \"new_part_id\")\npartIdDF_new.show",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-21 15:38:44.192",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----+-----------+\n|value|new_part_id|\n+-----+-----------+\n|   22|          0|\n|    1|          0|\n|    2|          0|\n|    1|          1|\n|    1|          1|\n|    7|          1|\n|    4|          1|\n|    4|          1|\n|    0|          2|\n|    1|          2|\n|    2|          2|\n|    3|          2|\n+-----+-----------+\n\r\nnewDf: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [key: string, value: int]\r\npartIdDF_new: org.apache.spark.sql.DataFrame \u003d [value: int, new_part_id: int]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576938718495_-1659362554",
+      "id": "20191221-153158_1050049898",
+      "dateCreated": "2019-12-21 15:31:58.495",
+      "dateStarted": "2019-12-21 15:38:34.088",
+      "dateFinished": "2019-12-21 15:38:34.332",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "partIdDF.join(partIdDF_new, \"value\").show()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-21 15:41:12.482",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----+------------+-----------+\n|value|orig_part_id|new_part_id|\n+-----+------------+-----------+\n|   22|           0|          0|\n|    1|           0|          0|\n|    1|           0|          1|\n|    1|           0|          1|\n|    1|           0|          2|\n|    1|           1|          0|\n|    1|           1|          1|\n|    1|           1|          1|\n|    1|           1|          2|\n|    1|           1|          0|\n|    1|           1|          1|\n|    1|           1|          1|\n|    1|           1|          2|\n|    1|           3|          0|\n|    1|           3|          1|\n|    1|           3|          1|\n|    1|           3|          2|\n|    3|           4|          2|\n|    4|           2|          1|\n|    4|           2|          1|\n+-----+------------+-----------+\nonly showing top 20 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576938831028_-493284676",
+      "id": "20191221-153351_556397647",
+      "dateCreated": "2019-12-21 15:33:51.028",
+      "dateStarted": "2019-12-21 15:41:02.381",
+      "dateFinished": "2019-12-21 15:41:03.426",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1576939075609_1559466763",
+      "id": "20191221-153755_148506467",
+      "dateCreated": "2019-12-21 15:37:55.609",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "~Trash/Partitions",
+  "id": "2EVHDG6AD",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "personalizedMode": "false",
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

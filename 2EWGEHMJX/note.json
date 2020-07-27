@@ -1,0 +1,80 @@
+{
+  "paragraphs": [
+    {
+      "text": "%sh\ndir",
+      "user": "admin",
+      "dateUpdated": "2019-11-24 23:44:54.607",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/sh"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": " Volume in drive D has no label.\r\n Volume Serial Number is 6EF7-E246\r\n\r\n Directory of D:\\AnacondaProjects\r\n\r\n24/11/2019  23:43    \u003cDIR\u003e          .\r\n24/11/2019  23:43    \u003cDIR\u003e          ..\r\n23/11/2019  11:53    \u003cDIR\u003e          .ipynb_checkpoints\r\n13/03/2019  00:35                46 1.yml\r\n17/11/2019  01:44    \u003cDIR\u003e          1week4\r\n05/11/2019  16:10    \u003cDIR\u003e          1week4_2\r\n23/11/2019  11:54            16,925 Advanced AnalyticsSpark-ch2.ipynb\r\n23/11/2019  15:01    \u003cDIR\u003e          AdvancedAnalyticsSpark\r\n13/10/2019  19:54           253,555 AdvancedAnalyticsSpark-Chap 2 (5).json\r\n14/11/2019  10:58         7,665,025 backup6887153579280596404.serpmojo\r\n12/03/2019  18:42    \u003cDIR\u003e          beakerx-master\r\n13/03/2019  22:31           216,308 binning-bagging.ipynb\r\n16/11/2019  22:28    \u003cDIR\u003e          checkpoint\r\n20/10/2019  04:03         8,835,072 chromedriver.exe\r\n14/11/2019  23:49         4,845,020 chromedriver_win32.zip\r\n27/02/2019  01:11    \u003cDIR\u003e          competitive-data-science-master\r\n24/02/2019  10:01    \u003cDIR\u003e          cookbook-2nd-code-master\r\n16/11/2019  07:17            42,519 Copy_of_Train_a_GPT_2_Text_Generating_Model_w_GPU.ipynb\r\n23/02/2019  23:50    \u003cDIR\u003e          dask-worker-space\r\n23/08/2019  05:35    \u003cDIR\u003e          databricks-master\r\n24/09/2019  22:56       125,368,023 databricks-master.zip\r\n21/07/2019  22:21             5,428 environment.yml\r\n15/10/2019  18:06             3,827 exampl1.csv\r\n14/11/2019  23:44            87,538 glassdoor scraping.ipynb\r\n15/11/2019  00:16            23,657 Glassdoor_scraper.ipynb\r\n15/02/2019  12:44    \u003cDIR\u003e          House_prices\r\n16/11/2019  07:10         1,115,394 input.txt\r\n23/02/2019  20:10    \u003cDIR\u003e          ipyparallel-master\r\n24/11/2019  23:39    \u003cDIR\u003e          KDD 1999 CUP\r\n25/02/2019  10:08    \u003cDIR\u003e          LightGBM-master\r\n13/10/2019  20:26    \u003cDIR\u003e          logs\r\n13/03/2019  14:55    \u003cDIR\u003e          mlens-master\r\n16/11/2019  22:24    \u003cDIR\u003e          models\r\n15/07/2019  13:40         2,961,609 Neural Network with Pytorch.ipynb\r\n13/10/2019  20:41    \u003cDIR\u003e          note\r\n26/09/2019  23:18            99,544 note.json\r\n13/10/2019  20:42    \u003cDIR\u003e          notebook\r\n16/11/2019  06:10    \u003cDIR\u003e          panel-examples\r\n15/03/2019  00:46    \u003cDIR\u003e          PetAdoption\r\n21/07/2019  22:10    \u003cDIR\u003e          pymc3-master\r\n26/09/2019  23:18            99,544 RDD transformation and action (3).json\r\n18/07/2019  21:19        28,014,045 spanish-high-speed-rail-system-ticket-pricing.zip\r\n26/09/2019  20:08    \u003cDIR\u003e          Spark-The-Definitive-Guide-master\r\n23/11/2019  14:11    \u003cDIR\u003e          spark-warehouse\r\n21/07/2019  23:42            13,172 spec-file.txt\r\n12/03/2019  18:17            18,962 TableAPI.ipynb\r\n16/11/2019  06:56    \u003cDIR\u003e          textgenrnn\r\n23/11/2019  11:14         2,806,202 text_generation_app.ipynb\r\n21/11/2019  22:05            88,728 text_generation_transformers.ipynb\r\n21/11/2019  22:45            73,483 text_generation_transformers2.ipynb\r\n23/11/2019  11:14            20,994 text_generation_transformers3.ipynb\r\n26/06/2019  15:30    \u003cDIR\u003e          Titanic_Machine_Learning_From_Disaster\r\n26/06/2019  11:49             1,379 Untitled.ipynb\r\n06/11/2019  01:11               894 Untitled1.ipynb\r\n23/11/2019  11:32             1,071 Untitled10.ipynb\r\n23/11/2019  11:33             1,213 Untitled11.ipynb\r\n23/11/2019  12:20            17,270 Untitled12.ipynb\r\n14/11/2019  17:37            57,337 Untitled2.ipynb\r\n18/11/2019  00:59               555 Untitled3.ipynb\r\n16/11/2019  05:53                72 Untitled4.ipynb\r\n17/11/2019  01:00             3,134 Untitled5.ipynb\r\n17/11/2019  00:54            24,981 Untitled6.ipynb\r\n23/11/2019  11:14             1,273 Untitled7.ipynb\r\n23/11/2019  11:16             1,166 Untitled8.ipynb\r\n23/11/2019  12:31             5,614 Untitled9.ipynb\r\n23/11/2019  13:56                16 vsprova.scala\r\n              38 File(s)    182,790,595 bytes\r\n              28 Dir(s)  87,715,794,944 bytes free\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1574635478815_-910044690",
+      "id": "20191124-234438_265057808",
+      "dateCreated": "2019-11-24 23:44:38.815",
+      "dateStarted": "2019-11-24 23:44:54.617",
+      "dateFinished": "2019-11-24 23:44:54.705",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val file \u003d sc.textfile(``)",
+      "user": "admin",
+      "dateUpdated": "2019-11-24 23:46:53.953",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1574635487227_1431132113",
+      "id": "20191124-234447_12418978",
+      "dateCreated": "2019-11-24 23:44:47.227",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "~Trash/AdvancedAnalyticsSparc-ch3",
+  "id": "2EWGEHMJX",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

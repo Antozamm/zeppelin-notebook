@@ -1,0 +1,1040 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n### Demonstrate how to create and use RDD",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-29 17:57:08.712",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eDemonstrate how to create and use RDD\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580316804873_-1431448496",
+      "id": "20200129-175324_1485628305",
+      "dateCreated": "2020-01-29 17:53:24.873",
+      "dateStarted": "2020-01-29 17:57:08.712",
+      "dateFinished": "2020-01-29 17:57:15.352",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "sc.parallelize(Array(1,2,3,4,5,6,7,8,9))",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-29 18:05:20.536",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res11: org.apache.spark.rdd.RDD[Int] \u003d ParallelCollectionRDD[5] at parallelize at \u003cconsole\u003e:26\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580317059193_-1619309202",
+      "id": "20200129-175739_897230079",
+      "dateCreated": "2020-01-29 17:57:39.193",
+      "dateStarted": "2020-01-29 18:05:20.551",
+      "dateFinished": "2020-01-29 18:05:20.820",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "sc.parallelize(List(9,8,7,6,5,4,3,2,1))",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-29 17:59:43.916",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res6: org.apache.spark.rdd.RDD[Int] \u003d ParallelCollectionRDD[3] at parallelize at \u003cconsole\u003e:26\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580317143032_1434786283",
+      "id": "20200129-175903_370670080",
+      "dateCreated": "2020-01-29 17:59:03.032",
+      "dateStarted": "2020-01-29 17:59:43.939",
+      "dateFinished": "2020-01-29 17:59:44.202",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "sc.textFile(\".\\\\Datasets\\\\OnlineRetail\\\\OnlineRetail.csv\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-29 18:06:58.464",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res12: org.apache.spark.rdd.RDD[String] \u003d .\\Datasets\\OnlineRetail\\OnlineRetail.csv MapPartitionsRDD[7] at textFile at \u003cconsole\u003e:26\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580317183916_1517146741",
+      "id": "20200129-175943_1512315812",
+      "dateCreated": "2020-01-29 17:59:43.916",
+      "dateStarted": "2020-01-29 18:06:58.480",
+      "dateFinished": "2020-01-29 18:06:58.900",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Apply transformation to RDDs, such as map(), filter(), distinct(), reduceByKey",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-29 18:07:49.701",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eApply transformation to RDDs, such as map(), filter(), distinct(), reduceByKey\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580317239654_1556343704",
+      "id": "20200129-180039_460566056",
+      "dateCreated": "2020-01-29 18:00:39.654",
+      "dateStarted": "2020-01-29 18:07:49.702",
+      "dateFinished": "2020-01-29 18:07:49.712",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val myrdd1 \u003d sc.parallelize(List(9,8,7,6,5,4,3,2,1))\n\nmyrdd1.map( x \u003d\u003e 2*x ).collect",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-29 18:09:15.966",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "myrdd1: org.apache.spark.rdd.RDD[Int] \u003d ParallelCollectionRDD[9] at parallelize at \u003cconsole\u003e:27\r\nres13: Array[Int] \u003d Array(18, 16, 14, 12, 10, 8, 6, 4, 2)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580317669683_-1249240814",
+      "id": "20200129-180749_248115490",
+      "dateCreated": "2020-01-29 18:07:49.684",
+      "dateStarted": "2020-01-29 18:09:15.981",
+      "dateFinished": "2020-01-29 18:09:16.994",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "myrdd1.filter( x \u003d\u003e x\u003e3 ).collect",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-29 18:10:05.012",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res15: Array[Int] \u003d Array(9, 8, 7, 6, 5, 4)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580317717606_118899282",
+      "id": "20200129-180837_836264365",
+      "dateCreated": "2020-01-29 18:08:37.606",
+      "dateStarted": "2020-01-29 18:10:05.028",
+      "dateFinished": "2020-01-29 18:10:05.322",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val myrdd1 \u003d sc.parallelize( List( (\"Pino\", 1500), (\"Pippo\", 2600), (\"Giovanni\", 1000), (\"Pino\", 1350)))",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-29 18:12:58.421",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "myrdd1: org.apache.spark.rdd.RDD[(String, Int)] \u003d ParallelCollectionRDD[13] at parallelize at \u003cconsole\u003e:25\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580317795317_-1937747015",
+      "id": "20200129-180955_982159171",
+      "dateCreated": "2020-01-29 18:09:55.317",
+      "dateStarted": "2020-01-29 18:12:58.444",
+      "dateFinished": "2020-01-29 18:12:58.855",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\napplico **distinct** sull\u0027elenco delle *keys* per vedere quante key distinte ci sono",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-29 18:15:28.362",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eapplico \u003cstrong\u003edistinct\u003c/strong\u003e sull\u0026rsquo;elenco delle \u003cem\u003ekeys\u003c/em\u003e per vedere quante key distinte ci sono\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580318074719_1854091604",
+      "id": "20200129-181434_1533123730",
+      "dateCreated": "2020-01-29 18:14:34.719",
+      "dateStarted": "2020-01-29 18:15:28.363",
+      "dateFinished": "2020-01-29 18:15:28.369",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "myrdd1.keys.distinct.collect",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-29 18:15:42.516",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res20: Array[String] \u003d Array(Giovanni, Pippo, Pino)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580317978422_894304827",
+      "id": "20200129-181258_10261718",
+      "dateCreated": "2020-01-29 18:12:58.422",
+      "dateStarted": "2020-01-29 18:13:50.948",
+      "dateFinished": "2020-01-29 18:13:51.499",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "myrdd1.getNumPartitions",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-29 18:34:54.500",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res26: Int \u003d 16\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580319283730_-1478154381",
+      "id": "20200129-183443_456366452",
+      "dateCreated": "2020-01-29 18:34:43.730",
+      "dateStarted": "2020-01-29 18:34:54.521",
+      "dateFinished": "2020-01-29 18:34:54.697",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "myrdd1.groupByKey.collect",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-29 19:30:04.223",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res42: Array[(String, Iterable[Int])] \u003d Array((Giovanni,CompactBuffer(1000)), (Pippo,CompactBuffer(2600)), (Pino,CompactBuffer(1500, 1350)))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580322585021_-2033430785",
+      "id": "20200129-192945_126409296",
+      "dateCreated": "2020-01-29 19:29:45.021",
+      "dateStarted": "2020-01-29 19:30:04.248",
+      "dateFinished": "2020-01-29 19:30:04.526",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "for (x \u003c- myrdd1.groupByKey.take(4)(2)._2){\n    println(x)\n}",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-29 19:47:13.195",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "1500\r\n1350\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580323058640_1388070820",
+      "id": "20200129-193738_1207043684",
+      "dateCreated": "2020-01-29 19:37:38.640",
+      "dateStarted": "2020-01-29 19:44:53.059",
+      "dateFinished": "2020-01-29 19:44:53.348",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "def aggrValue( a: (String, Iterable[Int]) ): (String, Int) \u003d {\n    \n    var sum \u003d 0\n    for (x\u003c-a._2){\n        sum \u003d sum + x\n    }\n    (a._1, sum)\n    \n}",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-29 19:53:49.014",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "aggrValue: (a: (String, Iterable[Int]))(String, Int)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580323633341_1355584928",
+      "id": "20200129-194713_1291869681",
+      "dateCreated": "2020-01-29 19:47:13.341",
+      "dateStarted": "2020-01-29 19:53:49.038",
+      "dateFinished": "2020-01-29 19:53:49.254",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "myrdd1.groupByKey.map(aggrValue).collect",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-29 19:57:35.839",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res63: Array[(String, Int)] \u003d Array((Giovanni,1000), (Pippo,2600), (Pino,2850))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580324186965_184948416",
+      "id": "20200129-195626_47123165",
+      "dateCreated": "2020-01-29 19:56:26.965",
+      "dateStarted": "2020-01-29 19:57:35.865",
+      "dateFinished": "2020-01-29 19:57:36.133",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "//acc \u003d (\"\", 0)\n//value \u003d (String, Iterable[Int])\ndef seqOp (acc: (String, Int), value: (String, Iterable[Int] )) : (String, Int) \u003d {\n    \n    var sum \u003d acc._2\n    \n    for (x\u003c-value._2){\n        sum \u003d sum + x\n    }\n    \n    (value._1, sum)\n}\n\ndef combOp( a: (String, Int), b: (String, Int) ): (String, Int) \u003d {\n    \n    (a._1, a._2 + b._2)\n    \n}",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-29 20:25:09.114",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "seqOp: (acc: (String, Int), value: (String, Iterable[Int]))(String, Int)\r\ncombOp: (a: (String, Int), b: (String, Int))(String, Int)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580324801712_1278657883",
+      "id": "20200129-200641_1543498846",
+      "dateCreated": "2020-01-29 20:06:41.712",
+      "dateStarted": "2020-01-29 20:25:09.139",
+      "dateFinished": "2020-01-29 20:25:09.321",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "myrdd1.groupByKey.aggregate(\"\", 0)( seqOp, combOp )",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-29 20:25:13.307",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res69: (String, Int) \u003d (\"\",6450)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580325662387_1710907205",
+      "id": "20200129-202102_986285722",
+      "dateCreated": "2020-01-29 20:21:02.387",
+      "dateStarted": "2020-01-29 20:25:13.331",
+      "dateFinished": "2020-01-29 20:25:13.619",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "myrdd1.groupByKey.aggregate(\"\", 0)( (acc, value) \u003d\u003e (value._1, acc._2+value._2), (acc1, acc2) \u003d\u003e (acc1._1, acc1._2+acc2._2))",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-29 19:54:31.987",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1580324038849_346367445",
+      "id": "20200129-195358_431021937",
+      "dateCreated": "2020-01-29 19:53:58.849",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "myrdd1.groupByKey.aggregate(\"\", 0)( (acc, value) \u003d\u003e (value._1, acc._2+value._2), (acc1, acc2) \u003d\u003e (acc1._1, acc1._2+acc2._2))",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-29 20:06:30.932",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cconsole\u003e:26: error: overloaded method value + with alternatives:\r\n  (x: Int)Int \u003cand\u003e\r\n  (x: Char)Int \u003cand\u003e\r\n  (x: Short)Int \u003cand\u003e\r\n  (x: Byte)Int\r\n cannot be applied to (Iterable[Int])\r\n       myrdd1.groupByKey.aggregate(\"\", 0)( (acc, value) \u003d\u003e (value._1, acc._2+value._2), (acc1, acc2) \u003d\u003e (acc1._1, acc1._2+acc2._2))\r\n                                                                            ^\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580323595591_-1276523949",
+      "id": "20200129-194635_949807043",
+      "dateCreated": "2020-01-29 19:46:35.591",
+      "dateStarted": "2020-01-29 20:06:30.955",
+      "dateFinished": "2020-01-29 20:06:30.981",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "//def aggregate[U](zeroValue: U)(seqOp: (U, (K, C)) ⇒ U, combOp: (U, U) ⇒ U)(implicit arg0: ClassTag[U]): U\nmyrdd1.groupByKey.aggregate(\"\", 0)( (acc, value) \u003d\u003e (value._1, acc._2+value._2), (acc1, acc2) \u003d\u003e (acc1._1, acc1._2+acc2._2))",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-29 20:06:24.497",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cconsole\u003e:27: error: overloaded method value + with alternatives:\r\n  (x: Int)Int \u003cand\u003e\r\n  (x: Char)Int \u003cand\u003e\r\n  (x: Short)Int \u003cand\u003e\r\n  (x: Byte)Int\r\n cannot be applied to (Iterable[Int])\r\n       myrdd1.groupByKey.aggregate(\"\", 0)( (acc, value) \u003d\u003e (value._1, acc._2+value._2), (acc1, acc2) \u003d\u003e (acc1._1, acc1._2+acc2._2))\r\n                                                                            ^\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580317991209_410437102",
+      "id": "20200129-181311_940983787",
+      "dateCreated": "2020-01-29 18:13:11.209",
+      "dateStarted": "2020-01-29 20:06:24.521",
+      "dateFinished": "2020-01-29 20:06:24.548",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "myrdd1.groupByKey.collect",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-29 19:16:09.259",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res37: Array[(String, Iterable[Int])] \u003d Array((Giovanni,CompactBuffer(1000)), (Pippo,CompactBuffer(2600)), (Pino,CompactBuffer(1500, 1350)))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580321692873_-318605039",
+      "id": "20200129-191452_250755300",
+      "dateCreated": "2020-01-29 19:14:52.873",
+      "dateStarted": "2020-01-29 19:16:09.279",
+      "dateFinished": "2020-01-29 19:16:09.577",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val listRDD \u003d sc.parallelize(List(1,2,3,4), 2)\r\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-29 18:57:15.426",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "listRDD: org.apache.spark.rdd.RDD[Int] \u003d ParallelCollectionRDD[28] at parallelize at \u003cconsole\u003e:25\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580318175855_-1042209218",
+      "id": "20200129-181615_1099219302",
+      "dateCreated": "2020-01-29 18:16:15.855",
+      "dateStarted": "2020-01-29 18:57:15.443",
+      "dateFinished": "2020-01-29 18:57:15.654",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "listRDD.aggregate(0)( (acc, value) \u003d\u003e acc+value, (acc1, acc2) \u003d\u003e acc1+acc2 )\n//def aggregate[U](zeroValue: U)(seqOp: (U, Int) \u003d\u003e U,combOp: (U, U) \u003d\u003e U)(implicit evidence$30: scala.reflect.ClassTag[U]): U",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-29 19:14:17.194",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res35: Int \u003d 10\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580320615664_852853165",
+      "id": "20200129-185655_430346367",
+      "dateCreated": "2020-01-29 18:56:55.664",
+      "dateStarted": "2020-01-29 19:14:17.213",
+      "dateFinished": "2020-01-29 19:14:17.435",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "def seqOP(a:Int, b:Int) : Int \u003d {\r\n    // println(\"seqOp: \" + a + \"\\t\" + b)\r\n    math.min(a,b)\r\n    }",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-29 19:13:32.787",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "seqOP: (a: Int, b: Int)Int\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580321238871_-1923775072",
+      "id": "20200129-190718_1668051157",
+      "dateCreated": "2020-01-29 19:07:18.871",
+      "dateStarted": "2020-01-29 19:09:56.611",
+      "dateFinished": "2020-01-29 19:09:56.787",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "def combOp(a:Int, b:Int): Int \u003d {\r\n    //  println(\"combOp: \" + a + \"\\t\" + b)\r\n     a + b\r\n     }",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-29 19:13:40.956",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "combOp: (a: Int, b: Int)Int\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580321367308_1046564956",
+      "id": "20200129-190927_725104042",
+      "dateCreated": "2020-01-29 19:09:27.308",
+      "dateStarted": "2020-01-29 19:10:32.446",
+      "dateFinished": "2020-01-29 19:10:32.596",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "listRDD.aggregate(0)(seqOP, combOp)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-29 19:12:05.943",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res34: Int \u003d 0\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580321382302_2117465100",
+      "id": "20200129-190942_1500900973",
+      "dateCreated": "2020-01-29 19:09:42.302",
+      "dateStarted": "2020-01-29 19:12:05.963",
+      "dateFinished": "2020-01-29 19:12:06.205",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1580321487344_336219800",
+      "id": "20200129-191127_400063595",
+      "dateCreated": "2020-01-29 19:11:27.344",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "MapR Certified Developer - Study Guide",
+  "id": "2EYCYJPR6",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "sh:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

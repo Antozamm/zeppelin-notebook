@@ -1,0 +1,420 @@
+{
+  "paragraphs": [
+    {
+      "text": "val string \u003d \"kyeibuumwlyhuwksxodcawelubbyznxvpfxyxzhftudwtiemdhqaqoDeodltimrusmwtfdikxoqpuFliyvacNgrpigspylwaxvbdwiqurqkqidkujwziucglsvzxjbswtkeogxyncoweuvczualykpszcbrmwwyjkgbvpfyijshnkbjdrxppwmclymvofjslldhwnwajnnyvzktbjixlsodivgmfsvwjfqjuwwrqelkkzupmlggzeqmcskkvjggnajgimzkdtzgvhuzlgubkigdctumjhdwnzzlnrlyuhlhmlgfxuhyxlzraqhqgfsgvtigkfuuuawoxherqhovyyyglsxwoqkwntuaesstxvtwhzvzxincwpkhigcwslpokwplgrotrnttohkzzumqcejkvgwkvexpnyjrwzbfauervihrvezyfndmekllabllewmqrgbfwimygcwlbeblcfqitaxnoaudfgaodqbmsgavetmrtlnyy\"",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-01 14:21:35.567",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "string: String \u003d kyeibuumwlyhuwksxodcawelubbyznxvpfxyxzhftudwtiemdhqaqoDeodltimrusmwtfdikxoqpuFliyvacNgrpigspylwaxvbdwiqurqkqidkujwziucglsvzxjbswtkeogxyncoweuvczualykpszcbrmwwyjkgbvpfyijshnkbjdrxppwmclymvofjslldhwnwajnnyvzktbjixlsodivgmfsvwjfqjuwwrqelkkzupmlggzeqmcskkvjggnajgimzkdtzgvhuzlgubkigdctumjhdwnzzlnrlyuhlhmlgfxuhyxlzraqhqgfsgvtigkfuuuawoxherqhovyyyglsxwoqkwntuaesstxvtwhzvzxincwpkhigcwslpokwplgrotrnttohkzzumqcejkvgwkvexpnyjrwzbfauervihrvezyfndmekllabllewmqrgbfwimygcwlbeblcfqitaxnoaudfgaodqbmsgavetmrtlnyy\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593605826276_969152842",
+      "id": "20200701-141706_1941558609",
+      "dateCreated": "2020-07-01 14:17:06.276",
+      "dateStarted": "2020-07-01 14:21:35.576",
+      "dateFinished": "2020-07-01 14:21:35.774",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "string.count(_ \u003d\u003d \"k\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-01 14:25:24.363",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res30: Int \u003d 0\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593606091335_1648707037",
+      "id": "20200701-142131_429523030",
+      "dateCreated": "2020-07-01 14:21:31.335",
+      "dateStarted": "2020-07-01 14:25:24.369",
+      "dateFinished": "2020-07-01 14:25:24.589",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\"hello\".count(_ \u003d\u003d \u0027o\u0027 )",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-01 14:29:38.234",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res39: Int \u003d 1\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593606182328_645643991",
+      "id": "20200701-142302_21689553",
+      "dateCreated": "2020-07-01 14:23:02.328",
+      "dateStarted": "2020-07-01 14:29:38.241",
+      "dateFinished": "2020-07-01 14:29:38.426",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\"hello world of throne\".count(_ \u003d\u003d \u0027o\u0027)",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-01 14:31:56.313",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res44: Int \u003d 4\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593606369316_-1203607422",
+      "id": "20200701-142609_967298557",
+      "dateCreated": "2020-07-01 14:26:09.316",
+      "dateStarted": "2020-07-01 14:31:56.321",
+      "dateFinished": "2020-07-01 14:31:56.510",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\u0027o\u0027",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-01 14:29:52.594",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res40: Char \u003d o\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593606552490_-1355747875",
+      "id": "20200701-142912_194710863",
+      "dateCreated": "2020-07-01 14:29:12.490",
+      "dateStarted": "2020-07-01 14:29:52.604",
+      "dateFinished": "2020-07-01 14:29:52.771",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\"o\"",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-01 14:29:57.521",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res41: String \u003d o\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593606592594_-545387428",
+      "id": "20200701-142952_1100510949",
+      "dateCreated": "2020-07-01 14:29:52.594",
+      "dateStarted": "2020-07-01 14:29:57.530",
+      "dateFinished": "2020-07-01 14:29:57.700",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\"hello world of throne\".contains(\"of\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-01 14:32:28.613",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res45: Boolean \u003d true\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593606597521_-812971902",
+      "id": "20200701-142957_478637824",
+      "dateCreated": "2020-07-01 14:29:57.521",
+      "dateStarted": "2020-07-01 14:32:28.624",
+      "dateFinished": "2020-07-01 14:32:28.798",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\"hello world of throne\".indexOf(\"of\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-01 14:32:56.388",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res47: Int \u003d 12\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593606748613_1895244628",
+      "id": "20200701-143228_1737463444",
+      "dateCreated": "2020-07-01 14:32:28.614",
+      "dateStarted": "2020-07-01 14:32:56.397",
+      "dateFinished": "2020-07-01 14:32:56.564",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\"hello world of throne\".slice(12,14)",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-01 14:33:17.448",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res48: String \u003d of\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593606762225_548790658",
+      "id": "20200701-143242_811878687",
+      "dateCreated": "2020-07-01 14:32:42.226",
+      "dateStarted": "2020-07-01 14:33:17.459",
+      "dateFinished": "2020-07-01 14:33:17.664",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val dogBreeds \u003d List(\"Doberman\", \"Yorkshire Terrier\", \"Dachshund\",\r\n\"Scottish Terrier\", \"Great Dane\", \"Portuguese Water Dog\")\r\nfor { breed \u003c- dogBreeds\r\n    upcasedBreed \u003d breed.toUpperCase()\r\n} println(upcasedBreed)",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-01 14:55:46.490",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "DOBERMAN\r\nYORKSHIRE TERRIER\r\nDACHSHUND\r\nSCOTTISH TERRIER\r\nGREAT DANE\r\nPORTUGUESE WATER DOG\r\ndogBreeds: List[String] \u003d List(Doberman, Yorkshire Terrier, Dachshund, Scottish Terrier, Great Dane, Portuguese Water Dog)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593606797448_1560338246",
+      "id": "20200701-143317_1863555058",
+      "dateCreated": "2020-07-01 14:33:17.448",
+      "dateStarted": "2020-07-01 14:55:46.503",
+      "dateFinished": "2020-07-01 14:55:46.844",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1593608134343_-2036712038",
+      "id": "20200701-145534_495353612",
+      "dateCreated": "2020-07-01 14:55:34.343",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Regular Expression",
+  "id": "2FC56XHMP",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

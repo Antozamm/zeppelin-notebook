@@ -1,0 +1,3606 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\nhttps://towardsdatascience.com/six-spark-exercises-to-rule-them-all-242445b24565\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-30 01:40:31.400",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003e\u003ca href\u003d\"https://towardsdatascience.com/six-spark-exercises-to-rule-them-all-242445b24565\"\u003ehttps://towardsdatascience.com/six-spark-exercises-to-rule-them-all-242445b24565\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593464495054_-166251999",
+      "id": "20200629-230135_1698089405",
+      "dateCreated": "2020-06-29 23:01:35.054",
+      "dateStarted": "2020-06-30 01:40:31.400",
+      "dateFinished": "2020-06-30 01:40:31.405",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Warm-up #1\nhow many orders, how many products, how many sellers?\n\nHow many products have been sold at least once? Which is the product contained in more orders?",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 07:51:30.289",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eWarm-up #1\u003c/h2\u003e\n\u003cp\u003ehow many orders, how many products, how many sellers?\u003c/p\u003e\n\u003cp\u003eHow many products have been sold at least once? Which is the product contained in more orders?\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593464521984_-715913091",
+      "id": "20200629-230201_38423068",
+      "dateCreated": "2020-06-29 23:02:01.984",
+      "dateStarted": "2020-07-24 07:51:30.290",
+      "dateFinished": "2020-07-24 07:51:30.299",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val d_path \u003d \"D:/AnacondaProjects/Datasets/DatasetToCompleteTheSixSparkExercises\"\nval d_path_prod \u003d d_path + \"/products_parquet\"\nval d_path_sales \u003d d_path + \"/sales_parquet\"\nval d_path_seller \u003d d_path + \"/sellers_parquet\"\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-02 16:49:53.396",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "d_path: String \u003d D:/AnacondaProjects/Datasets/DatasetToCompleteTheSixSparkExercises\r\nd_path_prod: String \u003d D:/AnacondaProjects/Datasets/DatasetToCompleteTheSixSparkExercises/products_parquet\r\nd_path_sales: String \u003d D:/AnacondaProjects/Datasets/DatasetToCompleteTheSixSparkExercises/sales_parquet\r\nd_path_seller: String \u003d D:/AnacondaProjects/Datasets/DatasetToCompleteTheSixSparkExercises/sellers_parquet\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593464820699_1658520535",
+      "id": "20200629-230700_1532336233",
+      "dateCreated": "2020-06-29 23:07:00.699",
+      "dateStarted": "2020-07-02 16:49:53.444",
+      "dateFinished": "2020-07-02 16:49:53.607",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val prods \u003d spark.read.format(\"parquet\").load(d_path_prod)\nprods.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-02 16:49:55.902",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----------+------------+-----+\n|product_id|product_name|price|\n+----------+------------+-----+\n|         0|   product_0|   22|\n|         1|   product_1|   30|\n|         2|   product_2|   91|\n|         3|   product_3|   37|\n|         4|   product_4|  145|\n|         5|   product_5|  128|\n|         6|   product_6|   66|\n|         7|   product_7|  145|\n|         8|   product_8|   51|\n|         9|   product_9|   44|\n|        10|  product_10|   53|\n|        11|  product_11|   13|\n|        12|  product_12|  104|\n|        13|  product_13|  102|\n|        14|  product_14|   24|\n|        15|  product_15|   14|\n|        16|  product_16|   38|\n|        17|  product_17|   72|\n|        18|  product_18|   16|\n|        19|  product_19|   46|\n+----------+------------+-----+\nonly showing top 20 rows\n\r\nprods: org.apache.spark.sql.DataFrame \u003d [product_id: string, product_name: string ... 1 more field]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593464928569_641813269",
+      "id": "20200629-230848_1225068730",
+      "dateCreated": "2020-06-29 23:08:48.569",
+      "dateStarted": "2020-07-02 16:49:55.945",
+      "dateFinished": "2020-07-02 16:49:56.271",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "prods.select(\"product_name\").dropDuplicates.count",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-02 16:49:58.197",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res15: Long \u003d 75000000\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593464946981_1641605749",
+      "id": "20200629-230906_1332630369",
+      "dateCreated": "2020-06-29 23:09:06.981",
+      "dateStarted": "2020-07-02 16:49:58.239",
+      "dateFinished": "2020-07-02 16:50:52.572",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val sellers \u003d spark.read.format(\"parquet\").load(d_path_seller)\nsellers.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-02 16:49:59.719",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---------+-----------+------------+\n|seller_id|seller_name|daily_target|\n+---------+-----------+------------+\n|        0|   seller_0|     2500000|\n|        1|   seller_1|      257237|\n|        2|   seller_2|      754188|\n|        3|   seller_3|      310462|\n|        4|   seller_4|     1532808|\n|        5|   seller_5|     1199693|\n|        6|   seller_6|     1055915|\n|        7|   seller_7|     1946998|\n|        8|   seller_8|      547320|\n|        9|   seller_9|     1318051|\n+---------+-----------+------------+\n\r\nsellers: org.apache.spark.sql.DataFrame \u003d [seller_id: string, seller_name: string ... 1 more field]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593465298567_1772581395",
+      "id": "20200629-231458_367373792",
+      "dateCreated": "2020-06-29 23:14:58.567",
+      "dateStarted": "2020-07-02 16:49:59.803",
+      "dateFinished": "2020-07-02 16:50:52.911",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "sellers.select(\"seller_name\").dropDuplicates.count",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-02 16:50:02.878",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res17: Long \u003d 10\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593465812837_-312867467",
+      "id": "20200629-232332_923571337",
+      "dateCreated": "2020-06-29 23:23:32.837",
+      "dateStarted": "2020-07-02 16:50:52.982",
+      "dateFinished": "2020-07-02 16:50:54.699",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val sales \u003d spark.read.format(\"parquet\").load(d_path_sales)\nsales.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-02 16:50:11.874",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|kyeibuumwlyhuwksx...|\n|       2|         0|        0|2020-07-08|             13|jfyuoyfkeyqkckwbu...|\n|       3|         0|        0|2020-07-05|             38|uyjihlzhzcswxcccx...|\n|       4|         0|        0|2020-07-05|             56|umnxvoqbdzpbwjqmz...|\n|       5|         0|        0|2020-07-05|             11|zmqexmaawmvdpqhih...|\n|       6|         0|        0|2020-07-01|             82|lmuhhkpyuoyslwmvX...|\n|       7|         0|        0|2020-07-04|             15|zoqweontumefxbgvu...|\n|       8|         0|        0|2020-07-08|             79|sgldfgtcxufasnvsc...|\n|       9|         0|        0|2020-07-10|             25|jnykelwjjebgkwgmu...|\n|      10|         0|        0|2020-07-08|              8|yywjfihneygcvfnyl...|\n|      11|         0|        0|2020-07-01|             10|nxwejyoeznltdhcam...|\n|      12|         0|        0|2020-07-06|             45|efmymeftivwsfljzt...|\n|      13|         0|        0|2020-07-10|             63|nxhvtospPhfnkavdy...|\n|      14|         0|        0|2020-07-03|             22|ypyusdsjzfpfbucnn...|\n|      15|         0|        0|2020-07-09|             75|ymjvbhaxffyjcwzyn...|\n|      16|         0|        0|2020-07-10|             83|phbcykkhvqsbkipwa...|\n|      17|         0|        0|2020-07-04|             54|qgnGqqnjmbqZytoug...|\n|      18|         0|        0|2020-07-04|             58|ozmllbabrnhebWcex...|\n|      19|         0|        0|2020-07-07|             33|kbrvXuzgiuinodtkg...|\n|      20|         0|        0|2020-07-09|             73|jnqjzaigjtqlfwpug...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 20 rows\n\r\nsales: org.apache.spark.sql.DataFrame \u003d [order_id: string, product_id: string ... 4 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593466079827_916010518",
+      "id": "20200629-232759_1380625483",
+      "dateCreated": "2020-06-29 23:27:59.827",
+      "dateStarted": "2020-07-02 16:50:53.485",
+      "dateFinished": "2020-07-02 16:50:55.359",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "sales.count",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-30 21:19:49.944",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res6: Long \u003d 20000040\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593466147194_-2043585868",
+      "id": "20200629-232907_1003703289",
+      "dateCreated": "2020-06-29 23:29:07.194",
+      "dateStarted": "2020-06-30 21:20:27.885",
+      "dateFinished": "2020-06-30 21:20:29.277",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "sales.select(\"order_id\").agg(max(sales(\"order_id\"))).show",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-30 11:57:36.321",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------------+\n|max(order_id)|\n+-------------+\n|      9999999|\n+-------------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593466231560_-36921791",
+      "id": "20200629-233031_255512961",
+      "dateCreated": "2020-06-29 23:30:31.560",
+      "dateStarted": "2020-06-30 11:57:43.747",
+      "dateFinished": "2020-06-30 11:57:46.837",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "sales.select(\"order_id\").sort($\"order_id\".desc).head",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-30 21:19:54.574",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res7: org.apache.spark.sql.Row \u003d [9999999]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593466286648_-1227463352",
+      "id": "20200629-233126_144412479",
+      "dateCreated": "2020-06-29 23:31:26.648",
+      "dateStarted": "2020-06-30 21:20:28.542",
+      "dateFinished": "2020-06-30 21:20:30.705",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nHow many products have been sold at least once?",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-30 00:17:36.604",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eHow many products have been sold at least once?\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593468823230_1187856804",
+      "id": "20200630-001343_763133867",
+      "dateCreated": "2020-06-30 00:13:43.230",
+      "dateStarted": "2020-06-30 00:17:36.604",
+      "dateFinished": "2020-06-30 00:17:36.610",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "sales.select(\"product_id\").dropDuplicates.count",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-02 16:53:28.006",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res21: Long \u003d 993429\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593469056589_1943779387",
+      "id": "20200630-001736_1551439677",
+      "dateCreated": "2020-06-30 00:17:36.589",
+      "dateStarted": "2020-07-02 16:53:28.050",
+      "dateFinished": "2020-07-02 16:53:30.412",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "sales.agg(countDistinct(col(\"product_id\"))).show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-02 16:53:20.079",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------------------+\n|count(DISTINCT product_id)|\n+--------------------------+\n|                    993429|\n+--------------------------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593701588518_591457276",
+      "id": "20200702-165308_1002953630",
+      "dateCreated": "2020-07-02 16:53:08.518",
+      "dateStarted": "2020-07-02 16:53:20.131",
+      "dateFinished": "2020-07-02 16:53:22.292",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nWhich is the product contained in more orders?",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-30 00:37:45.576",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eWhich is the product contained in more orders?\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593469577658_-1058076514",
+      "id": "20200630-002617_183017166",
+      "dateCreated": "2020-06-30 00:26:17.658",
+      "dateStarted": "2020-06-30 00:37:45.577",
+      "dateFinished": "2020-06-30 00:37:45.582",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "sales.groupBy(\"product_id\").count.sort($\"count\".desc).show",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-30 11:58:14.821",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----------+--------+\n|product_id|   count|\n+----------+--------+\n|         0|19000000|\n|  35669461|       3|\n|  73385513|       3|\n|   3534470|       3|\n|  40579633|       3|\n|  19986717|       3|\n|  57735075|       3|\n|  28592106|       3|\n|  14542470|       3|\n|  28183035|       3|\n|  40193396|       3|\n|   2316238|       3|\n|  36269838|       3|\n|  40496308|       3|\n|  67723231|       3|\n|  72017876|       3|\n|   2839667|       3|\n|  31136332|       3|\n|  26915351|       3|\n|  61475460|       3|\n+----------+--------+\nonly showing top 20 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593470265561_608897888",
+      "id": "20200630-003745_1814454247",
+      "dateCreated": "2020-06-30 00:37:45.561",
+      "dateStarted": "2020-06-30 11:58:14.845",
+      "dateFinished": "2020-06-30 11:58:16.399",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Warm-up #2\nHow many distinct products have been sold in each day?",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 07:52:12.989",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eWarm-up #2\u003c/h2\u003e\n\u003cp\u003eHow many distinct products have been sold in each day?\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593470315042_-1085800693",
+      "id": "20200630-003835_976146543",
+      "dateCreated": "2020-06-30 00:38:35.042",
+      "dateStarted": "2020-07-24 07:52:12.989",
+      "dateFinished": "2020-07-24 07:52:12.998",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "sales.groupBy(\"date\").agg(countDistinct(\"product_id\")).show(5)",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-30 11:58:19.057",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----------+--------------------------+\n|      date|count(DISTINCT product_id)|\n+----------+--------------------------+\n|2020-07-03|                    100017|\n|2020-07-07|                     99756|\n|2020-07-01|                    100337|\n|2020-07-08|                     99662|\n|2020-07-04|                     99791|\n+----------+--------------------------+\nonly showing top 5 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593471515161_1011827167",
+      "id": "20200630-005835_962123588",
+      "dateCreated": "2020-06-30 00:58:35.161",
+      "dateStarted": "2020-06-30 11:58:19.078",
+      "dateFinished": "2020-06-30 11:58:29.336",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "sales.show(1)",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-30 11:58:29.488",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|kyeibuumwlyhuwksx...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 1 row\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593471591429_1857995815",
+      "id": "20200630-005951_720855864",
+      "dateCreated": "2020-06-30 00:59:51.429",
+      "dateStarted": "2020-06-30 11:58:30.028",
+      "dateFinished": "2020-06-30 11:58:32.951",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "sales.groupBy(\"date\").agg(approxCountDistinct(\"product_id\")).show(5)",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-30 11:58:26.066",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "warning: there was one deprecation warning; re-run with -deprecation for details\n+----------+---------------------------------+\n|      date|approx_count_distinct(product_id)|\n+----------+---------------------------------+\n|2020-07-03|                            98788|\n|2020-07-07|                           100446|\n|2020-07-01|                           102411|\n|2020-07-08|                            96671|\n|2020-07-04|                           102159|\n+----------+---------------------------------+\nonly showing top 5 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593472381892_-236536305",
+      "id": "20200630-011301_1802897760",
+      "dateCreated": "2020-06-30 01:13:01.892",
+      "dateStarted": "2020-06-30 11:58:26.122",
+      "dateFinished": "2020-06-30 11:58:32.632",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Exercise #1\nWhat is the average revenue of the orders?",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 07:53:08.174",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eExercise #1\u003c/h2\u003e\n\u003cp\u003eWhat is the average revenue of the orders?\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593472450092_-1683191954",
+      "id": "20200630-011410_1181495825",
+      "dateCreated": "2020-06-30 01:14:10.093",
+      "dateStarted": "2020-07-24 07:53:08.174",
+      "dateFinished": "2020-07-24 07:53:08.180",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "prods.filter(\"product_id \u003d\u003d 1\").show",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-30 11:58:36.802",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----------+------------+-----+\n|product_id|product_name|price|\n+----------+------------+-----+\n|         1|   product_1|   30|\n+----------+------------+-----+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593472593199_2000694505",
+      "id": "20200630-011633_1866117443",
+      "dateCreated": "2020-06-30 01:16:33.199",
+      "dateStarted": "2020-06-30 11:58:36.824",
+      "dateFinished": "2020-06-30 11:58:39.938",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "prods.filter($\"product_id\" \u003d\u003d\u003d 1).show",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-30 01:22:08.046",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----------+------------+-----+\n|product_id|product_name|price|\n+----------+------------+-----+\n|         1|   product_1|   30|\n+----------+------------+-----+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593472838424_-1895287924",
+      "id": "20200630-012038_2095203917",
+      "dateCreated": "2020-06-30 01:20:38.424",
+      "dateStarted": "2020-06-30 01:22:08.067",
+      "dateFinished": "2020-06-30 01:22:11.187",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val sales2 \u003d sales.join(prods, \"product_id\")\nsales2.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-02 17:57:38.787",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----------+--------+---------+----------+---------------+--------------------+----------------+-----+\n|product_id|order_id|seller_id|      date|num_pieces_sold|       bill_raw_text|    product_name|price|\n+----------+--------+---------+----------+---------------+--------------------+----------------+-----+\n|  10005243|12478308|        6|2020-07-04|             98|qfvpgiscflyjxphcq...|product_10005243|   44|\n|  10023464| 8996776|        9|2020-07-03|             59|jjbyqkzcimBfoehbv...|product_10023464|   19|\n|  10050363|10476976|        6|2020-07-03|             18|xqhlvkpxtzrfdadry...|product_10050363|   98|\n|  10089524| 5977582|        2|2020-07-01|             53|jchvhzbeaicqitpvx...|product_10089524|  100|\n|  10122266| 1482892|        2|2020-07-07|             25|kezhpglnqigaqwrss...|product_10122266|   89|\n|  10134574| 2987749|        3|2020-07-03|             28|bmtlxvobfmerqlckf...|product_10134574|  138|\n|  10150439|15982399|        4|2020-07-01|             72|rvgiffufcxceotpdn...|product_10150439|   71|\n|  10158822|12494868|        9|2020-07-09|             86|pzrsootkmszwuzpsi...|product_10158822|   35|\n|  10160884|18485793|        7|2020-07-01|             89|goZelczdeypjghxta...|product_10160884|   52|\n|  10172594| 2499725|        2|2020-07-03|             60|gndkqyfadrbiaasna...|product_10172594|   81|\n|  10175294| 2491769|        7|2020-07-09|             29|owrjfdkvctlnpgwcn...|product_10175294|  112|\n|   1017716| 7996888|        9|2020-07-08|             82|khdtupfmrdgaayizq...| product_1017716|   66|\n|  10200802|17998848|        2|2020-07-04|             42|nwtragsmtdzwuddxb...|product_10200802|   41|\n|  10215353|10978787|        1|2020-07-06|             22|qaihdzblvkhjcnqzz...|product_10215353|   56|\n|  10218345|10985061|        4|2020-07-10|             98|ypwtputatDvrxntll...|product_10218345|  141|\n|  10220977|10484807|        5|2020-07-10|             76|hfytxferykvmdaope...|product_10220977|  132|\n|  10255853| 6990855|        7|2020-07-03|             26|nychcgnenspynymic...|product_10255853|  120|\n|  10288525|16495205|        6|2020-07-06|             63|fynucihpbitrmbcqg...|product_10288525|  132|\n|  10304712| 1985267|        9|2020-07-05|             48|pjlfowgkhrncuboha...|product_10304712|   24|\n|  10324080|10988195|        6|2020-07-04|              5|ypdylfnxjvaphduiy...|product_10324080|  130|\n+----------+--------+---------+----------+---------------+--------------------+----------------+-----+\nonly showing top 20 rows\n\r\nsales2: org.apache.spark.sql.DataFrame \u003d [product_id: string, order_id: string ... 6 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593472928046_-1873445923",
+      "id": "20200630-012208_1538756800",
+      "dateCreated": "2020-06-30 01:22:08.046",
+      "dateStarted": "2020-07-02 17:57:38.858",
+      "dateFinished": "2020-07-02 18:02:30.511",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "sales2.show(5)",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-30 12:32:19.090",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----------+--------+---------+----------+---------------+--------------------+----------------+-----+\n|product_id|order_id|seller_id|      date|num_pieces_sold|       bill_raw_text|    product_name|price|\n+----------+--------+---------+----------+---------------+--------------------+----------------+-----+\n|  10005243|12478308|        6|2020-07-04|             98|qfvpgiscflyjxphcq...|product_10005243|   44|\n|  10023464| 8996776|        9|2020-07-03|             59|jjbyqkzcimBfoehbv...|product_10023464|   19|\n|  10050363|10476976|        6|2020-07-03|             18|xqhlvkpxtzrfdadry...|product_10050363|   98|\n|  10089524| 5977582|        2|2020-07-01|             53|jchvhzbeaicqitpvx...|product_10089524|  100|\n|  10122266| 1482892|        2|2020-07-07|             25|kezhpglnqigaqwrss...|product_10122266|   89|\n+----------+--------+---------+----------+---------------+--------------------+----------------+-----+\nonly showing top 5 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593474500558_346552416",
+      "id": "20200630-014820_473877604",
+      "dateCreated": "2020-06-30 01:48:20.558",
+      "dateStarted": "2020-06-30 12:32:19.111",
+      "dateFinished": "2020-06-30 12:34:52.047",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.storage.StorageLevel\n\nval sales2 \u003d sales.join(prods, \"product_id\").persist(StorageLevel.MEMORY_ONLY)",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-30 12:36:58.643",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.storage.StorageLevel\r\nsales2: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [product_id: string, order_id: string ... 6 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593512433857_-1855372236",
+      "id": "20200630-122033_721523729",
+      "dateCreated": "2020-06-30 12:20:33.857",
+      "dateStarted": "2020-06-30 12:36:58.666",
+      "dateFinished": "2020-06-30 12:36:58.988",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "sales2.show(50)",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-30 12:41:35.383",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----------+--------+---------+----------+---------------+--------------------+----------------+-----+\n|product_id|order_id|seller_id|      date|num_pieces_sold|       bill_raw_text|    product_name|price|\n+----------+--------+---------+----------+---------------+--------------------+----------------+-----+\n|  10005243|12478308|        6|2020-07-04|             98|qfvpgiscflyjxphcq...|product_10005243|   44|\n|  10023464| 8996776|        9|2020-07-03|             59|jjbyqkzcimBfoehbv...|product_10023464|   19|\n|  10050363|10476976|        6|2020-07-03|             18|xqhlvkpxtzrfdadry...|product_10050363|   98|\n|  10089524| 5977582|        2|2020-07-01|             53|jchvhzbeaicqitpvx...|product_10089524|  100|\n|  10122266| 1482892|        2|2020-07-07|             25|kezhpglnqigaqwrss...|product_10122266|   89|\n|  10134574| 2987749|        3|2020-07-03|             28|bmtlxvobfmerqlckf...|product_10134574|  138|\n|  10150439|15982399|        4|2020-07-01|             72|rvgiffufcxceotpdn...|product_10150439|   71|\n|  10158822|12494868|        9|2020-07-09|             86|pzrsootkmszwuzpsi...|product_10158822|   35|\n|  10160884|18485793|        7|2020-07-01|             89|goZelczdeypjghxta...|product_10160884|   52|\n|  10172594| 2499725|        2|2020-07-03|             60|gndkqyfadrbiaasna...|product_10172594|   81|\n|  10175294| 2491769|        7|2020-07-09|             29|owrjfdkvctlnpgwcn...|product_10175294|  112|\n|   1017716| 7996888|        9|2020-07-08|             82|khdtupfmrdgaayizq...| product_1017716|   66|\n|  10200802|17998848|        2|2020-07-04|             42|nwtragsmtdzwuddxb...|product_10200802|   41|\n|  10215353|10978787|        1|2020-07-06|             22|qaihdzblvkhjcnqzz...|product_10215353|   56|\n|  10218345|10985061|        4|2020-07-10|             98|ypwtputatDvrxntll...|product_10218345|  141|\n|  10220977|10484807|        5|2020-07-10|             76|hfytxferykvmdaope...|product_10220977|  132|\n|  10255853| 6990855|        7|2020-07-03|             26|nychcgnenspynymic...|product_10255853|  120|\n|  10288525|16495205|        6|2020-07-06|             63|fynucihpbitrmbcqg...|product_10288525|  132|\n|  10304712| 1985267|        9|2020-07-05|             48|pjlfowgkhrncuboha...|product_10304712|   24|\n|  10324080|10988195|        6|2020-07-04|              5|ypdylfnxjvaphduiy...|product_10324080|  130|\n|  10329337| 9991189|        9|2020-07-07|             66|wjdooeorijeijdhio...|product_10329337|   53|\n|  10329669|19498942|        8|2020-07-07|             58|ehcacdrdrbsizqeix...|product_10329669|   67|\n|    103432|15499559|        1|2020-07-05|             98|hocpkodhjvqdvlwkt...|  product_103432|   64|\n|  10378833|17987815|        8|2020-07-05|             26|jeeemhhynuvdofbbr...|product_10378833|   35|\n|  10398868|10478960|        3|2020-07-08|              9|guzcmzrmlwamawhmm...|product_10398868|  140|\n|  10405009|16998983|        9|2020-07-05|             90|rxgxaixubrivqwudc...|product_10405009|  102|\n|   1040583|18997482|        7|2020-07-10|             38|karlmzvfqgaxudzzq...| product_1040583|   76|\n|  10482901| 1978679|        7|2020-07-06|             38|dpqwkqtbqfkvjzpfz...|product_10482901|  122|\n|  10494099|17977191|        4|2020-07-09|             71|ovjubbvaoxyjickvu...|product_10494099|   79|\n|  10505003| 8983227|        3|2020-07-06|             28|qqhdobzrezxjlexpp...|product_10505003|  144|\n|  10524893| 1989609|        4|2020-07-09|              6|ixfmpqzqqhsmbdjgi...|product_10524893|  119|\n|  10551133|13983259|        3|2020-07-04|             81|lwsdgwbbontljvkpt...|product_10551133|   65|\n|   1055308| 1482162|        4|2020-07-07|             63|kdrfixzuyyeldgriq...| product_1055308|   26|\n|  10637985| 5975299|        9|2020-07-04|              5|ypevycxttgthxonsq...|product_10637985|  113|\n|  10648633|13997732|        4|2020-07-06|             98|pgloncfcetghmbydw...|product_10648633|   79|\n|  10689536| 9482365|        1|2020-07-08|             80|uyubfosjostlyosOa...|product_10689536|   64|\n|  10711413|16975831|        4|2020-07-06|             51|nezovtmizlqrtodqt...|product_10711413|   96|\n|   1073482|13490548|        6|2020-07-05|             92|quszazwwbyvmvqbuf...| product_1073482|   60|\n|  10735560|19491991|        1|2020-07-10|             36|neijdttwryebnvkme...|product_10735560|   40|\n|  10740789| 4476593|        1|2020-07-07|              5|ypwvscpvfazykawiy...|product_10740789|   91|\n|  10749424|  499547|        8|2020-07-01|             63|ztlhxefjcaikoyouU...|product_10749424|    1|\n|  10752659|18499179|        1|2020-07-10|             70|ownitqlpatadacdyv...|product_10752659|  139|\n|  10777100|17978657|        9|2020-07-03|             84|xgyqksquwetltahjj...|product_10777100|  146|\n|  10818496|10994957|        3|2020-07-06|             41|tytbgqbpufIamwsul...|product_10818496|  132|\n|  10852025|13980877|        5|2020-07-03|              4|pnnnmklgfvxhmtlpx...|product_10852025|  145|\n|  10867431|12476656|        9|2020-07-01|             66|pexsvdbitzeLzbmbn...|product_10867431|  147|\n|  10869417|14482595|        5|2020-07-07|             97|ftzwckokgzlpbgrxa...|product_10869417|   47|\n|  10880368|14990020|        3|2020-07-05|             12|woeppujxustfhshtt...|product_10880368|   19|\n|  10893006|15480925|        5|2020-07-04|             66|bijaccdzwUzvcbsnf...|product_10893006|   46|\n|  10914575| 2477312|        9|2020-07-06|             60|lvfmrhtnihpqgfobl...|product_10914575|  107|\n+----------+--------+---------+----------+---------------+--------------------+----------------+-----+\nonly showing top 50 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593513429469_263039737",
+      "id": "20200630-123709_428471108",
+      "dateCreated": "2020-06-30 12:37:09.469",
+      "dateStarted": "2020-06-30 12:41:35.404",
+      "dateFinished": "2020-06-30 12:41:35.614",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "sales.show(5)",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-30 12:42:48.840",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|kyeibuumwlyhuwksx...|\n|       2|         0|        0|2020-07-08|             13|jfyuoyfkeyqkckwbu...|\n|       3|         0|        0|2020-07-05|             38|uyjihlzhzcswxcccx...|\n|       4|         0|        0|2020-07-05|             56|umnxvoqbdzpbwjqmz...|\n|       5|         0|        0|2020-07-05|             11|zmqexmaawmvdpqhih...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 5 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593513686779_2007938395",
+      "id": "20200630-124126_6582191",
+      "dateCreated": "2020-06-30 12:41:26.779",
+      "dateStarted": "2020-06-30 12:42:48.863",
+      "dateFinished": "2020-06-30 12:42:49.269",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "sales2.show(5)",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-30 12:43:07.343",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----------+--------+---------+----------+---------------+--------------------+----------------+-----+\n|product_id|order_id|seller_id|      date|num_pieces_sold|       bill_raw_text|    product_name|price|\n+----------+--------+---------+----------+---------------+--------------------+----------------+-----+\n|  10005243|12478308|        6|2020-07-04|             98|qfvpgiscflyjxphcq...|product_10005243|   44|\n|  10023464| 8996776|        9|2020-07-03|             59|jjbyqkzcimBfoehbv...|product_10023464|   19|\n|  10050363|10476976|        6|2020-07-03|             18|xqhlvkpxtzrfdadry...|product_10050363|   98|\n|  10089524| 5977582|        2|2020-07-01|             53|jchvhzbeaicqitpvx...|product_10089524|  100|\n|  10122266| 1482892|        2|2020-07-07|             25|kezhpglnqigaqwrss...|product_10122266|   89|\n+----------+--------+---------+----------+---------------+--------------------+----------------+-----+\nonly showing top 5 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593513768840_384853446",
+      "id": "20200630-124248_1777122828",
+      "dateCreated": "2020-06-30 12:42:48.840",
+      "dateStarted": "2020-06-30 12:43:07.368",
+      "dateFinished": "2020-06-30 12:43:07.556",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val sales3 \u003d sales2.withColumn(\"totalPrice\", \u0027price * \u0027num_pieces_sold).persist(StorageLevel.MEMORY_ONLY)\nsales3.show(5)",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-30 12:44:50.882",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----------+--------+---------+----------+---------------+--------------------+----------------+-----+----------+\n|product_id|order_id|seller_id|      date|num_pieces_sold|       bill_raw_text|    product_name|price|totalPrice|\n+----------+--------+---------+----------+---------------+--------------------+----------------+-----+----------+\n|  10005243|12478308|        6|2020-07-04|             98|qfvpgiscflyjxphcq...|product_10005243|   44|    4312.0|\n|  10023464| 8996776|        9|2020-07-03|             59|jjbyqkzcimBfoehbv...|product_10023464|   19|    1121.0|\n|  10050363|10476976|        6|2020-07-03|             18|xqhlvkpxtzrfdadry...|product_10050363|   98|    1764.0|\n|  10089524| 5977582|        2|2020-07-01|             53|jchvhzbeaicqitpvx...|product_10089524|  100|    5300.0|\n|  10122266| 1482892|        2|2020-07-07|             25|kezhpglnqigaqwrss...|product_10122266|   89|    2225.0|\n+----------+--------+---------+----------+---------------+--------------------+----------------+-----+----------+\nonly showing top 5 rows\n\r\nsales3: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [product_id: string, order_id: string ... 7 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593513787343_-715954273",
+      "id": "20200630-124307_1014031798",
+      "dateCreated": "2020-06-30 12:43:07.343",
+      "dateStarted": "2020-06-30 12:44:50.907",
+      "dateFinished": "2020-06-30 12:44:51.438",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "sales3.select(\"totalPrice\").agg(mean($\"totalPrice\")).show",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-30 12:50:33.860",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------------------+\n|   avg(totalPrice)|\n+------------------+\n|1246.1338560822878|\n+------------------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593513890882_-2002696781",
+      "id": "20200630-124450_1334402281",
+      "dateCreated": "2020-06-30 12:44:50.882",
+      "dateStarted": "2020-06-30 12:50:33.882",
+      "dateFinished": "2020-06-30 12:55:29.078",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Exercise #2\nFor each seller, what is the average % contribution of an order to the seller\u0027s daily quota?",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 07:53:52.369",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eExercise #2\u003c/h2\u003e\n\u003cp\u003eFor each seller, what is the average % contribution of an order to the seller\u0026rsquo;s daily quota?\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593513907420_903179361",
+      "id": "20200630-124507_336526880",
+      "dateCreated": "2020-06-30 12:45:07.420",
+      "dateStarted": "2020-07-24 07:53:52.370",
+      "dateFinished": "2020-07-24 07:53:52.375",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val sales4 \u003d sales3.join(sellers, \"seller_id\").persist(StorageLevel.MEMORY_AND_DISK)",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-30 13:00:23.651",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "sales4: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [seller_id: string, product_id: string ... 9 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593514265359_-2062964567",
+      "id": "20200630-125105_74149615",
+      "dateCreated": "2020-06-30 12:51:05.359",
+      "dateStarted": "2020-06-30 13:00:23.674",
+      "dateFinished": "2020-06-30 13:00:23.875",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "sales4.show(5)",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-30 13:00:38.227",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---------+----------+--------+----------+---------------+--------------------+----------------+-----+----------+-----------+------------+\n|seller_id|product_id|order_id|      date|num_pieces_sold|       bill_raw_text|    product_name|price|totalPrice|seller_name|daily_target|\n+---------+----------+--------+----------+---------------+--------------------+----------------+-----+----------+-----------+------------+\n|        6|  10005243|12478308|2020-07-04|             98|qfvpgiscflyjxphcq...|product_10005243|   44|    4312.0|   seller_6|     1055915|\n|        9|  10023464| 8996776|2020-07-03|             59|jjbyqkzcimBfoehbv...|product_10023464|   19|    1121.0|   seller_9|     1318051|\n|        6|  10050363|10476976|2020-07-03|             18|xqhlvkpxtzrfdadry...|product_10050363|   98|    1764.0|   seller_6|     1055915|\n|        2|  10089524| 5977582|2020-07-01|             53|jchvhzbeaicqitpvx...|product_10089524|  100|    5300.0|   seller_2|      754188|\n|        2|  10122266| 1482892|2020-07-07|             25|kezhpglnqigaqwrss...|product_10122266|   89|    2225.0|   seller_2|      754188|\n+---------+----------+--------+----------+---------------+--------------------+----------------+-----+----------+-----------+------------+\nonly showing top 5 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593514567082_312956929",
+      "id": "20200630-125607_74475446",
+      "dateCreated": "2020-06-30 12:56:07.082",
+      "dateStarted": "2020-06-30 13:00:38.254",
+      "dateFinished": "2020-06-30 13:00:38.834",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\n\nsales4.filter($\"seller_id\" \u003d\u003d\u003d 9).withColumn(\"percentDailyQuota\", $\"num_pieces_sold\"/$\"daily_target\").agg(mean($\"percentDailyQuota\")).show",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-30 13:58:17.788",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----------------------+\n|avg(percentDailyQuota)|\n+----------------------+\n|  3.837913136180197E-5|\n+----------------------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593514838227_456488678",
+      "id": "20200630-130038_1014246123",
+      "dateCreated": "2020-06-30 13:00:38.227",
+      "dateStarted": "2020-06-30 13:58:17.813",
+      "dateFinished": "2020-06-30 13:58:33.341",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "sales4.groupBy($\"seller_id\").agg($\"num_pieces_sold\"/$\"daily_target\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-30 14:17:21.004",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 104.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "org.apache.spark.sql.AnalysisException: expression \u0027`num_pieces_sold`\u0027 is neither present in the group by, nor is it an aggregate function. Add to group by or wrap in first() (or first_value) if you don\u0027t care which value you get.;;\r\nAggregate [seller_id#48], [seller_id#48, (cast(num_pieces_sold#50 as double) / cast(daily_target#25 as double)) AS (num_pieces_sold / daily_target)#21229]\r\n+- Project [seller_id#48, product_id#47, order_id#46, date#49, num_pieces_sold#50, bill_raw_text#51, product_name#1, price#2, totalPrice#20405, seller_name#24, daily_target#25]\r\n   +- Join Inner, (seller_id#48 \u003d seller_id#23)\r\n      :- Project [product_id#47, order_id#46, seller_id#48, date#49, num_pieces_sold#50, bill_raw_text#51, product_name#1, price#2, (cast(price#2 as double) * cast(num_pieces_sold#50 as double)) AS totalPrice#20405]\r\n      :  +- Project [product_id#47, order_id#46, seller_id#48, date#49, num_pieces_sold#50, bill_raw_text#51, product_name#1, price#2]\r\n      :     +- Join Inner, (product_id#47 \u003d product_id#0)\r\n      :        :- Relation[order_id#46,product_id#47,seller_id#48,date#49,num_pieces_sold#50,bill_raw_text#51] parquet\r\n      :        +- Relation[product_id#0,product_name#1,price#2] parquet\r\n      +- Relation[seller_id#23,seller_name#24,daily_target#25] parquet\r\n\r\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$class.failAnalysis(CheckAnalysis.scala:43)\r\n  at org.apache.spark.sql.catalyst.analysis.Analyzer.failAnalysis(Analyzer.scala:95)\r\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$1.org$apache$spark$sql$catalyst$analysis$CheckAnalysis$class$$anonfun$$checkValidAggregateExpression$1(CheckAnalysis.scala:225)\r\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$1$$anonfun$org$apache$spark$sql$catalyst$analysis$CheckAnalysis$class$$anonfun$$checkValidAggregateExpression$1$5.apply(CheckAnalysis.scala:231)\r\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$1$$anonfun$org$apache$spark$sql$catalyst$analysis$CheckAnalysis$class$$anonfun$$checkValidAggregateExpression$1$5.apply(CheckAnalysis.scala:231)\r\n  at scala.collection.immutable.List.foreach(List.scala:392)\r\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$1.org$apache$spark$sql$catalyst$analysis$CheckAnalysis$class$$anonfun$$checkValidAggregateExpression$1(CheckAnalysis.scala:231)\r\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$1$$anonfun$org$apache$spark$sql$catalyst$analysis$CheckAnalysis$class$$anonfun$$checkValidAggregateExpression$1$5.apply(CheckAnalysis.scala:231)\r\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$1$$anonfun$org$apache$spark$sql$catalyst$analysis$CheckAnalysis$class$$anonfun$$checkValidAggregateExpression$1$5.apply(CheckAnalysis.scala:231)\r\n  at scala.collection.immutable.List.foreach(List.scala:392)\r\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$1.org$apache$spark$sql$catalyst$analysis$CheckAnalysis$class$$anonfun$$checkValidAggregateExpression$1(CheckAnalysis.scala:231)\r\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$1$$anonfun$org$apache$spark$sql$catalyst$analysis$CheckAnalysis$class$$anonfun$$checkValidAggregateExpression$1$5.apply(CheckAnalysis.scala:231)\r\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$1$$anonfun$org$apache$spark$sql$catalyst$analysis$CheckAnalysis$class$$anonfun$$checkValidAggregateExpression$1$5.apply(CheckAnalysis.scala:231)\r\n  at scala.collection.immutable.List.foreach(List.scala:392)\r\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$1.org$apache$spark$sql$catalyst$analysis$CheckAnalysis$class$$anonfun$$checkValidAggregateExpression$1(CheckAnalysis.scala:231)\r\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$1$$anonfun$apply$10.apply(CheckAnalysis.scala:258)\r\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$1$$anonfun$apply$10.apply(CheckAnalysis.scala:258)\r\n  at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)\r\n  at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)\r\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$1.apply(CheckAnalysis.scala:258)\r\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$1.apply(CheckAnalysis.scala:86)\r\n  at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:127)\r\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$class.checkAnalysis(CheckAnalysis.scala:86)\r\n  at org.apache.spark.sql.catalyst.analysis.Analyzer.checkAnalysis(Analyzer.scala:95)\r\n  at org.apache.spark.sql.catalyst.analysis.Analyzer$$anonfun$executeAndCheck$1.apply(Analyzer.scala:108)\r\n  at org.apache.spark.sql.catalyst.analysis.Analyzer$$anonfun$executeAndCheck$1.apply(Analyzer.scala:105)\r\n  at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper$.markInAnalyzer(AnalysisHelper.scala:201)\r\n  at org.apache.spark.sql.catalyst.analysis.Analyzer.executeAndCheck(Analyzer.scala:105)\r\n  at org.apache.spark.sql.execution.QueryExecution.analyzed$lzycompute(QueryExecution.scala:57)\r\n  at org.apache.spark.sql.execution.QueryExecution.analyzed(QueryExecution.scala:55)\r\n  at org.apache.spark.sql.execution.QueryExecution.assertAnalyzed(QueryExecution.scala:47)\r\n  at org.apache.spark.sql.Dataset$.ofRows(Dataset.scala:78)\r\n  at org.apache.spark.sql.RelationalGroupedDataset.toDF(RelationalGroupedDataset.scala:65)\r\n  at org.apache.spark.sql.RelationalGroupedDataset.agg(RelationalGroupedDataset.scala:224)\r\n  ... 47 elided\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593514886279_348112529",
+      "id": "20200630-130126_715413722",
+      "dateCreated": "2020-06-30 13:01:26.279",
+      "dateStarted": "2020-06-30 14:05:14.777",
+      "dateFinished": "2020-06-30 14:05:15.129",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.types.IntegerType\n\nval sales5 \u003d sales4.select(\"seller_id\", \"num_pieces_sold\", \"daily_target\")\n      .withColumn(\"num_pieces_sold\", \u0027num_pieces_sold.cast(IntegerType))\n      .withColumn(\"daily_target\", \u0027daily_target.cast(IntegerType))\n      .persist(StorageLevel.MEMORY_AND_DISK)\n      \nval seller_num_pieces_sold \u003d sales5.groupBy(\"seller_id\").sum(\"num_pieces_sold\").persist(StorageLevel.MEMORY_AND_DISK)\n\nval seller_pieces_target \u003d seller_num_pieces_sold.join(sellers.select(\"seller_id\", \"daily_target\"), \"seller_id\").persist(StorageLevel.MEMORY_AND_DISK)\n\n\nseller_pieces_target.withColumn(\"percentContr\", col(\"sum(num_pieces_sold)\")/col(\"daily_target\")).sort($\"percentContr\").show(5)",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-30 14:39:55.860",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---------+--------------------+------------+------------------+\n|seller_id|sum(num_pieces_sold)|daily_target|      percentContr|\n+---------+--------------------+------------+------------------+\n|        7|             5610746|     1946998|2.8817420459599856|\n|        4|             5617087|     1532808|3.6645731233135526|\n|        9|             5634837|     1318051| 4.275128200653844|\n|        5|             5601350|     1199693| 4.668986148956441|\n|        6|             5621048|     1055915| 5.323390613827818|\n+---------+--------------------+------------+------------------+\nonly showing top 5 rows\n\r\nimport org.apache.spark.sql.types.IntegerType\r\nsales5: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [seller_id: string, num_pieces_sold: int ... 1 more field]\r\nseller_num_pieces_sold: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [seller_id: string, sum(num_pieces_sold): bigint]\r\nseller_pieces_target: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [seller_id: string, sum(num_pieces_sold): bigint ... 1 more field]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593518714751_-11711577",
+      "id": "20200630-140514_1310353015",
+      "dateCreated": "2020-06-30 14:05:14.751",
+      "dateStarted": "2020-06-30 14:39:55.884",
+      "dateFinished": "2020-06-30 14:39:56.596",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.types.IntegerType\n\nval sales5 \u003d sales4.select(\"seller_id\", \"num_pieces_sold\", \"daily_target\")\n      .withColumn(\"num_pieces_sold\", \u0027num_pieces_sold.cast(IntegerType))\n      .withColumn(\"daily_target\", \u0027daily_target.cast(IntegerType))\n      .persist(StorageLevel.MEMORY_AND_DISK)\n      \nval seller_num_pieces_sold \u003d sales5.groupBy(\"seller_id\").agg(count(\"num_pieces_sold\"), sum(\"num_pieces_sold\")).persist(StorageLevel.MEMORY_AND_DISK)\n\nval seller_pieces_target \u003d seller_num_pieces_sold.join(sellers.select(\"seller_id\", \"daily_target\"), \"seller_id\").persist(StorageLevel.MEMORY_AND_DISK)\n\nseller_pieces_target.withColumn(\"percentContr\", col(\"sum(num_pieces_sold)\")/col(\"daily_target\")/col(\"count(num_pieces_sold)\")).sort($\"percentContr\").show(5, 0)",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-30 14:48:09.166",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---------+----------------------+--------------------+------------+---------------------+\n|seller_id|count(num_pieces_sold)|sum(num_pieces_sold)|daily_target|percentContr         |\n+---------+----------------------+--------------------+------------+---------------------+\n|0        |19000000              |959445802           |2500000     |2.0198858989473686E-5|\n|7        |111040                |5610746             |1946998     |2.5952287877881714E-5|\n|4        |111168                |5617087             |1532808     |3.2964280398258064E-5|\n|9        |111392                |5634837             |1318051     |3.837913136180196E-5 |\n|5        |110874                |5601350             |1199693     |4.2110739659040364E-5|\n+---------+----------------------+--------------------+------------+---------------------+\nonly showing top 5 rows\n\r\nimport org.apache.spark.sql.types.IntegerType\r\nsales5: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [seller_id: string, num_pieces_sold: int ... 1 more field]\r\nseller_num_pieces_sold: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [seller_id: string, count(num_pieces_sold): bigint ... 1 more field]\r\nseller_pieces_target: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [seller_id: string, count(num_pieces_sold): bigint ... 2 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593520999299_395658221",
+      "id": "20200630-144319_49723321",
+      "dateCreated": "2020-06-30 14:43:19.299",
+      "dateStarted": "2020-06-30 14:48:09.192",
+      "dateFinished": "2020-06-30 14:48:09.581",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Exercise #3\nWho are the second most selling and the least selling persons (sellers) for each product?",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-02 19:04:21.375",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eExercise #3\u003c/h2\u003e\n\u003cp\u003eWho are the second most selling and the least selling persons (sellers) for each product?\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593518734068_-1332732327",
+      "id": "20200630-140534_75910511",
+      "dateCreated": "2020-06-30 14:05:34.068",
+      "dateStarted": "2020-07-02 19:04:21.397",
+      "dateFinished": "2020-07-02 19:04:26.716",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.storage.StorageLevel\n\n\nval d_path \u003d \"D:/AnacondaProjects/Datasets/DatasetToCompleteTheSixSparkExercises\"\nval d_path_prod \u003d d_path + \"/products_parquet\"\nval d_path_sales \u003d d_path + \"/sales_parquet\"\nval d_path_seller \u003d d_path + \"/sellers_parquet\"\n\nval sellers \u003d spark.read.format(\"parquet\").load(d_path_seller)\n\nval prods \u003d spark.read.format(\"parquet\").load(d_path_prod)\n\nval sales \u003d spark.read.format(\"parquet\").load(d_path_sales)\n\nsales.show(1)\nsellers.show(1)\nprods.show(1)",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 08:07:07.160",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 338.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|kyeibuumwlyhuwksx...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 1 row\n\r\n+---------+-----------+------------+\n|seller_id|seller_name|daily_target|\n+---------+-----------+------------+\n|        0|   seller_0|     2500000|\n+---------+-----------+------------+\nonly showing top 1 row\n\r\n+----------+------------+-----+\n|product_id|product_name|price|\n+----------+------------+-----+\n|         0|   product_0|   22|\n+----------+------------+-----+\nonly showing top 1 row\n\r\nimport org.apache.spark.storage.StorageLevel\r\nd_path: String \u003d D:/AnacondaProjects/Datasets/DatasetToCompleteTheSixSparkExercises\r\nd_path_prod: String \u003d D:/AnacondaProjects/Datasets/DatasetToCompleteTheSixSparkExercises/products_parquet\r\nd_path_sales: String \u003d D:/AnacondaProjects/Datasets/DatasetToCompleteTheSixSparkExercises/sales_parquet\r\nd_path_seller: String \u003d D:/AnacondaProjects/Datasets/DatasetToCompleteTheSixSparkExercises/sellers_parquet\r\nsellers: org.apache.spark.sql.DataFrame \u003d [seller_id: string, seller_name: string ... 1 more field]\r\nprods: org.apache.spark.sql.DataFrame \u003d [product_id: string, product_name: string ... 1 more field]\r\nsales: org.apache.spark.sql.DataFrame \u003d [order_id: string, product_id: string ... 4 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593520676915_1719840260",
+      "id": "20200630-143756_167771222",
+      "dateCreated": "2020-06-30 14:37:56.915",
+      "dateStarted": "2020-07-24 08:06:21.363",
+      "dateFinished": "2020-07-24 08:06:54.347",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "sales.printSchema",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 08:07:09.730",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- order_id: string (nullable \u003d true)\n |-- product_id: string (nullable \u003d true)\n |-- seller_id: string (nullable \u003d true)\n |-- date: string (nullable \u003d true)\n |-- num_pieces_sold: string (nullable \u003d true)\n |-- bill_raw_text: string (nullable \u003d true)\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593552584742_-1652124697",
+      "id": "20200630-232944_414930769",
+      "dateCreated": "2020-06-30 23:29:44.742",
+      "dateStarted": "2020-07-24 08:07:09.784",
+      "dateFinished": "2020-07-24 08:07:10.002",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nNella seguente eseguo una serie di operazioni:\n- seleziono le colonne che mi interessano: `select`\n- poichè devo summare i pezzi venduti (\"num_pieces_sold\") voglio che questi siano un intero: `withColumn` e `cast`\n- raggruppo su product_id: `groupBy`\n- genero una pivot table, usando seller_id come pivot: `pivot`\n- aggrego i dati aventi stesso group_id e pivot_id facendo la somma dei pezzi venduti\n- persisto, poichè si tratta di una operazione costosa \n",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 08:07:25.373",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eNella seguente eseguo una serie di operazioni:\u003cbr/\u003e- seleziono le colonne che mi interessano: \u003ccode\u003eselect\u003c/code\u003e\u003cbr/\u003e- poichè devo summare i pezzi venduti (\u0026ldquo;num_pieces_sold\u0026rdquo;) voglio che questi siano un intero: \u003ccode\u003ewithColumn\u003c/code\u003e e \u003ccode\u003ecast\u003c/code\u003e\u003cbr/\u003e- raggruppo su product_id: \u003ccode\u003egroupBy\u003c/code\u003e\u003cbr/\u003e- genero una pivot table, usando seller_id come pivot: \u003ccode\u003epivot\u003c/code\u003e\u003cbr/\u003e- aggrego i dati aventi stesso group_id e pivot_id facendo la somma dei pezzi venduti\u003cbr/\u003e- persisto, poichè si tratta di una operazione costosa\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1595570474998_-812055617",
+      "id": "20200724-080114_772649120",
+      "dateCreated": "2020-07-24 08:01:14.998",
+      "dateStarted": "2020-07-24 08:07:25.373",
+      "dateFinished": "2020-07-24 08:07:25.380",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.types.IntegerType\n\nval table1 \u003d sales.select(\"product_id\", \"seller_id\", \"num_pieces_sold\").withColumn(\"num_pieces_sold\", col(\"num_pieces_sold\").cast(IntegerType)).groupBy(\"product_id\").pivot(\"seller_id\").sum(\"num_pieces_sold\").persist(StorageLevel.MEMORY_AND_DISK)\n\ntable1.show(5)\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 08:07:28.235",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----------+----+----+----+----+----+----+----+----+----+----+\n|product_id|   0|   1|   2|   3|   4|   5|   6|   7|   8|   9|\n+----------+----+----+----+----+----+----+----+----+----+----+\n|  70710071|null|null|null|null|null|  98|null|null|null|null|\n|  71540195|null|null|null|null|null|  55|null|null|null|null|\n|  42804009|null|null|null|null|null|  59|null|null|null|null|\n|  30938279|null|null|null|null|null|null|null|null|  65|null|\n|  68805333|null|  43|null|null|null|null|null|null|null|null|\n+----------+----+----+----+----+----+----+----+----+----+----+\nonly showing top 5 rows\n\r\nimport org.apache.spark.sql.types.IntegerType\r\ntable1: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [product_id: string, 0: bigint ... 9 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593552379796_354370199",
+      "id": "20200630-232619_2089612446",
+      "dateCreated": "2020-06-30 23:26:19.796",
+      "dateStarted": "2020-07-24 08:07:28.286",
+      "dateFinished": "2020-07-24 08:08:12.440",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nCome si vede ci sono molti `null` che voglio convertire in zero. La funzione `fill` prende come primo argomento il valore che voglio mettere al posto di `null`, e come secondo argomento una lista delle colonne sulle quali fare l\u0027operazione, tutte in questo caso: `table1.column` ",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 08:10:51.268",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eCome si vede ci sono molti \u003ccode\u003enull\u003c/code\u003e che voglio convertire in zero. La funzione \u003ccode\u003efill\u003c/code\u003e prende come primo argomento il valore che voglio mettere al posto di \u003ccode\u003enull\u003c/code\u003e, e come secondo argomento una lista delle colonne sulle quali fare l\u0026rsquo;operazione, tutte in questo caso: \u003ccode\u003etable1.column\u003c/code\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1595570903366_688473146",
+      "id": "20200724-080823_298559871",
+      "dateCreated": "2020-07-24 08:08:23.366",
+      "dateStarted": "2020-07-24 08:10:51.269",
+      "dateFinished": "2020-07-24 08:10:51.274",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val table2 \u003d table1.na.fill(0, table1.columns).persist()\ntable2.show(5)",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 08:10:58.615",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----------+---+---+---+---+---+---+---+---+---+---+\n|product_id|  0|  1|  2|  3|  4|  5|  6|  7|  8|  9|\n+----------+---+---+---+---+---+---+---+---+---+---+\n|  70710071|  0|  0|  0|  0|  0| 98|  0|  0|  0|  0|\n|  71540195|  0|  0|  0|  0|  0| 55|  0|  0|  0|  0|\n|  42804009|  0|  0|  0|  0|  0| 59|  0|  0|  0|  0|\n|  30938279|  0|  0|  0|  0|  0|  0|  0|  0| 65|  0|\n|  68805333|  0| 43|  0|  0|  0|  0|  0|  0|  0|  0|\n+----------+---+---+---+---+---+---+---+---+---+---+\nonly showing top 5 rows\n\r\ntable2: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [product_id: string, 0: bigint ... 9 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593553012980_-213562860",
+      "id": "20200630-233652_1734103574",
+      "dateCreated": "2020-06-30 23:36:52.980",
+      "dateStarted": "2020-07-24 08:10:58.667",
+      "dateFinished": "2020-07-24 08:10:59.374",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1595574210977_-574870830",
+      "id": "20200724-090330_1277398749",
+      "dateCreated": "2020-07-24 09:03:30.977",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1595574210696_525352235",
+      "id": "20200724-090330_1419028871",
+      "dateCreated": "2020-07-24 09:03:30.696",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val a \u003d table2.drop(\"product_id\").head\n\nval b \u003d a.toSeq.map( x \u003d\u003e x.toString.toInt).zipWithIndex\n\nval max_index \u003d b.maxBy(_._1)._2\n\n//or\n\nval c \u003d a.toSeq.map( x \u003d\u003e x.toString.toInt)\nval d \u003d c.indexOf(c.max)",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 08:14:11.106",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "a: org.apache.spark.sql.Row \u003d [0,0,0,0,0,98,0,0,0,0]\r\nb: Seq[(Int, Int)] \u003d ArrayBuffer((0,0), (0,1), (0,2), (0,3), (0,4), (98,5), (0,6), (0,7), (0,8), (0,9))\r\nmax_index: Int \u003d 5\r\nc: Seq[Int] \u003d ArrayBuffer(0, 0, 0, 0, 0, 98, 0, 0, 0, 0)\r\nd: Int \u003d 5\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593553273573_167719977",
+      "id": "20200630-234113_1866963530",
+      "dateCreated": "2020-06-30 23:41:13.573",
+      "dateStarted": "2020-07-24 08:14:11.157",
+      "dateFinished": "2020-07-24 08:14:12.058",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.Row\n\ndef find_2_last(x:Row):(String,String,String) \u003d {\n    val zipped_vec \u003d x.toSeq.map( x \u003d\u003e x.toString.toInt).zipWithIndex\n    \n    val map_ \u003d zipped_vec.groupBy(_._1)\n    \n    val keys_ \u003d map_.keys.toArray\n    \n    val keys_sorted \u003d keys_.sorted\n    \n    //map_ contains only one key \u003d\u003e only best seller\n    //map contains 2 keys \u003d\u003e first, second \u003dlast\n    //mp contains at least 3 keys \u003d\u003e first, second, last\n    \n    val keys_m0 \u003d map_.keys.filter(_.toInt\u003e0)\n    \n    val keys_num \u003d keys_m0.size\n    \n    keys_num match {\n        case 1 \u003d\u003e (\"1\",\"0\",\"0\")\n        case 2 \u003d\u003e (\"2\",\"0\",\"0\")\n        case 3 \u003d\u003e (\"3\",\"0\",\"0\")\n    }\n    \n}\n\nfind_2_last(a)",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 08:26:50.243",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.Row\r\nfind_2_last: (x: org.apache.spark.sql.Row)(String, String, String)\r\nres29: (String, String, String) \u003d (1,0,0)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593553720554_-1066684671",
+      "id": "20200630-234840_89721835",
+      "dateCreated": "2020-06-30 23:48:40.555",
+      "dateStarted": "2020-07-24 08:26:50.293",
+      "dateFinished": "2020-07-24 08:26:50.789",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "table2.show(2)",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-02 23:48:03.580",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----------+---+---+---+---+---+---+---+---+---+---+\n|product_id|  0|  1|  2|  3|  4|  5|  6|  7|  8|  9|\n+----------+---+---+---+---+---+---+---+---+---+---+\n|  70710071|  0|  0|  0|  0|  0| 98|  0|  0|  0|  0|\n|  71540195|  0|  0|  0|  0|  0| 55|  0|  0|  0|  0|\n+----------+---+---+---+---+---+---+---+---+---+---+\nonly showing top 2 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593726142878_873340364",
+      "id": "20200702-234222_1791641316",
+      "dateCreated": "2020-07-02 23:42:22.878",
+      "dateStarted": "2020-07-02 23:48:03.625",
+      "dateFinished": "2020-07-02 23:48:03.884",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "dynamicColumnSelection.map(col)",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 09:04:58.253",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res67: Array[org.apache.spark.sql.Column] \u003d Array(a, b, c, d, e, f)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1595573691083_-703137130",
+      "id": "20200724-085451_393055850",
+      "dateCreated": "2020-07-24 08:54:51.083",
+      "dateStarted": "2020-07-24 09:04:58.304",
+      "dateFinished": "2020-07-24 09:04:58.509",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "table2.columns.map(col)",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 09:12:01.477",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cconsole\u003e:29: error: no `: _*\u0027 annotation allowed here\r\n(such annotations are only allowed in arguments to *-parameters)\r\n       table2.columns.map(col):_*\r\n                              ^\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1595574322306_212516637",
+      "id": "20200724-090522_1971877933",
+      "dateCreated": "2020-07-24 09:05:22.306",
+      "dateStarted": "2020-07-24 09:11:49.181",
+      "dateFinished": "2020-07-24 09:11:49.211",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// simply creating a one line dataframe to check that it\u0027s working\r\nval df \u003d Seq((1, 2, 3, 4, 5 ,6, 7, 8, 9))\r\n    .toDF(\"a\", \"b\", \"c\", \"d\", \"e\", \"f\", \"g\", \"h\", \"i\")\r\n//val e \u003d expr(\"stack(3, \u0027g\u0027, g, \u0027h\u0027, h, \u0027i\u0027, i) as (Key,Value)\")\r\nval dynamicColumnSelection \u003d Array(\"a\", \"b\", \"c\", \"d\", \"e\", \"f\")\r\nval result \u003d df.select(dynamicColumnSelection.map(col) :_*)\r\ndf.show()\r\nresult.show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 09:04:42.606",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+---+---+---+---+---+---+---+---+\n|  a|  b|  c|  d|  e|  f|  g|  h|  i|\n+---+---+---+---+---+---+---+---+---+\n|  1|  2|  3|  4|  5|  6|  7|  8|  9|\n+---+---+---+---+---+---+---+---+---+\n\r\n+---+---+---+---+---+---+\n|  a|  b|  c|  d|  e|  f|\n+---+---+---+---+---+---+\n|  1|  2|  3|  4|  5|  6|\n+---+---+---+---+---+---+\n\r\ndf: org.apache.spark.sql.DataFrame \u003d [a: int, b: int ... 7 more fields]\r\ndynamicColumnSelection: Array[String] \u003d Array(a, b, c, d, e, f)\r\nresult: org.apache.spark.sql.DataFrame \u003d [a: int, b: int ... 4 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593725819406_-1266628594",
+      "id": "20200702-233659_1832576565",
+      "dateCreated": "2020-07-02 23:36:59.406",
+      "dateStarted": "2020-07-24 09:04:20.128",
+      "dateFinished": "2020-07-24 09:04:20.564",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "table2.drop(\"product_id\").select(table2.drop(\"product_id\").columns.map(col):_*).head",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 09:15:08.366",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res78: org.apache.spark.sql.Row \u003d [0,0,0,0,0,98,0,0,0,0]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1595572935271_-969741912",
+      "id": "20200724-084215_250122185",
+      "dateCreated": "2020-07-24 08:42:15.271",
+      "dateStarted": "2020-07-24 09:14:33.905",
+      "dateFinished": "2020-07-24 09:14:34.156",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "table2.head.toSeq",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 12:07:44.490",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res82: Seq[Any] \u003d WrappedArray(70710071, 0, 0, 0, 0, 0, 98, 0, 0, 0, 0)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1595572283289_757809831",
+      "id": "20200724-083123_1604890936",
+      "dateCreated": "2020-07-24 08:31:23.289",
+      "dateStarted": "2020-07-24 12:07:44.544",
+      "dateFinished": "2020-07-24 12:07:44.736",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val x\u003dArray(\"10\",\"2\",5)\nx.zipWithIndex",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 09:19:42.117",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "x: Array[Any] \u003d Array(10, 2, 5)\r\nres80: Array[(Any, Int)] \u003d Array((10,0), (2,1), (5,2))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1595575134516_-2000148849",
+      "id": "20200724-091854_691361267",
+      "dateCreated": "2020-07-24 09:18:54.516",
+      "dateStarted": "2020-07-24 09:19:42.168",
+      "dateFinished": "2020-07-24 09:19:42.396",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val r1 \u003d table2.drop(\"product_id\").head.toSeq.zipWithIndex\nval r2 \u003d r1.groupBy(_._1)\n//r2.toSeq.sortBy(_._1)",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 12:12:29.812",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "r1: Seq[(Any, Int)] \u003d ArrayBuffer((0,0), (0,1), (0,2), (0,3), (0,4), (98,5), (0,6), (0,7), (0,8), (0,9))\r\nr2: scala.collection.immutable.Map[Any,Seq[(Any, Int)]] \u003d Map(98 -\u003e ArrayBuffer((98,5)), 0 -\u003e ArrayBuffer((0,0), (0,1), (0,2), (0,3), (0,4), (0,6), (0,7), (0,8), (0,9)))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1595585387364_364291067",
+      "id": "20200724-120947_2042614938",
+      "dateCreated": "2020-07-24 12:09:47.364",
+      "dateStarted": "2020-07-24 12:12:29.865",
+      "dateFinished": "2020-07-24 12:12:30.153",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "def func_find(x:Row) \u003d {\n    \n    val zipped_vec \u003d x.toSeq.zipWithIndex\n    \n    zipped_vec.groupBy(_._1)\n    \n}",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 12:09:27.353",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1595574980214_324484976",
+      "id": "20200724-091620_890060097",
+      "dateCreated": "2020-07-24 09:16:20.214",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val e \u003d b.sortBy(_._1)\nval mv \u003d e(e.size-1) //miglior venditore\nval smv \u003d e(e.size-2) //secondo miglior venditore, pari merito non considerati\nval pv \u003d e(0) //peggior venditore",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 08:14:17.586",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "e: Seq[(Int, Int)] \u003d ArrayBuffer((0,0), (0,1), (0,2), (0,3), (0,4), (0,6), (0,7), (0,8), (0,9), (98,5))\r\nmv: (Int, Int) \u003d (98,5)\r\nsmv: (Int, Int) \u003d (0,9)\r\npv: (Int, Int) \u003d (0,0)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593554395913_905915730",
+      "id": "20200630-235955_658112126",
+      "dateCreated": "2020-06-30 23:59:55.913",
+      "dateStarted": "2020-07-24 08:14:17.637",
+      "dateFinished": "2020-07-24 08:14:18.069",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "var f \u003d e.groupBy(_._1).keys.toArray //per considerare i pari merito\nf.size",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 08:16:18.712",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "f: Array[Int] \u003d Array(98, 0)\r\nres7: Int \u003d 2\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593555148824_-182671818",
+      "id": "20200701-001228_201939196",
+      "dateCreated": "2020-07-01 00:12:28.824",
+      "dateStarted": "2020-07-24 08:16:18.763",
+      "dateFinished": "2020-07-24 08:16:19.223",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "e.groupBy(_._1)",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 08:18:56.922",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res9: scala.collection.immutable.Map[Int,Seq[(Int, Int)]] \u003d Map(98 -\u003e ArrayBuffer((98,5)), 0 -\u003e ArrayBuffer((0,0), (0,1), (0,2), (0,3), (0,4), (0,6), (0,7), (0,8), (0,9)))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1595571528782_-2140584275",
+      "id": "20200724-081848_269090401",
+      "dateCreated": "2020-07-24 08:18:48.782",
+      "dateStarted": "2020-07-24 08:18:56.970",
+      "dateFinished": "2020-07-24 08:18:57.287",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "e.groupBy(_._1)(f.max)(0)._2",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 08:23:15.205",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res27: Int \u003d 5\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1595571556565_255492406",
+      "id": "20200724-081916_2021327153",
+      "dateCreated": "2020-07-24 08:19:16.565",
+      "dateStarted": "2020-07-24 08:23:15.255",
+      "dateFinished": "2020-07-24 08:23:15.475",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 08:23:22.715",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res26: Int \u003d 98\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1595571731129_-1261510965",
+      "id": "20200724-082211_1416519249",
+      "dateCreated": "2020-07-24 08:22:11.129",
+      "dateStarted": "2020-07-24 08:23:08.001",
+      "dateFinished": "2020-07-24 08:23:08.167",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "if (f.size\u003d\u003d2) {\n    println(\"best seller: \", e.groupBy(_._1)(f.max)(0)._2)\n}\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 08:24:14.296",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "(best seller: ,5)\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1595571347675_1962195260",
+      "id": "20200724-081547_1143466550",
+      "dateCreated": "2020-07-24 08:15:47.675",
+      "dateStarted": "2020-07-24 08:23:41.067",
+      "dateFinished": "2020-07-24 08:23:41.302",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val arr \u003d Array(1,2,5,3,4)",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-02 19:18:22.343",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "arr: Array[Int] \u003d Array(1, 2, 5, 3, 4)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593709591063_-591008623",
+      "id": "20200702-190631_225811402",
+      "dateCreated": "2020-07-02 19:06:31.063",
+      "dateStarted": "2020-07-02 19:18:22.403",
+      "dateFinished": "2020-07-02 19:18:22.549",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val arr_sort \u003d arr.sorted\n\narr_sort(arr_sort.size-1)",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-02 19:20:29.779",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "arr_sort: Array[Int] \u003d Array(1, 2, 3, 4, 5)\r\nres43: Int \u003d 5\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593710307382_-2141081869",
+      "id": "20200702-191827_489377295",
+      "dateCreated": "2020-07-02 19:18:27.382",
+      "dateStarted": "2020-07-02 19:20:29.822",
+      "dateFinished": "2020-07-02 19:20:29.975",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Exercise #4\nCreate a new column called \"hashed_bill\" defined as follows:\n- if the order_id is even: apply MD5 hashing iteratively to the bill_raw_text field, once for each \u0027A\u0027 (capital \u0027A\u0027) present in the text. E.g. if the bill text is \u0027nbAAnllA\u0027, you would apply hashing three times iteratively (only if the order number is even)\n- if the order_id is odd: apply SHA256 hashing to the bill text\nFinally, check if there are any duplicate on the new column",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 07:55:11.801",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eExercise #4\u003c/h2\u003e\n\u003cp\u003eCreate a new column called \u0026ldquo;hashed_bill\u0026rdquo; defined as follows:\u003cbr/\u003e- if the order_id is even: apply MD5 hashing iteratively to the bill_raw_text field, once for each \u0026lsquo;A\u0026rsquo; (capital \u0026lsquo;A\u0026rsquo;) present in the text. E.g. if the bill text is \u0026lsquo;nbAAnllA\u0026rsquo;, you would apply hashing three times iteratively (only if the order number is even)\u003cbr/\u003e- if the order_id is odd: apply SHA256 hashing to the bill text\u003cbr/\u003eFinally, check if there are any duplicate on the new column\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593537862968_-2029915023",
+      "id": "20200630-192422_910968967",
+      "dateCreated": "2020-06-30 19:24:22.968",
+      "dateStarted": "2020-07-24 07:55:11.800",
+      "dateFinished": "2020-07-24 07:55:11.809",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "md5(\"66zshshsh\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-01 10:08:36.760",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cconsole\u003e:27: error: type mismatch;\r\n found   : String(\"66zshshsh\")\r\n required: org.apache.spark.sql.Column\r\n       md5(\"66zshshsh\")\r\n           ^\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593542692047_1841258819",
+      "id": "20200630-204452_912611122",
+      "dateCreated": "2020-06-30 20:44:52.047",
+      "dateStarted": "2020-07-01 10:08:36.797",
+      "dateFinished": "2020-07-01 10:08:36.922",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val firstrow \u003d sales.head",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-01 14:47:20.787",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "firstrow: String \u003d [1,0,0,2020-07-10,26,kyeibuumwlyhuwksxodcawelubbyznxvpfxyxzhftudwtiemdhqaqoDeodltimrusmwtfdikxoqpuFliyvacNgrpigspylwaxvbdwiqurqkqidkujwziucglsvzxjbswtkeogxyncoweuvczualykpszcbrmwwyjkgbvpfyijshnkbjdrxppwmclymvofjslldhwnwajnnyvzktbjixlsodivgmfsvwjfqjuwwrqelkkzupmlggzeqmcskkvjggnajgimzkdtzgvhuzlgubkigdctumjhdwnzzlnrlyuhlhmlgfxuhyxlzraqhqgfsgvtigkfuuuawoxherqhovyyyglsxwoqkwntuaesstxvtwhzvzxincwpkhigcwslpokwplgrotrnttohkzzumqcejkvgwkvexpnyjrwzbfauervihrvezyfndmekllabllewmqrgbfwimygcwlbeblcfqitaxnoaudfgaodqbmsgavetmrtlnyy]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593590916760_1629596100",
+      "id": "20200701-100836_218884871",
+      "dateCreated": "2020-07-01 10:08:36.760",
+      "dateStarted": "2020-07-01 14:46:58.255",
+      "dateFinished": "2020-07-01 14:46:58.626",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "firstrow(5).toString.contains(\"A\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-01 10:26:35.901",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res12: Boolean \u003d true\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593591812356_-1003552702",
+      "id": "20200701-102332_2091143264",
+      "dateCreated": "2020-07-01 10:23:32.356",
+      "dateStarted": "2020-07-01 10:25:52.615",
+      "dateFinished": "2020-07-01 10:25:52.839",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val occ_A \u003d firstrow(5).toString.count(_ \u003d\u003d \u0027i\u0027)",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-01 14:47:23.107",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cconsole\u003e:28: error: value count is not a member of Char\r\n       val occ_A \u003d firstrow(5).count(_ \u003d\u003d \u0027i\u0027)\r\n                               ^\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593591846144_-1661240503",
+      "id": "20200701-102406_510685583",
+      "dateCreated": "2020-07-01 10:24:06.144",
+      "dateStarted": "2020-07-01 14:47:06.011",
+      "dateFinished": "2020-07-01 14:47:06.031",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\r\n/**\r\n* Remove blank lines from the specified input file.\r\n*/\r\ndef remove(path: String, compressWhiteSpace: Boolean \u003d false): Seq[String] \u003d for {\r\n    line \u003c- scala.io.Source.fromFile(path).getLines.toSeq \r\n    if line.matches(\"\"\"^\\s*$\"\"\") \u003d\u003d false \r\n        line2 \u003d if (compressWhiteSpace) line replaceAll (\"\\\\s+\", \" \") \r\n    else line\r\n} yield line2",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-01 14:45:11.983",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "remove: (path: String, compressWhiteSpace: Boolean)Seq[String]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593592058213_699100258",
+      "id": "20200701-102738_781162239",
+      "dateCreated": "2020-07-01 10:27:38.213",
+      "dateStarted": "2020-07-01 14:45:12.019",
+      "dateFinished": "2020-07-01 14:45:12.328",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "remove(\" prova remove blank lines \")",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-01 14:45:27.501",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "java.io.FileNotFoundException:  prova remove blank lines  (The system cannot find the file specified)\r\n  at java.io.FileInputStream.open0(Native Method)\r\n  at java.io.FileInputStream.open(FileInputStream.java:195)\r\n  at java.io.FileInputStream.\u003cinit\u003e(FileInputStream.java:138)\r\n  at scala.io.Source$.fromFile(Source.scala:91)\r\n  at scala.io.Source$.fromFile(Source.scala:76)\r\n  at scala.io.Source$.fromFile(Source.scala:54)\r\n  at remove(\u003cconsole\u003e:30)\r\n  ... 48 elided\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593607441512_-65881695",
+      "id": "20200701-144401_447416803",
+      "dateCreated": "2020-07-01 14:44:01.512",
+      "dateStarted": "2020-07-01 14:45:27.539",
+      "dateFinished": "2020-07-01 14:45:27.916",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "sales.printSchema",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-01 14:56:59.969",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- order_id: string (nullable \u003d true)\n |-- product_id: string (nullable \u003d true)\n |-- seller_id: string (nullable \u003d true)\n |-- date: string (nullable \u003d true)\n |-- num_pieces_sold: string (nullable \u003d true)\n |-- bill_raw_text: string (nullable \u003d true)\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593608216145_1051968084",
+      "id": "20200701-145656_609237516",
+      "dateCreated": "2020-07-01 14:56:56.145",
+      "dateStarted": "2020-07-01 14:57:00.004",
+      "dateFinished": "2020-07-01 14:57:00.175",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val firstrow \u003d sales.head\nval firstString \u003d firstrow(5).toString\n\nval occ_i \u003d firstString.count(_ \u003d\u003d \u0027i\u0027)\n\n\nfor {idx \u003c- 1 to occ_i\n    string2 \u003d md5( sales(\"bill_raw_text\") )\n    } \n    { \n        sales.withColumn(\"bill_raw_text\", md5( sales(\"bill_raw_text\") ).alias(\"md5\")).show(5) \n    }",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-01 15:33:50.872",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|0e72113eda28e817b...|\n|       2|         0|        0|2020-07-08|             13|13af9a32eb8a31513...|\n|       3|         0|        0|2020-07-05|             38|c2d269a5c9376e431...|\n|       4|         0|        0|2020-07-05|             56|7a73a2250f416bb81...|\n|       5|         0|        0|2020-07-05|             11|2e66bd8b5b16526e5...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 5 rows\n\r\n+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|0e72113eda28e817b...|\n|       2|         0|        0|2020-07-08|             13|13af9a32eb8a31513...|\n|       3|         0|        0|2020-07-05|             38|c2d269a5c9376e431...|\n|       4|         0|        0|2020-07-05|             56|7a73a2250f416bb81...|\n|       5|         0|        0|2020-07-05|             11|2e66bd8b5b16526e5...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 5 rows\n\r\n+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|0e72113eda28e817b...|\n|       2|         0|        0|2020-07-08|             13|13af9a32eb8a31513...|\n|       3|         0|        0|2020-07-05|             38|c2d269a5c9376e431...|\n|       4|         0|        0|2020-07-05|             56|7a73a2250f416bb81...|\n|       5|         0|        0|2020-07-05|             11|2e66bd8b5b16526e5...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 5 rows\n\r\n+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|0e72113eda28e817b...|\n|       2|         0|        0|2020-07-08|             13|13af9a32eb8a31513...|\n|       3|         0|        0|2020-07-05|             38|c2d269a5c9376e431...|\n|       4|         0|        0|2020-07-05|             56|7a73a2250f416bb81...|\n|       5|         0|        0|2020-07-05|             11|2e66bd8b5b16526e5...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 5 rows\n\r\n+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|0e72113eda28e817b...|\n|       2|         0|        0|2020-07-08|             13|13af9a32eb8a31513...|\n|       3|         0|        0|2020-07-05|             38|c2d269a5c9376e431...|\n|       4|         0|        0|2020-07-05|             56|7a73a2250f416bb81...|\n|       5|         0|        0|2020-07-05|             11|2e66bd8b5b16526e5...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 5 rows\n\r\n+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|0e72113eda28e817b...|\n|       2|         0|        0|2020-07-08|             13|13af9a32eb8a31513...|\n|       3|         0|        0|2020-07-05|             38|c2d269a5c9376e431...|\n|       4|         0|        0|2020-07-05|             56|7a73a2250f416bb81...|\n|       5|         0|        0|2020-07-05|             11|2e66bd8b5b16526e5...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 5 rows\n\r\n+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|0e72113eda28e817b...|\n|       2|         0|        0|2020-07-08|             13|13af9a32eb8a31513...|\n|       3|         0|        0|2020-07-05|             38|c2d269a5c9376e431...|\n|       4|         0|        0|2020-07-05|             56|7a73a2250f416bb81...|\n|       5|         0|        0|2020-07-05|             11|2e66bd8b5b16526e5...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 5 rows\n\r\n+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|0e72113eda28e817b...|\n|       2|         0|        0|2020-07-08|             13|13af9a32eb8a31513...|\n|       3|         0|        0|2020-07-05|             38|c2d269a5c9376e431...|\n|       4|         0|        0|2020-07-05|             56|7a73a2250f416bb81...|\n|       5|         0|        0|2020-07-05|             11|2e66bd8b5b16526e5...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 5 rows\n\r\n+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|0e72113eda28e817b...|\n|       2|         0|        0|2020-07-08|             13|13af9a32eb8a31513...|\n|       3|         0|        0|2020-07-05|             38|c2d269a5c9376e431...|\n|       4|         0|        0|2020-07-05|             56|7a73a2250f416bb81...|\n|       5|         0|        0|2020-07-05|             11|2e66bd8b5b16526e5...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 5 rows\n\r\n+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|0e72113eda28e817b...|\n|       2|         0|        0|2020-07-08|             13|13af9a32eb8a31513...|\n|       3|         0|        0|2020-07-05|             38|c2d269a5c9376e431...|\n|       4|         0|        0|2020-07-05|             56|7a73a2250f416bb81...|\n|       5|         0|        0|2020-07-05|             11|2e66bd8b5b16526e5...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 5 rows\n\r\n+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|0e72113eda28e817b...|\n|       2|         0|        0|2020-07-08|             13|13af9a32eb8a31513...|\n|       3|         0|        0|2020-07-05|             38|c2d269a5c9376e431...|\n|       4|         0|        0|2020-07-05|             56|7a73a2250f416bb81...|\n|       5|         0|        0|2020-07-05|             11|2e66bd8b5b16526e5...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 5 rows\n\r\n+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|0e72113eda28e817b...|\n|       2|         0|        0|2020-07-08|             13|13af9a32eb8a31513...|\n|       3|         0|        0|2020-07-05|             38|c2d269a5c9376e431...|\n|       4|         0|        0|2020-07-05|             56|7a73a2250f416bb81...|\n|       5|         0|        0|2020-07-05|             11|2e66bd8b5b16526e5...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 5 rows\n\r\n+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|0e72113eda28e817b...|\n|       2|         0|        0|2020-07-08|             13|13af9a32eb8a31513...|\n|       3|         0|        0|2020-07-05|             38|c2d269a5c9376e431...|\n|       4|         0|        0|2020-07-05|             56|7a73a2250f416bb81...|\n|       5|         0|        0|2020-07-05|             11|2e66bd8b5b16526e5...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 5 rows\n\r\n+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|0e72113eda28e817b...|\n|       2|         0|        0|2020-07-08|             13|13af9a32eb8a31513...|\n|       3|         0|        0|2020-07-05|             38|c2d269a5c9376e431...|\n|       4|         0|        0|2020-07-05|             56|7a73a2250f416bb81...|\n|       5|         0|        0|2020-07-05|             11|2e66bd8b5b16526e5...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 5 rows\n\r\n+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|0e72113eda28e817b...|\n|       2|         0|        0|2020-07-08|             13|13af9a32eb8a31513...|\n|       3|         0|        0|2020-07-05|             38|c2d269a5c9376e431...|\n|       4|         0|        0|2020-07-05|             56|7a73a2250f416bb81...|\n|       5|         0|        0|2020-07-05|             11|2e66bd8b5b16526e5...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 5 rows\n\r\n+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|0e72113eda28e817b...|\n|       2|         0|        0|2020-07-08|             13|13af9a32eb8a31513...|\n|       3|         0|        0|2020-07-05|             38|c2d269a5c9376e431...|\n|       4|         0|        0|2020-07-05|             56|7a73a2250f416bb81...|\n|       5|         0|        0|2020-07-05|             11|2e66bd8b5b16526e5...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 5 rows\n\r\n+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|0e72113eda28e817b...|\n|       2|         0|        0|2020-07-08|             13|13af9a32eb8a31513...|\n|       3|         0|        0|2020-07-05|             38|c2d269a5c9376e431...|\n|       4|         0|        0|2020-07-05|             56|7a73a2250f416bb81...|\n|       5|         0|        0|2020-07-05|             11|2e66bd8b5b16526e5...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 5 rows\n\r\n+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|0e72113eda28e817b...|\n|       2|         0|        0|2020-07-08|             13|13af9a32eb8a31513...|\n|       3|         0|        0|2020-07-05|             38|c2d269a5c9376e431...|\n|       4|         0|        0|2020-07-05|             56|7a73a2250f416bb81...|\n|       5|         0|        0|2020-07-05|             11|2e66bd8b5b16526e5...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 5 rows\n\r\n+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|0e72113eda28e817b...|\n|       2|         0|        0|2020-07-08|             13|13af9a32eb8a31513...|\n|       3|         0|        0|2020-07-05|             38|c2d269a5c9376e431...|\n|       4|         0|        0|2020-07-05|             56|7a73a2250f416bb81...|\n|       5|         0|        0|2020-07-05|             11|2e66bd8b5b16526e5...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 5 rows\n\r\n+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|0e72113eda28e817b...|\n|       2|         0|        0|2020-07-08|             13|13af9a32eb8a31513...|\n|       3|         0|        0|2020-07-05|             38|c2d269a5c9376e431...|\n|       4|         0|        0|2020-07-05|             56|7a73a2250f416bb81...|\n|       5|         0|        0|2020-07-05|             11|2e66bd8b5b16526e5...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 5 rows\n\r\nfirstrow: org.apache.spark.sql.Row \u003d [1,0,0,2020-07-10,26,kyeibuumwlyhuwksxodcawelubbyznxvpfxyxzhftudwtiemdhqaqoDeodltimrusmwtfdikxoqpuFliyvacNgrpigspylwaxvbdwiqurqkqidkujwziucglsvzxjbswtkeogxyncoweuvczualykpszcbrmwwyjkgbvpfyijshnkbjdrxppwmclymvofjslldhwnwajnnyvzktbjixlsodivgmfsvwjfqjuwwrqelkkzupmlggzeqmcskkvjggnajgimzkdtzgvhuzlgubkigdctumjhdwnzzlnrlyuhlhmlgfxuhyxlzraqhqgfsgvtigkfuuuawoxherqhovyyyglsxwoqkwntuaesstxvtwhzvzxincwpkhigcwslpokwplgrotrnttohkzzumqcejkvgwkvexpnyjrwzbfauervihrvezyfndmekllabllewmqrgbfwimygcwlbeblcfqitaxnoaudfgaodqbmsgavetmrtlnyy]\r\nfirstString: String \u003d kyeibuumwlyhuwksxodcawelubbyznxvpfxyxzhftudwtiemdhqaqoDeodltimrusmwtfdikxoqpuFliyvacNgrpigspylwaxvbdwiqurqkqidkujwziucglsvzxjbswtkeogxyncoweuvczualykpszcbrmwwyjkgbvpfyijshnkbjdrxppwmclymvofjslldhwnwajnnyvzktbjixlso..."
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593607527501_-829853472",
+      "id": "20200701-144527_632571419",
+      "dateCreated": "2020-07-01 14:45:27.501",
+      "dateStarted": "2020-07-01 15:33:50.906",
+      "dateFinished": "2020-07-01 15:33:54.542",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "sales.withColumn(\"new\", md5( sales(\"bill_raw_text\") ).alias(\"md5\")).show(5)",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-01 15:31:48.469",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+----------+---------+----------+---------------+--------------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|                 new|\n+--------+----------+---------+----------+---------------+--------------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|kyeibuumwlyhuwksx...|0e72113eda28e817b...|\n|       2|         0|        0|2020-07-08|             13|jfyuoyfkeyqkckwbu...|13af9a32eb8a31513...|\n|       3|         0|        0|2020-07-05|             38|uyjihlzhzcswxcccx...|c2d269a5c9376e431...|\n|       4|         0|        0|2020-07-05|             56|umnxvoqbdzpbwjqmz...|7a73a2250f416bb81...|\n|       5|         0|        0|2020-07-05|             11|zmqexmaawmvdpqhih...|2e66bd8b5b16526e5...|\n+--------+----------+---------+----------+---------------+--------------------+--------------------+\nonly showing top 5 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593607663005_509239529",
+      "id": "20200701-144743_1855578092",
+      "dateCreated": "2020-07-01 14:47:43.005",
+      "dateStarted": "2020-07-01 15:31:48.504",
+      "dateFinished": "2020-07-01 15:31:48.935",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.storage.StorageLevel\n\n\nval d_path \u003d \"D:/AnacondaProjects/Datasets/DatasetToCompleteTheSixSparkExercises\"\nval d_path_prod \u003d d_path + \"/products_parquet\"\nval d_path_sales \u003d d_path + \"/sales_parquet\"\nval d_path_seller \u003d d_path + \"/sellers_parquet\"\n\nval sellers \u003d spark.read.format(\"parquet\").load(d_path_seller).persist(StorageLevel.MEMORY_AND_DISK)\n\nval prods \u003d spark.read.format(\"parquet\").load(d_path_prod).persist(StorageLevel.MEMORY_AND_DISK)\n\nval sales \u003d spark.read.format(\"parquet\").load(d_path_sales).persist(StorageLevel.MEMORY_AND_DISK)\n\nsales.show(1)\nsellers.show(1)\nprods.show(1)",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-01 16:02:14.795",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|kyeibuumwlyhuwksx...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 1 row\n\r\n+---------+-----------+------------+\n|seller_id|seller_name|daily_target|\n+---------+-----------+------------+\n|        0|   seller_0|     2500000|\n+---------+-----------+------------+\nonly showing top 1 row\n\r\n+----------+------------+-----+\n|product_id|product_name|price|\n+----------+------------+-----+\n|         0|   product_0|   22|\n+----------+------------+-----+\nonly showing top 1 row\n\r\nimport org.apache.spark.storage.StorageLevel\r\nd_path: String \u003d D:/AnacondaProjects/Datasets/DatasetToCompleteTheSixSparkExercises\r\nd_path_prod: String \u003d D:/AnacondaProjects/Datasets/DatasetToCompleteTheSixSparkExercises/products_parquet\r\nd_path_sales: String \u003d D:/AnacondaProjects/Datasets/DatasetToCompleteTheSixSparkExercises/sales_parquet\r\nd_path_seller: String \u003d D:/AnacondaProjects/Datasets/DatasetToCompleteTheSixSparkExercises/sellers_parquet\r\nsellers: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [seller_id: string, seller_name: string ... 1 more field]\r\nprods: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [product_id: string, product_name: string ... 1 more field]\r\nsales: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [order_id: string, product_id: s..."
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593612112444_-147116638",
+      "id": "20200701-160152_951398610",
+      "dateCreated": "2020-07-01 16:01:52.444",
+      "dateStarted": "2020-07-01 16:02:14.832",
+      "dateFinished": "2020-07-01 16:02:23.772",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val acc \u003d sc.collectionAccumulator(\"prova\")\n\nval sales1 \u003d sales.withColumnRenamed(\"bill_raw_text\", \"bill_raw_text_0\")\nsales1.show(5)\nval sales2 \u003d Range(1,5).foldLeft( sales1 ){ (acc, x) \u003d\u003e acc.withColumn(\"bill_raw_text_\"+x, md5( acc(\"bill_raw_text_\"+(x-1)) ) )}\nsales2.show(5)",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-02 05:58:37.054",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 432.0,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|     bill_raw_text_0|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|kyeibuumwlyhuwksx...|\n|       2|         0|        0|2020-07-08|             13|jfyuoyfkeyqkckwbu...|\n|       3|         0|        0|2020-07-05|             38|uyjihlzhzcswxcccx...|\n|       4|         0|        0|2020-07-05|             56|umnxvoqbdzpbwjqmz...|\n|       5|         0|        0|2020-07-05|             11|zmqexmaawmvdpqhih...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 5 rows\n\r\n+--------+----------+---------+----------+---------------+--------------------+--------------------+--------------------+--------------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|     bill_raw_text_0|     bill_raw_text_1|     bill_raw_text_2|     bill_raw_text_3|     bill_raw_text_4|\n+--------+----------+---------+----------+---------------+--------------------+--------------------+--------------------+--------------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|kyeibuumwlyhuwksx...|0e72113eda28e817b...|dd7776a030df0941b...|51960891d3640178d...|aa26467f07244138a...|\n|       2|         0|        0|2020-07-08|             13|jfyuoyfkeyqkckwbu...|13af9a32eb8a31513...|4b4b6db3794449623...|1599682fcd0879b58...|afa71e43783564ce2...|\n|       3|         0|        0|2020-07-05|             38|uyjihlzhzcswxcccx...|c2d269a5c9376e431...|fee9bf121605c6666...|41719f6c251ec32a7...|7946fd68fde656983...|\n|       4|         0|        0|2020-07-05|             56|umnxvoqbdzpbwjqmz...|7a73a2250f416bb81...|fa00fab1238c5bf17...|82f89222fdc874bec...|260a666921f815980...|\n|       5|         0|        0|2020-07-05|             11|zmqexmaawmvdpqhih...|2e66bd8b5b16526e5...|4f2c00af4df594bb9...|dc2fe70005ee80ed9...|f165c5bfcbb6b4e85...|\n+--------+----------+---------+----------+---------------+--------------------+--------------------+--------------------+--------------------+--------------------+\nonly showing top 5 rows\n\r\nacc: org.apache.spark.util.CollectionAccumulator[Nothing] \u003d CollectionAccumulator(id: 258, name: Some(prova), value: [])\r\nsales1: org.apache.spark.sql.DataFrame \u003d [order_id: string, product_id: string ... 4 more fields]\r\nsales2: org.apache.spark.sql.DataFrame \u003d [order_id: string, product_id: string ... 8 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593607815522_1711916270",
+      "id": "20200701-145015_155163035",
+      "dateCreated": "2020-07-01 14:50:15.522",
+      "dateStarted": "2020-07-02 05:58:37.100",
+      "dateFinished": "2020-07-02 05:58:37.629",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val firstrow \u003d sales.head\nval firststring \u003d firstrow(5).toString",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-02 07:16:26.626",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "firstrow: org.apache.spark.sql.Row \u003d [1,0,0,2020-07-10,26,kyeibuumwlyhuwksxodcawelubbyznxvpfxyxzhftudwtiemdhqaqoDeodltimrusmwtfdikxoqpuFliyvacNgrpigspylwaxvbdwiqurqkqidkujwziucglsvzxjbswtkeogxyncoweuvczualykpszcbrmwwyjkgbvpfyijshnkbjdrxppwmclymvofjslldhwnwajnnyvzktbjixlsodivgmfsvwjfqjuwwrqelkkzupmlggzeqmcskkvjggnajgimzkdtzgvhuzlgubkigdctumjhdwnzzlnrlyuhlhmlgfxuhyxlzraqhqgfsgvtigkfuuuawoxherqhovyyyglsxwoqkwntuaesstxvtwhzvzxincwpkhigcwslpokwplgrotrnttohkzzumqcejkvgwkvexpnyjrwzbfauervihrvezyfndmekllabllewmqrgbfwimygcwlbeblcfqitaxnoaudfgaodqbmsgavetmrtlnyy]\r\nfirststring: String \u003d kyeibuumwlyhuwksxodcawelubbyznxvpfxyxzhftudwtiemdhqaqoDeodltimrusmwtfdikxoqpuFliyvacNgrpigspylwaxvbdwiqurqkqidkujwziucglsvzxjbswtkeogxyncoweuvczualykpszcbrmwwyjkgbvpfyijshnkbjdrxppwmclymvofjslldhwnwajnnyvzktbjixlso..."
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593662308660_1968443985",
+      "id": "20200702-055828_967748538",
+      "dateCreated": "2020-07-02 05:58:28.660",
+      "dateStarted": "2020-07-02 07:16:26.674",
+      "dateFinished": "2020-07-02 07:16:26.850",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "println(md5HashString(md5HashString(firststring)))",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-02 06:02:56.123",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "fef2e61c249daf7c6af48faa146bc4e0\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593662422851_-937542175",
+      "id": "20200702-060022_2042792099",
+      "dateCreated": "2020-07-02 06:00:22.851",
+      "dateStarted": "2020-07-02 06:02:56.172",
+      "dateFinished": "2020-07-02 06:02:56.371",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nCome modificare iterativamente una colonna di un dataFrame considerando che il dataFrame è un oggetto immutabile?\n\nUsando foldLeft applicato ad un range per esempio. Il range ha una funzione equiparabile a quella di un for loop in un linguaggio di programmazione tradizionale\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 12:14:44.284",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": false,
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eCome modificare iterativamente una colonna di un dataFrame considerando che il dataFrame è un oggetto immutabile?\u003c/p\u003e\n\u003cp\u003eUsando foldLeft applicato ad un range per esempio. Il range ha una funzione equiparabile a quella di un for loop in un linguaggio di programmazione tradizionale\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593612507932_1266255046",
+      "id": "20200701-160827_1673170761",
+      "dateCreated": "2020-07-01 16:08:27.932",
+      "dateStarted": "2020-07-01 16:10:49.441",
+      "dateFinished": "2020-07-01 16:10:49.451",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val sales2 \u003d Range(1,5).foldLeft( sales ){ (acc, x) \u003d\u003e acc.withColumn(\"bill_raw_text\", md5( acc(\"bill_raw_text\" ) ) )}\n\nsales2.show(5)\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-01 16:08:09.544",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|aa26467f07244138a...|\n|       2|         0|        0|2020-07-08|             13|afa71e43783564ce2...|\n|       3|         0|        0|2020-07-05|             38|7946fd68fde656983...|\n|       4|         0|        0|2020-07-05|             56|260a666921f815980...|\n|       5|         0|        0|2020-07-05|             11|f165c5bfcbb6b4e85...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 5 rows\n\r\nsales2: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [order_id: string, product_id: string ... 4 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593610454722_679244182",
+      "id": "20200701-153414_581012153",
+      "dateCreated": "2020-07-01 15:34:14.722",
+      "dateStarted": "2020-07-01 16:08:09.584",
+      "dateFinished": "2020-07-01 16:08:09.863",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "sales.withColumnRenamed(\"bill_raw_text\", \"bill_raw_text_0\").show",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-01 16:04:43.917",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|     bill_raw_text_0|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|kyeibuumwlyhuwksx...|\n|       2|         0|        0|2020-07-08|             13|jfyuoyfkeyqkckwbu...|\n|       3|         0|        0|2020-07-05|             38|uyjihlzhzcswxcccx...|\n|       4|         0|        0|2020-07-05|             56|umnxvoqbdzpbwjqmz...|\n|       5|         0|        0|2020-07-05|             11|zmqexmaawmvdpqhih...|\n|       6|         0|        0|2020-07-01|             82|lmuhhkpyuoyslwmvX...|\n|       7|         0|        0|2020-07-04|             15|zoqweontumefxbgvu...|\n|       8|         0|        0|2020-07-08|             79|sgldfgtcxufasnvsc...|\n|       9|         0|        0|2020-07-10|             25|jnykelwjjebgkwgmu...|\n|      10|         0|        0|2020-07-08|              8|yywjfihneygcvfnyl...|\n|      11|         0|        0|2020-07-01|             10|nxwejyoeznltdhcam...|\n|      12|         0|        0|2020-07-06|             45|efmymeftivwsfljzt...|\n|      13|         0|        0|2020-07-10|             63|nxhvtospPhfnkavdy...|\n|      14|         0|        0|2020-07-03|             22|ypyusdsjzfpfbucnn...|\n|      15|         0|        0|2020-07-09|             75|ymjvbhaxffyjcwzyn...|\n|      16|         0|        0|2020-07-10|             83|phbcykkhvqsbkipwa...|\n|      17|         0|        0|2020-07-04|             54|qgnGqqnjmbqZytoug...|\n|      18|         0|        0|2020-07-04|             58|ozmllbabrnhebWcex...|\n|      19|         0|        0|2020-07-07|             33|kbrvXuzgiuinodtkg...|\n|      20|         0|        0|2020-07-09|             73|jnqjzaigjtqlfwpug...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 20 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593611525034_-1437767806",
+      "id": "20200701-155205_694916296",
+      "dateCreated": "2020-07-01 15:52:05.034",
+      "dateStarted": "2020-07-01 16:04:43.955",
+      "dateFinished": "2020-07-01 16:04:44.187",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.Column\n\nval col_1 \u003d ",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-01 16:17:26.465",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cconsole\u003e:34: error: missing argument list for method col in object functions\r\nUnapplied methods are only converted to functions when a function type is expected.\r\nYou can make this conversion explicit by writing `col _` or `col(_)` instead of `col`.\r\nval $ires9 \u003d col\r\n             ^\n\u003cconsole\u003e:30: error: reassignment to val\r\n       col \u003d\r\n           ^\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593612283917_-314794664",
+      "id": "20200701-160443_222703220",
+      "dateCreated": "2020-07-01 16:04:43.917",
+      "dateStarted": "2020-07-01 16:16:42.959",
+      "dateFinished": "2020-07-01 16:16:42.968",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "def md5HashString(s: String): String \u003d {\r\n    import java.security.MessageDigest\r\n    import java.math.BigInteger\r\n    val md \u003d MessageDigest.getInstance(\"MD5\")\r\n    val digest \u003d md.digest(s.getBytes)\r\n    val bigInt \u003d new BigInteger(1,digest)\r\n    val hashedString \u003d bigInt.toString(16)\r\n    hashedString\r\n}",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-02 05:52:58.178",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "md5HashString: (s: String)String\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593613002921_1918038142",
+      "id": "20200701-161642_1479824838",
+      "dateCreated": "2020-07-01 16:16:42.921",
+      "dateStarted": "2020-07-02 05:52:58.240",
+      "dateFinished": "2020-07-02 05:52:58.571",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "md5HashString(firstrow(5).toString)",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-01 16:18:13.320",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res108: String \u003d e72113eda28e817b065adecf6c7ae0e\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593613060574_-88761358",
+      "id": "20200701-161740_1480811392",
+      "dateCreated": "2020-07-01 16:17:40.574",
+      "dateStarted": "2020-07-01 16:18:13.363",
+      "dateFinished": "2020-07-01 16:18:13.516",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.Row\n\nval sales2 \u003d sales.map(  )\nsales2.show(5)\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-01 17:08:33.623",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cconsole\u003e:37: error: overloaded method value map with alternatives:\r\n  [U](func: org.apache.spark.api.java.function.MapFunction[org.apache.spark.sql.Row,U], encoder: org.apache.spark.sql.Encoder[U])org.apache.spark.sql.Dataset[U] \u003cand\u003e\r\n  [U](func: org.apache.spark.sql.Row \u003d\u003e U)(implicit evidence$6: org.apache.spark.sql.Encoder[U])org.apache.spark.sql.Dataset[U]\r\n cannot be applied to ()\r\n       val sales2 \u003d sales.map(  )\r\n                          ^\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593613073575_179376700",
+      "id": "20200701-161753_1615965221",
+      "dateCreated": "2020-07-01 16:17:53.575",
+      "dateStarted": "2020-07-01 17:08:33.665",
+      "dateFinished": "2020-07-01 17:08:33.681",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "sales.show(1)",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-01 17:35:26.320",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|kyeibuumwlyhuwksx...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 1 row\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593614428041_-1796567950",
+      "id": "20200701-164028_1498274206",
+      "dateCreated": "2020-07-01 16:40:28.041",
+      "dateStarted": "2020-07-01 17:35:26.362",
+      "dateFinished": "2020-07-01 17:35:26.558",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.storage.StorageLevel\n\n\nval d_path \u003d \"D:/AnacondaProjects/Datasets/DatasetToCompleteTheSixSparkExercises\"\nval d_path_prod \u003d d_path + \"/products_parquet\"\nval d_path_sales \u003d d_path + \"/sales_parquet\"\nval d_path_seller \u003d d_path + \"/sellers_parquet\"\n\nval sellers \u003d spark.read.format(\"parquet\").load(d_path_seller).persist(StorageLevel.MEMORY_AND_DISK)\n\nval prods \u003d spark.read.format(\"parquet\").load(d_path_prod).persist(StorageLevel.MEMORY_AND_DISK)\n\nval sales \u003d spark.read.format(\"parquet\").load(d_path_sales).persist(StorageLevel.MEMORY_AND_DISK)\n\nsales.show(1)\nsellers.show(1)\nprods.show(1)",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 13:20:26.710",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n|       1|         0|        0|2020-07-10|             26|kyeibuumwlyhuwksx...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 1 row\n\r\n+---------+-----------+------------+\n|seller_id|seller_name|daily_target|\n+---------+-----------+------------+\n|        0|   seller_0|     2500000|\n+---------+-----------+------------+\nonly showing top 1 row\n\r\n+----------+------------+-----+\n|product_id|product_name|price|\n+----------+------------+-----+\n|         0|   product_0|   22|\n+----------+------------+-----+\nonly showing top 1 row\n\r\nimport org.apache.spark.storage.StorageLevel\r\nd_path: String \u003d D:/AnacondaProjects/Datasets/DatasetToCompleteTheSixSparkExercises\r\nd_path_prod: String \u003d D:/AnacondaProjects/Datasets/DatasetToCompleteTheSixSparkExercises/products_parquet\r\nd_path_sales: String \u003d D:/AnacondaProjects/Datasets/DatasetToCompleteTheSixSparkExercises/sales_parquet\r\nd_path_seller: String \u003d D:/AnacondaProjects/Datasets/DatasetToCompleteTheSixSparkExercises/sellers_parquet\r\nsellers: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [seller_id: string, seller_name: string ... 1 more field]\r\nprods: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [product_id: string, product_name: string ... 1 more field]\r\nsales: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [order_id: string, product_id: s..."
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593637779692_-2089970714",
+      "id": "20200701-230939_1789171241",
+      "dateCreated": "2020-07-01 23:09:39.692",
+      "dateStarted": "2020-07-24 13:20:26.766",
+      "dateFinished": "2020-07-24 13:20:27.274",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import spark.implicits._\n\ncase class myrow(order_id:String, product_id:String, seller_id:String, date:String, num_pieces_sold:String, bill_raw_text:String)\n\n//to dataset\nsales.as[myrow].show(1)",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24 13:36:53.397",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "org.apache.spark.sql.AnalysisException: Cannot up cast `num_pieces_sold` from string to int as it may truncate\r\nThe type path of the target object is:\r\n- field (class: \"scala.Int\", name: \"num_pieces_sold\")\r\n- root class: \"myrow\"\r\nYou can either add an explicit cast to the input data or choose a higher precision type of the field in the target object;\r\n  at org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveUpCast$.org$apache$spark$sql$catalyst$analysis$Analyzer$ResolveUpCast$$fail(Analyzer.scala:2494)\r\n  at org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveUpCast$$anonfun$apply$38$$anonfun$applyOrElse$12.applyOrElse(Analyzer.scala:2510)\r\n  at org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveUpCast$$anonfun$apply$38$$anonfun$applyOrElse$12.applyOrElse(Analyzer.scala:2505)\r\n  at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$2.apply(TreeNode.scala:259)\r\n  at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$2.apply(TreeNode.scala:259)\r\n  at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:70)\r\n  at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:258)\r\n  at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$transformDown$1.apply(TreeNode.scala:264)\r\n  at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$transformDown$1.apply(TreeNode.scala:264)\r\n  at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$4.apply(TreeNode.scala:329)\r\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapProductIterator(TreeNode.scala:187)\r\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapChildren(TreeNode.scala:327)\r\n  at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:264)\r\n  at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$transformDown$1.apply(TreeNode.scala:264)\r\n  at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$transformDown$1.apply(TreeNode.scala:264)\r\n  at org.apache.spark.sql.catalyst.trees.TreeNode.org$apache$spark$sql$catalyst$trees$TreeNode$$mapChild$2(TreeNode.scala:298)\r\n  at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$4$$anonfun$apply$13.apply(TreeNode.scala:357)\r\n  at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)\r\n  at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)\r\n  at scala.collection.immutable.List.foreach(List.scala:392)\r\n  at scala.collection.TraversableLike$class.map(TraversableLike.scala:234)\r\n  at scala.collection.immutable.List.map(List.scala:296)\r\n  at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$4.apply(TreeNode.scala:357)\r\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapProductIterator(TreeNode.scala:187)\r\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapChildren(TreeNode.scala:327)\r\n  at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:264)\r\n  at org.apache.spark.sql.catalyst.plans.QueryPlan$$anonfun$transformExpressionsDown$1.apply(QueryPlan.scala:83)\r\n  at org.apache.spark.sql.catalyst.plans.QueryPlan$$anonfun$transformExpressionsDown$1.apply(QueryPlan.scala:83)\r\n  at org.apache.spark.sql.catalyst.plans.QueryPlan$$anonfun$1.apply(QueryPlan.scala:105)\r\n  at org.apache.spark.sql.catalyst.plans.QueryPlan$$anonfun$1.apply(QueryPlan.scala:105)\r\n  at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:70)\r\n  at org.apache.spark.sql.catalyst.plans.QueryPlan.transformExpression$1(QueryPlan.scala:104)\r\n  at org.apache.spark.sql.catalyst.plans.QueryPlan.org$apache$spark$sql$catalyst$plans$QueryPlan$$recursiveTransform$1(QueryPlan.scala:116)\r\n  at org.apache.spark.sql.catalyst.plans.QueryPlan$$anonfun$2.apply(QueryPlan.scala:126)\r\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapProductIterator(TreeNode.scala:187)\r\n  at org.apache.spark.sql.catalyst.plans.QueryPlan.mapExpressions(QueryPlan.scala:126)\r\n  at org.apache.spark.sql.catalyst.plans.QueryPlan.transformExpressionsDown(QueryPlan.scala:83)\r\n  at org.apache.spark.sql.catalyst.plans.QueryPlan.transformExpressions(QueryPlan.scala:74)\r\n  at org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveUpCast$$anonfun$apply$38.applyOrElse(Analyzer.scala:2505)\r\n  at org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveUpCast$$anonfun$apply$38.applyOrElse(Analyzer.scala:2501)\r\n  at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper$$anonfun$resolveOperatorsUp$1$$anonfun$apply$1.apply(AnalysisHelper.scala:90)\r\n  at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper$$anonfun$resolveOperatorsUp$1$$anonfun$apply$1.apply(AnalysisHelper.scala:90)\r\n  at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:70)\r\n  at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper$$anonfun$resolveOperatorsUp$1.apply(AnalysisHelper.scala:89)\r\n  at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper$$anonfun$resolveOperatorsUp$1.apply(AnalysisHelper.scala:86)\r\n  at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper$.allowInvokingTransformsInAnalyzer(AnalysisHelper.scala:194)\r\n  at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper$class.resolveOperatorsUp(AnalysisHelper.scala:86)\r\n  at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.resolveOperatorsUp(LogicalPlan.scala:29)\r\n  at org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveUpCast$.apply(Analyzer.scala:2501)\r\n  at org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveUpCast$.apply(Analyzer.scala:2488)\r\n  at org.apache.spark.sql.catalyst.rules.RuleExecutor$$anonfun$execute$1$$anonfun$apply$1.apply(RuleExecutor.scala:87)\r\n  at org.apache.spark.sql.catalyst.rules.RuleExecutor$$anonfun$execute$1$$anonfun$apply$1.apply(RuleExecutor.scala:84)\r\n  at scala.collection.LinearSeqOptimized$class.foldLeft(LinearSeqOptimized.scala:124)\r\n  at scala.collection.immutable.List.foldLeft(List.scala:84)\r\n  at org.apache.spark.sql.catalyst.rules.RuleExecutor$$anonfun$execute$1.apply(RuleExecutor.scala:84)\r\n  at org.apache.spark.sql.catalyst.rules.RuleExecutor$$anonfun$execute$1.apply(RuleExecutor.scala:76)\r\n  at scala.collection.immutable.List.foreach(List.scala:392)\r\n  at org.apache.spark.sql.catalyst.rules.RuleExecutor.execute(RuleExecutor.scala:76)\r\n  at org.apache.spark.sql.catalyst.analysis.Analyzer.org$apache$spark$sql$catalyst$analysis$Analyzer$$executeSameContext(Analyzer.scala:127)\r\n  at org.apache.spark.sql.catalyst.analysis.Analyzer.execute(Analyzer.scala:121)\r\n  at org.apache.spark.sql.catalyst.encoders.ExpressionEncoder.resolveAndBind(ExpressionEncoder.scala:257)\r\n  at org.apache.spark.sql.Dataset.org$apache$spark$sql$Dataset$$deserializer$lzycompute(Dataset.scala:213)\r\n  at org.apache.spark.sql.Dataset.org$apache$spark$sql$Dataset$$deserializer(Dataset.scala:212)\r\n  at org.apache.spark.sql.Dataset$.apply(Dataset.scala:71)\r\n  at org.apache.spark.sql.Dataset.as(Dataset.scala:430)\r\n  ... 41 elided\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593615116254_87837437",
+      "id": "20200701-165156_1388384717",
+      "dateCreated": "2020-07-01 16:51:56.254",
+      "dateStarted": "2020-07-24 13:21:20.232",
+      "dateFinished": "2020-07-24 13:21:20.693",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "def md5HashString(s: String): String \u003d {\n    import java.security.MessageDigest\n    import java.math.BigInteger\n    val md \u003d MessageDigest.getInstance(\"MD5\")\n    val digest \u003d md.digest(s.getBytes)\n    val bigInt \u003d new BigInteger(1,digest)\n    val hashedString \u003d bigInt.toString(16)\n    hashedString\n}\n\ndef md5_az(x:String):String \u003d {\n    val occ_a \u003d x.count(_ \u003d\u003d \u0027A\u0027)\n    \n    val x1 \u003d x\n    \n    // Range(1, 2).foldLeft(x1){ (acc, idx) \u003d\u003e md5HashString(acc) }\n    Range(1, occ_a).foldLeft(x1){ (acc, idx) \u003d\u003e md5HashString(acc) }\n    \n}\n\ndef sha256(x:String):String \u003d {\n    \n    import java.security.MessageDigest\n    import java.math.BigInteger\n\n    String.format(\"%032x\", new BigInteger(1,MessageDigest.getInstance(\"SHA-256\").digest(x.getBytes(\"UTF-8\"))))\n}\n\ndef hash_string (bill_raw_text: String, order_id: String):String \u003d {\n    \n    val even_v \u003d ( (order_id.toInt/2 - order_id.toInt/2.0)\u003d\u003d0 )\n    \n    even_v match {\n        case true  \u003d\u003e md5_az(bill_raw_text) //pari\n        case false \u003d\u003e sha256(bill_raw_text) //dispari\n    }\n    \n}",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-02 16:44:55.942",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "md5HashString: (s: String)String\r\nmd5_az: (x: String)String\r\nsha256: (x: String)String\r\nhash_string: (bill_raw_text: String, order_id: String)String\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593638742478_1185791385",
+      "id": "20200701-232542_796332011",
+      "dateCreated": "2020-07-01 23:25:42.478",
+      "dateStarted": "2020-07-02 07:23:15.051",
+      "dateFinished": "2020-07-02 07:23:15.249",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.Row\n\n\nsales.map {\n    case Row(order_id:String, product_id:String, seller_id:String, date:String, num_pieces_sold:String, bill_raw_text:String) \u003d\u003e \n    (order_id, product_id, seller_id, date, num_pieces_sold, hash_string(bill_raw_text.toString, order_id.toString))\n}.toDF(\"order_id\",\"product_id\",\"seller_id\",\"date\",\"num_pieces_sold\",\"bill_raw_text\").sort($\"product_id\".desc).show(20)",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-02 09:57:05.440",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+----------+---------+----------+---------------+--------------------+\n|order_id|product_id|seller_id|      date|num_pieces_sold|       bill_raw_text|\n+--------+----------+---------+----------+---------------+--------------------+\n| 7491764|   9999941|        9|2020-07-10|             84|xmnmbjimdhbdontrm...|\n|10484490|   9999858|        7|2020-07-08|             34|79e08d1457c91f49d...|\n|10499120|   9999685|        6|2020-07-04|             25|fltbijqjcnvriftbr...|\n| 5489002|   9999682|        1|2020-07-09|             15|ezjhbfcneyibdnhzx...|\n| 8490521|   9999657|        3|2020-07-10|             66|d488a68bb1728689c...|\n|10987557|    999960|        1|2020-07-08|              5|27768a37cb9b142fd...|\n| 2475405|   9999485|        1|2020-07-06|             54|f73e0a9321bc1a83c...|\n|12477257|   9999483|        6|2020-07-02|             15|d2a6ca7341ff898cb...|\n| 4491764|   9999466|        9|2020-07-09|             70|uyuyvgirowptrlrke...|\n| 6486860|   9999413|        9|2020-07-08|             55|zwryancqifhfvjlbg...|\n| 6992789|   9999358|        5|2020-07-05|             76|45c35f38c36d7a666...|\n|14493771|   9999251|        6|2020-07-02|             77|e8988dfcadfc4352a...|\n| 7977840|   9999112|        3|2020-07-05|             73|lupfmjcmtlfisehyo...|\n|  492678|   9998904|        9|2020-07-08|             90|hzkrmsrbtgwbxpngg...|\n| 9997273|   9998884|        1|2020-07-01|             32|e68cb39202de7955a...|\n| 1496803|   9998775|        5|2020-07-02|             54|6c36abffc00a96095...|\n|17998598|   9998727|        3|2020-07-07|             42|ybrexvwiquwlynosi...|\n|10476958|   9998694|        3|2020-07-05|             62|zfeczgocszvcfljaq...|\n| 2487779|   9998562|        8|2020-07-06|             30|3525092fdbce61e05...|\n| 1493340|   9998469|        5|2020-07-03|             29|fxhelcmncanvpsvgy...|\n+--------+----------+---------+----------+---------------+--------------------+\nonly showing top 20 rows\n\r\nimport org.apache.spark.sql.Row\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593615479605_397333493",
+      "id": "20200701-165759_1723725333",
+      "dateCreated": "2020-07-01 16:57:59.605",
+      "dateStarted": "2020-07-02 07:23:18.028",
+      "dateFinished": "2020-07-02 07:23:39.961",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1593667345387_-1857857896",
+      "id": "20200702-072225_574964663",
+      "dateCreated": "2020-07-02 07:22:25.387",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "6 Exercises to rule them all",
+  "id": "2FCMGGBS4",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

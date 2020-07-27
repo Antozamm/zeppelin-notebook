@@ -1,0 +1,1929 @@
+{
+  "paragraphs": [
+    {
+      "text": "\r\nval df \u003d Seq(\r\n  (2012, \"Tesla\", \"S\"), (1997, \"Ford\", \"E350\"),\r\n  (2015, \"Chevy\", \"Volt\")\r\n).toDF(\"year\", \"make\", \"model\")def sum(a:Int, b:Int): Int \u003d a+b",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-02 20:01:17.354",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "sum: (a: Int, b: Int)Int\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579267119525_-1585013679",
+      "id": "20200117-141839_487482989",
+      "dateCreated": "2020-01-17 14:18:39.525",
+      "dateStarted": "2020-06-24 01:02:00.519",
+      "dateFinished": "2020-06-24 01:02:00.809",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "sum(1,\"2\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 01:02:02.807",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cconsole\u003e:26: error: type mismatch;\r\n found   : String(\"2\")\r\n required: Int\r\n       sum(1,\"2\")\r\n             ^\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579267142907_15245276",
+      "id": "20200117-141902_1997746771",
+      "dateCreated": "2020-01-17 14:19:02.908",
+      "dateStarted": "2020-06-24 01:02:02.864",
+      "dateFinished": "2020-06-24 01:02:02.903",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "implicit def stringToInt(a: String) \u003d a.toInt",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 01:02:09.013",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "warning: there was one feature warning; re-run with -feature for details\nstringToInt: (a: String)Int\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579267157953_1336837495",
+      "id": "20200117-141917_2074984092",
+      "dateCreated": "2020-01-17 14:19:17.953",
+      "dateStarted": "2020-06-24 01:02:09.063",
+      "dateFinished": "2020-06-24 01:02:09.347",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "implicit def stringToInt(s: String) \u003d s.toInt",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 01:03:06.132",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "warning: there was one feature warning; re-run with -feature for details\nstringToInt: (s: String)Int\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579267208255_-2034855000",
+      "id": "20200117-142008_1783852789",
+      "dateCreated": "2020-01-17 14:20:08.255",
+      "dateStarted": "2020-06-24 01:03:06.170",
+      "dateFinished": "2020-06-24 01:03:06.361",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.sql(\"select * from global_temp.large_table_2\").show",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 01:04:01.633",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "org.apache.spark.sql.AnalysisException: Table or view not found: `global_temp`.`large_table_2`; line 1 pos 14;\r\n\u0027Project [*]\r\n+- \u0027UnresolvedRelation `global_temp`.`large_table_2`\r\n\r\n  at org.apache.spark.sql.catalyst.analysis.package$AnalysisErrorAt.failAnalysis(package.scala:42)\r\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$1.apply(CheckAnalysis.scala:91)\r\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$1.apply(CheckAnalysis.scala:86)\r\n  at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:127)\r\n  at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$foreachUp$1.apply(TreeNode.scala:126)\r\n  at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$foreachUp$1.apply(TreeNode.scala:126)\r\n  at scala.collection.immutable.List.foreach(List.scala:392)\r\n  at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:126)\r\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$class.checkAnalysis(CheckAnalysis.scala:86)\r\n  at org.apache.spark.sql.catalyst.analysis.Analyzer.checkAnalysis(Analyzer.scala:95)\r\n  at org.apache.spark.sql.catalyst.analysis.Analyzer$$anonfun$executeAndCheck$1.apply(Analyzer.scala:108)\r\n  at org.apache.spark.sql.catalyst.analysis.Analyzer$$anonfun$executeAndCheck$1.apply(Analyzer.scala:105)\r\n  at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper$.markInAnalyzer(AnalysisHelper.scala:201)\r\n  at org.apache.spark.sql.catalyst.analysis.Analyzer.executeAndCheck(Analyzer.scala:105)\r\n  at org.apache.spark.sql.execution.QueryExecution.analyzed$lzycompute(QueryExecution.scala:57)\r\n  at org.apache.spark.sql.execution.QueryExecution.analyzed(QueryExecution.scala:55)\r\n  at org.apache.spark.sql.execution.QueryExecution.assertAnalyzed(QueryExecution.scala:47)\r\n  at org.apache.spark.sql.Dataset$.ofRows(Dataset.scala:78)\r\n  at org.apache.spark.sql.SparkSession.sql(SparkSession.scala:642)\r\n  ... 48 elided\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1579267259709_245042944",
+      "id": "20200117-142059_616960311",
+      "dateCreated": "2020-01-17 14:20:59.709",
+      "dateStarted": "2020-06-24 01:04:01.675",
+      "dateFinished": "2020-06-24 01:04:02.495",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\nshow tables",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 01:04:10.493",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "database": "string",
+                      "tableName": "string",
+                      "isTemporary": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "database\ttableName\tisTemporary\n"
+          },
+          {
+            "type": "TEXT",
+            "data": ""
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581504745197_764895419",
+      "id": "20200212-115225_1958231416",
+      "dateCreated": "2020-02-12 11:52:25.197",
+      "dateStarted": "2020-06-24 01:04:10.527",
+      "dateFinished": "2020-06-24 01:04:11.195",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df \u003d (1 to 10).toDF()\ndf.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 01:04:24.054",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----+\n|value|\n+-----+\n|    1|\n|    2|\n|    3|\n|    4|\n|    5|\n|    6|\n|    7|\n|    8|\n|    9|\n|   10|\n+-----+\n\r\ndf: org.apache.spark.sql.DataFrame \u003d [value: int]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581506231501_529243995",
+      "id": "20200212-121711_1004293959",
+      "dateCreated": "2020-02-12 12:17:11.501",
+      "dateStarted": "2020-06-24 01:04:24.095",
+      "dateFinished": "2020-06-24 01:04:25.104",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.write.format(\"json\").save(\"d:\\\\Anacondaprojects\\\\prova1001\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 01:11:39.648",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1581894912964_2092157898",
+      "id": "20200217-001512_1348495605",
+      "dateCreated": "2020-02-17 00:15:12.964",
+      "dateStarted": "2020-06-24 01:10:56.502",
+      "dateFinished": "2020-06-24 01:10:56.837",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.rdd.getNumPartitions",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 01:13:02.619",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res7: Int \u003d 10\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581894995645_-1033035269",
+      "id": "20200217-001635_1744664366",
+      "dateCreated": "2020-02-17 00:16:35.645",
+      "dateStarted": "2020-06-24 01:13:02.651",
+      "dateFinished": "2020-06-24 01:13:02.860",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.conf",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 01:14:02.353",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res8: org.apache.spark.sql.RuntimeConfig \u003d org.apache.spark.sql.RuntimeConfig@14bdc09c\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581895178639_1698125",
+      "id": "20200217-001938_2060592477",
+      "dateCreated": "2020-02-17 00:19:38.639",
+      "dateStarted": "2020-06-24 01:14:02.386",
+      "dateFinished": "2020-06-24 01:14:02.516",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.SparkConf",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-17 11:11:42.202",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.SparkConf\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581934272473_-22738524",
+      "id": "20200217-111112_1289576444",
+      "dateCreated": "2020-02-17 11:11:12.473",
+      "dateStarted": "2020-02-17 11:11:42.224",
+      "dateFinished": "2020-02-17 11:11:42.550",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val sparkconf \u003d new SparkConf",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-17 11:11:59.766",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "sparkconf: org.apache.spark.SparkConf \u003d org.apache.spark.SparkConf@58dea83\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581934302202_697874820",
+      "id": "20200217-111142_1068853179",
+      "dateCreated": "2020-02-17 11:11:42.202",
+      "dateStarted": "2020-02-17 11:11:59.787",
+      "dateFinished": "2020-02-17 11:12:00.050",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\r\n* an asterisk starts an unordered list\r\n* and this is another item in the list\r\n+ or you can also use the + character\r\n- or the - character\r\n\r\nTo start an ordered list, write this:\r\n\r\n+ this starts a list *with* numbers\r\n+  this will show as number \"2\"\r\n*  this will show as number \"3.\"\r\n+ any number, +, -, or * will keep the list going.\r\n    * just indent by 4 spaces (or tab) to make a sub-list\r\n        1. keep indenting for more sub lists\r\n    * here i\u0027m back to the second level\r\n\r\nTo start a check list, write this:\r\n\r\n- [ ] this is not checked\r\n- [ ] this is too\r\n- [x] but this is checked",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-17 13:05:22.828",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": false,
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cul\u003e\n  \u003cli\u003ean asterisk starts an unordered list\u003c/li\u003e\n  \u003cli\u003eand this is another item in the list\u003c/li\u003e\n  \u003cli\u003eor you can also use the + character\u003c/li\u003e\n  \u003cli\u003eor the - character\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eTo start an ordered list, write this:\u003c/p\u003e\n\u003cul\u003e\n  \u003cli\u003ethis starts a list \u003cem\u003ewith\u003c/em\u003e numbers\u003c/li\u003e\n  \u003cli\u003ethis will show as number \u0026ldquo;2\u0026rdquo;\u003c/li\u003e\n  \u003cli\u003ethis will show as number \u0026ldquo;3.\u0026rdquo;\u003c/li\u003e\n  \u003cli\u003eany number, +, -, or * will keep the list going.\n    \u003cul\u003e\n      \u003cli\u003ejust indent by 4 spaces (or tab) to make a sub-list\n        \u003col\u003e\n          \u003cli\u003ekeep indenting for more sub lists\u003c/li\u003e\n        \u003c/ol\u003e\n      \u003c/li\u003e\n      \u003cli\u003ehere i\u0026rsquo;m back to the second level\u003c/li\u003e\n    \u003c/ul\u003e\n  \u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eTo start a check list, write this:\u003c/p\u003e\n\u003cul\u003e\n  \u003cli class\u003d\"task-list-item\"\u003e\u003cinput type\u003d\"checkbox\" class\u003d\"task-list-item-checkbox\" disabled\u003d\"disabled\"\u003e\u003c/input\u003ethis is not checked\u003c/li\u003e\n  \u003cli class\u003d\"task-list-item\"\u003e\u003cinput type\u003d\"checkbox\" class\u003d\"task-list-item-checkbox\" disabled\u003d\"disabled\"\u003e\u003c/input\u003ethis is too\u003c/li\u003e\n  \u003cli class\u003d\"task-list-item\"\u003e\u003cinput type\u003d\"checkbox\" class\u003d\"task-list-item-checkbox\" checked\u003d\"checked\" disabled\u003d\"disabled\"\u003e\u003c/input\u003ebut this is checked\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581934319766_-822546589",
+      "id": "20200217-111159_1536509599",
+      "dateCreated": "2020-02-17 11:11:59.766",
+      "dateStarted": "2020-02-17 13:05:19.779",
+      "dateFinished": "2020-02-17 13:05:19.786",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// Create bucketed tables\r\nimport org.apache.spark.sql.SaveMode\r\nspark.range(10e4.toLong)\r\n  .write\r\n  .bucketBy(4, \"id\")\r\n  .sortBy(\"id\")\r\n  .mode(SaveMode.Overwrite)\r\n  .saveAsTable(\"bucketed_4_10e4\")\r\nspark.range(10e6.toLong)\r\n  .write\r\n  .bucketBy(4, \"id\")\r\n  .sortBy(\"id\")\r\n  .mode(SaveMode.Overwrite)\r\n  .saveAsTable(\"bucketed_4_10e6\")\r\n\r\nval bucketed_4_10e4 \u003d spark.table(\"bucketed_4_10e4\")\r\nval bucketed_4_10e6 \u003d spark.table(\"bucketed_4_10e6\")\r\n\r\n// trigger execution of the join query\r\nbucketed_4_10e4.join(bucketed_4_10e6, \"id\").foreach(_ \u003d\u003e ())",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 01:17:08.253",
+      "config": {
+        "colWidth": 6.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.SaveMode\r\nbucketed_4_10e4: org.apache.spark.sql.DataFrame \u003d [id: bigint]\r\nbucketed_4_10e6: org.apache.spark.sql.DataFrame \u003d [id: bigint]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581941024780_-406850526",
+      "id": "20200217-130344_797802543",
+      "dateCreated": "2020-02-17 13:03:44.780",
+      "dateStarted": "2020-06-24 01:16:02.903",
+      "dateFinished": "2020-06-24 01:16:10.271",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "//sc.range(0, 10)\nspark.range(10e4.toLong)",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 01:24:20.376",
+      "config": {
+        "colWidth": 6.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res17: org.apache.spark.sql.Dataset[Long] \u003d [id: bigint]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1592954562442_-958362993",
+      "id": "20200624-012242_593385211",
+      "dateCreated": "2020-06-24 01:22:42.442",
+      "dateStarted": "2020-06-24 01:24:20.403",
+      "dateFinished": "2020-06-24 01:24:20.522",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.range(10e4.toLong)\n     .write\n     .bucketBy(4, \"id\")\n     .sortBy(\"id\")\n     .mode(\"overwrite\")\n     .saveAsTable(\"bucketed_4_10e4\")\n\nval bucketed_4_10e4 \u003d spark.table(\"bucketed_4_10e4\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 01:30:48.691",
+      "config": {
+        "colWidth": 6.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "bucketed_4_10e4: org.apache.spark.sql.DataFrame \u003d [id: bigint]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1592954232569_-1415433647",
+      "id": "20200624-011712_2105483751",
+      "dateCreated": "2020-06-24 01:17:12.569",
+      "dateStarted": "2020-06-24 01:30:48.717",
+      "dateFinished": "2020-06-24 01:30:49.783",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// Create bucketed tables\r\nimport org.apache.spark.sql.SaveMode\r\nspark.range(10e4.toLong)\r\n  .write\r\n  .bucketBy(4, \"id\")\r\n  .sortBy(\"id\")\r\n  .mode(SaveMode.Overwrite)\r\n  .saveAsTable(\"bucketed_4_10e4\")\r\nspark.range(10e6.toLong)\r\n  .write\r\n  .bucketBy(4, \"id\")\r\n  .sortBy(\"id\")\r\n  .mode(SaveMode.Overwrite)\r\n  .saveAsTable(\"bucketed_4_10e6\")\r\n\r\nval bucketed_4_10e4 \u003d spark.table(\"bucketed_4_10e4\")\r\nval bucketed_4_10e6 \u003d spark.table(\"bucketed_4_10e6\")\r\n\r\n// trigger execution of the join query\r\nval buc_joined \u003d bucketed_4_10e4.join(bucketed_4_10e6, \"id\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 01:35:14.758",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.SaveMode\r\nbucketed_4_10e4: org.apache.spark.sql.DataFrame \u003d [id: bigint]\r\nbucketed_4_10e6: org.apache.spark.sql.DataFrame \u003d [id: bigint]\r\nbuc_joined: org.apache.spark.sql.DataFrame \u003d [id: bigint]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1592955288689_94741479",
+      "id": "20200624-013448_1455840025",
+      "dateCreated": "2020-06-24 01:34:48.689",
+      "dateStarted": "2020-06-24 01:35:14.786",
+      "dateFinished": "2020-06-24 01:35:18.151",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "bucketed_4_10e4.sort(\"id\").show",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 01:48:31.733",
+      "config": {
+        "colWidth": 4.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+\n| id|\n+---+\n|  0|\n|  1|\n|  2|\n|  3|\n|  4|\n|  5|\n|  6|\n|  7|\n|  8|\n|  9|\n| 10|\n| 11|\n| 12|\n| 13|\n| 14|\n| 15|\n| 16|\n| 17|\n| 18|\n| 19|\n+---+\nonly showing top 20 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1592955912481_856267586",
+      "id": "20200624-014512_472344632",
+      "dateCreated": "2020-06-24 01:45:12.481",
+      "dateStarted": "2020-06-24 01:45:48.854",
+      "dateFinished": "2020-06-24 01:45:49.216",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.range(1e3.toLong).count\n\n//bucketed_4_10e4.count",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 01:52:44.376",
+      "config": {
+        "colWidth": 4.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res30: Long \u003d 1000\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1592956116131_-119920678",
+      "id": "20200624-014836_764826176",
+      "dateCreated": "2020-06-24 01:48:36.132",
+      "dateStarted": "2020-06-24 01:52:44.402",
+      "dateFinished": "2020-06-24 01:52:44.617",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.range(10e4.toLong).show",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 01:54:34.628",
+      "config": {
+        "colWidth": 4.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+\n| id|\n+---+\n|  0|\n|  1|\n|  2|\n|  3|\n|  4|\n|  5|\n|  6|\n|  7|\n|  8|\n|  9|\n| 10|\n| 11|\n| 12|\n| 13|\n| 14|\n| 15|\n| 16|\n| 17|\n| 18|\n| 19|\n+---+\nonly showing top 20 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1592955326677_1113409161",
+      "id": "20200624-013526_648597709",
+      "dateCreated": "2020-06-24 01:35:26.677",
+      "dateStarted": "2020-06-24 01:37:14.507",
+      "dateFinished": "2020-06-24 01:37:14.673",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df \u003d (1 to 10).toDF()\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 01:57:32.893",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "df: org.apache.spark.sql.DataFrame \u003d [value: int]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581961498567_938593882",
+      "id": "20200217-184458_849258930",
+      "dateCreated": "2020-02-17 18:44:58.567",
+      "dateStarted": "2020-06-24 01:57:32.922",
+      "dateFinished": "2020-06-24 01:57:33.092",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.first.get(0)",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 02:00:09.335",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res36: Any \u003d 1\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581965051926_-486991452",
+      "id": "20200217-194411_549564673",
+      "dateCreated": "2020-02-17 19:44:11.926",
+      "dateStarted": "2020-06-24 02:00:09.365",
+      "dateFinished": "2020-06-24 02:00:09.477",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.take(1)(0)(0).asInstanceOf[Int]",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 02:02:20.626",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res37: Int \u003d 1\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581965076121_677185663",
+      "id": "20200217-194436_2094760408",
+      "dateCreated": "2020-02-17 19:44:36.121",
+      "dateStarted": "2020-06-24 02:02:20.654",
+      "dateFinished": "2020-06-24 02:02:20.785",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "(1 to 10).map(_ \u003d\u003e +1)",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 02:07:28.764",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res39: scala.collection.immutable.IndexedSeq[Int] \u003d Vector(2, 3, 4, 5, 6, 7, 8, 9, 10, 11)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1592957067613_-825155755",
+      "id": "20200624-020427_1995178475",
+      "dateCreated": "2020-06-24 02:04:27.613",
+      "dateStarted": "2020-06-24 02:05:14.006",
+      "dateFinished": "2020-06-24 02:05:14.323",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df \u003d Seq((1,3,4),(1,2,3),(2,3,4),(2,3,5)).toDF(\"col1\",\"col2\",\"col3\")\r\n\r\nval exprs \u003d df.columns.map((_ -\u003e \"approx_count_distinct\")).toMap\r\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 02:02:33.452",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "df: org.apache.spark.sql.DataFrame \u003d [col1: int, col2: int ... 1 more field]\r\nexprs: scala.collection.immutable.Map[String,String] \u003d Map(col1 -\u003e approx_count_distinct, col2 -\u003e approx_count_distinct, col3 -\u003e approx_count_distinct)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581965096843_840673180",
+      "id": "20200217-194456_1019807735",
+      "dateCreated": "2020-02-17 19:44:56.843",
+      "dateStarted": "2020-06-24 02:02:33.480",
+      "dateFinished": "2020-06-24 02:02:34.618",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-17 22:53:19.959",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----+----+----+\n|col1|col2|col3|\n+----+----+----+\n|   1|   3|   4|\n|   1|   2|   3|\n|   2|   3|   4|\n|   2|   3|   5|\n+----+----+----+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581976332062_-1795058495",
+      "id": "20200217-225212_9769331",
+      "dateCreated": "2020-02-17 22:52:12.062",
+      "dateStarted": "2020-02-17 22:53:19.981",
+      "dateFinished": "2020-02-17 22:53:20.174",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "exprs",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-17 23:07:56.598",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res44: scala.collection.immutable.Map[String,String] \u003d Map(col1 -\u003e approx_count_distinct, col2 -\u003e approx_count_distinct, col3 -\u003e approx_count_distinct)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581976399959_-673675615",
+      "id": "20200217-225319_1177336623",
+      "dateCreated": "2020-02-17 22:53:19.959",
+      "dateStarted": "2020-02-17 23:07:56.620",
+      "dateFinished": "2020-02-17 23:07:56.811",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.columns.map((_ -\u003e \"approx_count_distinct\"))",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-17 23:10:07.486",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res45: Array[(String, String)] \u003d Array((col1,approx_count_distinct), (col2,approx_count_distinct), (col3,approx_count_distinct))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581977276598_2124253008",
+      "id": "20200217-230756_1265061209",
+      "dateCreated": "2020-02-17 23:07:56.598",
+      "dateStarted": "2020-02-17 23:10:07.511",
+      "dateFinished": "2020-02-17 23:10:07.825",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.columns.map(_ -\u003e \"approx_count_distinct\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 02:08:16.752",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res40: Array[(String, String)] \u003d Array((col1,approx_count_distinct), (col2,approx_count_distinct), (col3,approx_count_distinct))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1592957290707_1045898815",
+      "id": "20200624-020810_1868465012",
+      "dateCreated": "2020-06-24 02:08:10.708",
+      "dateStarted": "2020-06-24 02:08:16.780",
+      "dateFinished": "2020-06-24 02:08:17.058",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.agg((\"col1\", \"approx_count_distinct\")).show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-17 23:14:15.789",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---------------------------+\n|approx_count_distinct(col1)|\n+---------------------------+\n|                          2|\n+---------------------------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581977407486_241017711",
+      "id": "20200217-231007_960841856",
+      "dateCreated": "2020-02-17 23:10:07.486",
+      "dateStarted": "2020-02-17 23:14:15.810",
+      "dateFinished": "2020-02-17 23:14:16.338",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.util.LongAccumulator\n\nimport org.apache.spark.sql.Row\n\nimport spark.implicits._",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-17 23:50:32.863",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.util.LongAccumulator\r\nimport org.apache.spark.sql.Row\r\nimport spark.implicits._\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581977623566_1746091249",
+      "id": "20200217-231343_254731513",
+      "dateCreated": "2020-02-17 23:13:43.566",
+      "dateStarted": "2020-02-17 23:50:32.886",
+      "dateFinished": "2020-02-17 23:50:33.632",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "math",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 02:12:12.955",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cconsole\u003e:32: error: package scala.math is not a value\r\n       math\r\n       ^\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1592957530631_-492238167",
+      "id": "20200624-021210_1057847807",
+      "dateCreated": "2020-06-24 02:12:10.631",
+      "dateStarted": "2020-06-24 02:12:12.986",
+      "dateFinished": "2020-06-24 02:12:12.999",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "math.round(math.random * 100)",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 02:12:55.571",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res43: Long \u003d 90\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581979314839_1760437135",
+      "id": "20200217-234154_2130039561",
+      "dateCreated": "2020-02-17 23:41:54.839",
+      "dateStarted": "2020-06-24 02:12:55.600",
+      "dateFinished": "2020-06-24 02:12:55.718",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df \u003d spark.range(1,100).map(x \u003d\u003e (x, math.round(math.random * 100)))\n\ndf.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 02:14:02.373",
+      "config": {
+        "colWidth": 6.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+---+\n| _1| _2|\n+---+---+\n|  1| 66|\n|  2| 52|\n|  3| 39|\n|  4| 21|\n|  5| 88|\n|  6| 52|\n|  7| 90|\n|  8| 95|\n|  9| 74|\n| 10| 76|\n| 11| 75|\n| 12| 39|\n| 13| 87|\n| 14| 24|\n| 15| 98|\n| 16| 78|\n| 17| 17|\n| 18| 98|\n| 19| 10|\n| 20| 42|\n+---+---+\nonly showing top 20 rows\n\r\ndf: org.apache.spark.sql.Dataset[(Long, Long)] \u003d [_1: bigint, _2: bigint]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581979333958_692965175",
+      "id": "20200217-234213_739492175",
+      "dateCreated": "2020-02-17 23:42:13.958",
+      "dateStarted": "2020-02-17 23:51:03.631",
+      "dateFinished": "2020-02-17 23:51:04.138",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df \u003d spark.range(1,100).map(x \u003d\u003e (x, x+1))\n\ndf.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-24 02:14:27.500",
+      "config": {
+        "colWidth": 6.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+---+\n| _1| _2|\n+---+---+\n|  1|  2|\n|  2|  3|\n|  3|  4|\n|  4|  5|\n|  5|  6|\n|  6|  7|\n|  7|  8|\n|  8|  9|\n|  9| 10|\n| 10| 11|\n| 11| 12|\n| 12| 13|\n| 13| 14|\n| 14| 15|\n| 15| 16|\n| 16| 17|\n| 17| 18|\n| 18| 19|\n| 19| 20|\n| 20| 21|\n+---+---+\nonly showing top 20 rows\n\r\ndf: org.apache.spark.sql.Dataset[(Long, Long)] \u003d [_1: bigint, _2: bigint]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1592957648195_668469804",
+      "id": "20200624-021408_1654077513",
+      "dateCreated": "2020-06-24 02:14:08.195",
+      "dateStarted": "2020-06-24 02:14:27.528",
+      "dateFinished": "2020-06-24 02:14:27.950",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val acc \u003d new LongAccumulator()",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-17 23:51:47.409",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "acc: org.apache.spark.util.LongAccumulator \u003d Un-registered Accumulator: LongAccumulator\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581979547670_1056145604",
+      "id": "20200217-234547_1839360543",
+      "dateCreated": "2020-02-17 23:45:47.670",
+      "dateStarted": "2020-02-17 23:51:47.435",
+      "dateFinished": "2020-02-17 23:51:47.616",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.foreach(x \u003d\u003e acc.add(1))",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-17 23:56:47.458",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "org.apache.spark.SparkException: Task not serializable\r\n  at org.apache.spark.util.ClosureCleaner$.ensureSerializable(ClosureCleaner.scala:403)\r\n  at org.apache.spark.util.ClosureCleaner$.org$apache$spark$util$ClosureCleaner$$clean(ClosureCleaner.scala:393)\r\n  at org.apache.spark.util.ClosureCleaner$.clean(ClosureCleaner.scala:162)\r\n  at org.apache.spark.SparkContext.clean(SparkContext.scala:2326)\r\n  at org.apache.spark.rdd.RDD$$anonfun$foreach$1.apply(RDD.scala:926)\r\n  at org.apache.spark.rdd.RDD$$anonfun$foreach$1.apply(RDD.scala:925)\r\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)\r\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)\r\n  at org.apache.spark.rdd.RDD.withScope(RDD.scala:363)\r\n  at org.apache.spark.rdd.RDD.foreach(RDD.scala:925)\r\n  at org.apache.spark.sql.Dataset$$anonfun$foreach$1.apply$mcV$sp(Dataset.scala:2722)\r\n  at org.apache.spark.sql.Dataset$$anonfun$foreach$1.apply(Dataset.scala:2722)\r\n  at org.apache.spark.sql.Dataset$$anonfun$foreach$1.apply(Dataset.scala:2722)\r\n  at org.apache.spark.sql.Dataset$$anonfun$withNewRDDExecutionId$1.apply(Dataset.scala:3355)\r\n  at org.apache.spark.sql.execution.SQLExecution$$anonfun$withNewExecutionId$1.apply(SQLExecution.scala:78)\r\n  at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:125)\r\n  at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:73)\r\n  at org.apache.spark.sql.Dataset.withNewRDDExecutionId(Dataset.scala:3351)\r\n  at org.apache.spark.sql.Dataset.foreach(Dataset.scala:2721)\r\n  ... 51 elided\r\nCaused by: java.lang.UnsupportedOperationException: Accumulator must be registered before send to executor\r\n  at org.apache.spark.util.AccumulatorV2.writeReplace(AccumulatorV2.scala:162)\r\n  at sun.reflect.GeneratedMethodAccessor161.invoke(Unknown Source)\r\n  at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)\r\n  at java.lang.reflect.Method.invoke(Unknown Source)\r\n  at java.io.ObjectStreamClass.invokeWriteReplace(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeObject0(Unknown Source)\r\n  at java.io.ObjectOutputStream.defaultWriteFields(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeSerialData(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeOrdinaryObject(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeObject0(Unknown Source)\r\n  at java.io.ObjectOutputStream.defaultWriteFields(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeSerialData(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeOrdinaryObject(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeObject0(Unknown Source)\r\n  at java.io.ObjectOutputStream.defaultWriteFields(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeSerialData(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeOrdinaryObject(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeObject0(Unknown Source)\r\n  at java.io.ObjectOutputStream.defaultWriteFields(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeSerialData(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeOrdinaryObject(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeObject0(Unknown Source)\r\n  at java.io.ObjectOutputStream.defaultWriteFields(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeSerialData(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeOrdinaryObject(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeObject0(Unknown Source)\r\n  at java.io.ObjectOutputStream.defaultWriteFields(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeSerialData(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeOrdinaryObject(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeObject0(Unknown Source)\r\n  at java.io.ObjectOutputStream.defaultWriteFields(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeSerialData(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeOrdinaryObject(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeObject0(Unknown Source)\r\n  at java.io.ObjectOutputStream.defaultWriteFields(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeSerialData(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeOrdinaryObject(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeObject0(Unknown Source)\r\n  at java.io.ObjectOutputStream.defaultWriteFields(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeSerialData(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeOrdinaryObject(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeObject0(Unknown Source)\r\n  at java.io.ObjectOutputStream.defaultWriteFields(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeSerialData(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeOrdinaryObject(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeObject0(Unknown Source)\r\n  at java.io.ObjectOutputStream.defaultWriteFields(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeSerialData(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeOrdinaryObject(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeObject0(Unknown Source)\r\n  at java.io.ObjectOutputStream.defaultWriteFields(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeSerialData(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeOrdinaryObject(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeObject0(Unknown Source)\r\n  at java.io.ObjectOutputStream.defaultWriteFields(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeSerialData(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeOrdinaryObject(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeObject0(Unknown Source)\r\n  at java.io.ObjectOutputStream.defaultWriteFields(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeSerialData(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeOrdinaryObject(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeObject0(Unknown Source)\r\n  at java.io.ObjectOutputStream.defaultWriteFields(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeSerialData(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeOrdinaryObject(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeObject0(Unknown Source)\r\n  at java.io.ObjectOutputStream.defaultWriteFields(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeSerialData(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeOrdinaryObject(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeObject0(Unknown Source)\r\n  at java.io.ObjectOutputStream.writeObject(Unknown Source)\r\n  at org.apache.spark.serializer.JavaSerializationStream.writeObject(JavaSerializer.scala:43)\r\n  at org.apache.spark.serializer.JavaSerializerInstance.serialize(JavaSerializer.scala:100)\r\n  at org.apache.spark.util.ClosureCleaner$.ensureSerializable(ClosureCleaner.scala:400)\r\n  ... 69 more\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581979907409_1383699502",
+      "id": "20200217-235147_979408057",
+      "dateCreated": "2020-02-17 23:51:47.409",
+      "dateStarted": "2020-02-17 23:56:47.485",
+      "dateFinished": "2020-02-17 23:56:47.937",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.filter(x \u003d\u003e x._2\u003e50).foreach(println(_))",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-18 00:31:58.053",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1581980257960_460056687",
+      "id": "20200217-235737_799384213",
+      "dateCreated": "2020-02-17 23:57:37.960",
+      "dateStarted": "2020-02-18 00:31:40.430",
+      "dateFinished": "2020-02-18 00:31:40.841",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val accum \u003d sc.longAccumulator(\"My Accumulator\")\n\nsc.parallelize(Array(1, 2, 3, 4)).toDF.foreach(x \u003d\u003e accum.add(x(0)))\n\naccum.value",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-18 00:15:06.270",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cconsole\u003e:40: error: overloaded method value add with alternatives:\r\n  (v: scala.Long)Unit \u003cand\u003e\r\n  (v: java.lang.Long)Unit\r\n cannot be applied to (Any)\r\n       sc.parallelize(Array(1, 2, 3, 4)).toDF.foreach(x \u003d\u003e accum.add(x(0)))\r\n                                                                 ^\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581980047720_-291816135",
+      "id": "20200217-235407_828276142",
+      "dateCreated": "2020-02-17 23:54:07.720",
+      "dateStarted": "2020-02-18 00:15:06.300",
+      "dateFinished": "2020-02-18 00:15:06.356",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "Seq((1, 56), (2,12), (3,12), (4,68), (5,90)).toDF.map(x \u003d\u003e x(0))",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-18 01:06:02.391",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cconsole\u003e:35: error: Unable to find encoder for type Any. An implicit Encoder[Any] is needed to store Any instances in a Dataset. Primitive types (Int, String, etc) and Product types (case classes) are supported by importing spark.implicits._  Support for serializing other types will be added in future releases.\r\n       Seq((1, 56), (2,12), (3,12), (4,68), (5,90)).toDF.map(x \u003d\u003e x(0))\r\n                                                            ^\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581980137385_284561358",
+      "id": "20200217-235537_1348828928",
+      "dateCreated": "2020-02-17 23:55:37.385",
+      "dateStarted": "2020-02-18 01:06:02.415",
+      "dateFinished": "2020-02-18 01:06:02.485",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.functions._",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-18 12:21:30.356",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.functions._\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1581983981443_1708814006",
+      "id": "20200218-005941_1294689568",
+      "dateCreated": "2020-02-18 00:59:41.443",
+      "dateStarted": "2020-02-18 12:21:30.386",
+      "dateFinished": "2020-02-18 12:21:30.572",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df \u003d spark.range(1,100).map(x \u003d\u003e (x, math.round(math.random * 100)))\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-18 12:21:53.696",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "df: org.apache.spark.sql.Dataset[(Long, Long)] \u003d [_1: bigint, _2: bigint]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1582024890356_255598812",
+      "id": "20200218-122130_744239480",
+      "dateCreated": "2020-02-18 12:21:30.356",
+      "dateStarted": "2020-02-18 12:21:53.725",
+      "dateFinished": "2020-02-18 12:21:54.201",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-18 12:21:57.775",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+---+\n| _1| _2|\n+---+---+\n|  1| 68|\n|  2| 55|\n|  3| 98|\n|  4| 16|\n|  5| 75|\n|  6| 44|\n|  7|  3|\n|  8| 69|\n|  9| 89|\n| 10| 24|\n| 11| 83|\n| 12| 65|\n| 13| 67|\n| 14| 64|\n| 15| 40|\n| 16| 72|\n| 17| 94|\n| 18| 78|\n| 19| 88|\n| 20| 64|\n+---+---+\nonly showing top 20 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1582024913696_-1061566603",
+      "id": "20200218-122153_666276479",
+      "dateCreated": "2020-02-18 12:21:53.696",
+      "dateStarted": "2020-02-18 12:21:57.804",
+      "dateFinished": "2020-02-18 12:21:58.095",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.select(approxCountDistinct($\"_2\")).show",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-18 12:22:47.530",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "warning: there was one deprecation warning; re-run with -deprecation for details\n+-------------------------+\n|approx_count_distinct(_2)|\n+-------------------------+\n|                       63|\n+-------------------------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1582024917775_1087384498",
+      "id": "20200218-122157_1220866863",
+      "dateCreated": "2020-02-18 12:21:57.775",
+      "dateStarted": "2020-02-18 12:22:47.559",
+      "dateFinished": "2020-02-18 12:22:48.319",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.distinct().show",
+      "user": "anonymous",
+      "dateUpdated": "2020-02-18 12:23:27.569",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+---+\n| _1| _2|\n+---+---+\n| 86|  9|\n| 72| 33|\n| 91| 90|\n| 84| 67|\n| 66| 75|\n| 44|  9|\n| 12| 88|\n| 33| 27|\n|  9| 94|\n|  8| 33|\n| 55| 78|\n| 45| 89|\n| 56| 50|\n| 93| 26|\n| 88| 92|\n|  3| 52|\n| 34| 73|\n| 77| 84|\n| 95| 86|\n| 41| 73|\n+---+---+\nonly showing top 20 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1582024963056_770717254",
+      "id": "20200218-122243_1076548662",
+      "dateCreated": "2020-02-18 12:22:43.056",
+      "dateStarted": "2020-02-18 12:23:27.596",
+      "dateFinished": "2020-02-18 12:23:28.447",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df \u003d Seq(\r\n  (2012, \"Tesla\", \"S\"), (1997, \"Ford\", \"E350\"),\r\n  (2015, \"Chevy\", \"Volt\")\r\n).toDF(\"year\", \"make\", \"model\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-01 23:06:59.721",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "df: org.apache.spark.sql.DataFrame \u003d [year: int, make: string ... 1 more field]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1582024992586_1077327494",
+      "id": "20200218-122312_1860402732",
+      "dateCreated": "2020-02-18 12:23:12.586",
+      "dateStarted": "2020-07-01 23:06:59.952",
+      "dateFinished": "2020-07-01 23:07:29.886",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.Row\r\n\r\ndf.map {\r\n  case Row(year: Int, make: String, model: String) \u003d\u003e \r\n    (year, if(make.toLowerCase \u003d\u003d \"tesla\") \"S\" else make, model)\r\n}.show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-01 23:07:37.413",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----+-----+----+\n|  _1|   _2|  _3|\n+----+-----+----+\n|2012|    S|   S|\n|1997| Ford|E350|\n|2015|Chevy|Volt|\n+----+-----+----+\n\r\nimport org.apache.spark.sql.Row\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593636750868_160500893",
+      "id": "20200701-225230_930516119",
+      "dateCreated": "2020-07-01 22:52:30.868",
+      "dateStarted": "2020-07-01 23:07:37.527",
+      "dateFinished": "2020-07-01 23:07:39.942",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "for (colName \u003c- df.columns) yield {colName}",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-01 23:21:11.722",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res19: Array[String] \u003d Array(year, make, model)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1593636776057_-251319075",
+      "id": "20200701-225256_570106682",
+      "dateCreated": "2020-07-01 22:52:56.057",
+      "dateStarted": "2020-07-01 23:21:11.755",
+      "dateFinished": "2020-07-01 23:21:11.923",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1593638384400_17998615",
+      "id": "20200701-231944_226071830",
+      "dateCreated": "2020-07-01 23:19:44.400",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Playground",
+  "id": "2EZU28Z2P",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

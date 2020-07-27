@@ -1,0 +1,2589 @@
+{
+  "paragraphs": [
+    {
+      "text": "%sh\ndir",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 12:01:17.372",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/sh"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": " Volume in drive D has no label.\r\n Volume Serial Number is 6EF7-E246\r\n\r\n Directory of D:\\AnacondaProjects\r\n\r\n30/01/2020  01:32    \u003cDIR\u003e          .\r\n30/01/2020  01:32    \u003cDIR\u003e          ..\r\n27/01/2020  19:26    \u003cDIR\u003e          .ipynb_checkpoints\r\n13/03/2019  00:35                46 1.yml\r\n28/01/2020  17:07    \u003cDIR\u003e          1week4\r\n05/11/2019  16:10    \u003cDIR\u003e          1week4_2\r\n23/11/2019  11:54            16,925 Advanced AnalyticsSpark-ch2.ipynb\r\n23/11/2019  15:01    \u003cDIR\u003e          AdvancedAnalyticsSpark\r\n13/10/2019  19:54           253,555 AdvancedAnalyticsSpark-Chap 2 (5).json\r\n14/11/2019  10:58         7,665,025 backup6887153579280596404.serpmojo\r\n28/01/2020  17:13    \u003cDIR\u003e          BayesianModel\r\n12/03/2019  18:42    \u003cDIR\u003e          beakerx-master\r\n13/03/2019  22:31           216,308 binning-bagging.ipynb\r\n16/11/2019  22:28    \u003cDIR\u003e          checkpoint\r\n20/10/2019  04:03         8,835,072 chromedriver.exe\r\n14/11/2019  23:49         4,845,020 chromedriver_win32.zip\r\n27/02/2019  01:11    \u003cDIR\u003e          competitive-data-science-master\r\n24/02/2019  10:01    \u003cDIR\u003e          cookbook-2nd-code-master\r\n16/11/2019  07:17            42,519 Copy_of_Train_a_GPT_2_Text_Generating_Model_w_GPU.ipynb\r\n23/02/2019  23:50    \u003cDIR\u003e          dask-worker-space\r\n23/08/2019  05:35    \u003cDIR\u003e          databricks-master\r\n24/09/2019  22:56       125,368,023 databricks-master.zip\r\n30/01/2020  09:52    \u003cDIR\u003e          Datasets\r\n16/01/2020  02:14    \u003cDIR\u003e          docker-spark\r\n16/01/2020  12:17    \u003cDIR\u003e          docker-spark-cluster\r\n28/01/2020  10:12           642,447 Elaborate HTML_4.ipynb\r\n03/01/2020  07:52             4,609 environment.yml\r\n25/11/2019  13:15             3,838 exampl1.csv\r\n10/12/2019  11:50               161 exampl2.csv\r\n10/12/2019  12:57                78 exampl3.csv\r\n26/01/2020  01:37         1,002,370 Filter - Zeppelin 2.html\r\n26/01/2020  00:07         1,009,368 Filter - Zeppelin.html\r\n14/11/2019  23:44            87,538 glassdoor scraping.ipynb\r\n15/11/2019  00:16            23,657 Glassdoor_scraper.ipynb\r\n15/02/2019  12:44    \u003cDIR\u003e          House_prices\r\n13/01/2020  18:44            42,654 hs_err_pid12572.log\r\n13/01/2020  18:25            42,350 hs_err_pid14988.log\r\n13/01/2020  18:03            43,354 hs_err_pid16288.log\r\n13/01/2020  18:19            42,907 hs_err_pid17024.log\r\n13/01/2020  18:35            41,643 hs_err_pid4824.log\r\n16/11/2019  07:10         1,115,394 input.txt\r\n23/02/2019  20:10    \u003cDIR\u003e          ipyparallel-master\r\n30/01/2020  01:15        12,944,659 lastfm_subset.zip\r\n30/01/2020  01:19       138,366,470 lastfm_test.zip\r\n30/01/2020  01:32     1,078,326,185 lastfm_train.zip\r\n12/01/2020  23:34        18,020,567 Learning Spark SQL - Aurobindo Sarkar.epub\r\n25/02/2019  10:08    \u003cDIR\u003e          LightGBM-master\r\n13/10/2019  20:26    \u003cDIR\u003e          logs\r\n05/10/2019  17:20        16,773,477 Mastering Apache Spark 2.x - Romeo Kienzler.pdf\r\n13/03/2019  14:55    \u003cDIR\u003e          mlens-master\r\n28/01/2020  10:07            40,643 modelli-bayesiani-pymc3-114488643625369928180430136789285.png\r\n28/01/2020  10:07             3,490 modelli-bayesiani-pymc3-121068363449011043211362007287431.png\r\n28/01/2020  10:07            31,895 modelli-bayesiani-pymc3-121479043697138819832313021431105.png\r\n28/01/2020  10:07            17,552 modelli-bayesiani-pymc3-144781850463635941740129536929925.png\r\n28/01/2020  10:07            16,016 modelli-bayesiani-pymc3-145037074592398803157461552750105.png\r\n28/01/2020  10:07            32,796 modelli-bayesiani-pymc3-147233227646439086871186495338983.png\r\n28/01/2020  10:07            74,882 modelli-bayesiani-pymc3-150870221262436550308858595820261.png\r\n28/01/2020  10:07            76,520 modelli-bayesiani-pymc3-36013710810389836003296204862178.png\r\n28/01/2020  10:07            15,881 modelli-bayesiani-pymc3-41991662822083940168956511547887.png\r\n28/01/2020  10:07             9,596 modelli-bayesiani-pymc3-42139425219047447277923198329097.png\r\n28/01/2020  10:07            16,148 modelli-bayesiani-pymc3-47826170745640711411219560250675.png\r\n28/01/2020  10:07            14,943 modelli-bayesiani-pymc3-51228901060707524812006267071429.png\r\n28/01/2020  10:07            17,544 modelli-bayesiani-pymc3-53677119741012496327204749961113.png\r\n28/01/2020  10:07            41,171 modelli-bayesiani-pymc3-63287649704732252013427422310479.png\r\n28/01/2020  10:07            15,750 modelli-bayesiani-pymc3-70583849762835761819156686524549.png\r\n28/01/2020  10:07            24,142 modelli-bayesiani-pymc3-78031576177836376159463465325257.png\r\n16/11/2019  22:24    \u003cDIR\u003e          models\r\n15/07/2019  13:40         2,961,609 Neural Network with Pytorch.ipynb\r\n16/01/2020  15:05            15,120 new 1.txt\r\n13/10/2019  20:41    \u003cDIR\u003e          note\r\n26/09/2019  23:18            99,544 note.json\r\n13/10/2019  20:42    \u003cDIR\u003e          notebook\r\n16/11/2019  06:10    \u003cDIR\u003e          panel-examples\r\n15/03/2019  00:46    \u003cDIR\u003e          PetAdoption\r\n13/01/2020  12:44    \u003cDIR\u003e          prova\r\n13/01/2020  12:46    \u003cDIR\u003e          prova1\r\n21/12/2019  21:12            91,383 Public - Crash Course - Apache Spark - Berlin - 2018.pdf\r\n21/12/2019  21:12            91,383 Public - Crash Course - Data Science - Berlin - 2018.pdf\r\n21/07/2019  22:10    \u003cDIR\u003e          pymc3-master\r\n11/12/2019  12:20           676,800 PySpark_Cheat_Sheet_Python.pdf\r\n06/12/2019  07:10         2,032,143 RDD API example2 - Zeppelin.html\r\n26/09/2019  23:18            99,544 RDD transformation and action (3).json\r\n18/07/2019  21:19        28,014,045 spanish-high-speed-rail-system-ticket-pricing.zip\r\n22/01/2020  16:30    \u003cDIR\u003e          spark\r\n26/11/2019  18:20         1,781,348 Spark Basic 1 - Zeppelin.html\r\n27/11/2019  14:14         1,681,824 Spark Basic 1 - Zeppelin1.html\r\n18/01/2020  15:29    \u003cDIR\u003e          Spark-in-Action\r\n26/09/2019  20:08    \u003cDIR\u003e          Spark-The-Definitive-Guide-master\r\n21/01/2020  17:11    \u003cDIR\u003e          spark-warehouse\r\n14/01/2020  19:53         2,954,222 Spark2_myLearning_inforGraphics.jpg\r\n21/07/2019  23:42            13,172 spec-file.txt\r\n12/03/2019  18:17            18,962 TableAPI.ipynb\r\n06/12/2019  07:13           490,439 temp.html\r\n16/11/2019  06:56    \u003cDIR\u003e          textgenrnn\r\n29/11/2019  07:35         2,814,078 text_generation_app.ipynb\r\n21/11/2019  22:05            88,728 text_generation_transformers.ipynb\r\n21/11/2019  22:45            73,483 text_generation_transformers2.ipynb\r\n23/11/2019  11:14            20,994 text_generation_transformers3.ipynb\r\n26/06/2019  15:30    \u003cDIR\u003e          Titanic_Machine_Learning_From_Disaster\r\n28/01/2020  10:04    \u003cDIR\u003e          UNCSS4\r\n03/01/2020  00:44             1,379 Untitled.ipynb\r\n06/11/2019  01:11               894 Untitled1.ipynb\r\n23/11/2019  11:32             1,071 Untitled10.ipynb\r\n23/11/2019  11:33             1,213 Untitled11.ipynb\r\n23/11/2019  12:20            17,270 Untitled12.ipynb\r\n27/01/2020  17:46                72 Untitled13.ipynb\r\n27/01/2020  19:26                72 Untitled14.ipynb\r\n14/11/2019  17:37            57,337 Untitled2.ipynb\r\n18/11/2019  00:59               555 Untitled3.ipynb\r\n16/11/2019  05:53                72 Untitled4.ipynb\r\n17/11/2019  01:00             3,134 Untitled5.ipynb\r\n17/11/2019  00:54            24,981 Untitled6.ipynb\r\n23/11/2019  11:14             1,273 Untitled7.ipynb\r\n23/11/2019  11:16             1,166 Untitled8.ipynb\r\n23/11/2019  12:31             5,614 Untitled9.ipynb\r\n23/11/2019  13:56                16 vsprova.scala\r\n06/12/2019  07:13             8,910 zeppelin.css\r\n03/12/2019  13:06            46,793 zeppelin1.css\r\n06/12/2019  07:13         2,583,880 ZeppelinHTML.ipynb\r\n03/12/2019  14:39         1,039,095 Zeppelin_postproc.ipynb\r\n27/01/2020  00:02         1,049,015 Zeppelin_postproc_1.ipynb\r\n26/01/2020  23:56            67,545 Zeppelin_postproc_2.ipynb\r\n              86 File(s)  1,465,155,366 bytes\r\n              36 Dir(s)  78,616,961,024 bytes free\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580382068337_438661344",
+      "id": "20200130-120108_1920202048",
+      "dateCreated": "2020-01-30 12:01:08.337",
+      "dateStarted": "2020-01-30 12:01:17.407",
+      "dateFinished": "2020-01-30 12:01:24.339",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\n\nval rawUserArtistDara \u003d sc.textFile(\"D:\\\\AnacondaProjects\\\\Datasets\\\\Audioscrobbler\\\\user_artist_data_smaller.txt\") \n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 12:09:21.217",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/sh"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "rawUserArtistDara: org.apache.spark.rdd.RDD[String] \u003d D:\\AnacondaProjects\\Datasets\\Audioscrobbler\\user_artist_data_smaller.txt MapPartitionsRDD[11] at textFile at \u003cconsole\u003e:25\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580382077376_1690007897",
+      "id": "20200130-120117_1369977407",
+      "dateCreated": "2020-01-30 12:01:17.377",
+      "dateStarted": "2020-01-30 12:09:21.231",
+      "dateFinished": "2020-01-30 12:09:21.540",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 12:13:15.118",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 22.0 failed 1 times, most recent failure: Lost task 0.0 in stage 22.0 (TID 24, localhost, executor driver): java.lang.ClassNotFoundException: $anonfun$1\r\n\tat org.apache.spark.repl.ExecutorClassLoader.findClass(ExecutorClassLoader.scala:111)\r\n\tat java.lang.ClassLoader.loadClass(ClassLoader.java:424)\r\n\tat java.lang.ClassLoader.loadClass(ClassLoader.java:357)\r\n\tat java.lang.Class.forName0(Native Method)\r\n\tat java.lang.Class.forName(Class.java:348)\r\n\tat org.apache.spark.serializer.JavaDeserializationStream$$anon$1.resolveClass(JavaSerializer.scala:67)\r\n\tat java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:1819)\r\n\tat java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1713)\r\n\tat java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1986)\r\n\tat java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535)\r\n\tat java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2231)\r\n\tat java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2155)\r\n\tat java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2013)\r\n\tat java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535)\r\n\tat java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2231)\r\n\tat java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2155)\r\n\tat java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2013)\r\n\tat java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535)\r\n\tat java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2231)\r\n\tat java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2155)\r\n\tat java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2013)\r\n\tat java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535)\r\n\tat java.io.ObjectInputStream.readObject(ObjectInputStream.java:422)\r\n\tat org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:75)\r\n\tat org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:114)\r\n\tat org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:83)\r\n\tat org.apache.spark.scheduler.Task.run(Task.scala:123)\r\n\tat org.apache.spark.executor.Executor$TaskRunner$$anonfun$10.apply(Executor.scala:408)\r\n\tat org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1360)\r\n\tat org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:414)\r\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\r\n\tat java.lang.Thread.run(Thread.java:745)\r\nCaused by: java.lang.ClassNotFoundException: $anonfun$1\r\n\tat java.lang.ClassLoader.findClass(ClassLoader.java:530)\r\n\tat org.apache.spark.util.ParentClassLoader.findClass(ParentClassLoader.java:35)\r\n\tat java.lang.ClassLoader.loadClass(ClassLoader.java:424)\r\n\tat org.apache.spark.util.ParentClassLoader.loadClass(ParentClassLoader.java:40)\r\n\tat java.lang.ClassLoader.loadClass(ClassLoader.java:357)\r\n\tat org.apache.spark.repl.ExecutorClassLoader.findClass(ExecutorClassLoader.scala:106)\r\n\t... 32 more\r\n\r\nDriver stacktrace:\r\n  at org.apache.spark.scheduler.DAGScheduler.org$apache$spark$scheduler$DAGScheduler$$failJobAndIndependentStages(DAGScheduler.scala:1889)\r\n  at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1877)\r\n  at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1876)\r\n  at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)\r\n  at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)\r\n  at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:1876)\r\n  at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:926)\r\n  at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:926)\r\n  at scala.Option.foreach(Option.scala:257)\r\n  at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:926)\r\n  at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:2110)\r\n  at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2059)\r\n  at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2048)\r\n  at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)\r\n  at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:737)\r\n  at org.apache.spark.SparkContext.runJob(SparkContext.scala:2061)\r\n  at org.apache.spark.SparkContext.runJob(SparkContext.scala:2082)\r\n  at org.apache.spark.SparkContext.runJob(SparkContext.scala:2101)\r\n  at org.apache.spark.rdd.RDD$$anonfun$take$1.apply(RDD.scala:1364)\r\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)\r\n  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)\r\n  at org.apache.spark.rdd.RDD.withScope(RDD.scala:363)\r\n  at org.apache.spark.rdd.RDD.take(RDD.scala:1337)\r\n  ... 47 elided\r\nCaused by: java.lang.ClassNotFoundException: $anonfun$1\r\n  at org.apache.spark.repl.ExecutorClassLoader.findClass(ExecutorClassLoader.scala:111)\r\n  at java.lang.ClassLoader.loadClass(ClassLoader.java:424)\r\n  at java.lang.ClassLoader.loadClass(ClassLoader.java:357)\r\n  at java.lang.Class.forName0(Native Method)\r\n  at java.lang.Class.forName(Class.java:348)\r\n  at org.apache.spark.serializer.JavaDeserializationStream$$anon$1.resolveClass(JavaSerializer.scala:67)\r\n  at java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:1819)\r\n  at java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1713)\r\n  at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1986)\r\n  at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535)\r\n  at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2231)\r\n  at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2155)\r\n  at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2013)\r\n  at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535)\r\n  at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2231)\r\n  at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2155)\r\n  at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2013)\r\n  at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535)\r\n  at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:2231)\r\n  at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2155)\r\n  at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2013)\r\n  at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1535)\r\n  at java.io.ObjectInputStream.readObject(ObjectInputStream.java:422)\r\n  at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:75)\r\n  at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:114)\r\n  at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:83)\r\n  at org.apache.spark.scheduler.Task.run(Task.scala:123)\r\n  at org.apache.spark.executor.Executor$TaskRunner$$anonfun$10.apply(Executor.scala:408)\r\n  at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1360)\r\n  at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:414)\r\n  ... 3 more\r\nCaused by: java.lang.ClassNotFoundException: $anonfun$1\r\n  at java.lang.ClassLoader.findClass(ClassLoader.java:530)\r\n  at org.apache.spark.util.ParentClassLoader.findClass(ParentClassLoader.java:35)\r\n  at java.lang.ClassLoader.loadClass(ClassLoader.java:424)\r\n  at org.apache.spark.util.ParentClassLoader.loadClass(ParentClassLoader.java:40)\r\n  at java.lang.ClassLoader.loadClass(ClassLoader.java:357)\r\n  at org.apache.spark.repl.ExecutorClassLoader.findClass(ExecutorClassLoader.scala:106)\r\n  ... 32 more\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580382162862_-181782842",
+      "id": "20200130-120242_1040453076",
+      "dateCreated": "2020-01-30 12:02:42.862",
+      "dateStarted": "2020-01-30 12:09:23.925",
+      "dateFinished": "2020-01-30 12:09:24.362",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "rawUserArtistDara.take(1)(0).split(\" \")(0).toDouble",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 12:06:35.295",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res19: Double \u003d 1059637.0\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580382208445_2086125981",
+      "id": "20200130-120328_1795952203",
+      "dateCreated": "2020-01-30 12:03:28.445",
+      "dateStarted": "2020-01-30 12:06:35.310",
+      "dateFinished": "2020-01-30 12:06:35.521",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.stop",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 12:09:57.899",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1580382225690_-1182087157",
+      "id": "20200130-120345_792623172",
+      "dateCreated": "2020-01-30 12:03:45.690",
+      "dateStarted": "2020-01-30 12:09:57.918",
+      "dateFinished": "2020-01-30 12:09:58.179",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.SparkSession",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 12:10:26.604",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.SparkSession\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580382578469_-520784140",
+      "id": "20200130-120938_2064928982",
+      "dateCreated": "2020-01-30 12:09:38.469",
+      "dateStarted": "2020-01-30 12:10:26.622",
+      "dateFinished": "2020-01-30 12:10:26.763",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val spark \u003d SparkSession.builder.master(\"local[*]\").appName(\"prova\").getOrCreate",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 12:11:08.026",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "spark: org.apache.spark.sql.SparkSession \u003d org.apache.spark.sql.SparkSession@5e16e661\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580382626604_1083104246",
+      "id": "20200130-121026_20365788",
+      "dateCreated": "2020-01-30 12:10:26.604",
+      "dateStarted": "2020-01-30 12:11:08.045",
+      "dateFinished": "2020-01-30 12:11:08.400",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\nval a \u003d spark.sparkContext.textFile(\"D:\\\\AnacondaProjects\\\\Datasets\\\\Audioscrobbler\\\\user_artist_data_smaller.txt\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 12:11:59.167",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "a: org.apache.spark.rdd.RDD[String] \u003d D:\\AnacondaProjects\\Datasets\\Audioscrobbler\\user_artist_data_smaller.txt MapPartitionsRDD[3] at textFile at \u003cconsole\u003e:26\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580382668026_451935911",
+      "id": "20200130-121108_1838486846",
+      "dateCreated": "2020-01-30 12:11:08.026",
+      "dateStarted": "2020-01-30 12:11:59.184",
+      "dateFinished": "2020-01-30 12:11:59.373",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\nval rawUserArtistData \u003d spark.sparkContext.textFile(\"D:\\\\AnacondaProjects\\\\Datasets\\\\Audioscrobbler\\\\user_artist_data_small.txt\") ",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 13:28:23.352",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "rawUserArtistData: org.apache.spark.rdd.RDD[String] \u003d D:\\AnacondaProjects\\Datasets\\Audioscrobbler\\user_artist_data_small.txt MapPartitionsRDD[31] at textFile at \u003cconsole\u003e:26\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580382708439_-637167665",
+      "id": "20200130-121148_1450797386",
+      "dateCreated": "2020-01-30 12:11:48.439",
+      "dateStarted": "2020-01-30 13:28:23.373",
+      "dateFinished": "2020-01-30 13:28:23.593",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "rawUserArtistDara.map( x \u003d\u003e x.split(\" \")(1).toDouble).stats",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 12:14:00.971",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res26: org.apache.spark.util.StatCounter \u003d (count: 49481, mean: 2003155.029729, stdev: 2489584.207124, max: 10788218.000000, min: 1.000000)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580382737597_-673943672",
+      "id": "20200130-121217_1445404450",
+      "dateCreated": "2020-01-30 12:12:17.597",
+      "dateStarted": "2020-01-30 12:14:00.988",
+      "dateFinished": "2020-01-30 12:14:01.239",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "Integer.MAX_VALUE",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 12:14:40.425",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res27: Int \u003d 2147483647\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580382817704_1950347131",
+      "id": "20200130-121337_403710139",
+      "dateCreated": "2020-01-30 12:13:37.704",
+      "dateStarted": "2020-01-30 12:14:40.448",
+      "dateFinished": "2020-01-30 12:14:40.607",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\nval rawArtistData \u003d spark.sparkContext.textFile(\"D:\\\\AnacondaProjects\\\\Datasets\\\\Audioscrobbler\\\\artist_data_small.txt\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 12:23:34.364",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "rawArtistData: org.apache.spark.rdd.RDD[String] \u003d D:\\AnacondaProjects\\Datasets\\Audioscrobbler\\artist_data_small.txt MapPartitionsRDD[21] at textFile at \u003cconsole\u003e:26\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580382880425_-1154326067",
+      "id": "20200130-121440_1540924635",
+      "dateCreated": "2020-01-30 12:14:40.425",
+      "dateStarted": "2020-01-30 12:23:34.388",
+      "dateFinished": "2020-01-30 12:23:34.571",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val artistByID \u003d rawArtistData.map{ line \u003d\u003e\n    val (id,name) \u003d line.span( x\u003d\u003e x!\u003d \u0027\\t\u0027)\n    Some((id.toInt, name.trim))\n}",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 12:27:31.436",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "artistByID: org.apache.spark.rdd.RDD[Some[(Int, String)]] \u003d MapPartitionsRDD[24] at map at \u003cconsole\u003e:28\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580382977314_-1908920504",
+      "id": "20200130-121617_1742497452",
+      "dateCreated": "2020-01-30 12:16:17.314",
+      "dateStarted": "2020-01-30 12:27:31.457",
+      "dateFinished": "2020-01-30 12:27:31.688",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val artistByID \u003d rawArtistData.flatMap{ line \u003d\u003e\n    val (id,name) \u003d line.span( x\u003d\u003e x!\u003d \u0027\\t\u0027)\n    Some((id.toInt, name.trim))\n}",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 12:28:41.628",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "artistByID: org.apache.spark.rdd.RDD[(Int, String)] \u003d MapPartitionsRDD[26] at flatMap at \u003cconsole\u003e:28\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580383662559_797233011",
+      "id": "20200130-122742_1866483524",
+      "dateCreated": "2020-01-30 12:27:42.559",
+      "dateStarted": "2020-01-30 12:28:41.648",
+      "dateFinished": "2020-01-30 12:28:41.924",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "artistByID.take(1)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 13:24:10.690",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res56: Array[(Int, String)] \u003d Array((1240105,André Visior))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580383082227_1306139189",
+      "id": "20200130-121802_1471413974",
+      "dateCreated": "2020-01-30 12:18:02.227",
+      "dateStarted": "2020-01-30 13:24:10.714",
+      "dateFinished": "2020-01-30 13:24:10.897",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "line.span( x \u003d\u003e x!\u003d\u0027\\t\u0027 )._2",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 12:21:16.271",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res33: String \u003d \"\ttopolino\"\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580383136271_-766895442",
+      "id": "20200130-121856_1656939055",
+      "dateCreated": "2020-01-30 12:18:56.271",
+      "dateStarted": "2020-01-30 12:21:16.293",
+      "dateFinished": "2020-01-30 12:21:16.480",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 13:24:32.612",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cconsole\u003e:2: error: identifier expected but \u0027override\u0027 found.\r\noverride def span(p: Char \u003d\u003e Boolean): (String, String)\r\n^\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580383175752_570211856",
+      "id": "20200130-121935_184222894",
+      "dateCreated": "2020-01-30 12:19:35.752",
+      "dateStarted": "2020-01-30 12:22:08.287",
+      "dateFinished": "2020-01-30 12:22:08.292",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "artistByID.collect",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 12:28:49.404",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res42: Array[(Int, String)] \u003d Array((1240105,André Visior), (1240113,riow arai), (1240132,Outkast \u0026 Rage Against the Machine), (6776115,小松正夫), (1030848,Raver\u0027s Nature), (6671601,Erguner, Kudsi), (1106617,Bloque), (1240185,Lexy \u0026 K. Paul), (6671631,Rev. W.M. Mosley), (6671632,Labelle, Patti), (1240238,the Chinese Stars), (1240262,The Gufs), (6718605,Bali Music), (6828988,Southern Conference Featuring Dr. Ace), (1240415,Paul \u0026 Paula), (1009439,Cinnamon), (1018275,School Of Fish), (6671680,Armstrong, Louis \u0026 His Hot Five), (1240508,The Ozark Mountain Daredevils), (1240510,The Mercury Program), (1240516,Del Close \u0026 John Brent), (1002584,Nena), (6990766,Phil Hendrie - 11/06/98), (1240554,Ami Yoshida), (1124756,utabi), (10023740,Red \u0026 Blue feat. Cathy Dennis), (1240589,Sebastian Bach \u0026 Friend..."
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580383328264_-2130408067",
+      "id": "20200130-122208_674121713",
+      "dateCreated": "2020-01-30 12:22:08.264",
+      "dateStarted": "2020-01-30 12:28:49.431",
+      "dateFinished": "2020-01-30 12:28:49.658",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\r\n\r\nval artistAlias \u003d rawArtistAlias.flatMap { line \u003d\u003e\r\n    val tokens \u003d line.split(\u0027\\t\u0027)  \r\n    if (tokens(0).isEmpty) {    \r\n        None  } \r\n    else {    \r\n        Some((tokens(0).toInt, tokens(1).toInt))\r\n    }\r\n}.collectAsMap()\r\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 17:15:02.691",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "rawArtistAlias: org.apache.spark.rdd.RDD[String] \u003d D:\\AnacondaProjects\\Datasets\\Audioscrobbler\\artist_alias_small.txt MapPartitionsRDD[28] at textFile at \u003cconsole\u003e:28\r\nartistAlias: scala.collection.Map[Int,Int] \u003d Map(10586534 -\u003e 1008953, 1016673 -\u003e 1298111, 6804942 -\u003e 6676351, 1011272 -\u003e 1246839, 1289246 -\u003e 1023527, 2118737 -\u003e 1011363, 1181082 -\u003e 1009583, 2144935 -\u003e 1066433, 1326264 -\u003e 1235663, 2164287 -\u003e 10076841, 1004857 -\u003e 1034635, 2113453 -\u003e 1003052, 1017615 -\u003e 668, 1049384 -\u003e 1008336, 1002892 -\u003e 1002451, 6679381 -\u003e 1027349, 1244970 -\u003e 1028445, 6704224 -\u003e 9964755, 10163001 -\u003e 4775, 1000945 -\u003e 1018807, 1052982 -\u003e 1011231, 1302130 -\u003e 1291109, 1234249 -\u003e 1005225, 1052722 -\u003e 2797, 1143149 -\u003e 1093353, 10377598 -\u003e 1010055, 2025457 -\u003e 951, 10328567 -\u003e 1000689, 1244701 -\u003e 1249401, 1000129 -..."
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580383335667_-1016973056",
+      "id": "20200130-122215_1631596883",
+      "dateCreated": "2020-01-30 12:22:15.667",
+      "dateStarted": "2020-01-30 12:31:19.021",
+      "dateFinished": "2020-01-30 12:31:19.354",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "artistAlias.take(1)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 13:23:44.183",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res55: scala.collection.Map[Int,Int] \u003d Map(10586534 -\u003e 1008953)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580383848419_1036512239",
+      "id": "20200130-123048_330917145",
+      "dateCreated": "2020-01-30 12:30:48.419",
+      "dateStarted": "2020-01-30 13:23:44.205",
+      "dateFinished": "2020-01-30 13:23:44.395",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "artistByID.lookup(10586534)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 12:33:31.604",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res51: org.apache.spark.rdd.RDD[(Int, String)] \u003d MapPartitionsRDD[26] at flatMap at \u003cconsole\u003e:28\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580383917271_-1082176476",
+      "id": "20200130-123157_1811991485",
+      "dateCreated": "2020-01-30 12:31:57.271",
+      "dateStarted": "2020-01-30 12:32:53.694",
+      "dateFinished": "2020-01-30 12:32:53.868",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.mllib.recommendation._\r\n\r\nval bArtistAlias \u003d spark.sparkContext.broadcast(artistAlias)\r\n\r\nval trainData \u003d rawUserArtistData.map { line \u003d\u003e  \r\n        val Array(userID, artistID, count) \u003d line.split(\u0027 \u0027).map(_.toInt)\r\n        \r\n        val finalArtistID \u003d bArtistAlias.value.getOrElse(artistID, artistID)   \r\n        \r\n        Rating(userID, finalArtistID, count) \r\n    \r\n}.cache()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 13:50:12.828",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.mllib.recommendation._\r\nbArtistAlias: org.apache.spark.broadcast.Broadcast[scala.collection.Map[Int,Int]] \u003d Broadcast(19)\r\ntrainData: org.apache.spark.rdd.RDD[org.apache.spark.mllib.recommendation.Rating] \u003d MapPartitionsRDD[33] at map at \u003cconsole\u003e:41\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580383973669_-1101096826",
+      "id": "20200130-123253_1555531822",
+      "dateCreated": "2020-01-30 12:32:53.669",
+      "dateStarted": "2020-01-30 13:50:12.851",
+      "dateFinished": "2020-01-30 13:50:13.176",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "bArtistAlias.value.get(10586534)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 13:43:13.164",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res60: Option[Int] \u003d Some(1008953)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580387197842_-716477072",
+      "id": "20200130-132637_133903797",
+      "dateCreated": "2020-01-30 13:26:37.842",
+      "dateStarted": "2020-01-30 13:43:13.188",
+      "dateFinished": "2020-01-30 13:43:13.377",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "trainData.take(1)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 13:51:49.415",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res62: Array[org.apache.spark.mllib.recommendation.Rating] \u003d Array(Rating(1059637,1000010,238.0))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580388141101_-2104515681",
+      "id": "20200130-134221_1406560974",
+      "dateCreated": "2020-01-30 13:42:21.101",
+      "dateStarted": "2020-01-30 13:51:49.440",
+      "dateFinished": "2020-01-30 13:51:49.765",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val model \u003d ALS.trainImplicit(trainData, 10, 5, 0.01, 1.0)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 14:44:45.747",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "model: org.apache.spark.mllib.recommendation.MatrixFactorizationModel \u003d org.apache.spark.mllib.recommendation.MatrixFactorizationModel@4aa2dc20\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580388653589_-1584178464",
+      "id": "20200130-135053_1313257059",
+      "dateCreated": "2020-01-30 13:50:53.589",
+      "dateStarted": "2020-01-30 14:44:45.780",
+      "dateFinished": "2020-01-30 14:44:50.930",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "model.userFeatures.mapValues(_.mkString(\", \")).first",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 14:44:47.835",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res66: (Int, String) \u003d (1001440,-0.4385204017162323, 0.25188809633255005, -0.19841091334819794, -0.3352015018463135, -0.3682340085506439, 0.3984014391899109, -0.0691504254937172, 0.13299214839935303, 0.35412928462028503, -0.05644610896706581)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580391729340_904776783",
+      "id": "20200130-144209_2143465608",
+      "dateCreated": "2020-01-30 14:42:09.340",
+      "dateStarted": "2020-01-30 14:44:47.897",
+      "dateFinished": "2020-01-30 14:44:51.272",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "model.userFeatures.first",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 14:43:59.739",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res64: (Int, Array[Double]) \u003d (1001440,Array(0.11962977051734924, 0.06358493864536285, -0.20204801857471466, -0.6368263959884644, -0.2990116775035858, 0.4375538229942322, -0.2878965139389038, 0.31424733996391296, 0.38011157512664795, 0.28472059965133667))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580391770476_1198064535",
+      "id": "20200130-144250_390933091",
+      "dateCreated": "2020-01-30 14:42:50.477",
+      "dateStarted": "2020-01-30 14:43:59.767",
+      "dateFinished": "2020-01-30 14:43:59.989",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "rawUserArtistData.collect",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 14:45:24.860",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res67: Array[String] \u003d Array(1059637 1000010 238, 1059637 1000049 1, 1059637 1000056 1, 1059637 1000062 11, 1059637 1000094 1, 1059637 1000112 423, 1059637 1000113 5, 1059637 1000114 2, 1059637 1000123 2, 1059637 1000130 19129, 1059637 1000139 4, 1059637 1000241 188, 1059637 1000263 180, 1059637 1000289 2, 1059637 1000305 1, 1059637 1000320 21, 1059637 1000340 1, 1059637 1000427 20, 1059637 1000428 12, 1059637 1000433 10, 1059637 1000445 88, 1059637 1000527 1, 1059637 1000617 4, 1059637 1000632 250, 1059637 1000676 3, 1059637 1000790 18, 1059637 1000877 1, 1059637 1000890 1, 1059637 1000926 1, 1059637 1000999 22, 1059637 1001007 38, 1059637 1001027 6, 1059637 1001066 3, 1059637 1001068 23, 1059637 1001107 1, 1059637 1001117 1, 1059637 1001130 3, 1059637 1001198 1, 1059637 1001233 3, 105..."
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580391839739_1647782213",
+      "id": "20200130-144359_1346898608",
+      "dateCreated": "2020-01-30 14:43:59.739",
+      "dateStarted": "2020-01-30 14:45:24.886",
+      "dateFinished": "2020-01-30 14:45:25.115",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "rawUserArtistData.map(x \u003d\u003e x.split(\" \")).filter( x\u003d\u003e x(1)\u003d\u003d\"1000647\" )",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 14:56:45.308",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res72: org.apache.spark.rdd.RDD[Array[String]] \u003d MapPartitionsRDD[420] at filter at \u003cconsole\u003e:33\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580391924860_1198465476",
+      "id": "20200130-144524_1562731996",
+      "dateCreated": "2020-01-30 14:45:24.860",
+      "dateStarted": "2020-01-30 14:47:30.947",
+      "dateFinished": "2020-01-30 14:47:31.169",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "rawUserArtistData.map(x \u003d\u003e x.split(\" \")).filter( x\u003d\u003e x(0).equals(\"1000647\")).collect",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 14:49:35.586",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res76: Array[Array[String]] \u003d Array(Array(1000647, 1000014, 13), Array(1000647, 1000041, 7), Array(1000647, 1000052, 10), Array(1000647, 1000054, 348), Array(1000647, 1000062, 12), Array(1000647, 1000076, 15), Array(1000647, 1000094, 13), Array(1000647, 1000112, 15), Array(1000647, 1000113, 479), Array(1000647, 1000114, 12), Array(1000647, 1000166, 24), Array(1000647, 1000199, 27), Array(1000647, 1000294, 505), Array(1000647, 1000302, 18), Array(1000647, 1000343, 386), Array(1000647, 1000427, 13), Array(1000647, 1000570, 16), Array(1000647, 1000766, 34), Array(1000647, 1000795, 36), Array(1000647, 1000892, 7), Array(1000647, 1000982, 1), Array(1000647, 1001021, 8), Array(1000647, 1001027, 10), Array(1000647, 1001066, 25), Array(1000647, 1001068, 12), Array(1000647, 1001080, 11), Array(1..."
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580391957522_558823636",
+      "id": "20200130-144557_1885561672",
+      "dateCreated": "2020-01-30 14:45:57.522",
+      "dateStarted": "2020-01-30 14:49:35.611",
+      "dateFinished": "2020-01-30 14:49:35.845",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val rawArtistsForUser \u003d rawUserArtistData.map(_.split(\" \")).filter{\n                                                                case Array(user,_,_) \u003d\u003e user.toInt \u003d\u003d 1000647}",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 14:56:46.339",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "rawArtistsForUser: org.apache.spark.rdd.RDD[Array[String]] \u003d MapPartitionsRDD[437] at filter at \u003cconsole\u003e:32\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580391966370_837005833",
+      "id": "20200130-144606_194226332",
+      "dateCreated": "2020-01-30 14:46:06.370",
+      "dateStarted": "2020-01-30 14:56:46.368",
+      "dateFinished": "2020-01-30 14:56:46.608",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "rawArtistsForUser.collect",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 14:56:48.585",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res81: Array[Array[String]] \u003d Array(Array(1000647, 1000014, 13), Array(1000647, 1000041, 7), Array(1000647, 1000052, 10), Array(1000647, 1000054, 348), Array(1000647, 1000062, 12), Array(1000647, 1000076, 15), Array(1000647, 1000094, 13), Array(1000647, 1000112, 15), Array(1000647, 1000113, 479), Array(1000647, 1000114, 12), Array(1000647, 1000166, 24), Array(1000647, 1000199, 27), Array(1000647, 1000294, 505), Array(1000647, 1000302, 18), Array(1000647, 1000343, 386), Array(1000647, 1000427, 13), Array(1000647, 1000570, 16), Array(1000647, 1000766, 34), Array(1000647, 1000795, 36), Array(1000647, 1000892, 7), Array(1000647, 1000982, 1), Array(1000647, 1001021, 8), Array(1000647, 1001027, 10), Array(1000647, 1001066, 25), Array(1000647, 1001068, 12), Array(1000647, 1001080, 11), Array(1..."
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580392544980_33305907",
+      "id": "20200130-145544_884438048",
+      "dateCreated": "2020-01-30 14:55:44.980",
+      "dateStarted": "2020-01-30 14:56:48.620",
+      "dateFinished": "2020-01-30 14:56:48.817",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val existingProducts \u003d rawArtistsForUser.map{ case Array(_, artist, _) \u003d\u003e artist.toInt }.collect.toSet",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 14:56:50.803",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "existingProducts: scala.collection.immutable.Set[Int] \u003d Set(5810, 1083833, 1062124, 1111706, 6641574, 1026377, 5469, 6623640, 1009229, 1235514, 1021106, 1005150, 1262203, 1067750, 1240513, 6637813, 6666033, 1083569, 1017237, 3830, 1234423, 2170715, 1007841, 6606757, 4682, 6766857, 1046223, 1260563, 1008497, 1087065, 1022918, 6616488, 1039536, 1750, 1006147, 1260028, 4037, 1406, 1202161, 1002179, 1277410, 276, 3858, 1002621, 1011233, 1035554, 1050025, 1084951, 1122739, 1051793, 1016851, 1205, 2142966, 1042030, 1055120, 1001233, 202, 1017871, 1337594, 6624736, 1080924, 1267185, 1057254, 1005862, 1027819, 1306002, 6605119, 1264080, 6776368, 1051290, 1024518, 1867, 1027432, 1022392, 1008529, 1036597, 1033458, 1060029, 1266524, 1287249, 1004431, 1071257, 1334247, 1010739, 1040153, 6631826, 1..."
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580392326568_1846373808",
+      "id": "20200130-145206_1067332399",
+      "dateCreated": "2020-01-30 14:52:06.568",
+      "dateStarted": "2020-01-30 14:56:50.830",
+      "dateFinished": "2020-01-30 14:56:51.122",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "artistByID.filter { case (id, name) \u003d\u003e existingProducts.contains(id) }.values.collect.foreach(println)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 14:56:52.678",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Nena\r\nThe Wake\r\nThe Azoic\r\nPig\r\nAmy Goodman\r\nDiva Destruction\r\nGary Jules\r\nVaughn Monroe\r\nThe (International) Noise Conspiracy\r\nRobert Ashley\r\nAngels \u0026 Agony\r\nNeneh Cherry\r\n1000 Homo DJs\r\nMark Lane\r\nElectro Assassin\r\nSI Randere\r\nSabotage - Qu \u0027Est - Que C\u0027est?\r\nH.P. Lovecraft Historical Society\r\nThe Voluptuous Horror Of Karen Black\r\nShining (feat. Julian Beeston, Ex Nitzer Ebb)\r\nFreudstein\r\nSub Fusion\r\nThe Soviettes\r\nLuxt\r\nThe Blackouts\r\nEcho \u0026 the Bunnymen\r\nThe Dust of Basement\r\nProphetess\r\nEnigma\r\nMutha\u0027s Day Out\r\ncsm 101\r\nErasure\r\nEurythmics\r\nEvil\u0027s Toy\r\nBunker Soldier\r\nThe Boxing Lesson\r\nUm ou Nao\r\nKingbees\r\nRoss Stevens\r\nThe Brain\r\nTrance to the Sun (with Marc Linder)\r\nThe Psychic Force\r\nRei Toei\r\nHalomaker\r\nOut Of Phase\r\nGLAMPIRE\r\nTake Back The Media Radio\r\nThe World/Inferno Friendship Society\r\nlow technicians\r\nThe Parallel Project\r\nThe Machine in the Garden\r\nRollins Band\r\nThe Dark Aeons\r\nThe Epoxies\r\nNature TM\r\nVas\r\nThe Klinik\r\nStun Gun\r\nChrome\r\nEva O\r\nDavid J.\r\nTake Back The Media Raido\r\nBlind Before Dawn\r\nwww.samplearena.com\r\nLagwagon\r\nL\u0027Âme Immortelle\r\nMale or Female\r\nLights of Euphoria\r\nBlack Rain\r\nAlex Reynolds\r\nStone Temple Pilots\r\nMy Life With The Thrill Kill Kult\r\nWolfsheim\r\n:Wumpscut:\r\nBilly Idol\r\nIntertia\r\nEdge Effect\r\nThe Damned\r\ncracker g\r\nArgine\r\nLucifer Scale\r\nEva O Halo\r\nSaint Etienne\r\nRailgun\r\nMatt Sharp \u0026 Damon Albarn\r\nKraftwerk\r\nHate Dept. vs. 16 Volt\r\nTotal Transformation\r\nSt. Eve\r\n16 Volt vs. Hate Dept.\r\nSheryl Crow\r\nPainfetish\r\nAn Pierce\r\nSilverbeam\r\nLondon Symphony Orchestra\r\nDKay.Com-Die Krupps\r\nThe Orb\r\nhande frei\r\nPantera\r\nHaujobb\r\nKMFDM\r\nNapalm Death\r\nOil Filter\r\nMinistry\r\nCircular Firing Squad\r\nNitzer Ebb\r\nNOFX\r\nMiss Kittin \u0026 The Hacker\r\nDave Clarke\r\nJewel\r\nthe new creatures\r\nSilent Order\r\nCydonia\r\nMerry Thoughts\r\nDreamscape Unlimited\r\nAnti-Flag\r\nJesus Jones\r\nIggy Pop\r\nRazed In Black vs. Transmutator\r\nMoonspell\r\nHot Water Music\r\nCliffwalk\r\nVNV Nation\r\nTears for Fears\r\nTestube\r\nSweep\r\nInterface VS. Nick Shifter\r\nThe Jesus and Mary Chain\r\nDale Bozzio\r\nSkinny Puppy\r\nJunkie XL\r\nJuno Reactor\r\nFear Factory\r\nFeindflug\r\nTest Dept.\r\nSphere Lazza\r\nNew Found Glory\r\nEntluften\r\nYellowcard\r\nBis\r\nThe Statler Brothers\r\nKirlian Camera\r\nSynapscape\r\nManufactura\r\nAlex Xenophon\r\nDenali\r\nIndividual Industry\r\nStone 588\r\nMaryanne Amacher\r\nRancid\r\nMacondo\r\nCoil\r\nSelf Defense Force\r\nLess Than Jake\r\nSum 41\r\nPrince \u0026 The Revolution\r\nDixie Chicks\r\nThe Offspring\r\nVampire Rodents\r\nThe Young Gods\r\nThe Boomtown Rats\r\nThe Prodigy\r\nTommi Stumpff\r\nPierre Schaeffer\r\nDropkick Murphys\r\nThe Ataris\r\nPoupp E Fabrikk\r\nPerceptual Outer Dimensions\r\nAnd One\r\nStrung Out\r\nPet Shop Boys\r\nMan(i)kin\r\nEinstürzende Neubauten\r\nPublic Image Ltd.\r\nDJ Food\r\nI Will I\r\nRx vs. Alien Sound\r\nImpossible Recording Machine\r\nThe Verve\r\nFleetwood Mac\r\nLou Gramm\r\nSiouxsie and the Banshees\r\nINXS\r\nDepeche Mode\r\nPsychic Force\r\nC/A/T\r\nFor Love Not Lisa\r\nRaymond Scott\r\nAbney Park\r\nRage Against the Machine\r\nChris Holmes\r\nLenny Kravitz and Kadim Al Sahir\r\nPennywise\r\nTori Amos\r\nThe Cranberries\r\nMastertune\r\nPrince\r\nThe Magnetic Fields\r\nTracy Chapman\r\nApoptygma Berzerk\r\nMadonna\r\nNo Doubt\r\nThe Beatles\r\npoesie noire\r\nBad Religion\r\nSukia\r\nSurface 10\r\nR.E.M.\r\nAlkaline Trio\r\nJoy Division\r\nViolent Femmes\r\nAmish Rake Fight\r\nMoloko\r\nMassive Attack\r\nThe Cure\r\nEnya\r\nSkunk Anansie\r\nDavid Bowie\r\nBauhaus\r\nThe Get Up Kids\r\nRed Hot Chili Peppers\r\nFoo Fighters\r\nMoby\r\nAutechre\r\nU2\r\nTwisted and Broken\r\nEtikemic\r\nBeyond Reality\r\nHelmet\r\nClone DT\r\nOfra Haza\r\nLiquefaction\r\nCorpus Delicti\r\nArt of Noise\r\nDKAY.COM/Die Krupps\r\nT#tine\r\nEva O Halo Experience\r\nGreg Weeks\r\nGoth Oddity\r\nSimon Boswell /\r\nGothik (disc 1 of 2)\r\nIndustrial Strength Machine Music\r\nCyberl@b v.1.0 (disc A)\r\nMusic From The Motion Picture Sliver\r\nNewer Wave (Various)\r\nFuture Trance Trax\r\nAbsinthee\r\nFlogging Molly\r\nBomb 20\r\nHere vs. M. Tebo T.\r\nRasputina\r\nUltraviolence\r\nThe Damage Manual\r\nCryptomnesia\r\nFront 242\r\nThe Love Interest vs. Michael Balch\r\nMy Ruin\r\nFictional\r\nHemisphere\r\nterror process\r\nJames Hardaway with Amanda Host featuring Boy George\r\nThe Eternal Afflict\r\nLost Boys Soundtrack\r\nBow Ever Down\r\nDeep Forest\r\nSheep on Drugs vs. Bagman\r\nEdera\r\nFuzzboy\r\nThe Creatures vs. Icarus\r\nScrew Jack\r\nControlled Bleeding\r\nThomas Newman\r\nBytet\r\nGlobo vs. Meat Beat Manifesto\r\nGirl Eats Boy vs. The Dub Pistols\r\nXiphoid Process\r\nTiffany\r\nHajas\r\nThe Popguns\r\nDubstar\r\nRepublica\r\nTransmutator (feat. Sirley Dayton)\r\nCtrl\r\nGary Flanagan\r\nPlastic Noise Experience\r\nThis Ascension\r\nSpartak\r\nFortran 5\r\nNimf\r\nHex80\r\nJohn Lennon\r\nNoctule Sorix\r\nNot Breathing\r\nEskimos and Egypt\r\nDigital Poodle\r\nPigface vs. Psychic TV\r\nRed Alert\r\nNegativland\r\nLaibach\r\nConverter\r\ns:cage\r\nJohn Cage\r\nDr. Phibes and the House of Wax Equations\r\nArmageddon Dildos\r\nThomas Dolby\r\nAstralasia\r\nMidnight Configuration\r\nDas Ich\r\nAbsurd Minds\r\ngeorge Sarah\r\nThrobbing Gristle\r\nSystem 7\r\nRammstein\r\nMomus\r\nNine Inch Nails\r\nFlesh Field\r\nPsychic TV\r\nEarthshock\r\nDevo\r\nVirgin Prunes\r\nBrian Eno\r\nTraci Lords\r\nCabaret Voltaire\r\nDelerium\r\nFront Line Assembly\r\nDuran Duran\r\nSpiritual Bats\r\nNew Order\r\nMarilyn Manson\r\nArcana\r\nnoise unit\r\nTelevision Overdose\r\nType O Negative\r\nTerry Riley\r\nPeter Murphy\r\nUltravox\r\nUnderworld\r\nVarious Artists\r\nVelvet Acid Christ\r\nhexedene\r\nVideodrone\r\nOrbital\r\nThe Invincible Spirit\r\nHyperdex\r\nDaisy Chainsaw\r\nMitchell Sigman with Katrina Valquez\r\nBella Morte\r\nDoppelganger\r\nCancer Barrack\r\nShane Savant\r\nBinary, Count Zero, Freqout, Gweeds, Javaman, Mangala, Shardy\r\nKismet\r\nAndy Northrup\r\nOneiroid Psychosis\r\nPatti Smith\r\nVomito Negro\r\nVolume 1\r\nAnubian Lights\r\nStruktur\r\nSheep On Drugs\r\nDwarves\r\nRush Limbaugh Hater\r\nT.O.W.\r\nCleen\r\nBroken Fabiola\r\nDead Voices on Air vs. Abintra \u0026 Frankie Pet\r\nAurora\r\nFinal Cut vs. Team VSR\r\nTo Live \u0026 Shave in L.A.\r\nDrain the Doves\r\nTin Electric with Alexandra Nicole\r\nAnima In Fiamme\r\nMonstrum Sepsis\r\nIdiot Stare\r\nCrisis NTI\r\nDigital Blood\r\nAalacho\r\nsungod\r\nMotormark\r\nFiction 8\r\nNecromantik Sunshine\r\nNight shift\r\nChildren Of No Return\r\nNamNamBulu\r\nThe Prodigy vs. The Prodigy\r\nSimple\r\nLuc Van Acker\r\nAftershock\r\nKlang Abstrakt\r\nSean Croghan\r\nMeegs \u0026 Jessicka\r\nE.C.M.\r\nCruciform Injection\r\nOgre\r\nBlack Atmosphere\r\nFaux Furnishings\r\nEyes of the Nightmare Jungle\r\nVerge\r\nSimbolo\r\nJane Jenson\r\nLa Monte Young\r\nFilmstrip, The\r\nNeuroactive\r\nHoward Stern\r\nTetine\r\nOctaine\r\nWedge\r\nsonar\r\nScorn vs. Autechre\r\nSplit Enz\r\nTNV\r\nCathexis\r\nSkeewiff\r\nSauce of the Future\r\nB! Machine\r\nSoma Holiday\r\nMagenta\r\nTruxton\r\nMy Life With TheThrill Kill Kult\r\nBernard Parmegiani\r\nMors Syphilitica\r\nGossamer\r\nDeathline International\r\nAthan Maroulis \u0026 Zeitmahl\r\nNoam Chomsky\r\nMeg Lee Chin vs. Martin Atkins\r\nAmber Asylum\r\nNerve Filter\r\nBlok 57\r\nIpecac Loop\r\nAnnabella Lwin\r\nSubgenius vs. Test Dept.\r\nScreams for Tina\r\nEight To Infinity\r\nThe Moors\r\nThe Ancient Gallery\r\nInformation Society\r\nExclipsect\r\nJah Wobble vs. Jah Wobble\r\nX\r\nResetta Stone vs. Marilyn Monroe\r\nKlinik\r\nTakshaka\r\nT.H.D.\r\nEpsilon Minus\r\nTwo\r\nAudio Science\r\nGirls Under Glass\r\nDavid E Williams\r\nScanalyzer\r\nSunshine Blind\r\nAn Pierlé\r\nX-mal Deutschland\r\nFields of the Nephilim\r\nUnwoman\r\nEvil Mothers vs. KMFDM\r\nSocial Distorsion\r\nLords of Acid\r\nInformatik\r\nUnderdog\r\n(In)Ternal\r\nCollide\r\n16volt\r\nMartha and the Muffins\r\nWonderland\r\nBerlin\r\nGenerated X-ed\r\nROBERT SMITH\r\nSleater\r\nCyber-G\r\nBang Tango\r\nElf\r\nDynamichrome with Alistair Foster\r\nMachines Of Loving Grace\r\nCenobita\r\nGod Module\r\n45 Grave\r\nRenegade Soundwave\r\nPulcher Femina\r\nSow vs. Pig\r\nSigue Sigue Sputnik\r\nTheatre Of Tradegy\r\nEmeralde Feare\r\nWitchman Vs. Jammin Unit\r\nBehind The Scenes\r\nGitane Demone\r\nNon\r\nViolet Arcana\r\nThe National\r\nTheatre of Hate\r\nInkubus Sukkubus\r\nTrespassers William\r\nG//Z/R\r\nAndroid Lust\r\nSeabound\r\nBiopsy\r\nBizarbies\r\nTubalcain\r\nDarlene Love\r\nI Found God\r\nDeadsy\r\nAcumen\r\nOxygiene 23\r\nCrunch-O-Matic\r\nPope Factory\r\nmindFluxFuneral\r\nLaughing Us\r\nNot Breathing vs. Rotorhead\r\nHyperdex-1-Sect\r\nbackandtotheleft\r\nS.P.O.C.K\r\nThe Unquiet Void\r\nExecutive Slacks\r\nSanteria\r\nEddie and the Tide\r\nTheta Wave State\r\nTree Wave\r\nGravedance\r\nFuture Wave\r\nSheep on Drugs vs. Ashtrayhead\r\nS.M.P.\r\nThe Cassandra Complex\r\nLoleatta Holloway\r\nKinder Atom\r\nZoe\r\nFear Cult\r\nPurr Machine\r\nOnly Crime\r\nPsyche\r\nThe Darkside\r\nNuit\r\nEve of Destiny\r\nChrist Analogue\r\nPsychic TV vs. Download\r\n30 Helens Agree\r\nDr Phibes \u0026 The House Of Wax Equations\r\nFr-action\r\nScreaming Meat Prophet\r\nBeborn Beton\r\nBurning Retina\r\nJennifer Smith\r\nProject Pitchfork\r\nChako\r\nCrimson Joy\r\nSpleenclutch\r\nNumeralia\r\nLe##ther Strip\r\nStrap on Halo\r\nSister Machine Gun\r\nBureau of Control\r\nQntal\r\nAnita Haxsaw\r\nShape Factor Moment\r\nPremature Ejaculation\r\nThrowing Muses\r\nSoma\r\nGothik (disc 2 of 2)\r\nWayne Hussey \u0026 The Mission\r\nPink Turns Blue\r\nTwo Witches\r\nEerie Von and Mike Morance\r\nGraveyard Cafe\r\nSilverbeam with Ann Louise\r\nGITM\r\nSecret Secret\r\nCiborium\r\nEtherRing\r\nMussolini Headkick\r\nThe Sepia\r\nLoch Lemmond\r\nBlasting Agent\r\nIndustrial Playground\r\nNancy Kerrigan\r\nRichard Kendrick\r\nSealed In Silence\r\nScar Tissue\r\nLemon Jelly \u0026 Ministry of Sound\r\ndavid j\r\nUrusai\r\nExquisite Tenderness\r\nMichel\u0027le and Tony Jaflone Jr.\r\nKitchens Of Distinction\r\nGalaxxy Chamber\r\nSiouxie Sioux\r\nDarlene Love and Richard Kendrick\r\nL.S.G.\r\nMeg Lee Chin Vs. Hanzel Und Gretyl\r\nTribe\r\nLeæther Strip\r\nRose Reiter and Kyle McMahon\r\nAlvin Lucier\r\nRazed In Black\r\nSpahn Ranch\r\nApcrypho\r\nSky Cries Mary\r\nShpongle - 05\r\nToward the Cathedral\r\nNeikka RPM\r\nSummer Blanket\r\nCat Rapes Dog\r\nd. compose\r\nBloodwire\r\nPapa Sprain\r\nJasy Andrews\r\nLet the Wind Erase Me (single)\r\nIan Dury and The Blockheads\r\nDust Of Basement\r\nBeat Box feat. DJ Speedo\r\nFoetus\r\nBlind Passengers\r\nThe Frisk\r\nPenal Colony\r\nThe Electric Hellfire Club\r\nDeath Ride 69\r\nDin\r\nSpecimen\r\nDance Or Die\r\nBuffalo Springfield\r\nVladimir Ussachevsky\r\nTod Dockstader\r\nRichard Maxfield\r\nMatrix\r\nOhm\r\nJean-Claude Risset\r\nHerbert Eimert\r\nPosh\r\nBlitz\r\nJennifer Hope\r\nBile\r\nKloq\r\nLCD\r\nVoluptuous Horror Of Karen Black\r\nRed Lorry Yellow Lorry\r\nDoubting Thomas\r\nCyberaktif\r\nCcorpus Delicti\r\ndisplacer\r\nHolland Bulb Head\r\nAlchemia\r\nLowtechnicians\r\nGrimble Grumble\r\nNosferatu\r\nControl Theory\r\nSabotage Qu \u0027est-Ce Que C\u0027est?\r\nClairvoyants\r\nSMP\r\nRosetta Stone\r\nDismantled\r\nJane Siberry\r\nFraction\r\nMarch Violets\r\nInertia\r\nHalo Project\r\nGreen Day\r\nXero-G\r\nOperation Ivy\r\nCorvus Corax\r\nThe 0ne\r\nConfession of Faith\r\nRhea\u0027s Obsession\r\nA Modern Effigy\r\nPhycus\r\nNightmare Noise Machine\r\nRAS.AL.GHUL\r\nMors Syphylitica\r\nSuspiria\r\nPurveyor\r\nThe Immortals\r\nKevorkian Death Cycle\r\nNoxious Emotions\r\nThought Riot\r\nAlannah Miles and Jeff Healey\r\nLove is Colder Than Death\r\nUser On The Grid\r\nThe M.E.M.O.R.Y. Lab\r\nTH26 \u0026 T.A.C.\r\nEco-hed featuring Jim Marcus\r\nWendy Jans\r\nHanzel und Gretyl\r\nAkanoid\r\nBilly?\r\nTim O\u0027Reilly\r\nKompressor\r\nChildren on Stun\r\nSkorbut Vs. Kalte Farben\r\nAnnabella Twin of Bow Bow Bow\r\nAghast View\r\nLoop Guru\r\nAutumn Tears\r\nKill Switch... Klick\r\nBypass Unit\r\nNerve Factor Feat. Sarah Fairless\r\nArea_39\r\nDiamanda Galás\r\nWreckage\r\nLarry Gaab\r\nThe Buggles\r\nRX Bandits\r\nInvincible Spirit\r\nMummy Calls\r\nGravity Kills\r\nNoisia\r\nThe Mission\r\nHate Dept.\r\nHarry\r\nSuicide Commando\r\nCinema Strange\r\nOOMPH!\r\nMnemonic\r\nT.O.Y.\r\nNone More Black\r\nHoward Jones\r\nIris\r\nStrike Anywhere\r\nSnog\r\nOrdinateur\r\nThe Tea Party\r\nKieTheVez\r\nThe Vapors\r\nNatalie Merchant\r\nZeromancer\r\nCartax Abbey\r\nMesh\r\nNegative Format\r\nBlack Tape for a Blue Girl\r\nDreadful Shadows\r\nАрия\r\nAutopilot Off\r\nDe/Vision\r\nPigface vs. Tranquilit Bass\r\nDiary of Dreams\r\nOrgy\r\nRise Against\r\nHocico\r\nThe Bouncing Souls\r\nGeorge S. Clinton\r\nDonots\r\nE:Moderne\r\nEmpusae\r\nThis Vale of Tears\r\nArchitect\r\nTactille vs. 0\r\nFinal Frontier\r\nZEITMAHL\r\nGary Numan\r\nThe Disposable Heroes of Hiphoprisy\r\nBattery\r\nM\r\nTones on Tail\r\nAdam Christian\r\nBrotherhood of Pagans\r\nMerge\r\nUnit:187\r\nLowsunday\r\nResonate\r\nUtah Saints\r\nRegenerator\r\ndrone Ektogenesis\r\nVoltaire\r\nDolly Parton/Eurythmics/Beatles/Laurie Anderson/Art Of Noise/Beastie Boys/Pat Benatar (DJ Earworm)\r\nGanymede\r\nOtto Luening\r\nNicole Blackman \u0026 John Van Eaton\r\ndiverje\r\nAnd also the trees\r\nJello Biafra with D.O.A.\r\nParadise Lost\r\nEBM Club Classics\r\nProvision\r\nRoger Daltrey\r\nGerard McMann\r\nTalla 2XLC\r\nEskimos \u0026 Egypt\r\nA Flock Of Seagulls\r\nCycloon\r\nKilling Joke\r\nFahrenheit 451\r\nMedicine\r\nATP\r\nRevolting Cocks\r\nDive\r\nTemplebeat\r\nDavid Behrman\r\nAuthority Zero\r\nUseless ID\r\nSick Of It All\r\nDillinger Four\r\nAria\r\nJane Child\r\nBrooklyn Bounce\r\nPulsars\r\nThe Unseen\r\nStromkern\r\nBirmingham 6\r\nIcon of Coil\r\nFunker Vogt\r\nSunbeam\r\nChemlab\r\nNoise Box\r\nStatemachine\r\nNick Cave\r\nClan Of Xymox\r\nDeniece Williams\r\nIkon\r\nMark Pistel\r\nCyber-Tec Project\r\nAmanda Ghost\r\nPolecats\r\nGenitorturers\r\nKomakino\r\nUnit 187\r\nKenickie\r\nTapping The Vein\r\nEleven Shadows\r\nAiboforcen\r\nClaire Voyant\r\nUnto Ashes\r\nTim Cappello\r\nPsykosonik\r\nDimension Zero\r\nPierrepoint\r\nAdvent Sleep\r\nChiasm\r\nHungry Lucy\r\ncleaner\r\nCyberl@b v.3.0\r\nNeverregion\r\nCourse of Empire\r\nIn to the Mix\r\nK. Nitrate\r\nElectronica Sci-Fi ()\r\nPanic on the Titanic\r\nUsherhouse\r\nInerta\r\nLove Like Blood\r\nCulture Kultür\r\nCobalt 60\r\nSuperheroines\r\n20 Dead Flower Children\r\nMephisto Walz\r\nDie Laughing\r\nImperative Reaction\r\nMy Psychotic Motor\r\nproject-x\r\nGiez\r\nBeauty\r\nOut Out\r\nBlack Metal Box\r\nInsight 23\r\ndragon style\r\nNebula-H\r\nKip Winger\r\nHuman Drama\r\nDr. Phibes and T.H.O.W.E.\r\nInside Treatment\r\nScapa Flow\r\nNo Comment\r\nInjury\r\nNEWT\r\nEisbrecher\r\nInformatics\r\nChallenge\r\nFading Colours\r\nSabotage\r\nTemple Of Rain\r\nAngina Pectoris\r\nCorpus Delecti\r\nKill Switch...Klick\r\nSee Colin Slash\r\nDarkside\r\nGuenter Shulz\r\nShining (feat. Julian Beeston Ex Netzer Ebb)\r\nBig Electric Cat\r\nFilmstrip\r\nhaloblack\r\nImplant\r\nFlesh for Eve\r\nX-Marks The Pedwalk\r\nAtaraxia\r\nUve Ursi\r\nEx Voto\r\nTrance To The Sun\r\nMorgue\r\nAdeva\r\nSunshine Band\r\nDessau\r\n16 Volt VS. Spahn Ranch\r\nEARTHSHOCK!\r\nNude\r\nImmortalis Amor\r\nNo More\r\nx-axis\r\nWritten in Ashes\r\nEyes Of A Nightmare Jungle\r\nCrocodile Shop\r\nEx-Voto\r\nTrance Corp\r\nS.I.N.A\r\nNecromantic Sunshine\r\nSecond Skin\r\nEXP\r\nFuneral in Berlin\r\nSmothered Hope\r\nATD Convention\r\nHypnotech\r\nEmmanuel Goldstein\r\nL. Kage\r\nWake\r\nBurning Gates\r\nA#boforcen\r\nNeon Electronics\r\nBeautiful Assassins\r\nMark Pistel with Danger Girl\r\nmicronaut\r\nOrifice\r\nManufacture\r\nMichelle Crispin\r\nKommunity FK\r\nDilate\r\nGene Loves Jezebel\r\nEndanger\r\nStare\r\nSpiritual Front\r\nXylon\r\nRichard Feynman\r\nFront Line Assembly with Tiffany\r\nIntra-Venus\r\nUm ou N#o\r\nPressurehed\r\nSimon Boswell\r\nEarl Brutus\r\nCirculation of Events\r\nOctober Hill\r\nEgo Likeness\r\nImformation Society\r\nKAJ\r\nyendri\r\nBoyd Rice\r\nEtern\r\nInto The Abyss\r\nmoonlife\r\nPsychopomps\r\nS.E.M;I\r\nvinny fazzari\r\nEye\r\nTHC\r\nFurnace\r\nNik Turner Of Hawkwind\r\nCroc Shop\r\nDroom\r\nEssence\r\nWindscale\r\nProjektor\r\npsionic\r\nPeck Slip\r\nR-Escape-R\r\nThe Lawrence Arms\r\nThe Crüxshadows\r\nThe Last Dance\r\nThe Merry Thoughts\r\nThe March Violets\r\nIan Rhett\r\nAttrition\r\nMichael Andrews\r\nCyndi Lauper\r\nCharles Dodge\r\nJohn Chowning\r\nKlaus Schulze\r\nLacrimosa\r\nprospero\r\nEMF\r\nMidnight Oil\r\nThe Shamen\r\nFluke\r\nBiGod 20\r\nKraftwelt\r\nMad Caddies\r\nSaul Williams\r\nCovenant\r\nSugarcult\r\nJimi Tenor\r\nMeat Beat Manifesto\r\nDeutsch Amerikanische Freundschaft\r\nAssemblage 23\r\nThe Legendary Pink Dots\r\nXTC\r\nChris Connelly\r\nChristian Death\r\nClock DVA\r\nConsolidated\r\nCubanate\r\nDescendents\r\nDie Form\r\nDie Krupps\r\nHeaven 17\r\nNo Use for a Name\r\nUB40\r\nPigface\r\nTowering Inferno\r\nThe Wolfgang Press\r\nShaggy\r\nBlack Lung\r\nDead Or Alive\r\nPop Will Eat Itself\r\nAlien Sex Fiend\r\nSwitchblade Symphony\r\nChumbawamba\r\nY Front\r\nDie Warzau\r\nAgainst Me!\r\nJawbreaker\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580392427655_775400113",
+      "id": "20200130-145347_109940133",
+      "dateCreated": "2020-01-30 14:53:47.655",
+      "dateStarted": "2020-01-30 14:56:52.710",
+      "dateFinished": "2020-01-30 14:56:53.030",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val recommendations \u003d model.recommendProducts(1000647, 5)\nrecommendations.foreach(println)\n// def recommendProducts(user: Int,num: Int): Array[org.apache.spark.mllib.recommendation.Rating]",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 14:58:53.688",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Rating(1000647,1026440,2.8033014341028872)\r\nRating(1000647,1002095,2.371514719034085)\r\nRating(1000647,1001530,2.312304976657514)\r\nRating(1000647,1019347,2.3028960886037684)\r\nRating(1000647,1001487,2.1945611545035666)\r\nrecommendations: Array[org.apache.spark.mllib.recommendation.Rating] \u003d Array(Rating(1000647,1026440,2.8033014341028872), Rating(1000647,1002095,2.371514719034085), Rating(1000647,1001530,2.312304976657514), Rating(1000647,1019347,2.3028960886037684), Rating(1000647,1001487,2.1945611545035666))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580392482206_1007256369",
+      "id": "20200130-145442_146658105",
+      "dateCreated": "2020-01-30 14:54:42.206",
+      "dateStarted": "2020-01-30 14:58:53.718",
+      "dateFinished": "2020-01-30 14:58:54.051",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val recommendedProductIDs \u003d recommendations.map(_.product).toSet\n\nartistByID.filter{ case (id,name) \u003d\u003e recommendedProductIDs.contains(id) }.values.collect.foreach(println)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 15:03:41.556",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Finch\r\nSomething Corporate\r\nMy Chemical Romance\r\nArmor for Sleep\r\nThe Starting Line\r\nrecommendedProductIDs: scala.collection.immutable.Set[Int] \u003d Set(1019347, 1026440, 1002095, 1001530, 1001487)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580392733688_-884173",
+      "id": "20200130-145853_1224324897",
+      "dateCreated": "2020-01-30 14:58:53.688",
+      "dateStarted": "2020-01-30 15:03:41.602",
+      "dateFinished": "2020-01-30 15:03:41.907",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\n\n\nval rawArtistData \u003d spark.read.format(\"csv\").load(\"D:\\\\AnacondaProjects\\\\Datasets\\\\Audioscrobbler\\\\artist_data_small.txt\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 16:36:10.114",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "rawArtistData: org.apache.spark.sql.DataFrame \u003d [_c0: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580393021556_1984957493",
+      "id": "20200130-150341_1697708483",
+      "dateCreated": "2020-01-30 15:03:41.556",
+      "dateStarted": "2020-01-30 16:36:10.146",
+      "dateFinished": "2020-01-30 16:36:12.028",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val rawArtistData2 \u003d spark.read.option(\"sep\",\"\\t\").csv(\"D:\\\\AnacondaProjects\\\\Datasets\\\\Audioscrobbler\\\\artist_data_small.txt\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 16:50:43.133",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "rawArtistData2: org.apache.spark.sql.DataFrame \u003d [_c0: string, _c1: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580398555597_-1394691611",
+      "id": "20200130-163555_2061907818",
+      "dateCreated": "2020-01-30 16:35:55.597",
+      "dateStarted": "2020-01-30 16:50:43.163",
+      "dateFinished": "2020-01-30 16:50:43.442",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "rawArtistData2.first",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 16:50:48.308",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res92: org.apache.spark.sql.Row \u003d [1240105,André Visior]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580398633317_-171621242",
+      "id": "20200130-163713_92666247",
+      "dateCreated": "2020-01-30 16:37:13.317",
+      "dateStarted": "2020-01-30 16:50:48.339",
+      "dateFinished": "2020-01-30 16:50:48.546",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "rawArtistData2.show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 16:50:52.033",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+--------------------+\n|    _c0|                 _c1|\n+-------+--------------------+\n|1240105|        André Visior|\n|1240113|           riow arai|\n|1240132|Outkast \u0026 Rage Ag...|\n|6776115|            小松正夫|\n|1030848|      Raver\u0027s Nature|\n|6671601|      Erguner, Kudsi|\n|1106617|              Bloque|\n|1240185|      Lexy \u0026 K. Paul|\n|6671631|    Rev. W.M. Mosley|\n|6671632|      Labelle, Patti|\n|1240238|   the Chinese Stars|\n|1240262|            The Gufs|\n|6718605|          Bali Music|\n|6828988|Southern Conferen...|\n|1240415|        Paul \u0026 Paula|\n|1009439|            Cinnamon|\n|1018275|      School Of Fish|\n|6671680|Armstrong, Louis ...|\n|1240508|The Ozark Mountai...|\n|1240510| The Mercury Program|\n+-------+--------------------+\nonly showing top 20 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580398720873_1491924881",
+      "id": "20200130-163840_229029515",
+      "dateCreated": "2020-01-30 16:38:40.873",
+      "dateStarted": "2020-01-30 16:50:52.065",
+      "dateFinished": "2020-01-30 16:50:52.285",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\n\nval rawUserArtistData2 \u003d spark.read.option(\"sep\", \" \").csv(\"D:\\\\AnacondaProjects\\\\Datasets\\\\Audioscrobbler\\\\user_artist_data_small.txt\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 16:51:13.993",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "rawUserArtistData2: org.apache.spark.sql.DataFrame \u003d [_c0: string, _c1: string ... 1 more field]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580399312192_-1493867435",
+      "id": "20200130-164832_1538209501",
+      "dateCreated": "2020-01-30 16:48:32.192",
+      "dateStarted": "2020-01-30 16:51:14.023",
+      "dateFinished": "2020-01-30 16:51:14.298",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "rawUserArtistData2.first",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 16:51:16.020",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res95: org.apache.spark.sql.Row \u003d [1059637,1000010,238]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580399420067_-1917258421",
+      "id": "20200130-165020_2107596738",
+      "dateCreated": "2020-01-30 16:50:20.067",
+      "dateStarted": "2020-01-30 16:51:16.050",
+      "dateFinished": "2020-01-30 16:51:16.294",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "rawArtistData2.describe(\"_c0\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 16:53:16.984",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res101: org.apache.spark.sql.DataFrame \u003d [summary: string, _c0: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580399465078_1409617230",
+      "id": "20200130-165105_1392873356",
+      "dateCreated": "2020-01-30 16:51:05.078",
+      "dateStarted": "2020-01-30 16:53:17.016",
+      "dateFinished": "2020-01-30 16:53:17.810",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "rawUserArtistData2.printSchema",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 16:53:38.161",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- _c0: string (nullable \u003d true)\n |-- _c1: string (nullable \u003d true)\n |-- _c2: string (nullable \u003d true)\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580399496905_1421769934",
+      "id": "20200130-165136_1453774880",
+      "dateCreated": "2020-01-30 16:51:36.905",
+      "dateStarted": "2020-01-30 16:53:38.194",
+      "dateFinished": "2020-01-30 16:53:38.366",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "case class record(UserID: String, ArtistID: String, Counter: String)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 17:04:51.040",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "defined class record\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580399618161_627025131",
+      "id": "20200130-165338_1755926816",
+      "dateCreated": "2020-01-30 16:53:38.161",
+      "dateStarted": "2020-01-30 17:04:51.076",
+      "dateFinished": "2020-01-30 17:04:51.240",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val rawUserArtistData3 \u003d rawUserArtistData2.toDF(\"UserID\", \"ArtistID\", \"Counter\").as[record]",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 17:06:32.017",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "rawUserArtistData3: org.apache.spark.sql.Dataset[record] \u003d [UserID: string, ArtistID: string ... 1 more field]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580399682345_619214454",
+      "id": "20200130-165442_2029090339",
+      "dateCreated": "2020-01-30 16:54:42.345",
+      "dateStarted": "2020-01-30 17:06:32.052",
+      "dateFinished": "2020-01-30 17:06:32.344",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "rawUserArtistData3.first",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 17:06:43.460",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res107: record \u003d record(1059637,1000010,238)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580399713925_-410804019",
+      "id": "20200130-165513_1185487122",
+      "dateCreated": "2020-01-30 16:55:13.925",
+      "dateStarted": "2020-01-30 17:06:43.496",
+      "dateFinished": "2020-01-30 17:06:43.780",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\nval rawArtistAlias2 \u003d spark.read.option(\"sep\", \"\\t\").csv(\"D:\\\\AnacondaProjects\\\\Datasets\\\\Audioscrobbler\\\\artist_alias_small.txt\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 17:20:36.399",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "rawArtistAlias2: org.apache.spark.sql.DataFrame \u003d [_c0: string, _c1: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580400819580_1992343338",
+      "id": "20200130-171339_1053123913",
+      "dateCreated": "2020-01-30 17:13:39.580",
+      "dateStarted": "2020-01-30 17:17:20.170",
+      "dateFinished": "2020-01-30 17:17:20.450",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "rawArtistAlias2\nrawArtistData2\nrawUserArtistData2",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 17:28:57.865",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cconsole\u003e:36: warning: a pure expression does nothing in statement position; you may be omitting necessary parentheses\r\n       rawArtistAlias2\r\n       ^\n\u003cconsole\u003e:37: warning: a pure expression does nothing in statement position; you may be omitting necessary parentheses\r\n       rawArtistData2\r\n       ^\nres109: org.apache.spark.sql.DataFrame \u003d [_c0: string, _c1: string ... 1 more field]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580401040127_642533458",
+      "id": "20200130-171720_98708555",
+      "dateCreated": "2020-01-30 17:17:20.127",
+      "dateStarted": "2020-01-30 17:28:57.907",
+      "dateFinished": "2020-01-30 17:28:58.093",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "rawArtistData2.first",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 17:29:21.071",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res110: org.apache.spark.sql.Row \u003d [1240105,André Visior]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580401737866_-1255024461",
+      "id": "20200130-172857_1892898245",
+      "dateCreated": "2020-01-30 17:28:57.866",
+      "dateStarted": "2020-01-30 17:29:21.108",
+      "dateFinished": "2020-01-30 17:29:21.357",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1580403474359_-394152262",
+      "id": "20200130-175754_1063972655",
+      "dateCreated": "2020-01-30 17:57:54.359",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val model2 \u003d ALS.trainImplicit(trainData, 10, 5, 0.01, 1.0)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 21:03:19.988",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "model2: org.apache.spark.mllib.recommendation.MatrixFactorizationModel \u003d org.apache.spark.mllib.recommendation.MatrixFactorizationModel@5a284b08\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580401761071_1819670500",
+      "id": "20200130-172921_1091136147",
+      "dateCreated": "2020-01-30 17:29:21.071",
+      "dateStarted": "2020-01-30 21:03:20.055",
+      "dateFinished": "2020-01-30 21:03:25.480",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "rawUserArtistData2.printSchema",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 21:05:48.514",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- _c0: string (nullable \u003d true)\n |-- _c1: string (nullable \u003d true)\n |-- _c2: string (nullable \u003d true)\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580414599988_1422705998",
+      "id": "20200130-210319_1875481115",
+      "dateCreated": "2020-01-30 21:03:19.988",
+      "dateStarted": "2020-01-30 21:05:48.556",
+      "dateFinished": "2020-01-30 21:05:48.776",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "rawUserArtistData3.printSchema",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 21:05:35.261",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- UserID: string (nullable \u003d true)\n |-- ArtistID: string (nullable \u003d true)\n |-- Counter: string (nullable \u003d true)\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580414649932_-2140938655",
+      "id": "20200130-210409_558639218",
+      "dateCreated": "2020-01-30 21:04:09.932",
+      "dateStarted": "2020-01-30 21:05:35.298",
+      "dateFinished": "2020-01-30 21:05:35.467",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "rawArtistAlias2.printSchema",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 21:08:29.084",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- _c0: string (nullable \u003d true)\n |-- _c1: string (nullable \u003d true)\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580414895972_-2048836707",
+      "id": "20200130-210815_783820473",
+      "dateCreated": "2020-01-30 21:08:15.972",
+      "dateStarted": "2020-01-30 21:08:29.123",
+      "dateFinished": "2020-01-30 21:08:29.338",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "rawArtistAlias2.filter( $\"_c1\" \u003d\u003d\u003d \"1277014\").count",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 23:29:28.071",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res178: Long \u003d 0\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580415547272_-1469425983",
+      "id": "20200130-211907_1302633136",
+      "dateCreated": "2020-01-30 21:19:07.272",
+      "dateStarted": "2020-01-30 23:29:28.114",
+      "dateFinished": "2020-01-30 23:29:28.536",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "rawArtistAlias2.flatMap{ x \u003d\u003e \n        \n        if (x(0) \u003d\u003d \"1039896\"){\n            x(1)\n        } else {\n            1039896\n        }\n    \n    }.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 22:53:03.777",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cconsole\u003e:36: error: type mismatch;\r\n found   : Any\r\n required: Boolean\r\n                   x(1)\r\n                    ^\n\u003cconsole\u003e:38: error: type mismatch;\r\n found   : Int(1039896)\r\n required: Boolean\r\n                   1039896\r\n                   ^\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580414929437_1770064387",
+      "id": "20200130-210849_1000472403",
+      "dateCreated": "2020-01-30 21:08:49.437",
+      "dateStarted": "2020-01-30 22:51:10.510",
+      "dateFinished": "2020-01-30 22:51:10.526",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val badIDRow \u003d rawArtistAlias2.filter(col(\"_c0\") \u003d\u003d\u003d \"103982828\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-31 01:15:15.321",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "badIDRow: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [_c0: string, _c1: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580424321376_-2100267992",
+      "id": "20200130-234521_2022638560",
+      "dateCreated": "2020-01-30 23:45:21.376",
+      "dateStarted": "2020-01-31 01:15:15.364",
+      "dateFinished": "2020-01-31 01:15:15.542",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.broadcast.Broadcast",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-31 01:50:40.901",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.broadcast.Broadcast\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580431836546_-1820055852",
+      "id": "20200131-015036_835125810",
+      "dateCreated": "2020-01-31 01:50:36.546",
+      "dateStarted": "2020-01-31 01:50:40.944",
+      "dateFinished": "2020-01-31 01:50:41.096",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val bRawArtistAlias \u003d spark.sparkContext.broadcast(rawArtistAlias)\n\nbRawArtistAlias.value.count",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-31 01:51:05.741",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "java.lang.IllegalArgumentException: requirement failed: Can not directly broadcast RDDs; instead, call collect() and broadcast the result.\r\n  at scala.Predef$.require(Predef.scala:224)\r\n  at org.apache.spark.SparkContext.broadcast(SparkContext.scala:1487)\r\n  ... 51 elided\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580431242109_1073992701",
+      "id": "20200131-014042_1387362554",
+      "dateCreated": "2020-01-31 01:40:42.109",
+      "dateStarted": "2020-01-31 01:51:05.784",
+      "dateFinished": "2020-01-31 01:51:06.127",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "rawArtistAlias2",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-31 02:00:41.487",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res261: org.apache.spark.sql.DataFrame \u003d [_c0: string, _c1: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580432434405_-1164368780",
+      "id": "20200131-020034_1404314177",
+      "dateCreated": "2020-01-31 02:00:34.405",
+      "dateStarted": "2020-01-31 02:00:41.531",
+      "dateFinished": "2020-01-31 02:00:41.701",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.{DataFrame, Dataset, Row}",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-31 02:05:07.571",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.{DataFrame, Dataset, Row}\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580432206566_828298864",
+      "id": "20200131-015646_894796138",
+      "dateCreated": "2020-01-31 01:56:46.566",
+      "dateStarted": "2020-01-31 02:05:07.616",
+      "dateFinished": "2020-01-31 02:05:07.775",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val bRawArtistAlias2 \u003d broadcast(rawArtistAlias2)\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-31 02:04:32.693",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "bRawArtistAlias2: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [_c0: string, _c1: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580432646478_1619124648",
+      "id": "20200131-020406_286003474",
+      "dateCreated": "2020-01-31 02:04:06.478",
+      "dateStarted": "2020-01-31 02:04:32.742",
+      "dateFinished": "2020-01-31 02:04:32.925",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\nval bRawArtistAlias2 \u003d broadcast(rawArtistAlias2)\n// val bRawArtistAlias \u003d spark.sparkContext.broadcast(rawArtistAlias)\n\n//convert bad artistID to good artistID\ndef convertF3(badID: String, rawArtistAlias20: Dataset[Row]): String \u003d {\n    \n    rawArtistAlias20.take(1)\n    \n    if (1\u003e0){\n        \"a\"\n    } else {\n        \"b\"\n    }\n    \n}\n\nrawUserArtistData3.map{ line \u003d\u003e\n\n                val artID \u003d convertF3(line.ArtistID, bRawArtistAlias2)\n                (line.UserID, artID, line.Counter)\n                \n}.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-31 02:05:16.696",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 885.0 failed 1 times, most recent failure: Lost task 0.0 in stage 885.0 (TID 1839, localhost, executor driver): java.lang.NullPointerException\r\n\tat org.apache.spark.sql.Dataset.\u003cinit\u003e(Dataset.scala:182)\r\n\tat org.apache.spark.sql.Dataset$.apply(Dataset.scala:64)\r\n\tat org.apache.spark.sql.Dataset.withTypedPlan(Dataset.scala:3417)\r\n\tat org.apache.spark.sql.Dataset.limit(Dataset.scala:1814)\r\n\tat org.apache.spark.sql.Dataset.head(Dataset.scala:2550)\r\n\tat org.apache.spark.sql.Dataset.take(Dataset.scala:2764)\r\n\tat convertF3(\u003cconsole\u003e:51)\r\n\tat $anonfun$1.apply(\u003cconsole\u003e:65)\r\n\tat $anonfun$1.apply(\u003cconsole\u003e:63)\r\n\tat org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.mapelements_doConsume_0$(Unknown Source)\r\n\tat org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.deserializetoobject_doConsume_0$(Unknown Source)\r\n\tat org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)\r\n\tat org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)\r\n\tat org.apache.spark.sql.execution.WholeStageCodegenExec$$anonfun$13$$anon$1.hasNext(WholeStageCodegenExec.scala:636)\r\n\tat org.apache.spark.sql.execution.SparkPlan$$anonfun$2.apply(SparkPlan.scala:255)\r\n\tat org.apache.spark.sql.execution.SparkPlan$$anonfun$2.apply(SparkPlan.scala:247)\r\n\tat org.apache.spark.rdd.RDD$$anonfun$mapPartitionsInternal$1$$anonfun$apply$24.apply(RDD.scala:836)\r\n\tat org.apache.spark.rdd.RDD$$anonfun$mapPartitionsInternal$1$$anonfun$apply$24.apply(RDD.scala:836)\r\n\tat org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)\r\n\tat org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:324)\r\n\tat org.apache.spark.rdd.RDD.iterator(RDD.scala:288)\r\n\tat org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)\r\n\tat org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:324)\r\n\tat org.apache.spark.rdd.RDD.iterator(RDD.scala:288)\r\n\tat org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)\r\n\tat org.apache.spark.scheduler.Task.run(Task.scala:123)\r\n\tat org.apache.spark.executor.Executor$TaskRunner$$anonfun$10.apply(Executor.scala:408)\r\n\tat org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1360)\r\n\tat org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:414)\r\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\r\n\tat java.lang.Thread.run(Thread.java:745)\r\n\r\nDriver stacktrace:\r\n  at org.apache.spark.scheduler.DAGScheduler.org$apache$spark$scheduler$DAGScheduler$$failJobAndIndependentStages(DAGScheduler.scala:1889)\r\n  at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1877)\r\n  at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1876)\r\n  at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)\r\n  at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)\r\n  at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:1876)\r\n  at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:926)\r\n  at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:926)\r\n  at scala.Option.foreach(Option.scala:257)\r\n  at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:926)\r\n  at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:2110)\r\n  at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2059)\r\n  at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2048)\r\n  at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)\r\n  at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:737)\r\n  at org.apache.spark.SparkContext.runJob(SparkContext.scala:2061)\r\n  at org.apache.spark.SparkContext.runJob(SparkContext.scala:2082)\r\n  at org.apache.spark.SparkContext.runJob(SparkContext.scala:2101)\r\n  at org.apache.spark.sql.execution.SparkPlan.executeTake(SparkPlan.scala:365)\r\n  at org.apache.spark.sql.execution.CollectLimitExec.executeCollect(limit.scala:38)\r\n  at org.apache.spark.sql.Dataset.org$apache$spark$sql$Dataset$$collectFromPlan(Dataset.scala:3389)\r\n  at org.apache.spark.sql.Dataset$$anonfun$head$1.apply(Dataset.scala:2550)\r\n  at org.apache.spark.sql.Dataset$$anonfun$head$1.apply(Dataset.scala:2550)\r\n  at org.apache.spark.sql.Dataset$$anonfun$52.apply(Dataset.scala:3370)\r\n  at org.apache.spark.sql.execution.SQLExecution$$anonfun$withNewExecutionId$1.apply(SQLExecution.scala:78)\r\n  at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:125)\r\n  at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:73)\r\n  at org.apache.spark.sql.Dataset.withAction(Dataset.scala:3369)\r\n  at org.apache.spark.sql.Dataset.head(Dataset.scala:2550)\r\n  at org.apache.spark.sql.Dataset.take(Dataset.scala:2764)\r\n  at org.apache.spark.sql.Dataset.getRows(Dataset.scala:254)\r\n  at org.apache.spark.sql.Dataset.showString(Dataset.scala:291)\r\n  at org.apache.spark.sql.Dataset.show(Dataset.scala:751)\r\n  at org.apache.spark.sql.Dataset.show(Dataset.scala:710)\r\n  at org.apache.spark.sql.Dataset.show(Dataset.scala:719)\r\n  ... 53 elided\r\nCaused by: java.lang.NullPointerException\r\n  at org.apache.spark.sql.Dataset.\u003cinit\u003e(Dataset.scala:182)\r\n  at org.apache.spark.sql.Dataset$.apply(Dataset.scala:64)\r\n  at org.apache.spark.sql.Dataset.withTypedPlan(Dataset.scala:3417)\r\n  at org.apache.spark.sql.Dataset.limit(Dataset.scala:1814)\r\n  at org.apache.spark.sql.Dataset.head(Dataset.scala:2550)\r\n  at org.apache.spark.sql.Dataset.take(Dataset.scala:2764)\r\n  at convertF3(\u003cconsole\u003e:51)\r\n  at $anonfun$1.apply(\u003cconsole\u003e:65)\r\n  at $anonfun$1.apply(\u003cconsole\u003e:63)\r\n  at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.mapelements_doConsume_0$(Unknown Source)\r\n  at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.deserializetoobject_doConsume_0$(Unknown Source)\r\n  at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)\r\n  at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)\r\n  at org.apache.spark.sql.execution.WholeStageCodegenExec$$anonfun$13$$anon$1.hasNext(WholeStageCodegenExec.scala:636)\r\n  at org.apache.spark.sql.execution.SparkPlan$$anonfun$2.apply(SparkPlan.scala:255)\r\n  at org.apache.spark.sql.execution.SparkPlan$$anonfun$2.apply(SparkPlan.scala:247)\r\n  at org.apache.spark.rdd.RDD$$anonfun$mapPartitionsInternal$1$$anonfun$apply$24.apply(RDD.scala:836)\r\n  at org.apache.spark.rdd.RDD$$anonfun$mapPartitionsInternal$1$$anonfun$apply$24.apply(RDD.scala:836)\r\n  at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)\r\n  at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:324)\r\n  at org.apache.spark.rdd.RDD.iterator(RDD.scala:288)\r\n  at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)\r\n  at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:324)\r\n  at org.apache.spark.rdd.RDD.iterator(RDD.scala:288)\r\n  at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)\r\n  at org.apache.spark.scheduler.Task.run(Task.scala:123)\r\n  at org.apache.spark.executor.Executor$TaskRunner$$anonfun$10.apply(Executor.scala:408)\r\n  at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1360)\r\n  at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:414)\r\n  ... 3 more\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580414706976_1937728803",
+      "id": "20200130-210506_1116768873",
+      "dateCreated": "2020-01-30 21:05:06.976",
+      "dateStarted": "2020-01-31 02:05:16.741",
+      "dateFinished": "2020-01-31 02:05:17.352",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "//convert bad artistID to good artistID\ndef convertF(badID: Int): String \u003d {\n    \n    val badIDRow \u003d rawArtistAlias2.filter(col(\"_c0\") \u003d\u003d\u003d badID)\n    if (badIDRow.count()\u003e0){\n        badIDRow.head.get(1).toString\n    } else {\n        badID.toString\n    }\n    \n}\nconvertF(1039896)\n// convertF(1277013)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 23:44:10.094",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "convertF: (badID: Int)String\r\nres199: String \u003d 1277013\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580421766274_1645533206",
+      "id": "20200130-230246_1572702833",
+      "dateCreated": "2020-01-30 23:02:46.274",
+      "dateStarted": "2020-01-30 23:44:10.138",
+      "dateFinished": "2020-01-30 23:44:10.426",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "//convert bad artistID to good artistID\ndef convertF2(badID: Int): String \u003d {\n        badID.toString\n\n}\nconvertF(1039897)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-31 01:00:48.917",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "convertF2: (badID: Int)String\r\nres210: String \u003d 1039897\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1580423992633_1060602948",
+      "id": "20200130-233952_125005464",
+      "dateCreated": "2020-01-30 23:39:52.633",
+      "dateStarted": "2020-01-31 00:56:57.594",
+      "dateFinished": "2020-01-31 00:56:57.865",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-30 23:31:55.622",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1580423418771_356536023",
+      "id": "20200130-233018_1180124094",
+      "dateCreated": "2020-01-30 23:30:18.771",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "AdvancedAnalyticsWithSpark-Ch3",
+  "id": "2EYQKU2R3",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "sh:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

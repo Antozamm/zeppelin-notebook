@@ -1,0 +1,672 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\nLo SparkContext (sc) è creato automaticamente all\u0027avvio dell\u0027ambiente Zeppelin, per cui posso iniziare ad usarlo direttamente.\n",
+      "user": "user1",
+      "dateUpdated": "2019-10-15 22:49:06.953",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eLo SparkContext (sc) è creato automaticamente all\u0026rsquo;avvio dell\u0026rsquo;ambiente Zeppelin, per cui posso iniziare ad usarlo direttamente.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1571172452031_-1935892434",
+      "id": "20191015-224732_1201150108",
+      "dateCreated": "2019-10-15 22:47:32.031",
+      "dateStarted": "2019-10-15 22:49:06.953",
+      "dateFinished": "2019-10-15 22:49:32.743",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nCreo un rdd dal file csv. Il file csv contiene su ogni riga una persona, la sua età e il numero di amici su Facebook. \nVoglio trovare il valore medio di amici per gni età, per esempio i trentenni hanno in media 16.5 amici.",
+      "user": "user1",
+      "dateUpdated": "2019-10-16 00:17:18.754",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eCreo un rdd dal file csv. Il file csv contiene su ogni riga una persona, la sua età e il numero di amici su Facebook.\u003cbr/\u003eVoglio trovare il valore medio di amici per gni età, per esempio i trentenni hanno in media 16.5 amici.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1571177632804_-755190938",
+      "id": "20191016-001352_2116774267",
+      "dateCreated": "2019-10-16 00:13:52.804",
+      "dateStarted": "2019-10-16 00:17:18.754",
+      "dateFinished": "2019-10-16 00:17:18.759",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val csvrdd \u003d sc.textFile(\"D:\\\\AnacondaProjects\\\\exampl1.csv\")",
+      "user": "admin",
+      "dateUpdated": "2019-12-09 14:53:38.144",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "java.lang.IllegalStateException: Cannot call methods on a stopped SparkContext.\r\nThis stopped SparkContext was created at:\r\n\r\norg.apache.spark.sql.SparkSession$Builder.getOrCreate(SparkSession.scala:910)\r\nsun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\nsun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)\r\nsun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)\r\njava.lang.reflect.Method.invoke(Unknown Source)\r\norg.apache.zeppelin.spark.BaseSparkScalaInterpreter.spark2CreateContext(BaseSparkScalaInterpreter.scala:263)\r\norg.apache.zeppelin.spark.BaseSparkScalaInterpreter.createSparkContext(BaseSparkScalaInterpreter.scala:182)\r\norg.apache.zeppelin.spark.SparkScala211Interpreter.open(SparkScala211Interpreter.scala:90)\r\norg.apache.zeppelin.spark.NewSparkInterpreter.open(NewSparkInterpreter.java:102)\r\norg.apache.zeppelin.spark.SparkInterpreter.open(SparkInterpreter.java:62)\r\norg.apache.zeppelin.interpreter.LazyOpenInterpreter.open(LazyOpenInterpreter.java:69)\r\norg.apache.zeppelin.spark.PySparkInterpreter.getSparkInterpreter(PySparkInterpreter.java:664)\r\norg.apache.zeppelin.spark.PySparkInterpreter.createGatewayServerAndStartScript(PySparkInterpreter.java:260)\r\norg.apache.zeppelin.spark.PySparkInterpreter.open(PySparkInterpreter.java:194)\r\norg.apache.zeppelin.interpreter.LazyOpenInterpreter.open(LazyOpenInterpreter.java:69)\r\norg.apache.zeppelin.interpreter.remote.RemoteInterpreterServer$InterpretJob.jobRun(RemoteInterpreterServer.java:616)\r\norg.apache.zeppelin.scheduler.Job.run(Job.java:188)\r\norg.apache.zeppelin.scheduler.FIFOScheduler$1.run(FIFOScheduler.java:140)\r\njava.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)\r\njava.util.concurrent.FutureTask.run(Unknown Source)\r\n\r\nThe currently active SparkContext was created at:\r\n\r\n(No active SparkContext.)\r\n\r\n  at org.apache.spark.SparkContext.assertNotStopped(SparkContext.scala:100)\r\n  at org.apache.spark.SparkContext.defaultParallelism(SparkContext.scala:2327)\r\n  at org.apache.spark.SparkContext.defaultMinPartitions(SparkContext.scala:2336)\r\n  at org.apache.spark.SparkContext.textFile$default$2(SparkContext.scala:830)\r\n  ... 47 elided\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1571172420126_458126067",
+      "id": "20191015-224700_1116354684",
+      "dateCreated": "2019-10-15 22:47:00.126",
+      "dateStarted": "2019-12-09 14:53:38.168",
+      "dateFinished": "2019-12-09 14:53:38.635",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\npotrei chiedermi tra quante partizione è suddiviso il rdd sopra creato",
+      "user": "user1",
+      "dateUpdated": "2019-10-15 22:52:29.346",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003epotrei chiedermi tra quante partizione è suddiviso il rdd sopra creato\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1571172418355_-2003258586",
+      "id": "20191015-224658_1258663677",
+      "dateCreated": "2019-10-15 22:46:58.355",
+      "dateStarted": "2019-10-15 22:52:29.347",
+      "dateFinished": "2019-10-15 22:52:29.354",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "csvrdd.getNumPartitions",
+      "user": "user1",
+      "dateUpdated": "2019-10-15 22:52:41.006",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res24: Int \u003d 1\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1571172413122_332495226",
+      "id": "20191015-224653_777579811",
+      "dateCreated": "2019-10-15 22:46:53.122",
+      "dateStarted": "2019-10-15 22:52:41.026",
+      "dateFinished": "2019-10-15 22:52:41.238",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nCiascun elemento del rdd è una stringa costituita dai due numeri e la virgola, per esempio:\n18, 362",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-01 20:34:35.218",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eCiascun elemento del rdd è una stringa costituita dai due numeri e la virgola, per esempio:\u003cbr/\u003e18, 362\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1571172832704_1930261336",
+      "id": "20191015-225352_1247779003",
+      "dateCreated": "2019-10-15 22:53:52.704",
+      "dateStarted": "2019-12-01 20:34:35.218",
+      "dateFinished": "2019-12-01 20:34:35.230",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "csvrdd.take(1)",
+      "user": "user1",
+      "dateUpdated": "2019-10-16 00:07:17.037",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res51: Array[String] \u003d Array(44,11)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1571159610692_-1713831660",
+      "id": "20191015-191330_62804289",
+      "dateCreated": "2019-10-15 19:13:30.692",
+      "dateStarted": "2019-10-16 00:07:17.055",
+      "dateFinished": "2019-10-16 00:07:17.267",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nVoglio trasformare ogni stringa in una coppia Key-value",
+      "user": "user1",
+      "dateUpdated": "2019-10-16 00:07:21.511",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eVoglio trasformare ogni stringa in una coppia Key-value\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1571172409909_211745566",
+      "id": "20191015-224649_651740334",
+      "dateCreated": "2019-10-15 22:46:49.909",
+      "dateStarted": "2019-10-16 00:07:21.511",
+      "dateFinished": "2019-10-16 00:07:21.515",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "//un modo per farlo è questo\ncsvrdd.map(x \u003d\u003e x.split(\",\")).map(array \u003d\u003e (array(0),array(1).toDouble)) //la trasformazione map è una narrow transformation, dunque nessuno shuffle dei dati dentro il cluster\n//si noti che la prima map da come risultato un Aarray[String] in ogni elemento\ncsvrdd.map( x \u003d\u003e x.split(\",\"))  //Risultato: res31: org.apache.spark.rdd.RDD[Array[String]] \u003d MapPartitionsRDD[24] at map at \u003cconsole\u003e:28\n\n\n//un modo simile di farlo con una singola map\ncsvrdd.map(x \u003d\u003e ((x.split(\",\"))(0),(x.split(\",\"))(1).toDouble))",
+      "user": "user1",
+      "dateUpdated": "2019-10-15 23:22:21.697",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res32: org.apache.spark.rdd.RDD[(String, String)] \u003d MapPartitionsRDD[28] at map at \u003cconsole\u003e:36\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1571172409720_1905437151",
+      "id": "20191015-224649_691861205",
+      "dateCreated": "2019-10-15 22:46:49.720",
+      "dateStarted": "2019-10-15 23:09:10.778",
+      "dateFinished": "2019-10-15 23:09:11.053",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nDefinisco il nuovo rdd di coppie key-value",
+      "user": "user1",
+      "dateUpdated": "2019-10-15 23:23:20.509",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eDefinisco il nuovo rdd di coppie key-value\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1571174558155_2023017337",
+      "id": "20191015-232238_1173324459",
+      "dateCreated": "2019-10-15 23:22:38.155",
+      "dateStarted": "2019-10-15 23:23:20.509",
+      "dateFinished": "2019-10-15 23:23:20.516",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val csvrdd2 \u003d csvrdd.map(x \u003d\u003e ((x.split(\",\"))(0),(x.split(\",\"))(1).toDouble))\ncsvrdd2.take(2)",
+      "user": "user1",
+      "dateUpdated": "2019-10-15 23:22:29.022",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "csvrdd2: org.apache.spark.rdd.RDD[(String, Double)] \u003d MapPartitionsRDD[32] at map at \u003cconsole\u003e:29\r\nres35: Array[(String, Double)] \u003d Array((44,11.0), (5,190.0))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1571172409500_-1900874712",
+      "id": "20191015-224649_649872996",
+      "dateCreated": "2019-10-15 22:46:49.500",
+      "dateStarted": "2019-10-15 23:22:29.040",
+      "dateFinished": "2019-10-15 23:22:29.280",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// un metodo diffuso per contare quanti sono gli elementi con la stessa key, è quello di associare una unità ad ogni elemento value \u003d\u003e (value,1)\n// si noti che per accedere agli elementi del tuple in scala devo usare la notazione x._1 e x._2 (si inizia a contare d 1 e non da 0)\nval csvrdd3 \u003d csvrdd2.map( x \u003d\u003e (x._1,(x._2,1) ))",
+      "user": "user1",
+      "dateUpdated": "2019-10-15 23:45:55.525",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "csvrdd3: org.apache.spark.rdd.RDD[(String, (Double, Int))] \u003d MapPartitionsRDD[37] at map at \u003cconsole\u003e:31\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1571175636769_-1939592309",
+      "id": "20191015-234036_782736643",
+      "dateCreated": "2019-10-15 23:40:36.769",
+      "dateStarted": "2019-10-15 23:45:55.543",
+      "dateFinished": "2019-10-15 23:45:55.752",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nSiccome voglio la media di **value** per key utilizzo un reduceByKey sul rdd key-value.\nQuello che il reduceByKey fa, è prendere il considerazione tutte le coppie che hanno la stessa key e aggrega i value corrispondenti secondo lo schema indicato, in questo caso una somma dei value.",
+      "user": "user1",
+      "dateUpdated": "2019-10-15 23:32:29.809",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eSiccome voglio la media di \u003cstrong\u003evalue\u003c/strong\u003e per key utilizzo un reduceByKey sul rdd key-value.\u003cbr/\u003eQuello che il reduceByKey fa, è prendere il considerazione tutte le coppie che hanno la stessa key e aggrega i value corrispondenti secondo lo schema indicato, in questo caso una somma dei value.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1571173889190_-2012612583",
+      "id": "20191015-231129_510167540",
+      "dateCreated": "2019-10-15 23:11:29.190",
+      "dateStarted": "2019-10-15 23:32:29.809",
+      "dateFinished": "2019-10-15 23:32:29.816",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "//si noti che nel comando reduceByKey a e b sono i values di due elementi che vanno aggregati (e non key e value di un elemento)\nval csvrdd4 \u003d csvrdd3.reduceByKey( (a,b) \u003d\u003e (a._1 + b._1,a._2+b._2))\ncsvrdd4.collect",
+      "user": "user1",
+      "dateUpdated": "2019-10-15 23:53:25.106",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "csvrdd4: org.apache.spark.rdd.RDD[(String, (Double, Int))] \u003d ShuffledRDD[40] at reduceByKey at \u003cconsole\u003e:33\r\nres44: Array[(String, (Double, Int))] \u003d Array((69,(2098.0,10)), (4,(757.0,3)), (14,(1067.0,4)), (19,(1402.0,5)), (7,(1632.0,8)), (42,(1603.0,6)), (53,(2578.0,8)), (36,(1952.0,8)), (62,(2594.0,10)), (6,(1183.0,3)), (37,(1603.0,5)), (45,(3049.0,10)), (56,(2198.0,6)), (2,(3862.0,14)), (16,(3200.0,10)), (41,(2644.0,9)), (46,(843.0,4)), (9,(1490.0,8)), (3,(1520.0,5)), (34,(2787.0,10)), (28,(1992.0,8)), (59,(2664.0,9)), (30,(1376.0,7)), (61,(977.0,5)), (25,(1407.0,7)), (66,(1482.0,5)), (44,(1951.0,9)), (13,(1166.0,5)), (24,(539.0,3)), (1,(1608.0,5)), (39,(1532.0,6)), (11,(1347.0,5)), (63,(1494.0,6)), (10,(1051.0,5)), (64,(2384.0,9)), (29,(898.0,5)), (23,(2763.0,12)), (49,(1585.0,5)), (..."
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1571175964157_-1038670414",
+      "id": "20191015-234604_723295457",
+      "dateCreated": "2019-10-15 23:46:04.157",
+      "dateStarted": "2019-10-15 23:52:51.246",
+      "dateFinished": "2019-10-15 23:52:51.526",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nLa key è rimasta la stessa, i value sono diventati una coppia di valori, il primo numero è la somma di tutti i value aventi quella key, e il secondo il numero di elementi aventi quella key. \nSe divido il primo per il secondo ottengo la media.",
+      "user": "user1",
+      "dateUpdated": "2019-10-16 00:10:33.260",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eLa key è rimasta la stessa, i value sono diventati una coppia di valori, il primo numero è la somma di tutti i value aventi quella key, e il secondo il numero di elementi aventi quella key.\u003cbr/\u003eSe divido il primo per il secondo ottengo la media.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1571177260026_2020751159",
+      "id": "20191016-000740_888408214",
+      "dateCreated": "2019-10-16 00:07:40.026",
+      "dateStarted": "2019-10-16 00:10:33.261",
+      "dateFinished": "2019-10-16 00:10:33.267",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val csvrdd5 \u003d csvrdd4.map( x \u003d\u003e (x._1, x._2._1/x._2._2))\ncsvrdd5.collect",
+      "user": "user1",
+      "dateUpdated": "2019-10-15 23:57:24.613",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "csvrdd5: org.apache.spark.rdd.RDD[(String, Double)] \u003d MapPartitionsRDD[44] at map at \u003cconsole\u003e:33\r\nres50: Array[(String, Double)] \u003d Array((69,209.8), (4,252.33333333333334), (14,266.75), (19,280.4), (7,204.0), (42,267.1666666666667), (53,322.25), (36,244.0), (62,259.4), (6,394.3333333333333), (37,320.6), (45,304.9), (56,366.3333333333333), (2,275.85714285714283), (16,320.0), (41,293.77777777777777), (46,210.75), (9,186.25), (3,304.0), (34,278.7), (28,249.0), (59,296.0), (30,196.57142857142858), (61,195.4), (25,201.0), (66,296.4), (44,216.77777777777777), (13,233.2), (24,179.66666666666666), (1,321.6), (39,255.33333333333334), (11,269.4), (63,249.0), (10,210.2), (64,264.8888888888889), (29,179.6), (23,230.25), (49,317.0), (8,284.85714285714283), (60,215.44444444444446), (57,181.75), (21,..."
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1571172409370_699685160",
+      "id": "20191015-224649_1957015883",
+      "dateCreated": "2019-10-15 22:46:49.370",
+      "dateStarted": "2019-10-15 23:57:24.634",
+      "dateFinished": "2019-10-15 23:57:24.861",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "user1",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1571172408350_-1813659774",
+      "id": "20191015-224648_1095382995",
+      "dateCreated": "2019-10-15 22:46:48.350",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Esempio uso di RDD",
+  "id": "2EST4Y6C8",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "python:shared_process": [],
+    "sh:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

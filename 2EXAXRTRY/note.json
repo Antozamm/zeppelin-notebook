@@ -1,0 +1,3774 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n## SparkContext\nCandidates are expected to know how to use the SparkContext to control basic configuration settings such as spark.sql.shuffle.partitions.",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.253",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eSparkContext\u003c/h2\u003e\n\u003cp\u003eCandidates are expected to know how to use the SparkContext to control basic configuration settings such as spark.sql.shuffle.partitions.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864251_1158744137",
+      "id": "20191208-223008_393211527",
+      "dateCreated": "2020-01-13 11:04:24.252",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.conf.set(\"spark.sql.shuffle.partitions\", 6)\r\nspark.conf.set(\"spark.executor.memory\", \"6g\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.256",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864256_1407531496",
+      "id": "20191208-231746_1391846984",
+      "dateCreated": "2020-01-13 11:04:24.256",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "print(spark.conf.get(\"spark.sql.shuffle.partitions\") + \",\" + spark.conf.get(\"spark.executor.memory\"))",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.257",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "6,6g"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864256_1606878739",
+      "id": "20191208-231801_1338398669",
+      "dateCreated": "2020-01-13 11:04:24.256",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.conf.getAll.foreach(println)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.258",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "(zeppelin.pyspark.python,C:\\Users\\home\\Anaconda3\\envs\\conda2020\\python)\r\n(spark.driver.host,10.0.75.1)\r\n(zeppelin.dep.localrepo,local-repo)\r\n(zeppelin.spark.sql.stacktrace,false)\r\n(spark.driver.port,51529)\r\n(master,local[*])\r\n(spark.repl.class.uri,spark://10.0.75.1:51529/classes)\r\n(zeppelin.spark.useHiveContext,true)\r\n(spark.repl.class.outputDir,C:\\Users\\home\\AppData\\Local\\Temp\\spark384852474003408976)\r\n(zeppelin.spark.sql.interpolation,false)\r\n(zeppelin.spark.importImplicit,true)\r\n(zeppelin.interpreter.output.limit,102400)\r\n(spark.app.name,Zeppelin)\r\n(zeppelin.R.cmd,R)\r\n(zeppelin.spark.maxResult,1000)\r\n(zeppelin.pyspark.useIPython,true)\r\n(zeppelin.spark.concurrentSQL,false)\r\n(zeppelin.spark.enableSupportedVersionCheck,true)\r\n(zeppelin.spark.printREPLOutput,true)\r\n(zeppelin.dep.additionalRemoteRepository,spark-packages,http://dl.bintray.com/spark-packages/maven,false;)\r\n(spark.executor.id,driver)\r\n(zeppelin.spark.useNew,true)\r\n(spark.useHiveContext,true)\r\n(spark.master,local)\r\n(zeppelin.R.image.width,100%)\r\n(zeppelin.spark.ui.hidden,false)\r\n(zeppelin.interpreter.localRepo,C:\\zeppelin-0.8.2-bin-all/local-repo/spark)\r\n(args,deprecation)\r\n(spark.executor.memory,6g)\r\n(spark.driver.allowMultipleContexts,false)\r\n(zeppelin.R.render.options,out.format \u003d \u0027html\u0027, comment \u003d NA, echo \u003d FALSE, results \u003d \u0027asis\u0027, message \u003d F, warning \u003d F, fig.retina \u003d 2)\r\n(zeppelin.interpreter.max.poolsize,10)\r\n(spark.app.id,local-1576162433295)\r\n(zeppelin.R.knitr,true)\r\n(spark.sql.shuffle.partitions,6)\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864257_1422996331",
+      "id": "20191208-231824_1113669698",
+      "dateCreated": "2020-01-13 11:04:24.257",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nPrima di definire un nuovo SparkContext devo cancellare quello vecchio",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.259",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003ePrima di definire un nuovo SparkContext devo cancellare quello vecchio\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864258_-1467687147",
+      "id": "20191208-234115_293208618",
+      "dateCreated": "2020-01-13 11:04:24.258",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "sc.stop()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.260",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864259_476580446",
+      "id": "20191208-233158_1715604013",
+      "dateCreated": "2020-01-13 11:04:24.259",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nposso usare `spark.conf` oppure `SparkConk` di **org.apache.spark.SparkConf**, i due sono equivalenti",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.261",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eposso usare \u003ccode\u003espark.conf\u003c/code\u003e oppure \u003ccode\u003eSparkConk\u003c/code\u003e di \u003cstrong\u003eorg.apache.spark.SparkConf\u003c/strong\u003e, i due sono equivalenti\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864260_1098634849",
+      "id": "20191208-234856_995728250",
+      "dateCreated": "2020-01-13 11:04:24.260",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.SparkConf\nimport org.apache.spark.SparkContext\nval conf \u003d new SparkConf().setMaster(\"local[*]\").setAppName(\"provaApp\")\nval sc \u003d new SparkContext(conf)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.262",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.SparkConf\r\nimport org.apache.spark.SparkContext\r\nconf: org.apache.spark.SparkConf \u003d org.apache.spark.SparkConf@6f3fc821\r\nsc: org.apache.spark.SparkContext \u003d org.apache.spark.SparkContext@51117f47\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864261_1613435857",
+      "id": "20191208-232506_784248409",
+      "dateCreated": "2020-01-13 11:04:24.261",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nThere are two mandatory settings of any Spark application that have to be defined before this Spark application could be run — spark.master and spark.app.name.\n\nParametri (più importanti) dello SparkConf (vedi [link](!https://spark.apache.org/docs/latest/configuration.html) per la lista completa):\n\n| property name  | default   | meaning  |\n|---|---|---|\n| spark.app.name  |  none |  |\n| spark.driver.cores  | 1   | Number of cores to use for the driver process, #only in cluster mode.  |\n| spark.driver.memory  | 1g  |   |\n|spark.executor.memory|1g| |\n|spark.local.dir|/tmp|Directory to use for \"scratch\" space in Spark, including map output files and RDDs that get stored on disk. |\n|spark.master|none|The deploy mode of Spark driver program, either \"client\" or \"cluster\", Which means to launch driver program locally (\"client\") or remotely (\"cluster\") on one of the nodes inside the cluster.|\n\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.263",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eThere are two mandatory settings of any Spark application that have to be defined before this Spark application could be run — spark.master and spark.app.name.\u003c/p\u003e\n\u003cp\u003eParametri (più importanti) dello SparkConf (vedi \u003ca href\u003d\"!https://spark.apache.org/docs/latest/configuration.html\"\u003elink\u003c/a\u003e per la lista completa):\u003c/p\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n    \u003ctr\u003e\n      \u003cth\u003eproperty name \u003c/th\u003e\n      \u003cth\u003edefault \u003c/th\u003e\n      \u003cth\u003emeaning \u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003ctd\u003espark.app.name \u003c/td\u003e\n      \u003ctd\u003enone \u003c/td\u003e\n      \u003ctd\u003e \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003espark.driver.cores \u003c/td\u003e\n      \u003ctd\u003e1 \u003c/td\u003e\n      \u003ctd\u003eNumber of cores to use for the driver process, #only in cluster mode. \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003espark.driver.memory \u003c/td\u003e\n      \u003ctd\u003e1g \u003c/td\u003e\n      \u003ctd\u003e \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003espark.executor.memory\u003c/td\u003e\n      \u003ctd\u003e1g\u003c/td\u003e\n      \u003ctd\u003e \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003espark.local.dir\u003c/td\u003e\n      \u003ctd\u003e/tmp\u003c/td\u003e\n      \u003ctd\u003eDirectory to use for \u0026ldquo;scratch\u0026rdquo; space in Spark, including map output files and RDDs that get stored on disk. \u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003ctd\u003espark.master\u003c/td\u003e\n      \u003ctd\u003enone\u003c/td\u003e\n      \u003ctd\u003eThe deploy mode of Spark driver program, either \u0026ldquo;client\u0026rdquo; or \u0026ldquo;cluster\u0026rdquo;, Which means to launch driver program locally (\u0026ldquo;client\u0026rdquo;) or remotely (\u0026ldquo;cluster\u0026rdquo;) on one of the nodes inside the cluster.\u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864262_465378542",
+      "id": "20191208-234024_900986684",
+      "dateCreated": "2020-01-13 11:04:24.262",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "conf.toDebugString",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.264",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res7: String \u003d\r\nspark.app.name\u003dprovaApp\r\nspark.driver.allowMultipleContexts\u003dfalse\r\nspark.master\u003dlocal[*]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864263_1687915630",
+      "id": "20191208-234822_1356753041",
+      "dateCreated": "2020-01-13 11:04:24.263",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\r\nSET spark.sql.shuffle.partitions \u003d 2;\r\nSET spark.executor.memory \u003d 1g;",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.265",
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "spark.sql.shuffle.partitions should be int, but was 2;\r\nSET spark.executor.memory \u003d 1g;\nset zeppelin.spark.sql.stacktrace \u003d true to see full stacktrace"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864264_-261702517",
+      "id": "20191209-001403_19931058",
+      "dateCreated": "2020-01-13 11:04:24.264",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "print(spark.conf.get(\"spark.sql.shuffle.partitions\") + \",\" + spark.conf.get(\"spark.executor.memory\"))",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.265",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "6,6g"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864265_-144361181",
+      "id": "20191209-005336_1737210193",
+      "dateCreated": "2020-01-13 11:04:24.265",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## SparkSession\nCandidates are expected to know how to:\n- Create a DataFrame/Dataset from a collection (e.g. list or set)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.266",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eSparkSession\u003c/h2\u003e\n\u003cp\u003eCandidates are expected to know how to:\u003cbr/\u003e- Create a DataFrame/Dataset from a collection (e.g. list or set)\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864265_-981120818",
+      "id": "20191209-005438_844637410",
+      "dateCreated": "2020-01-13 11:04:24.265",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nriguardo la creazione di DataFrame vedere questo [articolo](!https://medium.com/@mrpowers/manually-creating-spark-dataframes-b14dae906393)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.267",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eriguardo la creazione di DataFrame vedere questo \u003ca href\u003d\"!https://medium.com/@mrpowers/manually-creating-spark-dataframes-b14dae906393\"\u003earticolo\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864266_379407243",
+      "id": "20191209-150906_329859745",
+      "dateCreated": "2020-01-13 11:04:24.266",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Creazione di un dataframe - Metodo 1\nPer creare un dataframe da una lista di valori si può usare il metodo **toDF**.\nIn alcuni casi occorre importare spark.implicits._ per poter fare la conversione da lista a datafame.",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.267",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreazione di un dataframe - Metodo 1\u003c/h3\u003e\n\u003cp\u003ePer creare un dataframe da una lista di valori si può usare il metodo \u003cstrong\u003etoDF\u003c/strong\u003e.\u003cbr/\u003eIn alcuni casi occorre importare spark.implicits._ per poter fare la conversione da lista a datafame.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864267_-1741288249",
+      "id": "20191209-150234_1543111474",
+      "dateCreated": "2020-01-13 11:04:24.267",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import spark.implicits._\n\nval lista_numeri \u003d List(1,2,3,4,5,6,7)\nval list_df \u003d lista_numeri.toDF()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.268",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import spark.implicits._\r\nlista_numeri: List[Int] \u003d List(1, 2, 3, 4, 5, 6, 7)\r\nlist_df: org.apache.spark.sql.DataFrame \u003d [value: int]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864268_-648327710",
+      "id": "20191209-145222_6272954",
+      "dateCreated": "2020-01-13 11:04:24.268",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.version",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.269",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res13: String \u003d 2.2.1\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864269_681527732",
+      "id": "20191209-153828_1991109153",
+      "dateCreated": "2020-01-13 11:04:24.269",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Creazione di un dataframe - Metodo 2\nUso il metodo di [Sparksession](https://spark.apache.org/docs/latest/api/scala/#org.apache.spark.sql.SparkSession) **createDataFrame()** definito come:\n`def createDataFrame(rows: rdd[Row], schema: StructType): DataFrame`\nIl metodo necessita due parametri: un **RDD** di **Row** e uno schema definito con **StructType**\nLo schema è definito così:\n`StructType( \n    List ( StructField(\"name1\", TypeName1), StructField(\"name2\", TypeName2) ...) \n)`",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.271",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCreazione di un dataframe - Metodo 2\u003c/h3\u003e\n\u003cp\u003eUso il metodo di \u003ca href\u003d\"https://spark.apache.org/docs/latest/api/scala/#org.apache.spark.sql.SparkSession\"\u003eSparksession\u003c/a\u003e \u003cstrong\u003ecreateDataFrame()\u003c/strong\u003e definito come:\u003cbr/\u003e\u003ccode\u003edef createDataFrame(rows: rdd[Row], schema: StructType): DataFrame\u003c/code\u003e\u003cbr/\u003eIl metodo necessita due parametri: un \u003cstrong\u003eRDD\u003c/strong\u003e di \u003cstrong\u003eRow\u003c/strong\u003e e uno schema definito con \u003cstrong\u003eStructType\u003c/strong\u003e\u003cbr/\u003eLo schema è definito così:\u003cbr/\u003e\u003ccode\u003eStructType( \n    List ( StructField(\u0026quot;name1\u0026quot;, TypeName1), StructField(\u0026quot;name2\u0026quot;, TypeName2) ...) \n)\u003c/code\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864270_-1055290247",
+      "id": "20191209-152147_799141739",
+      "dateCreated": "2020-01-13 11:04:24.270",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.Row\r\nimport org.apache.spark.sql.types.{StructField, StructType, IntegerType, StringType}\r\n\r\n//creiamo un dataset\r\nval someData \u003d sc.parallelize( Seq(\r\n                                    Row(8, \"bat\"),\r\n                                    Row(64, \"mouse\"),\r\n                                    Row(-27, \"horse\")\r\n                                  )\r\n                             )\r\n\r\n//definiamo lo schema\r\nval someSchema \u003d StructType ( List(\r\n                                    StructField(\"number\", IntegerType, true),\r\n                                    StructField(\"word\", StringType, true)\r\n                                    )\r\n                            )\r\n\r\n//dobbiamo dare come parametri un RDD (creato con sc.parallelize) e lo schema\r\nval someDF \u003d spark.createDataFrame( someData, someSchema )",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.272",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.Row\r\nimport org.apache.spark.sql.types.{StructField, StructType, IntegerType, StringType}\r\nsomeData: org.apache.spark.rdd.RDD[org.apache.spark.sql.Row] \u003d ParallelCollectionRDD[0] at parallelize at \u003cconsole\u003e:37\r\nsomeSchema: org.apache.spark.sql.types.StructType \u003d StructType(StructField(number,IntegerType,true), StructField(word,StringType,true))\r\nsomeDF: org.apache.spark.sql.DataFrame \u003d [number: int, word: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864271_-1831974398",
+      "id": "20191209-150623_1701344785",
+      "dateCreated": "2020-01-13 11:04:24.271",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nUn altro modo di usare  **StructType** è il seguente:",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.273",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eUn altro modo di usare \u003cstrong\u003eStructType\u003c/strong\u003e è il seguente:\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864272_-1819956090",
+      "id": "20191212-175449_1322998139",
+      "dateCreated": "2020-01-13 11:04:24.272",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.types.StructType\r\n\r\nval schema \u003d new StructType()\r\n  .add($\"id\".long.copy(nullable \u003d false))\r\n  .add($\"city\".string)\r\n  .add($\"country\".string)\r\n\r\nschema.printTreeString\r\n\r\nimport org.apache.spark.sql.DataFrameReader\r\n\r\nval r: DataFrameReader \u003d spark.read.schema(schema)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.274",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- id: long (nullable \u003d false)\n |-- city: string (nullable \u003d true)\n |-- country: string (nullable \u003d true)\n\r\nimport org.apache.spark.sql.types.StructType\r\nschema: org.apache.spark.sql.types.StructType \u003d StructType(StructField(id,LongType,false), StructField(city,StringType,true), StructField(country,StringType,true))\r\nimport org.apache.spark.sql.DataFrameReader\r\nr: org.apache.spark.sql.DataFrameReader \u003d org.apache.spark.sql.DataFrameReader@140fe2cd\r\nres44: org.apache.spark.sql.DataFrameReader \u003d org.apache.spark.sql.DataFrameReader@140fe2cd\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864273_769228005",
+      "id": "20191209-172321_1676365353",
+      "dateCreated": "2020-01-13 11:04:24.273",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n-- creare un dataframe da un Map\n\nIn questo caso lo schema può essere settato automaticamente da Spark.\n\nAnche con un dato di partenza in formato **Map** lo schema è sempre:\nMap -\u003e parallelize -\u003e RDD -\u003e DataFrame",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.275",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003e\u0026ndash; creare un dataframe da un Map\u003c/p\u003e\n\u003cp\u003eIn questo caso lo schema può essere settato automaticamente da Spark.\u003c/p\u003e\n\u003cp\u003eAnche con un dato di partenza in formato \u003cstrong\u003eMap\u003c/strong\u003e lo schema è sempre:\u003cbr/\u003eMap -\u0026gt; parallelize -\u0026gt; RDD -\u0026gt; DataFrame\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864274_-2055202815",
+      "id": "20191209-161140_1190648093",
+      "dateCreated": "2020-01-13 11:04:24.274",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df \u003d spark.createDataFrame( sc.parallelize( Map((\"x\", 24), (\"y\", 25), (\"z\", 26)).toSeq ) )\ndf.withColumnRenamed(\"_1\", \"nome\").withColumnRenamed(\"_2\", \"età\").show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.277",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----+---+\n|nome|età|\n+----+---+\n|   x| 24|\n|   y| 25|\n|   z| 26|\n+----+---+\n\r\ndf: org.apache.spark.sql.DataFrame \u003d [_1: string, _2: int]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864276_-1321072656",
+      "id": "20191209-154711_1751171205",
+      "dateCreated": "2020-01-13 11:04:24.276",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n- Create a DataFrame for a range of numbers\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.278",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cul\u003e\n  \u003cli\u003eCreate a DataFrame for a range of numbers\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864277_403627305",
+      "id": "20191209-160718_634751735",
+      "dateCreated": "2020-01-13 11:04:24.277",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "//anche in questo caso si può usare toDF\nsc.parallelize(1 to 10).toDF()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.279",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res16: org.apache.spark.sql.DataFrame \u003d [value: int]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864278_-1683482517",
+      "id": "20191209-164619_759620927",
+      "dateCreated": "2020-01-13 11:04:24.278",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "//oppure senza passare do un rdd \nimport org.apache.spark.sql.DataFrame\nval ar \u003d 1 to 10\nval df: DataFrame \u003d ar.toDF()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.280",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.DataFrame\r\nar: scala.collection.immutable.Range.Inclusive \u003d Range(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)\r\ndf: org.apache.spark.sql.DataFrame \u003d [value: int]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864279_-1378452155",
+      "id": "20191209-174742_65377942",
+      "dateCreated": "2020-01-13 11:04:24.279",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\r\n- Access the DataFrameReaders\r\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.280",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cul\u003e\n  \u003cli\u003eAccess the DataFrameReaders\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864280_908876799",
+      "id": "20191209-172131_84593321",
+      "dateCreated": "2020-01-13 11:04:24.280",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df \u003d spark.read.csv(\"exampl1.csv\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.281",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "df: org.apache.spark.sql.DataFrame \u003d [_c0: string, _c1: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864280_2019398941",
+      "id": "20191209-172147_35366691",
+      "dateCreated": "2020-01-13 11:04:24.280",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nVediamo alcuni esempi presi da [The Internal of Spark SQL](https://jaceklaskowski.gitbooks.io/mastering-spark-sql/spark-sql-DataFrameReader.html)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.281",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eVediamo alcuni esempi presi da \u003ca href\u003d\"https://jaceklaskowski.gitbooks.io/mastering-spark-sql/spark-sql-DataFrameReader.html\"\u003eThe Internal of Spark SQL\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864281_-140621081",
+      "id": "20191209-174057_1442239035",
+      "dateCreated": "2020-01-13 11:04:24.281",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val csvLine \u003d \"0,Warsaw,Poland\"\r\n\r\nimport org.apache.spark.sql.Dataset\r\nval cities: Dataset[String] \u003d Seq(csvLine).toDS\r\n\r\ncities.show\r\n\r\n// Define schema explicitly (as below)\r\n// or\r\n// option(\"header\", true) + option(\"inferSchema\", true)\r\nimport org.apache.spark.sql.types.StructType\r\nval schema \u003d new StructType()\r\n  .add($\"id\".long.copy(nullable \u003d false))\r\n  .add($\"city\".string)\r\n  .add($\"country\".string)\r\n\r\nschema.printTreeString\r\n\r\nimport org.apache.spark.sql.DataFrame\r\n\r\nval citiesDF: DataFrame \u003d spark\r\n  .read\r\n  .schema(schema)\r\n  .csv(cities)\r\n  \r\ncitiesDF.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.282",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---------------+\n|          value|\n+---------------+\n|0,Warsaw,Poland|\n+---------------+\n\r\nroot\n |-- id: long (nullable \u003d false)\n |-- city: string (nullable \u003d true)\n |-- country: string (nullable \u003d true)\n\r\n+---+------+-------+\n| id|  city|country|\n+---+------+-------+\n|  0|Warsaw| Poland|\n+---+------+-------+\n\r\ncsvLine: String \u003d 0,Warsaw,Poland\r\nimport org.apache.spark.sql.Dataset\r\ncities: org.apache.spark.sql.Dataset[String] \u003d [value: string]\r\nimport org.apache.spark.sql.types.StructType\r\nschema: org.apache.spark.sql.types.StructType \u003d StructType(StructField(id,LongType,false), StructField(city,StringType,true), StructField(country,StringType,true))\r\nimport org.apache.spark.sql.DataFrame\r\ncitiesDF: org.apache.spark.sql.DataFrame \u003d [id: bigint, city: string ... 1 more field]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864282_-2122499333",
+      "id": "20191209-173652_451601145",
+      "dateCreated": "2020-01-13 11:04:24.282",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n- Register User Defined Functions (UDFs)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.283",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cul\u003e\n  \u003cli\u003eRegister User Defined Functions (UDFs)\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864282_234522049",
+      "id": "20191209-164149_1780866584",
+      "dateCreated": "2020-01-13 11:04:24.282",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nDobbiamo registrare una funzione da noi definita (UDF), che potremo poi usare per operare sui dataframe o in una espressione SQL.\n\nUsiamo il metodo **udf()** con parametro la funzione da registrare. Nel nostro caso la funzione da registrare è:\n`x(Double) \u003d\u003e {x*x*x}`",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.283",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eDobbiamo registrare una funzione da noi definita (UDF), che potremo poi usare per operare sui dataframe o in una espressione SQL.\u003c/p\u003e\n\u003cp\u003eUsiamo il metodo \u003cstrong\u003eudf()\u003c/strong\u003e con parametro la funzione da registrare. Nel nostro caso la funzione da registrare è:\u003cbr/\u003e\u003ccode\u003ex(Double) \u003d\u0026gt; {x*x*x}\u003c/code\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864283_-490957596",
+      "id": "20191209-164148_1095261788",
+      "dateCreated": "2020-01-13 11:04:24.283",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "//importiamo udf\nimport org.apache.spark.sql.functions.udf\n\nval power3udf \u003d udf( (x:Double) \u003d\u003e { x*x*x } )\n\nval df \u003d sc.parallelize(0 to 10 by 2).toDF()\n\ndf.show()\n\ndf.select(power3udf( $\"value\" )).show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.284",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----+\n|value|\n+-----+\n|    0|\n|    2|\n|    4|\n|    6|\n|    8|\n|   10|\n+-----+\n\r\n+----------+\n|UDF(value)|\n+----------+\n|       0.0|\n|       8.0|\n|      64.0|\n|     216.0|\n|     512.0|\n|    1000.0|\n+----------+\n\r\nimport org.apache.spark.sql.functions.udf\r\npower3udf: org.apache.spark.sql.expressions.UserDefinedFunction \u003d UserDefinedFunction(\u003cfunction1\u003e,DoubleType,Some(List(DoubleType)))\r\ndf: org.apache.spark.sql.DataFrame \u003d [value: int]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864284_-1854803637",
+      "id": "20191209-164144_1827773364",
+      "dateCreated": "2020-01-13 11:04:24.284",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nDi seguito un altro esempio di registrazione di una UDF, l\u0027esempio è preso dall\u0027articolo di Medium  [Spark User Defined Functions (UDFs)](https://medium.com/@mrpowers/spark-user-defined-functions-udfs-6c849e39443b).\nNell\u0027esempio ho una funzione che converte le stringhe di input in minuscolo e rimuove tutti gli spazi.",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.285",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eDi seguito un altro esempio di registrazione di una UDF, l\u0026rsquo;esempio è preso dall\u0026rsquo;articolo di Medium \u003ca href\u003d\"https://medium.com/@mrpowers/spark-user-defined-functions-udfs-6c849e39443b\"\u003eSpark User Defined Functions (UDFs)\u003c/a\u003e.\u003cbr/\u003eNell\u0026rsquo;esempio ho una funzione che converte le stringhe di input in minuscolo e rimuove tutti gli spazi.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864284_-660538564",
+      "id": "20191212-184254_596233998",
+      "dateCreated": "2020-01-13 11:04:24.284",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.types.StringType\r\n\r\ndef lowerRemoveAllWhitespace(s: String): String \u003d {\r\n  s.toLowerCase().replaceAll(\"\\\\s\", \"\")\r\n}\r\n\r\nval lowerRemoveAllWhitespaceUDF \u003d udf[String, String](lowerRemoveAllWhitespace)\r\n\r\nval sourceDF \u003d List((\"  HI THERE     \"),\r\n                    (\" GivE mE PresenTS     \")\r\n                   ).toDF()\r\n\r\nsourceDF.show()\r\n\r\nsourceDF.select(\r\n  lowerRemoveAllWhitespaceUDF(col(\"value\")).as(\"clean_value\")\r\n).show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.286",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------------+\n|               value|\n+--------------------+\n|       HI THERE     |\n| GivE mE PresenTS...|\n+--------------------+\n\r\n+--------------+\n|   clean_value|\n+--------------+\n|       hithere|\n|givemepresents|\n+--------------+\n\r\nimport org.apache.spark.sql.types.StringType\r\nlowerRemoveAllWhitespace: (s: String)String\r\nlowerRemoveAllWhitespaceUDF: org.apache.spark.sql.expressions.UserDefinedFunction \u003d UserDefinedFunction(\u003cfunction1\u003e,StringType,Some(List(StringType)))\r\nsourceDF: org.apache.spark.sql.DataFrame \u003d [value: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864285_442454196",
+      "id": "20191209-194959_1831441693",
+      "dateCreated": "2020-01-13 11:04:24.285",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nLa funzione è registrata in dataframe. Non ci resta che registrarla anche in SQL.",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.286",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eLa funzione è registrata in dataframe. Non ci resta che registrarla anche in SQL.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864286_-1322063532",
+      "id": "20191212-185406_539607392",
+      "dateCreated": "2020-01-13 11:04:24.286",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "//registare la funzione in SQL\r\nval df \u003d (1 to 100 by 3).toDF(\"num\")\r\ndf.show(5)\r\nspark.udf.register(\"power2\", (x: Double) \u003d\u003e x*x)\r\n//adesso che la funzione è registrata posso usarla in una query sql, nel formato Scala\r\ndf.selectExpr(\"power2(num)\").show(5)\r\n//posso usare la funzione anche nel formato SQL\r\n//prima creando una view temporanea\r\ndf.createOrReplaceTempView(\"udfExampleSQL3\")\r\nspark.sql(\"SELECT power3(num) AS p2 FROM udfExampleSQL3\").show(5)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.287",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+\n|num|\n+---+\n|  1|\n|  4|\n|  7|\n| 10|\n| 13|\n+---+\nonly showing top 5 rows\n\r\n+-------------------------------+\n|UDF:power2(cast(num as double))|\n+-------------------------------+\n|                            1.0|\n|                           16.0|\n|                           49.0|\n|                          100.0|\n|                          169.0|\n+-------------------------------+\nonly showing top 5 rows\n\r\n+-----+\n|   p2|\n+-----+\n|  1.0|\n| 16.0|\n| 49.0|\n|100.0|\n|169.0|\n+-----+\nonly showing top 5 rows\n\r\ndf: org.apache.spark.sql.DataFrame \u003d [num: int]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864286_-1224750177",
+      "id": "20191209-182855_435960561",
+      "dateCreated": "2020-01-13 11:04:24.286",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\r\n## DataFrameReader\r\n\r\n### Read data for the \"core\" data formats (CSV, JSON, JDBC, ORC, Parquet, text and tables)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.287",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eDataFrameReader\u003c/h2\u003e\n\u003ch3\u003eRead data for the \u0026ldquo;core\u0026rdquo; data formats (CSV, JSON, JDBC, ORC, Parquet, text and tables)\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864287_-1693354875",
+      "id": "20191209-222907_932594899",
+      "dateCreated": "2020-01-13 11:04:24.287",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val dataFrame \u003d spark.read.json(\"example.json\") \r\nval dataFrame \u003d spark.read.csv(\"example.csv\") \r\nval dataFrame \u003d spark.read.parquet(\"example.parquet\")\r\nval dataFrame \u003d spark.read.jdbc(url,\"person\",prop)\r\nval dataFrame \u003d spark.read.text(\"file.txt\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.288",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864288_1214646841",
+      "id": "20191209-231453_154806882",
+      "dateCreated": "2020-01-13 11:04:24.288",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nUna sintassi equivalente per importare i file è la seguente:",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.289",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eUna sintassi equivalente per importare i file è la seguente:\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864289_-1573972199",
+      "id": "20191212-190708_238350304",
+      "dateCreated": "2020-01-13 11:04:24.289",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.read.format(\"csv\").load(\"example.csv\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.290",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res10: org.apache.spark.sql.DataFrame \u003d [_c0: string, _c1: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864290_13995858",
+      "id": "20191210-100835_1246440689",
+      "dateCreated": "2020-01-13 11:04:24.290",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\r\n### How to configure options for specific formats\r\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.291",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "databaseName": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eHow to configure options for specific formats\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864290_-1126367724",
+      "id": "20191209-223422_742724847",
+      "dateCreated": "2020-01-13 11:04:24.290",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nDevo usare il metodo **option(\"parametro\", \"valore\")**, mettendo anche più option in cascata.",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.292",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eDevo usare il metodo \u003cstrong\u003eoption(\u0026ldquo;parametro\u0026rdquo;, \u0026ldquo;valore\u0026rdquo;)\u003c/strong\u003e, mettendo anche più option in cascata.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864291_-1593973631",
+      "id": "20191212-191028_108858606",
+      "dateCreated": "2020-01-13 11:04:24.291",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df \u003d spark.read.option(\"header\", \"true\").option(\"inferSchema\", \"true\").csv(\"exampl1.csv\")\n//or \nval df2 \u003d spark.read.options(Map((\"header\", \"true\"), (\"inferSchema\",\"true\"))).csv(\"exampl1.csv\")\n//or\nval df3 \u003d spark.read.format(\"csv\").option(\"header\", \"true\").option(\"inferSchema\", \"true\").option(\"mode\", \"FAILFAST\").load(\"exampl1.csv\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.292",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "df: org.apache.spark.sql.DataFrame \u003d [eta: int, amici: int]\r\ndf2: org.apache.spark.sql.DataFrame \u003d [eta: int, amici: int]\r\ndf3: org.apache.spark.sql.DataFrame \u003d [eta: int, amici: int]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864292_-1195452164",
+      "id": "20191209-231451_1479988188",
+      "dateCreated": "2020-01-13 11:04:24.292",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nPer vedere le opzioni disponibili per i metodi di [DataFrameReader](https://spark.apache.org/docs/2.2.1/api/scala/#org.apache.spark.sql.DataFrameReader), ad esempio csv, si può fare riferimento alla documentazione della API.\nAd esempio per conoscere tutte le opzioni disponibili per csv si può clikkare sulla freccia per espandere il campo csv (vedere la figura sotto).\n![figura](https://www.1week4.com/wp-content/uploads/2019/12/spark-api-dataframereader-options.jpg)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.293",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003ePer vedere le opzioni disponibili per i metodi di \u003ca href\u003d\"https://spark.apache.org/docs/2.2.1/api/scala/#org.apache.spark.sql.DataFrameReader\"\u003eDataFrameReader\u003c/a\u003e, ad esempio csv, si può fare riferimento alla documentazione della API.\u003cbr/\u003eAd esempio per conoscere tutte le opzioni disponibili per csv si può clikkare sulla freccia per espandere il campo csv (vedere la figura sotto).\u003cbr/\u003e\u003cimg src\u003d\"https://www.1week4.com/wp-content/uploads/2019/12/spark-api-dataframereader-options.jpg\" alt\u003d\"figura\" /\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864292_-2048644754",
+      "id": "20191209-233955_1825649355",
+      "dateCreated": "2020-01-13 11:04:24.292",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nAlcune delle opzioni sono per l\u0027importazione dei file csv sono:\n- header\n- inferSchema\n- mode\n- ...",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.294",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eAlcune delle opzioni sono per l\u0026rsquo;importazione dei file csv sono:\u003cbr/\u003e- header\u003cbr/\u003e- inferSchema\u003cbr/\u003e- mode\u003cbr/\u003e- \u0026hellip;\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864293_1779276366",
+      "id": "20191209-222407_39639960",
+      "dateCreated": "2020-01-13 11:04:24.293",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### How to read data from non-core formats using format() and load()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.294",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eHow to read data from non-core formats using format() and load()\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864294_1775336239",
+      "id": "20191209-225654_1498953618",
+      "dateCreated": "2020-01-13 11:04:24.294",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nSupponiamo di avere un file in cui i dati sono salvati seguendo un formato particolare, per esempio:\n- il separatore è il segno meno **-** invece della virgola **,**\n- nel file ci sono linee di commenti che iniziano con **\u003c!--**\n- il file è indentato per cui ci sono spazi vuoti all\u0027inizio delle righe\n- etc.\n\nper ognuno di questi casi particolari trovo una opzione di **load**.",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.295",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eSupponiamo di avere un file in cui i dati sono salvati seguendo un formato particolare, per esempio:\u003cbr/\u003e- il separatore è il segno meno \u003cstrong\u003e-\u003c/strong\u003e invece della virgola \u003cstrong\u003e,\u003c/strong\u003e\u003cbr/\u003e- nel file ci sono linee di commenti che iniziano con \u003cstrong\u003e\u0026lt;!\u0026ndash;\u003c/strong\u003e\u003cbr/\u003e- il file è indentato per cui ci sono spazi vuoti all\u0026rsquo;inizio delle righe\u003cbr/\u003e- etc.\u003c/p\u003e\n\u003cp\u003eper ognuno di questi casi particolari trovo una opzione di \u003cstrong\u003eload\u003c/strong\u003e.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864294_222113008",
+      "id": "20191210-112248_463581520",
+      "dateCreated": "2020-01-13 11:04:24.294",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df \u003d spark.read.format(\"txt\").option(\"sep\",\"-\").option(\"inferSchema\",\"true\").option(\"header\",\"true\").option(\"ignoreLeadingWhiteSpace\",\"true\").option(\"comment\", \"\u003c!--\").load(data_file)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.295",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864295_-1297481070",
+      "id": "20191210-111353_98572472",
+      "dateCreated": "2020-01-13 11:04:24.295",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\r\n### How to construct and specify a schema using the StructType classes\r\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.296",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eHow to construct and specify a schema using the StructType classes\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864295_-1958999857",
+      "id": "20191210-111352_766045483",
+      "dateCreated": "2020-01-13 11:04:24.295",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.types.{StructType, StructField, StringType, IntegerType, FloatType}\n\nval my_schema \u003d StructType( List(\n                                StructField(\"nome\", StringType),\n                                StructField(\"cognome\", StringType, nullable\u003dtrue),\n                                StructField(\"altezza\", IntegerType, nullable\u003dtrue), \n                                StructField(\"peso\", FloatType, nullable\u003dtrue),\n                                StructField(\"età\", IntegerType)\n                                )\n                          )\n\nval df \u003d spark.read.format(\"csv\").schema(my_schema).option(\"mode\",\"PERMISSIVE\").load(\"exampl2.csv\")\ndf.show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.297",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+---------+-------+----+---+\n|    nome|  cognome|altezza|peso|età|\n+--------+---------+-------+----+---+\n|   Pippo|  Paolini|    167|72.3| 44|\n|   Luigi|    Russo|    178|89.2|  5|\n|Giovanna|    Rosso|    175|80.0| 44|\n|Giuseppe|  Bianchi|    165|75.8|  9|\n|  Amedeo|    Verdi|    167|56.2| 18|\n|   Luisa|Valentino|    182|64.9| 15|\n+--------+---------+-------+----+---+\n\r\nimport org.apache.spark.sql.types.{StructType, StructField, StringType, IntegerType, FloatType}\r\nmy_schema: org.apache.spark.sql.types.StructType \u003d StructType(StructField(nome,StringType,true), StructField(cognome,StringType,true), StructField(altezza,IntegerType,true), StructField(peso,FloatType,true), StructField(età,IntegerType,true))\r\ndf: org.apache.spark.sql.DataFrame \u003d [nome: string, cognome: string ... 3 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864296_-1251014166",
+      "id": "20191210-111351_1574884426",
+      "dateCreated": "2020-01-13 11:04:24.296",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### How to specify a DDL-formatted schema",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.297",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eHow to specify a DDL-formatted schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864297_-1365630662",
+      "id": "20191210-111351_248682753",
+      "dateCreated": "2020-01-13 11:04:24.297",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nil metodo **schema** del DataFrameReader consente di specificare o schema dei dati usando un formato DDL. Esempio:\n`spark.read.schema(\"a INT, b STRING, c DOUBLE\").csv(\"test.csv\")`",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.298",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eil metodo \u003cstrong\u003eschema\u003c/strong\u003e del DataFrameReader consente di specificare o schema dei dati usando un formato DDL. Esempio:\u003cbr/\u003e\u003ccode\u003espark.read.schema(\u0026quot;a INT, b STRING, c DOUBLE\u0026quot;).csv(\u0026quot;test.csv\u0026quot;)\u003c/code\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864298_535160025",
+      "id": "20191210-130015_1610535786",
+      "dateCreated": "2020-01-13 11:04:24.298",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "//purtroppo anche l\u0027esempio della API non funziona nella mia versione di Spark\n//l\u0027errore dice che si aspetta uno StructType invece di una stringa\nspark.read.schema(\"a INT, b STRING, c DOUBLE\").csv(\"test.csv\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.298",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cconsole\u003e:31: error: type mismatch;\r\n found   : String(\"a INT, b STRING, c DOUBLE\")\r\n required: org.apache.spark.sql.types.StructType\r\n       spark.read.schema(\"a INT, b STRING, c DOUBLE\").csv(\"test.csv\")\r\n                         ^\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864298_-1748493274",
+      "id": "20191210-130604_1116103219",
+      "dateCreated": "2020-01-13 11:04:24.298",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.299",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864299_-1215996446",
+      "id": "20191210-194013_1256688542",
+      "dateCreated": "2020-01-13 11:04:24.299",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\r\n## DataFrameWriter\r\n\r\n### Write data to the \"core\" data formats (csv, json, jdbc, orc, parquet, text and tables)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.299",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eDataFrameWriter\u003c/h2\u003e\n\u003ch3\u003eWrite data to the \u0026ldquo;core\u0026rdquo; data formats (csv, json, jdbc, orc, parquet, text and tables)\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864299_-184455541",
+      "id": "20191210-132329_1436810178",
+      "dateCreated": "2020-01-13 11:04:24.299",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.write.parquet(\"myparquetfile\")\r\ndf.write.saveAsTable(\"mytable\")\r\ndf.write.csv(\"data\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.300",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864300_2085906136",
+      "id": "20191210-132328_1299705672",
+      "dateCreated": "2020-01-13 11:04:24.300",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.write.format(\"csv\").mode(\"overwrite\").option(\"sep\", \"\\t\").save(\"/my-tsv-file.tsv\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.301",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864300_-1425533305",
+      "id": "20191210-132328_552244365",
+      "dateCreated": "2020-01-13 11:04:24.300",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.write.csv(\"data.csv\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.301",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864301_1995508738",
+      "id": "20191210-132327_190454110",
+      "dateCreated": "2020-01-13 11:04:24.301",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Overwriting existing files",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.302",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eOverwriting existing files\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864301_1038552865",
+      "id": "20191210-111350_872219591",
+      "dateCreated": "2020-01-13 11:04:24.301",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.write.mode(\"overwrite\").csv(\"data.csv\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.302",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864302_-1771252337",
+      "id": "20191210-143643_83693407",
+      "dateCreated": "2020-01-13 11:04:24.302",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### How to configure options for specific formats",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.303",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eHow to configure options for specific formats\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864302_-1357508687",
+      "id": "20191210-143641_1543266406",
+      "dateCreated": "2020-01-13 11:04:24.302",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "csvFile.write.format(\"csv\").mode(\"overwrite\").option(\"sep\", \"\\t\").save(\"my-tsv-file.tsv\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.303",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864303_-1963522849",
+      "id": "20191210-143749_633513408",
+      "dateCreated": "2020-01-13 11:04:24.303",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.write.option(\"sep\", \",\")\n        .option(\"quote\", \"U+005C\")\n        .option(\"escape\", \"U+005C\")\n        .option(\"charToEscapeQuoteEscaping\", \"\\0\")\n        .option(\"escapeQuotes\", \"true\")\n        .option(\"quoteAll\", false)\n        ...\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.304",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864303_2016330638",
+      "id": "20191210-143639_1616145122",
+      "dateCreated": "2020-01-13 11:04:24.303",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### How to write a data source to 1 single file or N separate files",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.304",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eHow to write a data source to 1 single file or N separate files\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864304_-1138360694",
+      "id": "20191210-143745_2125326608",
+      "dateCreated": "2020-01-13 11:04:24.304",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "//df is currently stored in how many partition\nval df \u003d spark.read.option(\"header\", \"true\").option(\"inferSchema\", \"true\").csv(\"globalpowerplantdatabasev120/*.csv\")\ndf.rdd.partitions.size",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.305",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "df: org.apache.spark.sql.DataFrame \u003d [country: string, country_long: string ... 22 more fields]\r\nres58: Int \u003d 1\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864304_-1889363806",
+      "id": "20191210-144824_1897653351",
+      "dateCreated": "2020-01-13 11:04:24.304",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.repartition(5)\ndf.rdd.getNumPartitions\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.305",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res55: Int \u003d 1\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864305_-628815371",
+      "id": "20191210-145039_1021740747",
+      "dateCreated": "2020-01-13 11:04:24.305",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.coalesce(1) //coalesce restrict to thisnumber of partition and try to reduce the data movement effort, for example keeping some partitions unchanged\r\ndf.repartition(1) //just shuffle all number to a different number of partitions",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.305",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res49: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [country: string, country_long: string ... 22 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864305_1956082096",
+      "id": "20191210-143743_1845380236",
+      "dateCreated": "2020-01-13 11:04:24.305",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### How to write partitioned data\n### How to bucket data by a given set of columns\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.306",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eHow to write partitioned data\u003c/h3\u003e\n\u003ch3\u003eHow to bucket data by a given set of columns\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864306_1184201635",
+      "id": "20191210-145235_582686940",
+      "dateCreated": "2020-01-13 11:04:24.306",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.write\r\n  .partitionBy(\"ProductKey\")\r\n  .bucketBy(42, \"OrderDateKey\")\r\n  .saveAsTable(\"orders_partitioned_bucketed\"))",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.306",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864306_-2131015792",
+      "id": "20191210-145428_643315789",
+      "dateCreated": "2020-01-13 11:04:24.306",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## DataFrame\n### Have a working understanding of every action such as take(), collect(), and foreach()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.307",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eDataFrame\u003c/h2\u003e\n\u003ch3\u003eHave a working understanding of every action such as take(), collect(), and foreach()\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864306_1345938165",
+      "id": "20191210-145523_1589489823",
+      "dateCreated": "2020-01-13 11:04:24.306",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "//con take(n) ottengo le prime n righe del dataframe \ndf.take(1)\n//collect invece non prende alcun parametro. come risultato ho tutto il dataframe. Può essere un\u0027operazione \"costosa\" in quanto tutti i dati dagli executor vengono mandati al driver\ndf.collect()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.307",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res71: Array[org.apache.spark.sql.Row] \u003d Array([1.0,a], [2.0,b], [3.0,c], [1.0,d], [2.0,e], [3.0,f])\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864307_-80399178",
+      "id": "20191210-145521_1840941900",
+      "dateCreated": "2020-01-13 11:04:24.307",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n### Have a working understanding of the various transformations and how they work such as producing a distinct set, filtering data, repartitioning and coalescing, \nperforming joins and unions as well as producing aggregates. ",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.308",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eHave a working understanding of the various transformations and how they work such as producing a distinct set, filtering data, repartitioning and coalescing,\u003c/h3\u003e\n\u003cp\u003eperforming joins and unions as well as producing aggregates.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864307_1609568226",
+      "id": "20191210-175558_1033071390",
+      "dateCreated": "2020-01-13 11:04:24.307",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### FILTERING",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.308",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003eFILTERING\u003c/h4\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864308_-1657538472",
+      "id": "20191212-002140_1784748128",
+      "dateCreated": "2020-01-13 11:04:24.308",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df \u003d spark.read.option(\"header\", \"true\").option(\"inferSchema\", \"true\").csv(\"globalpowerplantdatabasev120/*.csv\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.309",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "df: org.apache.spark.sql.DataFrame \u003d [country: string, country_long: string ... 22 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864308_1826189551",
+      "id": "20191210-145520_1389233865",
+      "dateCreated": "2020-01-13 11:04:24.308",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nAllo scopo di avere una visualizzazione più semplice del dataframe, riduco lo stesso ad un numero di colonne più maneggiabile. Seleziono le colonne contenenti i dati di stato, capacità(MGW), alimentazione, anno di costruzione, produzione di energia stimata (GWh).\nPer farlo uso il metodo **select()**, che agisce sulle colonne.",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.309",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eAllo scopo di avere una visualizzazione più semplice del dataframe, riduco lo stesso ad un numero di colonne più maneggiabile. Seleziono le colonne contenenti i dati di stato, capacità(MGW), alimentazione, anno di costruzione, produzione di energia stimata (GWh).\u003cbr/\u003ePer farlo uso il metodo \u003cstrong\u003eselect()\u003c/strong\u003e, che agisce sulle colonne.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864309_-387708956",
+      "id": "20191210-180913_1264511170",
+      "dateCreated": "2020-01-13 11:04:24.309",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df_reduced \u003d df.select(\"country_long\", \"capacity_mw\", \"primary_fuel\", \"commissioning_year\", \"estimated_generation_gwh\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.309",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "df_reduced: org.apache.spark.sql.DataFrame \u003d [country_long: string, capacity_mw: double ... 3 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864309_-995342441",
+      "id": "20191210-181353_632470427",
+      "dateCreated": "2020-01-13 11:04:24.309",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\ncon **filter()** seleziono solo le righe in cui la produzione stimata è superiore a 50000GWh ",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.310",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003econ \u003cstrong\u003efilter()\u003c/strong\u003e seleziono solo le righe in cui la produzione stimata è superiore a 50000GWh\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864309_-13140900",
+      "id": "20191210-181416_307482537",
+      "dateCreated": "2020-01-13 11:04:24.309",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df_reduced.filter(\u0027estimated_generation_gwh \u003e 50000).show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.310",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------------+-----------+------------+------------------+------------------------+\n|        country_long|capacity_mw|primary_fuel|commissioning_year|estimated_generation_gwh|\n+--------------------+-----------+------------+------------------+------------------------+\n|               China|    13050.0|       Hydro|              null|       53622.49078855527|\n|               China|    22500.0|       Hydro|            2003.0|        92452.5703250953|\n|               China|    12600.0|       Hydro|            2013.0|      51773.439382053366|\n|United States of ...|      454.3|        Coal|              null|       450562.6923495511|\n+--------------------+-----------+------------+------------------+------------------------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864310_-860797199",
+      "id": "20191210-180439_1208136448",
+      "dateCreated": "2020-01-13 11:04:24.310",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### DISTINCT DATASET",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.311",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003eDISTINCT DATASET\u003c/h4\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864310_825365920",
+      "id": "20191212-002213_234199614",
+      "dateCreated": "2020-01-13 11:04:24.310",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nuso **distinct()** per vedere quali sono tutti gli elementi distinti della colonna *country_long* ",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.315",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003euso \u003cstrong\u003edistinct()\u003c/strong\u003e per vedere quali sono tutti gli elementi distinti della colonna \u003cem\u003ecountry_long\u003c/em\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864311_83274531",
+      "id": "20191210-182333_246931147",
+      "dateCreated": "2020-01-13 11:04:24.311",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df_reduced.select(\u0027country_long).distinct().show",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.316",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------+\n|  country_long|\n+--------------+\n|      Paraguay|\n|        Russia|\n|         Yemen|\n|       Senegal|\n|        Sweden|\n|        Guyana|\n|       Eritrea|\n|   Philippines|\n|      Djibouti|\n|      Malaysia|\n|     Singapore|\n|          Fiji|\n|        Turkey|\n|        Malawi|\n|Western Sahara|\n|          Iraq|\n|       Germany|\n|   Afghanistan|\n|      Cambodia|\n|        Jordan|\n+--------------+\nonly showing top 20 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864316_147141151",
+      "id": "20191210-181731_80430365",
+      "dateCreated": "2020-01-13 11:04:24.316",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### JOIN",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.316",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003eJOIN\u003c/h4\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864316_-1631353671",
+      "id": "20191212-002319_1412952400",
+      "dateCreated": "2020-01-13 11:04:24.316",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\ndefault è un inner join, cioè vengono usate le chiavi comuni",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.317",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003edefault è un inner join, cioè vengono usate le chiavi comuni\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864316_1890614854",
+      "id": "20191210-230112_1384528109",
+      "dateCreated": "2020-01-13 11:04:24.316",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df_1 \u003d Seq(\n    (0, \"zero\"),\n    (1, \"uno\"),\n    (4, \"quattro\")).toDF(\"number\", \"numberString\")\n\nval df_2 \u003d Seq(\n    (1, \"UNO\"),\n    (2, \"due\"),\n    (3, \"tre\")).toDF(\"number\", \"numberString\")\n\n//se ho una chiave comune posso semplicemente indicare la chiave sulla quale fare il join\ndf_2.join(df_1, \"number\").show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.317",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------+------------+------------+\n|number|numberString|numberString|\n+------+------------+------------+\n|     1|         UNO|         uno|\n+------+------------+------------+\n\r\ndf_1: org.apache.spark.sql.DataFrame \u003d [number: int, numberString: string]\r\ndf_2: org.apache.spark.sql.DataFrame \u003d [number: int, numberString: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864317_-1849861030",
+      "id": "20191210-225453_1498492579",
+      "dateCreated": "2020-01-13 11:04:24.317",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nse non abbiamo una chiave comune devo usare una espressione del tipo \n`$\"key1\"\u003d\u003d\u003d$\"key2\"`",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.317",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003ese non abbiamo una chiave comune devo usare una espressione del tipo\u003cbr/\u003e\u003ccode\u003e$\u0026quot;key1\u0026quot;\u003d\u003d\u003d$\u0026quot;key2\u0026quot;\u003c/code\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864317_-668282064",
+      "id": "20191210-230711_944681551",
+      "dateCreated": "2020-01-13 11:04:24.317",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df_1 \u003d Seq(\n    (0, \"zero\"),\n    (1, \"uno\"),\n    (4, \"quattro\")).toDF(\"numberKey1\", \"numberString\")\n\nval df_2 \u003d Seq(\n    (1, \"UNO\"),\n    (2, \"due\"),\n    (3, \"tre\")).toDF(\"numberKey2\", \"numberString\")\n\n//se ho una chiave comune posso semplicemente indicare la chiave sulla quale fare il join\ndf_2.join(df_1, $\"numberKey1\"\u003d\u003d\u003d$\"numberKey2\").show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.318",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----------+------------+----------+------------+\n|numberKey2|numberString|numberKey1|numberString|\n+----------+------------+----------+------------+\n|         1|         UNO|         1|         uno|\n+----------+------------+----------+------------+\n\r\ndf_1: org.apache.spark.sql.DataFrame \u003d [numberKey1: int, numberString: string]\r\ndf_2: org.apache.spark.sql.DataFrame \u003d [numberKey2: int, numberString: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864318_-187707244",
+      "id": "20191210-230548_444257089",
+      "dateCreated": "2020-01-13 11:04:24.318",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df_1 \u003d Seq(\n    (0, \"zero\"),\n    (1, \"uno\"),\n    (4, \"quattro\")).toDF(\"number\", \"numberString\")\n\nval df_2 \u003d Seq(\n    (1, \"UNO\"),\n    (2, \"due\"),\n    (3, \"tre\")).toDF(\"number\", \"numberString\")\n\n//se ho una chiave comune posso semplicemente indicare la chiave sulla quale fare il join\ndf_2.join(df_1, Seq(\"number\"), \"fullouter\").show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.318",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------+------------+------------+\n|number|numberString|numberString|\n+------+------------+------------+\n|     1|         UNO|         uno|\n|     3|         tre|        null|\n|     4|        null|     quattro|\n|     2|         due|        null|\n|     0|        null|        zero|\n+------+------------+------------+\n\r\ndf_1: org.apache.spark.sql.DataFrame \u003d [number: int, numberString: string]\r\ndf_2: org.apache.spark.sql.DataFrame \u003d [number: int, numberString: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864318_-1982159333",
+      "id": "20191210-230524_1703954643",
+      "dateCreated": "2020-01-13 11:04:24.318",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nesiste anche una \"left-anti\" join in cui vengono usate le chiavi non comuni e vengono prese solo le colonne del dataframe di sinistra",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.319",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eesiste anche una \u0026ldquo;left-anti\u0026rdquo; join in cui vengono usate le chiavi non comuni e vengono prese solo le colonne del dataframe di sinistra\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864318_1239479230",
+      "id": "20191210-232250_794208794",
+      "dateCreated": "2020-01-13 11:04:24.318",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df_1 \u003d Seq(\n    (0, \"zero\"),\n    (1, \"uno\"),\n    (4, \"quattro\")).toDF(\"number\", \"numberString\")\n\nval df_2 \u003d Seq(\n    (1, \"UNO\"),\n    (2, \"due\"),\n    (3, \"tre\")).toDF(\"number\", \"numberString\")\n\n//se ho una chiave comune posso semplicemente indicare la chiave sulla quale fare il join\ndf_2.join(df_1, \"number\").show()\n\ndf_2.join(df_1, Seq(\"number\"), \"leftanti\").show()\n\ndf_2.join(df_1, Seq(\"number\"), \"fullouter\").show()\n\ndf_2.join(df_1, Seq(\"number\"), \"leftouter\").show()\n\ndf_2.join(df_1, Seq(\"number\"), \"leftsemi\").show()\n\ndf_2.join(df_1, Seq(\"number\"), \"rightouter\").show()\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.319",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------+------------+------------+\n|number|numberString|numberString|\n+------+------------+------------+\n|     1|         UNO|         uno|\n+------+------------+------------+\n\r\n+------+------------+\n|number|numberString|\n+------+------------+\n|     2|         due|\n|     3|         tre|\n+------+------------+\n\r\n+------+------------+------------+\n|number|numberString|numberString|\n+------+------------+------------+\n|     1|         UNO|         uno|\n|     3|         tre|        null|\n|     4|        null|     quattro|\n|     2|         due|        null|\n|     0|        null|        zero|\n+------+------------+------------+\n\r\n+------+------------+------------+\n|number|numberString|numberString|\n+------+------------+------------+\n|     1|         UNO|         uno|\n|     2|         due|        null|\n|     3|         tre|        null|\n+------+------------+------------+\n\r\n+------+------------+\n|number|numberString|\n+------+------------+\n|     1|         UNO|\n+------+------------+\n\r\n+------+------------+------------+\n|number|numberString|numberString|\n+------+------------+------------+\n|     0|        null|        zero|\n|     1|         UNO|         uno|\n|     4|        null|     quattro|\n+------+------------+------------+\n\r\ndf_1: org.apache.spark.sql.DataFrame \u003d [number: int, numberString: string]\r\ndf_2: org.apache.spark.sql.DataFrame \u003d [number: int, numberString: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864319_-408494392",
+      "id": "20191210-232739_1603140433",
+      "dateCreated": "2020-01-13 11:04:24.319",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### PARTINIONING - REPARTITION e COALESCE",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.319",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003ePARTINIONING - REPARTITION e COALESCE\u003c/h4\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864319_-506856211",
+      "id": "20191212-002253_416496746",
+      "dateCreated": "2020-01-13 11:04:24.319",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "//un parametro interessante in questo senso è spark.sql.files.maxPartitionBytes, la quantità di spazio su disco max per ogni partizione \nspark.conf.set(\"spark.sql.files.maxPartitionBytes\", \"1000000\")\n\n//ricostruisco il datatframe\nval df \u003d spark.read.option(\"header\", \"true\").option(\"inferSchema\", \"true\").csv(\"globalpowerplantdatabasev120/*.csv\")\n\n//poichè ho deciso di fare partizioni da circa 1MB, il file (7.55MB) viene suddiviso in 8 partizioni, come possiamo verificare\nprintln(\"Numero di partizioni di df: \" + df.rdd.getNumPartitions)\n\n//riduco il numero di partizioni a 4\nval df_coalesce \u003d df.coalesce(4)\n\nprintln(\"Numero di partizioni di df_colesce: \" + df_coalesce.rdd.getNumPartitions)\n\n//aumento il numero di partizioni a 12\nval df_repartition \u003d df.repartition(12)\n\nprintln(\"Numero di partizioni di df_reduced_repartition: \" + df_repartition.rdd.getNumPartitions)",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.319",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 226.8,
+              "optionOpen": false
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864319_-2057357188",
+      "id": "20191210-182609_462097691",
+      "dateCreated": "2020-01-13 11:04:24.319",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nin questo momento il dataframe *df_2* è suddiviso tra x partizioni, vediamo esattemente quante sono:",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.319",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003ein questo momento il dataframe \u003cem\u003edf_2\u003c/em\u003e è suddiviso tra x partizioni, vediamo esattemente quante sono:\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864319_-1966189888",
+      "id": "20191210-232927_992011959",
+      "dateCreated": "2020-01-13 11:04:24.319",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df_2.rdd.getNumPartitions",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.320",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res6: Int \u003d 1\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864319_-436521003",
+      "id": "20191210-232925_1979395053",
+      "dateCreated": "2020-01-13 11:04:24.320",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nposso decidere di distribuire i dati su 10 partizioni, usando il metodo **repartition()*",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.320",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eposso decidere di distribuire i dati su 10 partizioni, usando il metodo **repartition()*\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864320_925961147",
+      "id": "20191210-232923_28399345",
+      "dateCreated": "2020-01-13 11:04:24.320",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df_3 \u003d df_2.repartition(10)\ndf_3.rdd.getNumPartitions",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.320",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "df_3: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [number: int, numberString: string]\r\nres9: Int \u003d 10\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864320_2020462107",
+      "id": "20191210-232920_807033847",
+      "dateCreated": "2020-01-13 11:04:24.320",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\ncon il metodo **coalesce()** posso ridurre il numero delle partizioni con la garanzia che il minor numero di spostamenti è stato fatto",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.320",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003econ il metodo \u003cstrong\u003ecoalesce()\u003c/strong\u003e posso ridurre il numero delle partizioni con la garanzia che il minor numero di spostamenti è stato fatto\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864320_506601040",
+      "id": "20191211-233805_1133424068",
+      "dateCreated": "2020-01-13 11:04:24.320",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df_4 \u003d df_2.coalesce(2)\ndf_3.rdd.getNumPartitions",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-13 11:04:24.321",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "df_4: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [number: int, numberString: string]\r\nres10: Int \u003d 10\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1578909864320_-220168140",
+      "id": "20191211-233936_2021273454",
+      "dateCreated": "2020-01-13 11:04:24.320",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "~Trash/Databricks cert",
+  "id": "2EXAXRTRY",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

@@ -1,0 +1,828 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n### Intro\nThis notebook is an example of how to use **Apache Flink** for processing simple data sets. We will take an open airline data set from [stat-computing.org](http://stat-computing.org) and find out who was the most popular carrier during 1998-2000 years. Next we will build a chart that shows flights distribution by months and look how it changes from year to year. We will use Zeppelin `%table` display system to build charts.",
+      "user": "anonymous",
+      "dateUpdated": "2020-06-30 17:20:31.628",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false,
+        "fontSize": 9.0
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eIntro\u003c/h3\u003e\n\u003cp\u003eThis notebook is an example of how to use \u003cstrong\u003eApache Flink\u003c/strong\u003e for processing simple data sets. We will take an open airline data set from \u003ca href\u003d\"http://stat-computing.org\"\u003estat-computing.org\u003c/a\u003e and find out who was the most popular carrier during 1998-2000 years. Next we will build a chart that shows flights distribution by months and look how it changes from year to year. We will use Zeppelin \u003ccode\u003e%table\u003c/code\u003e display system to build charts.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1483952101049_-1120777567",
+      "id": "20170109-115501_192763014",
+      "dateCreated": "2017-01-09 11:55:01.000",
+      "dateStarted": "2020-06-30 17:20:31.628",
+      "dateFinished": "2020-06-30 17:20:31.660",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Getting the data\nFirst we need to download and unpack the data. We will get three big data sets with flight details (one pack for each year) and a small one with carriers names. In total we will get for about 1,5 GB of data. To be able to process such amount of data it is recommended to increase `shell.command.timeout.millisecs` value in `%sh` interpreter settings up to several minutes. You can find interpreters configuration by clicking on `Interpreter` in a drop-down menu from the top right corner of the Zeppelin web-ui.",
+      "user": "anonymous",
+      "dateUpdated": "2017-01-09 11:56:08.000",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eGetting the data\u003c/h3\u003e\n\u003cp\u003eFirst we need to download and unpack the data. We will get three big data sets with flight details (one pack for each year) and a small one with carriers names. In total we will get for about 1,5 GB of data. To be able to process such amount of data it is recommended to increase \u003ccode\u003eshell.command.timeout.millisecs\u003c/code\u003e value in \u003ccode\u003e%sh\u003c/code\u003e interpreter settings up to several minutes. You can find interpreters configuration by clicking on \u003ccode\u003eInterpreter\u003c/code\u003e in a drop-down menu from the top right corner of the Zeppelin web-ui.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1483952142017_284386712",
+      "id": "20170109-115542_1487437739",
+      "dateCreated": "2017-01-09 11:55:42.000",
+      "dateStarted": "2017-01-09 11:56:07.000",
+      "dateFinished": "2017-01-09 11:56:07.000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sh\n\nrm /tmp/flights98.csv.bz2\ncurl -o /tmp/flights98.csv.bz2 \"http://stat-computing.org/dataexpo/2009/1998.csv.bz2\"\nrm /tmp/flights98.csv\nbzip2 -d /tmp/flights98.csv.bz2\nchmod 666 /tmp/flights98.csv",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-16 17:16:17.071",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sh",
+        "tableHide": true,
+        "fontSize": 9.0
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u0027rm\u0027 is not recognized as an internal or external command,\r\noperable program or batch file.\r\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "ExitValue: 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1483952167547_-566831096",
+      "id": "20170109-115607_1634441713",
+      "dateCreated": "2017-01-09 11:56:07.000",
+      "dateStarted": "2020-01-16 17:16:17.101",
+      "dateFinished": "2020-01-16 17:16:18.413",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sh\n\nrm /tmp/flights99.csv.bz2\ncurl -o /tmp/flights99.csv.bz2 \"http://stat-computing.org/dataexpo/2009/1999.csv.bz2\"\nrm /tmp/flights99.csv\nbzip2 -d /tmp/flights99.csv.bz2\nchmod 666 /tmp/flights99.csv",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-16 17:16:45.609",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sh",
+        "tableHide": true,
+        "fontSize": 9.0
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u0027rm\u0027 is not recognized as an internal or external command,\r\noperable program or batch file.\r\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "ExitValue: 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1483952257873_-1874269156",
+      "id": "20170109-115737_1346880844",
+      "dateCreated": "2017-01-09 11:57:37.000",
+      "dateStarted": "2020-01-16 17:16:45.641",
+      "dateFinished": "2020-01-16 17:16:45.674",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sh\n\nrm /tmp/flights00.csv.bz2\ncurl -o /tmp/flights00.csv.bz2 \"http://stat-computing.org/dataexpo/2009/2000.csv.bz2\"\nrm /tmp/flights00.csv\nbzip2 -d /tmp/flights00.csv.bz2\nchmod 666 /tmp/flights00.csv",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-16 17:16:38.616",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sh",
+        "tableHide": true,
+        "fontSize": 9.0
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u0027rm\u0027 is not recognized as an internal or external command,\r\noperable program or batch file.\r\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "ExitValue: 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1483952312038_-1315320949",
+      "id": "20170109-115832_608069986",
+      "dateCreated": "2017-01-09 11:58:32.000",
+      "dateStarted": "2020-01-16 17:16:38.646",
+      "dateFinished": "2020-01-16 17:16:38.685",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sh\n\nrm /tmp/carriers.csv\ncurl -o /tmp/carriers.csv \"http://stat-computing.org/dataexpo/2009/carriers.csv\"\nchmod 666 /tmp/carriers.csv",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-16 17:16:41.505",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/sh",
+        "tableHide": true,
+        "fontSize": 9.0
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u0027rm\u0027 is not recognized as an internal or external command,\r\noperable program or batch file.\r\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "ExitValue: 1"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1483952329229_2136292082",
+      "id": "20170109-115849_1794095031",
+      "dateCreated": "2017-01-09 11:58:49.000",
+      "dateStarted": "2020-01-16 17:16:41.531",
+      "dateFinished": "2020-01-16 17:16:41.570",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Preparing the data\nThe `flights\u003cYY\u003e.csv` contains various data but we only need the information about the year, the month and the carrier who served the flight. Let\u0027s retrieve this information and create `DataSets`.",
+      "user": "anonymous",
+      "dateUpdated": "2017-01-09 12:01:51.000",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003ePreparing the data\u003c/h3\u003e\n\u003cp\u003eThe \u003ccode\u003eflights\u0026lt;YY\u0026gt;.csv\u003c/code\u003e contains various data but we only need the information about the year, the month and the carrier who served the flight. Let\u0026rsquo;s retrieve this information and create \u003ccode\u003eDataSets\u003c/code\u003e.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1483952363836_-1769111757",
+      "id": "20170109-115923_963126574",
+      "dateCreated": "2017-01-09 11:59:23.000",
+      "dateStarted": "2017-01-09 12:01:51.000",
+      "dateFinished": "2017-01-09 12:01:53.000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%flink\n\ncase class Flight(year: Int, month: Int, carrierCode: String)\ncase class Carrier(code: String, name: String)\n\nval flights98 \u003d benv.readCsvFile[Flight](\"/tmp/flights98.csv\", ignoreFirstLine \u003d true, includedFields \u003d Array(0, 1, 8))\nval flights99 \u003d benv.readCsvFile[Flight](\"/tmp/flights99.csv\", ignoreFirstLine \u003d true, includedFields \u003d Array(0, 1, 8))\nval flights00 \u003d benv.readCsvFile[Flight](\"/tmp/flights00.csv\", ignoreFirstLine \u003d true, includedFields \u003d Array(0, 1, 8))\nval flights \u003d flights98.union(flights99).union(flights00)\nval carriers \u003d benv.readCsvFile[Carrier](\"/tmp/carriers.csv\", ignoreFirstLine \u003d true, quoteCharacter \u003d \u0027\"\u0027)",
+      "user": "anonymous",
+      "dateUpdated": "2017-01-09 12:02:38.000",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/scala",
+        "lineNumbers": true,
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "defined class Flight\ndefined class Carrier\nflights98: org.apache.flink.api.scala.DataSet[Flight] \u003d org.apache.flink.api.scala.DataSet@7cd81fd5\nflights99: org.apache.flink.api.scala.DataSet[Flight] \u003d org.apache.flink.api.scala.DataSet@58242e79\nflights00: org.apache.flink.api.scala.DataSet[Flight] \u003d org.apache.flink.api.scala.DataSet@13f866c0\nflights: org.apache.flink.api.scala.DataSet[Flight] \u003d org.apache.flink.api.scala.DataSet@2aad2530\ncarriers: org.apache.flink.api.scala.DataSet[Carrier] \u003d org.apache.flink.api.scala.DataSet@148c977b\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1483952511284_-589624871",
+      "id": "20170109-120151_872852428",
+      "dateCreated": "2017-01-09 12:01:51.000",
+      "dateStarted": "2017-01-09 12:02:10.000",
+      "dateFinished": "2017-01-09 12:02:29.000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Choosing the carrier\nNow we will search for the most popular carrier during the whole time period.",
+      "user": "anonymous",
+      "dateUpdated": "2017-01-09 12:03:08.000",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eChoosing the carrier\u003c/h3\u003e\n\u003cp\u003eNow we will search for the most popular carrier during the whole time period.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1483952530113_212237809",
+      "id": "20170109-120210_773710997",
+      "dateCreated": "2017-01-09 12:02:10.000",
+      "dateStarted": "2017-01-09 12:03:08.000",
+      "dateFinished": "2017-01-09 12:03:08.000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%flink\n\nimport org.apache.flink.api.common.operators.Order\nimport org.apache.flink.api.java.aggregation.Aggregations\n\ncase class CarrierFlightsCount(carrierCode: String, count: Int)\ncase class CountByMonth(month: Int, count: Int)\n\nval carriersFlights \u003d flights\n  .map(f \u003d\u003e CarrierFlightsCount(f.carrierCode, 1))\n  .groupBy(\"carrierCode\")\n  .sum(\"count\")\n\nval maxFlights \u003d carriersFlights\n  .aggregate(Aggregations.MAX, \"count\")\n\nval bestCarrier \u003d carriersFlights\n  .join(maxFlights)\n  .where(\"count\")\n  .equalTo(\"count\")\n  .map(_._1)\n  \nval carrierName \u003d bestCarrier\n  .join(carriers)\n  .where(\"carrierCode\")\n  .equalTo(\"code\")\n  .map(_._2.name)\n  .collect\n  .head",
+      "user": "anonymous",
+      "dateUpdated": "2017-01-09 12:04:04.000",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/scala",
+        "lineNumbers": true,
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.flink.api.common.operators.Order\nimport org.apache.flink.api.java.aggregation.Aggregations\ndefined class CarrierFlightsCount\ndefined class CountByMonth\ncarriersFlights: org.apache.flink.api.scala.AggregateDataSet[CarrierFlightsCount] \u003d org.apache.flink.api.scala.AggregateDataSet@2c59be0b\nmaxFlights: org.apache.flink.api.scala.AggregateDataSet[CarrierFlightsCount] \u003d org.apache.flink.api.scala.AggregateDataSet@53e5fad9\nbestCarrier: org.apache.flink.api.scala.DataSet[CarrierFlightsCount] \u003d org.apache.flink.api.scala.DataSet@64b7b1b3\ncarrierName: String \u003d Delta Air Lines Inc.\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1483952588708_-1770095793",
+      "id": "20170109-120308_1328511597",
+      "dateCreated": "2017-01-09 12:03:08.000",
+      "dateStarted": "2017-01-09 12:03:41.000",
+      "dateFinished": "2017-01-09 12:03:58.000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%flink\n\nprintln(s\"\"\"The most popular carrier is:\n$carrierName\n\"\"\")",
+      "user": "anonymous",
+      "dateUpdated": "2017-01-09 12:09:18.000",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/scala",
+        "lineNumbers": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "The most popular carrier is:\nDelta Air Lines Inc.\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1483952621624_-1222400539",
+      "id": "20170109-120341_952212268",
+      "dateCreated": "2017-01-09 12:03:41.000",
+      "dateStarted": "2017-01-09 12:04:09.000",
+      "dateFinished": "2017-01-09 12:04:10.000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Calculating flights\nThe last step is to filter **Delta Air Lines** flights and group them by months.",
+      "user": "anonymous",
+      "dateUpdated": "2017-01-09 12:04:26.000",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCalculating flights\u003c/h3\u003e\n\u003cp\u003eThe last step is to filter \u003cstrong\u003eDelta Air Lines\u003c/strong\u003e flights and group them by months.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1483952649646_-1553253944",
+      "id": "20170109-120409_2003276881",
+      "dateCreated": "2017-01-09 12:04:09.000",
+      "dateStarted": "2017-01-09 12:04:26.000",
+      "dateFinished": "2017-01-09 12:04:26.000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "flights grouping",
+      "text": "%flink\n\ndef countFlightsPerMonth(flights: DataSet[Flight],\n                         carrier: DataSet[CarrierFlightsCount]) \u003d {\n  val carrierFlights \u003d flights\n    .join(carrier)\n    .where(\"carrierCode\")\n    .equalTo(\"carrierCode\")\n    .map(_._1)\n    \n  carrierFlights\n    .map(flight \u003d\u003e CountByMonth(flight.month, 1))\n    .groupBy(\"month\")\n    .sum(\"count\")\n    .sortPartition(\"month\", Order.ASCENDING)\n}\n\nval bestCarrierFlights_98 \u003d countFlightsPerMonth(flights98, bestCarrier)\nval bestCarrierFlights_99 \u003d countFlightsPerMonth(flights99, bestCarrier)\nval bestCarrierFlights_00 \u003d countFlightsPerMonth(flights00, bestCarrier)",
+      "user": "anonymous",
+      "dateUpdated": "2017-01-09 12:05:06.000",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/scala",
+        "lineNumbers": true,
+        "title": true,
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "countFlightsPerMonth: (flights: org.apache.flink.api.scala.DataSet[Flight], carrier: org.apache.flink.api.scala.DataSet[CarrierFlightsCount])org.apache.flink.api.scala.DataSet[CountByMonth]\nbestCarrierFlights_98: org.apache.flink.api.scala.DataSet[CountByMonth] \u003d org.apache.flink.api.scala.PartitionSortedDataSet@2aa64309\nbestCarrierFlights_99: org.apache.flink.api.scala.DataSet[CountByMonth] \u003d org.apache.flink.api.scala.PartitionSortedDataSet@35fe60c4\nbestCarrierFlights_00: org.apache.flink.api.scala.DataSet[CountByMonth] \u003d org.apache.flink.api.scala.PartitionSortedDataSet@4621410f\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1483952665972_667547355",
+      "id": "20170109-120425_2018337048",
+      "dateCreated": "2017-01-09 12:04:25.000",
+      "dateStarted": "2017-01-09 12:04:50.000",
+      "dateFinished": "2017-01-09 12:04:51.000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "making a results table",
+      "text": "%flink\n\ndef monthAsString(month: Int): String \u003d {\n  month match {\n    case 1 \u003d\u003e \"Jan\"\n    case 2 \u003d\u003e \"Feb\"\n    case 3 \u003d\u003e \"Mar\"\n    case 4 \u003d\u003e \"Apr\"\n    case 5 \u003d\u003e \"May\"\n    case 6 \u003d\u003e \"Jun\"\n    case 7 \u003d\u003e \"Jul\"\n    case 8 \u003d\u003e \"Aug\"\n    case 9 \u003d\u003e \"Sept\"\n    case 10 \u003d\u003e \"Oct\"\n    case 11 \u003d\u003e \"Nov\"\n    case 12 \u003d\u003e \"Dec\"\n  }\n}\n\n// We should put all the results into a common DataFrame\n// to show them in a common picture\nval bestCarrierFlights \u003d bestCarrierFlights_98\n  .join(bestCarrierFlights_99)\n  .where(\"month\")\n  .equalTo(\"month\")\n  .map(tuple \u003d\u003e (tuple._1.month, tuple._1.count, tuple._2.count))\n  .join(bestCarrierFlights_00)\n  .where(0)\n  .equalTo(\"month\")\n  .map(tuple \u003d\u003e (tuple._1._1, tuple._1._2, tuple._1._3, tuple._2.count))\n  .collect\n  \nvar flightsByMonthTable \u003d s\"Month\\t1998\\t1999\\t2000\\n\"\nbestCarrierFlights.foreach(data \u003d\u003e flightsByMonthTable +\u003d s\"${monthAsString(data._1)}\\t${data._2}\\t${data._3}\\t${data._4}\\n\")",
+      "user": "anonymous",
+      "dateUpdated": "2017-01-09 12:06:03.000",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/scala",
+        "lineNumbers": true,
+        "title": true,
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "monthAsString: (month: Int)String\nbestCarrierFlights: Seq[(Int, Int, Int, Int)] \u003d Buffer((1,78523,77745,78055), (2,71101,70498,71090), (3,78906,77812,78453), (4,75726,75343,75247), (5,77937,77226,76797), (6,75432,75840,74846), (7,77521,77264,75776), (8,78104,78141,77654), (9,74840,75067,73696), (10,76145,77829,77425), (11,73552,74411,73659), (12,77308,76954,75331))\nflightsByMonthTable: String \u003d \n\"Month\t1998\t1999\t2000\n\"\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1483952690164_-1061667443",
+      "id": "20170109-120450_1574916350",
+      "dateCreated": "2017-01-09 12:04:50.000",
+      "dateStarted": "2017-01-09 12:05:24.000",
+      "dateFinished": "2017-01-09 12:05:59.000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "\"Delta Air Lines\" flights count by months",
+      "text": "%flink\n\nprintln(s\"\"\"%table\n$flightsByMonthTable\n\"\"\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-16 17:10:55.508",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "lineChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "Month",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "1998",
+                  "index": 1.0,
+                  "aggr": "sum"
+                },
+                {
+                  "name": "1999",
+                  "index": 2.0,
+                  "aggr": "sum"
+                },
+                {
+                  "name": "2000",
+                  "index": 3.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/scala",
+        "title": true,
+        "lineNumbers": true,
+        "fontSize": 9.0
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "Month\t1998\t1999\t2000\nJan\t78523\t77745\t78055\nFeb\t71101\t70498\t71090\nMar\t78906\t77812\t78453\nApr\t75726\t75343\t75247\nMay\t77937\t77226\t76797\nJun\t75432\t75840\t74846\nJul\t77521\t77264\t75776\nAug\t78104\t78141\t77654\nSept\t74840\t75067\t73696\nOct\t76145\t77829\t77425\nNov\t73552\t74411\t73659\nDec\t77308\t76954\t75331\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1483952724460_191505697",
+      "id": "20170109-120524_2037622815",
+      "dateCreated": "2017-01-09 12:05:24.000",
+      "dateStarted": "2017-01-09 12:06:07.000",
+      "dateFinished": "2017-01-09 12:06:08.000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Results\nLooking at this chart we can say that February is the most unpopular month, but this is only because it has less days (28 or 29) than the other months (30 or 31). To receive more fair picture we should calculate the average flights count per day for each month.",
+      "user": "anonymous",
+      "dateUpdated": "2017-01-09 12:06:34.000",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eResults\u003c/h3\u003e\n\u003cp\u003eLooking at this chart we can say that February is the most unpopular month, but this is only because it has less days (28 or 29) than the other months (30 or 31). To receive more fair picture we should calculate the average flights count per day for each month.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1483952767719_-1010557136",
+      "id": "20170109-120607_67673280",
+      "dateCreated": "2017-01-09 12:06:07.000",
+      "dateStarted": "2017-01-09 12:06:34.000",
+      "dateFinished": "2017-01-09 12:06:34.000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%flink\n\ndef daysInMonth(month: Int, year: Int): Int \u003d {\n  month match {\n    case 1 \u003d\u003e 31\n    case 2 \u003d\u003e if (year % 4 \u003d\u003d 0) {\n        29\n    } else {\n        28\n    }\n    case 3 \u003d\u003e 31\n    case 4 \u003d\u003e 30\n    case 5 \u003d\u003e 31\n    case 6 \u003d\u003e 30\n    case 7 \u003d\u003e 31\n    case 8 \u003d\u003e 31\n    case 9 \u003d\u003e 30\n    case 10 \u003d\u003e 31\n    case 11 \u003d\u003e 30\n    case 12 \u003d\u003e 31\n  }\n}\n\n\nvar flightsByDayTable \u003d s\"Month\\t1998\\t1999\\t2000\\n\"\n\nbestCarrierFlights.foreach(data \u003d\u003e flightsByDayTable +\u003d s\"${monthAsString(data._1)}\\t${data._2/daysInMonth(data._1,1998)}\\t${data._3/daysInMonth(data._1,1999)}\\t${data._4/daysInMonth(data._1,2000)}\\n\")",
+      "user": "anonymous",
+      "dateUpdated": "2017-01-09 12:06:58.000",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/scala",
+        "lineNumbers": true,
+        "tableHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "daysInMonth: (month: Int, year: Int)Int\nflightsByDayTable: String \u003d \n\"Month\t1998\t1999\t2000\n\"\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1483952794097_-785833130",
+      "id": "20170109-120634_492170963",
+      "dateCreated": "2017-01-09 12:06:34.000",
+      "dateStarted": "2017-01-09 12:06:53.000",
+      "dateFinished": "2017-01-09 12:06:53.000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "\"Delta Air Lines\" flights count by days",
+      "text": "%flink\n\nprintln(s\"\"\"%table\n$flightsByDayTable\n\"\"\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-01-16 17:16:04.563",
+      "config": {
+        "colWidth": 12.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "lineChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "Month",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "1998",
+                  "index": 1.0,
+                  "aggr": "sum"
+                },
+                {
+                  "name": "1999",
+                  "index": 2.0,
+                  "aggr": "sum"
+                },
+                {
+                  "name": "2000",
+                  "index": 3.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/scala",
+        "title": true,
+        "lineNumbers": true,
+        "fontSize": 9.0
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "org.apache.zeppelin.interpreter.InterpreterNotFoundException: No interpreter is binded to this note: 2C35YU814"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1483952813391_1847418990",
+      "id": "20170109-120653_1870236569",
+      "dateCreated": "2017-01-09 12:06:53.000",
+      "dateStarted": "2017-01-09 12:07:22.000",
+      "dateFinished": "2017-01-09 12:07:23.000",
+      "status": "ERROR",
+      "errorMessage": "org.apache.zeppelin.interpreter.InterpreterNotFoundException: No interpreter is binded to this note: 2C35YU814\r\n\tat org.apache.zeppelin.interpreter.InterpreterFactory.getInterpreter(InterpreterFactory.java:60)\r\n\tat org.apache.zeppelin.notebook.Paragraph.getBindedInterpreter(Paragraph.java:243)\r\n\tat org.apache.zeppelin.notebook.Paragraph.execute(Paragraph.java:351)\r\n\tat org.apache.zeppelin.notebook.Note.run(Note.java:683)\r\n\tat org.apache.zeppelin.socket.NotebookServer.persistAndExecuteSingleParagraph(NotebookServer.java:1881)\r\n\tat org.apache.zeppelin.socket.NotebookServer.runParagraph(NotebookServer.java:1840)\r\n\tat org.apache.zeppelin.socket.NotebookServer.onMessage(NotebookServer.java:262)\r\n\tat org.apache.zeppelin.socket.NotebookSocket.onWebSocketText(NotebookSocket.java:59)\r\n\tat org.eclipse.jetty.websocket.common.events.JettyListenerEventDriver.onTextMessage(JettyListenerEventDriver.java:189)\r\n\tat org.eclipse.jetty.websocket.common.message.SimpleTextMessage.messageComplete(SimpleTextMessage.java:69)\r\n\tat org.eclipse.jetty.websocket.common.events.AbstractEventDriver.appendMessage(AbstractEventDriver.java:66)\r\n\tat org.eclipse.jetty.websocket.common.events.JettyListenerEventDriver.onTextFrame(JettyListenerEventDriver.java:158)\r\n\tat org.eclipse.jetty.websocket.common.events.AbstractEventDriver.incomingFrame(AbstractEventDriver.java:162)\r\n\tat org.eclipse.jetty.websocket.common.WebSocketSession.incomingFrame(WebSocketSession.java:459)\r\n\tat org.eclipse.jetty.websocket.common.extensions.AbstractExtension.nextIncomingFrame(AbstractExtension.java:182)\r\n\tat org.eclipse.jetty.websocket.common.extensions.compress.PerMessageDeflateExtension.nextIncomingFrame(PerMessageDeflateExtension.java:105)\r\n\tat org.eclipse.jetty.websocket.common.extensions.compress.CompressExtension.forwardIncoming(CompressExtension.java:142)\r\n\tat org.eclipse.jetty.websocket.common.extensions.compress.PerMessageDeflateExtension.incomingFrame(PerMessageDeflateExtension.java:85)\r\n\tat org.eclipse.jetty.websocket.common.extensions.ExtensionStack.incomingFrame(ExtensionStack.java:220)\r\n\tat org.eclipse.jetty.websocket.common.Parser.notifyFrame(Parser.java:219)\r\n\tat org.eclipse.jetty.websocket.common.Parser.parse(Parser.java:244)\r\n\tat org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.readParse(AbstractWebSocketConnection.java:559)\r\n\tat org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection.onFillable(AbstractWebSocketConnection.java:390)\r\n\tat org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)\r\n\tat org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103)\r\n\tat org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)\r\n\tat org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)\r\n\tat org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)\r\n\tat org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)\r\n\tat org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)\r\n\tat org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)\r\n\tat org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)\r\n\tat org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)\r\n\tat java.lang.Thread.run(Unknown Source)\r\n",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%flink\n",
+      "dateUpdated": "2017-01-09 12:07:22.000",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1483952842919_587228425",
+      "id": "20170109-120722_939892827",
+      "dateCreated": "2017-01-09 12:07:22.000",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Zeppelin Tutorial/Using Flink for batch processing",
+  "id": "2C35YU814",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "sh:shared_process": [],
+    "flink:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "looknfeel": "default",
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
