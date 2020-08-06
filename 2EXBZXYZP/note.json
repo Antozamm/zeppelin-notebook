@@ -42,7 +42,7 @@
     {
       "text": "%md\nPrefixing a constructor argument with a var makes it a mutable field of the class, also\ncall an instance variable or attribute in different OO languages. Prefixing a constructor\nargument with a val makes it an immutable field. Using the case keyword infers the\nval keyword and also adds additional methods.",
       "user": "admin",
-      "dateUpdated": "2019-12-12 19:52:53.008",
+      "dateUpdated": "2020-08-06 14:29:01.706",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -55,8 +55,8 @@
           "completionSupport": false
         },
         "editorMode": "ace/mode/markdown",
-        "editorHide": true,
-        "tableHide": false
+        "editorHide": false,
+        "tableHide": true
       },
       "settings": {
         "params": {},
@@ -82,8 +82,8 @@
     },
     {
       "text": "class MutablePerson(var name: String, var age: Int)\ncase class ImmutablePerson(name: String, age: Int)\n//oppure\nclass ImmutablePerson2(val name: String, val age: Int)",
-      "user": "admin",
-      "dateUpdated": "2019-12-12 20:12:21.112",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-06 14:31:57.402",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -114,15 +114,15 @@
       "jobName": "paragraph_1576174876945_-296564186",
       "id": "20191212-192116_260465688",
       "dateCreated": "2019-12-12 19:21:16.945",
-      "dateStarted": "2019-12-12 20:12:21.123",
-      "dateFinished": "2019-12-12 20:12:21.316",
+      "dateStarted": "2020-08-06 14:31:57.434",
+      "dateFinished": "2020-08-06 14:32:01.974",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\nLike most statically typed languages, Scala allows overloaded methods. Two or more methods can have the same name as long as their full signatures are unique.\nThe signature includes the enclosing type name, method name, and the list of argument types (the names don’t matter). In the JVM, different return types alone are not sufficient to distinguish methods.\nHowever, recall from “Working Around Erasure” on page 139 that the JVM prevents\nsome methods from being truly distinct, because of type erasure of the type parameters\nfor higher-kinded types, i.e., types with type parameters, like List[A]. Consider the\nfollowing example:\n```\nobject C {\n| def m(seq: Seq[Int]): Unit \u003d println(s\"Seq[Int]: $seq\")\n| def m(seq: Seq[String]): Unit \u003d println(s\"Seq[String]: $seq\")\n| }\n```\nconsole:9: error: double definition:\nmethod m:(seq: Seq[String])Unit and\nmethod m:(seq: Seq[Int])Unit at line 8\nhave same type after erasure: (seq: Seq)Unit\ndef m(seq: Seq[String]): Unit \u003d println(s\"Seq[String]: $seq\")\n^\nThe type parameters Int and String are erased in the byte code",
-      "user": "admin",
-      "dateUpdated": "2019-12-12 20:01:50.475",
+      "text": "%md\nLike most statically typed languages, Scala allows overloaded methods. Two or more methods can have the same name as long as their full signatures are unique.\nThe signature includes the enclosing type name, method name, and the list of argument types (the names don’t matter). In the JVM, different return types alone are not sufficient to distinguish methods.\nHowever, recall from “Working Around Erasure” on page 139 that the JVM prevents\nsome methods from being truly distinct, because of type erasure of the type parameters\nfor higher-kinded types, i.e., types with type parameters, like List[A]. Consider the\nfollowing example:\n```\nobject C {\n| def m(seq: Seq[Int]): Unit \u003d println(s\"Seq[Int]: $seq\")\n| def m(seq: Seq[String]): Unit \u003d println(s\"Seq[String]: $seq\")\n| }\n```\nconsole:9: error: double definition:\nmethod m:(seq: Seq[String])Unit and\nmethod m:(seq: Seq[Int])Unit at line 8\nhave same type after erasure: (seq: Seq)Unit\ndef m(seq: Seq[String]): Unit \u003d println(s\"Seq[String]: $seq\")\n^\nThe type parameters Int and String are erased in the byte code\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-06 14:31:16.420",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -155,15 +155,15 @@
       "jobName": "paragraph_1576176752193_-1738021140",
       "id": "20191212-195232_1516239661",
       "dateCreated": "2019-12-12 19:52:32.193",
-      "dateStarted": "2019-12-12 20:01:50.475",
-      "dateFinished": "2019-12-12 20:01:50.483",
+      "dateStarted": "2020-08-06 14:31:16.428",
+      "dateFinished": "2020-08-06 14:31:16.818",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "val tony \u003d new MutablePerson(\"Antonio\", 32)",
-      "user": "admin",
-      "dateUpdated": "2019-12-12 20:12:33.364",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-06 14:32:07.326",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -186,7 +186,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "tony: MutablePerson \u003d MutablePerson@6523ca01\n"
+            "data": "tony: MutablePerson \u003d MutablePerson@35f6af2a\n"
           }
         ]
       },
@@ -194,15 +194,15 @@
       "jobName": "paragraph_1576177222945_-469692748",
       "id": "20191212-200022_424161633",
       "dateCreated": "2019-12-12 20:00:22.945",
-      "dateStarted": "2019-12-12 20:12:33.373",
-      "dateFinished": "2019-12-12 20:12:33.505",
+      "dateStarted": "2020-08-06 14:32:07.449",
+      "dateFinished": "2020-08-06 14:32:09.595",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\nPoichè ho definito ImmutablePerson con *case class* posso evitare di usare la key **new**. ",
-      "user": "user1",
-      "dateUpdated": "2020-01-09 00:04:11.925",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-06 14:31:04.496",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -235,15 +235,15 @@
       "jobName": "paragraph_1576178196046_-2070534310",
       "id": "20191212-201636_1760681693",
       "dateCreated": "2019-12-12 20:16:36.046",
-      "dateStarted": "2020-01-09 00:04:11.926",
-      "dateFinished": "2020-01-09 00:04:11.932",
+      "dateStarted": "2020-08-06 14:31:04.510",
+      "dateFinished": "2020-08-06 14:31:04.606",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "val giusy \u003d ImmutablePerson(\"Giuseppe\", 12)",
-      "user": "admin",
-      "dateUpdated": "2019-12-12 20:16:31.915",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-06 14:32:12.652",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -274,15 +274,15 @@
       "jobName": "paragraph_1576177936459_221200989",
       "id": "20191212-201216_2041633164",
       "dateCreated": "2019-12-12 20:12:16.459",
-      "dateStarted": "2019-12-12 20:16:31.926",
-      "dateFinished": "2019-12-12 20:16:32.071",
+      "dateStarted": "2020-08-06 14:32:12.714",
+      "dateFinished": "2020-08-06 14:32:14.400",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "giusy match { case ImmutablePerson(n, r) \u003d\u003e println(n, r) }",
-      "user": "admin",
-      "dateUpdated": "2019-12-12 20:22:06.797",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-06 14:32:25.228",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -313,8 +313,8 @@
       "jobName": "paragraph_1576177959697_-1953433103",
       "id": "20191212-201239_539352931",
       "dateCreated": "2019-12-12 20:12:39.697",
-      "dateStarted": "2019-12-12 20:22:06.809",
-      "dateFinished": "2019-12-12 20:22:07.007",
+      "dateStarted": "2020-08-06 14:32:25.291",
+      "dateFinished": "2020-08-06 14:32:26.940",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -353,7 +353,6 @@
   "noteForms": {},
   "angularObjects": {
     "md:shared_process": [],
-    "sh:shared_process": [],
     "spark:shared_process": []
   },
   "config": {

@@ -1,0 +1,421 @@
+{
+  "paragraphs": [
+    {
+      "text": "import org.apache.spark.storage._\n\nval base_df2 \u003d spark.read.format(\"csv\").option(\"sep\", \" \").option(\"header\",false).schema(\"host STRING, _c1 STRING, _c2 STRING, datetime STRING, _c4 STRING, request STRING, code INT, bytes STRING\").load(\"D:\\\\AnacondaProjects\\\\Datasets\\\\apache.access.log.PROJECT\\\\apache.access.log.PROJECT\").persist(StorageLevel.MEMORY_AND_DISK)\nbase_df2.show(5)\n\n//val base_df3 \u003d base_df2.drop(\"_c1\",\"_c2\",\"_c4\").persist(StorageLevel.MEMORY_AND_DISK)\n//base_df3.show(5)",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-04 23:32:25.959",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------------+---+---+--------------------+------+--------------------+----+-----+\n|             host|_c1|_c2|            datetime|   _c4|             request|code|bytes|\n+-----------------+---+---+--------------------+------+--------------------+----+-----+\n|in24.inetnebr.com|  -|  -|[01/Aug/1995:00:0...|-0400]|GET /shuttle/miss...| 200| 1839|\n|  uplherc.upl.com|  -|  -|[01/Aug/1995:00:0...|-0400]|      GET / HTTP/1.0| 304|    0|\n|  uplherc.upl.com|  -|  -|[01/Aug/1995:00:0...|-0400]|GET /images/ksclo...| 304|    0|\n|  uplherc.upl.com|  -|  -|[01/Aug/1995:00:0...|-0400]|GET /images/MOSAI...| 304|    0|\n|  uplherc.upl.com|  -|  -|[01/Aug/1995:00:0...|-0400]|GET /images/USA-l...| 304|    0|\n+-----------------+---+---+--------------------+------+--------------------+----+-----+\nonly showing top 5 rows\n\r\nimport org.apache.spark.storage._\r\nbase_df2: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [host: string, _c1: string ... 6 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1596553910760_1234955666",
+      "id": "20200804-171150_436970391",
+      "dateCreated": "2020-08-04 17:11:50.760",
+      "dateStarted": "2020-08-04 23:32:26.010",
+      "dateFinished": "2020-08-04 23:32:27.334",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "base_df2.agg(sum(when($\"_c1\".isNotNull,0).otherwise(1))).show",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-04 23:32:30.220",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------------------------------------------+\n|sum(CASE WHEN (_c1 IS NOT NULL) THEN 0 ELSE 1 END)|\n+--------------------------------------------------+\n|                                                13|\n+--------------------------------------------------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1596575956545_828764026",
+      "id": "20200804-231916_1206467383",
+      "dateCreated": "2020-08-04 23:19:16.545",
+      "dateStarted": "2020-08-04 23:32:30.271",
+      "dateFinished": "2020-08-04 23:32:32.327",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val base_df3 \u003d base_df2.filter($\"_c1\".isNotNull).drop(\"_c1\",\"_c2\",\"_c4\").persist(StorageLevel.MEMORY_AND_DISK)",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-04 23:32:35.416",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "base_df3: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [host: string, datetime: string ... 3 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1596576093853_356904261",
+      "id": "20200804-232133_71094959",
+      "dateCreated": "2020-08-04 23:21:33.853",
+      "dateStarted": "2020-08-04 23:32:35.495",
+      "dateFinished": "2020-08-04 23:32:36.886",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-04 23:32:48.331",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+-------+\n|summary|    _c2|\n+-------+-------+\n|  count|1043164|\n|   mean|   null|\n| stddev|   null|\n|    min|      -|\n|    max|      -|\n+-------+-------+\n\r\n+-------+-------+\n|summary|    _c1|\n+-------+-------+\n|  count|1043164|\n|   mean|   null|\n| stddev|   null|\n|    min|      -|\n|    max|      -|\n+-------+-------+\n\r\nres80: Long \u003d 1043177\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1596575729580_-2063973150",
+      "id": "20200804-231529_1578938770",
+      "dateCreated": "2020-08-04 23:15:29.580",
+      "dateStarted": "2020-08-04 23:17:18.177",
+      "dateFinished": "2020-08-04 23:17:31.675",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "base_df2.describe(\"host\").show\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-04 23:18:24.095",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+--------------------+\n|summary|                host|\n+-------+--------------------+\n|  count|             1043164|\n|   mean|                null|\n| stddev|                null|\n|    min|         ***.novo.dk|\n|    max|zztduffy.slip.cc....|\n+-------+--------------------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1596575884627_491216596",
+      "id": "20200804-231804_2082754974",
+      "dateCreated": "2020-08-04 23:18:04.627",
+      "dateStarted": "2020-08-04 23:18:24.141",
+      "dateFinished": "2020-08-04 23:18:30.877",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "(base_df3.filter(\u0027host.isNull).count,\nbase_df3.filter(\u0027datetime.isNull).count,\nbase_df3.filter(\u0027request.isNull).count,\nbase_df3.filter(\u0027code.isNull).count,\nbase_df3.filter(\u0027bytes.isNull).count)",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-04 23:31:35.831",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res89: (Long, Long, Long, Long, Long) \u003d (0,0,0,0,0)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1596553937354_1408272034",
+      "id": "20200804-171217_770834232",
+      "dateCreated": "2020-08-04 17:12:17.354",
+      "dateStarted": "2020-08-04 23:31:35.878",
+      "dateFinished": "2020-08-04 23:31:44.203",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "case class myRow(host: String, datetime: String, request: String, code: String, bytes: String)",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-04 17:20:40.430",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "defined class myRow\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1596554029808_-277083838",
+      "id": "20200804-171349_1368799996",
+      "dateCreated": "2020-08-04 17:13:49.808",
+      "dateStarted": "2020-08-04 17:20:40.476",
+      "dateFinished": "2020-08-04 17:20:43.391",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val base_df5 \u003d spark.read.format(\"csv\").option(\"sep\", \" \").option(\"header\",false).schema(\"host STRING, _c1 STRING, _c2 STRING, datetime STRING, _c4 STRING, request STRING, code INT, bytes STRING\").load(\"D:\\\\AnacondaProjects\\\\Datasets\\\\apache.access.log.PROJECT\\\\apache.access.log.PROJECT4\").as[myRow]",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-04 23:13:34.766",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "base_df5: org.apache.spark.sql.Dataset[myRow] \u003d [host: string, _c1: string ... 6 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1596554440430_-1426276746",
+      "id": "20200804-172040_1611362118",
+      "dateCreated": "2020-08-04 17:20:40.430",
+      "dateStarted": "2020-08-04 23:13:34.802",
+      "dateFinished": "2020-08-04 23:13:37.529",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "base_df5.count",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-04 23:13:37.243",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res73: Long \u003d 231359\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1596557456205_1538724958",
+      "id": "20200804-181056_304211853",
+      "dateCreated": "2020-08-04 18:10:56.206",
+      "dateStarted": "2020-08-04 23:13:37.311",
+      "dateFinished": "2020-08-04 23:13:40.133",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "base_df5.map( x \u003d\u003e x.datetime.slice(1,x.datetime.size)).show\nbase_df5.map( x \u003d\u003e x.datetime.slice(1,x.datetime.size)).count",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-04 23:13:44.275",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------------+\n|               value|\n+--------------------+\n|01/Aug/1995:00:00:01|\n|01/Aug/1995:00:00:07|\n|01/Aug/1995:00:00:08|\n|01/Aug/1995:00:00:08|\n|01/Aug/1995:00:00:08|\n|01/Aug/1995:00:00:09|\n|01/Aug/1995:00:00:10|\n|01/Aug/1995:00:00:10|\n|01/Aug/1995:00:00:10|\n|01/Aug/1995:00:00:11|\n|01/Aug/1995:00:00:12|\n|01/Aug/1995:00:00:12|\n|01/Aug/1995:00:00:13|\n|01/Aug/1995:00:00:14|\n|01/Aug/1995:00:00:16|\n|01/Aug/1995:00:00:17|\n|01/Aug/1995:00:00:18|\n|01/Aug/1995:00:00:19|\n|01/Aug/1995:00:00:19|\n|01/Aug/1995:00:00:20|\n+--------------------+\nonly showing top 20 rows\n\r\nres74: Long \u003d 231359\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1596555996750_-292382435",
+      "id": "20200804-174636_1341461808",
+      "dateCreated": "2020-08-04 17:46:36.750",
+      "dateStarted": "2020-08-04 23:13:44.311",
+      "dateFinished": "2020-08-04 23:13:48.089",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1596556960366_1930951289",
+      "id": "20200804-180240_673159633",
+      "dateCreated": "2020-08-04 18:02:40.366",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "web log analyisis",
+  "id": "2FFNKYR3C",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "sh:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

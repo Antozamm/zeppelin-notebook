@@ -241,9 +241,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "",
+      "text": "\n",
       "user": "anonymous",
-      "dateUpdated": "2020-01-20 00:23:28.916",
+      "dateUpdated": "2020-08-04 20:56:52.179",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1085,6 +1085,7 @@
   "noteForms": {},
   "angularObjects": {
     "md:shared_process": [],
+    "sh:shared_process": [],
     "spark:shared_process": []
   },
   "config": {

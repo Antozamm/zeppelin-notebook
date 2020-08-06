@@ -3,7 +3,7 @@
     {
       "text": "spark.version",
       "user": "anonymous",
-      "dateUpdated": "2020-02-12 15:57:18.554",
+      "dateUpdated": "2020-07-31 20:04:42.995",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -26,7 +26,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "res1: String \u003d 2.4.4\n"
+            "data": "res4: String \u003d 2.4.4\n"
           }
         ]
       },
@@ -34,8 +34,8 @@
       "jobName": "paragraph_1581501431982_-2112743472",
       "id": "20200212-105711_607763418",
       "dateCreated": "2020-02-12 10:57:11.983",
-      "dateStarted": "2020-02-12 15:57:18.827",
-      "dateFinished": "2020-02-12 15:57:35.152",
+      "dateStarted": "2020-07-31 20:04:43.760",
+      "dateFinished": "2020-07-31 20:04:47.374",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
