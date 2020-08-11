@@ -1,6 +1,22 @@
 {
   "paragraphs": [
     {
+      "text": "%md\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-07 10:03:01.757",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1596787381752_9949120",
+      "id": "20200807-100301_1908345598",
+      "dateCreated": "2020-08-07 10:03:01.752",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    },
+    {
       "text": "%md\n\n# Web Server Log Analysis with Apache Spark\n\nThis lab will demonstrate how easy it is to perform web server log analysis with Apache Spark.\n\nServer log analysis is an ideal use case for Spark. It\u0027s a very large, common data source and contains a rich set of information. Spark allows you to store your logs in files on disk cheaply, while still providing a quick and simple way to perform data analysis on them. This homework will show you how to use Apache Spark on real-world text-based production logs and fully harness the power of that data. Log data comes from many sources, such as web, file, and compute servers, application logs, user-generated content, and can be used for monitoring servers, improving business and customer intelligence, building recommendation systems, fraud detection, and much more.\n",
       "user": "anonymous",
       "dateUpdated": "2020-08-02 00:13:21.614",

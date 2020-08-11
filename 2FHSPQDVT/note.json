@@ -1,9 +1,9 @@
 {
   "paragraphs": [
     {
-      "text": "%md\nCi sono diverse strategie per l\u0027ingestione di uno o più file di dati in Apache Spark:\n\n1. leggere il file come un file di testo, i dati su ciascuna riga vengono memorizzati come una unica stringa, dalla quale posso estrarre le informazioni che mi interessano per inserirle nelle diverse colonne di un dataframe.\n2. leggere il file come un file csv, fornendo uno `schema` o lasciando che Spark intuisca da solo lo schema da applicare\n3. definire una classe corrispondente ai dati da memorizzare, leggere il file e forzare il casting dei dati alla classe definita ",
+      "text": "%md\nCon Apache Spark ho la possibilità di caricare in memoria grosse quantità di dati di diverso formato, csv, txt, json etc.\n\nI dati vengono memorizzati in un dataset o in un dataframe e successivamente processati. \n\nCi sono diverse strategie per l\u0027ingestione di uno o più file di dati in Apache Spark:\n\n1. leggere il file come un file di testo, i dati su ciascuna riga vengono memorizzati come una unica stringa, dalla quale posso estrarre le informazioni che mi interessano per inserirle nelle diverse colonne di un dataframe.\n2. leggere il file come un file csv, fornendo uno `schema` o lasciando che Spark intuisca da solo lo schema da applicare\n3. definire una classe corrispondente ai dati da memorizzare, leggere il file e forzare il casting dei dati alla classe definita\n\nVediamo come procedere in ciascuno dei tre casi.\n\n## Leggere come file di testo\n",
       "user": "anonymous",
-      "dateUpdated": "2020-08-05 14:14:03.373",
+      "dateUpdated": "2020-08-11 20:45:11.265",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -28,7 +28,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eCi sono diverse strategie per l\u0026rsquo;ingestione di uno o più file di dati in Apache Spark:\u003c/p\u003e\n\u003col\u003e\n  \u003cli\u003eleggere il file come un file di testo, i dati su ciascuna riga vengono memorizzati come una unica stringa, dalla quale posso estrarre le informazioni che mi interessano per inserirle nelle diverse colonne di un dataframe.\u003c/li\u003e\n  \u003cli\u003eleggere il file come un file csv, fornendo uno \u003ccode\u003eschema\u003c/code\u003e o lasciando che Spark intuisca da solo lo schema da applicare\u003c/li\u003e\n  \u003cli\u003edefinire una classe corrispondente ai dati da memorizzare, leggere il file e forzare il casting dei dati alla classe definita\u003c/li\u003e\n\u003c/ol\u003e\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eCon Apache Spark ho la possibilità di caricare in memoria grosse quantità di dati di diverso formato, csv, txt, json etc.\u003c/p\u003e\n\u003cp\u003eI dati vengono memorizzati in un dataset o in un dataframe e successivamente processati. \u003c/p\u003e\n\u003cp\u003eCi sono diverse strategie per l\u0026rsquo;ingestione di uno o più file di dati in Apache Spark:\u003c/p\u003e\n\u003col\u003e\n  \u003cli\u003eleggere il file come un file di testo, i dati su ciascuna riga vengono memorizzati come una unica stringa, dalla quale posso estrarre le informazioni che mi interessano per inserirle nelle diverse colonne di un dataframe.\u003c/li\u003e\n  \u003cli\u003eleggere il file come un file csv, fornendo uno \u003ccode\u003eschema\u003c/code\u003e o lasciando che Spark intuisca da solo lo schema da applicare\u003c/li\u003e\n  \u003cli\u003edefinire una classe corrispondente ai dati da memorizzare, leggere il file e forzare il casting dei dati alla classe definita\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003eVediamo come procedere in ciascuno dei tre casi.\u003c/p\u003e\n\u003ch2\u003eLeggere come file di testo\u003c/h2\u003e\n\u003c/div\u003e"
           }
         ]
       },
@@ -36,56 +36,15 @@
       "jobName": "paragraph_1596627647252_230538395",
       "id": "20200805-134047_1627063865",
       "dateCreated": "2020-08-05 13:40:47.252",
-      "dateStarted": "2020-08-05 14:14:03.395",
-      "dateFinished": "2020-08-05 14:14:26.667",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "%md\n## Leggere come file di testo",
-      "user": "anonymous",
-      "dateUpdated": "2020-08-05 14:43:34.234",
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "markdown",
-          "editOnDblClick": true,
-          "completionKey": "TAB",
-          "completionSupport": false
-        },
-        "editorMode": "ace/mode/markdown",
-        "editorHide": true,
-        "tableHide": false
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eLeggere come file di testo\u003c/h2\u003e\n\u003c/div\u003e"
-          }
-        ]
-      },
-      "apps": [],
-      "jobName": "paragraph_1596629643242_-324847174",
-      "id": "20200805-141403_1459420523",
-      "dateCreated": "2020-08-05 14:14:03.242",
-      "dateStarted": "2020-08-05 14:43:34.276",
-      "dateFinished": "2020-08-05 14:43:34.410",
+      "dateStarted": "2020-08-11 20:45:11.266",
+      "dateFinished": "2020-08-11 20:45:11.311",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "val df \u003d spark.read.textFile(\"D:\\\\AnacondaProjects\\\\Datasets\\\\apache.access.log.PROJECT\\\\apache.access.log.PROJECT\").cache\ndf.show(truncate\u003dfalse)",
       "user": "anonymous",
-      "dateUpdated": "2020-08-05 14:49:59.804",
+      "dateUpdated": "2020-08-11 20:01:18.455",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -116,15 +75,15 @@
       "jobName": "paragraph_1596631303580_354087077",
       "id": "20200805-144143_1659995000",
       "dateCreated": "2020-08-05 14:41:43.580",
-      "dateStarted": "2020-08-05 14:49:59.895",
-      "dateFinished": "2020-08-05 14:50:05.299",
+      "dateStarted": "2020-08-11 20:01:18.786",
+      "dateFinished": "2020-08-11 20:01:21.245",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\ntra le funzioni di Spark SQL trovo [regexp_extract](https://spark.apache.org/docs/latest/api/scala/org/apache/spark/sql/functions$.html) per eseguire una espressione regolare su ciasuna rig del dataframe.\n\n`def regexp_extract(e: Column, exp: String, groupIdx: Int): Column`\n\n\nI parametri della funzione sono:\n- `e`: la colonna del dataframe alla quale applicare l\u0027espressione regolare\n- `exp`: l\u0027espressione regolare nel formato \"\"\"\u003c espress. regolare \u003e\"\"\"\n- `groupIdx`: se ci sono più matching devo indicare quale voglio selezionare, il primo è 0\n",
       "user": "anonymous",
-      "dateUpdated": "2020-08-05 16:41:59.571",
+      "dateUpdated": "2020-08-11 20:01:21.312",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -157,15 +116,15 @@
       "jobName": "paragraph_1596636629192_1924557175",
       "id": "20200805-161029_715105368",
       "dateCreated": "2020-08-05 16:10:29.192",
-      "dateStarted": "2020-08-05 16:41:59.571",
-      "dateFinished": "2020-08-05 16:41:59.740",
+      "dateStarted": "2020-08-11 20:01:21.970",
+      "dateFinished": "2020-08-11 20:01:22.064",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "import org.apache.spark.sql.functions._\n\nval df_col \u003d df.select(regexp_extract($\"value\", \"\"\"[a-zA-z0-9\\-\\.]+\"\"\", 0).alias(\"host\"),\n          regexp_extract($\"value\", \"\"\"\\[([0-9a-z-A-Z\\:\\/]+)\\s\"\"\", 1).alias(\"datetime\"),\n          regexp_extract($\"value\", \"\"\"GET\\s([\\/a-zA-Z0-9\\.\\-\\_]+)\\sHTTP\"\"\",1).alias(\"request\"),\n          regexp_extract($\"value\", \"\"\"\\\"\\s([0-9]+)\\s\"\"\",1).alias(\"code\"),\n          regexp_extract($\"value\", \"\"\"\\s([0-9]+)$\"\"\", 1).alias(\"bytes\")).cache\ndf_col.show",
       "user": "anonymous",
-      "dateUpdated": "2020-08-05 17:09:33.890",
+      "dateUpdated": "2020-08-11 20:01:22.167",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -196,15 +155,15 @@
       "jobName": "paragraph_1596636624182_1758034580",
       "id": "20200805-161024_1156523033",
       "dateCreated": "2020-08-05 16:10:24.182",
-      "dateStarted": "2020-08-05 17:09:33.952",
-      "dateFinished": "2020-08-05 17:09:47.931",
+      "dateStarted": "2020-08-11 20:01:22.798",
+      "dateFinished": "2020-08-11 20:01:38.346",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\nVediamo per ogni colonna se ci sono elementi nulli o NaN",
       "user": "anonymous",
-      "dateUpdated": "2020-08-05 17:58:39.881",
+      "dateUpdated": "2020-08-11 20:01:38.407",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -237,15 +196,15 @@
       "jobName": "paragraph_1596642607488_1670894258",
       "id": "20200805-175007_30493775",
       "dateCreated": "2020-08-05 17:50:07.489",
-      "dateStarted": "2020-08-05 17:58:39.976",
-      "dateFinished": "2020-08-05 17:58:40.101",
+      "dateStarted": "2020-08-11 20:01:39.112",
+      "dateFinished": "2020-08-11 20:01:39.138",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "df_col.agg(sum(when($\"host\".isNull, 1).otherwise(0)).alias(\"host-null\"),\n           sum(when($\"datetime\".isNull, 1).otherwise(0)).alias(\"datetime-null\"),\n           sum(when($\"request\".isNull, 1).otherwise(0)).alias(\"request-null\"),\n           sum(when($\"code\".isNull, 1).otherwise(0)).alias(\"code-null\"),\n           sum(when($\"bytes\".isNull, 1).otherwise(0)).alias(\"bytes-null\")).show",
       "user": "anonymous",
-      "dateUpdated": "2020-08-05 17:15:25.272",
+      "dateUpdated": "2020-08-11 20:01:39.207",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -276,15 +235,15 @@
       "jobName": "paragraph_1596637458012_877050581",
       "id": "20200805-162418_1263463979",
       "dateCreated": "2020-08-05 16:24:18.012",
-      "dateStarted": "2020-08-05 17:15:25.324",
-      "dateFinished": "2020-08-05 17:15:29.524",
+      "dateStarted": "2020-08-11 20:01:39.600",
+      "dateFinished": "2020-08-11 20:02:01.662",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "df_col.agg(sum(when($\"host\".isNaN, 1).otherwise(0)).alias(\"host-nan\"),\n           sum(when($\"datetime\".isNaN, 1).otherwise(0)).alias(\"datetime-nan\"),\n           sum(when($\"request\".isNaN, 1).otherwise(0)).alias(\"request-nan\"),\n           sum(when($\"code\".isNaN, 1).otherwise(0)).alias(\"code-nan\"),\n           sum(when($\"bytes\".isNaN, 1).otherwise(0)).alias(\"bytes-nan\")).show",
       "user": "anonymous",
-      "dateUpdated": "2020-08-05 17:57:06.493",
+      "dateUpdated": "2020-08-11 20:02:01.669",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -315,15 +274,15 @@
       "jobName": "paragraph_1596642759979_165389990",
       "id": "20200805-175239_158420232",
       "dateCreated": "2020-08-05 17:52:39.979",
-      "dateStarted": "2020-08-05 17:57:06.559",
-      "dateFinished": "2020-08-05 17:57:17.477",
+      "dateStarted": "2020-08-11 20:02:02.083",
+      "dateFinished": "2020-08-11 20:02:15.103",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "df_col.select($\"datetime\").count",
       "user": "anonymous",
-      "dateUpdated": "2020-08-05 17:27:21.851",
+      "dateUpdated": "2020-08-11 20:02:15.127",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -346,7 +305,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "res19: Long \u003d 1043177\n"
+            "data": "res38: Long \u003d 1043177\n"
           }
         ]
       },
@@ -354,15 +313,15 @@
       "jobName": "paragraph_1596640278976_1914588920",
       "id": "20200805-171118_39255845",
       "dateCreated": "2020-08-05 17:11:18.976",
-      "dateStarted": "2020-08-05 17:27:21.930",
-      "dateFinished": "2020-08-05 17:27:24.997",
+      "dateStarted": "2020-08-11 20:02:15.502",
+      "dateFinished": "2020-08-11 20:02:17.060",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\nSembra che questo approccio abbia funzionato bene e i valori siano stati estratti correttamente in ogni riga.",
       "user": "anonymous",
-      "dateUpdated": "2020-08-05 18:03:01.656",
+      "dateUpdated": "2020-08-11 20:02:17.144",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -395,15 +354,15 @@
       "jobName": "paragraph_1596643263333_-1291549174",
       "id": "20200805-180103_936818779",
       "dateCreated": "2020-08-05 18:01:03.333",
-      "dateStarted": "2020-08-05 18:03:01.664",
-      "dateFinished": "2020-08-05 18:03:01.756",
+      "dateStarted": "2020-08-11 20:02:17.537",
+      "dateFinished": "2020-08-11 20:02:17.579",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n## Leggere il file come csv\n\nVediamo innanzitutto come è composta una riga:\n\n`in24.inetnebr.com - - [01/Aug/1995:00:00:01 -0400] \"GET /shuttle/missions/sts-68/news/sts-68-mcc-05.txt HTTP/1.0\" 200 1839`\n\npossiamo usare lo spazio come separatore e poi eliminare le colonne che non servono.",
       "user": "anonymous",
-      "dateUpdated": "2020-08-05 18:23:21.747",
+      "dateUpdated": "2020-08-11 20:02:17.648",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -436,15 +395,15 @@
       "jobName": "paragraph_1596641241851_2131586085",
       "id": "20200805-172721_643585193",
       "dateCreated": "2020-08-05 17:27:21.852",
-      "dateStarted": "2020-08-05 18:23:21.762",
-      "dateFinished": "2020-08-05 18:23:21.806",
+      "dateStarted": "2020-08-11 20:02:18.085",
+      "dateFinished": "2020-08-11 20:02:18.104",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "val df \u003d spark.read.format(\"csv\").option(\"header\",\"false\").option(\"sep\",\" \").load(\"D:\\\\AnacondaProjects\\\\Datasets\\\\apache.access.log.PROJECT\\\\apache.access.log.PROJECT\").drop(\"_c1\",\"_c2\",\"_c4\").toDF(\"host\",\"datetime\",\"request\",\"code\",\"bytes\").cache\ndf.show(5)",
       "user": "anonymous",
-      "dateUpdated": "2020-08-06 11:55:09.339",
+      "dateUpdated": "2020-08-11 20:02:18.187",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -475,15 +434,15 @@
       "jobName": "paragraph_1596644699644_1680348172",
       "id": "20200805-182459_921809117",
       "dateCreated": "2020-08-05 18:24:59.644",
-      "dateStarted": "2020-08-06 11:55:09.445",
-      "dateFinished": "2020-08-06 11:55:11.959",
+      "dateStarted": "2020-08-11 20:02:18.470",
+      "dateFinished": "2020-08-11 20:02:27.524",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "df.select( sum(when($\"host\".isNull, 1).otherwise(0)).alias(\"host-null\"),\n           sum(when($\"datetime\".isNull, 1).otherwise(0)).alias(\"datetime-null\"),\n           sum(when($\"request\".isNull, 1).otherwise(0)).alias(\"request-null\"),\n           sum(when($\"code\".isNull, 1).otherwise(0)).alias(\"code-null\"),\n           sum(when($\"bytes\".isNull, 1).otherwise(0)).alias(\"bytes-null\")).show",
       "user": "anonymous",
-      "dateUpdated": "2020-08-05 18:38:11.753",
+      "dateUpdated": "2020-08-11 20:02:27.618",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -514,15 +473,15 @@
       "jobName": "paragraph_1596645255935_-1572629377",
       "id": "20200805-183415_866627426",
       "dateCreated": "2020-08-05 18:34:15.935",
-      "dateStarted": "2020-08-05 18:38:11.880",
-      "dateFinished": "2020-08-05 18:38:14.536",
+      "dateStarted": "2020-08-11 20:02:27.942",
+      "dateFinished": "2020-08-11 20:02:40.691",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\nVediamo lo schema del dataframe",
       "user": "anonymous",
-      "dateUpdated": "2020-08-05 18:52:48.651",
+      "dateUpdated": "2020-08-11 20:02:40.821",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -555,15 +514,15 @@
       "jobName": "paragraph_1596646349677_1660730385",
       "id": "20200805-185229_1768362473",
       "dateCreated": "2020-08-05 18:52:29.677",
-      "dateStarted": "2020-08-05 18:52:48.683",
-      "dateFinished": "2020-08-05 18:52:48.717",
+      "dateStarted": "2020-08-11 20:02:42.204",
+      "dateFinished": "2020-08-11 20:02:42.385",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "df.printSchema",
       "user": "anonymous",
-      "dateUpdated": "2020-08-05 18:38:32.679",
+      "dateUpdated": "2020-08-11 20:02:42.485",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -594,95 +553,15 @@
       "jobName": "paragraph_1596645395065_958104125",
       "id": "20200805-183635_1317460593",
       "dateCreated": "2020-08-05 18:36:35.065",
-      "dateStarted": "2020-08-05 18:38:32.775",
-      "dateFinished": "2020-08-05 18:38:33.822",
+      "dateStarted": "2020-08-11 20:02:43.535",
+      "dateFinished": "2020-08-11 20:02:44.508",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\nApplichiamo describe ad ogni colonna del datatframe",
+      "text": "%md\nApplichiamo describe ad ogni colonna del dataframe",
       "user": "anonymous",
-      "dateUpdated": "2020-08-05 18:54:55.051",
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "markdown",
-          "editOnDblClick": true,
-          "completionKey": "TAB",
-          "completionSupport": false
-        },
-        "editorMode": "ace/mode/markdown",
-        "editorHide": true,
-        "tableHide": false
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eApplichiamo describe ad ogni colonna del datatframe\u003c/p\u003e\n\u003c/div\u003e"
-          }
-        ]
-      },
-      "apps": [],
-      "jobName": "paragraph_1596646346641_-2146983176",
-      "id": "20200805-185226_1430115867",
-      "dateCreated": "2020-08-05 18:52:26.642",
-      "dateStarted": "2020-08-05 18:54:55.070",
-      "dateFinished": "2020-08-05 18:54:55.110",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "df.describe(\"host\",\"datetime\",\"request\",\"code\",\"bytes\").show(truncate\u003dfalse)",
-      "user": "anonymous",
-      "dateUpdated": "2020-08-06 11:55:21.859",
-      "config": {
-        "colWidth": 12.0,
-        "fontSize": 9.0,
-        "enabled": true,
-        "results": {},
-        "editorSetting": {
-          "language": "scala",
-          "editOnDblClick": false,
-          "completionKey": "TAB",
-          "completionSupport": true
-        },
-        "editorMode": "ace/mode/scala"
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "+-------+-------------------------+---------------------+-------------------------------------------------------------+------------------+------------------+\n|summary|host                     |datetime             |request                                                      |code              |bytes             |\n+-------+-------------------------+---------------------+-------------------------------------------------------------+------------------+------------------+\n|count  |1043177                  |1043177              |1043177                                                      |1043177           |1043177           |\n|mean   |null                     |null                 |null                                                         |210.77027485611083|17679.736875431394|\n|stddev |null                     |null                 |null                                                         |33.52356783510582 |68832.10308836344 |\n|min    |***.novo.dk              |[01/Aug/1995:00:00:01|GET /                                                        |200               |-                 |\n|max    |zztduffy.slip.cc.uq.oz.au|[22/Aug/1995:23:59:59|POST /shuttle/missions/sts-73/sts-73-patch-small.gif HTTP/1.0|HTTP/1.0\"         |99981             |\n+-------+-------------------------+---------------------+-------------------------------------------------------------+------------------+------------------+\n\r\n"
-          }
-        ]
-      },
-      "apps": [],
-      "jobName": "paragraph_1596645512679_-904410099",
-      "id": "20200805-183832_147538782",
-      "dateCreated": "2020-08-05 18:38:32.679",
-      "dateStarted": "2020-08-06 11:55:21.974",
-      "dateFinished": "2020-08-06 11:55:59.865",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "%md\nDalla tabella sopra ottengo due importanti informazioni:\n- nella colonna request ci sono sia GET che POST\n- nella colonna code alcuni valori sono sbagliati, contengono la stringa \"HTTP/1.0\"\" invece dei codici numerici\n- nella colonna bytes alcuni valori sono non numerici e sono rappresentati come \"-\" per questo non è risultato come Null o NaN ",
-      "user": "anonymous",
-      "dateUpdated": "2020-08-06 11:57:24.129",
+      "dateUpdated": "2020-08-11 20:02:44.625",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -707,23 +586,62 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eDalla tabella sopra ottengo una importante informazione che nella colonna bytes alcuni valori sono non numerici e sono rappresentati come \u0026ldquo;-\u0026rdquo; per questo non è risultato come Null o NaN\u003c/p\u003e\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eApplichiamo describe ad ogni colonna del dataframe\u003c/p\u003e\n\u003c/div\u003e"
           }
         ]
       },
       "apps": [],
-      "jobName": "paragraph_1596646505133_-813731538",
-      "id": "20200805-185505_1176722985",
-      "dateCreated": "2020-08-05 18:55:05.133",
-      "dateStarted": "2020-08-05 19:11:13.599",
-      "dateFinished": "2020-08-05 19:11:13.772",
+      "jobName": "paragraph_1596646346641_-2146983176",
+      "id": "20200805-185226_1430115867",
+      "dateCreated": "2020-08-05 18:52:26.642",
+      "dateStarted": "2020-08-11 20:02:44.981",
+      "dateFinished": "2020-08-11 20:02:45.008",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\nFiltriamo gli elementi di code che sono malformati, ovvero che contengono valori non numerici",
+      "text": "df.describe(\"host\",\"datetime\",\"request\",\"code\",\"bytes\").show()",
       "user": "anonymous",
-      "dateUpdated": "2020-08-06 11:17:48.490",
+      "dateUpdated": "2020-08-11 20:02:45.094",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+--------------------+--------------------+--------------------+------------------+------------------+\n|summary|                host|            datetime|             request|              code|             bytes|\n+-------+--------------------+--------------------+--------------------+------------------+------------------+\n|  count|             1043177|             1043177|             1043177|           1043177|           1043177|\n|   mean|                null|                null|                null|210.77027485611083|17679.736875431394|\n| stddev|                null|                null|                null| 33.52356783510582| 68832.10308836344|\n|    min|         ***.novo.dk|[01/Aug/1995:00:0...|               GET /|               200|                 -|\n|    max|zztduffy.slip.cc....|[22/Aug/1995:23:5...|POST /shuttle/mis...|         HTTP/1.0\"|             99981|\n+-------+--------------------+--------------------+--------------------+------------------+------------------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1596645512679_-904410099",
+      "id": "20200805-183832_147538782",
+      "dateCreated": "2020-08-05 18:38:32.679",
+      "dateStarted": "2020-08-11 20:02:45.434",
+      "dateFinished": "2020-08-11 20:03:09.917",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nDalla tabella sopra ottengo due importanti informazioni:\n- nella colonna request ci sono sia GET che POST\n- nella colonna code alcuni valori sono sbagliati, contengono la stringa \"HTTP/1.0\"\" invece dei codici numerici\n- nella colonna bytes alcuni valori sono non numerici e sono rappresentati come \"-\" per questo non è risultato come Null o NaN\n\nFiltriamo gli elementi di code che sono malformati, ovvero che contengono valori non numerici",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-11 20:03:09.966",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -748,23 +666,23 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eFiltriamo gli elementi di code che sono malformati, ovvero che contengono valori non numerici\u003c/p\u003e\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eDalla tabella sopra ottengo due importanti informazioni:\u003cbr/\u003e- nella colonna request ci sono sia GET che POST\u003cbr/\u003e- nella colonna code alcuni valori sono sbagliati, contengono la stringa \u0026ldquo;HTTP/1.0\u0026rdquo;\u0026ldquo; invece dei codici numerici\u003cbr/\u003e- nella colonna bytes alcuni valori sono non numerici e sono rappresentati come \u0026rdquo;-\u0026quot; per questo non è risultato come Null o NaN\u003c/p\u003e\n\u003cp\u003eFiltriamo gli elementi di code che sono malformati, ovvero che contengono valori non numerici\u003c/p\u003e\n\u003c/div\u003e"
           }
         ]
       },
       "apps": [],
-      "jobName": "paragraph_1596661974521_-579249449",
-      "id": "20200805-231254_666382632",
-      "dateCreated": "2020-08-05 23:12:54.521",
-      "dateStarted": "2020-08-06 11:17:48.499",
-      "dateFinished": "2020-08-06 11:17:48.558",
+      "jobName": "paragraph_1596646505133_-813731538",
+      "id": "20200805-185505_1176722985",
+      "dateCreated": "2020-08-05 18:55:05.133",
+      "dateStarted": "2020-08-11 20:03:10.243",
+      "dateFinished": "2020-08-11 20:03:10.256",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "df.filter($\"code\" contains \"HTTP/1.0\").show(truncate\u003dfalse)",
       "user": "anonymous",
-      "dateUpdated": "2020-08-05 23:14:43.689",
+      "dateUpdated": "2020-08-11 20:03:10.338",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -795,15 +713,15 @@
       "jobName": "paragraph_1596661999336_1523546916",
       "id": "20200805-231319_1825265572",
       "dateCreated": "2020-08-05 23:13:19.336",
-      "dateStarted": "2020-08-05 23:14:43.789",
-      "dateFinished": "2020-08-05 23:14:45.988",
+      "dateStarted": "2020-08-11 20:03:10.582",
+      "dateFinished": "2020-08-11 20:03:12.054",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\nCi dovremmo chiedere come mai questo errore nell\u0027ingestione di queste righe. Dovremmo cercare di filtrare queste righe senza però suddividere in colonne.\n\nCi torna utile leggere il file come textfile e filtrare le righe che contengono le richieste del filtro sopra.",
       "user": "anonymous",
-      "dateUpdated": "2020-08-06 11:24:01.927",
+      "dateUpdated": "2020-08-11 20:03:12.072",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -836,15 +754,15 @@
       "jobName": "paragraph_1596705486880_1138308112",
       "id": "20200806-111806_373185590",
       "dateCreated": "2020-08-06 11:18:06.880",
-      "dateStarted": "2020-08-06 11:24:01.930",
-      "dateFinished": "2020-08-06 11:24:01.991",
+      "dateStarted": "2020-08-11 20:03:12.432",
+      "dateFinished": "2020-08-11 20:03:12.452",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "val df_text \u003d spark.read.textFile(\"D:\\\\AnacondaProjects\\\\Datasets\\\\apache.access.log.PROJECT\\\\apache.access.log.PROJECT\").filter(\n    ($\"value\" contains \"GET /ksc.html\") \u0026\u0026 ($\"value\" contains \"08/Aug/1995:11:24:31\") ||\n    ($\"value\" contains \"/shuttle/missions/sts-70/images/ksc-95ec-o667.gif\") \u0026\u0026 (($\"value\" contains \"10/Aug/1995:18:45:48\") ||\n                                                                                ($\"value\" contains \"10/Aug/1995:18:45:49\") ||\n                                                                                ($\"value\" contains \"10/Aug/1995:19:25:40\") ||\n                                                                                ($\"value\" contains \"10/Aug/1995:20:08:13\") ||\n                                                                                ($\"value\" contains \"10/Aug/1995:20:08:41\") ||\n                                                                                ($\"value\" contains \"10/Aug/1995:20:09:31\") ||\n                                                                                ($\"value\" contains \"10/Aug/1995:20:09:32\")) ||\n    (($\"value\" contains \"GET /shuttle/missions/sts-9/sts-9-patch-small.gif\") \u0026\u0026 ($\"value\" contains \"22/Aug/1995:11:03:15\")) ||\n    (($\"value\" contains \"GET /shuttle/missions/sts-45/sts-45-patch-small.gif\") \u0026\u0026 ($\"value\" contains \"22/Aug/1995:11:03:18\")) ||\n    (($\"value\" contains \"GET /shuttle/missions/sts-57/sts-57-patch-small.gif\") \u0026\u0026 ($\"value\" contains \"22/Aug/1995:11:03:19\")))\n\ndf_text.show(truncate\u003dfalse)\n",
+      "text": "val df_text \u003d spark.read.textFile(\"D:\\\\AnacondaProjects\\\\Datasets\\\\apache.access.log.PROJECT\\\\apache.access.log.PROJECT\").filter(\n    ($\"value\" contains \"GET /ksc.html\") \u0026\u0026 ($\"value\" contains \"08/Aug/1995:11:24:31\") ||\n    ($\"value\" contains \"/shuttle/missions/sts-70/images/ksc-95ec-o667.gif\") \u0026\u0026 (($\"value\" contains \"10/Aug/1995:18:45:48\") ||\n                                                                                ($\"value\" contains \"10/Aug/1995:18:45:49\") ||\n                                                                                ($\"value\" contains \"10/Aug/1995:19:25:40\") ||\n                                                                                ($\"value\" contains \"10/Aug/1995:20:08:13\") ||\n                                                                                ($\"value\" contains \"10/Aug/1995:20:08:41\") ||\n                                                                                ($\"value\" contains \"10/Aug/1995:20:09:31\") ||\n                                                                                ($\"value\" contains \"10/Aug/1995:20:09:32\")) ||\n    (($\"value\" contains \"GET /shuttle/missions/sts-9/sts-9-patch-small.gif\") \u0026\u0026 ($\"value\" contains \"22/Aug/1995:11:03:15\")) ||\n    (($\"value\" contains \"GET /shuttle/missions/sts-45/sts-45-patch-small.gif\") \u0026\u0026 ($\"value\" contains \"22/Aug/1995:11:03:18\")) ||\n    (($\"value\" contains \"GET /shuttle/missions/sts-57/sts-57-patch-small.gif\") \u0026\u0026 ($\"value\" contains \"22/Aug/1995:11:03:19\")))\n\ndf_text.show(5, truncate\u003dfalse)\n",
       "user": "anonymous",
-      "dateUpdated": "2020-08-06 11:54:48.756",
+      "dateUpdated": "2020-08-11 20:03:12.532",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -867,7 +785,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "+---------------------------------------------------------------------------------------------------------------------------------+\n|value                                                                                                                            |\n+---------------------------------------------------------------------------------------------------------------------------------+\n|jhanley.doe.state.la.us - - [08/Aug/1995:11:24:31 -0400] \"GET /ksc.html\" HTTP/1.0\" 404 -                                         |\n|redx3.cac.washington.edu - - [10/Aug/1995:18:45:48 -0400] \"GET /shuttle/missions/sts-70/images/ksc-95ec-o667.gif\" HTTP/1.0\" 404 -|\n|redx3.cac.washington.edu - - [10/Aug/1995:18:45:49 -0400] \"GET /shuttle/missions/sts-70/images/ksc-95ec-o667.gif\" HTTP/1.0\" 404 -|\n|128.95.234.46 - - [10/Aug/1995:19:25:40 -0400] \"GET /shuttle/missions/sts-70/images/ksc-95ec-o667.gif\" HTTP/1.0\" 404 -           |\n|redx3.cac.washington.edu - - [10/Aug/1995:20:08:13 -0400] \"GET /shuttle/missions/sts-70/images/ksc-95ec-o667.gif\" HTTP/1.0\" 404 -|\n|redx3.cac.washington.edu - - [10/Aug/1995:20:08:13 -0400] \"GET /shuttle/missions/sts-70/images/ksc-95ec-o667.gif\" HTTP/1.0\" 404 -|\n|redx3.cac.washington.edu - - [10/Aug/1995:20:08:41 -0400] \"GET /shuttle/missions/sts-70/images/ksc-95ec-o667.gif\" HTTP/1.0\" 404 -|\n|redx3.cac.washington.edu - - [10/Aug/1995:20:08:41 -0400] \"GET /shuttle/missions/sts-70/images/ksc-95ec-o667.gif\" HTTP/1.0\" 404 -|\n|macba305.aerov.jussieu.fr - - [22/Aug/1995:11:03:15 -0400] \"GET /shuttle/missions/sts-9/sts-9-patch-small.gif\" HTTP/1.0\" 404 -   |\n|macba305.aerov.jussieu.fr - - [22/Aug/1995:11:03:18 -0400] \"GET /shuttle/missions/sts-45/sts-45-patch-small.gif\" HTTP/1.0\" 404 - |\n|macba305.aerov.jussieu.fr - - [22/Aug/1995:11:03:19 -0400] \"GET /shuttle/missions/sts-57/sts-57-patch-small.gif\"\" HTTP/1.0\" 404 -|\n+---------------------------------------------------------------------------------------------------------------------------------+\n\r\ndf_text: org.apache.spark.sql.Dataset[String] \u003d [value: string]\n"
+            "data": "+---------------------------------------------------------------------------------------------------------------------------------+\n|value                                                                                                                            |\n+---------------------------------------------------------------------------------------------------------------------------------+\n|jhanley.doe.state.la.us - - [08/Aug/1995:11:24:31 -0400] \"GET /ksc.html\" HTTP/1.0\" 404 -                                         |\n|redx3.cac.washington.edu - - [10/Aug/1995:18:45:48 -0400] \"GET /shuttle/missions/sts-70/images/ksc-95ec-o667.gif\" HTTP/1.0\" 404 -|\n|redx3.cac.washington.edu - - [10/Aug/1995:18:45:49 -0400] \"GET /shuttle/missions/sts-70/images/ksc-95ec-o667.gif\" HTTP/1.0\" 404 -|\n|128.95.234.46 - - [10/Aug/1995:19:25:40 -0400] \"GET /shuttle/missions/sts-70/images/ksc-95ec-o667.gif\" HTTP/1.0\" 404 -           |\n|redx3.cac.washington.edu - - [10/Aug/1995:20:08:13 -0400] \"GET /shuttle/missions/sts-70/images/ksc-95ec-o667.gif\" HTTP/1.0\" 404 -|\n+---------------------------------------------------------------------------------------------------------------------------------+\nonly showing top 5 rows\n\r\ndf_text: org.apache.spark.sql.Dataset[String] \u003d [value: string]\n"
           }
         ]
       },
@@ -875,15 +793,15 @@
       "jobName": "paragraph_1596705770366_57114483",
       "id": "20200806-112250_827451570",
       "dateCreated": "2020-08-06 11:22:50.366",
-      "dateStarted": "2020-08-06 11:54:28.589",
-      "dateFinished": "2020-08-06 11:54:34.381",
+      "dateStarted": "2020-08-11 20:03:12.800",
+      "dateFinished": "2020-08-11 20:03:15.936",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\nCome si vede le righe in questione sono tutte malformate, cioè invece di essere nel formato `\"GET \u003curl\u003e HTTP/1.0\"` hanno degli extra \".\n\nSi noti che \" è il simbolo quote di default nel csv dataframe reader, cioè quello che vi è tra virgolette viene considerato come un\u0027unica stringa anche se c\u0027è un carattere separator (lo spazio nel nostro caso) in mezzo. Per questo motivo `\"GET \u003curl\u003e HTTP/1.0\"` è visto come una unica stringa. Se invece ci sono altre virgolette in mezzo la lettura e la separazione della riga in field non funzionerà.\n\nA questo punto ho due opzioni:\n- correggere queste righe manualmente\n- eliminare queste righe\n\nVisto che non sono molte, e che non mi sembrano particolarmente importanti (anche se sono tutti codici 404, page not found) decido di eliminare queste righe.",
       "user": "anonymous",
-      "dateUpdated": "2020-08-06 11:46:02.738",
+      "dateUpdated": "2020-08-11 20:03:15.947",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -916,15 +834,15 @@
       "jobName": "paragraph_1596706060428_1018291061",
       "id": "20200806-112740_69879454",
       "dateCreated": "2020-08-06 11:27:40.428",
-      "dateStarted": "2020-08-06 11:46:02.740",
-      "dateFinished": "2020-08-06 11:46:02.799",
+      "dateStarted": "2020-08-11 20:03:16.288",
+      "dateFinished": "2020-08-11 20:03:16.331",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "val df_clean \u003d df.filter(not(col(\"code\").contains(\"HTTP\"))).cache\ndf_clean.show\n",
       "user": "anonymous",
-      "dateUpdated": "2020-08-06 14:05:42.633",
+      "dateUpdated": "2020-08-11 20:03:16.387",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -955,15 +873,15 @@
       "jobName": "paragraph_1596707495334_-1873575968",
       "id": "20200806-115135_142456605",
       "dateCreated": "2020-08-06 11:51:35.334",
-      "dateStarted": "2020-08-06 14:05:42.771",
-      "dateFinished": "2020-08-06 14:05:49.084",
+      "dateStarted": "2020-08-11 20:03:16.682",
+      "dateFinished": "2020-08-11 20:03:20.517",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\nPotrebbe essere una buona idea quella di convertire in interi le ultime due colonne.\n\nDefiniamo una funzione in Scala e poi la convertiamo in UDF (User Defined Function) per usarla in Spark.\n\nLa funzione `st_to_int` definita sotto converte una stringa in interi. Una struttura try-catch fa in modo che quando non sia possibile convertire a intero, perchè ho una riga malformata, la funzione ritorna -9999 o 0 nel caso che bytes sia uguale a \"-\".",
       "user": "anonymous",
-      "dateUpdated": "2020-08-06 14:14:34.896",
+      "dateUpdated": "2020-08-11 20:03:20.537",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -996,15 +914,15 @@
       "jobName": "paragraph_1596645791994_1539895915",
       "id": "20200805-184311_1161347874",
       "dateCreated": "2020-08-05 18:43:11.994",
-      "dateStarted": "2020-08-06 14:14:34.912",
-      "dateFinished": "2020-08-06 14:14:34.981",
+      "dateStarted": "2020-08-11 20:03:20.888",
+      "dateFinished": "2020-08-11 20:03:20.909",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "\n//val st_to_int : String \u003d\u003e Int \u003d x \u003d\u003e x.toInt\n\ndef st_to_int (x: String): Int \u003d {\n    \n    try {\n        x.toInt\n    } catch {\n        case ex: NumberFormatException \u003d\u003e \n            { if (x \u003d\u003d \"-\") 0 else -9999 }\n    }\n    \n}\nval udf_st_to_int \u003d udf(st_to_int _)\n\nval df_conv \u003d df_clean.withColumn(\"code\", udf_st_to_int($\"code\")).withColumn(\"bytes\", udf_st_to_int($\"bytes\"))\ndf_conv.show(5)\ndf_conv.printSchema",
       "user": "anonymous",
-      "dateUpdated": "2020-08-06 14:13:16.459",
+      "dateUpdated": "2020-08-11 20:03:20.988",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1035,15 +953,15 @@
       "jobName": "paragraph_1596645691808_-1731636083",
       "id": "20200805-184131_1222963581",
       "dateCreated": "2020-08-05 18:41:31.808",
-      "dateStarted": "2020-08-06 14:13:16.531",
-      "dateFinished": "2020-08-06 14:13:18.742",
+      "dateStarted": "2020-08-11 20:03:21.272",
+      "dateFinished": "2020-08-11 20:03:24.169",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\nVerifichiamo di avere corretto tutti i problemi usando la funzione `describe` dui dataframe prima e dopo.",
+      "text": "%md\nVerifichiamo di avere corretto tutti i problemi usando la funzione `describe` sui dataframe prima e dopo.",
       "user": "anonymous",
-      "dateUpdated": "2020-08-06 14:19:16.417",
+      "dateUpdated": "2020-08-11 20:03:24.228",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1068,7 +986,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eVerifichiamo di avere corretto tutti i problemi usando la funzione \u003ccode\u003edescribe\u003c/code\u003e dui dataframe prima e dopo.\u003c/p\u003e\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eVerifichiamo di avere corretto tutti i problemi usando la funzione \u003ccode\u003edescribe\u003c/code\u003e sui dataframe prima e dopo.\u003c/p\u003e\n\u003c/div\u003e"
           }
         ]
       },
@@ -1076,15 +994,15 @@
       "jobName": "paragraph_1596716307899_1931694480",
       "id": "20200806-141827_2038544370",
       "dateCreated": "2020-08-06 14:18:27.900",
-      "dateStarted": "2020-08-06 14:19:16.428",
-      "dateFinished": "2020-08-06 14:19:16.456",
+      "dateStarted": "2020-08-11 20:03:24.508",
+      "dateFinished": "2020-08-11 20:03:24.526",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "df.describe(\"code\",\"bytes\").show",
       "user": "anonymous",
-      "dateUpdated": "2020-08-06 14:07:10.885",
+      "dateUpdated": "2020-08-11 20:03:24.620",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1115,15 +1033,15 @@
       "jobName": "paragraph_1596648076950_-431102989",
       "id": "20200805-192116_975385808",
       "dateCreated": "2020-08-05 19:21:16.950",
-      "dateStarted": "2020-08-06 14:07:10.967",
-      "dateFinished": "2020-08-06 14:07:14.730",
+      "dateStarted": "2020-08-11 20:03:24.857",
+      "dateFinished": "2020-08-11 20:03:29.170",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "df_conv.describe(\"code\",\"bytes\").show",
       "user": "anonymous",
-      "dateUpdated": "2020-08-06 14:13:25.998",
+      "dateUpdated": "2020-08-11 20:03:29.240",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1154,23 +1072,917 @@
       "jobName": "paragraph_1596648416314_-488190027",
       "id": "20200805-192656_4364144",
       "dateCreated": "2020-08-05 19:26:56.314",
-      "dateStarted": "2020-08-06 14:13:26.086",
-      "dateFinished": "2020-08-06 14:13:28.378",
+      "dateStarted": "2020-08-11 20:03:29.478",
+      "dateFinished": "2020-08-11 20:03:34.817",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
+      "text": "%md\n👌",
       "user": "anonymous",
-      "config": {},
+      "dateUpdated": "2020-08-11 20:03:34.864",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
       "settings": {
         "params": {},
         "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003e👌\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
       },
       "apps": [],
       "jobName": "paragraph_1596661299588_-1881521838",
       "id": "20200805-230139_1881734347",
       "dateCreated": "2020-08-05 23:01:39.588",
-      "status": "READY",
+      "dateStarted": "2020-08-11 20:03:35.147",
+      "dateFinished": "2020-08-11 20:03:35.167",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Importare i dati in un dataset\n\nSe uso un dataset devo definire un tipo per ogni riga di dati. In questo modo i miei dati tipizzati ",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-11 20:03:35.246",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eImportare i dati in un dataset\u003c/h2\u003e\n\u003cp\u003eSe uso un dataset devo definire un tipo per ogni riga di dati. In questo modo i miei dati tipizzati\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1596733498240_-932401520",
+      "id": "20200806-190458_2051369695",
+      "dateCreated": "2020-08-06 19:04:58.240",
+      "dateStarted": "2020-08-11 20:03:35.489",
+      "dateFinished": "2020-08-11 20:03:35.512",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "case class server_connection(host: String, datetime: String, request: String, code: Int, bytes: Int)",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-11 20:03:35.588",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "defined class server_connection\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1596733523604_1721003150",
+      "id": "20200806-190523_544781146",
+      "dateCreated": "2020-08-06 19:05:23.604",
+      "dateStarted": "2020-08-11 20:03:35.845",
+      "dateFinished": "2020-08-11 20:03:36.518",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nPer fare il mapping dei singoli field della classe server_connection le colonne devono avere gli stessi nomi dei field, quindi in queto caso: host,datetime,request,code,bytes. \n\nPer convertire in Dataset[server_connection] devo usare la funzione `.as[server_connection]` ",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-11 20:03:36.569",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003ePer fare il mapping dei singoli field della classe server_connection le colonne devono avere gli stessi nomi dei field, quindi in queto caso: host,datetime,request,code,bytes. \u003c/p\u003e\n\u003cp\u003ePer convertire in Dataset[server_connection] devo usare la funzione \u003ccode\u003e.as[server_connection]\u003c/code\u003e\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1596776638255_-1875575006",
+      "id": "20200807-070358_1726026953",
+      "dateCreated": "2020-08-07 07:03:58.255",
+      "dateStarted": "2020-08-11 20:03:36.894",
+      "dateFinished": "2020-08-11 20:03:37.023",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\nval df \u003d spark.read.format(\"csv\").option(\"header\",\"false\").option(\"sep\",\" \")\n         .schema(\"host string, _c1 string, _c2 string, datetime string, _c4 string, request string, code int, bytes int\")\n         .load(\"D:\\\\AnacondaProjects\\\\Datasets\\\\apache.access.log.PROJECT\\\\apache.access.log.PROJECT\")\n         .drop(\"_c1\",\"_c2\",\"_c4\")\n         .as[server_connection]\n         .cache\ndf.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-11 20:03:37.094",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------------+--------------------+--------------------+----+-----+\n|                host|            datetime|             request|code|bytes|\n+--------------------+--------------------+--------------------+----+-----+\n|   in24.inetnebr.com|[01/Aug/1995:00:0...|GET /shuttle/miss...| 200| 1839|\n|     uplherc.upl.com|[01/Aug/1995:00:0...|      GET / HTTP/1.0| 304|    0|\n|     uplherc.upl.com|[01/Aug/1995:00:0...|GET /images/ksclo...| 304|    0|\n|     uplherc.upl.com|[01/Aug/1995:00:0...|GET /images/MOSAI...| 304|    0|\n|     uplherc.upl.com|[01/Aug/1995:00:0...|GET /images/USA-l...| 304|    0|\n|ix-esc-ca2-07.ix....|[01/Aug/1995:00:0...|GET /images/launc...| 200| 1713|\n|     uplherc.upl.com|[01/Aug/1995:00:0...|GET /images/WORLD...| 304|    0|\n|slppp6.intermind.net|[01/Aug/1995:00:0...|GET /history/skyl...| 200| 1687|\n|piweba4y.prodigy.com|[01/Aug/1995:00:0...|GET /images/launc...| 200|11853|\n|slppp6.intermind.net|[01/Aug/1995:00:0...|GET /history/skyl...| 200| 9202|\n|slppp6.intermind.net|[01/Aug/1995:00:0...|GET /images/ksclo...| 200| 3635|\n|ix-esc-ca2-07.ix....|[01/Aug/1995:00:0...|GET /history/apol...| 200| 1173|\n|slppp6.intermind.net|[01/Aug/1995:00:0...|GET /history/apol...| 200| 3047|\n|     uplherc.upl.com|[01/Aug/1995:00:0...|GET /images/NASA-...| 304|    0|\n|        133.43.96.45|[01/Aug/1995:00:0...|GET /shuttle/miss...| 200|10566|\n|kgtyk4.kj.yamagat...|[01/Aug/1995:00:0...|      GET / HTTP/1.0| 200| 7280|\n|kgtyk4.kj.yamagat...|[01/Aug/1995:00:0...|GET /images/ksclo...| 200| 5866|\n|     d0ucr6.fnal.gov|[01/Aug/1995:00:0...|GET /history/apol...| 200| 2743|\n|ix-esc-ca2-07.ix....|[01/Aug/1995:00:0...|GET /shuttle/reso...| 200| 6849|\n|     d0ucr6.fnal.gov|[01/Aug/1995:00:0...|GET /history/apol...| 200|14897|\n+--------------------+--------------------+--------------------+----+-----+\nonly showing top 20 rows\n\r\ndf: org.apache.spark.sql.Dataset[server_connection] \u003d [host: string, datetime: string ... 3 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1596733899796_-917088588",
+      "id": "20200806-191139_1184569745",
+      "dateCreated": "2020-08-06 19:11:39.796",
+      "dateStarted": "2020-08-11 20:03:37.355",
+      "dateFinished": "2020-08-11 20:03:39.322",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.printSchema",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-11 20:03:39.420",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- host: string (nullable \u003d true)\n |-- datetime: string (nullable \u003d true)\n |-- request: string (nullable \u003d true)\n |-- code: integer (nullable \u003d true)\n |-- bytes: integer (nullable \u003d true)\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1596734038801_-1057226074",
+      "id": "20200806-191358_2108098965",
+      "dateCreated": "2020-08-06 19:13:58.801",
+      "dateStarted": "2020-08-11 20:03:39.714",
+      "dateFinished": "2020-08-11 20:03:40.339",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nPossiamo anche fare un `.describe` sulle colonne code e bytes e vediamo che non ci sono campi/righe malformate.\n\nInoltre poiché describe è una operazione che viene eseguita su tutte le colonne ci potrà rivelare se ci sono problemi con con qualche record.",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-11 20:03:40.434",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003ePossiamo anche fare un \u003ccode\u003e.describe\u003c/code\u003e sulle colonne code e bytes e vediamo che non ci sono campi/righe malformate.\u003c/p\u003e\n\u003cp\u003eInoltre poiché describe è una operazione che viene eseguita su tutte le colonne ci potrà rivelare se ci sono problemi con con qualche record.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1596776872190_-1927073409",
+      "id": "20200807-070752_231827151",
+      "dateCreated": "2020-08-07 07:07:52.190",
+      "dateStarted": "2020-08-11 20:03:40.856",
+      "dateFinished": "2020-08-11 20:03:40.884",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.describe(\"host\",\"datetime\",\"request\",\"code\",\"bytes\").show",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-11 20:03:40.972",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+--------------------+--------------------+--------------------+------------------+-----------------+\n|summary|                host|            datetime|             request|              code|            bytes|\n+-------+--------------------+--------------------+--------------------+------------------+-----------------+\n|  count|             1034421|             1034421|             1034421|           1034421|          1034421|\n|   mean|                null|                null|                null| 209.3868917974403|17679.95398681968|\n| stddev|                null|                null|                null|29.757618057686102|68832.50836237728|\n|    min|         ***.novo.dk|[01/Aug/1995:00:0...|               GET /|               200|                0|\n|    max|zztduffy.slip.cc....|[22/Aug/1995:23:5...|POST /cgi-bin/new...|               500|          3421948|\n+-------+--------------------+--------------------+--------------------+------------------+-----------------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1596750847765_684136810",
+      "id": "20200806-235407_1770861471",
+      "dateCreated": "2020-08-06 23:54:07.766",
+      "dateStarted": "2020-08-11 20:03:41.211",
+      "dateFinished": "2020-08-11 20:04:03.025",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nVediamo se ci sono elementi Null.",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-11 20:04:03.053",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eVediamo se ci sono elementi Null.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1596777784419_-1597710867",
+      "id": "20200807-072304_405114647",
+      "dateCreated": "2020-08-07 07:23:04.419",
+      "dateStarted": "2020-08-11 20:04:03.393",
+      "dateFinished": "2020-08-11 20:04:03.407",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.select( sum(when($\"host\".isNull, 1).otherwise(0)).alias(\"host-null\"),\n           sum(when($\"datetime\".isNull, 1).otherwise(0)).alias(\"datetime-null\"),\n           sum(when($\"request\".isNull, 1).otherwise(0)).alias(\"request-null\"),\n           sum(when($\"code\".isNull, 1).otherwise(0)).alias(\"code-null\"),\n           sum(when($\"bytes\".isNull, 1).otherwise(0)).alias(\"bytes-null\")).show",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-11 20:04:03.488",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---------+-------------+------------+---------+----------+\n|host-null|datetime-null|request-null|code-null|bytes-null|\n+---------+-------------+------------+---------+----------+\n|     8756|         8756|        8756|     8756|      8756|\n+---------+-------------+------------+---------+----------+\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1596777772225_1364965319",
+      "id": "20200807-072252_1571828107",
+      "dateCreated": "2020-08-07 07:22:52.225",
+      "dateStarted": "2020-08-11 20:04:03.755",
+      "dateFinished": "2020-08-11 20:04:05.511",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nCome si vede per 8756 record non è riuscito ad applicare lo schema pertanto ha riportato il record come null",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-11 20:04:05.517",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eCome si vede per 8756 record non è riuscito ad applicare lo schema pertanto ha riportato il record come null\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1596777926690_1897859140",
+      "id": "20200807-072526_331115074",
+      "dateCreated": "2020-08-07 07:25:26.690",
+      "dateStarted": "2020-08-11 20:04:05.854",
+      "dateFinished": "2020-08-11 20:04:05.870",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.filter($\"host\".isNull).show",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-11 20:04:05.954",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----+--------+-------+----+-----+\n|host|datetime|request|code|bytes|\n+----+--------+-------+----+-----+\n|null|    null|   null|null| null|\n|null|    null|   null|null| null|\n|null|    null|   null|null| null|\n|null|    null|   null|null| null|\n|null|    null|   null|null| null|\n|null|    null|   null|null| null|\n|null|    null|   null|null| null|\n|null|    null|   null|null| null|\n|null|    null|   null|null| null|\n|null|    null|   null|null| null|\n|null|    null|   null|null| null|\n|null|    null|   null|null| null|\n|null|    null|   null|null| null|\n|null|    null|   null|null| null|\n|null|    null|   null|null| null|\n|null|    null|   null|null| null|\n|null|    null|   null|null| null|\n|null|    null|   null|null| null|\n|null|    null|   null|null| null|\n|null|    null|   null|null| null|\n+----+--------+-------+----+-----+\nonly showing top 20 rows\n\r\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1596777829082_1928230052",
+      "id": "20200807-072349_2135907137",
+      "dateCreated": "2020-08-07 07:23:49.082",
+      "dateStarted": "2020-08-11 20:04:06.196",
+      "dateFinished": "2020-08-11 20:04:07.560",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nDopo un po\u0027 di investigazioni ci accorgiamo che i record null corrispondono ai casi in cui `bytes\u003d\u003d\"-\"`\n\nEseguo una espressione regolare sul record in formato testo per vedere che effetivamente ottengo lo stesso numero: 8756.\n\nLa espressione regolare è semplicemente \"\"\"-$\"\"\", ove - è il simbolo da cercare, $ indica la fine della riga.",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-11 20:04:07.619",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eDopo un po\u0026rsquo; di investigazioni ci accorgiamo che i record null corrispondono ai casi in cui \u003ccode\u003ebytes\u003d\u003d\u0026quot;-\u0026quot;\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eEseguo una espressione regolare sul record in formato testo per vedere che effetivamente ottengo lo stesso numero: 8756.\u003c/p\u003e\n\u003cp\u003eLa espressione regolare è semplicemente \u0026quot;\u0026quot;\u0026ldquo;-$\u0026rdquo;\u0026quot;\u0026quot;, ove - è il simbolo da cercare, $ indica la fine della riga.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1596786974717_-901579067",
+      "id": "20200807-095614_775988207",
+      "dateCreated": "2020-08-07 09:56:14.717",
+      "dateStarted": "2020-08-11 20:04:07.909",
+      "dateFinished": "2020-08-11 20:04:07.945",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df_raw \u003d spark.read.textFile(\"D:\\\\AnacondaProjects\\\\Datasets\\\\apache.access.log.PROJECT\\\\apache.access.log.PROJECT\")\n\ndef find_pattern(x: String) \u003d {\nval pattern \u003d \"\"\"-$\"\"\".r\n\npattern.findFirstIn(x) !\u003d None\n    \n}\n\nval find_pattern_udf \u003d udf(find_pattern _)\n\ndf_raw.filter( find_pattern_udf($\"value\") ).show(5, truncate\u003dfalse)\n\nprintln(s\"Ho questo numero di matching: ${df_raw.filter( find_pattern_udf($\"value\") ).count}\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-11 20:04:08.006",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---------------------------------------------------------------------------------------------------------------------------+\n|value                                                                                                                      |\n+---------------------------------------------------------------------------------------------------------------------------+\n|gw1.att.com - - [01/Aug/1995:00:03:53 -0400] \"GET /shuttle/missions/sts-73/news HTTP/1.0\" 302 -                            |\n|js002.cc.utsunomiya-u.ac.jp - - [01/Aug/1995:00:07:33 -0400] \"GET /shuttle/resources/orbiters/discovery.gif HTTP/1.0\" 404 -|\n|tia1.eskimo.com - - [01/Aug/1995:00:28:41 -0400] \"GET /pub/winvn/release.txt HTTP/1.0\" 404 -                               |\n|itws.info.eng.niigata-u.ac.jp - - [01/Aug/1995:00:38:01 -0400] \"GET /ksc.html/facts/about_ksc.html HTTP/1.0\" 403 -         |\n|grimnet23.idirect.com - - [01/Aug/1995:00:50:12 -0400] \"GET /www/software/winvn/winvn.html HTTP/1.0\" 404 -                 |\n+---------------------------------------------------------------------------------------------------------------------------+\nonly showing top 5 rows\n\r\nHo questo numero di matching: 8756\r\ndf_raw: org.apache.spark.sql.Dataset[String] \u003d [value: string]\r\nfind_pattern: (x: String)Boolean\r\nfind_pattern_udf: org.apache.spark.sql.expressions.UserDefinedFunction \u003d UserDefinedFunction(\u003cfunction1\u003e,BooleanType,Some(List(StringType)))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1596787128777_217896235",
+      "id": "20200807-095848_742746773",
+      "dateCreated": "2020-08-07 09:58:48.777",
+      "dateStarted": "2020-08-11 20:04:08.345",
+      "dateFinished": "2020-08-11 20:04:12.186",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nVerificato.\n\nAdesso eliminiamo i record nulli.",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-11 20:04:12.236",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eVerificato.\u003c/p\u003e\n\u003cp\u003eAdesso eliminiamo i record nulli.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1596788192564_-420759815",
+      "id": "20200807-101632_2110320353",
+      "dateCreated": "2020-08-07 10:16:32.564",
+      "dateStarted": "2020-08-11 20:04:12.535",
+      "dateFinished": "2020-08-11 20:04:12.551",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df_clean \u003d df.filter($\"bytes\".isNotNull)\n\ndf_clean.show(5)\n\ndf_clean.count",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-11 20:04:12.634",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------------+--------------------+--------------------+----+-----+\n|             host|            datetime|             request|code|bytes|\n+-----------------+--------------------+--------------------+----+-----+\n|in24.inetnebr.com|[01/Aug/1995:00:0...|GET /shuttle/miss...| 200| 1839|\n|  uplherc.upl.com|[01/Aug/1995:00:0...|      GET / HTTP/1.0| 304|    0|\n|  uplherc.upl.com|[01/Aug/1995:00:0...|GET /images/ksclo...| 304|    0|\n|  uplherc.upl.com|[01/Aug/1995:00:0...|GET /images/MOSAI...| 304|    0|\n|  uplherc.upl.com|[01/Aug/1995:00:0...|GET /images/USA-l...| 304|    0|\n+-----------------+--------------------+--------------------+----+-----+\nonly showing top 5 rows\n\r\ndf_clean: org.apache.spark.sql.Dataset[server_connection] \u003d [host: string, datetime: string ... 3 more fields]\r\nres55: Long \u003d 1034421\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1596788207719_378104465",
+      "id": "20200807-101647_270126024",
+      "dateCreated": "2020-08-07 10:16:47.719",
+      "dateStarted": "2020-08-11 20:04:12.914",
+      "dateFinished": "2020-08-11 20:04:14.660",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nPer ripulire i campi datetime e request possiamo procedere come in precedenza.\n\nPer il campo **datetime** occorre prendere tutti i caratteri dal secondo fino alla fine.",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-11 20:04:14.670",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003ePer ripulire i campi datetime e request possiamo procedere come in precedenza.\u003c/p\u003e\n\u003cp\u003ePer il campo \u003cstrong\u003edatetime\u003c/strong\u003e occorre prendere tutti i caratteri dal secondo fino alla fine.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1596751947207_1811115303",
+      "id": "20200807-001227_106539563",
+      "dateCreated": "2020-08-07 00:12:27.207",
+      "dateStarted": "2020-08-11 20:04:15.003",
+      "dateFinished": "2020-08-11 20:04:15.027",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val clean: String \u003d\u003e String \u003d x \u003d\u003e x.slice(1,x.size)\n\nval clean_udf \u003d udf(clean)\n\nval df_clean_datetime \u003d df_clean.withColumn(\"clean_datetime\", clean_udf($\"datetime\"))\n\ndf_clean_datetime.show\n\ndf_clean_datetime.describe(\"clean_datetime\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-11 20:04:15.103",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------------+--------------------+--------------------+----+-----+--------------------+\n|                host|            datetime|             request|code|bytes|      clean_datetime|\n+--------------------+--------------------+--------------------+----+-----+--------------------+\n|   in24.inetnebr.com|[01/Aug/1995:00:0...|GET /shuttle/miss...| 200| 1839|01/Aug/1995:00:00:01|\n|     uplherc.upl.com|[01/Aug/1995:00:0...|      GET / HTTP/1.0| 304|    0|01/Aug/1995:00:00:07|\n|     uplherc.upl.com|[01/Aug/1995:00:0...|GET /images/ksclo...| 304|    0|01/Aug/1995:00:00:08|\n|     uplherc.upl.com|[01/Aug/1995:00:0...|GET /images/MOSAI...| 304|    0|01/Aug/1995:00:00:08|\n|     uplherc.upl.com|[01/Aug/1995:00:0...|GET /images/USA-l...| 304|    0|01/Aug/1995:00:00:08|\n|ix-esc-ca2-07.ix....|[01/Aug/1995:00:0...|GET /images/launc...| 200| 1713|01/Aug/1995:00:00:09|\n|     uplherc.upl.com|[01/Aug/1995:00:0...|GET /images/WORLD...| 304|    0|01/Aug/1995:00:00:10|\n|slppp6.intermind.net|[01/Aug/1995:00:0...|GET /history/skyl...| 200| 1687|01/Aug/1995:00:00:10|\n|piweba4y.prodigy.com|[01/Aug/1995:00:0...|GET /images/launc...| 200|11853|01/Aug/1995:00:00:10|\n|slppp6.intermind.net|[01/Aug/1995:00:0...|GET /history/skyl...| 200| 9202|01/Aug/1995:00:00:11|\n|slppp6.intermind.net|[01/Aug/1995:00:0...|GET /images/ksclo...| 200| 3635|01/Aug/1995:00:00:12|\n|ix-esc-ca2-07.ix....|[01/Aug/1995:00:0...|GET /history/apol...| 200| 1173|01/Aug/1995:00:00:12|\n|slppp6.intermind.net|[01/Aug/1995:00:0...|GET /history/apol...| 200| 3047|01/Aug/1995:00:00:13|\n|     uplherc.upl.com|[01/Aug/1995:00:0...|GET /images/NASA-...| 304|    0|01/Aug/1995:00:00:14|\n|        133.43.96.45|[01/Aug/1995:00:0...|GET /shuttle/miss...| 200|10566|01/Aug/1995:00:00:16|\n|kgtyk4.kj.yamagat...|[01/Aug/1995:00:0...|      GET / HTTP/1.0| 200| 7280|01/Aug/1995:00:00:17|\n|kgtyk4.kj.yamagat...|[01/Aug/1995:00:0...|GET /images/ksclo...| 200| 5866|01/Aug/1995:00:00:18|\n|     d0ucr6.fnal.gov|[01/Aug/1995:00:0...|GET /history/apol...| 200| 2743|01/Aug/1995:00:00:19|\n|ix-esc-ca2-07.ix....|[01/Aug/1995:00:0...|GET /shuttle/reso...| 200| 6849|01/Aug/1995:00:00:19|\n|     d0ucr6.fnal.gov|[01/Aug/1995:00:0...|GET /history/apol...| 200|14897|01/Aug/1995:00:00:20|\n+--------------------+--------------------+--------------------+----+-----+--------------------+\nonly showing top 20 rows\n\r\nclean: String \u003d\u003e String \u003d \u003cfunction1\u003e\r\nclean_udf: org.apache.spark.sql.expressions.UserDefinedFunction \u003d UserDefinedFunction(\u003cfunction1\u003e,StringType,Some(List(StringType)))\r\ndf_clean_datetime: org.apache.spark.sql.DataFrame \u003d [host: string, datetime: string ... 4 more fields]\r\nres56: org.apache.spark.sql.DataFrame \u003d [summary: string, clean_datetime: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1596777270473_648479329",
+      "id": "20200807-071430_115527483",
+      "dateCreated": "2020-08-07 07:14:30.473",
+      "dateStarted": "2020-08-11 20:04:15.375",
+      "dateFinished": "2020-08-11 20:04:22.159",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nPer il campo **request** posso usare una espressione regolare",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-11 20:04:22.186",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003ePer il campo \u003cstrong\u003erequest\u003c/strong\u003e posso usare una espressione regolare\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1597156493975_600790210",
+      "id": "20200811-163453_1600161699",
+      "dateCreated": "2020-08-11 16:34:53.976",
+      "dateStarted": "2020-08-11 20:04:22.525",
+      "dateFinished": "2020-08-11 20:04:22.540",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val regexp \u003d \"\"\"\\s*\\/+([a-zA-Z0-9\\/\\-\\_]*)\\s*\"\"\".r\n\nval func1: String \u003d\u003e String \u003d x \u003d\u003e regexp.findFirstIn(x).getOrElse(\"\")\n\nval udf_func1 \u003d udf(func1)\n\nval df_clean_request \u003d df_clean_datetime.withColumn(\"clean_request\", udf_func1($\"request\"))\ndf_clean_request.show",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-11 20:04:22.623",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------------+--------------------+--------------------+----+-----+--------------------+--------------------+\n|                host|            datetime|             request|code|bytes|      clean_datetime|       clean_request|\n+--------------------+--------------------+--------------------+----+-----+--------------------+--------------------+\n|   in24.inetnebr.com|[01/Aug/1995:00:0...|GET /shuttle/miss...| 200| 1839|01/Aug/1995:00:00:01| /shuttle/mission...|\n|     uplherc.upl.com|[01/Aug/1995:00:0...|      GET / HTTP/1.0| 304|    0|01/Aug/1995:00:00:07|                  / |\n|     uplherc.upl.com|[01/Aug/1995:00:0...|GET /images/ksclo...| 304|    0|01/Aug/1995:00:00:08| /images/ksclogo-...|\n|     uplherc.upl.com|[01/Aug/1995:00:0...|GET /images/MOSAI...| 304|    0|01/Aug/1995:00:00:08| /images/MOSAIC-l...|\n|     uplherc.upl.com|[01/Aug/1995:00:0...|GET /images/USA-l...| 304|    0|01/Aug/1995:00:00:08| /images/USA-logo...|\n|ix-esc-ca2-07.ix....|[01/Aug/1995:00:0...|GET /images/launc...| 200| 1713|01/Aug/1995:00:00:09| /images/launch-logo|\n|     uplherc.upl.com|[01/Aug/1995:00:0...|GET /images/WORLD...| 304|    0|01/Aug/1995:00:00:10| /images/WORLD-lo...|\n|slppp6.intermind.net|[01/Aug/1995:00:0...|GET /history/skyl...| 200| 1687|01/Aug/1995:00:00:10| /history/skylab/...|\n|piweba4y.prodigy.com|[01/Aug/1995:00:0...|GET /images/launc...| 200|11853|01/Aug/1995:00:00:10| /images/launchme...|\n|slppp6.intermind.net|[01/Aug/1995:00:0...|GET /history/skyl...| 200| 9202|01/Aug/1995:00:00:11| /history/skylab/...|\n|slppp6.intermind.net|[01/Aug/1995:00:0...|GET /images/ksclo...| 200| 3635|01/Aug/1995:00:00:12| /images/ksclogos...|\n|ix-esc-ca2-07.ix....|[01/Aug/1995:00:0...|GET /history/apol...| 200| 1173|01/Aug/1995:00:00:12| /history/apollo/...|\n|slppp6.intermind.net|[01/Aug/1995:00:0...|GET /history/apol...| 200| 3047|01/Aug/1995:00:00:13| /history/apollo/...|\n|     uplherc.upl.com|[01/Aug/1995:00:0...|GET /images/NASA-...| 304|    0|01/Aug/1995:00:00:14| /images/NASA-log...|\n|        133.43.96.45|[01/Aug/1995:00:0...|GET /shuttle/miss...| 200|10566|01/Aug/1995:00:00:16| /shuttle/mission...|\n|kgtyk4.kj.yamagat...|[01/Aug/1995:00:0...|      GET / HTTP/1.0| 200| 7280|01/Aug/1995:00:00:17|                  / |\n|kgtyk4.kj.yamagat...|[01/Aug/1995:00:0...|GET /images/ksclo...| 200| 5866|01/Aug/1995:00:00:18| /images/ksclogo-...|\n|     d0ucr6.fnal.gov|[01/Aug/1995:00:0...|GET /history/apol...| 200| 2743|01/Aug/1995:00:00:19| /history/apollo/...|\n|ix-esc-ca2-07.ix....|[01/Aug/1995:00:0...|GET /shuttle/reso...| 200| 6849|01/Aug/1995:00:00:19| /shuttle/resourc...|\n|     d0ucr6.fnal.gov|[01/Aug/1995:00:0...|GET /history/apol...| 200|14897|01/Aug/1995:00:00:20| /history/apollo/...|\n+--------------------+--------------------+--------------------+----+-----+--------------------+--------------------+\nonly showing top 20 rows\n\r\nregexp: scala.util.matching.Regex \u003d \\s*\\/+([a-zA-Z0-9\\/\\-\\_]*)\\s*\r\nfunc1: String \u003d\u003e String \u003d \u003cfunction1\u003e\r\nudf_func1: org.apache.spark.sql.expressions.UserDefinedFunction \u003d UserDefinedFunction(\u003cfunction1\u003e,StringType,Some(List(StringType)))\r\ndf_clean_request: org.apache.spark.sql.DataFrame \u003d [host: string, datetime: string ... 5 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1597139968701_140352180",
+      "id": "20200811-115928_2121407498",
+      "dateCreated": "2020-08-11 11:59:28.701",
+      "dateStarted": "2020-08-11 20:04:22.901",
+      "dateFinished": "2020-08-11 20:04:25.327",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\nRimuovo le colonne inutili",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-11 20:04:25.401",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003eRimuovo le colonne inutili\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1597168853920_450512540",
+      "id": "20200811-200053_1432646714",
+      "dateCreated": "2020-08-11 20:00:53.920",
+      "dateStarted": "2020-08-11 20:04:25.908",
+      "dateFinished": "2020-08-11 20:04:25.921",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val new_df \u003d df_clean_request.drop(\"datetime\",\"request\").cache\n\nnew_df.show(truncate\u003dfalse)",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-11 20:08:12.940",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---------------------------+----+-----+--------------------+------------------------------------------------+\n|host                       |code|bytes|clean_datetime      |clean_request                                   |\n+---------------------------+----+-----+--------------------+------------------------------------------------+\n|in24.inetnebr.com          |200 |1839 |01/Aug/1995:00:00:01| /shuttle/missions/sts-68/news/sts-68-mcc-05    |\n|uplherc.upl.com            |304 |0    |01/Aug/1995:00:00:07| /                                              |\n|uplherc.upl.com            |304 |0    |01/Aug/1995:00:00:08| /images/ksclogo-medium                         |\n|uplherc.upl.com            |304 |0    |01/Aug/1995:00:00:08| /images/MOSAIC-logosmall                       |\n|uplherc.upl.com            |304 |0    |01/Aug/1995:00:00:08| /images/USA-logosmall                          |\n|ix-esc-ca2-07.ix.netcom.com|200 |1713 |01/Aug/1995:00:00:09| /images/launch-logo                            |\n|uplherc.upl.com            |304 |0    |01/Aug/1995:00:00:10| /images/WORLD-logosmall                        |\n|slppp6.intermind.net       |200 |1687 |01/Aug/1995:00:00:10| /history/skylab/skylab                         |\n|piweba4y.prodigy.com       |200 |11853|01/Aug/1995:00:00:10| /images/launchmedium                           |\n|slppp6.intermind.net       |200 |9202 |01/Aug/1995:00:00:11| /history/skylab/skylab-small                   |\n|slppp6.intermind.net       |200 |3635 |01/Aug/1995:00:00:12| /images/ksclogosmall                           |\n|ix-esc-ca2-07.ix.netcom.com|200 |1173 |01/Aug/1995:00:00:12| /history/apollo/images/apollo-logo1            |\n|slppp6.intermind.net       |200 |3047 |01/Aug/1995:00:00:13| /history/apollo/images/apollo-logo             |\n|uplherc.upl.com            |304 |0    |01/Aug/1995:00:00:14| /images/NASA-logosmall                         |\n|133.43.96.45               |200 |10566|01/Aug/1995:00:00:16| /shuttle/missions/sts-69/mission-sts-69        |\n|kgtyk4.kj.yamagata-u.ac.jp |200 |7280 |01/Aug/1995:00:00:17| /                                              |\n|kgtyk4.kj.yamagata-u.ac.jp |200 |5866 |01/Aug/1995:00:00:18| /images/ksclogo-medium                         |\n|d0ucr6.fnal.gov            |200 |2743 |01/Aug/1995:00:00:19| /history/apollo/apollo-16/apollo-16            |\n|ix-esc-ca2-07.ix.netcom.com|200 |6849 |01/Aug/1995:00:00:19| /shuttle/resources/orbiters/discovery          |\n|d0ucr6.fnal.gov            |200 |14897|01/Aug/1995:00:00:20| /history/apollo/apollo-16/apollo-16-patch-small|\n+---------------------------+----+-----+--------------------+------------------------------------------------+\nonly showing top 20 rows\n\r\nnew_df: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [host: string, code: int ... 3 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1597148119794_1886169483",
+      "id": "20200811-141519_1796423616",
+      "dateCreated": "2020-08-11 14:15:19.796",
+      "dateStarted": "2020-08-11 20:08:13.097",
+      "dateFinished": "2020-08-11 20:08:14.085",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "user": "anonymous",
+      "dateUpdated": "2020-08-11 20:04:32.667",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1596840824078_-1594532905",
+      "id": "20200808-005344_1031572764",
+      "dateCreated": "2020-08-08 00:53:44.078",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     }
   ],
